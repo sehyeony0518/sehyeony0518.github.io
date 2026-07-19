@@ -31,4 +31,4 @@ I am an M.S. student in the Department of AI Convergence Network at [Ajou Univer
 
 I live with two callings that form one life. As a **researcher**, I study how to make machine learning worthy of trust. As a **campus missionary**, I serve students at my university in the self-supporting (*tentmaking*) tradition — my vocation as a researcher is itself the ground where faith and scholarship meet. You can read more on the [ministry](/ministry/) page.
 
-Before starting my M.S., I received my B.S. in Electrical and Computer Engineering and worked as an undergraduate researcher in an ITRC (IITP-funded) program on the reliability of AI-based medical ultrasound diagnosis, which has continued into my M.S. thesis research.
+Before starting my M.S., I received my B.S. in Electrical and Computer Engineering from Ajou University and worked as an undergraduate researcher in an ITRC (IITP-funded) program on the reliability of AI-based gallbladder ultrasound diagnosis, which has continued into my M.S. thesis research.
