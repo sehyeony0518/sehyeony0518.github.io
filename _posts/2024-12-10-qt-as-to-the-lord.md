@@ -3,7 +3,7 @@ layout: post
 title: 주께 하듯 (큐티묵상)
 date: 2024-12-10 12:00:00+0900
 description: 관계 안의 하나님을 바라보아야 한다.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 

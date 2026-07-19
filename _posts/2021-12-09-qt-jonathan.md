@@ -3,7 +3,7 @@ layout: post
 title: 요나단의 믿음의 배팅 (사무엘상)
 date: 2021-12-09 12:00:00+0900
 description: 주님의 계획을 실현하는 데 머리수는 중요하지 않다.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 

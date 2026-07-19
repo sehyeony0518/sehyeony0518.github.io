@@ -44,6 +44,15 @@ pagination:
   }
   .diary-nav .nav-chip:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
   .diary-nav .nav-chip .cnt { opacity: .5; font-size: .72rem; margin-left: .2rem; }
+  /* Stats bar */
+  .diary-stats {
+    display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: baseline;
+    padding: .9rem 1.1rem; margin: 0 0 1.4rem; border-radius: 10px;
+    border: 1px solid rgba(128,128,128,.2); background: rgba(128,128,128,.05);
+  }
+  .diary-stats .stat { display: flex; flex-direction: column; }
+  .diary-stats .stat .num { font-size: 1.5rem; font-weight: 700; line-height: 1.1; color: var(--global-theme-color); }
+  .diary-stats .stat .lbl { font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; opacity: .55; margin-top: .1rem; }
   /* Compact post list */
   .post .post-list { margin-top: .5rem; }
   .post .post-list > li { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid rgba(128,128,128,.15); }
@@ -51,6 +60,19 @@ pagination:
   .post .post-list > li .post-meta, .post .post-list > li .post-tags { margin: .1rem 0 0; font-size: .8rem; }
   .post .post-list > li p { margin: .15rem 0 0; }
 </style>
+
+{% assign sorted_posts = site.posts | sort: 'date' %}
+{% assign first_post = sorted_posts | first %}
+{% assign last_post = sorted_posts | last %}
+{% assign year_groups_all = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% assign meditation_ct = 0 %}
+{% for post in site.posts %}{% if post.tags contains "묵상" %}{% assign meditation_ct = meditation_ct | plus: 1 %}{% endif %}{% endfor %}
+<div class="diary-stats">
+  <div class="stat"><span class="num">{{ site.posts | size }}</span><span class="lbl">기록</span></div>
+  <div class="stat"><span class="num">{{ meditation_ct }}</span><span class="lbl">묵상</span></div>
+  <div class="stat"><span class="num">{{ year_groups_all | size }}</span><span class="lbl">해</span></div>
+  <div class="stat"><span class="num" style="font-size:1rem; font-weight:600;">{{ first_post.date | date: '%Y.%m' }} – {{ last_post.date | date: '%Y.%m' }}</span><span class="lbl">기간</span></div>
+</div>
 
 <div class="diary-nav">
   <p class="nav-label">섹터별</p>

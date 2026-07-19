@@ -3,7 +3,7 @@ layout: post
 title: 오바댜에서 엘리야로 (큐티묵상)
 date: 2024-09-04 12:00:00+0900
 description: 하나님을 잘 안다면 두려움을 이겨내고 세상에 나아갈 수 있다.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 
