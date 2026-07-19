@@ -7,7 +7,7 @@ nav: true
 nav_order: 1
 ---
 
-*For English readers:* My mission identity is rooted in the Reformed faith and in Matthew 28:19 — "Go therefore and make disciples of all nations." **Mission2035** is the calling God has confirmed in me: to go by 2035, as a professor and self-supporting (*tentmaking*, 자비량) missionary, to a university in a nation marked by poverty and a deep need for the gospel — to teach and raise students through my scholarship, to make disciples who make disciples, and to pray for God's kingdom to come in that land. What follows is my full mission identity statement, written in Korean.
+*For English readers: **Mission2035** is my calling — to go by 2035, as a professor and tentmaking missionary, to a university in a nation in deep need of the gospel, making disciples of all nations (Matthew 28:19).*
 
 ---
 

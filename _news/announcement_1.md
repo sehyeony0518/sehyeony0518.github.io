@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My personal website is now live! :sparkles:
+홈페이지 **Mission2035**를 열었습니다 :sparkles:
