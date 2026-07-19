@@ -3,7 +3,7 @@ layout: post
 title: 너희는 이제 가만히 서서 (사무엘상 12장)
 date: 2021-12-05 12:00:00+0900
 description: 하나님께서 행하시는 일을 기다리고 바라보는 믿음과 인내.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 

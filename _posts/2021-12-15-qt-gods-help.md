@@ -3,7 +3,7 @@ layout: post
 title: 하나님의 도우심을 얻는 방법
 date: 2021-12-15 12:00:00+0900
 description: 삶의 모든 영역을 주관하시는 하나님께 다 맡겨보는 믿음.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 

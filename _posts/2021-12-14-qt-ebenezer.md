@@ -3,7 +3,7 @@ layout: post
 title: 에벤에셀 하나님 (2021년을 돌아보며)
 date: 2021-12-14 12:00:00+0900
 description: 고난 가운데 하나님을 경험하고 의지하는 믿음의 근육이 성장한다.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 

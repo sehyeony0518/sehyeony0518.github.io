@@ -3,7 +3,7 @@ layout: post
 title: 광야 구덩이 가운데의 형통 (사무엘상)
 date: 2021-12-06 12:00:00+0900
 description: 우리의 삶은 고난 가운데 형통할 수 있다.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 

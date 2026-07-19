@@ -3,7 +3,7 @@ layout: post
 title: 하나님의 인도하심을 받는 믿음
 date: 2021-12-11 12:00:00+0900
 description: 어려워 보일지라도 낙심하지 않고 믿음으로 하나님을 신뢰하자.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 

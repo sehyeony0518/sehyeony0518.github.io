@@ -3,7 +3,7 @@ layout: post
 title: 주의 교훈과 훈계로 (큐티묵상)
 date: 2024-12-09 18:00:00+0900
 description: 그리스도인에게 관계란 섬김의 방향으로 나아가는 것이다.
-tags: 큐티묵상
+tags: 묵상
 related_posts: false
 ---
 
