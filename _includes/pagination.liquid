@@ -1,0 +1,36 @@
+{% if paginator.total_pages > 1 %}
+  <nav aria-label="Diary page navigation">
+    <ul class="af-pagination">
+      <li class="af-page-item {% unless paginator.previous_page %}disabled{% endunless %}">
+        <a class="af-page-link" href="{{ paginator.previous_page_path | relative_url }}" tabindex="-1" aria-disabled="{{ paginator.previous_page }}">&lt;</a>
+      </li>
+      {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+          {% if forloop.first and trail.num > 1 %}
+            <li class="af-page-item {% if paginator.page == 1 %}active{% endif %}">
+              <a class="af-page-link" href="{{ paginator.first_page_path | relative_url | remove: 'index.html' }}" title="Page 1">1</a>
+            </li>
+            {% if trail.num > 2 %}
+              <li class="af-page-item disabled"><span class="af-page-link">&hellip;</span></li>
+            {% endif %}
+          {% endif %}
+          <li class="af-page-item {% if page.url == trail.path %}active{% endif %}">
+            <a class="af-page-link" href="{{ trail.path | relative_url | remove: 'index.html' }}" title="{{ trail.title }}">{{ trail.num }}</a>
+          </li>
+          {% if forloop.last and trail.num < paginator.total_pages %}
+            {% assign second_last = paginator.total_pages | minus: 1 %}
+            {% if trail.num < second_last %}
+              <li class="af-page-item disabled"><span class="af-page-link">&hellip;</span></li>
+            {% endif %}
+            <li class="af-page-item {% if paginator.page == paginator.total_pages %}active{% endif %}">
+              <a class="af-page-link" href="{{ paginator.last_page_path | relative_url | remove: 'index.html' }}" title="Page {{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <li class="af-page-item {% unless paginator.next_page %}disabled{% endunless %}">
+        <a class="af-page-link" href="{{ paginator.next_page_path | relative_url }}">&gt;</a>
+      </li>
+    </ul>
+  </nav>
+{% endif %}

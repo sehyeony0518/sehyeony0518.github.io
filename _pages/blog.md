@@ -8,7 +8,7 @@ pagination:
   enabled: true
   collection: posts
   permalink: /page/:num/
-  per_page: 5
+  per_page: 20
   sort_field: date
   sort_reverse: true
   trail:
@@ -29,32 +29,51 @@ pagination:
   </div>
   {% endif %}
 
-{% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
+<!-- Diary navigation: by sector (tag) and by year -->
+<style>
+  .diary-nav { margin: 0 0 1.5rem; }
+  .diary-nav .nav-label {
+    font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    opacity: .55; margin: 0 0 .35rem;
+  }
+  .diary-nav .nav-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .9rem; }
+  .diary-nav .nav-chip {
+    display: inline-block; padding: .18rem .6rem; border-radius: 999px;
+    border: 1px solid rgba(128,128,128,.35); font-size: .82rem; text-decoration: none;
+    color: inherit; white-space: nowrap; transition: all .15s ease;
+  }
+  .diary-nav .nav-chip:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+  .diary-nav .nav-chip .cnt { opacity: .5; font-size: .72rem; margin-left: .2rem; }
+  /* Compact post list */
+  .post .post-list { margin-top: .5rem; }
+  .post .post-list > li { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid rgba(128,128,128,.15); }
+  .post .post-list > li h3 { margin-bottom: .1rem; line-height: 1.35; }
+  .post .post-list > li .post-meta, .post .post-list > li .post-tags { margin: .1rem 0 0; font-size: .8rem; }
+  .post .post-list > li p { margin: .15rem 0 0; }
+</style>
 
-  <div class="tag-category-list">
-    <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
-        <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/diary/tag/' | relative_url }}">{{ tag }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
+<div class="diary-nav">
+  <p class="nav-label">섹터별</p>
+  <div class="nav-row">
+    {% assign all_tags = site.posts | map: "tags" | join: ',' | replace: ' ,', ',' | split: ',' %}
+    {% assign tag_names = all_tags | uniq | sort %}
+    {% for tag in tag_names %}
+      {% if tag != "" %}
+        {% assign tag_count = 0 %}
+        {% for post in site.posts %}{% if post.tags contains tag %}{% assign tag_count = tag_count | plus: 1 %}{% endif %}{% endfor %}
+        <a class="nav-chip" href="{{ tag | slugify: 'raw' | prepend: '/diary/tag/' | relative_url }}"># {{ tag }}<span class="cnt">{{ tag_count }}</span></a>
       {% endif %}
-      {% for category in site.display_categories %}
-        <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/diary/category/' | relative_url }}">{{ category }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-    </ul>
+    {% endfor %}
   </div>
-  {% endif %}
+
+  <p class="nav-label">연도별</p>
+  <div class="nav-row">
+    {% assign year_groups = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for yg in year_groups %}
+      <a class="nav-chip" href="{{ yg.name | prepend: '/diary/' | append: '/' | relative_url }}">{{ yg.name }}<span class="cnt">{{ yg.items | size }}</span></a>
+    {% endfor %}
+  </div>
+</div>
 
 {% assign featured_posts = site.posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
