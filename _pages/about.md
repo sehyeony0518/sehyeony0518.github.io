@@ -38,13 +38,13 @@ latest_posts:
 
 **For English readers:** Mission2035 is the calling God has placed before me: beginning in 2035, to serve as a professor and tentmaking missionary at a university in a country facing material and educational hardship with limited access to the gospel, making disciples in partnership with the local church in obedience to Matthew 28:19.
 
-#### 현재의 순종
+#### Obedience Today
 
 2020년부터 2026년까지 JDM 수원지구에서 캠퍼스 전도와 제자 양육, 공동체 훈련을 경험했습니다. 2021년부터 리더로 섬겼고, 2025년에는 학생대표를 맡았습니다.
 
 현재는 경원교회 청년부 대표단과 대학부 목장장으로 섬기며, 하나님께서 맡기신 한 사람을 사랑하고 말씀으로 양육하는 훈련을 이어가고 있습니다. 지금의 교회와 목장에서 감당하는 작은 순종이 장차 열방에서 감당할 선교의 준비라고 믿습니다. 자세한 섬김의 이야기는 [ministry](/ministry/)에 있습니다.
 
-#### 연구라는 텐트
+#### Research as My Tent
 
 저의 '텐트'는 연구와 교육입니다.
 

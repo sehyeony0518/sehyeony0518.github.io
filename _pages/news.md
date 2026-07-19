@@ -6,7 +6,7 @@ nav: true
 nav_order: 5
 ---
 
-## Mission2035를 향한 현재의 순종과 준비
+## Obedience and Preparation Toward Mission2035
 
 Mission2035는 2035년에 갑자기 시작되는 계획이 아닙니다. 하나님께서 오늘 맡기신 교회와 공동체, 학업과 연구, 한 사람을 향한 작은 순종을 통해 이미 시작되고 있습니다.
 
