@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Journey** · 홈페이지 Mission2035를 열었습니다 :sparkles:
+**Journey** · Mission2035 홈페이지를 열었습니다 — 선교와 연구의 여정을 기록하고 나누기 위해 이 공간을 만들었습니다.

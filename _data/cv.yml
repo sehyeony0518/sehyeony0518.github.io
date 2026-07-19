@@ -1,10 +1,10 @@
 cv:
   name: Se-Hyeon Hwang
-  label: M.S. Student, Dept. of AI Convergence Network, Ajou University
+  label: M.S. Student in Trustworthy Medical AI · Preparing for Mission2035
   email: bikmiso3@ajou.ac.kr
   location: Suwon, South Korea
   image: ""
-  summary: M.S. student researching trustworthy and interpretable machine learning for healthcare, focusing on clinical faithfulness auditing and shortcut analysis of ultrasound diagnostic models. Long-term (Mission2035), I hope to serve students as a professor and tentmaking missionary at a university abroad.
+  summary: M.S. student at Ajou University researching trustworthy and interpretable machine learning for healthcare, with a focus on clinical faithfulness, shortcut analysis, and ultrasound AI. I am also preparing for Mission2035, a long-term calling to serve students as a professor and tentmaking campus missionary.
 
   social_networks:
     - network: GitHub
@@ -50,7 +50,7 @@ cv:
         end_date: 2026-02
         highlights:
           - Contributed to a 3-year ITRC (IITP-funded) project on AI-based diagnosis of gallbladder disease from ultrasound, spanning clinical problem formulation, modeling, evaluation, and physician collaboration.
-          - First-authored a reliability requirements analysis that improved malignant-class detection sensitivity by ~33% (ACK 2025); continued as M.S. thesis research.
+          - First-authored a reliability requirements analysis with improved malignant-class detection sensitivity, presented at ACK 2025; continued as M.S. thesis research.
           - Designed clinical-knowledge-guided modeling strategies using structured ultrasound findings — echogenicity, texture, lesion margin, wall-related features, and anatomical context — as domain priors.
 
       - company: Embedded & Software Lab, Ajou University
