@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Mission2035를 향해 가는 예수 그리스도의 제자 · 아주대학교 AI융합네트워크학과 석사과정
+subtitle: A disciple of Jesus Christ walking toward <b>Mission2035</b> · M.S. Student, AI Convergence Network, Ajou University
 
 profile:
   align: right
@@ -31,13 +31,13 @@ latest_posts:
 
 **연구**는 그 부르심을 위해 지금 준비하는, 장차 저의 "텐트"가 될 일입니다. 아주대학교 [Embedded & Software Lab](https://eslab.ajou.ac.kr/)에서 **신뢰가능하고 해석가능한 의료 AI**를 연구하고 있으며, 자세한 이력과 논문은 [cv](/cv/)와 [publications](/publications/) 페이지에 정리했습니다.
 
-#### 선교의 여정
+#### Mission Journey
 
 - **2020 – 2026** · JDM(예수제자운동) 수원지구 캠퍼스 선교 — 리더(2021–26) · 학생대표(2025)
 - **2025 – 현재** · 경원교회 청년부 대표단 · 대학부 목장장
 - **2035** · 🌍 **Mission2035** — 하나님께서 보내시는 나라의 대학으로
 
-#### 연구자의 여정
+#### Research Journey
 
 - **2020 – 2026** · 아주대학교 전자공학과 학사 — 공군 병장 만기전역(2022–23)
 - **2024 – 2026** · 아주대학교병원·ITRC·삼성중공업 연구 참여 — 제1저자 논문 2편(ACK 2025, KCSE 2026)
