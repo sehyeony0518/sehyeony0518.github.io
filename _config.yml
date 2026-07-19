@@ -122,9 +122,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: notes # blog_name will be displayed in your blog page
-blog_description: research notes and reflections
-permalink: /blog/:year/:title/
+blog_name: diary # blog_name will be displayed in your blog page
+blog_description: 하나님과 동행하는 날들의 기록
+permalink: /diary/:year/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
@@ -317,9 +317,9 @@ jekyll-archives:
   posts:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
     permalinks:
-      year: "/blog/:year/"
-      tags: "/blog/:type/:name/"
-      categories: "/blog/:type/:name/"
+      year: "/diary/:year/"
+      tags: "/diary/:type/:name/"
+      categories: "/diary/:type/:name/"
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
