@@ -1,10 +1,10 @@
 cv:
   name: Se-Hyeon Hwang
-  label: M.S. Student in AI · Aspiring Tentmaking Missionary (Mission2035)
+  label: M.S. Student, Dept. of AI Convergence Network, Ajou University
   email: bikmiso3@ajou.ac.kr
   location: Suwon, South Korea
   image: ""
-  summary: M.S. student researching trustworthy and interpretable machine learning for healthcare at Ajou University, preparing for Mission2035 — the calling to serve as a professor and self-supporting (tentmaking, 자비량) missionary at a university in a nation in deep need of the gospel.
+  summary: M.S. student researching trustworthy and interpretable machine learning for healthcare — clinical faithfulness auditing and shortcut analysis of ultrasound diagnostic models. Long-term (Mission2035), I hope to serve students as a professor and tentmaking missionary at a university abroad.
 
   social_networks:
     - network: GitHub
