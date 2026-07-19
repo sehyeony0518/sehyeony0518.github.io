@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sehyeony0518.github.io/sitemap.xml
