@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Research** · 첫 학술대회 발표를 마치며 (ACK 2025)
+**Research** · 첫 학술대회 발표를 마치며 (ACK 2025) — 초음파 진단 모델의 신뢰성 요구분석 연구를 처음으로 학회에서 발표했습니다.
