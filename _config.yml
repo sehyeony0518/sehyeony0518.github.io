@@ -9,12 +9,12 @@ last_name: Hwang
 contact_note: >
   The best way to reach me is by email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal website of Se-Hyeon Hwang — researcher in trustworthy AI for healthcare, and campus missionary.
+  Mission2035 — Se-Hyeon Hwang, campus missionary (tentmaking) and researcher in trustworthy AI for healthcare.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: Se-Hyeon Hwang, trustworthy AI, interpretable machine learning, healthcare AI, campus missionary # add your own keywords or leave empty
+keywords: Se-Hyeon Hwang, Mission2035, campus missionary, tentmaking, trustworthy AI, interpretable machine learning, healthcare AI # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 

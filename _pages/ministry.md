@@ -4,7 +4,7 @@ permalink: /ministry/
 title: ministry
 description: Serving the campus as a self-supporting (tentmaking) missionary.
 nav: true
-nav_order: 2
+nav_order: 1
 ---
 
 Alongside my graduate studies, I serve as a **campus missionary** at my university — in the *tentmaking* (자비량) tradition: supporting the mission through my own vocation as a researcher, rather than being supported by it.

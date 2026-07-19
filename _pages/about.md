@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: M.S. Student at <a href='https://www.ajou.ac.kr/en/'>Ajou University</a> · Researcher & Campus Missionary
+subtitle: Campus Missionary (자비량) · M.S. Student at <a href='https://www.ajou.ac.kr/en/'>Ajou University</a>
 
 profile:
   align: right
@@ -27,8 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/), working on **trustworthy and interpretable machine learning for healthcare**. My research asks how we can make AI models reliable enough to be trusted in clinical settings — from analyzing data and model requirements for the reliability of ultrasound-based diagnostic models, to designing monitoring software for predictive maintenance.
+I am a **campus missionary** serving students at [Ajou University](https://www.ajou.ac.kr/en/) in the self-supporting (*tentmaking*, 자비량) tradition — carrying the gospel to the campus while supporting the mission through my own vocation. Walking with students through shared meals and conversations, Bible studies, and one-to-one discipleship is the heart of what I do. **Mission2035** is the name of that journey; you can read more on the [ministry](/ministry/) page.
 
-I live with two callings that form one life. As a **researcher**, I study how to make machine learning worthy of trust. As a **campus missionary**, I serve students at my university in the self-supporting (*tentmaking*) tradition — my vocation as a researcher is itself the ground where faith and scholarship meet. You can read more on the [ministry](/ministry/) page.
+My tent is **research**. I am an M.S. student in the Department of AI Convergence Network, working on trustworthy and interpretable machine learning for healthcare — asking how AI models can be made reliable enough to be trusted in clinical settings, from ultrasound-based diagnosis to predictive-maintenance monitoring. I believe honest, excellent scholarship is itself a form of witness: faith and scholarship belong together.
 
 Before starting my M.S., I received my B.S. in Electrical and Computer Engineering from Ajou University and worked as an undergraduate researcher in an ITRC (IITP-funded) program on the reliability of AI-based gallbladder ultrasound diagnosis, which has continued into my M.S. thesis research.
