@@ -9,6 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <p><a href="https://eslab.ajou.ac.kr/" target="_blank">Embedded & Software Lab</a></p>
     <p>Dept. of AI Convergence Network</p>
     <p>Ajou University</p>
     <p>Suwon, South Korea</p>
@@ -27,8 +28,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a **campus missionary** serving students at [Ajou University](https://www.ajou.ac.kr/en/) in the self-supporting (*tentmaking*, 자비량) tradition — carrying the gospel to the campus while supporting the mission through my own vocation. Walking with students through shared meals and conversations, Bible studies, and one-to-one discipleship is the heart of what I do. **Mission2035** is the name of that journey; you can read more on the [ministry](/ministry/) page.
+I am a **campus missionary** in the self-supporting (*tentmaking*, 자비량) tradition — shaped by campus mission and discipleship with JDM Suwon (2020–2026), and now serving the young adults and the university group at Gyeongwon Church. **Mission2035** is the calling God has confirmed in me: by 2035, to go with scholarship and the gospel in hand to a university in a nation marked by poverty and a deep need for the gospel, and to live there as a professor and tentmaking missionary — making disciples of all nations (Matthew 28:19). The full story is on the [ministry](/ministry/) page.
 
-My tent is **research**. I am an M.S. student in the Department of AI Convergence Network, working on trustworthy and interpretable machine learning for healthcare — asking how AI models can be made reliable enough to be trusted in clinical settings, from ultrasound-based diagnosis to predictive-maintenance monitoring. I believe honest, excellent scholarship is itself a form of witness: faith and scholarship belong together.
+My tent is **research**. I am an M.S. student in the Department of AI Convergence Network at Ajou University's [Embedded & Software Lab](https://eslab.ajou.ac.kr/), working on trustworthy and interpretable machine learning for healthcare — asking how AI models can be made reliable enough to be trusted in clinical settings, from ultrasound-based diagnosis to predictive-maintenance monitoring. To me the classroom and the lab are a mission field: honest, excellent scholarship is itself a form of witness, and faith and scholarship belong together.
 
 Before starting my M.S., I received my B.S. in Electrical and Computer Engineering from Ajou University and worked as an undergraduate researcher in an ITRC (IITP-funded) program on the reliability of AI-based gallbladder ultrasound diagnosis, which has continued into my M.S. thesis research.
