@@ -1,12 +1,11 @@
 <style>
   .diary-preview { margin-top: 0.6rem; }
-  .diary-preview .dp-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
-  }
-  @media (min-width: 576px) {
-    .diary-preview .dp-grid { grid-template-columns: 1fr 1fr; }
+  .diary-preview .dp-cols { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+  @media (min-width: 576px) { .diary-preview .dp-cols { grid-template-columns: 1fr 1fr; } }
+  .diary-preview .dp-col { display: flex; flex-direction: column; gap: 0.6rem; }
+  .diary-preview .dp-col-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    opacity: 0.5; margin: 0 0 0.05rem;
   }
   .diary-preview .dp-item {
     display: block;
@@ -23,22 +22,6 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   }
-  .diary-preview .dp-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 0.28rem;
-  }
-  .diary-preview .dp-tag {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 0.12rem 0.55rem;
-    border-radius: 999px;
-    background: var(--global-theme-color);
-    color: #fff;
-    white-space: nowrap;
-  }
   .diary-preview .dp-date {
     font-size: 0.74rem;
     opacity: 0.5;
@@ -47,6 +30,7 @@
   .diary-preview .dp-title {
     font-weight: 600;
     line-height: 1.4;
+    margin-top: 0.2rem;
   }
   .diary-preview .dp-desc {
     font-size: 0.82rem;
@@ -60,7 +44,7 @@
   }
   .diary-preview .dp-more {
     display: inline-block;
-    margin-top: 0.75rem;
+    margin-top: 0.9rem;
     font-size: 0.82rem;
     text-decoration: none;
     color: var(--global-theme-color);
@@ -68,24 +52,31 @@
   .diary-preview .dp-more:hover { text-decoration: underline; }
 </style>
 
-{% if page.latest_posts.limit %}
-  {% assign dp_limit = page.latest_posts.limit %}
-{% else %}
-  {% assign dp_limit = 6 %}
-{% endif %}
+{% assign meditations = site.posts | where_exp: "post", "post.tags contains '묵상'" %}
+{% assign impressions = site.posts | where_exp: "post", "post.tags contains '소감문'" %}
 
 <div class="diary-preview">
-  <div class="dp-grid">
-    {% for item in site.posts limit: dp_limit %}
-      <a class="dp-item" href="{{ item.url | relative_url }}">
-        <div class="dp-meta">
-          {% if item.tags.first %}<span class="dp-tag">{{ item.tags.first }}</span>{% endif %}
+  <div class="dp-cols">
+    <div class="dp-col">
+      <div class="dp-col-label"># 묵상</div>
+      {% for item in meditations limit: 3 %}
+        <a class="dp-item" href="{{ item.url | relative_url }}">
           <span class="dp-date">{{ item.date | date: '%Y.%m.%d' }}</span>
-        </div>
-        <div class="dp-title">{{ item.title }}</div>
-        {% if item.description %}<div class="dp-desc">{{ item.description }}</div>{% endif %}
-      </a>
-    {% endfor %}
+          <div class="dp-title">{{ item.title }}</div>
+          {% if item.description %}<div class="dp-desc">{{ item.description }}</div>{% endif %}
+        </a>
+      {% endfor %}
+    </div>
+    <div class="dp-col">
+      <div class="dp-col-label"># 소감문</div>
+      {% for item in impressions limit: 3 %}
+        <a class="dp-item" href="{{ item.url | relative_url }}">
+          <span class="dp-date">{{ item.date | date: '%Y.%m.%d' }}</span>
+          <div class="dp-title">{{ item.title }}</div>
+          {% if item.description %}<div class="dp-desc">{{ item.description }}</div>{% endif %}
+        </a>
+      {% endfor %}
+    </div>
   </div>
   <a class="dp-more" href="{{ '/diary/' | relative_url }}">View All Reflections &rarr;</a>
 </div>
