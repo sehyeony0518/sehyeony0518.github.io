@@ -1,0 +1,105 @@
+---
+layout: page
+---
+
+<style>
+  .pl-topbar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: .7rem;
+    justify-content: space-between; margin: 0 0 1.2rem;
+    padding-bottom: .9rem; border-bottom: 1px solid rgba(128,128,128,.18);
+  }
+  .pl-issue-line { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+  .pl-issue {
+    font-size: .72rem; font-weight: 800; letter-spacing: .04em;
+    padding: .18rem .6rem; border-radius: 999px;
+    background: var(--global-theme-color); color: #fff; white-space: nowrap;
+  }
+  .pl-date { font-size: .8rem; opacity: .55; font-variant-numeric: tabular-nums; }
+  .pl-share-btn {
+    display: inline-flex; align-items: center; gap: .4rem;
+    background: none; border: 1px solid rgba(128,128,128,.4); border-radius: 999px;
+    font-size: .82rem; font-weight: 600; padding: .3rem .85rem; cursor: pointer;
+    color: inherit; transition: all .15s ease;
+  }
+  .pl-share-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+  .pl-cover { width: 100%; max-height: 440px; object-fit: cover; border-radius: 12px; margin: 0 0 1.6rem; display: block; }
+  .pl-body { line-height: 1.85; }
+  .pl-body blockquote { opacity: .95; }
+  .pl-gallery {
+    display: grid; grid-template-columns: 1fr; gap: .7rem; margin: 2rem 0 1rem;
+  }
+  @media (min-width: 600px) { .pl-gallery { grid-template-columns: 1fr 1fr; } }
+  .pl-gallery figure { margin: 0; }
+  .pl-gallery img { width: 100%; border-radius: 10px; display: block; }
+  .pl-gallery figcaption { font-size: .76rem; opacity: .55; margin-top: .35rem; }
+  .pl-nav { margin: 2.2rem 0 0; padding-top: 1.1rem; border-top: 1px solid rgba(128,128,128,.18); }
+  .pl-nav a { font-size: .88rem; text-decoration: none; color: var(--global-theme-color); }
+  .pl-nav a:hover { text-decoration: underline; }
+  .pl-toast {
+    position: fixed; left: 50%; bottom: 2rem; transform: translateX(-50%) translateY(1rem);
+    background: rgba(20,20,20,.92); color: #fff; padding: .6rem 1.1rem; border-radius: 999px;
+    font-size: .84rem; opacity: 0; pointer-events: none; transition: all .25s ease; z-index: 4000;
+  }
+  .pl-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+
+<div class="pl-topbar">
+  <div class="pl-issue-line">
+    {% if page.issue %}<span class="pl-issue">{{ page.issue }}</span>{% endif %}
+    {% if page.date %}<span class="pl-date">{{ page.date | date: '%Y.%m.%d' }}</span>{% endif %}
+  </div>
+  <button class="pl-share-btn" id="pl-share" type="button" aria-label="이 기도편지 공유하기">
+    <span aria-hidden="true">🔗</span> 링크 공유하기
+  </button>
+</div>
+
+{% if page.cover %}
+  <img class="pl-cover" src="{{ '/assets/img/gallery/' | append: page.cover | append: '.jpg' | relative_url }}" alt="{{ page.title }}" loading="eager">
+{% endif %}
+
+<div class="pl-body">
+  {{ content }}
+</div>
+
+{% if page.gallery %}
+  <div class="pl-gallery">
+    {% for ph in page.gallery %}
+      <figure>
+        <img loading="lazy" src="{{ '/assets/img/gallery/' | append: ph.id | append: '.jpg' | relative_url }}" alt="{{ ph.caption }}">
+        {% if ph.caption %}<figcaption>{{ ph.caption }}</figcaption>{% endif %}
+      </figure>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="pl-nav">
+  <a href="{{ '/prayer/' | relative_url }}">&larr; 기도편지 목록으로</a>
+</div>
+
+<div class="pl-toast" id="pl-toast">링크가 복사되었습니다</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('pl-share');
+    var toast = document.getElementById('pl-toast');
+    if (!btn) return;
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 2200);
+    }
+    btn.addEventListener('click', function () {
+      var url = window.location.href;
+      var title = document.title;
+      if (navigator.share) {
+        navigator.share({ title: title, url: url }).catch(function () {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          showToast('링크가 복사되었습니다');
+        }).catch(function () { showToast(url); });
+      } else {
+        showToast(url);
+      }
+    });
+  })();
+</script>
