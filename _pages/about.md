@@ -27,7 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-**그리스도께 부름받아, 열방으로 보냄받고, 삶을 드려 하나님 나라의 임하심을 구하라.**
+**부르심을 따라 제자로, 보내심을 따라 열방으로.**
+<span style="opacity:.6; font-style:italic;">Called to Follow. Sent to Make Disciples.</span>
 
 저는 먼저 예수 그리스도께 부름받은 제자입니다. 하나님께서 먼저 저를 구원하시고 부르셨기에, 그분의 말씀을 듣고 따르는 제자로 살아갑니다.
 
