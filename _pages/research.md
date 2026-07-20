@@ -32,6 +32,9 @@ I study ultrasound AI that reflects clinically and physically meaningful image c
 
 Rather than treating interpretability as an additional visualization step, I aim to connect computational evidence with the factors clinicians actually use in practice.
 
+<img src="/assets/img/gallery/g41.jpg" alt="Demonstrating the gallbladder ultrasound diagnostic system" loading="lazy" style="width:100%; max-width:560px; border-radius:10px; margin:1rem 0;">
+<span style="display:block; font-size:.78rem; opacity:.55; margin:-.6rem 0 0;">Demonstrating a gallbladder ultrasound AI system — diagnostic readout with a probability heatmap and edge-based evidence.</span>
+
 ## Research Interests
 
 - Clinical faithfulness and model auditing
@@ -113,6 +116,17 @@ Rather than treating interpretability as an additional visualization step, I aim
   Government-funded computational psychiatry project; IRB-approved clinical research workflows.
 
 For a full list of roles, publications, and skills, see the [cv](/cv/) page.
+
+<div style="display:flex; flex-wrap:wrap; gap:.7rem; margin:1.2rem 0;">
+  <figure style="flex:1 1 240px; margin:0;">
+    <img src="/assets/img/gallery/g42.jpg" alt="Presenting research at the lab" loading="lazy" style="width:100%; border-radius:10px;">
+    <figcaption style="font-size:.76rem; opacity:.55; margin-top:.3rem;">Presenting ultrasound curriculum-learning work at the Embedded &amp; Software Lab.</figcaption>
+  </figure>
+  <figure style="flex:1 1 240px; margin:0;">
+    <img src="/assets/img/gallery/g40.jpg" alt="Award at the 2025 industry-academia expo" loading="lazy" style="width:100%; border-radius:10px;">
+    <figcaption style="font-size:.76rem; opacity:.55; margin-top:.3rem;">Recognized at the 2025 ECE Industry–Academia Expo, Ajou University.</figcaption>
+  </figure>
+</div>
 
 ## Research as a Calling
 
