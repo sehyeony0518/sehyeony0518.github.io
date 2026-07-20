@@ -73,6 +73,9 @@
   .partner-logos a:hover { opacity: 1; transform: translateY(-2px); }
   .partner-logos img { height: 22px; width: auto; display: block; }
   .partner-logos img.ens-logo { filter: invert(1); height: 19px; }
+  /* Back link on individual reflection posts */
+  .diary-back { display: inline-block; margin: 0 0 1.2rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
+  .diary-back:hover { text-decoration: underline; }
 </style> <script>
   (function () {
     var KEY = 'siteLang';
@@ -119,6 +122,23 @@
     }
     if (document.readyState !== 'loading') addBrand();
     else document.addEventListener('DOMContentLoaded', addBrand);
+  })();
+
+  (function () {
+    // Back link on individual reflection (diary) posts
+    if (!/^\/diary\/\d{4}\/[^/]+\/?$/.test(window.location.pathname)) return;
+    function addBack() {
+      if (document.querySelector('.diary-back')) return;
+      var c = document.querySelector('.post') || document.querySelector('article');
+      if (!c) return;
+      var a = document.createElement('a');
+      a.className = 'diary-back';
+      a.href = '/diary/';
+      a.innerHTML = '&larr; reflections';
+      c.insertBefore(a, c.firstChild);
+    }
+    if (document.readyState !== 'loading') addBack();
+    else document.addEventListener('DOMContentLoaded', addBack);
   })();
 </script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · Mission2035 · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {

@@ -20,13 +20,12 @@
         .rp-viewall:hover { text-decoration: underline; }
       </style> <a class="rp-card" href="/prayer/2026-07/"> <div class="rp-thumb" style="background-image:url('/assets/img/gallery/g45.jpg');"></div> <div class="rp-body"> <span class="rp-badge">2026년 7월호</span> <h3>부르심의 시작</h3> <p class="rp-sum">하나님께서 2035년부터 열방의 대학에서 교수이자 자비량 캠퍼스 선교사로 살아가라 확인시켜 주신 부르심을 나누는 첫 번째 기도편지입니다.</p> </div> </a> <a class="rp-viewall" href="/prayer/">View All Prayer Letters →</a> <h2> <a href="/diary/" style="color: inherit">recent reflections</a> </h2> <style>
   .diary-preview { margin-top: 0.6rem; }
-  .diary-preview .dp-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
-  }
-  @media (min-width: 576px) {
-    .diary-preview .dp-grid { grid-template-columns: 1fr 1fr; }
+  .diary-preview .dp-cols { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+  @media (min-width: 576px) { .diary-preview .dp-cols { grid-template-columns: 1fr 1fr; } }
+  .diary-preview .dp-col { display: flex; flex-direction: column; gap: 0.6rem; }
+  .diary-preview .dp-col-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    opacity: 0.5; margin: 0 0 0.05rem;
   }
   .diary-preview .dp-item {
     display: block;
@@ -43,22 +42,6 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   }
-  .diary-preview .dp-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 0.28rem;
-  }
-  .diary-preview .dp-tag {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 0.12rem 0.55rem;
-    border-radius: 999px;
-    background: var(--global-theme-color);
-    color: #fff;
-    white-space: nowrap;
-  }
   .diary-preview .dp-date {
     font-size: 0.74rem;
     opacity: 0.5;
@@ -67,6 +50,7 @@
   .diary-preview .dp-title {
     font-weight: 600;
     line-height: 1.4;
+    margin-top: 0.2rem;
   }
   .diary-preview .dp-desc {
     font-size: 0.82rem;
@@ -80,13 +64,13 @@
   }
   .diary-preview .dp-more {
     display: inline-block;
-    margin-top: 0.75rem;
+    margin-top: 0.9rem;
     font-size: 0.82rem;
     text-decoration: none;
     color: var(--global-theme-color);
   }
   .diary-preview .dp-more:hover { text-decoration: underline; }
-</style> <div class="diary-preview"> <div class="dp-grid"> <a class="dp-item" href="/diary/2026/qt-acts-1-2/"> <div class="dp-meta"> <span class="dp-tag">묵상</span> <span class="dp-date">2026.07.21</span> </div> <div class="dp-title">사도행전 1-2장 큐티묵상</div> <div class="dp-desc">선교는 하나님 아버지께서 하시는 일에 내가 동참하는 것이다.</div> </a> <a class="dp-item" href="/diary/2026/qt-faith-grace/"> <div class="dp-meta"> <span class="dp-tag">묵상</span> <span class="dp-date">2026.07.20</span> </div> <div class="dp-title">오직 믿음으로 의롭다 하시는 은혜</div> <div class="dp-desc">구원받은 자의 합당한 삶으로 하나님의 영광을 드러내기를.</div> </a> <a class="dp-item" href="/diary/2026/qt-john-16/"> <div class="dp-meta"> <span class="dp-tag">묵상</span> <span class="dp-date">2026.07.16</span> </div> <div class="dp-title">요한복음 16:32-33 묵상</div> <div class="dp-desc">주께서 참소망이 되심이라</div> </a> <a class="dp-item" href="/diary/2026/qt-john-13/"> <div class="dp-meta"> <span class="dp-tag">묵상</span> <span class="dp-date">2026.07.15</span> </div> <div class="dp-title">요한복음 13-14장 묵상</div> <div class="dp-desc">예수님을 사랑하는 사람은 예수님의 말씀에 순종하는 사람이다.</div> </a> <a class="dp-item" href="/diary/2026/qt-acts-13/"> <div class="dp-meta"> <span class="dp-tag">묵상</span> <span class="dp-date">2026.07.15</span> </div> <div class="dp-title">사도행전 13:44-52 묵상</div> <div class="dp-desc">복음은 택하심을 받은 자들에게 값없이 주어진 선물이다.</div> </a> <a class="dp-item" href="/diary/2026/qt-john-12/"> <div class="dp-meta"> <span class="dp-tag">묵상</span> <span class="dp-date">2026.07.14</span> </div> <div class="dp-title">요한복음 12:46-48 묵상</div> <div class="dp-desc">나는 세상을 심판하러 온 것이 아니라 구원하러 왔다.</div> </a> </div> <a class="dp-more" href="/diary/">View All Reflections →</a> </div> <h2> <a href="/photos/" style="color: inherit">photos</a> </h2> <style>
+</style> <div class="diary-preview"> <div class="dp-cols"> <div class="dp-col"> <div class="dp-col-label"># 묵상</div> <a class="dp-item" href="/diary/2026/qt-acts-1-2/"> <span class="dp-date">2026.07.21</span> <div class="dp-title">사도행전 1-2장 큐티묵상</div> <div class="dp-desc">선교는 하나님 아버지께서 하시는 일에 내가 동참하는 것이다.</div> </a> <a class="dp-item" href="/diary/2026/qt-faith-grace/"> <span class="dp-date">2026.07.20</span> <div class="dp-title">오직 믿음으로 의롭다 하시는 은혜</div> <div class="dp-desc">구원받은 자의 합당한 삶으로 하나님의 영광을 드러내기를.</div> </a> <a class="dp-item" href="/diary/2026/qt-john-16/"> <span class="dp-date">2026.07.16</span> <div class="dp-title">요한복음 16:32-33 묵상</div> <div class="dp-desc">주께서 참소망이 되심이라</div> </a> </div> <div class="dp-col"> <div class="dp-col-label"># 소감문</div> <a class="dp-item" href="/diary/2026/musical-resistance/"> <span class="dp-date">2026.06.06</span> <div class="dp-title">뮤지컬 '저항' 소감문</div> <div class="dp-desc">말씀 앞에 타협하지 않고 좁은 길을 걸어간 위그노들의 신앙.</div> </a> <a class="dp-item" href="/diary/2026/graduation/"> <span class="dp-date">2026.02.21</span> <div class="dp-title">졸업식 소감</div> <div class="dp-desc">수원지구 공동체 안에서 과분한 사랑받고 성장할 수 있었습니다.</div> </a> <a class="dp-item" href="/diary/2026/vision-trip-reflection/"> <span class="dp-date">2026.01.13</span> <div class="dp-title">I국 비전트립 소감문</div> <div class="dp-desc">선교란 다른 한 영혼 그 자체가 되는 것, 곧 십자가를 지는 삶이다.</div> </a> </div> </div> <a class="dp-more" href="/diary/">View All Reflections →</a> </div> <h2> <a href="/photos/" style="color: inherit">photos</a> </h2> <style>
         .photo-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin: 0.6rem 0 0.3rem; }
         @media (min-width: 576px) { .photo-strip { grid-template-columns: repeat(5, 1fr); } }
         .photo-strip a { display: block; border-radius: 8px; overflow: hidden; aspect-ratio: 1 / 1; }
@@ -140,6 +124,9 @@
   .partner-logos a:hover { opacity: 1; transform: translateY(-2px); }
   .partner-logos img { height: 22px; width: auto; display: block; }
   .partner-logos img.ens-logo { filter: invert(1); height: 19px; }
+  /* Back link on individual reflection posts */
+  .diary-back { display: inline-block; margin: 0 0 1.2rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
+  .diary-back:hover { text-decoration: underline; }
 </style> <script>
   (function () {
     var KEY = 'siteLang';
@@ -186,6 +173,23 @@
     }
     if (document.readyState !== 'loading') addBrand();
     else document.addEventListener('DOMContentLoaded', addBrand);
+  })();
+
+  (function () {
+    // Back link on individual reflection (diary) posts
+    if (!/^\/diary\/\d{4}\/[^/]+\/?$/.test(window.location.pathname)) return;
+    function addBack() {
+      if (document.querySelector('.diary-back')) return;
+      var c = document.querySelector('.post') || document.querySelector('article');
+      if (!c) return;
+      var a = document.createElement('a');
+      a.className = 'diary-back';
+      a.href = '/diary/';
+      a.innerHTML = '&larr; reflections';
+      c.insertBefore(a, c.firstChild);
+    }
+    if (document.readyState !== 'loading') addBack();
+    else document.addEventListener('DOMContentLoaded', addBack);
   })();
 </script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · Mission2035 · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
