@@ -1,11 +1,18 @@
 <style>
   .diary-preview { margin-top: 0.6rem; }
+  .diary-preview .dp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  @media (min-width: 576px) {
+    .diary-preview .dp-grid { grid-template-columns: 1fr 1fr; }
+  }
   .diary-preview .dp-item {
     display: block;
     text-decoration: none;
     color: inherit;
     padding: 0.85rem 1.05rem;
-    margin-bottom: 0.65rem;
     border-radius: 12px;
     border: 1px solid rgba(128, 128, 128, 0.18);
     background: rgba(128, 128, 128, 0.035);
@@ -13,8 +20,8 @@
   }
   .diary-preview .dp-item:hover {
     border-color: var(--global-theme-color);
-    transform: translateX(4px);
-    box-shadow: -3px 0 0 0 var(--global-theme-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   }
   .diary-preview .dp-meta {
     display: flex;
@@ -53,7 +60,7 @@
   }
   .diary-preview .dp-more {
     display: inline-block;
-    margin-top: 0.3rem;
+    margin-top: 0.75rem;
     font-size: 0.82rem;
     text-decoration: none;
     color: var(--global-theme-color);
@@ -64,19 +71,21 @@
 {% if page.latest_posts.limit %}
   {% assign dp_limit = page.latest_posts.limit %}
 {% else %}
-  {% assign dp_limit = 5 %}
+  {% assign dp_limit = 6 %}
 {% endif %}
 
 <div class="diary-preview">
-  {% for item in site.posts limit: dp_limit %}
-    <a class="dp-item" href="{{ item.url | relative_url }}">
-      <div class="dp-meta">
-        {% if item.tags.first %}<span class="dp-tag">{{ item.tags.first }}</span>{% endif %}
-        <span class="dp-date">{{ item.date | date: '%Y.%m.%d' }}</span>
-      </div>
-      <div class="dp-title">{{ item.title }}</div>
-      {% if item.description %}<div class="dp-desc">{{ item.description }}</div>{% endif %}
-    </a>
-  {% endfor %}
+  <div class="dp-grid">
+    {% for item in site.posts limit: dp_limit %}
+      <a class="dp-item" href="{{ item.url | relative_url }}">
+        <div class="dp-meta">
+          {% if item.tags.first %}<span class="dp-tag">{{ item.tags.first }}</span>{% endif %}
+          <span class="dp-date">{{ item.date | date: '%Y.%m.%d' }}</span>
+        </div>
+        <div class="dp-title">{{ item.title }}</div>
+        {% if item.description %}<div class="dp-desc">{{ item.description }}</div>{% endif %}
+      </a>
+    {% endfor %}
+  </div>
   <a class="dp-more" href="{{ '/diary/' | relative_url }}">View All Reflections &rarr;</a>
 </div>
