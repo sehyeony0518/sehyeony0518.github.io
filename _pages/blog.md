@@ -61,8 +61,11 @@ pagination:
   .post .post-list > li p { margin: .15rem 0 0; }
 </style>
 
-<p style="opacity:.75; line-height:1.7; margin:0 0 1.3rem;">
+<p class="lang-ko" style="opacity:.75; line-height:1.7; margin:0 0 1.3rem;">
 2021년부터 말씀을 묵상하고 공동체와 사역을 돌아보며 기록한 글을 모았습니다. 이 글들은 완성된 신학적 해설이라기보다, 하나님과 동행하며 말씀 앞에서 배우고 순종해 온 과정의 기록입니다.
+</p>
+<p class="lang-en" style="opacity:.75; line-height:1.7; margin:0 0 1.3rem;">
+These reflections are personal journals kept in Korean since 2021 — records of meditating on Scripture and looking back on community and ministry, written along the way of walking with God rather than as polished theological commentary. They are preserved here in their original language; the <a href="/mission/">mission</a> and <a href="/news/">journey</a> pages tell this story in English.
 </p>
 
 {% assign sorted_posts = site.posts | sort: 'date' %}

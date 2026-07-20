@@ -5,9 +5,9 @@ title: ministry
 description: 지금 맡겨진 자리에서의 순종
 nav: true
 nav_order: 2
-toc:
-  sidebar: left
 ---
+
+<div class="lang-ko" markdown="1">
 
 ## 오늘 맡겨진 자리에서 시작되는 선교
 
@@ -100,3 +100,101 @@ Mission2035를 준비하는 가장 중요한 과정은 학위와 경력을 얻�
 - 해외 박사과정과 장기 선교를 향한 길을 하나님의 때에 열어 주시도록
 - 보내실 나라와 대학, 함께 동역할 현지 교회를 분명하게 인도해 주시도록
 - 나의 이름이나 성취가 아니라 오직 예수 그리스도만 드러나도록
+
+</div>
+
+<div class="lang-en" markdown="1">
+
+## Mission That Begins in the Place Entrusted Today
+
+Mission2035 is not a plan that suddenly begins in 2035. It has already begun in today's obedience — faithfully serving the church and community, and the one person, God has entrusted to me now. The whole story of that calling is on the [mission](/mission/) page.
+
+## JDM Suwon District
+
+**2020–2026 · Campus mission and discipleship** · **2021–2026 · Leader** · **2025 · Student representative**
+
+When I entered Ajou University, I began campus mission and community life in the Suwon district of [JDM (Jesus Disciple Movement)](https://www.jdm.or.kr/). Through campus evangelism, one-to-one relationships, small-group Bible study, and leader training, I learned that the gospel is not merely information to be delivered, but a matter of sharing life with one person and building them up as a disciple of Christ.
+
+The most important missional legacy I received in JDM is the word of Matthew 28:19. The reproductive life — one person raising another as a disciple, and that disciple in turn raising yet another — became the central direction of Mission2035.
+
+<img src="/assets/img/gallery/g07.jpg" alt="JDM Suwon district campus booth" loading="lazy" style="width:100%; max-width:520px; border-radius:10px; margin:1rem 0;">
+<span style="display:block; font-size:.78rem; opacity:.55; margin:-.6rem 0 0;">The campus is a mission field — JDM Suwon district campus ministry.</span>
+
+## Kyungwon Church Young Adults
+
+**2025–present · Young-adult leadership team** · **2025–present · College small-group leader**
+
+I currently serve on the young-adult leadership team and as a college small-group ("mokjang") leader at [Kyungwon Church](https://www.kwchurch.co.kr/main/main.html). Within the small-group community I share the word, care for the members' lives and faith, and help build up worship and community ministry together.
+
+I believe that loving faithfully the one person entrusted to me now comes before the mission I will one day carry in a distant land. My present church community is not a place waiting for mission, but a place where I already learn and practice a missional life.
+
+<img src="/assets/img/gallery/g14.jpg" alt="Praying for one another" loading="lazy" style="width:100%; max-width:520px; border-radius:10px; margin:1rem 0;">
+<span style="display:block; font-size:.78rem; opacity:.55; margin:-.6rem 0 0;">Praying for one another (Matt. 28:19).</span>
+
+## The Ministry I Am Learning
+
+### Ministry That Builds People Through the Word
+
+What actually changes a person is not a leader's ability, a program, persuasion, or zeal, but the word of God and the work of the Holy Spirit.
+
+So a minister must not be someone who conveys their own ideas, but one who faithfully shares the living word. I believe a minister's responsibility is to stand first before the word, to obey it, and to help the person entrusted to me also live as a disciple who hears and follows the word of Jesus Christ.
+
+I do not want to shape people into a form that suits my own will. Within the word, I want to walk with them for a long time so that they meet God personally, discover their own calling, and obey the leading of the Holy Spirit.
+
+### Ministry That Loves One Soul for a Long Time
+
+Ministry does not mean only gathering many people or running meetings smoothly. It is knowing one person's life and struggles, embracing their pain and spiritual thirst, and believing and waiting for God to work within them.
+
+For one soul to be changed and built up as a disciple requires long prayer and love, patience and sacrifice. Because I too have been built up until now through the prayers and devotion of many, I now want to gladly lay down my time and heart for the people God has entrusted to me.
+
+Yet the one who changes people is not me. I only love the person entrusted to me and walk with them through the word; the one who makes life grow and bear fruit is God.
+
+### Ministry Carried by Community
+
+I do not want to become a missional hero who completes the mission alone. My faith and calling were formed through the love and prayers of JDM and the church community, staff and pastors, co-workers and fellow members.
+
+The ministry of Christ is not accomplished by one person's name or ability. It is members with different gifts forming one body — praying, serving, and waiting together.
+
+Mission2035, too, is not a personal project. Within the local church and mission community, I want to keep discerning the calling, to receive prayer and sending, and one day to live as a co-worker who honors the local church and its disciples.
+
+### Mission That Lowers Itself and Lives Alongside
+
+Mission is not rising to a higher position to exert influence, but — just as Christ entered human life — lowering oneself to enter another person's life and culture.
+
+Rather than insisting on my own familiar standards and comfort, I want to respect and learn the language and culture, the life and pain of local people. I want to be a missionary who attends carefully even to the small ways of eating, dressing, speaking, and using possessions, considering what they may mean to others.
+
+I go not as one who changes them by my own methods, but as a co-worker who discovers what God is already doing in that land and learns and serves alongside them.
+
+### Mission That Begins in Daily Life
+
+Mission does not begin the moment one arrives overseas. It has already begun within the church and small group, the campus and lab, the lectures and relationships God has entrusted to me now.
+
+I believe that I cannot love a person on a future mission field if I fail to love the person entrusted to me now, and that I cannot be faithful in the office of professor and missionary if I am not faithful in today's studies and responsibilities.
+
+So research and teaching are at once preparation for future mission and present worship offered to God. Through honest research, giving my best to the responsibilities entrusted to me, and respecting and serving those alongside me, I want to live as a disciple of Christ from the very place I am now.
+
+### Ministry That Entrusts the Fruit to God
+
+The success of ministry is not determined by my planned results appearing. There may be no immediate response even when the gospel is shared, and no visible change even in a person I have long loved.
+
+But salvation and change belong entirely to God's sovereignty and grace. My task is not to produce or possess results, but to trust God's goodness and remain faithful to the end in the place entrusted to me.
+
+I believe I sow the seed and water it, but the one who makes it grow is God. Even when there is no visible fruit, I want to be a minister who does not lose heart, who prays and obeys the word, and who waits for the time God has appointed.
+
+### A Disciple Still in Training
+
+I am not an already-prepared missionary or a finished leader. On the field of ministry and mission I have continually discovered my own pride and self-centeredness, my lack of sensitivity and love.
+
+But God carves and shapes me through failure and hardship, through friction within community and the responsibilities of daily life. Rather than hiding my inadequacies, I want to acknowledge them and keep learning and changing through the word, prayer, and the counsel of community.
+
+The most important part of preparing for Mission2035 is not only earning a degree and career. It is being shaped into a disciple with the character to love one person, the humility to respect another culture, the faithfulness to serve in unseen places, and the faith to entrust the results to God.
+
+## Prayer Requests
+
+- That I would faithfully serve to the end the community and the one person God has entrusted to me
+- That academic preparation and spiritual maturity would not be separated
+- That the way toward a doctorate abroad and long-term mission would open in God's timing
+- That God would clearly lead me to the country and university He will send me to, and to the local church I will partner with
+- That not my name or achievement, but only Jesus Christ, would be revealed
+
+</div>

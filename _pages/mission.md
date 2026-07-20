@@ -4,9 +4,9 @@ permalink: /mission/
 title: mission2035
 description: 부르심을 따라 제자로 살고, 보내심을 따라 열방으로 나아가며, 삶을 드려 하나님 나라의 임하심을 구한다.
 nav: false
-toc:
-  sidebar: left
 ---
+
+<div class="lang-ko" markdown="1">
 
 ### 그리스도께 부름받아, 열방으로 보냄받다
 
@@ -116,3 +116,118 @@ Mission2035는 어느 날 갑자기 세운 계획이 아니라, 말씀과 공동
 - [I국 비전트립 소감문](/diary/2026/vision-trip-reflection/) — 낮아져 다른 사람의 삶 속으로 들어가는 선교
 - [졸업식 소감](/diary/2026/graduation/) — 공동체와 영적 부모에게서 받은 제자도의 유산
 - [박성혜 교수님과의 만남](/diary/2025/professor-meeting/) — 연구와 강의를 예배로 드리는 삶
+
+</div>
+
+<div class="lang-en" markdown="1">
+
+### Called to Christ, Sent to the Nations
+
+**Called to Christ. Sent to the Nations.**
+
+> "Therefore go and make disciples of all nations."
+> — Matthew 28:19
+
+I am, first of all, a disciple called by Jesus Christ.
+
+Living as a disciple did not begin with unusual zeal or a personal choice of my own. Because God first saved me and called me to belong to Christ, I live as a disciple who listens to His word and follows Him. Discipleship is not a condition for earning salvation, but the life of obedience lived by one who has been called by grace.
+
+The more I read Scripture, the more I see that mission, too, is not an optional ministry entrusted to only a special few. Not every Christian goes to the same country or serves in the same way, but every disciple is sent into the world as a witness of the gospel. So the important question for a Christian is not "Should I do missions?" but **"As a disciple who has been sent, where and how will I obey with the place and gifts God has entrusted to me?"**
+
+## Mission2035
+
+**Mission2035** is the personal calling in which this universal call and sending took concrete shape in my life.
+
+God has confirmed that, after I complete a doctorate abroad, He is calling me — beginning in 2035 — to a university in a country where educational resources are scarce and access to the gospel is limited. There I hope to live as a professor and self-supporting (tentmaking) campus missionary, partnering with the local church to share the gospel with students and raise them as disciples of Jesus Christ.
+
+My goal is not simply to preach the gospel to many people. It is to love the one person God entrusts to me, to share word and life with them, and to walk alongside them until they grow into a disciple who in turn serves their own friends, juniors, campus, and people.
+
+Mission2035 is not the reason I live as a disciple.
+**Mission2035 is the concrete way that I — called as a disciple of Christ — respond to that calling.**
+
+## The Call and Discipleship I Learned in JDM
+
+From 2020 to 2026 I learned the vision of gospel proclamation, discipleship training, and world mission in the Suwon district of [JDM (Jesus Disciple Movement)](https://www.jdm.or.kr/). Seeing the campus as a mission field, I was trained not merely to share the gospel but to raise a single person as a disciple of Christ.
+
+The most important legacy I received in JDM is the vision of "everyone a disciple of Christ": a person who hears the gospel grows into a responsible disciple who obeys the word, and that disciple in turn builds up another. Mission2035 is my response, carrying this legacy of the disciple movement and campus mission on to universities among the nations.
+
+I currently serve on the young-adult leadership team and as a college small-group leader at Kyungwon Church. Before speaking of a future mission in a distant land, I believe it comes first to love and build up — through the word — the one person God has entrusted to me here and now. Mission2035 is not a plan that suddenly begins in 2035; it has already begun through the small obediences carried out in today's church and community. My present service is on the [ministry](/ministry/) page.
+
+## Research as a Tent
+
+Research is not merely a job or a means of livelihood for accomplishing Mission2035. Research and teaching are themselves a scholarly vocation God has entrusted to me now.
+
+I am currently a master's student in the Department of AI Convergence Network at Ajou University, studying trustworthy and interpretable medical AI. I want to verify whether a medical AI that shows high accuracy actually relies on clinically valid evidence, and to research technology that serves people and the clinical field more honestly and responsibly. More is on the [research](/research/) page.
+
+In time, research and teaching will be the tent that lets me remain among students at universities in the nations for the long haul, teaching and serving them. The lecture hall and the lab are not merely places of employment, but a mission field where I will witness to the gospel through love, honesty, and service, and raise up disciples.
+
+## A Calling Answered with the Whole of Life
+
+I believe that to go where God calls, not only a degree and expertise but the whole of life must be prepared. I want to receive my spirituality and character, competence and life-in-community, time and finances, relationships and future all as belonging to God, and to live as a faithful steward.
+
+Like the apostle Paul, I want to be a servant who does not count his own life dear in order to finish the ministry received from the Lord Jesus. And like Jim Elliot, rather than clinging to what cannot be kept forever, I want to gladly give my one and only life for the eternal kingdom of God.
+
+Yet the center of this devotion is not my sacrifice or resolve. It is the grace of God who first loved, called, and sends me. I am not someone trying to achieve great things on my own, but one who wants to be a faithful servant obeying to the end in the place God has entrusted.
+
+## Seeking the Coming of God's Kingdom
+
+The purpose of mission is not to expand my name or my ministry. It is that, through the gospel of Jesus Christ, one person is made new, a disciple who has been built up serves yet another, and the fruit of God's kingdom appears within a campus and a community.
+
+The kingdom of God is not built by my ability or by human progress. It comes only through the gospel of Jesus Christ and the work of the Holy Spirit. I am not a savior but a witness of the gospel; not the owner of God's kingdom but a servant of it.
+
+So I do not try to possess results. In the place God sends me, I want to share the gospel, love people, and raise disciples. Trusting that God makes all the fruit grow, I will obey the calling to the end.
+
+## My Missionary Confession
+
+<div style="border-left:3px solid rgba(128,128,128,.45); padding:0.2rem 0 0.2rem 1.2rem; margin:1.5rem 0;">
+
+I am a disciple called to Jesus Christ by the grace of God.
+
+I listen to the voice of the Lord who called me and live according to His word.
+
+As a disciple of Christ, I have been sent into the world as a witness of the gospel.
+
+I believe mission is not the ministry of a special few, but a biblical obedience in which every disciple takes part with their own place and gifts.
+
+Following the legacy of gospel proclamation, discipleship training, and world mission received in JDM, I love one person and walk with them until they grow into a disciple who builds up another.
+
+I receive my learning and vocation, time and possessions, relationships and future, health and life as belonging to God, and use them as a faithful steward.
+
+Beginning in 2035, I will live as a professor and self-supporting missionary at a university in the country to which God sends me.
+
+Partnering with the local church, I share the gospel with students and help them be built up as disciples who serve their own campus, people, and next generation.
+
+I seek the glory of God above worldly success, and the reward of heaven above earthly repayment.
+
+I respond with the whole of my life to the God who calls and sends me, and I remain faithful to the end for the coming of His kingdom.
+
+</div>
+
+> **Called to live as a disciple,
+> sent to go to the nations,
+> giving my life to seek the coming of God's kingdom.**
+
+## The Calling Discerned Through the Word
+
+Mission2035 is not a life plan I drew up one day. It is a calling God has confirmed again and again in the process of meditating on the word and obeying within community.
+
+Meditating on the Gospel of John, I learned that a disciple is first someone who hears the Lord's voice and follows Him. The disciple's life is to abide in Christ and bear fruit, to love one another as Jesus loved, and to carry on in life the service the Lord showed.
+
+At the same time I came to see that, just as Jesus was sent by the Father, the disciples too are sent into the world. Through Acts I meditated on how the church, having received the power of the Holy Spirit, is called to live as witnesses of Jesus Christ from nearby to the ends of the earth.
+
+The more I read the word, the more I realized that mission is not an extra ministry given only to special people, but obedience that flows naturally from the life of a disciple who follows Jesus Christ. As a result my question changed from "Will I do missions?" to "As a disciple who has already been sent, where and how will I obey?"
+
+Mission2035 is my present answer to that question. Trusting that God will guide even more clearly, I want to obey step by step within the word, community, and studies entrusted to me today.
+
+## The Records That Shaped Mission2035
+
+Mission2035 is not a plan made overnight, but a calling God has long been shaping through the word, community, and seasons of ministry. Representative writings from that journey are gathered in [reflections](/diary/).
+
+- [Reflection on the Luke Bible Conference](/diary/2024/luke-bible-conference/) — the identity of becoming a disciple because of the calling
+- [Reflection on the 2024 University Summer Conference](/diary/2024/summer-conference/) — the place that serves one soul is the place He calls
+- [Reflection on the Vision Trip to Country V](/diary/2024/vision-trip-v/) — mission that carries from a special trip into the everyday campus
+- [Reflection on the Vision Trip to Country I](/diary/2026/vision-trip-reflection/) — mission that lowers itself and enters another's life
+- [Graduation reflection](/diary/2026/graduation/) — the legacy of discipleship received from community and spiritual parents
+- [A meeting with a professor of faith](/diary/2025/professor-meeting/) — a life that offers research and teaching as worship
+
+</div>

@@ -4,17 +4,7 @@ title: journey
 permalink: /news/
 nav: true
 nav_order: 4
-toc:
-  sidebar: left
 ---
-
-## A Journey of Calling and Obedience
-
-**부르심을 따라 제자로, 보내심을 따라 열방으로.**
-
-이 페이지는 제가 이루어 온 성취를 나열하기 위한 연혁이 아닙니다. 하나님께서 말씀과 공동체, 사역과 학업, 만남과 실패를 통해 어떻게 저를 예수 그리스도의 제자로 부르시고 Mission2035의 길로 인도하셨는지를 기억하기 위한 기록입니다.
-
-Mission2035는 어느 날 갑자기 시작된 계획이 아닙니다. 하나님께서는 오래전부터 JDM 공동체와 교회, 캠퍼스 사역과 선교 경험, 학업과 연구를 통해 저를 준비시키셨습니다. 그리고 **2026년 7월 18일**, 흩어져 있던 지난 시간들이 하나의 부르심으로 연결되었습니다.
 
 <style>
   .calling-day {
@@ -50,6 +40,16 @@ Mission2035는 어느 날 갑자기 시작된 계획이 아닙니다. 하나님�
   .tl-body p { margin: 0 0 .5rem; line-height: 1.7; opacity: .85; }
   .tl-body p:last-child { margin-bottom: 0; }
 </style>
+
+<div class="lang-ko" markdown="1">
+
+## A Journey of Calling and Obedience
+
+**부르심을 따라 제자로, 보내심을 따라 열방으로.**
+
+이 페이지는 제가 이루어 온 성취를 나열하기 위한 연혁이 아닙니다. 하나님께서 말씀과 공동체, 사역과 학업, 만남과 실패를 통해 어떻게 저를 예수 그리스도의 제자로 부르시고 Mission2035의 길로 인도하셨는지를 기억하기 위한 기록입니다.
+
+Mission2035는 어느 날 갑자기 시작된 계획이 아닙니다. 하나님께서는 오래전부터 JDM 공동체와 교회, 캠퍼스 사역과 선교 경험, 학업과 연구를 통해 저를 준비시키셨습니다. 그리고 **2026년 7월 18일**, 흩어져 있던 지난 시간들이 하나의 부르심으로 연결되었습니다.
 
 <div class="calling-day">
   <div class="cd-label">CALLING DAY</div>
@@ -205,6 +205,177 @@ Mission2035는 어느 날 갑자기 시작된 계획이 아닙니다. 하나님�
       <p>나는 그 땅의 구원자가 아니라 복음의 증인이며, 하나님 나라의 주인이 아니라 그 나라를 섬기는 종입니다. 결과를 소유하려 하지 않고, 하나님께서 맡기신 자리에서 끝까지 충성하며 모든 열매를 하나님께 맡기고자 합니다.</p>
     </div>
   </div>
+
+</div>
+
+</div>
+
+<div class="lang-en" markdown="1">
+
+## A Journey of Calling and Obedience
+
+**Called to follow as a disciple; sent to the nations.**
+
+This page is not a résumé listing achievements I have accumulated. It is a record to remember how God — through the word and community, ministry and study, encounters and failures — called me as a disciple of Jesus Christ and led me onto the road of Mission2035.
+
+Mission2035 is not a plan that began one day. Long beforehand, God prepared me through the JDM community and the church, campus ministry and mission experience, study and research. And on **July 18, 2026**, the scattered seasons of the past were connected into a single calling.
+
+<div class="calling-day">
+  <div class="cd-label">CALLING DAY</div>
+  <div class="cd-date">2026. 07. 18</div>
+  <div class="cd-title">The day Mission2035 became a clear calling.</div>
+  <p>The day when God — who had been preparing me through the word and community, ministry and research — clearly confirmed the call to live, beginning in 2035, as a professor and self-supporting campus missionary at a university among the nations. After this day, Mission2035 was no longer a vague hope, but a concrete calling to prepare for and obey from today.</p>
+</div>
+
+## The Road to Mission2035
+
+<div class="timeline">
+
+  <div class="tl-item">
+    <div class="tl-date">2020.03</div>
+    <div class="tl-title">The disciple's road that began on campus</div>
+    <div class="tl-body">
+      <p>When I entered Ajou University, I met the JDM Suwon district community. At first I thought the important thing was to keep my faith through university life and to find a good community.</p>
+      <p>But as I experienced the word and community life in JDM, I learned that a Christian is not meant to remain someone who merely guards their own faith, but is called to share the gospel and raise another as a disciple. I began to learn that the campus is not a place for preparing studies and a career, but a mission field where the gospel must be shared and disciples raised.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2021 – 2026</div>
+    <div class="tl-title">Serving as a leader, learning to love one person</div>
+    <div class="tl-body">
+      <p>From 2021 I served as a leader in the JDM Suwon district. Through leadership I learned that ministry is not leading people or running programs. It was knowing one person's life and struggles, praying for them, sharing word and life, and waiting a long time in faith that God would work within them.</p>
+      <p>I experienced again and again that what changes a person is not a leader's ability but the word of God and the work of the Holy Spirit. At the same time I realized that I too am not a finished leader, but a disciple who must keep being trained and changed through the people entrusted to me.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2022.03 – 2023.12</div>
+    <div class="tl-title">Learning faithfulness in the ordinary place</div>
+    <div class="tl-body">
+      <p>I served my military duty in the Republic of Korea Air Force. The military was not a conspicuous, special place like mission or ministry, but God taught me that even within the responsibilities and relationships of daily life I must live as a disciple of Christ.</p>
+      <p>I learned that the calling is not obedience only in special moments of ministry, but a life of faithfully carrying out entrusted responsibility in a place no one notices, and of respecting and serving the person beside me.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2024</div>
+    <div class="tl-title">Asking about the calling before the word</div>
+    <div class="tl-body">
+      <p>Through the Luke Bible conference and various meditations on the word, I deeply faced the question, "Why must I live as a disciple?" The answer was not my zeal or will.</p>
+      <p>It was because God first loved and saved me, and called me as a disciple of Jesus Christ. I realized that discipleship is not a condition for earning salvation, but a life-response offered to the Lord who called me by one who has become a child of God through grace. From this point, the calling became not the language of career choice, but a matter of identity and obedience.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2024</div>
+    <div class="tl-title">Learning the weight of one soul</div>
+    <div class="tl-body">
+      <p>Through summer and winter conferences and small-group ministry, I learned how difficult and precious it is to serve one soul. A person's life is not easily changed by a short exhortation or a single conference. For someone to offer themselves wholly before God required long prayer and waiting, love and sacrifice.</p>
+      <p>I realized that I too had been built up through the prayers and devotion of many staff, leaders, and community members. I learned that mission is not gathering many people, but loving to the end the one person God has entrusted.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2024</div>
+    <div class="tl-title">A first look toward the nations</div>
+    <div class="tl-body">
+      <p>Through a vision trip and mission experience, I learned that mission does not end with a special trip or emotional devotion. The challenge received on the field had to continue — back in the everyday campus and community — as obedience in serving one person.</p>
+      <p>I also began to learn that mission is not delivering what I have one-sidedly, but — just as Christ entered human life — lowering oneself to enter another person's culture and life.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2024.05 – 2024.12</div>
+    <div class="tl-title">Discovering service through medicine and research</div>
+    <div class="tl-body">
+      <p>Serving as a research intern in the Department of Psychiatry at Ajou University Hospital, I experienced the field where medicine and artificial intelligence connect with real human lives. I came to see that research is not an activity for developing technology or producing papers, but a domain that can serve patients and clinicians more honestly and responsibly.</p>
+      <p>This experience later led me toward researching trustworthy and interpretable medical AI.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2025</div>
+    <div class="tl-title">A disciple who takes responsibility for community</div>
+    <div class="tl-body">
+      <p>In 2025 I served as the student representative of the JDM Suwon district. I learned that building up a community cannot be carried by one person's passion or ability alone. Members with different gifts and dispositions had to pray, serve, and wait together to form the body of Christ.</p>
+      <p>I learned that I am not someone who completes ministry alone, but someone who takes part in God's work together with the community. Mission2035, too, I confess, is not a personal project but a calling to be discerned within the church and mission community, and carried out having received prayer and sending.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2025 – present</div>
+    <div class="tl-title">Today's obedience continuing at Kyungwon Church</div>
+    <div class="tl-body">
+      <p>I began serving on the young-adult leadership team and as a college small-group leader at Kyungwon Church. The disciple-making life learned in JDM had to continue within the church community even after my JDM activity ended. I share word and life with the small-group members, care for their faith and daily life, and help build up worship and community together.</p>
+      <p>I believe that, before speaking of future mission, faithfully serving the church and the one person God has entrusted to me today comes first. Mission2035 has already begun through the small obediences carried out now in the church and community.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2025</div>
+    <div class="tl-title">Seeing that teaching and research can be worship</div>
+    <div class="tl-body">
+      <p>Through meeting a professor of faith, I came to see that being a professor is not merely a position for delivering knowledge and producing research results. I saw a professor who regards lecturing as worship offered to God, cares for students' lives in the lab, and witnesses to the gospel through scholarship and character.</p>
+      <p>This meeting showed me that the vision of a professor and self-supporting campus missionary is not an abstract ideal, but a calling that can actually be lived out within a real university.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2026.01</div>
+    <div class="tl-title">Vision trip to Country I — mission that lowers itself</div>
+    <div class="tl-body">
+      <p>I went on an overseas vision trip with the JDM Suwon district community. Through this time I learned that mission is not judging another culture by my own standards or sharing what I have one-sidedly. I had to respect the local people's language and culture, life and circumstances, and lower myself to draw near to their lives.</p>
+      <p>I came to consider even how the small ways of eating, dressing, speaking, and using possessions might come across to others. I learned that I must be not one who goes to change the people of the mission field by my own methods, but a co-worker who discovers what God is already doing in that land and learns and serves alongside them.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2026.02</div>
+    <div class="tl-title">Beginning to raise the tent of research</div>
+    <div class="tl-body">
+      <p>I entered the master's program in the Department of AI Convergence Network at Ajou University. Studying trustworthy and interpretable medical AI, I focus on the problem of verifying whether a high-performing model actually relies on clinically valid evidence.</p>
+      <p>Research is not merely a means of employment for future mission, but a scholarly vocation God has entrusted to me now and a present ministry that serves people and the clinical field. At the same time, research and teaching will be the tent God has given me to remain among students at universities in the nations for the long haul and to witness to the gospel.</p>
+    </div>
+  </div>
+
+  <div class="tl-item key">
+    <div class="tl-date">2026.07.18 · CALLING DAY</div>
+    <div class="tl-title">The calling became a single direction</div>
+    <div class="tl-body">
+      <p>The discipleship learned through the word, the legacy of campus mission received in JDM, service within the church community, a heart for the nations, and the vocation of research and teaching were connected into a single direction on this day.</p>
+      <p>God clearly confirmed that He is calling me to live, beginning in 2035, as a professor and self-supporting campus missionary at a university in the country to which He sends me. After this day, Mission2035 was no longer a vague hope, but a concrete calling to prepare for and obey from today.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2026 – 2028</div>
+    <div class="tl-title">Preparing spirituality and character, scholarship and expertise</div>
+    <div class="tl-body">
+      <p>During the master's program, I want to build expertise in trustworthy medical AI research while, within the church and community, serving the people entrusted to me and preparing the character and spirituality of a missionary.</p>
+      <p>What Mission2035 requires is not only a degree and research output. The character to love one person, the humility to respect another culture, the faith to entrust results to God, the maturity to work with community, and the attitude of remaining faithful to the end in entrusted study and research must all be prepared together.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2028 – 2035</div>
+    <div class="tl-title">Preparing toward universities in the nations</div>
+    <div class="tl-body">
+      <p>Through a doctorate abroad I want to build the expertise of research and teaching even more deeply. The doctorate is not a time for gaining a higher degree and a stable career, but a process of acquiring the competence and character to actually serve a nation's university and its students one day.</p>
+      <p>During this period I want to discern the country and university God will send me to, learn the necessary language and culture, and have my calling confirmed and my sending prepared within the local church and mission community.</p>
+    </div>
+  </div>
+
+  <div class="tl-item key">
+    <div class="tl-date">2035</div>
+    <div class="tl-title">🌍 To the university God sends</div>
+    <div class="tl-body">
+      <p>Beginning in 2035, I want to live as a professor and self-supporting campus missionary at a university in the country to which God sends me. I want to teach and research, help students learn and grow, and partner with the local church to share the gospel and raise disciples. The vision of Mission2035 is to help the disciples who are built up in turn serve their own friends and juniors, campus and people, and the next generation.</p>
+      <p>I am not the savior of that land but a witness of the gospel; not the owner of God's kingdom but a servant of it. I will not try to possess results, but remain faithful to the end in the place God entrusts, leaving all the fruit to Him.</p>
+    </div>
+  </div>
+
+</div>
 
 </div>
 
