@@ -54,20 +54,20 @@
   .lang-toggle-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
   /* Keep the Mission2035 brand visible in the navbar (including the home page) */
   #navbar .navbar-brand.title { opacity: 1 !important; }
-  /* Footer partner logos */
-  .footer-logos {
+  /* Partner / affiliation logos (shown near the social icons) */
+  .partner-logos {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-    gap: 0.6rem; margin: 0 0 1rem;
+    gap: 0.6rem; margin: 1.1rem 0 0;
   }
-  .footer-logos a {
+  .partner-logos a {
     display: inline-flex; align-items: center; justify-content: center;
     background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 8px;
     padding: 6px 11px; box-shadow: 0 1px 3px rgba(0,0,0,.08);
     opacity: .8; transition: opacity .15s ease, transform .15s ease;
   }
-  .footer-logos a:hover { opacity: 1; transform: translateY(-2px); }
-  .footer-logos img { height: 22px; width: auto; display: block; }
-  .footer-logos img.ens-logo { filter: invert(1); height: 19px; }
+  .partner-logos a:hover { opacity: 1; transform: translateY(-2px); }
+  .partner-logos img { height: 22px; width: auto; display: block; }
+  .partner-logos img.ens-logo { filter: invert(1); height: 19px; }
 </style> <script>
   (function () {
     var KEY = 'siteLang';
@@ -115,7 +115,7 @@
     if (document.readyState !== 'loading') addBrand();
     else document.addEventListener('DOMContentLoaded', addBrand);
   })();
-</script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> <div class="footer-logos"> <a href="https://www.jdm.or.kr/" target="_blank" rel="noopener" title="JDM 예수제자운동"><img src="/assets/img/logos/jdm.png" alt="JDM 예수제자운동" loading="lazy"></a> <a href="https://www.kwchurch.co.kr/main/main.html" target="_blank" rel="noopener" title="경원교회"><img src="/assets/img/logos/kwchurch.jpg" alt="경원교회" loading="lazy"></a> <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" title="Embedded &amp; Software Lab, Ajou University"><img class="ens-logo" src="/assets/img/logos/ens_white.png" alt="Embedded &amp; Software Lab" loading="lazy"></a> </div> © 2026 Se-Hyeon Hwang · Mission2035 · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+</script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · Mission2035 · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
