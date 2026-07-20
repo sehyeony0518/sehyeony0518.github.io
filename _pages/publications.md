@@ -2,18 +2,20 @@
 layout: page
 permalink: /publications/
 title: publications
-description: peer-reviewed publications and research in progress.
+description: peer-reviewed publications and manuscripts in preparation.
 nav: true
 nav_order: 4
 ---
 
 <!-- _pages/publications.md -->
 
+**Peer-reviewed publications and manuscripts in preparation.** (\* denotes first author)
+
 <!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}
 
-## Research in Progress
+## Manuscripts in Preparation
 
 <div class="publications">
 

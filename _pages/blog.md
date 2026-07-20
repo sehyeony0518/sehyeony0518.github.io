@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /diary/
-title: diary
+title: reflections
 nav: true
 nav_order: 6
 pagination:
@@ -60,6 +60,10 @@ pagination:
   .post .post-list > li .post-meta, .post .post-list > li .post-tags { margin: .1rem 0 0; font-size: .8rem; }
   .post .post-list > li p { margin: .15rem 0 0; }
 </style>
+
+<p style="opacity:.75; line-height:1.7; margin:0 0 1.3rem;">
+2021년부터 말씀을 묵상하고 공동체와 사역을 돌아보며 기록한 글을 모았습니다. 이 글들은 완성된 신학적 해설이라기보다, 하나님과 동행하며 말씀 앞에서 배우고 순종해 온 과정의 기록입니다.
+</p>
 
 {% assign sorted_posts = site.posts | sort: 'date' %}
 {% assign first_post = sorted_posts | first %}
