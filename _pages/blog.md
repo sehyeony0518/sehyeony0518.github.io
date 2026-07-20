@@ -3,7 +3,7 @@ layout: default
 permalink: /diary/
 title: reflections
 nav: true
-nav_order: 6
+nav_order: 3
 pagination:
   enabled: true
   collection: posts
