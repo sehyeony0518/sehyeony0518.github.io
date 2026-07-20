@@ -52,7 +52,48 @@
     color: var(--global-theme-color);
     -webkit-text-fill-color: var(--global-theme-color);
   }
-</style> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · Mission2035 · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+  /* Language toggle: Korean shown by default, English hidden until data-lang=en */
+  .lang-en { display: none; }
+  html[data-lang="en"] .lang-en { display: block; }
+  html[data-lang="en"] .lang-ko { display: none; }
+  .lang-toggle-btn {
+    background: none; border: 1px solid rgba(128,128,128,.4); border-radius: 999px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: .02em;
+    padding: 0.08rem 0.5rem; margin-left: 0.2rem; cursor: pointer; color: inherit;
+    line-height: 1.5; transition: all .15s ease;
+  }
+  .lang-toggle-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+</style> <script>
+  (function () {
+    var KEY = 'siteLang';
+    function apply(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      var btn = document.getElementById('lang-toggle-btn');
+      if (btn) { btn.textContent = lang === 'ko' ? 'EN' : '한'; btn.title = lang === 'ko' ? 'View in English' : '한국어로 보기'; }
+    }
+    apply(localStorage.getItem(KEY) || 'ko');
+    function inject() {
+      var tc = document.querySelector('.toggle-container');
+      if (!tc || document.getElementById('lang-toggle-btn')) return;
+      var li = document.createElement('li');
+      li.className = 'toggle-container lang-toggle-li';
+      var b = document.createElement('button');
+      b.id = 'lang-toggle-btn'; b.type = 'button'; b.className = 'lang-toggle-btn';
+      var cur = localStorage.getItem(KEY) || 'ko';
+      b.textContent = cur === 'ko' ? 'EN' : '한';
+      b.setAttribute('aria-label', 'Toggle language');
+      b.addEventListener('click', function () {
+        var c = localStorage.getItem(KEY) || 'ko';
+        var n = c === 'ko' ? 'en' : 'ko';
+        localStorage.setItem(KEY, n); apply(n);
+      });
+      li.appendChild(b);
+      tc.parentNode.insertBefore(li, tc);
+    }
+    if (document.readyState !== 'loading') inject();
+    else document.addEventListener('DOMContentLoaded', inject);
+  })();
+</script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · Mission2035 · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
