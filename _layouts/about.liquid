@@ -68,7 +68,6 @@ layout: default
         .rp-card .rp-sum { font-size: .85rem; opacity: .7; line-height: 1.55; margin: 0; }
         .rp-viewall { display: inline-block; margin: .85rem 0 0; font-size: .82rem; text-decoration: none; color: var(--global-theme-color); }
         .rp-viewall:hover { text-decoration: underline; }
-        .rp-section-gap { height: 2.6rem; }
       </style>
       <a class="rp-card" href="{{ latest_letter.url | relative_url }}">
         {% if latest_letter.cover %}
@@ -81,7 +80,6 @@ layout: default
         </div>
       </a>
       <a class="rp-viewall" href="{{ '/prayer/' | relative_url }}">View All Prayer Letters &rarr;</a>
-      <div class="rp-section-gap"></div>
     {% endif %}
 
     <!-- Latest posts -->
@@ -127,6 +125,12 @@ layout: default
     {% if page.social %}
       <div class="social">
         <div class="contact-icons">{% social_links %}</div>
+
+        <div class="partner-logos">
+          <a href="https://www.jdm.or.kr/" target="_blank" rel="noopener" title="JDM 예수제자운동"><img src="{{ '/assets/img/logos/jdm.png' | relative_url }}" alt="JDM 예수제자운동" loading="lazy"></a>
+          <a href="https://www.kwchurch.co.kr/main/main.html" target="_blank" rel="noopener" title="경원교회"><img src="{{ '/assets/img/logos/kwchurch.jpg' | relative_url }}" alt="경원교회" loading="lazy"></a>
+          <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" title="Embedded & Software Lab, Ajou University"><img class="ens-logo" src="{{ '/assets/img/logos/ens_white.png' | relative_url }}" alt="Embedded & Software Lab" loading="lazy"></a>
+        </div>
 
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
