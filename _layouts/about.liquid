@@ -105,7 +105,7 @@ layout: default
         .photo-more:hover { text-decoration: underline; }
       </style>
       <div class="photo-strip">
-        {% assign preview_ids = "g45,g35,g38,g41,g53" | split: "," %}
+        {% assign preview_ids = "g52,g35,g38,g41,g53" | split: "," %}
         {% for id in preview_ids %}
           <a href="{{ '/photos/' | relative_url }}"><img loading="lazy" src="{{ '/assets/img/gallery/' | append: id | append: '.jpg' | relative_url }}" alt="photo"></a>
         {% endfor %}
@@ -125,12 +125,6 @@ layout: default
     {% if page.social %}
       <div class="social">
         <div class="contact-icons">{% social_links %}</div>
-
-        <div class="partner-logos">
-          <a href="https://www.jdm.or.kr/" target="_blank" rel="noopener" title="JDM 예수제자운동"><img src="{{ '/assets/img/logos/jdm.png' | relative_url }}" alt="JDM 예수제자운동" loading="lazy"></a>
-          <a href="https://www.kwchurch.co.kr/main/main.html" target="_blank" rel="noopener" title="경원교회"><img src="{{ '/assets/img/logos/kwchurch.jpg' | relative_url }}" alt="경원교회" loading="lazy"></a>
-          <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" title="Embedded & Software Lab, Ajou University"><img class="ens-logo" src="{{ '/assets/img/logos/ens_white.png' | relative_url }}" alt="Embedded & Software Lab" loading="lazy"></a>
-        </div>
 
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
