@@ -28,6 +28,22 @@
     line-height: 1.5; transition: all .15s ease;
   }
   .lang-toggle-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+  /* Keep the Mission2035 brand visible in the navbar (including the home page) */
+  #navbar .navbar-brand.title { opacity: 1 !important; }
+  /* Footer partner logos */
+  .footer-logos {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 0.6rem; margin: 0 0 1rem;
+  }
+  .footer-logos a {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 8px;
+    padding: 6px 11px; box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    opacity: .8; transition: opacity .15s ease, transform .15s ease;
+  }
+  .footer-logos a:hover { opacity: 1; transform: translateY(-2px); }
+  .footer-logos img { height: 22px; width: auto; display: block; }
+  .footer-logos img.ens-logo { filter: invert(1); height: 19px; }
 </style>
 
 <script>
@@ -60,9 +76,31 @@
     if (document.readyState !== 'loading') inject();
     else document.addEventListener('DOMContentLoaded', inject);
   })();
+
+  (function () {
+    // al-folio hides the navbar brand on the home page; show "Mission2035" there too.
+    function addBrand() {
+      if (document.querySelector('.navbar-brand')) return;
+      var nav = document.querySelector('#navbar .container') || document.querySelector('nav .container');
+      if (!nav) return;
+      var a = document.createElement('a');
+      a.className = 'navbar-brand title font-weight-lighter';
+      a.href = '/';
+      a.textContent = 'Mission2035';
+      a.style.opacity = '1';
+      nav.insertBefore(a, nav.firstChild);
+    }
+    if (document.readyState !== 'loading') addBrand();
+    else document.addEventListener('DOMContentLoaded', addBrand);
+  })();
 </script>
 
 {% capture footer_contents %}
+  <div class="footer-logos">
+    <a href="https://www.jdm.or.kr/" target="_blank" rel="noopener" title="JDM 예수제자운동"><img src="{{ '/assets/img/logos/jdm.png' | relative_url }}" alt="JDM 예수제자운동" loading="lazy"></a>
+    <a href="https://www.kwchurch.co.kr/main/main.html" target="_blank" rel="noopener" title="경원교회"><img src="{{ '/assets/img/logos/kwchurch.jpg' | relative_url }}" alt="경원교회" loading="lazy"></a>
+    <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" title="Embedded & Software Lab, Ajou University"><img class="ens-logo" src="{{ '/assets/img/logos/ens_white.png' | relative_url }}" alt="Embedded & Software Lab" loading="lazy"></a>
+  </div>
   {{ site.footer_text }}
   {% if site.impressum_path %}
     <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.

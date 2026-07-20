@@ -66,7 +66,9 @@ layout: default
           padding: .16rem .55rem; border-radius: 999px; background: var(--global-theme-color); color: #fff; margin-bottom: .45rem; }
         .rp-card h3 { margin: 0 0 .4rem; font-size: 1.08rem; line-height: 1.35; }
         .rp-card .rp-sum { font-size: .85rem; opacity: .7; line-height: 1.55; margin: 0; }
-        .rp-card .rp-more { display: inline-block; margin-top: .55rem; font-size: .8rem; color: var(--global-theme-color); }
+        .rp-viewall { display: inline-block; margin: .85rem 0 0; font-size: .82rem; text-decoration: none; color: var(--global-theme-color); }
+        .rp-viewall:hover { text-decoration: underline; }
+        .rp-section-gap { height: 2.6rem; }
       </style>
       <a class="rp-card" href="{{ latest_letter.url | relative_url }}">
         {% if latest_letter.cover %}
@@ -76,9 +78,10 @@ layout: default
           <span class="rp-badge">{{ latest_letter.issue }}</span>
           <h3>{{ latest_letter.title | remove: latest_letter.issue | remove: ' · ' | strip }}</h3>
           {% if latest_letter.summary %}<p class="rp-sum">{{ latest_letter.summary }}</p>{% endif %}
-          <span class="rp-more">기도편지 전체 보기 &rarr;</span>
         </div>
       </a>
+      <a class="rp-viewall" href="{{ '/prayer/' | relative_url }}">View All Prayer Letters &rarr;</a>
+      <div class="rp-section-gap"></div>
     {% endif %}
 
     <!-- Latest posts -->

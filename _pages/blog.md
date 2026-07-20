@@ -68,8 +68,6 @@ pagination:
 These reflections are personal journals kept in Korean since 2021 — records of meditating on Scripture and looking back on community and ministry, written along the way of walking with God rather than as polished theological commentary. They are preserved here in their original language; the <a href="/mission/">mission</a> and <a href="/news/">journey</a> pages tell this story in English.
 </p>
 
-<img src="/assets/img/gallery/g55.jpg" alt="찬양을 준비하며" loading="lazy" style="width:100%; max-width:560px; border-radius:10px; margin:0.2rem 0 1.3rem; display:block;">
-
 {% assign sorted_posts = site.posts | sort: 'date' %}
 {% assign first_post = sorted_posts | first %}
 {% assign last_post = sorted_posts | last %}
