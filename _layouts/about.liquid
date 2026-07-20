@@ -48,6 +48,39 @@ layout: default
       {% include news.liquid limit=true %}
     {% endif %}
 
+    <!-- Recent prayer letter -->
+    {% assign latest_letter = site.prayer | sort: 'date' | reverse | first %}
+    {% if latest_letter %}
+      <h2>
+        <a href="{{ '/prayer/' | relative_url }}" style="color: inherit">recent prayer</a>
+      </h2>
+      <style>
+        .rp-card { display: flex; gap: 1rem; text-decoration: none; color: inherit; margin-top: .6rem;
+          border: 1px solid rgba(128,128,128,.18); border-radius: 14px; overflow: hidden;
+          background: rgba(128,128,128,.03); transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+        .rp-card:hover { border-color: var(--global-theme-color); transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,0,0,.07); }
+        .rp-card .rp-thumb { flex: 0 0 34%; max-width: 210px; background-size: cover; background-position: center; background-color: rgba(128,128,128,.1); }
+        @media (max-width: 520px) { .rp-card { flex-direction: column; } .rp-card .rp-thumb { flex-basis: 150px; max-width: none; height: 150px; } }
+        .rp-card .rp-body { padding: 1rem 1.15rem; display: flex; flex-direction: column; }
+        .rp-card .rp-badge { align-self: flex-start; font-size: .68rem; font-weight: 800; letter-spacing: .04em;
+          padding: .16rem .55rem; border-radius: 999px; background: var(--global-theme-color); color: #fff; margin-bottom: .45rem; }
+        .rp-card h3 { margin: 0 0 .4rem; font-size: 1.08rem; line-height: 1.35; }
+        .rp-card .rp-sum { font-size: .85rem; opacity: .7; line-height: 1.55; margin: 0; }
+        .rp-card .rp-more { display: inline-block; margin-top: .55rem; font-size: .8rem; color: var(--global-theme-color); }
+      </style>
+      <a class="rp-card" href="{{ latest_letter.url | relative_url }}">
+        {% if latest_letter.cover %}
+          <div class="rp-thumb" style="background-image:url('{{ '/assets/img/gallery/' | append: latest_letter.cover | append: '.jpg' | relative_url }}');"></div>
+        {% endif %}
+        <div class="rp-body">
+          <span class="rp-badge">{{ latest_letter.issue }}</span>
+          <h3>{{ latest_letter.title | remove: latest_letter.issue | remove: ' · ' | strip }}</h3>
+          {% if latest_letter.summary %}<p class="rp-sum">{{ latest_letter.summary }}</p>{% endif %}
+          <span class="rp-more">기도편지 전체 보기 &rarr;</span>
+        </div>
+      </a>
+    {% endif %}
+
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
