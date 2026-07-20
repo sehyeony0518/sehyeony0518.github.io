@@ -1,3 +1,12 @@
+<style>
+  /* Bold section headings across content pages */
+  article h1, article h2, article h3, article h4,
+  .post h1, .post h2, .post h3, .post h4,
+  .post-title, .header-bar h1 {
+    font-weight: 700 !important;
+  }
+</style>
+
 {% capture footer_contents %}
   {{ site.footer_text }}
   {% if site.impressum_path %}
