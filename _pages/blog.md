@@ -70,7 +70,6 @@ pagination:
 <div class="diary-stats">
   <div class="stat"><span class="num">{{ site.posts | size }}</span><span class="lbl">기록</span></div>
   <div class="stat"><span class="num">{{ meditation_ct }}</span><span class="lbl">묵상</span></div>
-  <div class="stat"><span class="num">{{ year_groups_all | size }}</span><span class="lbl">해</span></div>
   <div class="stat"><span class="num" style="font-size:1rem; font-weight:600;">{{ first_post.date | date: '%Y.%m' }} – {{ last_post.date | date: '%Y.%m' }}</span><span class="lbl">기간</span></div>
 </div>
 
