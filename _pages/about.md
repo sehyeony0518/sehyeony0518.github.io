@@ -29,6 +29,8 @@ latest_posts:
 photo_preview: true
 ---
 
+<div class="lang-ko" markdown="1">
+
 **부르심을 따라 제자로, 보내심을 따라 열방으로.**
 <span style="opacity:.6; font-style:italic;">Called to Follow. Sent to Make Disciples.</span>
 
@@ -40,4 +42,19 @@ photo_preview: true
 
 연구는 이 부르심을 위한 단순한 생계 수단이 아니라, 지금 하나님께서 맡기신 학문적 소명이자 장차 열방의 대학에서 학생들과 오래 동행하기 위한 저의 텐트입니다. 현재 아주대학교 [Embedded & Software Lab](https://eslab.ajou.ac.kr/)에서 신뢰할 수 있고 해석 가능한 의료 AI를 연구합니다. 연구 소개는 [research](/research/)에 있습니다.
 
-**For English readers:** Called to Christ and sent as a witness, I am preparing to serve — beginning in 2035 — as a professor and self-supporting campus missionary at a university where educational resources are limited and many have little access to the gospel, making disciples in partnership with the local church in obedience to Matthew 28:19. **Mission2035** is my concrete, lifelong response to that calling.
+</div>
+
+<div class="lang-en" markdown="1">
+
+**Called to follow as a disciple; sent to the nations as a witness.**
+<span style="opacity:.6; font-style:italic;">Called to Follow. Sent to Make Disciples.</span>
+
+I am, first of all, a disciple called by Jesus Christ. Because God saved me and called me first, I live as a disciple who listens to His word and follows Him.
+
+And every disciple is sent into the world as a witness of the gospel. So the question that matters to me is not "Should I do missions?" but **"As a disciple who has been sent, where and how will I obey with the place and the gifts God has entrusted to me?"**
+
+**Mission2035** is my concrete response to that call. Beginning in 2035, I hope to serve as a professor and self-supporting (tentmaking) campus missionary at a university in a country where educational resources are scarce and access to the gospel is limited — partnering with the local church to raise students as disciples of Christ. The whole story is on the [mission](/mission/) page, and my present service on the [ministry](/ministry/) page.
+
+Research is not merely a means of livelihood for this calling. It is a scholarly vocation God has entrusted to me now, and the tent that will let me walk alongside students at universities among the nations for the long haul. At Ajou University's [Embedded & Software Lab](https://eslab.ajou.ac.kr/), I study trustworthy and interpretable medical AI. More is on the [research](/research/) page.
+
+</div>
