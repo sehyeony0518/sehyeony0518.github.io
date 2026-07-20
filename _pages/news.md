@@ -3,7 +3,7 @@ layout: page
 title: journey
 permalink: /news/
 nav: true
-nav_order: 5
+nav_order: 4
 toc:
   sidebar: left
 ---

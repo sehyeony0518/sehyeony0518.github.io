@@ -4,7 +4,7 @@ permalink: /research/
 title: research
 description: Trustworthy medical AI grounded in clinical evidence.
 nav: true
-nav_order: 3
+nav_order: 5
 toc:
   sidebar: left
 ---
@@ -16,6 +16,9 @@ My research asks a simple but consequential question:
 > **When a medical AI model is accurate, is it accurate for clinically valid reasons?**
 
 High predictive performance alone does not guarantee that a model relies on evidence clinicians would consider meaningful. I study how to audit model reasoning, identify shortcut reliance, and evaluate whether interpretable model readouts remain faithful to independent clinical factors.
+
+<img src="/assets/img/gallery/g18.jpg" alt="연구실에서" loading="lazy" style="width:100%; max-width:460px; border-radius:10px; margin:1rem 0; float:right; margin-left:1.2rem;">
+<span style="display:block; clear:right;"></span>
 
 ## Clinical Faithfulness
 
@@ -91,6 +94,25 @@ Rather than treating interpretability as an additional visualization step, I aim
   </div>
 
 </div>
+
+## Education
+
+- **M.S., AI Convergence Network**, Ajou University &nbsp;<span style="opacity:.55;">Feb 2026 – Feb 2028 (expected)</span>
+  Embedded & Software Lab / MIIDS Research Center. Thesis on clinical faithfulness auditing of ultrasound diagnostic models.
+- **B.S., Electrical and Computer Engineering** (Microdegree in Data Science & AI), Ajou University &nbsp;<span style="opacity:.55;">Mar 2020 – Feb 2026</span>
+
+## Research Experience
+
+- **Graduate Researcher**, Embedded & Software Lab, Ajou University &nbsp;<span style="opacity:.55;">2026 – Present</span>
+  Clinical faithfulness auditing and shortcut analysis of ultrasound diagnostic models (M.S. thesis).
+- **Undergraduate Researcher**, ITRC Gallbladder Ultrasound AI Project (with Ajou University Hospital) &nbsp;<span style="opacity:.55;">2025 – 2026</span>
+  Reliability requirements analysis and clinically grounded modeling; first-authored ACK 2025.
+- **Research Intern**, Samsung Heavy Industries Project, Embedded & Software Lab &nbsp;<span style="opacity:.55;">2025 – 2026</span>
+  Fault-prediction models and reliability monitoring software; first-authored KCSE 2026.
+- **Research Intern**, Dept. of Psychiatry, Ajou University Hospital &nbsp;<span style="opacity:.55;">2024</span>
+  Government-funded computational psychiatry project; IRB-approved clinical research workflows.
+
+For a full list of roles, publications, and skills, see the [cv](/cv/) page.
 
 ## Research as a Calling
 

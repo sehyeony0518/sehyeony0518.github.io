@@ -2,7 +2,7 @@
 layout: about
 title: mission
 permalink: /
-subtitle: <b>Called to Christ, Sent to the Nations</b>
+subtitle: <b>Called to Christ, Sent to the Nations</b> <span style="opacity:.6;">(Matthew 28:19)</span>
 
 profile:
   align: right
@@ -25,6 +25,8 @@ latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
+
+photo_preview: true
 ---
 
 **부르심을 따라 제자로, 보내심을 따라 열방으로.**

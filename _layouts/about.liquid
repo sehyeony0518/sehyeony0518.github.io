@@ -8,7 +8,7 @@ layout: default
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
         {{ site.last_name }}
       {% else %}
-        {{ site.title }}
+        <span class="mission-title">Mission<span class="m-year">2035</span></span>
       {% endif %}
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
@@ -54,6 +54,29 @@ layout: default
         <a href="{{ '/diary/' | relative_url }}" style="color: inherit">recent reflections</a>
       </h2>
       {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Photo preview -->
+    {% if page.photo_preview %}
+      <h2>
+        <a href="{{ '/photos/' | relative_url }}" style="color: inherit">photos</a>
+      </h2>
+      <style>
+        .photo-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin: 0.6rem 0 0.3rem; }
+        @media (min-width: 576px) { .photo-strip { grid-template-columns: repeat(5, 1fr); } }
+        .photo-strip a { display: block; border-radius: 8px; overflow: hidden; aspect-ratio: 1 / 1; }
+        .photo-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .photo-strip a:hover img { transform: scale(1.06); }
+        .photo-more { display: inline-block; margin-top: 0.5rem; font-size: 0.82rem; text-decoration: none; color: var(--global-theme-color); }
+        .photo-more:hover { text-decoration: underline; }
+      </style>
+      <div class="photo-strip">
+        {% assign preview_ids = "g07,g14,g12,g26,g18" | split: "," %}
+        {% for id in preview_ids %}
+          <a href="{{ '/photos/' | relative_url }}"><img loading="lazy" src="{{ '/assets/img/gallery/' | append: id | append: '.jpg' | relative_url }}" alt="photo"></a>
+        {% endfor %}
+      </div>
+      <a class="photo-more" href="{{ '/photos/' | relative_url }}">View All Photos &rarr;</a>
     {% endif %}
 
     <!-- Selected papers -->
