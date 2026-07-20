@@ -86,13 +86,12 @@ layout: page
       toast.classList.add('show');
       setTimeout(function () { toast.classList.remove('show'); }, 2200);
     }
-    var shareTitle = {{ page.title | prepend: '기도편지 | ' | jsonify }};
     btn.addEventListener('click', function () {
       var url = window.location.href;
       if (navigator.share) {
-        navigator.share({ title: shareTitle, text: shareTitle, url: url }).catch(function () {});
+        navigator.share({ url: url }).catch(function () {});
       } else if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(shareTitle + '\n' + url).then(function () {
+        navigator.clipboard.writeText(url).then(function () {
           showToast('링크가 복사되었습니다');
         }).catch(function () { showToast(url); });
       } else {
