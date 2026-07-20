@@ -3,7 +3,7 @@ layout: page
 title: journey
 permalink: /news/
 nav: true
-nav_order: 4
+nav_order: 3
 ---
 
 <style>
@@ -379,7 +379,7 @@ Mission2035 is not a plan that began one day. Long beforehand, God prepared me t
 
 </div>
 
-<img src="/assets/img/gallery/g52.jpg" alt="Praying together" loading="lazy" style="width:100%; max-width:520px; border-radius:12px; margin:2rem auto 0.6rem; display:block;">
+<img src="/assets/img/gallery/g38.jpg" alt="Praying together" loading="lazy" style="width:100%; max-width:520px; border-radius:12px; margin:2rem auto 0.6rem; display:block;">
 <span style="display:block; text-align:center; font-size:.78rem; opacity:.55; margin-bottom:1.8rem;">함께 기도하며 — 부르심의 자리에서. · Praying together, in the place of the calling.</span>
 
 > **Called to Christ. Formed in Community.<br>Sent to the Nations. Faithful to the End.**

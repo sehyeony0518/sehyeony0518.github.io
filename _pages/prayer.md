@@ -4,7 +4,7 @@ permalink: /prayer/
 title: prayer
 description: Mission2035 기도편지 — 부르심의 여정을 함께 기도해 주세요.
 nav: true
-nav_order: 9
+nav_order: 5
 ---
 
 <style>

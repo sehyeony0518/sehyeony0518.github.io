@@ -4,7 +4,7 @@ permalink: /research/
 title: research
 description: Trustworthy medical AI grounded in clinical evidence.
 nav: true
-nav_order: 5
+nav_order: 7
 toc:
   sidebar: left
 ---

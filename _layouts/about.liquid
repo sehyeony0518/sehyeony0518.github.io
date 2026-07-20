@@ -105,7 +105,7 @@ layout: default
         .photo-more:hover { text-decoration: underline; }
       </style>
       <div class="photo-strip">
-        {% assign preview_ids = "g52,g35,g38,g41,g53" | split: "," %}
+        {% assign preview_ids = "g24,g35,g38,g41,g53" | split: "," %}
         {% for id in preview_ids %}
           <a href="{{ '/photos/' | relative_url }}"><img loading="lazy" src="{{ '/assets/img/gallery/' | append: id | append: '.jpg' | relative_url }}" alt="photo"></a>
         {% endfor %}

@@ -4,7 +4,7 @@ permalink: /publications/
 title: publications
 description: peer-reviewed publications and manuscripts in preparation.
 nav: true
-nav_order: 6
+nav_order: 8
 ---
 
 <!-- _pages/publications.md -->
