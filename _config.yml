@@ -202,6 +202,9 @@ kramdown:
       line_numbers: false
       start_line: 1
 
+# Build future-dated posts (same-day QT entries use a noon timestamp that may be ahead of build time)
+future: true
+
 # Includes & excludes
 include: ["_pages"]
 exclude:
