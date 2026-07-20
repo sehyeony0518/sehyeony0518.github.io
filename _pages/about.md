@@ -2,16 +2,16 @@
 layout: about
 title: mission
 permalink: /
-subtitle: <b>Called to Christ, Sent to the Nations</b> · M.S. Student in Trustworthy Medical AI, Ajou University
+subtitle: <b>Called to Christ, Sent to the Nations</b>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <p>M.S. Student, AI Convergence Network</p>
     <p><a href="https://eslab.ajou.ac.kr/" target="_blank">Embedded & Software Lab</a></p>
-    <p>Ajou University</p>
-    <p>Suwon, South Korea</p>
+    <p>Ajou University, Suwon</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

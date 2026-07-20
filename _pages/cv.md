@@ -11,7 +11,7 @@ toc:
 
 <div style="margin-bottom:1.4rem;">
   <h2 style="margin-bottom:.15rem;">Se-Hyeon Hwang (황세현)</h2>
-  <p style="margin:0; opacity:.75;">M.S. Student in Trustworthy Medical AI · Ajou University</p>
+  <p style="margin:0; opacity:.75;">M.S. Student, AI Convergence Network · Ajou University</p>
   <p style="margin:.2rem 0 0; font-size:.9rem; opacity:.6;">Suwon, South Korea · <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a> · <a href="https://github.com/sehyeony0518" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/sehyeony" target="_blank">LinkedIn</a></p>
 </div>
 
