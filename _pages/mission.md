@@ -25,7 +25,7 @@ nav: false
 
 **Mission2035**는 이 보편적인 부르심과 보내심이 저의 삶에서 구체적인 방향을 얻은 개인적 부르심입니다.
 
-하나님께서는 제가 해외에서 박사과정을 마친 뒤, 2035년부터 교육 자원이 부족하고 복음을 접할 기회가 제한된 나라의 대학으로 나아가도록 부르고 계심을 확인시켜 주셨습니다. 그곳에서 교수이자 자비량 캠퍼스 선교사로 살아가며, 현지 교회와 동역하여 학생들에게 복음을 전하고 그들을 예수 그리스도의 제자로 세우고자 합니다.
+하나님께서는 제가 해외에서 박사과정을 마친 뒤, 2035년부터 교육 자원이 부족하고 복음을 접할 기회가 제한된 나라의 대학으로 나아가도록 부르고 계심을 확인시켜 주셨습니다. 그곳에서 교육자이자 자비량 캠퍼스 선교사로 살아가며, 현지 교회와 동역하여 학생들에게 복음을 전하고 그들을 예수 그리스도의 제자로 세우고자 합니다.
 
 저의 목표는 단순히 많은 사람에게 복음을 전하는 것이 아닙니다. 하나님께서 맡기신 한 사람을 사랑하고 말씀과 삶을 나누며, 그가 다시 자기 친구와 후배, 캠퍼스와 민족을 섬기는 제자로 자라도록 동행하는 것입니다.
 
@@ -80,7 +80,7 @@ JDM에서 받은 가장 중요한 유산은 "만인을 그리스도의 제자로
 
 나는 학문과 직업, 시간과 물질, 관계와 미래, 건강과 생명을 하나님의 것으로 받아들이고 충성된 청지기로 사용한다.
 
-나는 2035년부터 하나님께서 보내시는 나라의 대학에서 교수이자 자비량선교사로 살아간다.
+나는 2035년부터 하나님께서 보내시는 나라의 대학에서 교육자이자 자비량선교사로 살아간다.
 
 나는 현지 교회와 동역하여 학생들에게 복음을 전하고, 그들이 자기 캠퍼스와 민족과 다음 세대를 섬기는 제자로 세워지도록 돕는다.
 
@@ -138,7 +138,7 @@ The more I read Scripture, the more I see that mission, too, is not an optional 
 
 **Mission2035** is the personal calling in which this universal call and sending took concrete shape in my life.
 
-God has confirmed that, after I complete a doctorate abroad, He is calling me — beginning in 2035 — to a university in a country where educational resources are scarce and access to the gospel is limited. There I hope to live as a professor and self-supporting (tentmaking) campus missionary, partnering with the local church to share the gospel with students and raise them as disciples of Jesus Christ.
+God has confirmed that, after I complete a doctorate abroad, He is calling me — beginning in 2035 — to a university in a country where educational resources are scarce and access to the gospel is limited. There I hope to live as an educator and self-supporting (tentmaking) campus missionary, partnering with the local church to share the gospel with students and raise them as disciples of Jesus Christ.
 
 My goal is not simply to preach the gospel to many people. It is to love the one person God entrusts to me, to share word and life with them, and to walk alongside them until they grow into a disciple who in turn serves their own friends, juniors, campus, and people.
 
@@ -193,7 +193,7 @@ Following the legacy of gospel proclamation, discipleship training, and world mi
 
 I receive my learning and vocation, time and possessions, relationships and future, health and life as belonging to God, and use them as a faithful steward.
 
-Beginning in 2035, I will live as a professor and self-supporting missionary at a university in the country to which God sends me.
+Beginning in 2035, I will live as an educator and self-supporting missionary at a university in the country to which God sends me.
 
 Partnering with the local church, I share the gospel with students and help them be built up as disciples who serve their own campus, people, and next generation.
 

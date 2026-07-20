@@ -19,7 +19,7 @@ toc:
 
 M.S. student at Ajou University working on trustworthy and interpretable machine learning for medical imaging, with a focus on clinical faithfulness, shortcut learning, and ultrasound AI. My research examines whether high-performing medical image classifiers rely on clinically meaningful evidence, and how their reasoning can be audited without retraining.
 
-Alongside my research, I am preparing for **Mission2035** — a long-term calling to serve students in higher education as a professor and self-supporting campus missionary.
+Alongside my research, I am preparing for **Mission2035** — a long-term calling to serve students in higher education as an educator and self-supporting campus missionary.
 
 ## Research Interests
 
