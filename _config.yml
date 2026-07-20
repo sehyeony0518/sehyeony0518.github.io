@@ -184,6 +184,9 @@ collections:
     output: true
   teachings:
     output: true
+  prayer:
+    output: true
+    permalink: /prayer/:name/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
