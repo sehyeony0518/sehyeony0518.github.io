@@ -115,6 +115,11 @@ Rather than treating interpretability as an additional visualization step, I aim
 - **Research Intern**, Dept. of Psychiatry, Ajou University Hospital &nbsp;<span style="opacity:.55;">2024</span>
   Government-funded computational psychiatry project; IRB-approved clinical research workflows.
 
+## Teaching
+
+- **Teaching Assistant**, Logic Circuit Experiment (논리회로실험), Dept. of Electrical and Computer Engineering, Ajou University &nbsp;<span style="opacity:.55;">Spring 2026</span>
+  Led weekly digital-logic lab sessions and guided students through circuit implementation. Course evaluation **4.77 / 5.0 (95.4%)**.
+
 For a full list of roles, publications, and skills, see the [cv](/cv/) page.
 
 <div style="display:flex; flex-wrap:wrap; gap:.7rem; margin:1.2rem 0;">

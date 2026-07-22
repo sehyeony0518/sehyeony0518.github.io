@@ -54,6 +54,12 @@ Embedded & Software Lab / MIIDS Research Center. Thesis research on clinical fai
 **Research Intern**, Department of Psychiatry, Ajou University Hospital &nbsp;·&nbsp; <span style="opacity:.6;">May 2024 – Dec 2024</span>
 - Worked on a government-funded computational psychiatry project, gaining hands-on experience with IRB-approved clinical research workflows, clinical data handling, and clinician–AI collaboration.
 
+## Teaching
+
+**Teaching Assistant**, Logic Circuit Experiment (논리회로실험), Dept. of Electrical and Computer Engineering, Ajou University &nbsp;·&nbsp; <span style="opacity:.6;">Spring 2026</span>
+- Led weekly laboratory sessions on digital logic design — guiding students through circuit implementation and experiments, supervising lab work, and supporting evaluation.
+- Student course evaluation: **4.77 / 5.0 (95.4%)**.
+
 ## Publications
 
 **Peer-reviewed (first-authored)**
