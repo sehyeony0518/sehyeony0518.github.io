@@ -9,6 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <p><strong>Se-Hyeon Hwang</strong> (황세현)</p>
     <p>M.S. Student, AI Convergence Network</p>
     <p><a href="https://eslab.ajou.ac.kr/" target="_blank">Embedded & Software Lab</a></p>
     <p>Ajou University, Suwon</p>
