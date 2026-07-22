@@ -34,8 +34,15 @@
     line-height: 1.5; transition: all .15s ease;
   }
   .lang-toggle-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
-  /* Keep the Mission2035 brand visible in the navbar (including the home page) */
+  /* Keep the brand visible in the navbar (including the home page) */
   #navbar .navbar-brand.title { opacity: 1 !important; }
+  /* Keep brand + nav on ONE row at desktop (the 930px cap made the long nav wrap under the name) */
+  @media (min-width: 576px) {
+    #navbar > .container { max-width: 1140px; flex-wrap: nowrap; }
+    #navbar .navbar-collapse { flex-basis: auto; width: auto; }
+    #navbar .navbar-nav { margin-left: auto; }
+    #navbar .navbar-nav .nav-link { padding-left: 0.4rem; padding-right: 0.4rem; }
+  }
   /* Back link on individual reflection posts */
   .diary-back { display: inline-block; margin: 0 0 1.2rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
   .diary-back:hover { text-decoration: underline; }
