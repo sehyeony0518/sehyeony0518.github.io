@@ -8,9 +8,9 @@ nav_order: 1
 ---
 
 <style>
-  .team-intro { opacity: .8; line-height: 1.75; margin: 0 0 1.6rem; max-width: 660px; }
+  .team-intro { opacity: .8; line-height: 1.75; margin: 0 0 1.6rem; }
   .team-cta {
-    opacity: .82; line-height: 1.75; max-width: 660px;
+    opacity: .82; line-height: 1.75;
     margin: 2.2rem 0 0; padding-top: 1.4rem;
     border-top: 1px solid rgba(128,128,128,.2);
   }
@@ -18,8 +18,11 @@ nav_order: 1
   .team-cta a:hover { text-decoration: underline; }
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 210px));
-    gap: 1.7rem; justify-content: start; margin: 1.6rem 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem; margin: 1.6rem 0;
+  }
+  @media (min-width: 576px) {
+    .team-grid { grid-template-columns: repeat(4, 1fr); }
   }
   .member-card { text-align: center; }
   /* Home-profile-style frame (rounded + z-depth-1 shadow), uniform 3:4 size across all cards */
