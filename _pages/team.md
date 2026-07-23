@@ -9,6 +9,13 @@ nav_order: 1
 
 <style>
   .team-intro { opacity: .8; line-height: 1.75; margin: 0 0 1.6rem; max-width: 660px; }
+  .team-cta {
+    opacity: .82; line-height: 1.75; max-width: 660px;
+    margin: 2.2rem 0 0; padding-top: 1.4rem;
+    border-top: 1px solid rgba(128,128,128,.2);
+  }
+  .team-cta a { color: var(--global-theme-color); text-decoration: none; }
+  .team-cta a:hover { text-decoration: underline; }
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 210px));
@@ -16,7 +23,7 @@ nav_order: 1
   }
   .member-card { text-align: center; }
   .member-card .m-photo {
-    width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
     border-radius: 14px; background: rgba(128,128,128,.1); display: block;
   }
   .member-card .m-role {
@@ -32,7 +39,7 @@ nav_order: 1
 </style>
 
 <p class="team-intro">
-A self-supporting (tentmaking) mission team — each member serving in their own field of expertise. More members will be introduced here.
+A self-supporting (tentmaking) mission team — each member serving in their own field of expertise.
 </p>
 
 <div class="team-grid">
@@ -53,3 +60,7 @@ A self-supporting (tentmaking) mission team — each member serving in their own
   </div>
 
 </div>
+
+<p class="team-cta">
+If this calling resonates with you, we would love to <a href="{{ '/' | relative_url }}">hear from you</a>. And even if you cannot walk with us directly, we would be deeply grateful for your partnership in prayer.
+</p>
