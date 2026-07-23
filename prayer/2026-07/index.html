@@ -100,10 +100,10 @@
   #navbar .navbar-brand.title { opacity: 1 !important; }
   /* Keep brand + nav on ONE row, aligned with the content column (brand lines up with the Mission2035 title) */
   @media (min-width: 576px) {
-    #navbar > .container { flex-wrap: nowrap; }
-    #navbar .navbar-collapse { flex-basis: auto; width: auto; }
-    #navbar .navbar-nav { margin-left: auto; }
-    #navbar .navbar-nav .nav-link { padding-left: 0.32rem; padding-right: 0.32rem; font-size: 0.85rem; }
+    #navbar > .container { flex-wrap: nowrap; justify-content: flex-start; }
+    #navbar .navbar-collapse { flex-basis: auto; width: auto; flex-grow: 0; }
+    #navbar .navbar-nav { margin-left: 1.6rem; }
+    #navbar .navbar-nav .nav-link { padding-left: 0.5rem; padding-right: 0.5rem; font-size: 0.92rem; }
     #navbar .navbar-brand.title { font-size: 1.15rem; }
   }
   /* Back link on individual reflection posts */
