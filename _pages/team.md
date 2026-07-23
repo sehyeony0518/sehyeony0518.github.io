@@ -26,6 +26,14 @@ nav_order: 1
     width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
     border-radius: 14px; background: rgba(128,128,128,.1); display: block;
   }
+  .member-card .m-photo-box {
+    width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
+    border-radius: 14px; background: rgba(128,128,128,.1);
+  }
+  .member-card .m-photo-box .m-photo-zoom {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    object-position: center 25%; transform: scale(1.3); transform-origin: center 25%;
+  }
   .member-card .m-role {
     margin-top: .65rem; font-size: .7rem; font-weight: 800; letter-spacing: .07em;
     text-transform: uppercase; color: var(--global-theme-color);
@@ -39,7 +47,7 @@ nav_order: 1
 </style>
 
 <p class="team-intro">
-A self-supporting (tentmaking) mission team — each member serving in their own field of expertise.
+A self-supporting (tentmaking) mission team — each member serving in their own field&nbsp;of&nbsp;expertise.
 </p>
 
 <div class="team-grid">
@@ -53,7 +61,7 @@ A self-supporting (tentmaking) mission team — each member serving in their own
   </div>
 
   <div class="member-card">
-    <img class="m-photo" src="/assets/img/team/jincheol-jeong.jpg" alt="Jin-Cheol Jeong" loading="lazy">
+    <div class="m-photo-box"><img class="m-photo-zoom" src="/assets/img/team/jincheol-jeong.jpg" alt="Jin-Cheol Jeong" loading="lazy"></div>
     <div class="m-role">Member</div>
     <div class="m-name">Jin-Cheol Jeong <span>정진철</span></div>
     <div class="m-desc">M.S. Student, Ajou University</div>
