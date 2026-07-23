@@ -6,6 +6,13 @@
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">mission </a> </li> <li class="nav-item active"> <a class="nav-link" href="/team/">team <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">team</h1> <p class="post-description">Mission2035 self-supporting (tentmaking) mission team.</p> </header> <article> <style>
   .team-intro { opacity: .8; line-height: 1.75; margin: 0 0 1.6rem; max-width: 660px; }
+  .team-cta {
+    opacity: .82; line-height: 1.75; max-width: 660px;
+    margin: 2.2rem 0 0; padding-top: 1.4rem;
+    border-top: 1px solid rgba(128,128,128,.2);
+  }
+  .team-cta a { color: var(--global-theme-color); text-decoration: none; }
+  .team-cta a:hover { text-decoration: underline; }
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 210px));
@@ -13,7 +20,7 @@
   }
   .member-card { text-align: center; }
   .member-card .m-photo {
-    width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
     border-radius: 14px; background: rgba(128,128,128,.1); display: block;
   }
   .member-card .m-role {
@@ -26,7 +33,7 @@
   .member-card .m-links { font-size: .8rem; margin-top: .4rem; }
   .member-card .m-links a { color: var(--global-theme-color); text-decoration: none; }
   .member-card .m-links a:hover { text-decoration: underline; }
-</style> <p class="team-intro"> A self-supporting (tentmaking) mission team — each member serving in their own field of expertise. More members will be introduced here. </p> <div class="team-grid"> <div class="member-card"> <img class="m-photo" src="/assets/img/team/sehyeon-hwang.jpg" alt="Se-Hyeon Hwang" loading="lazy"> <div class="m-role">Leader</div> <div class="m-name">Se-Hyeon Hwang <span>황세현</span> </div> <div class="m-desc">M.S. Student, Ajou University</div> <div class="m-links"> <a href="/research/">research</a> · <a href="/cv/">cv</a> </div> </div> <div class="member-card"> <img class="m-photo" src="/assets/img/team/jincheol-jeong.jpg" alt="Jin-Cheol Jeong" loading="lazy"> <div class="m-role">Member</div> <div class="m-name">Jin-Cheol Jeong <span>정진철</span> </div> <div class="m-desc">M.S. Student, Ajou University</div> </div> </div> </article> </div> </div> <style>
+</style> <p class="team-intro"> A self-supporting (tentmaking) mission team — each member serving in their own field of expertise. </p> <div class="team-grid"> <div class="member-card"> <img class="m-photo" src="/assets/img/team/sehyeon-hwang.jpg" alt="Se-Hyeon Hwang" loading="lazy"> <div class="m-role">Leader</div> <div class="m-name">Se-Hyeon Hwang <span>황세현</span> </div> <div class="m-desc">M.S. Student, Ajou University</div> <div class="m-links"> <a href="/research/">research</a> · <a href="/cv/">cv</a> </div> </div> <div class="member-card"> <img class="m-photo" src="/assets/img/team/jincheol-jeong.jpg" alt="Jin-Cheol Jeong" loading="lazy"> <div class="m-role">Member</div> <div class="m-name">Jin-Cheol Jeong <span>정진철</span> </div> <div class="m-desc">M.S. Student, Ajou University</div> </div> </div> <p class="team-cta"> If this calling resonates with you, we would love to <a href="/">hear from you</a>. And even if you cannot walk with us directly, we would be deeply grateful for your partnership in prayer. </p> </article> </div> </div> <style>
   /* Bold section headings across content pages */
   article h1, article h2, article h3, article h4,
   .post h1, .post h2, .post h3, .post h4,
