@@ -8,6 +8,9 @@ nav_order: 1
 ---
 
 <style>
+  /* Widen THIS page (and its navbar, so they stay aligned) beyond the default 930px */
+  .container.mt-5[role="main"], #navbar > .container { max-width: 1250px; }
+
   .team-intro { opacity: .8; line-height: 1.75; margin: 0 0 1.6rem; }
   .team-cta {
     opacity: .82; line-height: 1.75;
