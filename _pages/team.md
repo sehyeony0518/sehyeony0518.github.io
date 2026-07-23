@@ -23,7 +23,7 @@ nav_order: 1
   }
   .member-card { text-align: center; }
   .member-card .m-photo {
-    width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 18%;
     border-radius: 14px; background: rgba(128,128,128,.1); display: block;
   }
   .member-card .m-photo-box {
@@ -32,7 +32,7 @@ nav_order: 1
   }
   .member-card .m-photo-box .m-photo-zoom {
     width: 100%; height: 100%; object-fit: cover; display: block;
-    object-position: center 25%; transform: scale(1.3); transform-origin: center 25%;
+    object-position: center 20%; transform: scale(1.18); transform-origin: center 20%;
   }
   .member-card .m-role {
     margin-top: .65rem; font-size: .7rem; font-weight: 800; letter-spacing: .07em;
