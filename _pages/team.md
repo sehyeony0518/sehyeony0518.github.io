@@ -23,7 +23,7 @@ nav_order: 1
   }
   .member-card { text-align: center; }
   .member-card .m-photo {
-    width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+    width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
     border-radius: 14px; background: #fff; display: block;
   }
   .member-card .m-role {
