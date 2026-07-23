@@ -28,6 +28,14 @@ nav_order: 1
     border-radius: 0.25rem;
     box-shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
   }
+  /* Placeholder card for members without a photo yet */
+  .member-card .m-photo-placeholder {
+    aspect-ratio: 3 / 4;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(128,128,128,.12);
+    font-size: 2.6rem; font-weight: 700; letter-spacing: .05em;
+    color: rgba(128,128,128,.55);
+  }
   .member-card .m-role {
     margin-top: .65rem; font-size: .7rem; font-weight: 800; letter-spacing: .07em;
     text-transform: uppercase; color: var(--global-theme-color);
@@ -59,6 +67,13 @@ A self-supporting (tentmaking) mission team — each member serving in their own
     <div class="m-role">Member</div>
     <div class="m-name">Jin-Cheol Jeong <span>정진철</span></div>
     <div class="m-desc">M.S. Student, Ajou University</div>
+  </div>
+
+  <div class="member-card">
+    <div class="m-photo m-photo-placeholder" aria-label="Seong-Hun Noh">SH</div>
+    <div class="m-role">Member</div>
+    <div class="m-name">Seong-Hun Noh <span>노성훈</span></div>
+    <div class="m-desc">SK hynix</div>
   </div>
 
 </div>
