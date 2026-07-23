@@ -63,7 +63,6 @@ A self-supporting (tentmaking) mission team — each member serving in their own
     <div class="m-role">Leader</div>
     <div class="m-name">Se-Hyeon Hwang <span>황세현</span></div>
     <div class="m-desc">M.S. Student, Ajou University</div>
-    <div class="m-links"><a href="/research/">research</a> · <a href="/cv/">cv</a></div>
   </div>
 
   <div class="member-card">
