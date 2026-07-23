@@ -45,4 +45,11 @@ A self-supporting (tentmaking) mission team — each member serving in their own
     <div class="m-links"><a href="/research/">research</a> · <a href="/cv/">cv</a></div>
   </div>
 
+  <div class="member-card">
+    <img class="m-photo" src="/assets/img/team/jincheol-jeong.jpg" alt="Jin-Cheol Jeong" loading="lazy">
+    <div class="m-role">Member</div>
+    <div class="m-name">Jin-Cheol Jeong <span>정진철</span></div>
+    <div class="m-desc">M.S. Student, Ajou University</div>
+  </div>
+
 </div>
