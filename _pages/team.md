@@ -85,5 +85,6 @@ A self-supporting (tentmaking) mission team — each member serving in their own
 </div>
 
 <p class="team-cta">
-If this calling resonates with you, we would love to <a href="{{ '/' | relative_url }}">hear from you</a>. And even if you cannot walk with us directly, we would be deeply grateful for your partnership in prayer.
+If this calling resonates with you, we would love to <a href="{{ '/' | relative_url }}">hear from you</a>.<br>
+And even if you cannot walk with us directly, we would be deeply grateful for your partnership in prayer.
 </p>
