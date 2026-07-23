@@ -19,9 +19,11 @@
     gap: 1.7rem; justify-content: start; margin: 1.6rem 0;
   }
   .member-card { text-align: center; }
+  /* Same frame as the home profile photo: natural ratio, rounded corners, z-depth-1 shadow */
   .member-card .m-photo {
-    width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
-    border-radius: 14px; background: #fff; display: block;
+    width: 100%; height: auto; display: block;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
   }
   .member-card .m-role {
     margin-top: .65rem; font-size: .7rem; font-weight: 800; letter-spacing: .07em;
