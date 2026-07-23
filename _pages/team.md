@@ -32,7 +32,7 @@ nav_order: 1
 </style>
 
 <p class="team-intro">
-Mission2035 is not carried alone. We are a self-supporting (tentmaking) mission team — each serving in our own vocation while walking together toward the nations. More members will be introduced here.
+A self-supporting (tentmaking) mission team — each member serving in their own field of expertise. More members will be introduced here.
 </p>
 
 <div class="team-grid">
