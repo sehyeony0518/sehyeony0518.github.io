@@ -61,28 +61,28 @@ A self-supporting (tentmaking) mission team — each member serving in their own
 
   <div class="member-card">
     <img class="m-photo" src="/assets/img/team/sehyeon-hwang.jpg" alt="Se-Hyeon Hwang" loading="lazy">
-    <div class="m-role">Leader</div>
+    <div class="m-role">Jesus Disciple</div>
     <div class="m-name">Se-Hyeon Hwang <span>황세현</span></div>
     <div class="m-desc">M.S. Student, Ajou University</div>
   </div>
 
   <div class="member-card">
     <img class="m-photo" src="/assets/img/team/jincheol-jeong.jpg" alt="Jin-Cheol Jeong" loading="lazy">
-    <div class="m-role">Member</div>
+    <div class="m-role">Jesus Disciple</div>
     <div class="m-name">Jin-Cheol Jeong <span>정진철</span></div>
     <div class="m-desc">M.S. Student, Ajou University</div>
   </div>
 
   <div class="member-card">
     <div class="m-photo m-photo-placeholder" aria-label="Seong-Hun Noh">SH</div>
-    <div class="m-role">Member</div>
+    <div class="m-role">Jesus Disciple</div>
     <div class="m-name">Seong-Hun Noh <span>노성훈</span></div>
     <div class="m-desc">SK hynix</div>
   </div>
 
   <div class="member-card">
     <img class="m-photo" src="/assets/img/team/heejung-jeon.jpg" alt="Hee-Jung Jeon" loading="lazy">
-    <div class="m-role">Member</div>
+    <div class="m-role">Jesus Disciple</div>
     <div class="m-name">Hee-Jung Jeon <span>전희중</span></div>
     <div class="m-desc">B.S. Student, Ajou University</div>
   </div>
