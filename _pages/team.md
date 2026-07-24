@@ -74,9 +74,9 @@ A self-supporting (tentmaking) mission team — each member serving in their own
   </div>
 
   <div class="member-card">
-    <img class="m-photo" src="/assets/img/team/seonghun-noh.jpg" alt="Seong-Hun Noh" loading="lazy">
+    <img class="m-photo" src="/assets/img/team/seonghun-noh.jpg" alt="Sunghoon Roh" loading="lazy">
     <div class="m-role">Jesus Disciple</div>
-    <div class="m-name">Seong-Hun Noh <span>노성훈</span></div>
+    <div class="m-name">Sunghoon Roh <span>노성훈</span></div>
     <div class="m-desc">SK hynix</div>
   </div>
 
