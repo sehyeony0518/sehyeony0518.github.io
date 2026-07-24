@@ -79,6 +79,13 @@ A self-supporting (tentmaking) mission team — each member serving in their own
     <div class="m-desc">SK hynix</div>
   </div>
 
+  <div class="member-card">
+    <img class="m-photo" src="/assets/img/team/heejung-jeon.jpg" alt="Hee-Jung Jeon" loading="lazy">
+    <div class="m-role">Member</div>
+    <div class="m-name">Hee-Jung Jeon <span>전희중</span></div>
+    <div class="m-desc">B.S. Student, Ajou University</div>
+  </div>
+
 </div>
 
 <p class="team-cta">
