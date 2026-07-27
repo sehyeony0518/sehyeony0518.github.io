@@ -48,6 +48,12 @@ JDM에서 받은 가장 중요한 유산은 "만인을 그리스도의 제자로
 
 장차 연구와 교육은 제가 열방의 대학에서 학생들 곁에 오래 머물며 그들을 가르치고 섬기게 할 저의 텐트가 될 것입니다. 강의실과 연구실은 단순한 직업의 공간이 아니라, 사랑과 정직과 섬김으로 복음을 증언하고 제자를 세워 갈 선교지입니다.
 
+## 함께 걷는 자비량 선교팀
+
+Mission2035는 저 혼자 감당하는 계획이 아닙니다. 예수 그리스도께 부름받은 제자들이 각자의 전문 영역에서 일하며, 함께 기도하고 준비하며 열방을 향해 걸어가는 자비량 선교팀으로 세워져 가고 있습니다.
+
+우리는 직분이나 역할보다 한 가지 정체성을 공유합니다 — 예수님의 제자라는 것입니다. 각자의 일터와 학업이 곧 선교의 텐트가 되고, 서로의 부르심을 확인하고 지지하는 공동체가 되고자 합니다. 함께하는 지체들은 [team](/team/) 페이지에서 소개합니다.
+
 ## 삶 전체로 응답하는 부르심
 
 하나님께서 부르시는 곳으로 가기 위해서는 학위와 전문성만이 아니라 삶 전체가 준비되어야 한다고 믿습니다. 영성과 인격, 실력과 공동체성, 시간과 재정, 관계와 미래까지 모두 하나님의 것으로 받아들이고 충성된 청지기로 살아가고자 합니다.
@@ -160,6 +166,12 @@ Research is not merely a job or a means of livelihood for accomplishing Mission2
 I am currently a master's student in the Department of AI Convergence Network at Ajou University, studying trustworthy and interpretable medical AI. I want to verify whether a medical AI that shows high accuracy actually relies on clinically valid evidence, and to research technology that serves people and the clinical field more honestly and responsibly. More is on the [research](/research/) page.
 
 In time, research and teaching will be the tent that lets me remain among students at universities in the nations for the long haul, teaching and serving them. The lecture hall and the lab are not merely places of employment, but a mission field where I will witness to the gospel through love, honesty, and service, and raise up disciples.
+
+## The Tentmaking Team Walking Together
+
+Mission2035 is not a plan I carry alone. Disciples called by Jesus Christ are being built up as a self-supporting (tentmaking) mission team — each working in their own field of expertise, praying and preparing together, and walking toward the nations.
+
+More than titles or roles, we share one identity: we are disciples of Jesus. Each member's workplace and studies become a tent for mission, and we seek to be a community that confirms and supports one another's calling. The members are introduced on the [team](/team/) page.
 
 ## A Calling Answered with the Whole of Life
 
