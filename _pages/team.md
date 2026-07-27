@@ -81,6 +81,13 @@ A self-supporting (tentmaking) mission team — each member serving in their own
   </div>
 
   <div class="member-card">
+    <div class="m-photo m-photo-placeholder" aria-label="A-Yeon Joo">AY</div>
+    <div class="m-role">Jesus Disciple</div>
+    <div class="m-name">A-Yeon Joo <span>주아연</span></div>
+    <div class="m-desc">Pharmacist</div>
+  </div>
+
+  <div class="member-card">
     <img class="m-photo" src="/assets/img/team/heejung-jeon-v2.jpg" alt="Hee-Jung Jeon" loading="lazy">
     <div class="m-role">Jesus Disciple</div>
     <div class="m-name">Hee-Jung Jeon <span>전희중</span></div>
