@@ -43,6 +43,8 @@ photo_preview: true
 
 연구는 이 부르심을 위한 단순한 생계 수단이 아니라, 지금 하나님께서 맡기신 학문적 소명이자 장차 열방의 대학에서 학생들과 오래 동행하기 위한 저의 텐트입니다. 현재 아주대학교 [Embedded & Software Lab](https://eslab.ajou.ac.kr/)에서 신뢰할 수 있고 해석 가능한 의료 AI를 연구합니다. 연구 소개는 [research](/research/)에 있습니다.
 
+이 길은 혼자 걷는 길이 아닙니다. 예수님께 부름받은 제자들이 각자의 전문 영역에서 일하며 함께 기도하고 준비하는 **자비량 선교팀**으로 세워져 가고 있습니다. 함께하는 지체들은 [team](/team/)에서 소개합니다.
+
 </div>
 
 <div class="lang-en" markdown="1">
@@ -57,5 +59,7 @@ And every disciple is sent into the world as a witness of the gospel. So the que
 **Mission2035** is my concrete response to that call. Beginning in 2035, I hope to serve as an educator and self-supporting (tentmaking) campus missionary at a university in a country where educational resources are scarce and access to the gospel is limited — partnering with the local church to raise students as disciples of Christ. The whole story is on the [mission](/mission/) page, and my present service on the [ministry](/ministry/) page.
 
 Research is not merely a means of livelihood for this calling. It is a scholarly vocation God has entrusted to me now, and the tent that will let me walk alongside students at universities among the nations for the long haul. At Ajou University's [Embedded & Software Lab](https://eslab.ajou.ac.kr/), I study trustworthy and interpretable medical AI. More is on the [research](/research/) page.
+
+And this is not a road walked alone. Disciples called by Jesus are being built up as a **tentmaking mission team**, each working in their own field of expertise while praying and preparing together. The members are introduced on the [team](/team/) page.
 
 </div>
