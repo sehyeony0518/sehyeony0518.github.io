@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 description: Curriculum Vitae — Se-Hyeon Hwang
 nav: true
-nav_order: 10
+nav_order: 11
 ---
 
 # Se-Hyeon Hwang
