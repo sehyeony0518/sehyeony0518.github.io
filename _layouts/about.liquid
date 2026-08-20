@@ -66,9 +66,9 @@ layout: default
       {% include news.liquid limit=true %}
     {% endif %}
 
-    <!-- Recent prayer letter -->
+    <!-- Recent prayer letter (mission-side only; enable with prayer_preview: true) -->
     {% assign latest_letter = site.prayer | sort: 'date' | reverse | first %}
-    {% if latest_letter %}
+    {% if page.prayer_preview and latest_letter %}
       <h2>
         <a href="{{ '/prayer/' | relative_url }}" style="color: inherit">recent prayer</a>
       </h2>
