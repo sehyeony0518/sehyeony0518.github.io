@@ -7,6 +7,8 @@ nav: true
 nav_order: 1
 ---
 
+<img id="mission-profile" src="/assets/img/prof_pic.jpg" alt="Se-Hyeon Hwang" loading="eager">
+
 <div class="lang-ko" markdown="1">
 
 ### 그리스도께 부름받아, 열방으로 보냄받다
