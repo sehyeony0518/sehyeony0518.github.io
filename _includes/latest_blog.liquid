@@ -1,0 +1,38 @@
+<style>
+  .blog-preview { margin-top: 0.6rem; }
+  .blog-preview .bp-item {
+    display: block; text-decoration: none; color: inherit;
+    padding: 0.85rem 1.05rem; margin-bottom: 0.65rem; border-radius: 12px;
+    border: 1px solid rgba(128, 128, 128, 0.18);
+    background: rgba(128, 128, 128, 0.035);
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .blog-preview .bp-item:hover {
+    border-color: var(--global-theme-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  }
+  .blog-preview .bp-date { font-size: 0.74rem; opacity: 0.5; font-variant-numeric: tabular-nums; }
+  .blog-preview .bp-title { font-weight: 600; line-height: 1.4; margin-top: 0.2rem; }
+  .blog-preview .bp-desc {
+    font-size: 0.82rem; opacity: 0.68; margin-top: 0.22rem; line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .blog-preview .bp-more {
+    display: inline-block; margin-top: 0.4rem; font-size: 0.82rem;
+    text-decoration: none; color: var(--global-theme-color);
+  }
+  .blog-preview .bp-more:hover { text-decoration: underline; }
+</style>
+
+<div class="blog-preview">
+  {% assign ab_sorted = site.aiblog | sort: "date" | reverse %}
+  {% for item in ab_sorted limit: 3 %}
+    <a class="bp-item" href="{{ item.url | relative_url }}">
+      <span class="bp-date">{{ item.date | date: '%B %d, %Y' }}</span>
+      <div class="bp-title">{{ item.title }}</div>
+      {% if item.description %}<div class="bp-desc">{{ item.description }}</div>{% endif %}
+    </a>
+  {% endfor %}
+  <a class="bp-more" href="{{ '/blog/' | relative_url }}">View All Posts &rarr;</a>
+</div>

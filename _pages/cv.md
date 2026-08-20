@@ -2,96 +2,106 @@
 layout: page
 permalink: /cv/
 title: cv
-description: Curriculum vitae of Se-Hyeon Hwang.
+description: Curriculum Vitae — Se-Hyeon Hwang
 nav: true
-nav_order: 9
-toc:
-  sidebar: left
+nav_order: 10
 ---
 
-<div style="margin-bottom:1.4rem;">
-  <h2 style="margin-bottom:.15rem;">Se-Hyeon Hwang (황세현)</h2>
-  <p style="margin:0; opacity:.75;">M.S. Student, AI Convergence Network · Ajou University</p>
-  <p style="margin:.2rem 0 0; font-size:.9rem; opacity:.6;">Suwon, South Korea · <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a> · <a href="https://github.com/sehyeony0518" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/sehyeony" target="_blank">LinkedIn</a></p>
-</div>
+# Se-Hyeon Hwang
 
-## Professional Summary
-
-M.S. student at Ajou University working on trustworthy and interpretable machine learning for medical imaging, with a focus on clinical faithfulness, shortcut learning, and ultrasound AI. My research examines whether high-performing medical image classifiers rely on clinically meaningful evidence, and how their reasoning can be audited without retraining.
-
-Alongside my research, I am preparing for **Mission2035** — a long-term calling to serve students in higher education as an educator and self-supporting campus missionary.
+Dept. of AI Convergence Network, Ajou University, Suwon, South Korea
+[bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr) · [sehyeony0518.github.io](https://sehyeony0518.github.io) · [linkedin.com/in/sehyeony](https://www.linkedin.com/in/sehyeony/)
 
 ## Research Interests
 
-- Trustworthy and interpretable medical AI
-- Clinical faithfulness and model auditing
-- Shortcut learning and spurious correlations
-- Ultrasound image analysis
-- Frequency-based and graph-based representation learning
+Trustworthy Medical AI; Clinical Evidence Auditing; Interpretable & Auditable Model Design; Medical Imaging.
+
+**Research focus:** evaluating whether diagnostic models rely on clinically meaningful evidence, and developing models with directly inspectable evidence pathways.
 
 ## Education
 
-**M.S., AI Convergence Network**, Ajou University &nbsp;·&nbsp; <span style="opacity:.6;">Feb 2026 – Feb 2028 (expected)</span>
-Embedded & Software Lab / MIIDS Research Center. Thesis research on clinical faithfulness auditing and shortcut analysis of ultrasound diagnostic models.
-
-**B.S., Electrical and Computer Engineering** (Microdegree in Data Science & AI), Ajou University &nbsp;·&nbsp; <span style="opacity:.6;">Mar 2020 – Feb 2026</span>
-
-## Research Experience
-
-**Graduate Researcher**, Embedded & Software Lab / MIIDS Research Center, Ajou University &nbsp;·&nbsp; <span style="opacity:.6;">Feb 2026 – Present</span>
-- Auditing whether model explanations of ultrasound diagnostic models remain faithful to independent clinical factors rather than shortcut cues — core M.S. thesis research on trustworthy medical AI.
-- Studying frequency-band and attention-based representations to analyze model reliance and explanation faithfulness across CNN-, transformer-, graph-, and wavelet-based classifiers.
-
-**Undergraduate Researcher**, ITRC Project on Gallbladder Ultrasound AI (MIIDS Research Center / Ajou University Hospital) &nbsp;·&nbsp; <span style="opacity:.6;">Jan 2025 – Feb 2026</span>
-- Contributed to a 3-year ITRC (IITP-funded) project on AI-based diagnosis of gallbladder disease from ultrasound, spanning clinical problem formulation, modeling, evaluation, and physician collaboration.
-- First-authored a reliability requirements analysis with improved malignant-class detection sensitivity, presented at ACK 2025; continued as M.S. thesis research.
-- Designed clinical-knowledge-guided modeling strategies using structured ultrasound findings (echogenicity, texture, lesion margin, wall-related features, anatomical context) as domain priors.
-
-**Research Intern**, Samsung Heavy Industries Project (Embedded & Software Lab, Ajou University) &nbsp;·&nbsp; <span style="opacity:.6;">Jan 2025 – Jan 2026</span>
-- Developed machine learning models for equipment fault prediction and condition monitoring in smart-factory systems.
-- First-authored a monitoring-software design paper grounded in international reliability standards (KCSE 2026).
-
-**Research Intern**, Department of Psychiatry, Ajou University Hospital &nbsp;·&nbsp; <span style="opacity:.6;">May 2024 – Dec 2024</span>
-- Worked on a government-funded computational psychiatry project, gaining hands-on experience with IRB-approved clinical research workflows, clinical data handling, and clinician–AI collaboration.
-
-## Teaching
-
-**Teaching Assistant**, Logic Circuit Experiment (논리회로실험), Dept. of Electrical and Computer Engineering, Ajou University &nbsp;·&nbsp; <span style="opacity:.6;">Spring 2026</span>
-- Led weekly laboratory sessions on digital logic design — guiding students through circuit implementation and experiments, supervising lab work, and supporting evaluation.
-- Student course evaluation: **4.77 / 5.0 (95.4%)**.
+- **M.S. in AI Convergence Network**, Ajou University &nbsp;<span style="opacity:.55;">Feb 2026 – Feb 2028 (expected)</span>
+  Advisor: Prof. Jung-Won Lee
+- **B.S. in Electrical and Computer Engineering** (Microdegree in Data Science & AI), Ajou University &nbsp;<span style="opacity:.55;">Mar 2020 – Feb 2026</span>
+  Advisor: Prof. Jung-Won Lee
 
 ## Publications
 
-**Peer-reviewed (first-authored)**
-- **S.-H. Hwang**, J.-S. Kim, M. Choi, and J.-W. Lee, "Design of Monitoring Software for Predictive Maintenance in Smart Factory," *Proc. 28th Korea Conference on Software Engineering (KCSE 2026)*, vol. 28, no. 1, pp. 211–218, Feb 2026. [in Korean]
-- **S.-H. Hwang**, H. Choi, J. Kim, and J.-W. Lee, "Requirements Analysis of Data and Model for Reliability of Ultrasound-based Diagnostic Model," *Proc. Annual Conference of KIPS (ACK 2025)*, vol. 32, no. 2, pp. 489–490, Nov 2025. [in Korean]
+**Peer-Reviewed Conference Papers** <span style="opacity:.55;">(domestic, in Korean)</span>
 
-**Manuscripts in preparation**
-- Trustworthiness and clinical faithfulness of interpretable medical imaging models.
-- Clinically grounded representation learning for medical ultrasound.
+- **C2:** **S. Hwang**, J. Kim, M. Choi, & J. Lee (2026). Design of Monitoring Software for Predictive Maintenance in Smart Factory. *Proc. 28th Korea Conference on Software Engineering (KCSE)*, 28(1), 211–218.
+- **C1:** **S. Hwang**, H. Choi, J. Kim, & J. Lee (2025). Requirements Analysis of Data and Model for Reliability of Ultrasound-based Diagnostic Model. *Proc. Annual Conference of KIPS (ACK)*, 32(2), 489–490.
 
-See the full list on the [publications](/publications/) page.
+**Manuscripts in Preparation**
 
-## Software Registration
+- **M2:** Auditing clinical evidence alignment in ultrasound diagnostic models — retraining-free analysis of whether trained models rely on clinically valid evidence rather than shortcut cues.
+- **M1:** An auditable diagnostic framework for hepatobiliary ultrasound — clinical-cue channels with independent model branches and exact channel-level Shapley attribution for directly traceable evidence use.
 
-*A Tool for Removing Diagnostic Markers and Restoring Medical Images* — Software Copyright Registration No. ASSET_0013931. Removes on-image diagnostic markers, a known source of shortcut cues in medical imaging, while preserving downstream diagnostic usability.
+**Software Registration**
 
-## Ministry & Service
+- **S1:** *A Tool for Removing Diagnostic Markers and Restoring Medical Images*, Korea Copyright Commission, Reg. No. ASSET_0013931. Removes embedded diagnostic markers from medical images while preserving image content for downstream analysis.
 
-**Leadership Team · University Group Cell Leader (목장장)**, Gyeongwon Church — Young Adults &nbsp;·&nbsp; <span style="opacity:.6;">2025 – Present</span>
-Serving and discipling university students entrusted to me — a training ground for future missions.
+## Research Experience
 
-**Campus Mission & Discipleship**, JDM (Jesus Disciple Movement), Suwon &nbsp;·&nbsp; <span style="opacity:.6;">2020 – 2026 · Leader 2021–2026 · Student Representative 2025</span>
-Learned that the gospel is not a program but walking long with one person — raising disciples who make disciples.
+- **Graduate Researcher**, Embedded & Software Lab (ESL) / MIIDS Research Center, Ajou University &nbsp;<span style="opacity:.55;">Feb 2026 – Present</span>
+  <span style="opacity:.55;">MSIT-funded University ICT Research Center (ITRC)</span>
+  Conducting M.S. research on trustworthy medical AI, including post-hoc auditing of evidence use in trained models and auditable diagnostic model design (M2, M1). Evaluating model evidence using frequency-band, attention, and attribution analyses across CNN, transformer, graph, and wavelet-based classifiers.
+
+- **Graduate Researcher**, Diagnostic Prediction via Robotic Motion Anomaly Detection &nbsp;<span style="opacity:.55;">Dec 2025 – Nov 2026</span>
+  <span style="opacity:.55;">Embedded & Software Lab (ESL), Ajou University — funded by Samsung Heavy Industries</span>
+  Developing machine learning models for robotic motion anomaly detection and equipment fault prediction in smart-factory systems; first-authored a monitoring-software design paper based on international reliability standards (C2).
+
+- **Undergraduate Researcher**, ITRC Project on Gallbladder Ultrasound AI &nbsp;<span style="opacity:.55;">Jan 2025 – Feb 2026</span>
+  <span style="opacity:.55;">MIIDS Research Center, Ajou University</span>
+  Contributed to an MSIT-funded project on AI-based gallbladder ultrasound diagnosis in collaboration with Ajou University Hospital; the work continued into my M.S. research. First-authored a reliability requirements study reporting a **~33% improvement in malignant-class detection sensitivity** (C1). Developed clinical-knowledge-guided modeling strategies using echogenicity, texture, lesion margin, wall features, and anatomical context. Presented center research at the ITRC Talent Development Fair in 2025 and 2026.
+
+- **Undergraduate Research Intern**, Dept. of Psychiatry, Ajou University Medical Center &nbsp;<span style="opacity:.55;">May 2024 – Dec 2024</span>
+  Participated as an external researcher in a government-funded, IRB-approved computational psychiatry project involving clinical research workflows and clinical data handling. Supervised by Prof. Taewi Kim.
+
+- **Research Assistant**, Energy Center, Ajou University &nbsp;<span style="opacity:.55;">Jan – Dec 2021</span>
+  <span style="opacity:.55;">LINC-funded industry–academia collaboration program</span>
+  Operated XRD and IR spectroscopy equipment and analyzed samples for university and industry collaborators.
+
+## Teaching Experience
+
+- **Teaching Assistant**, Logic Circuit Laboratory (undergraduate), Ajou University &nbsp;<span style="opacity:.55;">Mar 2026 – Present</span>
+  Supervise undergraduate digital logic labs, including circuit troubleshooting, team projects, and grading of quizzes, reports, and projects. Student evaluation: **4.77 / 5.00 (95.4%)**, Spring 2026.
+
+## Selected Projects & Competitions
+
+- **Self-Supervised ECG Anomaly Detection Framework** — ICT Challenge 2026 &nbsp;<span style="opacity:.55;">Jan – Dec 2026</span>
+  <span style="opacity:.55;">University ICT Research Center Program</span>
+  Designing, training, and optimizing lightweight self-supervised models for ECG anomaly detection.
+
+- **Explainable Diagnostic Framework for Gallbladder Polyp Classification** — ICT Challenge 2025 &nbsp;<span style="opacity:.55;">2025</span>
+  <span style="opacity:.55;">Undergraduate capstone project · Team leader · also presented at the Industry–Academia Fair</span>
+  Developed a clinically guided ultrasound classifier using lesion margin, contrast, and liver–gallbladder echogenicity difference as explicit model features. Achieved **93% overall accuracy and 0.90 malignant-class F1** on a public dataset.
+
+- **Conquer Health Hackathon** — Medical Science Foundation Models, hosted by Lunit &nbsp;<span style="opacity:.55;">Aug 2026</span>
+  Built a health question-answering chatbot combining medical foundation models with retrieval-augmented generation.
+
+## Awards
+
+- **Encouragement Award**, Industry–Academia Fair, Dept. of Electrical and Computer Engineering, Ajou University &nbsp;<span style="opacity:.55;">Dec 2025</span>
+  <span style="opacity:.55;">Individual entry · 84 teams competed</span>
+- **Social Value Award** (Special Award), 2025 Capstone Design Competition, Ajou University &nbsp;<span style="opacity:.55;">Nov 2025</span>
+  <span style="opacity:.55;">Team leader · 1 of 12 awarded teams</span>
 
 ## Skills
 
-- **Programming** — Python, PyTorch, PyTorch Geometric, Linux, Git
-- **Machine Learning** — CNNs, vision transformers, graph neural networks, attention mechanisms, representation analysis (incl. Riemannian geometry, hyperbolic embeddings)
-- **Reliability & Interpretability** — shortcut analysis, frequency-band (DWT) analysis, attribution analysis, model monitoring
-- **Medical AI** — ultrasound imaging, clinical factor analysis, image preprocessing (incl. superpixel segmentation), physician-collaborative research
+- **Programming.** Python, PyTorch, PyTorch Geometric, Linux, Git
+- **Machine Learning.** CNNs, vision transformers, graph neural networks, self-supervised learning
+- **Trustworthy AI.** Shortcut analysis, attribution analysis, frequency-band analysis, model auditing
+- **Medical Imaging.** Ultrasound imaging, clinical-factor analysis, superpixel-based image representation
+- **Languages.** Korean (native); English
 
-## Military Service
+## Professional Training
 
-**Sergeant**, Republic of Korea Air Force — 15th Special Mission Wing &nbsp;·&nbsp; <span style="opacity:.6;">Mar 2022 – Dec 2023</span>
-Honorably discharged.
+- **Digital Healthcare AI Solution Development and Industry Field Experience** — Center for Artificial Intelligence in Healthcare, Seoul National University Bundang Hospital &nbsp;<span style="opacity:.55;">Aug 2024</span>
+- **Convergence Security Workforce Training — Smart Healthcare (Basic)**, 21 hours — Korea Information Security Industry Association (KISIA), Ministry of Science and ICT &nbsp;<span style="opacity:.55;">Jul 2024</span>
+
+## Community Service & Military
+
+- **Community Outreach Volunteer**, Sillim-dong, Seoul &nbsp;<span style="opacity:.55;">Mar 2026 – Present</span>
+  Participate in regular community outreach, providing practical assistance and ongoing support to local residents.
+- **Sergeant, Republic of Korea Air Force** — 15th Special Mission Wing, honorably discharged &nbsp;<span style="opacity:.55;">Mar 2022 – Dec 2023</span>

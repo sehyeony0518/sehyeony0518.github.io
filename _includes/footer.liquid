@@ -41,9 +41,46 @@
   /* Back link on individual reflection posts */
   .diary-back { display: inline-block; margin: 0 0 1.2rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
   .diary-back:hover { text-decoration: underline; }
+
+  /* ── Secret mission mode ─────────────────────────────────────────────
+     Default (academic) mode hides the mission-side tabs and the KO/EN toggle.
+     Clicking the profile photo on the home page toggles data-mode="mission". */
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/mission/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/team/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/ministry/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/diary/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/prayer/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/photos/"]),
+  html:not([data-mode="mission"]) #navbar li.lang-toggle-li {
+    display: none !important;
+  }
 </style>
 
 <script>
+  (function () {
+    // Secret mission mode: restore saved mode, and make the home profile photo the toggle.
+    var MKEY = 'siteMode';
+    if (localStorage.getItem(MKEY) === 'mission') {
+      document.documentElement.setAttribute('data-mode', 'mission');
+    }
+    function hookProfile() {
+      var img = document.querySelector('.profile img');
+      if (!img) return;
+      img.addEventListener('click', function () {
+        if (localStorage.getItem(MKEY) === 'mission') {
+          localStorage.removeItem(MKEY);
+          document.documentElement.removeAttribute('data-mode');
+        } else {
+          localStorage.setItem(MKEY, 'mission');
+          document.documentElement.setAttribute('data-mode', 'mission');
+          window.location.href = '/mission/';
+        }
+      });
+    }
+    if (document.readyState !== 'loading') hookProfile();
+    else document.addEventListener('DOMContentLoaded', hookProfile);
+  })();
+
   (function () {
     var KEY = 'siteLang';
     function apply(lang) {
