@@ -48,7 +48,6 @@
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/mission/"]),
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/team/"]),
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/ministry/"]),
-  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/diary/"]),
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/prayer/"]),
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/photos/"]),
   html:not([data-mode="mission"]) #navbar li.lang-toggle-li {
@@ -74,7 +73,7 @@
   (function () {
     // Secret mission mode — determined by the CURRENT PAGE (full separation, no stored state).
     // Mission-side paths show mission tabs only; everything else shows academic tabs only.
-    var missionPaths = ['/mission', '/team', '/ministry', '/diary', '/prayer', '/photos', '/news'];
+    var missionPaths = ['/mission', '/team', '/ministry', '/prayer', '/photos', '/news'];
     var onMission = missionPaths.some(function (p) { return window.location.pathname.indexOf(p) === 0; });
     if (onMission) document.documentElement.setAttribute('data-mode', 'mission');
 
