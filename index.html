@@ -116,6 +116,20 @@
   html:not([data-mode="mission"]) #navbar li.lang-toggle-li {
     display: none !important;
   }
+  /* Mission mode hides the academic tabs (full tab swap between the two sites) */
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href="/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/research/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/publications/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/blog/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/cv/"]) {
+    display: none !important;
+  }
+  /* Clickable profile photo on the mission page (the way back) */
+  #mission-profile {
+    float: right; width: min(28%, 220px); margin: 0 0 1rem 1.5rem;
+    border-radius: 0.25rem; cursor: pointer;
+    box-shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
+  }
 </style> <script>
   (function () {
     // Secret mission mode: restore saved mode, and make the home profile photo the toggle.
@@ -123,19 +137,22 @@
     if (localStorage.getItem(MKEY) === 'mission') {
       document.documentElement.setAttribute('data-mode', 'mission');
     }
+    function toggleMode() {
+      if (localStorage.getItem(MKEY) === 'mission') {
+        localStorage.removeItem(MKEY);
+        document.documentElement.removeAttribute('data-mode');
+        window.location.href = '/';
+      } else {
+        localStorage.setItem(MKEY, 'mission');
+        document.documentElement.setAttribute('data-mode', 'mission');
+        window.location.href = '/mission/';
+      }
+    }
     function hookProfile() {
-      var img = document.querySelector('.profile img');
-      if (!img) return;
-      img.addEventListener('click', function () {
-        if (localStorage.getItem(MKEY) === 'mission') {
-          localStorage.removeItem(MKEY);
-          document.documentElement.removeAttribute('data-mode');
-        } else {
-          localStorage.setItem(MKEY, 'mission');
-          document.documentElement.setAttribute('data-mode', 'mission');
-          window.location.href = '/mission/';
-        }
-      });
+      var home = document.querySelector('.profile img');
+      if (home) home.addEventListener('click', toggleMode);
+      var mission = document.getElementById('mission-profile');
+      if (mission) mission.addEventListener('click', toggleMode);
     }
     if (document.readyState !== 'loading') hookProfile();
     else document.addEventListener('DOMContentLoaded', hookProfile);
