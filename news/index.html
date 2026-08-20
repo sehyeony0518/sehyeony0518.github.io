@@ -40,9 +40,9 @@
   #navbar .navbar-brand.title { opacity: 1 !important; }
   /* Keep brand + nav on ONE row, aligned with the content column (brand lines up with the Mission2035 title) */
   @media (min-width: 576px) {
-    #navbar > .container { flex-wrap: nowrap; justify-content: flex-start; }
+    #navbar > .container { flex-wrap: nowrap; justify-content: space-between; }
     #navbar .navbar-collapse { flex-basis: auto; width: auto; flex-grow: 0; }
-    #navbar .navbar-nav { margin-left: 1rem; }
+    #navbar .navbar-nav { margin-left: auto; }
     #navbar .navbar-nav .nav-link { padding-left: 0.38rem; padding-right: 0.38rem; font-size: 0.85rem; }
     #navbar .navbar-brand.title { font-size: 1.1rem; }
   }
@@ -53,21 +53,21 @@
   /* ── Secret mission mode ─────────────────────────────────────────────
      Default (academic) mode hides the mission-side tabs and the KO/EN toggle.
      Clicking the profile photo on the home page toggles data-mode="mission". */
-  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/mission/"]),
-  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/team/"]),
-  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/ministry/"]),
-  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/diary/"]),
-  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/prayer/"]),
-  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href$="/photos/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/mission/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/team/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/ministry/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/diary/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/prayer/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/photos/"]),
   html:not([data-mode="mission"]) #navbar li.lang-toggle-li {
     display: none !important;
   }
   /* Mission mode hides the academic tabs (full tab swap between the two sites) */
   html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href="/"]),
-  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/research/"]),
-  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/publications/"]),
-  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/blog/"]),
-  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href$="/cv/"]) {
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/research/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/publications/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/blog/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/cv/"]) {
     display: none !important;
   }
   /* Clickable profile photo on the mission page (the way back) */
@@ -78,27 +78,18 @@
   }
 </style> <script>
   (function () {
-    // Secret mission mode: restore saved mode, and make the home profile photo the toggle.
-    var MKEY = 'siteMode';
-    if (localStorage.getItem(MKEY) === 'mission') {
-      document.documentElement.setAttribute('data-mode', 'mission');
-    }
-    function toggleMode() {
-      if (localStorage.getItem(MKEY) === 'mission') {
-        localStorage.removeItem(MKEY);
-        document.documentElement.removeAttribute('data-mode');
-        window.location.href = '/';
-      } else {
-        localStorage.setItem(MKEY, 'mission');
-        document.documentElement.setAttribute('data-mode', 'mission');
-        window.location.href = '/mission/';
-      }
-    }
+    // Secret mission mode — determined by the CURRENT PAGE (full separation, no stored state).
+    // Mission-side paths show mission tabs only; everything else shows academic tabs only.
+    var missionPaths = ['/mission', '/team', '/ministry', '/diary', '/prayer', '/photos', '/news'];
+    var onMission = missionPaths.some(function (p) { return window.location.pathname.indexOf(p) === 0; });
+    if (onMission) document.documentElement.setAttribute('data-mode', 'mission');
+
+    // The profile photo is the door between the two sites.
     function hookProfile() {
       var home = document.querySelector('.profile img');
-      if (home) home.addEventListener('click', toggleMode);
+      if (home) home.addEventListener('click', function () { window.location.href = '/mission/'; });
       var mission = document.getElementById('mission-profile');
-      if (mission) mission.addEventListener('click', toggleMode);
+      if (mission) mission.addEventListener('click', function () { window.location.href = '/'; });
     }
     if (document.readyState !== 'loading') hookProfile();
     else document.addEventListener('DOMContentLoaded', hookProfile);
