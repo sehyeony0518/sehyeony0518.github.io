@@ -10,7 +10,7 @@ nav_order: 11
 # Se-Hyeon Hwang
 
 Dept. of AI Convergence Network, Ajou University, Suwon, South Korea
-[bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr) · [sehyeony0518.github.io](https://sehyeony0518.github.io) · [linkedin.com/in/sehyeony](https://www.linkedin.com/in/sehyeony/)
+[bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr) · [sehyeony0518.github.io](https://sehyeony0518.github.io) · [github.com/sehyeony0518](https://github.com/sehyeony0518) · [linkedin.com/in/sehyeony](https://www.linkedin.com/in/sehyeony/)
 
 ## Research Interests
 

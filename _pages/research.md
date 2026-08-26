@@ -133,8 +133,40 @@ For a full list of roles, publications, and skills, see the [cv](/cv/) page.
   </figure>
 </div>
 
-## Research as a Calling
+## Open-Source Software
 
-Research is not separate from Mission2035. It is a scholarly calling entrusted to me in the present — a way to pursue truth with integrity, to serve patients and clinicians through responsible technology, and to prepare to teach and walk alongside students in higher education.
+Selected repositories on [GitHub](https://github.com/sehyeony0518):
+
+<div class="proj-grid">
+
+  <div class="proj-card">
+    <div class="pc-top"><span class="pc-badge">ACK 2025 · C1</span></div>
+    <h3>ultrasound-ai-reliability-requirements</h3>
+    <p class="pc-desc">Requirements framework for reliable ultrasound diagnostic AI — data/model attribute pairs made executable as a gallbladder pipeline (paper explainer).</p>
+    <a class="pc-link" href="https://github.com/sehyeony0518/ultrasound-ai-reliability-requirements" target="_blank" rel="noopener">→ github.com/sehyeony0518/ultrasound-ai-reliability-requirements</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-top"><span class="pc-badge">KCSE 2026 · C2</span></div>
+    <h3>smart-factory-monitoring</h3>
+    <p class="pc-desc">Condition-monitoring console for predictive maintenance of industrial robots — five-layer architecture traced to software quality and functional safety standards (reference implementation).</p>
+    <a class="pc-link" href="https://github.com/sehyeony0518/smart-factory-monitoring" target="_blank" rel="noopener">→ github.com/sehyeony0518/smart-factory-monitoring</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-top"><span class="pc-badge">Software Reg. · S1</span></div>
+    <h3>medical-marker-remover</h3>
+    <p class="pc-desc">Client-side tool for removing diagnostic markers from medical images and restoring the background (OpenCV.js + WASM, PSNR/MSE). No image leaves the browser.</p>
+    <a class="pc-link" href="https://github.com/sehyeony0518/medical-marker-remover" target="_blank" rel="noopener">→ github.com/sehyeony0518/medical-marker-remover</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-top"><span class="pc-badge">Research Prototype</span></div>
+    <h3>scid5-module-j-agent</h3>
+    <p class="pc-desc">LLM-administered SCID-5 Module J (adjustment disorder) interview — DSM-5 criteria as a decision tree, with human-in-the-loop probes on uncertainty.</p>
+    <a class="pc-link" href="https://github.com/sehyeony0518/scid5-module-j-agent" target="_blank" rel="noopener">→ github.com/sehyeony0518/scid5-module-j-agent</a>
+  </div>
+
+</div>
 
 Published papers and manuscripts in preparation are listed on the [publications](/publications/) page.
