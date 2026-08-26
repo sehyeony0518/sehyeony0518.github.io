@@ -4,6 +4,7 @@ title: "Beyond Average Accuracy: Woong Bae on KARA-CXR, Hallucination, and Clini
 date: 2026-04-17 12:00:00 +0900
 description: Notes from Woong Bae's interview on why radiology AI should move beyond lesion detection, how KARA-CXR was designed to draft chest X-ray reports, and why rare but absurd errors matter more than a strong average score.
 tag: "Kakao Brain"
+featured: true
 related_posts: false
 ---
 
