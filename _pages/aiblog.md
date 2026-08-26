@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /blog/
-title: blog
+title: insights
 description: Notes on medical AI and digital healthcare — how models become clinical care.
 nav: true
 nav_order: 9
