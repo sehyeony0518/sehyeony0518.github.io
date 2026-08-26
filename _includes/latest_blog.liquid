@@ -1,8 +1,10 @@
 <style>
   .blog-preview { margin-top: 0.6rem; }
+  .blog-preview .bp-grid { display: grid; grid-template-columns: 1fr; gap: 0.65rem; }
+  @media (min-width: 576px) { .blog-preview .bp-grid { grid-template-columns: 1fr 1fr; } }
   .blog-preview .bp-item {
     display: block; text-decoration: none; color: inherit;
-    padding: 0.85rem 1.05rem; margin-bottom: 0.65rem; border-radius: 12px;
+    padding: 0.85rem 1.05rem; border-radius: 12px;
     border: 1px solid rgba(128, 128, 128, 0.18);
     background: rgba(128, 128, 128, 0.035);
     transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
@@ -26,13 +28,15 @@
 </style>
 
 <div class="blog-preview">
-  {% assign ab_sorted = site.aiblog | sort: "date" | reverse %}
-  {% for item in ab_sorted limit: 3 %}
-    <a class="bp-item" href="{{ item.url | relative_url }}">
-      <span class="bp-date">{{ item.date | date: '%B %d, %Y' }}</span>
-      <div class="bp-title">{{ item.title }}</div>
-      {% if item.description %}<div class="bp-desc">{{ item.description }}</div>{% endif %}
-    </a>
-  {% endfor %}
+  <div class="bp-grid">
+    {% assign ab_sorted = site.aiblog | sort: "date" | reverse %}
+    {% for item in ab_sorted limit: 6 %}
+      <a class="bp-item" href="{{ item.url | relative_url }}">
+        <span class="bp-date">{{ item.date | date: '%B %d, %Y' }}</span>
+        <div class="bp-title">{{ item.title }}</div>
+        {% if item.description %}<div class="bp-desc">{{ item.description }}</div>{% endif %}
+      </a>
+    {% endfor %}
+  </div>
   <a class="bp-more" href="{{ '/blog/' | relative_url }}">View All Posts &rarr;</a>
 </div>
