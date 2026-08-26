@@ -1,10 +1,9 @@
 ---
 layout: post
-title: One Patient, Many Modalities — Chris McIntosh on MEDBind and Cross-Modal Medical AI
+title: "One Patient, Many Modalities: Chris McIntosh on MEDBind and Cross-Modal Medical AI"
 date: 2026-03-20 12:00:00 +0900
 description: How MEDBind aligns chest X-rays, ECGs, and clinical text to support multimodal prediction, few-shot learning, and cross-modal knowledge transfer.
 featured: true
-pinned: true
 related_posts: false
 ---
 
