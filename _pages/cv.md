@@ -4,10 +4,12 @@ permalink: /cv/
 title: cv
 description: Curriculum Vitae — Se-Hyeon Hwang
 nav: true
-nav_order: 11
+nav_order: 12
 ---
 
 # Se-Hyeon Hwang
+
+<a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a>
 
 Dept. of AI Convergence Network, Ajou University, Suwon, South Korea
 [bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr) · [sehyeony0518.github.io](https://sehyeony0518.github.io) · [github.com/sehyeony0518](https://github.com/sehyeony0518) · [linkedin.com/in/sehyeony](https://www.linkedin.com/in/sehyeony/)

@@ -31,10 +31,8 @@ photo_preview: false
 blog_preview: true
 ---
 
-I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). My research centers on **trustworthy medical AI** — asking not only whether a model is accurate, but whether it is accurate *for clinically valid reasons*.
+I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/).
 
-My current work has two threads: **post-hoc auditing of evidence use in trained models** — examining whether diagnostic models rely on clinically meaningful evidence rather than shortcut cues, using frequency-band, attention, and attribution analyses — and **auditable diagnostic model design**, building models with directly inspectable evidence pathways. I apply this perspective primarily to **ultrasound AI**, in collaboration with Ajou University Hospital.
+My research interest lies in **trustworthy medical AI** — understanding whether diagnostic models are right *for clinically valid reasons*, and designing models whose evidence can be directly inspected and audited. I am particularly interested in **medical imaging**, working closely with clinicians to build AI that serves real clinical practice.
 
-Before graduate school, I received my B.S. in Electrical and Computer Engineering from Ajou University, where I worked on gallbladder ultrasound AI (first-authored ACK 2025) and reliability monitoring software for industrial fault prediction with Samsung Heavy Industries (first-authored KCSE 2026). I also served as a research intern in the Department of Psychiatry at Ajou University Hospital, gaining hands-on experience with IRB-approved clinical research.
-
-I am preparing to apply for Ph.D. programs (Fall 2028) in medical imaging AI and trustworthy machine learning. Details are on the [research](/research/), [publications](/publications/), and [cv](/cv/) pages.
+I am preparing to apply for Ph.D. programs (Fall 2028). More about my work is on the [research](/research/) and [publications](/publications/) pages, and my full CV is available as a [PDF](/assets/pdf/cv-hwang.pdf).

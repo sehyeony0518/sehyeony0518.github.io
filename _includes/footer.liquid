@@ -58,8 +58,14 @@
   html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/research/"]),
   html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/publications/"]),
   html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/blog/"]),
+  html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/gallery/"]),
   html[data-mode="mission"] #navbar li.nav-item:has(> a.nav-link[href*="/cv/"]) {
     display: none !important;
+  }
+  /* On mobile, the home profile photo moves to the very bottom of the page content */
+  @media (max-width: 575.98px) {
+    article:has(> .profile) { display: flex; flex-direction: column; }
+    article:has(> .profile) > .profile { order: 99; float: none !important; width: 100%; max-width: 320px; margin: 1.2rem auto 0; }
   }
   /* Clickable profile photo on the mission page (the way back) */
   #mission-profile {
