@@ -3,6 +3,7 @@ layout: post
 title: "A Bold Number Is Not Evidence: Christodoulou and Colliot on Performance Reporting in Medical Imaging AI"
 date: 2025-09-19 12:00:00 +0900
 description: "Notes from a MICCAI webinar on performance uncertainty: confidence intervals, false claims of outperformance, data splitting, standard deviation versus standard error, and bootstrap-based reporting."
+tag: "MICCAI"
 related_posts: false
 ---
 

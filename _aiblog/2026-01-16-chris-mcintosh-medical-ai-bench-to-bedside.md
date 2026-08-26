@@ -5,6 +5,7 @@ date: 2026-01-16 12:00:00 +0900
 description: Notes from an interview with Prof. Chris McIntosh on clinical collaboration, radiotherapy deployment, transfer learning, explainability, fairness, wearables, and the long path from a paper to patient care.
 featured: true
 pinned: true
+tag: "McIntosh Lab"
 related_posts: false
 ---
 
