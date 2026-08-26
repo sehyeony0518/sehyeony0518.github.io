@@ -8,10 +8,11 @@ nav_order: 9
 ---
 
 <style>
-  .aiblog-list { margin-top: .5rem; }
+  .aiblog-list { margin-top: .5rem; display: grid; grid-template-columns: 1fr; gap: .8rem; }
+  @media (min-width: 576px) { .aiblog-list { grid-template-columns: 1fr 1fr; } }
   .aiblog-list .ab-item {
     display: block; text-decoration: none; color: inherit;
-    padding: 1rem 1.15rem; margin-bottom: .8rem; border-radius: 12px;
+    padding: 1rem 1.15rem; border-radius: 12px;
     border: 1px solid rgba(128,128,128,.18); background: rgba(128,128,128,.035);
     transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
   }
