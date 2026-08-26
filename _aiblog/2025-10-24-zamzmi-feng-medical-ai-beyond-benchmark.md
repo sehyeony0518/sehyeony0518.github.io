@@ -4,6 +4,7 @@ title: "Beyond the Benchmark: Ghada Zamzmi and Jean Feng on Building Medical AI 
 date: 2025-10-24 12:00:00 +0900
 description: Notes from a MICCAI webinar on regulatory-driven AI development, clinically meaningful endpoints, data quality, post-market drift, SHIFT, and why diagnosis should come before model retraining.
 tag: "MICCAI"
+featured: true
 related_posts: false
 ---
 
