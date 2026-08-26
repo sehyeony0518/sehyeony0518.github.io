@@ -4,6 +4,7 @@ title: "Korea's 'AI-Basic Healthcare' Strategy: a Potential Game Changer for Med
 date: 2026-08-10 12:00:00+0900
 description: "Notes on Korea's new national medical AI strategy: outcome-based reimbursement decided at the hospital level, a public 'AI highway' for inference infrastructure, and sovereign medical AI."
 featured: true
+tag: "MOHW"
 related_posts: false
 ---
 

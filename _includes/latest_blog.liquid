@@ -14,6 +14,11 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   }
+  .blog-preview .bp-meta { display: flex; align-items: baseline; gap: 0.5rem; }
+  .blog-preview .bp-tag {
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--global-theme-color); white-space: nowrap;
+  }
   .blog-preview .bp-date { font-size: 0.74rem; opacity: 0.5; font-variant-numeric: tabular-nums; }
   .blog-preview .bp-title { font-weight: 600; line-height: 1.4; margin-top: 0.2rem; }
   .blog-preview .bp-desc {
@@ -40,8 +45,11 @@
     {% endif %}
     {% for item in ab_sorted limit: 6 %}
       <a class="bp-item" href="{{ item.url | relative_url }}">
-        <span class="bp-date">{{ item.date | date: '%B %d, %Y' }}</span>
-        <div class="bp-title">{{ item.title }}</div>
+        <div class="bp-meta">
+          {% if item.tag %}<span class="bp-tag">{{ item.tag }}</span>{% endif %}
+          <span class="bp-date">{{ item.date | date: '%B %d, %Y' }}</span>
+        </div>
+        <div class="bp-title">{{ item.title | split: ": " | first }}</div>
         {% if item.description %}<div class="bp-desc">{{ item.description }}</div>{% endif %}
       </a>
     {% endfor %}

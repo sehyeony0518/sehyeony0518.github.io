@@ -3,6 +3,7 @@ layout: post
 title: "Confidence Matters: Saurabh Sharma on Selective Knowledge Transfer in Medical Image Classification"
 date: 2026-09-05 12:00:00 +0900
 description: "Notes on UDCD: mean-teacher self-distillation, contrastive relation matrices, entropy-based confidence weighting, and why a medical-AI student should not imitate every signal from its teacher equally."
+tag: "MICCAI"
 related_posts: false
 ---
 
