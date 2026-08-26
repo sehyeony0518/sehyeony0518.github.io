@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Beyond Point Solutions — Lunit's Vision for an AI-Native Cancer Platform
-date: 2026-08-29 12:00:00 +0900
+date: 2025-12-12 12:00:00 +0900
 description: Notes from Lunit co-founder Anthony Seungwook Paek on Volpara, foundation models, autonomous AI, and the shift from accurate algorithms to an integrated cancer-care platform.
 featured: true
 related_posts: false
@@ -9,7 +9,7 @@ related_posts: false
 
 This post summarizes a long-form conversation between Dr. Yoon Sup Choi and Anthony Seungwook Paek, co-founder and Executive Chairman of Lunit. Recorded near the end of 2023 and released in early 2024, the interview took place just after Lunit announced its plan to acquire Volpara Health Technologies. It should therefore be read as a snapshot of Lunit's strategy at that point, rather than as a current product catalogue. ([YouTube][2])
 
-> **2026 update.** Lunit completed the Volpara acquisition in 2024. In November 2025, the company announced that Volpara would operate under the Lunit brand as part of a unified global organization. ([Lunit][3])
+> **Update.** Lunit completed the Volpara acquisition in 2024. In November 2025, the company announced that Volpara would operate under the Lunit brand as part of a unified global organization. ([Lunit][3])
 
 ## Part 1 — Accuracy is only the entry ticket
 

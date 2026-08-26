@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Industry Cannot Outgrow Its Regulation — Chungkeun Lee on Governing Medical AI
-date: 2026-09-03 12:00:00 +0900
+date: 2026-06-12 12:00:00 +0900
 description: Notes from former MFDS reviewer Dr. Chungkeun Lee on how Korea moved early in medical-AI regulation, why model changes matter as much as initial accuracy, and how generative AI is pushing regulation from one-time approval toward continuous oversight.
 related_posts: false
 ---
@@ -12,7 +12,7 @@ This interview presents almost the opposite view.
 
 Dr. Yoon Sup Choi opens the conversation with a phrase he often uses: the level of a country's medical industry ultimately converges toward the level of its regulation. An industry may complain about regulation or try to move faster than it, but it cannot permanently grow beyond the ceiling that regulation creates.
 
-The previous posts on [VUNO's DeepCARS](/blog/2026-08-28-vuno-deepcars-beyond-auroc/) and [Chris McIntosh's bench-to-bedside research](/blog/2026-08-30-chris-mcintosh-medical-ai-bench-to-bedside/) examined what happens when a model meets clinical workflow, evidence generation, reimbursement, and real patient care. This post turns to another layer of the same problem: who defines the conditions under which that model may enter healthcare, change after approval, and remain trustworthy over time?
+The previous posts on [VUNO's DeepCARS](/blog/2025-11-14-vuno-deepcars-beyond-auroc/) and [Chris McIntosh's bench-to-bedside research](/blog/2026-01-16-chris-mcintosh-medical-ai-bench-to-bedside/) examined what happens when a model meets clinical workflow, evidence generation, reimbursement, and real patient care. This post turns to another layer of the same problem: who defines the conditions under which that model may enter healthcare, change after approval, and remain trustworthy over time?
 
 These are my notes from a two-part interview with Dr. Chungkeun Lee, formerly a medical-device reviewer at Korea's Ministry of Food and Drug Safety and now a research professor at the Medical Device Research and Development Center of Seoul National University Bundang Hospital. The first part focused on [how Korea became an early mover in digital-health regulation](https://www.youtube.com/watch?v=XYLCLmTlt6k), while the second examined [the regulatory problems created by generative medical AI](https://www.youtube.com/watch?v=ktiCjLEMq0k).
 

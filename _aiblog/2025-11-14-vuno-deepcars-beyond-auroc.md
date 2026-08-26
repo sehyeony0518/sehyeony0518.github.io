@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Beyond AUROC — What VUNO's DeepCARS Teaches Us About Making Medical AI Work
-date: 2026-08-28 12:00:00 +0900
+date: 2025-11-14 12:00:00 +0900
 description: Notes from an interview with VUNO founder and CEO Ye Ha Lee on DeepCARS, clinical evidence, reimbursement, and what it takes to move medical AI from a model into routine care.
 featured: true
 related_posts: false
 ---
 
-This is the third post in a short series on how medical AI moves from an idea into a health system. The [first post](/blog/2026-08-26-korea-ai-basic-healthcare-strategy/) looked at Korea's AI-Basic Healthcare Strategy, and the [second](/blog/2026-08-27-foundation-models-ai-basic-healthcare/) at the foundation-model vision behind it. This one turns to the company side: how a predictive model becomes something hospitals can integrate, clinicians can act on, and a healthcare system can pay for.
+How does a promising predictive model become something hospitals can integrate, clinicians can act on, and a healthcare system can pay for? Most medical-AI stories end at the benchmark; this one is about everything that comes after.
 
 The case is VUNO, one of Korea's earliest medical-AI companies, and its flagship inpatient risk-prediction product, VUNO Med®-DeepCARS®. These are my notes from a public interview series in which VUNO founder and CEO Dr. Ye Ha Lee spoke with Dr. Yoon Sup Choi about the company's beginnings, the clinical design of DeepCARS, Korea's reimbursement system, and VUNO's global strategy. Any errors of interpretation are mine.
 
