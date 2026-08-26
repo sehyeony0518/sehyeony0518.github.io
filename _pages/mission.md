@@ -7,7 +7,7 @@ nav: true
 nav_order: 1
 ---
 
-<img id="mission-profile" src="/assets/img/prof_pic.jpg" alt="Se-Hyeon Hwang" loading="eager">
+<img id="mission-profile" src="/assets/img/prof_pic.jpg?v=2" alt="Se-Hyeon Hwang" loading="eager">
 
 <div class="lang-ko" markdown="1">
 
