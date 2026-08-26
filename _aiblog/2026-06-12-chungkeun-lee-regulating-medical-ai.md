@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Industry Cannot Outgrow Its Regulation — Chungkeun Lee on Governing Medical AI
+title: "The Industry Cannot Outgrow Its Regulation: Chungkeun Lee on Governing Medical AI"
 date: 2026-06-12 12:00:00 +0900
 description: Notes from former MFDS reviewer Dr. Chungkeun Lee on how Korea moved early in medical-AI regulation, why model changes matter as much as initial accuracy, and how generative AI is pushing regulation from one-time approval toward continuous oversight.
 related_posts: false

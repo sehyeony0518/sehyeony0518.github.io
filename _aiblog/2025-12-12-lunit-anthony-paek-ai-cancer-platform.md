@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Beyond Point Solutions — Lunit's Vision for an AI-Native Cancer Platform
+title: "Beyond Point Solutions: Lunit's Vision for an AI-Native Cancer Platform"
 date: 2025-12-12 12:00:00 +0900
 description: Notes from Lunit co-founder Anthony Seungwook Paek on Volpara, foundation models, autonomous AI, and the shift from accurate algorithms to an integrated cancer-care platform.
 featured: true
