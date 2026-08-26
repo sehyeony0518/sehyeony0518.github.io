@@ -122,7 +122,7 @@
   .lang-toggle-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
   /* Keep the brand visible in the navbar (including the home page) */
   #navbar .navbar-brand.title { opacity: 1 !important; }
-  /* Keep brand + nav on ONE row, aligned with the content column (brand lines up with the Mission2035 title) */
+  /* Keep brand + nav on ONE row, aligned with the content column (brand lines up with the page title) */
   @media (min-width: 576px) {
     #navbar > .container { flex-wrap: nowrap; justify-content: space-between; }
     #navbar .navbar-collapse { flex-basis: auto; width: auto; flex-grow: 0; }
@@ -176,6 +176,26 @@
     }
     if (document.readyState !== 'loading') hookProfile();
     else document.addEventListener('DOMContentLoaded', hookProfile);
+
+    // On academic pages, strip mission-side entries from the Cmd-K search index.
+    if (!onMission) {
+      var missionRe = /\/(mission|team|ministry|prayer|photos|news)\//;
+      var tries = 0;
+      var t = setInterval(function () {
+        tries++;
+        var n = document.querySelector('ninja-keys');
+        if (n && n.data && n.data.length) {
+          n.data = n.data.filter(function (item) {
+            if (item.section === 'News' || item.section === 'Prayer') return false;
+            if (item.handler && missionRe.test(item.handler.toString())) return false;
+            return true;
+          });
+          clearInterval(t);
+        } else if (tries > 40) {
+          clearInterval(t);
+        }
+      }, 150);
+    }
   })();
 
   (function () {
@@ -209,7 +229,7 @@
   })();
 
   (function () {
-    // al-folio hides the navbar brand on the home page; show "Mission2035" there too.
+    // al-folio hides the navbar brand on the home page; show the site name there too.
     function addBrand() {
       if (document.querySelector('.navbar-brand')) return;
       var nav = document.querySelector('#navbar .container') || document.querySelector('nav .container');
@@ -241,7 +261,7 @@
     if (document.readyState !== 'loading') addBack();
     else document.addEventListener('DOMContentLoaded', addBack);
   })();
-</script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · Mission2035 · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+</script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
