@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "From Diagnostic Tools to Expert Companions — Why Korea Wants Its Own Medical Foundation Model"
-date: 2026-08-27 12:00:00+0900
+date: 2026-08-21 12:00:00+0900
 description: "Notes from a lecture by Prof. Joon-Beom Seo, head of the AI-Basic Healthcare Task Force: ten years from AlphaGo, four ways AI can transform care, and the case for a sovereign medical foundation model."
 featured: true
 related_posts: false
 ---
 
-This is a follow-up to my [previous post on Korea's AI-Basic Healthcare Strategy](/blog/2026-08-26-korea-ai-basic-healthcare-strategy/). That post covered the policy machinery; this one covers the vision behind it, as laid out in a public lecture at Seoul National University by **Prof. Joon-Beom Seo** — a radiologist who has collaborated with (mostly Korean) engineering teams for some twenty years, and who now chairs the **AI-Basic Healthcare Task Force** under the National AI Strategy Committee. He was careful to note he was speaking personally, not for the TF; the same disclaimer applies doubly to my notes here.
+This is a follow-up to my [previous post on Korea's AI-Basic Healthcare Strategy](/blog/2026-08-10-korea-ai-basic-healthcare-strategy/). That post covered the policy machinery; this one covers the vision behind it, as laid out in a public lecture at Seoul National University by **Prof. Joon-Beom Seo** — a radiologist who has collaborated with (mostly Korean) engineering teams for some twenty years, and who now chairs the **AI-Basic Healthcare Task Force** under the National AI Strategy Committee. He was careful to note he was speaking personally, not for the TF; the same disclaimer applies doubly to my notes here.
 
 He opened with a wry remark: when generative models first appeared, he argued Korea should build its own healthcare foundation models — and was widely dismissed ("does Korea even have the capacity?"). That the same argument is now national policy says something about how fast this field has moved.
 
