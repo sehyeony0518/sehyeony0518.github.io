@@ -2,7 +2,7 @@
 layout: page
 permalink: /blog/
 title: blog
-description: Notes on medical AI and digital healthcare.
+description: Notes on medical AI and digital healthcare — how models become clinical care.
 nav: true
 nav_order: 9
 ---
@@ -24,10 +24,6 @@ nav_order: 9
   .aiblog-list .ab-title { font-weight: 700; font-size: 1.08rem; line-height: 1.4; margin-top: .15rem; }
   .aiblog-list .ab-desc { font-size: .86rem; opacity: .7; margin-top: .25rem; line-height: 1.55; }
 </style>
-
-<p style="opacity:.75; line-height:1.7; margin:0 0 1.4rem;">
-Occasional posts on medical AI and digital healthcare — paper notes, trustworthy-AI perspectives, and things I learn while building diagnostic models.
-</p>
 
 <div class="aiblog-list">
   {% assign posts_sorted = site.aiblog | sort: "date" | reverse %}
