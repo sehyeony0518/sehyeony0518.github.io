@@ -67,7 +67,7 @@ nav_order: 10
 </style>
 
 <div class="photo-gallery">
-  {% assign photos = "g41,Demonstrating a gallbladder ultrasound AI diagnostic system|rg08,MICCAI 2025 — Daejeon · Republic of Korea|rg01,Presenting at the Lunit Medical FM Hackathon|g42,Presenting ultrasound curriculum-learning work at the lab|rg11,Conference oral presentation|rg06,Poster session — explainable gallbladder ultrasound AI|rg09,MIIDS Research Center booth · ITRC Talent Development Fair|g40,Recognized at the 2025 ECE Industry–Academia Expo|rg10,Social Value Award · 2025 Capstone Design Competition|rg02,Korea Computer Congress (KCC 2026) · Jeju|rg03,Supervising the digital logic laboratory as a TA|g18,At the Embedded & Software Lab|rg05,B.S. commencement · Ajou University|rg04,Commencement day with lab and classmates" | split: "|" %}
+  {% assign photos = "g41,Demonstrating a gallbladder ultrasound AI diagnostic system|rg01,Presenting at the Lunit Medical FM Hackathon|g42,Presenting ultrasound curriculum-learning work at the lab|rg11,Conference oral presentation|rg06,Poster session — explainable gallbladder ultrasound AI|rg09,MIIDS Research Center booth · ITRC Talent Development Fair|g40,Recognized at the 2025 ECE Industry–Academia Expo|rg10,Social Value Award · 2025 Capstone Design Competition|rg02,Korea Computer Congress (KCC 2026) · Jeju|rg03,Supervising the digital logic laboratory as a TA|g18,At the Embedded & Software Lab|rg05,B.S. commencement · Ajou University|rg04,Commencement day with lab and classmates" | split: "|" %}
   {% for p in photos %}
     {% assign parts = p | split: "," %}
     <figure>
