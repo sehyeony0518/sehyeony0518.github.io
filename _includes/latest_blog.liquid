@@ -29,7 +29,13 @@
 
 <div class="blog-preview">
   <div class="bp-grid">
-    {% assign ab_sorted = site.aiblog | sort: "date" | reverse %}
+    {% comment %} Curated mix: posts marked featured (balanced across topics); falls back to latest if none {% endcomment %}
+    {% assign ab_featured = site.aiblog | where: "featured", true | sort: "date" | reverse %}
+    {% if ab_featured.size > 0 %}
+      {% assign ab_sorted = ab_featured %}
+    {% else %}
+      {% assign ab_sorted = site.aiblog | sort: "date" | reverse %}
+    {% endif %}
     {% for item in ab_sorted limit: 6 %}
       <a class="bp-item" href="{{ item.url | relative_url }}">
         <span class="bp-date">{{ item.date | date: '%B %d, %Y' }}</span>
