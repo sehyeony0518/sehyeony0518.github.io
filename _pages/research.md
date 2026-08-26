@@ -17,9 +17,6 @@ My research asks a simple but consequential question:
 
 High predictive performance alone does not guarantee that a model relies on evidence clinicians would consider meaningful. I study how to audit model reasoning, identify shortcut reliance, and evaluate whether interpretable model readouts remain faithful to independent clinical factors.
 
-<img src="/assets/img/gallery/g18.jpg" alt="연구실에서" loading="lazy" style="width:100%; max-width:460px; border-radius:10px; margin:1rem 0; float:right; margin-left:1.2rem;">
-<span style="display:block; clear:right;"></span>
-
 ## Clinical Faithfulness
 
 My primary research focuses on **clinical faithfulness**: whether a model's interpretable evidence meaningfully aligns with clinical severity, diagnostic factors, or other independent clinical information.
@@ -31,9 +28,6 @@ I am particularly interested in post-hoc auditing methods that can evaluate mode
 I study ultrasound AI that reflects clinically and physically meaningful image characteristics — echogenicity, texture, lesion boundaries, anatomical context, and frequency structure.
 
 Rather than treating interpretability as an additional visualization step, I aim to connect computational evidence with the factors clinicians actually use in practice.
-
-<img src="/assets/img/gallery/g41.jpg" alt="Demonstrating the gallbladder ultrasound diagnostic system" loading="lazy" style="width:100%; max-width:560px; border-radius:10px; margin:1rem 0;">
-<span style="display:block; font-size:.78rem; opacity:.55; margin:-.6rem 0 0;">Demonstrating a gallbladder ultrasound AI system — diagnostic readout with a probability heatmap and edge-based evidence.</span>
 
 ## Research Interests
 
@@ -121,17 +115,6 @@ Rather than treating interpretability as an additional visualization step, I aim
   Led weekly digital-logic lab sessions and guided students through circuit implementation. Course evaluation **4.77 / 5.0 (95.4%)**.
 
 For a full list of roles, publications, and skills, see the [cv](/cv/) page.
-
-<div style="display:flex; flex-wrap:wrap; gap:.7rem; margin:1.2rem 0;">
-  <figure style="flex:1 1 240px; margin:0;">
-    <img src="/assets/img/gallery/g42.jpg" alt="Presenting research at the lab" loading="lazy" style="width:100%; border-radius:10px;">
-    <figcaption style="font-size:.76rem; opacity:.55; margin-top:.3rem;">Presenting ultrasound curriculum-learning work at the Embedded &amp; Software Lab.</figcaption>
-  </figure>
-  <figure style="flex:1 1 240px; margin:0;">
-    <img src="/assets/img/gallery/g40.jpg" alt="Award at the 2025 industry-academia expo" loading="lazy" style="width:100%; border-radius:10px;">
-    <figcaption style="font-size:.76rem; opacity:.55; margin-top:.3rem;">Recognized at the 2025 ECE Industry–Academia Expo, Ajou University.</figcaption>
-  </figure>
-</div>
 
 ## Open-Source Software
 
