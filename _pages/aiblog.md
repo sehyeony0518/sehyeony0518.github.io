@@ -2,7 +2,7 @@
 layout: page
 permalink: /blog/
 title: insights
-description: Notes on medical AI and digital healthcare — how models become clinical care.
+description: Insights related to my research — the trustworthiness of medical AI models.
 nav: true
 nav_order: 9
 ---
