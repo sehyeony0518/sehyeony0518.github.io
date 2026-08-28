@@ -4,7 +4,7 @@ permalink: /gallery/
 title: gallery
 description: Moments from research — lab, demos, and presentations.
 nav: true
-nav_order: 10
+nav_order: 11
 ---
 
 <style>

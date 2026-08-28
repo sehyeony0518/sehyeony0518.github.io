@@ -190,6 +190,9 @@ collections:
   aiblog:
     output: true
     permalink: /blog/:name/
+  papers:
+    output: true
+    permalink: /papers/:name/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
