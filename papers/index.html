@@ -5,6 +5,18 @@
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9C%9D%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/papers/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">paper reviews</h1> <p class="post-description">Papers I have studied closely — what they claim, how they show it, and what I take from them.</p> </header> <article> <style>
+  .venue-filter { display: flex; flex-wrap: wrap; gap: .45rem; margin: .3rem 0 1.3rem; }
+  .venue-filter .vf-chip {
+    display: inline-block; padding: .22rem .7rem; border-radius: 999px;
+    border: 1px solid rgba(128,128,128,.35); font-size: .8rem; font-weight: 600;
+    background: none; color: inherit; cursor: pointer; transition: all .15s ease;
+  }
+  .venue-filter .vf-chip:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+  .venue-filter .vf-chip.active {
+    background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff;
+  }
+  .venue-filter .vf-chip .vf-cnt { opacity: .75; font-size: .72rem; margin-left: .15rem; }
+
   .paper-list { margin-top: .5rem; display: grid; grid-template-columns: 1fr; gap: .8rem; }
   @media (min-width: 576px) { .paper-list { grid-template-columns: 1fr 1fr; } }
   .paper-list .pr-item {
@@ -18,6 +30,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0,0,0,.07);
   }
+  .paper-list .pr-item.pr-hidden { display: none; }
   .paper-list .pr-meta { display: flex; align-items: baseline; gap: .55rem; }
   .paper-list .pr-venue {
     font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
@@ -28,7 +41,25 @@
   .paper-list .pr-authors { font-size: .8rem; opacity: .55; margin-top: .15rem; font-style: italic; }
   .paper-list .pr-desc { font-size: .86rem; opacity: .7; margin-top: .25rem; line-height: 1.55; }
   .paper-empty { opacity: .6; line-height: 1.7; margin-top: 1rem; }
-</style> <div class="paper-list"> <a class="pr-item" href="/papers/2026-08-28-shortcut-learning-data-acquisition-bias/"> <div class="pr-meta"> <span class="pr-venue">npj Digital Medicine</span> <span class="pr-date">August 28, 2026</span> </div> <div class="pr-title">The Model Learned the Hospital, Not the Disease</div> <div class="pr-authors">Ong Ly, Nikita Saxena, Sangwook Kim, Chris McIntosh et al. (2024)</div> <div class="pr-desc">A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere.</div> </a> </div> </article> </div> </div> <style>
+</style> <div class="venue-filter" id="venue-filter"> <button type="button" class="vf-chip active" data-venue="all">All <span class="vf-cnt">11</span></button> <button type="button" class="vf-chip" data-venue="acm-chil">ACM CHIL <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="iccv">ICCV <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="icml">ICML <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="nature-machine-intelligence">Nature Machine Intelligence <span class="vf-cnt">2</span></button> <button type="button" class="vf-chip" data-venue="nature-medicine">Nature Medicine <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="neurips">NeurIPS <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="plos-medicine">PLOS Medicine <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="radiology">Radiology <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="radiology-artificial-intelligence">Radiology: Artificial Intelligence <span class="vf-cnt">1</span></button> <button type="button" class="vf-chip" data-venue="npj-digital-medicine">npj Digital Medicine <span class="vf-cnt">1</span></button> </div> <div class="paper-list" id="paper-list"> <a class="pr-item" data-venue="npj-digital-medicine" href="/papers/2026-08-28-shortcut-learning-data-acquisition-bias/"> <div class="pr-meta"> <span class="pr-venue">npj Digital Medicine</span> <span class="pr-date">August 28, 2026</span> </div> <div class="pr-title">The Model Learned the Hospital, Not the Disease</div> <div class="pr-authors">Ong Ly, Nikita Saxena, Sangwook Kim, Chris McIntosh et al. (2024)</div> <div class="pr-desc">A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere.</div> </a> <a class="pr-item" data-venue="radiology" href="/papers/2026-06-06-boland-shortcuts-radiology/"> <div class="pr-meta"> <span class="pr-venue">Radiology</span> <span class="pr-date">June 06, 2026</span> </div> <div class="pr-title">Shortcut Learning in Radiology AI</div> <div class="pr-authors">Boland et al. (2024)</div> <div class="pr-desc">A synthesis, aimed at radiologists rather than ML researchers, of how shortcut learning actually shows up in clinical imaging AI — and what to check for before trusting a model.</div> </a> <a class="pr-item" data-venue="radiology-artificial-intelligence" href="/papers/2026-05-09-arun-assessing-saliency/"> <div class="pr-meta"> <span class="pr-venue">Radiology: Artificial Intelligence</span> <span class="pr-date">May 09, 2026</span> </div> <div class="pr-title">Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging</div> <div class="pr-authors">Arun, Gaw, Singh, Chang, Aggarwal, Chen, Hoebel, Gupta, Patel, Gidwani, Adebayo, Li, Kalpathy-Cramer (2021)</div> <div class="pr-desc">Radiology-specific saliency evaluation: sanity checks and human-alignment tests applied directly to chest radiograph localization tasks.</div> </a> <a class="pr-item" data-venue="neurips" href="/papers/2026-04-11-adebayo-sanity-checks/"> <div class="pr-meta"> <span class="pr-venue">NeurIPS</span> <span class="pr-date">April 11, 2026</span> </div> <div class="pr-title">Sanity Checks for Saliency Maps</div> <div class="pr-authors">Adebayo, Gilmer, Muelly, Goodfellow, Hardt, Kim (2018)</div> <div class="pr-desc">Randomize the model's weights or the labels — some popular saliency methods produce almost the same heatmap anyway.</div> </a> <a class="pr-item" data-venue="icml" href="/papers/2026-03-14-guo-calibration/"> <div class="pr-meta"> <span class="pr-venue">ICML</span> <span class="pr-date">March 14, 2026</span> </div> <div class="pr-title">On Calibration of Modern Neural Networks</div> <div class="pr-authors">Guo, Pleiss, Sun, Weinberger (2017)</div> <div class="pr-desc">Modern networks are more accurate and less calibrated than their predecessors — and the fix (temperature scaling) is almost embarrassingly simple.</div> </a> <a class="pr-item" data-venue="iccv" href="/papers/2026-02-14-selvaraju-gradcam/"> <div class="pr-meta"> <span class="pr-venue">ICCV</span> <span class="pr-date">February 14, 2026</span> </div> <div class="pr-title">Grad-CAM</div> <div class="pr-authors">Selvaraju, Cogswell, Das, Vedantam, Parikh, Batra (2017)</div> <div class="pr-desc">The saliency method almost every medical-imaging paper cites — and a good place to be precise about what its heatmap actually certifies.</div> </a> <a class="pr-item" data-venue="nature-medicine" href="/papers/2026-01-10-seyyed-kalantari-underdiagnosis/"> <div class="pr-meta"> <span class="pr-venue">Nature Medicine</span> <span class="pr-date">January 10, 2026</span> </div> <div class="pr-title">Underdiagnosis Bias</div> <div class="pr-authors">Seyyed-Kalantari, Zhang, McDermott, Chen, Ghassemi (2021)</div> <div class="pr-desc">Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care.</div> </a> <a class="pr-item" data-venue="acm-chil" href="/papers/2025-12-06-oakden-rayner-hidden-stratification/"> <div class="pr-meta"> <span class="pr-venue">ACM CHIL</span> <span class="pr-date">December 06, 2025</span> </div> <div class="pr-title">Hidden Stratification</div> <div class="pr-authors">Oakden-Rayner, Dunnmon, Carneiro, Ré (2020)</div> <div class="pr-desc">Within a labeled class there are clinically distinct subsets, and a model can fail on the dangerous ones while the headline number stays high.</div> </a> <a class="pr-item" data-venue="nature-machine-intelligence" href="/papers/2025-11-08-degrave-covid-shortcut/"> <div class="pr-meta"> <span class="pr-venue">Nature Machine Intelligence</span> <span class="pr-date">November 08, 2025</span> </div> <div class="pr-title">Shortcuts Over Signal</div> <div class="pr-authors">DeGrave, Janizek, Lee (2021)</div> <div class="pr-desc">During a pandemic, dozens of high-accuracy COVID detectors were published. This paper showed many were reading laterality markers, patient positioning, and dataset provenance.</div> </a> <a class="pr-item" data-venue="plos-medicine" href="/papers/2025-10-11-zech-variable-generalization/"> <div class="pr-meta"> <span class="pr-venue">PLOS Medicine</span> <span class="pr-date">October 11, 2025</span> </div> <div class="pr-title">The Model Could Read the Hospital</div> <div class="pr-authors">Zech, Badgeley, Liu, Costa, Titano, Oermann (2018)</div> <div class="pr-desc">CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence — an early, concrete demonstration of confounding by site.</div> </a> <a class="pr-item" data-venue="nature-machine-intelligence" href="/papers/2025-09-06-geirhos-shortcut-learning/"> <div class="pr-meta"> <span class="pr-venue">Nature Machine Intelligence</span> <span class="pr-date">September 06, 2025</span> </div> <div class="pr-title">Shortcut Learning</div> <div class="pr-authors">Geirhos, Jacobsen, Michaelis, Zemel, Brendel, Bethge, Wichmann (2020)</div> <div class="pr-desc">The paper that gave the field a shared vocabulary for models that solve the benchmark without solving the task.</div> </a> </div> <script>
+  (function () {
+    var filter = document.getElementById('venue-filter');
+    if (!filter) return;
+    var chips = filter.querySelectorAll('.vf-chip');
+    var items = document.querySelectorAll('#paper-list .pr-item');
+    filter.addEventListener('click', function (e) {
+      var chip = e.target.closest('.vf-chip');
+      if (!chip) return;
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var v = chip.getAttribute('data-venue');
+      items.forEach(function (item) {
+        var show = (v === 'all') || (item.getAttribute('data-venue') === v);
+        item.classList.toggle('pr-hidden', !show);
+      });
+    });
+  })();
+</script> </article> </div> </div> <style>
   /* Bold section headings across content pages */
   article h1, article h2, article h3, article h4,
   .post h1, .post h2, .post h3, .post h4,
@@ -104,6 +135,20 @@
     border-radius: 0.25rem; cursor: pointer;
     box-shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
   }
+
+  /* Small social-icon row, shown once under the navbar (same links as the footer) */
+  #top-social-bar {
+    display: none; /* becomes flex via JS once populated */
+    justify-content: flex-end;
+    gap: 0.85rem;
+    padding: 0.35rem max(1rem, calc((100% - var(--max-content-width, 930px)) / 2 + 15px)) 0.35rem 1rem;
+    font-size: 0.92rem;
+    opacity: 0.75;
+  }
+  #top-social-bar a { color: inherit; }
+  #top-social-bar a:hover { color: var(--global-theme-color); }
+  #top-social-bar .contact-note { display: none; } /* keep only icons up top */
+  #top-social-source { display: none; }
 </style> <script>
   (function () {
     // Secret mission mode — determined by the CURRENT PAGE (full separation, no stored state).
@@ -121,6 +166,23 @@
     }
     if (document.readyState !== 'loading') hookProfile();
     else document.addEventListener('DOMContentLoaded', hookProfile);
+
+    // Duplicate the footer's social icons into a small bar right under the navbar,
+    // so they're visible without scrolling to the page bottom.
+    function addTopSocialBar() {
+      var source = document.getElementById('top-social-source');
+      var nav = document.getElementById('navbar');
+      if (!source || !nav || document.getElementById('top-social-bar')) return;
+      var icons = source.querySelector('.contact-icons');
+      if (!icons || !icons.children.length) return;
+      var bar = document.createElement('div');
+      bar.id = 'top-social-bar';
+      bar.innerHTML = icons.innerHTML;
+      bar.style.display = 'flex';
+      nav.parentNode.insertBefore(bar, nav.nextSibling);
+    }
+    if (document.readyState !== 'loading') addTopSocialBar();
+    else document.addEventListener('DOMContentLoaded', addTopSocialBar);
 
     // On academic pages, strip mission-side entries from the Cmd-K search index.
     if (!onMission) {
@@ -206,7 +268,7 @@
     if (document.readyState !== 'loading') addBack();
     else document.addEventListener('DOMContentLoaded', addBack);
   })();
-</script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+</script> <div id="top-social-source"> <div class="contact-icons"> <a href="mailto:bikmiso3@ajou.ac.kr" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/sehyeony0518" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="/assets/pdf/cv-hwang.pdf" title="Cv pdf"><i class="ai ai-cv"></i></a> <a href="https://www.linkedin.com/in/sehyeony" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://instagram.com/paulvs___" title="Instagram id" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-instagram"></i></a> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -2656,7 +2718,57 @@ ninja.data = [{
           section: "News",},{id: "news-journey-mission2035-홈페이지를-열었습니다-선교와-연구의-여정을-기록하고-나누기-위해-이-공간을-만들었습니다",
           title: 'Journey · Mission2035 홈페이지를 열었습니다 — 선교와 연구의 여정을 기록하고 나누기 위해 이...',
           description: "",
-          section: "News",},{id: "papers-the-model-learned-the-hospital-not-the-disease-shortcut-learning-from-data-acquisition",
+          section: "News",},{id: "papers-shortcut-learning-the-failure-mode-that-explains-most-others",
+          title: 'Shortcut Learning: The Failure Mode That Explains Most Others',
+          description: "The paper that gave the field a shared vocabulary for models that solve the benchmark without solving the task.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-09-06-geirhos-shortcut-learning/";
+            },},{id: "papers-the-model-could-read-the-hospital-variable-generalization-in-pneumonia-detection",
+          title: 'The Model Could Read the Hospital: Variable Generalization in Pneumonia Detection',
+          description: "CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence — an early, concrete demonstration of confounding by site.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-10-11-zech-variable-generalization/";
+            },},{id: "papers-shortcuts-over-signal-what-covid-radiograph-models-actually-learned",
+          title: 'Shortcuts Over Signal: What COVID Radiograph Models Actually Learned',
+          description: "During a pandemic, dozens of high-accuracy COVID detectors were published. This paper showed many were reading laterality markers, patient positioning, and dataset provenance.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-11-08-degrave-covid-shortcut/";
+            },},{id: "papers-hidden-stratification-the-failures-the-aggregate-metric-cannot-show",
+          title: 'Hidden Stratification: The Failures the Aggregate Metric Cannot Show',
+          description: "Within a labeled class there are clinically distinct subsets, and a model can fail on the dangerous ones while the headline number stays high.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-12-06-oakden-rayner-hidden-stratification/";
+            },},{id: "papers-underdiagnosis-bias-when-the-error-falls-on-those-already-underserved",
+          title: 'Underdiagnosis Bias: When the Error Falls on Those Already Underserved',
+          description: "Chest X-ray classifiers assigned &#39;no finding&#39; disproportionately to underserved patients — the error mode that silently denies care.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-01-10-seyyed-kalantari-underdiagnosis/";
+            },},{id: "papers-grad-cam-a-localization-map-is-not-an-explanation",
+          title: 'Grad-CAM: A Localization Map Is Not an Explanation',
+          description: "The saliency method almost every medical-imaging paper cites — and a good place to be precise about what its heatmap actually certifies.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-02-14-selvaraju-gradcam/";
+            },},{id: "papers-on-calibration-of-modern-neural-networks",
+          title: 'On Calibration of Modern Neural Networks',
+          description: "Modern networks are more accurate and less calibrated than their predecessors — and the fix (temperature scaling) is almost embarrassingly simple.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-03-14-guo-calibration/";
+            },},{id: "papers-sanity-checks-for-saliency-maps",
+          title: 'Sanity Checks for Saliency Maps',
+          description: "Randomize the model&#39;s weights or the labels — some popular saliency methods produce almost the same heatmap anyway.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-04-11-adebayo-sanity-checks/";
+            },},{id: "papers-assessing-the-trustworthiness-of-saliency-maps-for-localizing-abnormalities-in-medical-imaging",
+          title: 'Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging',
+          description: "Radiology-specific saliency evaluation: sanity checks and human-alignment tests applied directly to chest radiograph localization tasks.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-05-09-arun-assessing-saliency/";
+            },},{id: "papers-shortcut-learning-in-radiology-ai-a-practitioner-39-s-field-guide",
+          title: 'Shortcut Learning in Radiology AI: A Practitioner&amp;#39;s Field Guide',
+          description: "A synthesis, aimed at radiologists rather than ML researchers, of how shortcut learning actually shows up in clinical imaging AI — and what to check for before trusting a model.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-06-06-boland-shortcuts-radiology/";
+            },},{id: "papers-the-model-learned-the-hospital-not-the-disease-shortcut-learning-from-data-acquisition",
           title: 'The Model Learned the Hospital, Not the Disease: Shortcut Learning from Data Acquisition...',
           description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere.",
           section: "Papers",handler: () => {

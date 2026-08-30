@@ -102,6 +102,20 @@
     border-radius: 0.25rem; cursor: pointer;
     box-shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
   }
+
+  /* Small social-icon row, shown once under the navbar (same links as the footer) */
+  #top-social-bar {
+    display: none; /* becomes flex via JS once populated */
+    justify-content: flex-end;
+    gap: 0.85rem;
+    padding: 0.35rem max(1rem, calc((100% - var(--max-content-width, 930px)) / 2 + 15px)) 0.35rem 1rem;
+    font-size: 0.92rem;
+    opacity: 0.75;
+  }
+  #top-social-bar a { color: inherit; }
+  #top-social-bar a:hover { color: var(--global-theme-color); }
+  #top-social-bar .contact-note { display: none; } /* keep only icons up top */
+  #top-social-source { display: none; }
 </style> <script>
   (function () {
     // Secret mission mode — determined by the CURRENT PAGE (full separation, no stored state).
@@ -119,6 +133,23 @@
     }
     if (document.readyState !== 'loading') hookProfile();
     else document.addEventListener('DOMContentLoaded', hookProfile);
+
+    // Duplicate the footer's social icons into a small bar right under the navbar,
+    // so they're visible without scrolling to the page bottom.
+    function addTopSocialBar() {
+      var source = document.getElementById('top-social-source');
+      var nav = document.getElementById('navbar');
+      if (!source || !nav || document.getElementById('top-social-bar')) return;
+      var icons = source.querySelector('.contact-icons');
+      if (!icons || !icons.children.length) return;
+      var bar = document.createElement('div');
+      bar.id = 'top-social-bar';
+      bar.innerHTML = icons.innerHTML;
+      bar.style.display = 'flex';
+      nav.parentNode.insertBefore(bar, nav.nextSibling);
+    }
+    if (document.readyState !== 'loading') addTopSocialBar();
+    else document.addEventListener('DOMContentLoaded', addTopSocialBar);
 
     // On academic pages, strip mission-side entries from the Cmd-K search index.
     if (!onMission) {
@@ -204,7 +235,7 @@
     if (document.readyState !== 'loading') addBack();
     else document.addEventListener('DOMContentLoaded', addBack);
   })();
-</script> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+</script> <div id="top-social-source"> <div class="contact-icons"> <a href="mailto:bikmiso3@ajou.ac.kr" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/sehyeony0518" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="/assets/pdf/cv-hwang.pdf" title="Cv pdf"><i class="ai ai-cv"></i></a> <a href="https://www.linkedin.com/in/sehyeony" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://instagram.com/paulvs___" title="Instagram id" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-instagram"></i></a> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -2654,7 +2685,57 @@ ninja.data = [{
           section: "News",},{id: "news-journey-mission2035-홈페이지를-열었습니다-선교와-연구의-여정을-기록하고-나누기-위해-이-공간을-만들었습니다",
           title: 'Journey · Mission2035 홈페이지를 열었습니다 — 선교와 연구의 여정을 기록하고 나누기 위해 이...',
           description: "",
-          section: "News",},{id: "papers-the-model-learned-the-hospital-not-the-disease-shortcut-learning-from-data-acquisition",
+          section: "News",},{id: "papers-shortcut-learning-the-failure-mode-that-explains-most-others",
+          title: 'Shortcut Learning: The Failure Mode That Explains Most Others',
+          description: "The paper that gave the field a shared vocabulary for models that solve the benchmark without solving the task.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-09-06-geirhos-shortcut-learning/";
+            },},{id: "papers-the-model-could-read-the-hospital-variable-generalization-in-pneumonia-detection",
+          title: 'The Model Could Read the Hospital: Variable Generalization in Pneumonia Detection',
+          description: "CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence — an early, concrete demonstration of confounding by site.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-10-11-zech-variable-generalization/";
+            },},{id: "papers-shortcuts-over-signal-what-covid-radiograph-models-actually-learned",
+          title: 'Shortcuts Over Signal: What COVID Radiograph Models Actually Learned',
+          description: "During a pandemic, dozens of high-accuracy COVID detectors were published. This paper showed many were reading laterality markers, patient positioning, and dataset provenance.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-11-08-degrave-covid-shortcut/";
+            },},{id: "papers-hidden-stratification-the-failures-the-aggregate-metric-cannot-show",
+          title: 'Hidden Stratification: The Failures the Aggregate Metric Cannot Show',
+          description: "Within a labeled class there are clinically distinct subsets, and a model can fail on the dangerous ones while the headline number stays high.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2025-12-06-oakden-rayner-hidden-stratification/";
+            },},{id: "papers-underdiagnosis-bias-when-the-error-falls-on-those-already-underserved",
+          title: 'Underdiagnosis Bias: When the Error Falls on Those Already Underserved',
+          description: "Chest X-ray classifiers assigned &#39;no finding&#39; disproportionately to underserved patients — the error mode that silently denies care.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-01-10-seyyed-kalantari-underdiagnosis/";
+            },},{id: "papers-grad-cam-a-localization-map-is-not-an-explanation",
+          title: 'Grad-CAM: A Localization Map Is Not an Explanation',
+          description: "The saliency method almost every medical-imaging paper cites — and a good place to be precise about what its heatmap actually certifies.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-02-14-selvaraju-gradcam/";
+            },},{id: "papers-on-calibration-of-modern-neural-networks",
+          title: 'On Calibration of Modern Neural Networks',
+          description: "Modern networks are more accurate and less calibrated than their predecessors — and the fix (temperature scaling) is almost embarrassingly simple.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-03-14-guo-calibration/";
+            },},{id: "papers-sanity-checks-for-saliency-maps",
+          title: 'Sanity Checks for Saliency Maps',
+          description: "Randomize the model&#39;s weights or the labels — some popular saliency methods produce almost the same heatmap anyway.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-04-11-adebayo-sanity-checks/";
+            },},{id: "papers-assessing-the-trustworthiness-of-saliency-maps-for-localizing-abnormalities-in-medical-imaging",
+          title: 'Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging',
+          description: "Radiology-specific saliency evaluation: sanity checks and human-alignment tests applied directly to chest radiograph localization tasks.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-05-09-arun-assessing-saliency/";
+            },},{id: "papers-shortcut-learning-in-radiology-ai-a-practitioner-39-s-field-guide",
+          title: 'Shortcut Learning in Radiology AI: A Practitioner&amp;#39;s Field Guide',
+          description: "A synthesis, aimed at radiologists rather than ML researchers, of how shortcut learning actually shows up in clinical imaging AI — and what to check for before trusting a model.",
+          section: "Papers",handler: () => {
+              window.location.href = "/papers/2026-06-06-boland-shortcuts-radiology/";
+            },},{id: "papers-the-model-learned-the-hospital-not-the-disease-shortcut-learning-from-data-acquisition",
           title: 'The Model Learned the Hospital, Not the Disease: Shortcut Learning from Data Acquisition...',
           description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere.",
           section: "Papers",handler: () => {
