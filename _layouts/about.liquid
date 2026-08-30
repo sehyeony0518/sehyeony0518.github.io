@@ -100,11 +100,9 @@ layout: default
       <a class="rp-viewall" href="{{ '/prayer/' | relative_url }}">View All Prayer Letters &rarr;</a>
     {% endif %}
 
-    <!-- Latest blog posts (medical AI / digital healthcare) -->
+    <!-- Latest insights + paper reviews (medical AI / digital healthcare) -->
     {% if page.blog_preview %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">selected insights</a>
-      </h2>
+      <h2>selected reading</h2>
       {% include latest_blog.liquid %}
     {% endif %}
 
