@@ -5,6 +5,7 @@ date: 2025-11-01 12:00:00 +0900
 venue: "MICCAI 2024"
 authors: "Arianna Bunnell, Yannik Glaser, Dustin Valdez, Thomas Wolfgruber, Aleen Altamirano, Carol Zamora González, Brenda Y. Hernandez, Peter Sadowski, John A. Shepherd (2024)"
 description: "A concept bottleneck that predicts BI-RADS features before the final cancer classification — and shows that letting a radiologist correct the intermediate concepts actually improves the final diagnosis."
+featured: true
 related_posts: false
 ---
 

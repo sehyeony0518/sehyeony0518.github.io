@@ -5,6 +5,8 @@ date: 2026-08-28 12:00:00 +0900
 venue: "npj Digital Medicine"
 authors: "Ong Ly, Nikita Saxena, Sangwook Kim, Chris McIntosh et al. (2024)"
 description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere."
+featured: true
+pinned: true
 related_posts: false
 ---
 
