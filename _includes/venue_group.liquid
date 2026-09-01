@@ -1,0 +1,8 @@
+{%- assign parts = include.venue | split: " " -%}
+{%- capture out -%}
+  {%- for p in parts -%}
+    {%- assign pnum = p | plus: 0 -%}
+    {%- unless p.size == 4 and pnum >= 1900 and pnum <= 2100 -%}{{ p }} {%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{{- out | strip -}}
