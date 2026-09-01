@@ -59,10 +59,28 @@ nav_order: 10
 {% endfor %}
 {% assign venue_groups = venue_groups | sort %}
 
+{% comment %} Venues with only one review get folded into a single "Other" chip, so the filter row stays short as the library grows. {% endcomment %}
+{% assign main_groups = "" | split: "," %}
+{% assign other_count = 0 %}
+{% for v in venue_groups %}
+  {% assign vcount = 0 %}
+  {% for r in reviews %}
+    {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
+    {% assign vg = vg | strip %}
+    {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
+  {% endfor %}
+  {% if vcount >= 2 %}
+    {% assign one_item = v | split: "," %}
+    {% assign main_groups = main_groups | concat: one_item %}
+  {% else %}
+    {% assign other_count = other_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
 {% if reviews.size > 0 %}
 <div class="venue-filter" id="venue-filter">
   <button type="button" class="vf-chip active" data-venue="all">All <span class="vf-cnt">{{ reviews.size }}</span></button>
-  {% for v in venue_groups %}
+  {% for v in main_groups %}
     {% assign v = v | strip %}
     {% if v != "" %}
       {% assign vcount = 0 %}
@@ -74,13 +92,22 @@ nav_order: 10
       <button type="button" class="vf-chip" data-venue="{{ v | slugify }}">{{ v }} <span class="vf-cnt">{{ vcount }}</span></button>
     {% endif %}
   {% endfor %}
+  {% if other_count > 0 %}
+    <button type="button" class="vf-chip" data-venue="other">Other <span class="vf-cnt">{{ other_count }}</span></button>
+  {% endif %}
 </div>
 {% endif %}
 
 <div class="paper-list" id="paper-list">
   {% for r in reviews %}
     {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
-    <a class="pr-item" data-venue="{{ vg | strip | slugify }}" href="{{ r.url | relative_url }}">
+    {% assign vg = vg | strip %}
+    {% if main_groups contains vg %}
+      {% assign item_venue = vg | slugify %}
+    {% else %}
+      {% assign item_venue = "other" %}
+    {% endif %}
+    <a class="pr-item" data-venue="{{ item_venue }}" href="{{ r.url | relative_url }}">
       <div class="pr-meta">
         {% if r.venue %}<span class="pr-venue">{{ r.venue }}</span>{% endif %}
         <span class="pr-date">{{ r.date | date: '%B %d, %Y' }}</span>
