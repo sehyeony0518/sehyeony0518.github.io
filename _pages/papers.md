@@ -59,7 +59,8 @@ nav_order: 10
 {% endfor %}
 {% assign venue_groups = venue_groups | sort %}
 
-{% comment %} Venues with only one review get folded into a single "Other" chip, so the filter row stays short as the library grows. {% endcomment %}
+{% comment %} Venues with only one review get folded into a single "Other" chip, so the filter row stays short as the library grows — except a short pinned list of venues significant enough to always keep visible on their own. {% endcomment %}
+{% assign pinned_venues = "IEEE ISBI,IEEE TMI" | split: "," %}
 {% assign main_groups = "" | split: "," %}
 {% assign other_count = 0 %}
 {% for v in venue_groups %}
@@ -69,7 +70,7 @@ nav_order: 10
     {% assign vg = vg | strip %}
     {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
   {% endfor %}
-  {% if vcount >= 2 %}
+  {% if vcount >= 2 or pinned_venues contains v %}
     {% assign one_item = v | split: "," %}
     {% assign main_groups = main_groups | concat: one_item %}
   {% else %}
