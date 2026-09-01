@@ -5,6 +5,7 @@ date: 2026-03-07 12:00:00 +0900
 venue: "MICCAI 2018 Workshop"
 authors: "Mara Graziani, Vincent Andrearczyk, Henning Müller (2018)"
 description: "An extension of TCAV to continuous, graded concepts — used to show that nuclei texture, not just its presence, is a directional driver of tumor-grade predictions in lymph-node histopathology."
+featured: true
 related_posts: false
 ---
 

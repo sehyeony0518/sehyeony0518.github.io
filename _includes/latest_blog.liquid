@@ -74,7 +74,13 @@
         <a class="ip-col-title" href="{{ '/papers/' | relative_url }}">paper reviews</a>
       </div>
       <div class="ip-list">
-        {% assign pr_sorted = site.papers | sort: "date" | reverse %}
+        {% comment %} Prioritize featured (McIntosh lab + MICCAI) reviews, pinned first, then fill remaining rows with the latest non-featured reviews {% endcomment %}
+        {% assign pr_featured = site.papers | where: "featured", true %}
+        {% assign pr_pinned = pr_featured | where: "pinned", true | sort: "date" | reverse %}
+        {% assign pr_rest_featured = pr_featured | where_exp: "p", "p.pinned != true" | sort: "date" | reverse %}
+        {% assign pr_priority = pr_pinned | concat: pr_rest_featured %}
+        {% assign pr_fill = site.papers | sort: "date" | reverse | where_exp: "p", "p.featured != true" %}
+        {% assign pr_sorted = pr_priority | concat: pr_fill %}
         {% for item in pr_sorted limit: 6 %}
           <a class="ip-item" href="{{ item.url | relative_url }}">
             <div class="ip-meta">
