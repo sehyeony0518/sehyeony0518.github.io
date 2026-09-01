@@ -47,15 +47,30 @@ nav_order: 10
 </style>
 
 {% assign reviews = site.papers | sort: "date" | reverse %}
-{% assign venues = reviews | map: "venue" | uniq | sort %}
+
+{% assign venue_groups = "" | split: "," %}
+{% for r in reviews %}
+  {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
+  {% assign vg = vg | strip %}
+  {% unless venue_groups contains vg %}
+    {% assign one_item = vg | split: "," %}
+    {% assign venue_groups = venue_groups | concat: one_item %}
+  {% endunless %}
+{% endfor %}
+{% assign venue_groups = venue_groups | sort %}
 
 {% if reviews.size > 0 %}
 <div class="venue-filter" id="venue-filter">
   <button type="button" class="vf-chip active" data-venue="all">All <span class="vf-cnt">{{ reviews.size }}</span></button>
-  {% for v in venues %}
-    {% if v %}
+  {% for v in venue_groups %}
+    {% assign v = v | strip %}
+    {% if v != "" %}
       {% assign vcount = 0 %}
-      {% for r in reviews %}{% if r.venue == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}{% endfor %}
+      {% for r in reviews %}
+        {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
+        {% assign vg = vg | strip %}
+        {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
+      {% endfor %}
       <button type="button" class="vf-chip" data-venue="{{ v | slugify }}">{{ v }} <span class="vf-cnt">{{ vcount }}</span></button>
     {% endif %}
   {% endfor %}
@@ -64,7 +79,8 @@ nav_order: 10
 
 <div class="paper-list" id="paper-list">
   {% for r in reviews %}
-    <a class="pr-item" data-venue="{{ r.venue | slugify }}" href="{{ r.url | relative_url }}">
+    {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
+    <a class="pr-item" data-venue="{{ vg | strip | slugify }}" href="{{ r.url | relative_url }}">
       <div class="pr-meta">
         {% if r.venue %}<span class="pr-venue">{{ r.venue }}</span>{% endif %}
         <span class="pr-date">{{ r.date | date: '%B %d, %Y' }}</span>
