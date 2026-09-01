@@ -5,4 +5,18 @@
 {%- unless p.size == 4 and pnum >= 1900 and pnum <= 2100 -%}{{ p }} {% endunless -%}
 {%- endfor -%}
 {%- endcapture -%}
-{{- out | strip -}}
+{%- assign full_group = out | strip -%}
+{%- case full_group -%}
+  {%- when "Nature Machine Intelligence" or "Nature Medicine" or "Nature Biomedical Engineering" or "npj Digital Medicine" or "Scientific Reports" -%}
+    {{- "Nature Portfolio" -}}
+  {%- when "IEEE EMBS" or "IEEE ISBI" or "IEEE JSTSP" or "IEEE TMI" or "IEEE Trans. Communications" -%}
+    {{- "IEEE" -}}
+  {%- when "MICCAI" or "MICCAI Workshop" -%}
+    {{- "MICCAI" -}}
+  {%- when "PLOS Medicine" or "PLOS ONE" -%}
+    {{- "PLOS" -}}
+  {%- when "ACM CHIL" or "ACM FAccT" -%}
+    {{- "ACM" -}}
+  {%- else -%}
+    {{- full_group -}}
+{%- endcase -%}
