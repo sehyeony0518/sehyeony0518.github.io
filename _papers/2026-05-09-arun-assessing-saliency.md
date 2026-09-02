@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Adebayo et al.'s sanity checks were run on natural-image benchmarks. I wanted to know whether the same failure modes appear when the task is medical — localizing abnormalities on chest radiographs — where the clinical stakes of a misleading heatmap are much more concrete.
+Medical papers frequently interpret a saliency map as if it were a lesion detector. I read this study because it evaluates that assumption against explicit localization ground truth and against several basic reliability tests, rather than judging heatmaps by visual appeal.
 
-## What they did
+## What the paper claims
 
-The authors evaluated several common saliency methods against two criteria: **repeatability/reproducibility** (does the map stay stable under retraining and minor perturbation?) and **the same randomization sanity checks** from Adebayo et al., now applied to chest-radiograph abnormality localization instead of natural-image classification, alongside comparison to radiologist-annotated ground-truth regions.
+Eight commonly used saliency methods are assessed on pneumothorax segmentation and pneumonia detection. The tests cover localization utility, sensitivity to weight randomization, repeatability across repeated runs, and reproducibility across models. Dedicated U-Net and RetinaNet localization models provide task-appropriate reference points.
 
-The results echo the general-domain finding but ground it clinically: performance on standard localization metrics did not reliably predict whether a method passed the sanity checks, and methods varied substantially in how much they degraded under model randomization. Some methods that produced visually convincing, anatomically plausible heatmaps still showed limited sensitivity to whether the model had actually learned anything.
+## What convinced me
 
-## Why the medical framing matters
+Every saliency method failed at least one criterion. For pneumothorax, saliency-map AUPRC ranged from 0.024 to 0.224, while the U-Net reached 0.404. For pneumonia, saliency AUPRC ranged from 0.160 to 0.519, below the RetinaNet value of 0.596. Several methods also changed little after model weights were randomized, showing that a plausible image overlay can be weakly tied to the learned predictor.
 
-This is the paper that convinced me the general machine-learning literature on explanation reliability doesn't automatically transfer its conclusions to medical imaging — but its *methodology* does. The specific ranking of which saliency method is most trustworthy can differ by task and modality, so the sanity-check protocol itself, not any single method's reputation, is the reusable contribution.
+## What it leaves open
 
-It also reframes localization evaluation: agreement with radiologist annotations is necessary but not sufficient, for the same reason internal test accuracy is not sufficient — a shortcut correlated with lesion location would also pass a localization-overlap check.
+The paper tests particular methods, backbones, and localization tasks; it does not imply that every attribution method is useless for every scientific question. A saliency map may still help generate a hypothesis or identify a gross artifact. What it cannot provide without further validation is a reliable lesion boundary or a stand-alone certificate of causal evidence use.
 
 ## What I take from it
 
-Any saliency-based auditing tool I build for ultrasound needs its own version of this evaluation — modality-specific sanity checks, not an assumption that a method validated on chest X-rays or natural images carries its trustworthiness with it into a new domain.
+The explanation target must match the validation target. If the claim is localization, compare with localization annotations and a trained localization model. If the claim is faithfulness, use model-sensitive perturbations or interventions. Visual plausibility should be treated as the beginning of an audit, not its result.

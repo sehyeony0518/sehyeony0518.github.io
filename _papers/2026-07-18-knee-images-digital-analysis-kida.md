@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Deep-learning knee-OA papers often frame "automated, objective quantification of joint features" as a novel contribution of the deep-learning era. KIDA predates that framing by well over a decade, so I wanted to see what "digital, objective" measurement of the same features looked like before neural networks, and how much of the problem it had already solved.
+KIDA predates current explainable-AI terminology, yet it embodies an auditable design: quantify individual radiographic structures rather than compressing the image immediately into a single severity class. I read it to understand the measurement tradition behind newer component-based knee models.
 
 ## What the paper claims
 
-Radiography remains the gold-standard imaging modality for OA features like joint space narrowing, osteophytes, and subchondral sclerosis, but the paper notes that manual assessment of these features is difficult to make fully objective across readers. KIDA is a semi-automated digital image-analysis method designed to quantify these individual radiographic features of the knee in more detail and reproducibility than holistic visual grading (like KL grade) allows.
+KIDA measures continuous joint-space width at multiple locations, osteophyte area, subchondral bone density, joint angle, and tibial eminence height from standardized knee radiographs. The authors evaluate whether these measurements are reproducible and whether they distinguish healthy knees from osteoarthritis and correlate with Kellgren-Lawrence grade.
 
 ## What convinced me
 
-The paper's motivation — that manual, holistic grading struggles with objectivity and granularity — is the exact same motivation cited by every deep-learning knee-OA paper I've read since. Seeing that motivation already fully articulated and partially addressed with classical digital image-processing methods more than fifteen years earlier reframes how novel the "objective, automated" framing in newer deep-learning papers actually is.
+The study included 20 healthy and 55 osteoarthritic knees and reported small intra- and inter-observer variation for most measurements. The features separated healthy from osteoarthritic knees and tracked ordinal KL severity. The important contribution is not a single headline score; it is the replacement of one coarse grade with a continuous, anatomically localized profile that can be inspected feature by feature.
 
 ## What it leaves open
 
-As a semi-automated method, KIDA still requires meaningful operator involvement (landmark placement, calibration) rather than being fully automatic, and the paper's validation is on a specific cohort and imaging protocol — its reproducibility gains don't automatically establish how well it, or its successors, generalize across different radiographic acquisition setups.
+The study primarily assesses software and reader repeatability on available radiographs. It does not fully evaluate repeat acquisition, positioning error, scanner variability, or longitudinal sensitivity to structural change. Correlation with KL also partly validates one measurement system against another imperfect composite label.
 
 ## What I take from it
 
-When a deep-learning paper claims novelty specifically for "automated, objective quantification" of a classical radiographic feature, I now check what the actual claimed advance is over methods like KIDA — full automation (removing the remaining manual steps), a genuinely different feature set, or just packaging an old idea in a new architecture. The underlying goal of moving past subjective holistic grading toward reproducible, granular measurement is not new; what a deep model adds on top of that goal is the part that actually needs justifying.
+Clinical auditability often begins with better measurement, not a more sophisticated explanation method. KIDA suggests that modern models should expose continuous regional quantities and their uncertainty, then demonstrate acquisition repeatability and outcome relevance separately from segmentation accuracy.

@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-BI-RADS category 3 ("probably benign") is the exact category where a CAD system's false negatives are most dangerous — it's a category that already carries an implicit low-risk clinical judgment, so a model failing there means missing a cancer the radiologist had already, in good faith, deprioritized. This paper targets that category specifically, which made it worth reading closely.
+BI-RADS category 3 is a useful test case for clinically grounded AI because the question is not generic benign–malignant discrimination. It is whether quantitative morphology and texture can add information in a group that radiologists already consider probably benign and manage through follow-up.
 
 ## What the paper claims
 
-Of 69 breast masses that at least one of five radiologists had blindly assigned to BI-RADS category 3, 21 were malignant and 48 benign — meaning a meaningful fraction of "probably benign" masses in this cohort were, in fact, cancer. The authors build a CAD system using morphology (shape, orientation, margin, boundary) and texture (echo pattern) features aligned with the BI-RADS lexicon, and report that at a sensitivity operating point of 86–100%, the system achieves specificity of 33–90% for correctly reclassifying malignant masses out of the "probably benign" pool.
+The study extracts computer-derived morphological and texture features from breast-ultrasound masses that had been assigned category 3 by at least one radiologist. A classifier combines those features to distinguish malignant from benign lesions and to test whether quantitative analysis could reduce uncertainty within this narrow clinical category.
 
 ## What convinced me
 
-Framing the evaluation entirely around a single, clinically dangerous category — rather than an aggregate accuracy across all BI-RADS categories — is the right way to test whether a CAD system adds value where it matters most. An overall high accuracy number can hide poor performance specifically within the ambiguous middle category that clinical practice already struggles with, and this paper refuses to let that happen by construction.
+The combined model reached an AUC of 0.95, compared with 0.90 for morphology alone and 0.75 for texture alone. At an operating point of 95% sensitivity, the reported specificity was approximately 73%. The gain from combining morphology and texture is plausible because BI-RADS reasoning itself integrates boundary, shape, orientation, and internal appearance rather than depending on a single cue.
 
 ## What it leaves open
 
-The tradeoff the paper reports is real and steep: pushing sensitivity toward 100% (catching essentially all malignant cases misclassified as category 3) drops specificity to 33%, meaning most benign masses would be flagged for unnecessary follow-up at that operating point. The paper doesn't resolve which point on that curve is actually the right clinical tradeoff — that's a decision-theoretic question outside its scope, and the small cohort (69 masses) limits how precisely the curve itself is estimated.
+The cohort was small and deliberately enriched with malignant category-3 cases, so its prevalence and predictive values do not represent routine screening. The study is retrospective, and the features depend on lesion delineation. A high AUC in this selected set is not enough to justify changing follow-up policy, where false reassurance and negative predictive value are central.
 
 ## What I take from it
 
-Evaluating a diagnostic-support model only on its overall accuracy or AUC hides exactly the failure mode this paper is built to catch — an ambiguous middle category where wrong calls are most costly. When I read a BI-RADS-related AI paper's aggregate performance numbers, I now look specifically for a category-3-style breakdown, or the absence of one, before trusting that the reported number reflects performance where the clinical stakes are actually highest.
+Narrow, clinically defined cohorts can reveal whether a model adds information at an actual decision boundary. They also require prevalence-aware and prospective validation. For category-3 support, I would prioritize calibrated risk, sensitivity at a prespecified threshold, and follow-up outcomes over overall accuracy.

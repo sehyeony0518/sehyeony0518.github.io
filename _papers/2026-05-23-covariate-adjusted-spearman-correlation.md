@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Several liver-ultrasound and imaging papers I've reviewed report Spearman correlation between a model's output and a reference standard as their headline evidence of validity, without adjusting for shared covariates like age, BMI, or disease severity that could inflate the raw correlation. I wanted to understand the statistical machinery for doing that adjustment properly, since I keep flagging its absence.
+Clinical alignment is often measured by correlating a model score with an ordinal biomarker or severity grade. That correlation can be inflated, attenuated, or reversed by age, label, site, or other covariates. I read this paper for a principled rank-based adjustment rather than an ad hoc residualization step.
 
 ## What the paper claims
 
-The authors point out that the traditionally defined partial Spearman correlation has real limitations when adjusting for covariates, and propose an alternative based on probability-scale residuals — a way to compute a covariate-adjusted rank correlation that behaves more consistently than the existing partial-correlation approach, applicable to continuous, discrete, or mixed variable types.
+The authors define population parameters for partial and conditional Spearman correlation through concordance–discordance probabilities. The practical estimator is the correlation between probability-scale residuals from models of each variable conditional on the covariates. This preserves a rank interpretation and accommodates continuous, ordinal, and other orderable outcomes.
 
 ## What convinced me
 
-The paper is careful about exactly where the standard partial-Spearman approach breaks down, rather than just asserting a new method is better — that specificity makes it possible to check, for any given reported correlation in a downstream imaging paper, whether the confound structure in question is one this critique actually applies to.
+The applications show that adjustment can change the scientific conclusion. The unadjusted correlation between IL-6 and sCD14 was 0.03, but the adjusted estimate was 0.19 with a 95% confidence interval of 0.04–0.33. The leptin–sCD14 association changed sign, from –0.20 unadjusted to +0.13 after adjustment. Simulations also showed better type-I-error behavior than several traditional partial-rank alternatives in the examined settings.
 
 ## What it leaves open
 
-Being a statistical methods paper, it doesn't itself audit any medical-imaging validation study — it provides the tool, not the application. Whether a given imaging paper's confounds (age, sex, BMI, disease severity) are large enough in practice to meaningfully inflate an unadjusted correlation is a separate, empirical question this paper doesn't answer.
+The method is not automatically causal. Its validity depends on choosing the relevant covariates and adequately modeling each conditional distribution. Conditioning on a collider or adjusting away part of the clinical construct can create a different bias. The resulting coefficient also needs uncertainty estimates and sensitivity analysis.
 
 ## What I take from it
 
-This paper gave me a concrete standard to check reported correlations against: if a paper claims a model's continuous output correlates strongly with a reference standard, and that correlation is computed without adjusting for an obvious shared confound (disease severity being the most common offender), I now treat the reported number as an upper bound on the model's real predictive contribution, not a clean estimate of it. It's a small, easy-to-overlook methodological gap that can make a model look more clinically informative than it actually is.
+For evidence-alignment metrics, I would report the raw rank correlation, the covariate-adjusted estimate, its confidence interval, and the exact adjustment set. A label-controlled correlation can isolate within-class ordering, but only if the conditioning choice is clinically and causally defensible.

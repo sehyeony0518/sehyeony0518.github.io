@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Most shortcut-mitigation methods I've read work by identifying a specific known confound and suppressing the model's reliance on it. A causal-alignment framing promises something more general — training the model to respect the causal structure connecting disease to imaging evidence, rather than reacting to shortcuts one at a time. I wanted to see how that generality is actually achieved.
+The title is close to the question I am pursuing — whether a diagnostic model follows a clinically valid evidence chain rather than merely correlating with the label. I read it to see how the paper operationalizes "causal alignment" and how strong the resulting evidence really is.
 
 ## What the paper claims
 
-The authors frame reliable disease diagnosis as a problem of aligning a model's learned representation with the underlying causal graph relating disease state to observed imaging evidence, rather than only the statistical correlation a standard classifier fits. The approach is meant to produce diagnoses that remain reliable even when spurious, non-causal correlations in the training distribution shift or disappear at deployment.
+The method generates counterfactual samples, identifies changes associated with diagnostic attributes, and trains the classifier with a causal-alignment loss and a hierarchical alignment procedure. The objective is to make the model's visual evidence agree with expert-defined disease attributes while maintaining classification performance.
 
 ## What convinced me
 
-Framing the problem causally rather than correlationally is the right level of abstraction for shortcut learning generally — a shortcut is, definitionally, a correlation that isn't causal, so a method that directly targets causal structure is attacking the actual source of the problem rather than a specific symptom of it (one particular confound) at a time.
+The study evaluates lung nodules and breast masses, with additional modalities in the appendix, and includes controlled artificial shortcuts. On LIDC and DDSM, CAM precision reached 0.751 and 0.805, while classification accuracy was 0.722 and 0.656. The ablations attribute much of the localization gain to the alignment loss rather than to the backbone alone. The counterfactual component is valuable because it creates a stronger training signal than simply rewarding visually plausible heatmaps.
 
 ## What it leaves open
 
-Causal alignment methods generally require some assumption about the causal graph's structure, or interventional/multi-environment data, to be identifiable — and how well those assumptions hold for real clinical imaging, where the true causal graph relating pathology to image formation is only partially known, is the hard, unresolved part of applying this framework in practice rather than in a controlled benchmark.
+The causal claim depends on the realism of the generator, the chosen attribute hierarchy, and the assumption that those attributes sufficiently describe the diagnostic pathway. Artificial symbols are useful controls but are simpler than diffuse clinical confounding. CAM precision is still a localization proxy; it does not establish that correcting an attribute would change the prediction or improve a clinical decision.
 
 ## What I take from it
 
-This paper represents the more ambitious end of the shortcut-mitigation spectrum I've been reading across — where RRR-style methods correct one known shortcut at a time, causal alignment aims to make the whole training objective respect causal structure by design. Neither fully solves the problem: one needs the shortcut to already be named, the other needs (partial) knowledge of the causal graph. Knowing where a given mitigation method sits on that spectrum, and what assumption it's quietly relying on, is now a standard part of how I read this literature.
+This paper is best read as clinically supervised representation alignment, with causal motivation rather than complete causal identification. I would strengthen the claim with concept interventions, counter-shortcut external tests, and explicit analysis of cases where the expert attribute set is incomplete.

@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Most of the interpretability papers I read stop at detection: here's a concept vector, here's a saliency map, here's evidence the model relies on something spurious. This one is explicitly framed around the next step — using that same interpretability machinery to actually fix the problem, in both the model and the underlying dataset — which is the part I most want to see more of.
+Shortcut papers often isolate one stage — detection, explanation, or mitigation. I read this work because it frames safety as an iterative workflow: reveal suspicious behavior, characterize the concept, revise the model or data, and then test whether the revision actually worked.
 
 ## What the paper claims
 
-The authors argue that because deep models are non-transparent, detecting spurious behavior isn't enough on its own — the paper proposes an interpretability-driven pipeline that both identifies spurious model behavior (relying on concept-activation and explanation-based detection methods) and traces it back to the specific data responsible, enabling targeted mitigation of the model *and* correction or removal of the offending data, rather than a purely model-side fix.
+The Reveal2Revise framework searches for anomalous samples and concepts, represents suspected biases with concept activation vectors, localizes their influence, and applies targeted correction methods before re-evaluation. The emphasis is procedural: no single explanation score is treated as sufficient evidence of safety. Instead, multiple tools are organized around a repeated audit-and-revision loop.
 
 ## What convinced me
 
-Closing the loop back to the data is the part that distinguishes this from a typical detection-only interpretability paper. A spurious correlation usually originates in the training data, not the architecture, so a mitigation that only patches the model's behavior while leaving the underlying data issue untouched is treating a symptom — tracing the behavior back to specific responsible data points is a more durable fix.
+The controlled experiments span four medical datasets, two modalities, and multiple architectures. In biased test settings, the strongest revision variants raised accuracy from roughly 0.28 to 0.76 on ISIC, 0.62 to 0.96 on HyperKvasir, and 0.44 to 0.79 on CheXpert while largely preserving clean-set performance. The paper also compares several correction strategies rather than reporting one favorable intervention, which makes the workflow contribution more credible.
 
 ## What it leaves open
 
-Tracing a spurious behavior back to specific data points depends on the detection method correctly attributing the behavior in the first place, which inherits all the usual caveats of concept-based and explanation-based interpretability methods — a mis-attributed "spurious" signal could lead to removing or correcting data that wasn't actually the problem.
+The framework still depends on human or domain-expert recognition of the suspicious concept and on CAVs being a reasonable linear representation of it. Layer choice, concept entanglement, and incomplete concept examples can change the conclusion. A successful correction may also damage an unmeasured clinical subgroup or shift reliance to a new shortcut.
 
 ## What I take from it
 
-This paper models the workflow I think clinical-faithfulness auditing should actually look like end-to-end: detect a shortcut, trace it to its source in the data, and fix that source rather than only suppressing the model's reliance on it downstream. It's a useful template for structuring my own audits — not stopping at "here's evidence of a shortcut" but following through to "here's where in the data this shortcut comes from and what changes if we address it there."
+The main lesson is methodological: safety is not a one-pass explanation exercise. Every revision should be followed by a fresh behavioral audit on clean, biased, reversed-correlation, and subgroup-specific test conditions. The correction itself must become the next object of scrutiny.
