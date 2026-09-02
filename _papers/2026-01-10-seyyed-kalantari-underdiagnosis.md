@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Underdiagnosis Bias: When the Error Falls on Those Already Underserved"
+title: "Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Chest Radiographs in Under-Served Patient Populations"
 date: 2026-01-10 12:00:00 +0900
 venue: "Nature Medicine"
 authors: "Seyyed-Kalantari, Zhang, McDermott, Chen, Ghassemi (2021)"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Knee Images Digital Analysis (KIDA): A Novel Method to Quantify Radiographic Features of Knee OA"
+title: "Knee Images Digital Analysis (KIDA): A Novel Method to Quantify Individual Radiographic Features of Knee Osteoarthritis in Detail"
 date: 2026-07-18 12:00:00 +0900
 venue: "Osteoarthritis and Cartilage"
 authors: "A. C. A. Marijnissen, K. L. Vincken, P. A. J. M. Vos, D. B. F. Saris, M. A. Viergever, J. W. J. Bijlsma, L. W. Bartels, F. P. J. G. Lafeber (2008)"

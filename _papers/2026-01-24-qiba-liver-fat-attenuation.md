@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "US Attenuation for Liver Fat Quantification: The QIBA Pulse-Echo Ultrasound Initiative"
+title: "US Attenuation for Liver Fat Quantification: An AIUM-RSNA QIBA Pulse-Echo Quantitative Ultrasound Initiative"
 date: 2026-01-24 12:00:00 +0900
 venue: "Radiology"
 authors: "Giovanna Ferraioli, Viksit Kumar, Arinc Ozturk, Kibo Nam, Chris L. de Korte, Richard G. Barr (2022)"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Noninvasive Quantitative Estimation of Hepatic Steatosis: Hepatorenal Index vs. Attenuation Index"
+title: "Noninvasive Quantitative Estimation of Hepatic Steatosis by Ultrasound: A Comparison of the Hepato-Renal Index and Ultrasound Attenuation Index"
 date: 2026-02-28 12:00:00 +0900
 venue: "Medical Ultrasonography"
 authors: "Heon-Ju Kwon, Kyoung Won Kim, Jin-Hee Jung, Sang Hyun Choi, Woo Kyoung Jeong, Bohyun Kim, Gi-Won Song, Sung-Gyu Lee (2016)"
