@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-This is one of the earlier papers applying ImageNet-pretrained CNN features to liver ultrasound, and it directly benchmarks against two classical approaches — the hepatorenal index and gray-level co-occurrence matrix (GLCM) texture — that I'd already encountered as comparators elsewhere. I wanted to see the head-to-head numbers and understand what the deep features were actually adding.
+This is an early transfer-learning study in liver ultrasound with biopsy reference and a direct comparison against the hepatorenal index. I read it to see where a deep representation truly adds value over a transparent quantitative baseline.
 
 ## What the paper claims
 
-Using Inception-ResNet-v2 pretrained on ImageNet as a fixed feature extractor on B-mode liver ultrasound, followed by an SVM classifier, the authors grade steatosis against wedge-biopsy ground truth. The proposed approach reaches AUC 0.977, compared with 0.959 for the hepatorenal index (HRI) and 0.893 for GLCM texture features; on Spearman correlation with biopsy-graded steatosis, HRI actually edges out the proposed method (0.80 vs. 0.78), while GLCM lags well behind at 0.39.
+ImageNet-pretrained Inception-ResNet-v2 features are extracted from B-mode liver image sequences. An SVM detects steatosis above 5%, and Lasso regression estimates histologic fat percentage. The model is compared with HRI and gray-level co-occurrence-matrix texture features on 550 images from 55 patients.
 
 ## What convinced me
 
-The fact that HRI — a simple, fully legible ratio of liver-to-kidney echogenicity — comes within a hair of the deep-feature approach on AUC, and slightly beats it on correlation, is the most informative part of the paper, even though it's not the headline result. It suggests the deep features are capturing much of the same signal HRI already captures, plus a smaller increment, rather than a qualitatively different kind of evidence.
+For steatosis detection, the CNN features achieved AUC 0.977, above HRI at 0.959 and GLCM at 0.893. The quantification result is more nuanced: Spearman correlation with biopsy fat percentage was 0.78 for the CNN and 0.80 for HRI, while GLCM reached 0.39. The deep model therefore improved binary discrimination but did not outperform the simple clinical index for continuous severity estimation.
 
 ## What it leaves open
 
-Because the CNN is used purely as a frozen feature extractor pretrained on natural images, the paper can't tell us which visual patterns in the ultrasound the SVM is actually keying on — there's no concept-level or saliency analysis connecting the deep features back to hepatorenal contrast, attenuation, or something else entirely. Sample size and single-center biopsy grading also limit how far the AUC comparison generalizes.
+The cohort is very small, despite the larger image count, and comes from a narrow clinical setting. Repeated frames from the same patient require strict patient-level validation. Transfer learning may also exploit acquisition texture that does not generalize across scanners, and the study provides little insight into which image evidence supports the prediction.
 
 ## What I take from it
 
-A deep model narrowly beating a simple, interpretable index on AUC while losing to it on correlation is a genuinely useful negative-ish result — it argues against treating "the deep model achieved higher AUC" as automatic evidence of a richer or more clinically meaningful signal. This is exactly the kind of comparison I want to see more of in medical-AI papers: not just "did the black box win," but "by how much, and against what specific legible baseline."
+A black box should be compared against the right clinical baseline for each target. Better AUC does not imply better severity tracking. For liver steatosis, I would report patient-wise evaluation, external scanners, calibration, and incremental value beyond HRI rather than treating feature-learning capacity as sufficient evidence of progress.
