@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Grad-CAM appears in nearly every medical-imaging paper that claims interpretability, usually as a single figure: heatmap over the lesion, caption implying the model "looked at the right place." I wanted to go back to the original definition and be precise about what that figure licenses me to conclude.
+Grad-CAM is the default explanation in much of medical imaging, so it is important to understand exactly what it computes before using a heatmap as evidence of clinical reasoning. I read the original paper to separate its intended claim from the stronger claims later attached to it.
 
-## What it actually computes
+## What the paper claims
 
-Grad-CAM weights the final convolutional feature maps by the gradient of the target class with respect to each channel, then combines and upsamples them into a coarse localization map. It is architecture-general — no retraining, no modified network — which is exactly why it became the default choice for auditing an existing classifier.
+Grad-CAM averages the gradient of a target score with respect to each channel of the final convolutional feature map, then uses those weights to form a coarse, class-discriminative localization map. It requires no architectural change or retraining and can be applied to classification, captioning, and visual-question-answering models.
 
-The important detail is in the name: it is a **localization** method. It answers *which spatial regions most influenced the gradient of this class score*, at the resolution of the last convolutional layer, upsampled and smoothed. It was validated against human-annotated bounding boxes and weakly supervised segmentation — spatial correspondence tasks — not against clinical evidence correspondence.
+## What convinced me
 
-## Why I'm careful with it
+The method is simple, model-conditioned, and broadly applicable. The original work evaluates weakly supervised localization, identifies dataset biases, and includes human studies showing that visualizations can help users distinguish stronger from weaker models. Those experiments support Grad-CAM as an accessible diagnostic interface, especially for generating hypotheses about gross spatial focus.
 
-A heatmap that overlaps the lesion is compatible with at least three different explanations: the model used the lesion's texture appropriately; the model used a shortcut feature that happens to be co-located with the lesion (a marker, a boundary artifact); or the map itself is imprecise at that resolution and the overlap is partly coincidental. Later work (Adebayo et al.'s sanity checks, among others) showed some saliency methods are largely insensitive to model or label randomization — a caution I now read as directly relevant to how Grad-CAM claims should be qualified, even where Grad-CAM itself has held up comparatively well.
+## What it leaves open
 
-None of this makes Grad-CAM useless. It makes "the heatmap overlapped the lesion" a much weaker claim than the papers that cite it usually treat it as.
+A Grad-CAM region is not a lesion segmentation and does not prove that the highlighted pixels were causally necessary. Its resolution is limited by the final feature map, and later sanity-check studies show that visually plausible maps can be insensitive to parameters or unstable across models. The choice of layer and target also changes the result.
 
 ## What I take from it
 
-Localization overlap is a necessary check, not a sufficient one. If I use Grad-CAM in my own auditing pipeline, I want to pair it with something that tests *whether* the highlighted region is causally load-bearing — ablation, counterfactual perturbation, or a metric that changes when that region is removed — rather than reporting the heatmap as the endpoint of the audit.
+I use Grad-CAM as a screening tool, not a faithfulness endpoint. A clinical claim requires a matching test: lesion overlap for localization, parameter randomization for model dependence, and targeted perturbation or intervention for causal reliance. The heatmap suggests where to investigate; it does not finish the investigation.

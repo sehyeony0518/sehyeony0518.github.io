@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-I keep encountering breast-ultrasound CAD papers reporting numbers on datasets I can't fully verify — unclear how many scanners, whether malignancy status is biopsy-confirmed, or whether the train/test split is standardized enough to compare across papers. BUS-BRA is explicitly a dataset paper built to fix that, so I wanted to know exactly what it standardizes.
+Dataset design determines what a breast-ultrasound model can validly claim. I read BUS-BRA not only as a data source, but as an example of how biopsy labels, BI-RADS categories, lesion masks, scanner diversity, and patient-level partitions should be documented for reproducible CAD evaluation.
 
 ## What the paper claims
 
-BUS-BRA provides 1,875 anonymized breast ultrasound images from 1,064 patients at Rio de Janeiro's National Institute of Cancer, acquired across four different ultrasound scanners, with 722 benign and 342 malignant cases confirmed by biopsy. Each image carries a BI-RADS category (2–5) assigned by a senior sonographer, a manual lesion segmentation, and — critically — standardized 5-fold and 10-fold cross-validation partitions released with the dataset so different papers' reported numbers are directly comparable.
+BUS-BRA contains 1,875 breast-ultrasound images from 1,064 women, acquired with four ultrasound systems. The dataset includes biopsy-confirmed benign and malignant diagnoses, BI-RADS categories 2–5, and manual lesion segmentations. The authors also provide standardized patient-level folds for training and evaluation.
 
 ## What convinced me
 
-Multi-scanner acquisition combined with biopsy-confirmed labels and a senior sonographer's BI-RADS assignment is a stronger foundation than many single-scanner, single-reader breast-US datasets I've read papers built on. And releasing fixed CV partitions is a small but disproportionately useful contribution — it removes one common source of inflated, incomparable benchmark numbers across papers that each roll their own random split.
+The most valuable contribution is the unit of organization. The 1,875 images correspond to 722 benign and 342 malignant patient cases, so image-level random splitting would allow multiple images from one patient to cross partitions. Publishing fixed five- and ten-fold patient partitions removes a common source of leakage and makes comparisons between methods substantially more credible. The combination of pathology, clinical category, and masks also supports classification, segmentation, and concept-based analysis from the same cases.
 
 ## What it leaves open
 
-Multi-scanner acquisition helps but doesn't fully solve generalization — four scanners at one institution is still a narrow slice of the equipment and patient-population diversity a deployed CAD system would face. The paper doesn't report how much performance varies by scanner within the dataset itself, which would be useful for gauging expected external-site drop-off.
+The data are still from one clinical source, and the reference contours were produced within a limited annotation setting. Four scanners add acquisition variation but do not constitute external multi-institution validation. The class and BI-RADS distributions also reflect local biopsy and referral practice, which can become a shortcut if treated as universally representative.
 
 ## What I take from it
 
-Standardized splits and biopsy-confirmed, multi-scanner labels are exactly the dataset-hygiene details I now check for before trusting a breast-ultrasound benchmark comparison across papers. When two CAD papers report different AUCs on "the same dataset," the first thing I check is whether they actually used the same partition — and a paper like this, that ships the partition itself, removes that ambiguity for anyone using it going forward.
+A public dataset should ship with its evaluation contract. For BUS-BRA, I would retain patient-wise folds, report scanner-stratified results, and reserve another institution for external testing. Dataset scale matters, but provenance and split discipline determine whether a performance claim is believable.
