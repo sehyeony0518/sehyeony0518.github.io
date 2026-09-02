@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Diabetic retinopathy (DR) and diabetic macular edema (DME) are graded from the same retinal photograph and share underlying pathophysiology, yet most grading models I'd read treat them as two independent classification tasks. CANet's premise — that jointly modeling the two diseases should help both — is a structural claim about how the tasks relate, and I wanted to see how that claim was operationalized.
+DR and DME are related but not interchangeable clinical targets. I read CANet to see whether modeling their relationship jointly can improve grading without requiring lesion-level annotations, and whether the resulting attention can support a meaningful explanation claim.
 
 ## What the paper claims
 
-CANet introduces a cross-disease attention mechanism that lets features relevant to DR grading inform DME grading and vice versa, alongside a disease-specific attention module for each task individually, jointly training both graders on the same retinal image inputs rather than treating them as separate pipelines. The paper reports this joint, attention-coupled approach outperforming single-disease baselines on standard DR/DME benchmarks.
+CANet uses disease-specific attention to learn features for each task and disease-dependent attention to exchange information between the DR and DME branches. It is trained with image-level grades only. The architecture is meant to exploit clinically relevant co-occurrence while retaining task-specific representations.
 
 ## What convinced me
 
-Grounding the architecture in a real clinical relationship — DR and DME frequently co-occur and share retinal vascular pathology — gives the cross-disease attention module a principled justification beyond "attention improves things." It's testing a specific hypothesis (shared evidence helps both gradings) rather than just adding capacity.
+The joint formulation improves over the compared single-task and generic multitask baselines. On the IDRiD challenge setting, the reported joint grading accuracy was 65.1%. On Messidor, the model reached AUC 96.3 for DR and 92.4 for DME, with joint accuracy reported at 85.1 in the corresponding evaluation. The ablations indicate that both disease-specific and cross-disease attention contribute rather than one branch simply dominating.
 
 ## What it leaves open
 
-The paper doesn't decompose *which* shared visual evidence the cross-disease attention is actually routing between tasks — whether it's genuinely shared pathological signal (microaneurysms, exudates near the macula) or a more diffuse statistical correlation between the two disease labels in the training set that happens to help accuracy without being clinically traceable.
+Attention weights are not lesion annotations and do not prove that the model localized microaneurysms, exudates, or macular involvement faithfully. Disease correlation can also become a shortcut if prevalence or referral patterns change across populations. Image-level supervision leaves open whether the exchanged information is clinically correct or merely statistically convenient.
 
 ## What I take from it
 
-Joint modeling of correlated clinical labels is a reasonable structural prior, but the same faithfulness question I ask of single-task models applies here with an extra layer: does the cross-disease attention improve accuracy because it surfaces genuinely shared clinical evidence, or because DR and DME labels are correlated in ways a model can exploit without engaging the underlying pathology at all? A joint model earning higher accuracy isn't automatically evidence that it reasons more like a clinician connecting the two diagnoses.
+Related diagnoses can provide useful inductive structure, but the relationship itself must be audited. I would test whether DME predictions depend on macula-centered evidence and whether the benefit persists when DR–DME prevalence is shifted. Cross-task attention is a hypothesis about reasoning, not yet proof of it.
