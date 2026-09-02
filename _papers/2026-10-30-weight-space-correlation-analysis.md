@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Nearly every shortcut-detection method I've read operates on activations, gradients, or generated counterfactual images — inputs and intermediate representations. This paper instead looks at the trained weights themselves, which is a different enough vantage point on the same underlying question that I wanted to see what it reveals that the more common approaches don't.
+A model can encode scanner, site, or demographic information without using it for the clinical task. I read this paper because it tackles that availability–utilization distinction directly, which is central to any credible shortcut audit.
 
 ## What the paper claims
 
-Deep learning models in medical imaging are susceptible to shortcut learning, often relying on confounding metadata — the paper's example is scanner model — that ends up encoded in image embeddings. The central question the authors pose is whether a model *actively uses* that encoded confounding information in producing its final prediction, and they propose analyzing correlation structure directly in the model's weight space to quantify how much a given feature (including scanner-linked ones) is actually utilized, as distinct from merely being present in the model's internal representation.
+The method trains auxiliary heads to predict metadata from a shared representation, summarizes their weight directions with principal components, and measures alignment between those directions and the primary clinical head. High metadata predictability indicates that a signal is available; weight-space alignment is intended to indicate whether the task head is oriented toward using it.
 
 ## What convinced me
 
-Separating "the confound is encoded somewhere in the representation" from "the confound is actively used in the final decision" is an important and frequently glossed-over distinction — a model's embeddings can contain scanner information incidentally, correlated with other content, without that information being what drives the output. A weight-space method aimed specifically at utilization, rather than mere presence, is targeting the more clinically relevant half of that distinction.
+The paper first validates the measure in controlled shortcut settings, where increasing a spurious association produces the expected increase in weight-space alignment. It then analyzes a spontaneous-preterm-birth ultrasound model. Scanner and other metadata could be decoded from the representation, yet the clinical head aligned more strongly with cervical length — a clinically relevant measurement — than with scanner identity. That result shows why a metadata probe alone can generate false alarms: representation leakage and decision reliance are not the same phenomenon.
 
 ## What it leaves open
 
-Weight-space correlation is a structural property of the trained network; connecting it back to a concrete, checkable clinical claim (this specific prediction, on this specific image, used the scanner-linked signal) likely requires pairing it with an instance-level method like TCAV or a counterfactual test, rather than standing alone as a full explanation.
+The analysis is global and depends on relatively simple prediction heads and a geometric approximation of their directions. It does not provide patient-specific attribution, and nonlinear or distributed utilization may not be captured by cosine alignment in weight space. Alignment also remains an observational proxy unless paired with an intervention.
 
 ## What I take from it
 
-This paper reinforces a distinction I now try to keep explicit in my own audits: encoding versus utilization. A model's activations containing recoverable information about acquisition site or scanner doesn't by itself mean the model is relying on that information for its actual clinical predictions — and a weight-space method that targets utilization specifically is a useful complement to the more common activation-based and counterfactual-based shortcut-detection tools I've read elsewhere in this collection.
+Shortcut auditing should report at least two layers of evidence: whether a nuisance signal is recoverable, and whether the diagnostic decision changes when that signal is manipulated or suppressed. Weight-space correlation is a useful middle layer between a weak presence test and a stronger causal intervention.

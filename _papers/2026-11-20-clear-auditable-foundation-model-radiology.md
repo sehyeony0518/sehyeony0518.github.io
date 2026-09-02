@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Nearly everything else in this collection audits or explains a model that was trained conventionally, after the fact. CLEAR is the opposite move — a foundation model explicitly built, from training onward, around clinical-concept structure — and given how much of my own interest is in whether trustworthiness has to be retrofitted or can be designed in from the start, I wanted to see this large-scale attempt at the latter.
+Foundation models usually become harder to inspect as their scale increases. CLEAR interested me because it asks whether scale and auditability can be designed together by making radiological observations, rather than opaque latent dimensions, the model's representational interface.
 
 ## What the paper claims
 
-The authors motivate CLEAR by noting that "black box" deep learning models for medical image interpretation limit both clinical trust and the ability to analyze performance degradation over time or across sites. CLEAR — Concept-Level Embeddings for Auditable Radiology — is a foundation model trained on over 0.87 million image-report pairs from 239,391 patients, learning a visual representation structured around clinical concepts rather than an unconstrained embedding space, so that its behavior can be audited at the level of named clinical concepts rather than only through post hoc explanation methods applied after training.
+CLEAR is trained on more than 0.87 million chest X-ray–report pairs from 239,391 patients. It maps images into a concept space built from 368,294 report-derived radiological observations and decomposes each prediction into weighted contributions from those concepts. The same representation supports zero-shot classification, linear probing, retrieval, and concept intervention.
 
 ## What convinced me
 
-Building the concept structure into the representation during large-scale pretraining, rather than adding a bottleneck or explanation layer on top of a model trained without any concept constraint, is a meaningfully different and more ambitious bet than most of the interpretability literature I've read — it's foundation-model scale applied to a design philosophy usually only demonstrated on narrow, single-task models like the breast-ultrasound concept bottlenecks I've reviewed elsewhere.
+The paper does more than show concept examples. CLEAR improved zero-shot AUROC over CheXzero on VinDr (78.2 versus 75.0) and PadChest (70.0 versus 66.8), while linear probing on CheXpert reached a mean AUROC of 87.0. More importantly for faithfulness, correcting the concept for enlarged cardiomediastinum improved its AUROC from 0.727 to 0.784 without retraining the encoder. In a reader assessment, 89.8% of the highest-weighted concepts were judged diagnostically relevant, with substantial inter-reader agreement.
 
 ## What it leaves open
 
-Scale and concept-grounding are somewhat in tension — the more a foundation model's representation is constrained around a predefined concept vocabulary, the more it risks missing predictive signal not captured by that vocabulary, exactly the concern raised in narrower concept-bottleneck papers. Whether CLEAR's scale is enough to avoid that tradeoff, or whether it makes the same accuracy-for-auditability tradeoff at a larger scale, isn't something a single paper's own reported numbers can fully settle without independent external replication.
+The vocabulary is mined from reports, so it inherits reporting conventions, omissions, and institution-specific language. A weighted concept decomposition is also not a spatial localization or a causal proof that every concept was necessary. Performance on consolidation remained below the radiologist reference, illustrating that a large concept space can still be incomplete for particular findings.
 
 ## What I take from it
 
-CLEAR is the clearest example I've found of the field explicitly treating auditability as a first-class training objective for a foundation model, not an afterthought bolted onto a pretrained black box — which is the direction I think medical-AI trustworthiness research needs to keep moving. The open question it leaves me with is exactly the one at the center of my own research: at foundation-model scale, does concept-grounding still support the same kind of intervention test (correct a concept, check the prediction moves) that gives narrower bottleneck models their strongest faithfulness evidence, or does scale change what auditability can even mean.
+The strongest part of CLEAR is the editable concept interface, not merely the readable vocabulary. For an auditable foundation model, I would evaluate three properties separately: concept coverage, decomposition fidelity, and whether clinically valid concept interventions change predictions in the expected direction.

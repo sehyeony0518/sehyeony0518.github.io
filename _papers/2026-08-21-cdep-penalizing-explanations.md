@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-This paper's opening framing — that most explainable-AI methods stop after providing insight, without offering a way to act on that insight to actually improve the model — is a criticism I've come to share after reading a lot of interpretability papers. I wanted to see the specific mechanism CDEP proposes for closing that loop.
+Most explanation methods stop after showing a model's behavior. CDEP is important because it treats an explanation as something that can be acted on during training: if a known region or feature should not influence the prediction, penalize its contextual contribution.
 
 ## What the paper claims
 
-The authors introduce Contextual Decomposition Explanation Penalization (CDEP), which uses contextual decomposition (a way of attributing a prediction to groups of input features) not just to generate an explanation, but as a differentiable penalty term added directly to the training loss — explicitly discouraging the model from basing its prediction on feature groups a domain expert has flagged as irrelevant or spurious, while training.
+Contextual Decomposition Explanation Penalization uses group-level contextual decomposition scores as a regularizer. This differs from penalizing a raw input gradient: the method can target the contribution of a meaningful group of pixels or features, including interactions that simple first-order saliency may miss. Prior knowledge is therefore written as a constraint on the model's reasoning, not only on its output.
 
 ## What convinced me
 
-Making the explanation method itself part of the loss function, rather than a separate diagnostic run after training, is the structural choice that actually closes the detect-then-fix loop this paper is arguing for. It sits in the same family as Right for the Right Reasons (constraining input gradients), but works at the level of feature *groups* via contextual decomposition rather than individual input gradients, which is a more natural fit for cases where the spurious signal is a region or group of correlated features rather than a single input dimension.
+The comparison with gradient-based Right for the Right Reasons is especially informative. On ColorMNIST, where the unwanted rule depends on a higher-order color interaction, CDEP reached about 31% accuracy while vanilla and RRR models remained near chance; on DecoyMNIST it reached 97.2%. In the ISIC patch experiment, CDEP also preserved no-patch performance better than the unregularized model, with AUC 0.89 versus 0.87. These experiments show that the form of the explanation being penalized matters.
 
 ## What it leaves open
 
-Like RRR, CDEP needs a human to already know and annotate which feature groups are irrelevant or spurious — it corrects a named problem rather than discovering an unknown one. The paper also doesn't fully characterize how the penalty trades off against raw predictive accuracy when the "irrelevant" feature group actually carries some genuine, if weaker, signal.
+The method requires the practitioner to name the undesirable evidence in advance and specify it at an appropriate granularity. Incorrect or incomplete priors may suppress useful signal or simply redirect the network to another unmeasured shortcut. Better performance after regularization does not prove that the remaining features are clinically causal.
 
 ## What I take from it
 
-CDEP and RRR are converging evidence that training-time explanation penalties are a viable, general strategy once a shortcut is identified — the harder unsolved problem across this whole line of work remains discovery, not correction. For my own research, that keeps sharpening the same question: the tools for fixing a known shortcut are increasingly mature; the tools for finding shortcuts nobody thought to name in advance are where the real gap still is.
+Explanation regularization is strongest when it is paired with a falsifiable behavior test: remove the targeted shortcut, reverse its correlation, and verify that performance no longer depends on it. CDEP is a foundational example of explanations functioning as training constraints rather than decorative visualizations.

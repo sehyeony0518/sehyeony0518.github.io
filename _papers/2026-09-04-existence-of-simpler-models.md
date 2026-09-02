@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-I regularly read medical-AI papers that justify a complex, opaque model with some version of "a simpler model wasn't accurate enough." This paper directly interrogates that justification, asking when it's actually true versus an assumption nobody tested.
+In high-stakes medical AI, a complex model is often accepted because it performs marginally better — or because no one checked whether an equally accurate simpler model exists. This paper gives a formal reason to make that search part of model development rather than an optional afterthought.
 
 ## What the paper claims
 
-Finding optimal sparse, accurate models — small decision trees, integer-coefficient linear models, short rule lists — is generally NP-hard, so in practice teams reach for complex models rather than search for simpler ones that might perform just as well. The authors formalize and study the "Rashomon set": the set of models, of any given form, that achieve near-optimal accuracy on a dataset. Their central hypothesis, which they give theoretical and empirical support for, is that when a dataset admits many complex models achieving similar top accuracy, it typically also contains simple, interpretable models achieving comparably good accuracy — the Rashomon set for simple models is often non-empty precisely when the Rashomon set for complex models is large.
+The authors study the Rashomon set: all models in a hypothesis class whose loss is close to optimal. They define the Rashomon ratio as the volume of this set relative to the full hypothesis space and show conditions under which a large Rashomon set contains accurate models from simpler classes. Similar performance across substantially different learning algorithms is proposed as a practical signal that such a set may be large.
 
 ## What convinced me
 
-The theoretical framing turns "should we have used a simpler model" from a vague intuition into an empirically checkable question: characterize the Rashomon set for a given problem, and see whether a simple, interpretable model actually lives inside it. That's a testable claim, not a slogan about preferring interpretability for its own sake.
+The paper connects a familiar empirical pattern — linear models, trees, boosted models, and neural networks achieving nearly the same score — to a testable modeling decision. Its theoretical results do not merely celebrate model multiplicity; they explain why a simpler class may approximate many near-optimal functions and obtain favorable generalization guarantees. The empirical analyses then show that datasets with similar performance across model families often admit sparse or otherwise simpler alternatives.
 
 ## What it leaves open
 
-Whether a simple, accurate model exists in the Rashomon set for a *specific* dataset still isn't free to determine — the underlying search problem remains hard, and the paper's guarantees are about typical/expected behavior across problem classes, not a promise for any individual dataset a researcher happens to be working with. A team still needs to actually do the (expensive) search to find out.
+The heuristic is not a guarantee. Similar validation scores can hide different subgroup failures, calibration, or shortcut reliance, and estimating the Rashomon ratio is itself difficult in large neural-network spaces. "Simple" also needs a task-relevant definition: a small parameter count is not necessarily clinically interpretable.
 
 ## What I take from it
 
-This paper gives me a principled challenge to raise whenever a medical-AI paper defends model complexity purely on accuracy grounds: has an interpretable model actually been searched for and found wanting, or has interpretability simply not been attempted? Given how much clinical trust depends on legibility, the burden this paper implies is on the complex model to demonstrate the search was done — not on critics to prove a simple alternative exists.
+Before defending a black box, I would establish a performance tolerance and actively search within it for transparent alternatives. If several architectures tie on accuracy, the next comparison should be evidence use, stability, and clinical auditability — not another decimal place of AUROC.

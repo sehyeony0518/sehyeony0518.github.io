@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-The International Clinical Diabetic Retinopathy (ICDR) scale is the label space behind most DR-severity deep-learning papers I've read, usually cited as a fixed reference rather than examined for how it was actually built. I wanted to trace it back to its origin the same way I did for Kellgren-Lawrence in knee OA.
+This paper is not an AI method, but it defines one of the label systems that retinal AI models are trained to reproduce. I read it to understand what a "ground-truth" diabetic-retinopathy grade actually represents before treating the labels as natural biological categories.
 
 ## What the paper claims
 
-A group of 31 individuals from 16 countries — comprehensive ophthalmologists, retina subspecialists, endocrinologists, and epidemiologists — set out to build consensus clinical severity scales for diabetic retinopathy and diabetic macular edema that could be used consistently worldwide. Starting from an initial classification grounded in the ETDRS and Wisconsin Epidemiologic Study of DR, the group used a modified Delphi process — anonymous rounds of review and revision — to converge on separate, simplified severity scales for DR and DME suitable for routine clinical communication, distinct from the more granular research-grade ETDRS scale.
+Using a modified Delphi process, 31 participants from 16 countries developed a practical five-stage clinical DR scale: no apparent retinopathy, mild, moderate, and severe nonproliferative DR, followed by proliferative DR. Diabetic macular edema is recorded separately as apparently present or absent, with distance from the foveal center added when examination resources permit.
 
 ## What convinced me
 
-Being explicit that this is a consensus process, not a measurement, is exactly the kind of transparency I want from a label-defining paper — it tells you upfront that the scale trades some of ETDRS's granularity for international, cross-practice consistency, a deliberate simplification rather than an oversight.
+The scale is explicitly designed as a communication and care-delivery compromise. It translates evidence from more detailed research systems into categories that clinicians with different equipment and training can apply internationally. That design history explains both its usefulness and its coarseness: the categories are meant to support common clinical decisions, not to preserve every lesion-level distinction.
 
 ## What it leaves open
 
-A Delphi-consensus process converges on agreement among the specific panel involved; it doesn't guarantee the resulting simplified scale carves disease severity at its most clinically meaningful joints, and the paper doesn't quantify how much information is lost relative to the more granular ETDRS scale it was derived to simplify.
+A consensus taxonomy is not an error-free biological truth. Its application still depends on image field, image quality, reader judgment, and available examination tools. Collapsing a continuous and heterogeneous disease process into five stages also creates boundary ambiguity that an AI model cannot eliminate simply by achieving high accuracy.
 
 ## What I take from it
 
-Every DR-AI paper reporting "accuracy against ICDR grade" is implicitly reporting accuracy against a deliberately simplified, consensus-built label space — not a direct clinical measurement. That's a reasonable design tradeoff for clinical communication, but it means a model's ICDR-grade accuracy understates how much finer-grained disease information (of the kind ETDRS captures) the model might be missing or, alternatively, might be capturing without credit for it. I now read ICDR-based accuracy claims with that simplification explicitly in mind.
+Clinical labels should be documented as operational constructs: who defined them, for what decision, under which examination conditions, and with what uncertainty. For retinal AI, I would evaluate ungradable cases and lesion-level evidence separately from agreement with the final ordinal category.

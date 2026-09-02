@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-I've read enough liver-ultrasound papers using attenuation and echogenicity features to want to understand a step upstream of all of them: how the raw ultrasound signal gets tone-mapped into the image a radiologist (or a downstream model) actually sees. A preprocessing choice at this stage can shape everything built on top of it, including any AI system reading the same output image.
+Ultrasound preprocessing is often treated as a neutral image-quality step, although it can change exactly the spatial and frequency cues used by both clinicians and models. I read this paper as an example of how enhancement should be evaluated before it is inserted into an AI pipeline.
 
 ## What the paper claims
 
-Ultrasound diagnostics is a standard tool in obstetrics and beyond, but the raw signal has a dynamic range that standard image displays compress in ways that can obscure diagnostically relevant detail. The authors propose a multi-resolution tone-mapping method for high-dynamic-range ultrasound images, reporting quantitative image-quality improvements: a 5.4% mean increase in entropy (more preserved information) and generalized contrast-to-noise ratio (gCNR) improvements of 15.79%, 8.93%, and 17.39% across their evaluated conditions.
+The method combines multiresolution image fusion, depth compensation, and depth-adaptive weighting to improve visibility across near- and far-field regions. The intended benefit is stronger tissue contrast without the over-enhancement or depth imbalance produced by a single global tone-mapping rule.
 
 ## What convinced me
 
-Reporting entropy and gCNR — established, objective image-quality metrics — rather than only qualitative visual comparisons gives the claimed improvement something concrete to stand on. A tone-mapping method that measurably preserves more information and improves contrast-to-noise is directly relevant to any downstream task, human or automated, that depends on distinguishing subtle tissue differences.
+In a pilot set of 20 fetal ultrasound images centered on kidney visualization, the proposed method increased mean entropy by 5.4%. Generalized contrast-to-noise ratio improved by approximately 9–17% across the reported tissue-pair comparisons. The depth-aware design is technically sensible because attenuation and dynamic range are not uniform through an ultrasound image.
 
 ## What it leaves open
 
-Better entropy and gCNR are general image-quality improvements, not evidence specific to any particular diagnostic task — the paper doesn't test whether these gains translate into measurably better downstream classification or grading performance on a task like liver steatosis or breast lesion classification, which would be the more direct clinical validation.
+The study is small, and objective image statistics do not establish that clinicians see pathology more accurately or that a downstream model generalizes better. A preprocessing method may also introduce a consistent visual signature, suppress weak but valid signals, or alter calibration across devices. The clinician study mentioned by the authors was not yet part of the evidence.
 
 ## What I take from it
 
-This is a reminder that a model's apparent sensitivity to a clinical feature can be partly an artifact of how the raw signal was tone-mapped before the model ever saw it — two ultrasound machines or preprocessing pipelines producing "the same" image can differ enough in dynamic-range handling to shift what's easy or hard for a model to detect. When auditing an ultrasound-based model for clinical faithfulness, I now treat the tone-mapping/preprocessing pipeline as part of what needs auditing, not just the model downstream of it.
+Enhancement should be treated as an intervention, not cosmetic cleanup. I would validate it on three levels: visibility to clinicians, preservation of clinically relevant measurements, and invariance of model behavior across scanners and sites. Better-looking images are not automatically better evidence.
