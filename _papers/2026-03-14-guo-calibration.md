@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Every clinical faithfulness question I ask eventually runs into a prior question: does the model's confidence mean anything? A model that is accurate but poorly calibrated can still produce a "90% probability" that is wrong 40% of the time. That gap matters more in medicine than almost anywhere else, since confidence is often what determines whether a clinician double-checks a result.
+Clinical deployment requires more than ranking patients correctly. A probability of 0.9 should correspond to an event rate near 90% in the population where the model is used. This paper is the standard reference for why modern neural networks often fail that requirement and how a simple post hoc correction can help.
 
-## The finding
+## What the paper claims
 
-Across a range of architectures, the authors show that model capacity, batch normalization, and reduced weight decay — the ingredients responsible for modern accuracy gains — simultaneously **increase miscalibration**, even as accuracy improves. Deeper and wider is not calibration-neutral. It is a trade the field made implicitly, in pursuit of a different number.
+The authors show that architectural and training choices — including depth, width, batch normalization, and weight decay — can improve accuracy while worsening confidence calibration. They compare several post hoc methods and find that temperature scaling, a single scalar applied to logits on a held-out validation set, is a strong and simple baseline.
 
-Their diagnostic tool, the reliability diagram plotting confidence against observed accuracy, is one of those visualizations I now think should accompany every deployed classifier and rarely does.
+## What convinced me
 
-## The fix and its limits
+On CIFAR-100 with ResNet-110, expected calibration error fell from 16.53% to 1.26% after temperature scaling, while class predictions and ranking were unchanged. The simplicity of that result is important: calibration is a separable validation target, and a model can be recalibrated without pretending its discrimination improved.
 
-Temperature scaling — dividing the logits by a single learned scalar before the softmax — recovers most of the calibration loss with essentially no cost to accuracy, and outperforms more complex alternatives (Platt scaling, isotonic regression, vector/matrix scaling) on their benchmarks. The simplicity is almost suspicious, and that's the point worth sitting with: calibration and accuracy are close to separable problems, at least for i.i.d. test data.
+## What it leaves open
 
-That "at least for i.i.d. test data" is the boundary I care about. Temperature scaling fits one scalar on a held-out set from the *same* distribution. Nothing here guarantees the calibration transfers across sites, scanners, or patient populations — which is precisely the setting shortcut learning shows up in. A model can be shortcut-driven and well-calibrated on its own test set simultaneously.
+Calibration is distribution-specific. A temperature learned at one hospital can fail after prevalence, scanner, or population shift. ECE also depends on binning and can hide class- or subgroup-specific errors. A calibrated shortcut model remains a shortcut model, and calibration does not repair fairness, causal validity, or poor discrimination.
 
 ## What I take from it
 
-Calibration is necessary infrastructure for any auditing claim that touches confidence, uncertainty, or thresholds — but it is orthogonal to whether the model's evidence is clinically valid. Reporting a reliability diagram tells you the number can be trusted as a number. It does not tell you what the number is about.
+Every diagnostic model should report calibration alongside AUROC and threshold metrics, with uncertainty and subgroup analysis. Post hoc temperature scaling is a baseline, not the end point. Under external shift, recalibration and evidence auditing need to be evaluated together.

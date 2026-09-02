@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-The hepatorenal index (HRI) and ultrasound attenuation index (USAI) recur as baselines across nearly every liver-steatosis AI paper I've read. This paper compares the two directly against biopsy in a well-defined population — potential living liver-donor candidates, who by necessity get both imaging and histology — so I wanted the actual comparative numbers rather than each index's isolated validation study.
+This study compares two transparent ultrasound measurements against biopsy rather than training an opaque classifier. I read it to understand what a strong, clinically legible baseline looks like for hepatic-steatosis assessment and where its validation remains incomplete.
 
 ## What the paper claims
 
-In 224 potential living hepatic donors who underwent both ultrasound and liver biopsy, the authors compare the diagnostic accuracy of HRI (liver-to-kidney echogenicity ratio) against USAI (attenuation-based) for detecting hepatic steatosis, using biopsy as the reference standard.
+In 224 prospective living-liver-donor candidates, the authors compute a hepatorenal index from liver–kidney echogenicity and an ultrasound attenuation index from depth-dependent signal loss. Histologic steatosis from biopsy is the reference standard. The study compares diagnostic accuracy, correlation with fat percentage, and interobserver agreement.
 
 ## What convinced me
 
-Using a living-donor cohort is a methodologically clean choice for this specific comparison: donor candidates get biopsied essentially as a matter of course, independent of clinical suspicion of liver disease, which avoids the referral bias that affects steatosis studies drawing on patients biopsied because disease was already suspected.
+HRI showed numerically higher AUC than attenuation for both thresholds: 0.856 versus 0.820 for steatosis of at least 5%, and 0.937 versus 0.909 for at least 30%, although the differences were not statistically significant. HRI also correlated more strongly with histology (about 0.853 versus 0.682), and both methods had excellent interobserver agreement, with ICC 0.973 for HRI and 0.931 for attenuation.
 
 ## What it leaves open
 
-A donor-candidate population is healthier and has a narrower range of steatosis severity than a general NAFLD clinical population, which limits how far the reported accuracy generalizes to patients being screened for suspected fatty liver disease rather than pre-transplant clearance. The paper also doesn't test whether combining HRI and USAI outperforms either alone.
+Living-donor candidates are a selected, comparatively healthy population, so spectrum and prevalence differ from routine NAFLD clinics. The study evaluates measurement between readers but does not fully separate image-acquisition variability from measurement variability. Biopsy itself has sampling error, and thresholds may not transfer across devices or protocols.
 
 ## What I take from it
 
-Both HRI and USAI are simple, single-number, fully legible quantities computed directly from standard ultrasound images — exactly the kind of baseline a "the AI model beat classical ultrasound indices" claim should be benchmarked against, and exactly the comparison I look for (and am often disappointed not to find) in newer deep-learning liver-steatosis papers. A model's real contribution should be measured against this pair, in the same population, not against a vaguer "clinical assessment" baseline.
+Simple quantitative indices deserve serious consideration as baselines and audit anchors. A learned model should show not only better discrimination but also improved repeatability, robustness across scanners, and incremental clinical value beyond HRI. Interpretability begins with knowing what the model must beat.

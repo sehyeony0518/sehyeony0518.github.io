@@ -13,20 +13,20 @@ related_posts: false
 
 ## Why I read it
 
-TCAV's concept vectors work with binary concepts — a feature is present or absent. Most clinically meaningful concepts (tumor grade, degree of pleomorphism, texture severity) are graded rather than binary, so I wanted to see how the idea extends to a continuous setting, and whether that extension holds up on real histopathology.
+Many clinical concepts are continuous: lesion irregularity, tissue density, fibrosis burden, or steatosis severity. I read this paper because it extends concept-vector explanations beyond binary "present versus absent" concepts to measured quantities that can vary along a clinically meaningful scale.
 
 ## What the paper claims
 
-The authors introduce Regression Concept Vectors (RCVs), which extend TCAV-style concept vectors to continuous-valued concepts by regressing a concept's numeric value from a layer's activations rather than classifying its presence. The directional derivative along the RCV then measures the model's sensitivity to a *change in degree* of the concept, not just its presence. Applied to breast-cancer grading in lymph-node histopathology, nuclei texture emerges as a relevant, directionally consistent concept the model's tumor-detection decisions are sensitive to, backed by a statistical robustness and consistency evaluation across the dataset.
+Regression Concept Vectors fit a direction in a layer's activation space that predicts a continuous concept measurement. The directional derivative of the class score along that vector estimates sensitivity to increasing values of the concept, and a relevance measure links the concept value and its influence. The method is applied to breast-cancer histopathology using nuclear texture measurements.
 
 ## What convinced me
 
-Moving from "is this concept present" to "how does sensitivity change as the concept's degree changes" is a meaningfully richer question for grading tasks, where the clinically relevant fact is often severity, not presence. Backing the nuclei-texture finding with a statistical consistency check — rather than a single qualitative example — gives the result more weight than a typical interpretability case study.
+The analysis uses 300 image patches derived from a larger set of annotated nuclei and identifies contrast and correlation texture measures as relevant to tumor-tissue detection. For nuclear contrast, the raw output–concept association was around Spearman ρ = 0.41, and the proposed sensitivity analysis adds information about direction and magnitude that a binary TCAV score would discard. The paper also evaluates robustness across resampling and layers rather than presenting a single concept direction.
 
 ## What it leaves open
 
-As with TCAV, RCVs require someone to have measured or annotated the continuous concept in the first place (here, a texture metric), so the method only tells you about sensitivity to concepts you already thought to quantify. The workshop-scale evaluation is also on a specific breast-cancer grading task; whether nuclei-texture sensitivity generalizes as a pattern across other histopathology grading problems isn't established here.
+The study is a small proof of concept. The regression direction is linear, the concept measurements themselves may be noisy, and directional sensitivity is still a local derivative rather than a causal intervention. Correlated concepts can share a direction, making the clinical interpretation ambiguous.
 
 ## What I take from it
 
-Grading tasks — knee-OA severity, DR severity, BI-RADS category — are exactly the setting where a binary concept test understates what's actually needed: the question is rarely "does the model see this feature" but "does more of this feature move the prediction the right amount, in the right direction." RCVs are the right shape of tool for that question, and I want to bring this framing to my own audits of severity-grading models rather than defaulting to presence/absence concept tests.
+Continuous concept tests are a natural fit for clinical severity and quantitative imaging. I would pair them with covariate-adjusted association, out-of-sample concept prediction, and interventions that move the concept while preserving other factors. A continuous score deserves a continuous faithfulness test.
