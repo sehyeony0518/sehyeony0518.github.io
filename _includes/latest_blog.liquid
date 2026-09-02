@@ -62,7 +62,7 @@
               {% if item.tag %}<span class="ip-chip">{{ item.tag }}</span>{% endif %}
               <span class="ip-date">{{ item.date | date: '%b %-d, %Y' }}</span>
             </div>
-            <div class="ip-title">{{ item.title | split: ": " | first }}</div>
+            <div class="ip-title">{{ item.title }}</div>
           </a>
         {% endfor %}
       </div>
@@ -87,7 +87,7 @@
               {% if item.venue %}<span class="ip-chip">{{ item.venue }}</span>{% endif %}
               <span class="ip-date">{{ item.date | date: '%b %-d, %Y' }}</span>
             </div>
-            <div class="ip-title">{{ item.title | split: ": " | first }}</div>
+            <div class="ip-title">{{ item.title }}</div>
           </a>
         {% endfor %}
       </div>

@@ -8,12 +8,16 @@ nav_order: 11
 ---
 
 <style>
+  /* Widen just this page's content column so a 4-up photo grid has room to breathe */
+  .container.mt-5 { max-width: 1400px; }
+
   .photo-gallery {
     column-count: 2;
     column-gap: 0.7rem;
     margin-top: 0.8rem;
   }
   @media (min-width: 640px) { .photo-gallery { column-count: 3; } }
+  @media (min-width: 1000px) { .photo-gallery { column-count: 4; } }
   .photo-gallery figure {
     break-inside: avoid;
     margin: 0 0 0.7rem;
