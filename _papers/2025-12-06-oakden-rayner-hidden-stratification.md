@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Because "the model is 92% accurate" has never told me what I actually need to know, and this paper explains precisely why in clinical terms.
+A high aggregate score can conceal failure on the exact subgroup for which the model would be most useful. I read this paper because it shows that medically meaningful subtypes often exist inside a broad benchmark label even when the dataset does not name them.
 
-## The argument
+## What the paper claims
 
-A label like "abnormal" or "pneumothorax" is not one thing. It contains subsets that differ in prevalence, appearance, difficulty, and clinical urgency. A model can learn the common, easy, low-risk subset and fail on the rare, subtle, high-risk one — and the aggregate metric will not move, because the dangerous subset is rare by definition.
+Hidden stratification occurs when a coarse target contains clinically distinct subclasses with different prevalence, difficulty, or shortcut opportunities. The authors demonstrate the problem in chest radiographs, musculoskeletal radiographs, and fracture detection, then discuss schema completion, error auditing, and algorithmic subgroup discovery as partial remedies.
 
-Their pneumothorax example is the one I remember: models performed far worse on cases *without* a chest drain. Drains are visually obvious and correlate with the label, so the model learns the treatment rather than the pathology — and treated cases are exactly the ones already diagnosed. The clinically useful case is the one it fails on.
+## What convinced me
 
-## Why it matters for auditing
+The examples show how reassuring averages can reverse clinical interpretation. A pneumothorax model achieved AUC 0.87 overall and 0.94 in cases with a chest drain, but only 0.77 in cases without one — the untreated cases where detection matters most. In MURA, abnormality AUC was 0.98 for hardware but 0.76 for degenerative disease. Fracture sensitivity was also lower for subtle and cervical fractures than the overall result suggested.
 
-This reframes what a subgroup is. Fairness work usually stratifies by demographic attributes, which are recorded. Hidden stratification concerns subsets that are **clinically meaningful but not labeled** — severity, lesion morphology, presence of treatment artifacts, acquisition conditions. You cannot report performance on a subgroup you never defined.
+## What it leaves open
 
-The paper's proposed approaches — schema completion, error auditing, algorithmic measurement — all require someone to hypothesize where the strata might be. That is clinical work, not statistical work.
+Subgroup labels may be unavailable, expensive, or themselves incomplete. Error auditing can discover known patterns but cannot guarantee that all clinically important strata have been found. Reporting more subgroups also creates multiplicity and small-sample uncertainty, which requires prespecified priorities and confidence intervals.
 
 ## What I take from it
 
-The most dangerous errors are structurally invisible to the metrics we publish. Any audit that only reports overall performance plus demographic breakdowns will miss them.
+Evaluation should follow a clinical failure taxonomy, not only the dataset schema. I would ask which subtypes are untreated, rare, subtle, or disproportionately harmful, then report performance and evidence use within them. Aggregate AUROC is a summary, not a safety argument.

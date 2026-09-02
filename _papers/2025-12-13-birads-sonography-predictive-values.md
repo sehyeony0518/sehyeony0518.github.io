@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Several of the breast-ultrasound papers I've reviewed use BI-RADS descriptors — shape, margin, orientation — as an interpretable concept layer, implicitly assuming each descriptor carries real predictive weight toward malignancy. This paper is one of the empirical studies behind that assumption, so I read it to check how strong that per-feature signal actually is.
+Concept-based breast-ultrasound models need an empirical basis for why shape, margin, and orientation matter. This paper quantifies how individual BI-RADS descriptors relate to pathology in a biopsy-confirmed cohort.
 
 ## What the paper claims
 
-The authors evaluate individual BI-RADS sonographic features against biopsy outcomes, reporting the positive and negative predictive value of each descriptor category (shape, margin, orientation, echo pattern, posterior features, and others) rather than treating BI-RADS only as a single aggregate assessment category. This decomposes the lexicon into its component parts and asks how much malignancy risk each one carries on its own.
+Three dedicated breast radiologists described 403 solid masses using the sonographic BI-RADS lexicon, and those descriptors were compared with histology. The study reports positive and negative predictive values for individual features rather than building a multivariable predictive model.
 
 ## What convinced me
 
-Treating BI-RADS features individually, rather than only as inputs folded into a single final category, is exactly the granularity a concept-bottleneck or explainable CAD system needs to be built on. If a downstream model's "margin" concept prediction is meant to carry diagnostic weight, this kind of study is what tells you how much weight that concept can legitimately bear.
+The feature-level results are clinically intuitive and numerically clear. Spiculated margin had PPV 86% (19/22), irregular shape 62% (102/164), and nonparallel orientation 69% (75/109). Circumscribed margin had NPV 90% (160/178), oval shape 84% (200/237), and parallel orientation 78% (228/294). Descriptor distributions differed significantly between benign and malignant masses across the evaluated feature groups.
 
 ## What it leaves open
 
-Predictive values computed on one institution's case mix don't transfer directly to a population with a different malignancy prevalence — PPV and NPV are prevalence-dependent by construction, unlike sensitivity and specificity. A concept's predictive value at this site, in this era of equipment, is not automatically the same concept's predictive value elsewhere.
+Predictive values depend on prevalence; malignancy prevalence was 35% in this cohort, much higher than many screening settings. The descriptors are correlated and interpreted jointly in practice, so a single-feature PPV should not be treated as a causal weight or universal threshold. Inter-reader variability and selection for biopsy also limit portability.
 
 ## What I take from it
 
-When I evaluate a BI-RADS-based concept bottleneck, I now check whether its concept-level predictive weights are plausible against studies like this one — and whether the model is implicitly relearning that "irregular margin" matters more than "orientation" in a way that's consistent with the clinical literature, or diverging from it in ways that would need explaining. A concept bottleneck's concepts are only as trustworthy as the empirical grounding behind each one.
+Clinical concepts should be grounded in both guidelines and cohort evidence, but their meaning is conditional. In a concept model, I would evaluate descriptor agreement, combinations, prevalence shift, and intervention effects rather than assuming that a historically high PPV makes a concept sufficient for diagnosis.
