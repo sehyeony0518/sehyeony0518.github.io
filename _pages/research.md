@@ -123,8 +123,8 @@ Rather than treating interpretability as an additional visualization step, I aim
 
 ## Teaching Experience
 
-- **Teaching Assistant → Head Teaching Assistant**, Logic Circuit Laboratory (undergraduate), Ajou University &nbsp;<span style="opacity:.55;">Mar 2026 – Present</span>
-  Supervise undergraduate digital logic labs, including circuit troubleshooting, team projects, and grading. Student evaluation: **4.77 / 5.00 (95.4%)**, Spring 2026. Appointed Head TA for Fall 2026; train and coordinate the course's teaching assistants.
+- **Teaching Assistant** (Spring 2026) **→ Head Teaching Assistant** (Fall 2026), Logic Circuit Laboratory (undergraduate), Ajou University &nbsp;<span style="opacity:.55;">Mar 2026 – Dec 2026</span>
+  Supervised undergraduate digital logic labs — circuit troubleshooting, team projects, and grading — as TA in Spring 2026, with student evaluation **4.77 / 5.00 (95.4%)**. Served as Head TA in Fall 2026, training and coordinating the course's teaching assistants.
 
 - **Undergraduate Research Mentor**, Convergence Electronics Research, Dept. of ECE, Ajou University &nbsp;<span style="opacity:.55;">Jan – Dec 2026</span>
   Mentored an undergraduate research project on ultrasound image segmentation model design and experiments.
