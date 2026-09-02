@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Most of the AI papers I've read on ultrasound-based liver-fat grading treat attenuation and backscatter as if they were already standardized, reliable inputs. This QIBA review is the actual standardization effort behind that assumption, and I wanted to understand how far along it really is and what confounders it's still contending with.
+A learned ultrasound model is only as portable as the measurement process that produced its inputs. I read this QIBA review because it treats acquisition protocol, confounding factors, repeatability, and cross-vendor standardization as part of the biomarker — not as technical details outside the model.
 
 ## What the paper claims
 
-The Quantitative Imaging Biomarkers Alliance (QIBA) Pulse-Echo Quantitative Ultrasound (PEQUS) initiative reviews the state of standardizing attenuation coefficient, backscatter coefficient, and speed of sound as reproducible, cross-vendor quantitative biomarkers for hepatic steatosis, addressing sources of variability such as depth, probe pressure, and patient body habitus. It frames the clinical stakes: NAFLD affects roughly 30% of the general population and 55–80% of people with type 2 diabetes, with NASH incidence estimated at 12–26 per 1,000 person-years.
+The initiative reviews attenuation imaging for liver-fat quantification and places it alongside backscatter coefficient and speed of sound as quantitative ultrasound candidates. It summarizes the physics, acquisition recommendations, reference standards, reported diagnostic performance, and unresolved sources of variability that must be addressed before attenuation can function as a standardized biomarker.
 
 ## What convinced me
 
-The paper is explicit about which confounders (operator technique, machine settings, patient factors) still limit cross-site reproducibility of these quantitative US biomarkers, rather than presenting them as solved. That candor is useful, because it means a downstream AI model trained on attenuation measurements from one QIBA-participating site is not automatically getting a fully standardized input — the review itself documents the standardization is still in progress.
+Across the reviewed studies, attenuation methods often achieved strong discrimination for steatosis, with representative AUC around 0.91, and repeatability estimates were generally high, with reported ICCs roughly in the 0.81–0.98 range. At the same time, results and thresholds varied by system, protocol, region-of-interest placement, and reference standard. That combination — promising accuracy but incomplete interchangeability — is exactly why a technical profile is needed.
 
 ## What it leaves open
 
-As a review and initiative-status paper rather than a validation study, it doesn't provide a single number for how reproducible attenuation measurement currently is across vendors and sites in practice — that evidence lives in the individual studies it surveys, not in this synthesis.
+The paper is a review and expert statement, not a single prospective multicenter validation. Different implementations of attenuation are not automatically comparable, and biopsy and MRI-based references have different limitations. Vendor-specific cutoffs, body habitus, depth, and coexisting fibrosis can affect estimates.
 
 ## What I take from it
 
-Any AI paper using ultrasound attenuation or backscatter as a "quantitative" feature is implicitly relying on the QIBA standardization effort holding up across the specific machines and sites in its dataset — and per this review, that's a live, only-partially-solved problem, not settled infrastructure. It's a reminder to check, in any liver-US AI paper, how many scanners and sites the training data actually spans before trusting that the model's attenuation-based features generalize.
+For quantitative ultrasound AI, the acquisition pipeline belongs inside the validation claim. I would report device and protocol, repeat scans, operator effects, calibration or phantom procedures, and external reproducibility. A model cannot be clinically faithful to a biomarker whose own measurement conditions are undefined.

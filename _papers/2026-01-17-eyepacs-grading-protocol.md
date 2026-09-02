@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-EyePACS is one of the most widely used public diabetic-retinopathy datasets, and a large fraction of DR-grading deep learning papers I read train or benchmark on it without describing how its labels were actually produced. I wanted to read the grading manual itself rather than keep taking "EyePACS-labeled" at face value.
+Retinal benchmarks often present a final DR class without showing the grading rules that produced it. I read the EyePACS protocol because label construction — especially image quality, lesion certainty, and missing retinal field — directly determines what model errors mean.
 
-## What the document specifies
+## What the protocol specifies
 
-The protocol defines exactly which lesions a human grader is looking for and scoring — microaneurysms, hemorrhages with or without microaneurysms, cotton wool spots, intraretinal microvascular abnormalities, venous beading, new vessels (disc and elsewhere), fibrous proliferation, vitreous or preretinal hemorrhage, and hard exudates — each against reference grading templates, feeding into the overall DR severity label.
+Graders assess individual lesions such as microaneurysms, hemorrhages, cotton-wool spots, venous beading, neovascularization, and hard exudates. An algorithm then combines those lesion grades into overall retinopathy and macular-edema severity. The protocol also defines certainty and gradability rules rather than forcing every photograph into a disease category.
 
 ## What convinced me
 
-Having an explicit, lesion-by-lesion rulebook behind the labels is exactly the kind of grounding I want before trusting a DR-severity dataset as a training target. It means a "grade 3" label isn't a holistic gestalt call; it's traceable, in principle, back to specific named findings a grader was instructed to look for.
+The operational details expose uncertainty that is hidden in a benchmark CSV. A lesion is recorded as present when the grader is at least 50% certain. An image can be marked ungradable when more than half of the relevant retinal area is missing or obscured; when less is missing, graders are instructed to infer that the unseen area resembles the visible retina. These rules can materially affect both labels and apparent model performance.
 
 ## What it leaves open
 
-A written protocol constrains what graders are *supposed* to look for, but doesn't guarantee consistency in how individual graders apply it — crowd-sourced or distributed grading of the scale EyePACS operates at inevitably has inter-grader variability the protocol document itself can't quantify. It also doesn't specify how disagreements between graders on the same image are resolved into a single training label.
+Protocol consistency does not eliminate reader disagreement or the limitations of a restricted photographic field. Macular-edema grading relies on hard exudates as a surrogate because retinal thickening is not directly observed in color photographs. Models trained on the summary label may therefore learn grading conventions rather than the full clinical condition.
 
 ## What I take from it
 
-Reading the actual grading protocol changed how I read reported inter-rater agreement statistics on EyePACS-trained models — a lesion-level protocol like this is a meaningfully stronger foundation than an unstructured "assign a severity grade" instruction, but it's still not a substitute for lesion-level ground truth (e.g., pixel annotations) when auditing whether a model is actually keying on the lesions the protocol defines rather than a correlated shortcut.
+Dataset labels should be accompanied by their grading algorithm and uncertainty policy. I would model gradability explicitly, preserve lesion-level outputs when available, and analyze disagreements near the protocol's certainty and field-coverage boundaries instead of treating every mismatch as the same error.
