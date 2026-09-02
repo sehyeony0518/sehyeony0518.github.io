@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Before CNNs, breast-ultrasound CAD relied on hand-engineered features meant to capture specific radiological signs. This paper's target — the "infiltrative nature" of a lesion's margin, a classic malignancy cue — is exactly the kind of feature a modern deep model is implicitly expected to rediscover on its own, so I wanted to see how it was made explicit here.
+This paper is relevant to my ultrasound work because it turns a recognizable BI-RADS idea — the infiltrative or irregular contour of a malignant lesion — into an explicit multiscale signal feature. The evidence path is simple enough to inspect from contour to score.
 
 ## What the paper claims
 
-The authors treat the irregularity of a lesion's boundary as a kind of energy signal that produces local variance along a one-dimensional contour representation, and use a wavelet transform to extract "channel energy" features that quantify that irregularity, feeding them into a classifier to distinguish malignant from benign masses. The motivation is grounded directly in known clinical practice: breast ultrasound as an adjunct to mammography measurably improves sensitivity, and reducing unnecessary biopsies (most biopsied masses turn out to be benign) is the explicit clinical goal.
+A lesion boundary is converted into a one-dimensional signal, and high-octave wavelet channel energies quantify local contour variation. The authors argue that malignant infiltration produces irregular, localized changes that are captured efficiently by low-frequency-adjacent wavelet bands. They evaluate both physician-drawn contours and contours generated with ImageJ.
 
 ## What convinced me
 
-The feature is designed around a specific, named, clinically established sign (infiltrative/irregular margin as a malignancy indicator) rather than an arbitrary texture statistic, which makes the resulting classifier's reasoning traceable back to something a radiologist already looks for. That traceability is exactly what gets harder to verify once a CNN takes over the same task end-to-end.
+With expert contours, the feature achieved AUC 0.991, accuracy 0.951, sensitivity 0.985, and specificity 0.933. Performance fell when automated ImageJ contours were used, with AUC around 0.934 and accuracy 0.844. That drop is scientifically useful: it shows that the classifier's apparent strength is conditional on the quality of the upstream lesion boundary.
 
 ## What it leaves open
 
-Hand-engineered features like this one are, by construction, incomplete — they capture one clinically meaningful signal (margin irregularity) and will miss any other pattern predictive of malignancy that a radiologist or a learned model might pick up on. The paper doesn't report on a large or multi-institution cohort, so how well this specific feature generalizes across scanner and population is untested.
+The study uses a relatively small curated dataset and does not establish patient-level, multi-site, or multi-scanner generalization. Contour delineation is itself operator- and algorithm-dependent, and high performance with manual boundaries can hide the difficulty of automatic lesion extraction. The feature is clinically legible, but it captures only one aspect of BI-RADS reasoning.
 
 ## What I take from it
 
-Reading a hand-engineered-feature paper after a run of deep-learning breast-ultrasound papers is clarifying: it shows exactly what a black-box CNN is implicitly being asked to reinvent, and it's a useful sanity check for concept-bottleneck-style designs — margin irregularity is precisely the kind of concept that a modern bottleneck should be able to name explicitly, the same way this 2009 paper did with an explicit wavelet feature.
+An interpretable pipeline should report error propagation between stages. Here, contour uncertainty is part of the diagnostic uncertainty. Modern models can learn richer features, but this paper remains a useful control for whether they truly improve on a clinically motivated contour descriptor.
