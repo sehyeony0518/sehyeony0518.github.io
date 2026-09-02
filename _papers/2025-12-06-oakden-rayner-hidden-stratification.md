@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hidden Stratification: The Failures the Aggregate Metric Cannot Show"
+title: "Hidden Stratification Causes Clinically Meaningful Failures in Machine Learning for Medical Imaging"
 date: 2025-12-06 12:00:00 +0900
 venue: "ACM CHIL"
 authors: "Oakden-Rayner, Dunnmon, Carneiro, Ré (2020)"

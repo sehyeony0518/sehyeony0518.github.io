@@ -1,29 +1,31 @@
 ---
 layout: post
-title: "Shortcut Learning in Radiology AI: A Practitioner's Field Guide"
+title: "There Are No Shortcuts to Anywhere Worth Going: Identifying Shortcuts in Deep Learning Models for Medical Image Analysis"
 date: 2026-06-06 12:00:00 +0900
-venue: "Radiology"
-authors: "Boland et al. (2024)"
-description: "A synthesis, aimed at radiologists rather than ML researchers, of how shortcut learning actually shows up in clinical imaging AI — and what to check for before trusting a model."
+venue: "MIDL 2024"
+authors: "Christopher Boland, Keith A. Goatman, Sotirios A. Tsaftaris, Sonia Dahdouh (2024)"
+description: "A method for locating which layer of a network a shortcut's features actually manifest in, using Prediction Depth and KL divergence — moving from 'the model has a shortcut' to 'here is where in the network it lives.'"
 related_posts: false
 ---
 
-**Paper.** *Shortcut Learning in Medical AI* — Boland et al., Radiology (2024)
+**Paper.** *There Are No Shortcuts to Anywhere Worth Going: Identifying Shortcuts in Deep Learning Models for Medical Image Analysis* — [MIDL 2024](https://proceedings.mlr.press/v250/)
 
 ## Why I read it
 
-Most of the shortcut-learning literature I have read is written by and for machine-learning researchers. This paper is useful precisely because it translates the same concerns into the language and workflow of a practicing radiologist deciding whether to trust a vendor's AI product.
+Most of the shortcut-learning papers I've read establish *that* a model relies on a spurious feature — a scanner marker, an acquisition site — through performance drops or counterfactual tests. This paper asks a more mechanistic question: *where inside the network* does that reliance actually show up. That's a different, more actionable kind of evidence than anything else in my reading list so far.
 
-## What it adds
+## What the paper claims
 
-Rather than one dramatic case study, the paper works as a taxonomy: acquisition-linked shortcuts (scanner make, protocol, site markers), population-linked shortcuts (age, sex, comorbidity patterns that correlate with the label in a particular dataset but not causally), and workflow-linked shortcuts (the presence of a prior report, a treatment device, or an ordering pattern that leaks information about the outcome). Each category comes with the kind of question a radiologist evaluating a deployed tool could actually ask: was training data pooled across sites with different disease prevalence? Were cases and controls collected under different protocols? Does the tool's performance hold on images from equipment the developer didn't train on?
+The authors propose a method built on Prediction Depth (a sample-difficulty metric measuring how early in a network a prediction becomes stable) combined with KL divergence, to identify the specific layers where a shortcut's learned features manifest. Testing across several shortcuts, model architectures, and datasets, they show their method can isolate these layers consistently, and find a correlation between a shortcut's visual complexity, how deep in the network its features emerge, and how much it degrades model performance. They also report a nuanced relationship between learning rate and the degree of shortcut reliance.
 
-The framing I found most useful is the shift from "is this model accurate" to "what would have to be true about my patient population for this model's shortcuts, if any, to still produce correct answers." That's a question a clinical user can actually evaluate without needing to audit the model's internals.
+## What convinced me
+
+Localizing a shortcut to specific layers is a genuinely different and more useful claim than detecting its presence at the output. If a shortcut's features consistently manifest early (shallow, low-complexity) versus late (deep, high-complexity) depending on its visual complexity, that's a testable structural regularity — not just a post hoc explanation of one specific failure case, but a pattern that could inform where in a network to intervene.
 
 ## What it leaves open
 
-As a synthesis rather than a new empirical study, it does not resolve the harder technical question — how to detect a shortcut without external data or ground-truth annotation of the confounding variable. It is deliberately positioned as the translation layer between the technical literature (Geirhos, Zech, DeGrave) and clinical deployment decisions.
+The method identifies *where* a shortcut lives in a trained network; it doesn't by itself say how to remove reliance on it once located, or whether interventions at the identified layer (e.g., targeted fine-tuning or feature suppression) actually fix the underlying generalization problem. The learning-rate relationship is also reported as "nuanced" — the paper doesn't yet give a clean, actionable rule for how learning-rate choice should be adjusted to discourage shortcut formation.
 
 ## What I take from it
 
-This is the register I want my own writing to be able to shift into: the same auditing concerns, but phrased as questions a clinician can ask a vendor, not just a proof a machine-learning researcher can construct. If clinical faithfulness auditing is going to matter outside a lab, it needs exactly this kind of translation.
+Most of my reading treats shortcut detection as binary — a model either shows evidence of relying on a confound or it doesn't. This paper's layer-localization angle suggests a richer diagnostic: not just whether a shortcut is present, but how deep into the model's representation it has been absorbed, which plausibly says something about how hard it will be to dislodge. That's a dimension I want to start asking about in my own audits, not just presence or absence.

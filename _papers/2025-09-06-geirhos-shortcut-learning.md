@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Shortcut Learning: The Failure Mode That Explains Most Others"
+title: "Shortcut Learning in Deep Neural Networks"
 date: 2025-09-06 12:00:00 +0900
 venue: "Nature Machine Intelligence"
 authors: "Geirhos, Jacobsen, Michaelis, Zemel, Brendel, Bethge, Wichmann (2020)"

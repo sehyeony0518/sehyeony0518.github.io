@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy"
+title: "Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ"
 date: 2026-04-18 12:00:00 +0900
 venue: "IEEE JSTSP"
 authors: "Hsieh-Wei Lee, Bin-Da Liu, King-Chu Hung, Sheau-Fang Lei, Po-Chin Wang, Tsung-Lung Yang (2009)"

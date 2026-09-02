@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ultrasonographic Fatty Liver Indicator: A Novel Score for NAFLD"
+title: "Ultrasonographic Fatty Liver Indicator, a Novel Score Which Rules Out NASH and Is Correlated with Metabolic Parameters in NAFLD"
 date: 2025-09-27 12:00:00 +0900
 venue: "Liver International"
 authors: "Stefano Ballestri, Amedeo Lonardo, Dante Romagnoli, Lucia Carulli, Luisa Losi, Christopher P. Day, Paola Loria (2012)"

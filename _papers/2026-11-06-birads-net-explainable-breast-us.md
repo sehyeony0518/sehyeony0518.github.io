@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagnosis in Breast Ultrasound"
+title: "BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagnosis in Breast Ultrasound Images"
 date: 2026-11-06 12:00:00 +0900
 venue: "IEEE ISBI 2021"
 authors: "Boyu Zhang, Aleksandar Vakanski, Min Xian (2021)"

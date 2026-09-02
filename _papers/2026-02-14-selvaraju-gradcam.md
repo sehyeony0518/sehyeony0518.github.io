@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Grad-CAM: A Localization Map Is Not an Explanation"
+title: "Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization"
 date: 2026-02-14 12:00:00 +0900
 venue: "ICCV"
 authors: "Selvaraju, Cogswell, Das, Vedantam, Parikh, Batra (2017)"

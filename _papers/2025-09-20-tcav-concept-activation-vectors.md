@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Interpretability Beyond Feature Attribution: TCAV"
+title: "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)"
 date: 2025-09-20 12:00:00 +0900
 venue: "ICML 2018"
 authors: "Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viégas, Rory Sayres (2018)"

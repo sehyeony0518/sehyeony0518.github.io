@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Transfer Learning with Deep CNN for Liver Steatosis Assessment in Ultrasound"
+title: "Transfer Learning with Deep Convolutional Neural Network for Liver Steatosis Assessment in Ultrasound Images"
 date: 2025-11-22 12:00:00 +0900
 venue: "IJCARS"
 authors: "Michał Byra, Grzegorz Styczynski, Cezary Szmigielski, Piotr Kalinowski, Łukasz Michałowski, Rafał Paluszkiewicz, Bogna Ziarkiewicz-Wróblewska, Krzysztof Zieniewicz, Piotr Sobieraj, Andrzej Nowicki (2018)"

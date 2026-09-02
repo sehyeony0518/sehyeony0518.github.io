@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior"
+title: "Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data"
 date: 2026-08-07 12:00:00 +0900
 venue: "arXiv preprint"
 authors: "Frederik Pahde, Thomas Wiegand, Sebastian Lapuschkin, Wojciech Samek (2025)"

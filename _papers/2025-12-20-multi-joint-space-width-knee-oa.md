@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Superiority of Multiple-Joint Space Width Over Minimum-Joint Space Width for Knee OA"
+title: "Superiority of Multiple-Joint Space Width over Minimum-Joint Space Width Approach in the Machine Learning for Radiographic Severity and Knee Osteoarthritis Progression"
 date: 2025-12-20 12:00:00 +0900
 venue: "Biology (MDPI)"
 authors: "James Chung-Wai Cheung, Andy Yiu-Chau Tam, Lok-Chun Chan, Ping-Keung Chan, Chunyi Wen (2021)"

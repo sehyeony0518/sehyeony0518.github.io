@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Model Learned the Hospital, Not the Disease: Shortcut Learning from Data Acquisition"
+title: "Shortcut Learning in Medical AI Hinders Generalization: Method for Estimating AI Model Generalization Without External Data"
 date: 2026-08-28 12:00:00 +0900
 venue: "npj Digital Medicine"
 authors: "Ong Ly, Nikita Saxena, Sangwook Kim, Chris McIntosh et al. (2024)"

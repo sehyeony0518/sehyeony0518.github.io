@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Model Could Read the Hospital: Variable Generalization in Pneumonia Detection"
+title: "Variable Generalization Performance of a Deep Learning Model to Detect Pneumonia in Chest Radiographs: A Cross-Sectional Study"
 date: 2025-10-11 12:00:00 +0900
 venue: "PLOS Medicine"
 authors: "Zech, Badgeley, Liu, Costa, Titano, Oermann (2018)"

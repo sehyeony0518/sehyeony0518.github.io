@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Shortcuts Over Signal: What COVID Radiograph Models Actually Learned"
+title: "AI for Radiographic COVID-19 Detection Selects Shortcuts Over Signal"
 date: 2025-11-08 12:00:00 +0900
 venue: "Nature Machine Intelligence"
 authors: "DeGrave, Janizek, Lee (2021)"
