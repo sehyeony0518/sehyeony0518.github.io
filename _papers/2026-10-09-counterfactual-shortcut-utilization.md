@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-I'd just reviewed RoentMod, a chest-X-ray-specific counterfactual tool for catching shortcut reliance. This paper works from the same core idea — generate a counterfactual and see if the model's prediction moves appropriately — but frames it as a general evaluation methodology rather than a single-modality tool, so I wanted to compare the two approaches directly.
+Many shortcut studies stop after showing that site or sex can be decoded from a representation. I read this paper because it asks the more consequential question: how much of the diagnostic performance actually depends on that protected attribute?
 
 ## What the paper claims
 
-The authors note that deep learning models can surpass human performance on many medical image analysis tasks while still, unreliably, basing that performance on spurious correlations. They propose a counterfactual-analysis framework to evaluate the degree of shortcut utilization in a trained disease classifier — generating counterfactual versions of input images that alter the disease-relevant content (or a candidate confounder) and measuring whether the model's prediction shifts in the direction that genuine reliance on clinical evidence would predict.
+The authors fit a causal generative model to penultimate-layer activations and construct counterfactual activations in which a protected attribute is removed while other modeled factors are retained. The change in disease-classification performance is then interpreted as the amount of shortcut utilization attributable to that factor. Importantly, the intervention is performed in activation space, not by editing the input MRI.
 
 ## What convinced me
 
-Framing shortcut evaluation as a general, model-agnostic methodology rather than a single case study is useful precisely because it invites direct comparison across different classifiers and datasets using the same yardstick — a counterfactual-based shortcut score that isn't tied to one specific modality's counterfactual-generation pipeline.
+The Parkinson's disease study includes 835 T1-weighted MRI scans from nine sites. Removing site information reduced AUROC from about 0.74 to 0.65, suggesting substantial dependence on acquisition site. Removing sex changed AUROC by only about 0.004. The contrast is valuable because both variables may be encoded, yet only one materially supports the diagnostic decision.
 
 ## What it leaves open
 
-Any counterfactual-based evaluation is only as trustworthy as the realism and correctness of the counterfactual generator itself — exactly the concern RoentMod addressed head-on with a dedicated reader study validating its edited images. This paper's general framing doesn't remove that dependency; it shifts the burden of proving counterfactual fidelity onto whatever specific generator is used within the framework for a given application.
+The estimate is only as credible as the assumed causal graph and the generative model used to create the counterfactual activation. An activation that is mathematically valid may not correspond to any plausible image or patient. A performance drop also quantifies dependence without identifying which anatomical evidence should replace the shortcut.
 
 ## What I take from it
 
-Reading this alongside RoentMod sharpened a distinction I want to keep in mind: a *general* counterfactual-evaluation framework is valuable for comparing shortcut reliance across models, but its results are only as strong as the *specific* counterfactual generator's validated realism in each application. When I see a counterfactual-based shortcut claim, I now check whether the underlying image generator was itself validated (ideally with a reader study) before trusting the shortcut score it produces.
+The paper provides a much stronger test than metadata decodability: intervene, then measure the task consequence. I would still triangulate activation-space counterfactuals with image-level perturbations, cross-site evaluation, and clinically specified evidence tests before making a causal claim.

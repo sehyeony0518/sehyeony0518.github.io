@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-This is the most recent knee-OA paper in my reading list, and having already read the OARSI atlas, the Kellgren-Lawrence primer, and several classical and deep-learning grading papers, I wanted to see how the field's most current explainable-AI work frames the same reliability problem those earlier sources all point to: KL grading is poorly reproducible across readers.
+I read Knee-xRAI because it attempts something stronger than attaching a heatmap to a Kellgren-Lawrence classifier. The pipeline first measures the radiographic findings that define the grade — joint-space narrowing, osteophytes, and subchondral sclerosis — and then exposes those measurements as an auditable evidence surface.
 
 ## What the paper claims
 
-The authors open with the concrete clinical stakes of KL-grading disagreement: because a single-grade disagreement on the Kellgren-Lawrence scale can alter surgical management or redirect a patient from conservative therapy toward intra-articular injection, the poor reproducibility of KL grading across readers isn't just a measurement nuisance — it's a decision-relevant source of error. Knee-xRAI is proposed as an explainable AI framework for automatic KL grading that surfaces the visual evidence behind its grade assignment, aimed at making the model's output checkable against exactly the kind of borderline, clinically consequential disagreements the introduction highlights.
+The framework combines a U-Net++ module for joint-space measurements, a site-specific multitask network for OARSI osteophyte grades, and a texture-based sclerosis detector. These outputs form a 50-dimensional structured vector. The authors evaluate an XGBoost–SHAP audit path using only that vector, and a higher-capacity ConvNeXt hybrid path that also receives unrestricted visual features.
 
 ## What convinced me
 
-Opening with the treatment-pathway consequence of a single-grade disagreement, rather than a generic accuracy or agreement statistic, is the right way to motivate explainability for this specific task — it locates the value of interpretability precisely at the KL scale's known weak point (grade boundaries), which is also exactly where the inter-rater unreliability documented across the classification literature concentrates.
+The most informative result is the intervention study, not the SHAP plot. On 8,260 OAI-derived radiographs, the joint-space module reached a Dice score of 0.8909 and an mJSW ICC of 0.8674. The deployment path achieved QWK 0.8436 and AUC 0.9017. When joint-space evidence was removed, KL4 recall fell from 88% to 0%, while early grades were much less affected — behavior that matches the clinical construction of the KL scale.
 
 ## What it leaves open
 
-As a recent preprint, the framework's explanations haven't yet been validated the way, for instance, BUS-CBM's concept intervention was — the paper doesn't report whether correcting or challenging Knee-xRAI's stated visual evidence changes its output the way a genuinely faithful explanation should, which is the test I've come to look for before treating an "explainable" grading model as trustworthy at the specific grade boundaries where it matters most.
+The explanation and deployment paths are not identical. The fully structured audit path reached QWK 0.6294, substantially below the ConvNeXt hybrid, so SHAP explanations from the former do not completely account for the latter's decision. The feature annotations were also available only for subsets, and their inter-reader agreement was not fully quantified.
 
 ## What I take from it
 
-Reading this last, after the OARSI atlas, the KL primer, KIDA, and the individual-feature grading paper, closed a loop for me: this entire chain of knee-OA papers converges on the same fact from different angles — the scale's ordinal boundaries carry real clinical consequence and real reader disagreement, and every automated system built on it inherits that ambiguity whether or not it's explainable. An explainability layer is valuable exactly to the extent it helps a clinician see *why* a borderline case landed where it did — and that value still needs to be demonstrated with an intervention-style test, not just an attention map.
+Component-level prediction plus targeted ablation is much more persuasive than visual plausibility alone. At the same time, an auditable surrogate is not enough: the evidence test must apply to the model that will actually be deployed.

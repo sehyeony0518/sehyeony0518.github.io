@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Having already read the BUS-CBM concept-bottleneck paper, I wanted to see an earlier point in the same line of work — a multitask, rather than strict-bottleneck, approach to tying a breast-ultrasound classifier's output to BI-RADS descriptors — to understand what the bottleneck architecture specifically improved on relative to this precedent.
+I read BI-RADS-Net alongside BUS-CBM to separate two architectures that are often described with the same word, "explainable." Both predict BI-RADS concepts, but only one constrains how those concepts enter the final diagnosis.
 
 ## What the paper claims
 
-The authors argue that establishing clinician trust requires explaining a model's decision-making process, and that typical CAD systems for breast-cancer diagnosis fall short by only outputting a benign/malignant category or a tumor localization, without connecting that output to the diagnostic reasoning a radiologist would use. BI-RADS-Net addresses this with a multitask architecture that jointly predicts BI-RADS descriptors (such as shape and margin) and the final malignancy classification, sharing representations between the two tasks rather than strictly gating the final prediction through the BI-RADS outputs.
+BI-RADS-Net jointly predicts five BI-RADS descriptors, a benign/malignant class, and a malignancy likelihood from breast ultrasound. Shared features are intended to improve classification while presenting outputs in the vocabulary radiologists already use: shape, orientation, margin, echo pattern, and posterior features.
 
 ## What convinced me
 
-Naming the specific shortfall of prior CAD systems — a category or a bounding box, with no connection to diagnostic reasoning — is a clear and accurate framing of the trust gap, and treating BI-RADS descriptor prediction as a first-class task alongside classification (not just a post hoc visualization) is a reasonable multitask formulation.
+The multitask formulation is clinically coherent and performs reasonably on 1,192 images. All five descriptor tasks exceeded 80% accuracy, and tumor classification reached 88.9%. This is more informative than a post hoc heatmap because the auxiliary tasks are trained against explicit clinical labels rather than inferred after training.
 
 ## What it leaves open
 
-Multitask learning, unlike a strict concept bottleneck, doesn't force the final classification to depend *only* on the predicted BI-RADS concepts — the malignancy head can still draw on shared representations directly, bypassing the descriptor predictions. That means the BI-RADS outputs here are best read as auxiliary, correlated evidence of what the model may be attending to, not a guarantee (the way BUS-CBM's bottleneck and its concept-intervention test aim to guarantee) that the final decision actually routes through them.
+The malignancy head can still bypass the predicted descriptors through the shared representation. Descriptor agreement therefore shows that the network can recover BI-RADS information, not that its cancer decision actually depends on that information. The paper also did not include the clinician-facing qualitative study that it proposed as future work, and descriptor accuracy alone does not establish explanation usefulness or calibration.
 
 ## What I take from it
 
-Reading this alongside BUS-CBM clarified the real architectural distinction between "multitask, explanation as an auxiliary output" and "bottleneck, explanation as the only channel to the final decision" — and why the latter supports a much stronger faithfulness test (concept intervention) than the former does. When a paper describes itself as "explainable via BI-RADS," I now check which of these two architectures it actually is before assuming the explanation is causally load-bearing.
+This paper is a useful architectural baseline. Multitask concept prediction answers "does the representation contain this clinical information?" A strict bottleneck or an intervention test is needed to answer the stronger question, "would changing this concept change the diagnosis?" I now look for that distinction whenever a model claims concept-level explainability.

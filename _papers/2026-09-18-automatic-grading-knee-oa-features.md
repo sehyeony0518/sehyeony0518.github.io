@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Having read the OARSI atlas itself and the Kellgren-Lawrence classification primer, I wanted to see a deep-learning paper that engages with the atlas's actual granularity — individual feature grades — rather than collapsing straight to a single aggregate KL score, since that collapse is exactly where I've found a lot of clinical nuance gets lost.
+A single KL grade compresses several radiographic processes into one ordinal label. I read this paper to see whether predicting the component features — rather than only the composite grade — can produce a more clinically inspectable assessment of knee osteoarthritis.
 
 ## What the paper claims
 
-Instead of predicting a single holistic KL grade, Tiulpin and Saarakkala train a deep CNN to grade each individual OARSI-atlas feature separately — osteophytes at multiple joint compartments and joint space narrowing among them — providing a fine-grained severity assessment that mirrors how the atlas itself is structured, rather than the coarser five-point aggregate scale typically used as a single training target.
+The model jointly predicts Kellgren-Lawrence grade and site-specific OARSI features, including joint-space narrowing and osteophytes. Training used OAI radiographs, while evaluation included the independent MOST cohort. The central claim is not that OARSI replaces KL, but that the two can be learned together so the composite output is accompanied by its structural components.
 
 ## What convinced me
 
-Matching the model's output granularity to the atlas's own granularity is the right design choice given everything I'd already read about how much subjective aggregation happens when multiple individual features get compressed into one KL number. Predicting individual feature grades keeps the model's output at the same resolution as the clinical reference standard, rather than adding an extra, unmodeled aggregation step.
+External validation is the strongest part of the study. On MOST, the model reached weighted kappa 0.82 for KL grading and balanced accuracy 66.68%. Agreement for individual OARSI features ranged from approximately 0.79 to 0.94, and binary radiographic OA detection reached AUC and average precision near 0.98. This shows that component labels can transfer across cohorts rather than functioning only as an internal explanatory display.
 
 ## What it leaves open
 
-Predicting more, finer-grained labels means more label targets, each of which likely carries its own inter-rater variability — the paper doesn't fully address whether that per-feature noise compounds into a less reliable model overall compared to training on the coarser but more consistently-applied aggregate KL grade. It's a real tradeoff between granularity and label reliability that the paper doesn't fully resolve.
+OARSI annotations remain reader-dependent ordinal judgments and are highly imbalanced at severe grades. Joint prediction also does not by itself prove that the KL head causally uses the component outputs; both heads may rely on shared latent features. Clinical utility would require calibration and error analysis around grade boundaries, not only aggregate kappa.
 
 ## What I take from it
 
-This is a concrete example of a broader principle I want to apply when I audit grading models: check whether the model's output granularity matches the granularity of its actual clinical reference standard, or whether there's a hidden aggregation step (many features into one score) happening either in the labels or in the model architecture. A model trained on individual OARSI features, like this one, is answering a more specific and more checkable question than one trained only on aggregate KL grade.
+The paper supports reporting a structured evidence profile beside a composite severity score. For stronger faithfulness, I would add interventions that suppress or correct one component and test whether the final grade changes according to the clinical definition.

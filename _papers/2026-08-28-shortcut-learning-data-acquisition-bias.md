@@ -14,30 +14,20 @@ related_posts: false
 
 ## Why I read it
 
-My research asks whether a model that is accurate is accurate *for clinically valid reasons*. This paper is one of the clearest empirical demonstrations that the answer is often no — and, more usefully, it proposes a way to estimate how badly a model will generalize **without** needing an external dataset.
+This paper is directly aligned with the question behind my own work: an accurate model may still be untrustworthy if its performance comes from the acquisition process rather than the disease. It is also important to me because it moves beyond diagnosing this problem and attempts to estimate the external performance loss before an external dataset is available.
 
 ## What the paper claims
 
-Models trained on medical images frequently learn signals attached to **how and where the data were acquired** rather than to the disease itself. Scanner, institution, acquisition protocol, and even the clinical pathway that led to a scan can all correlate with the label. A model that exploits those correlations can post excellent internal test performance and then collapse when it meets another hospital's data.
-
-The paper's practical contribution is a method to estimate generalization gap using only the development data — by measuring how much of the model's performance is attributable to site- or acquisition-linked signals rather than to disease evidence.
+Across passively collected healthcare data, hidden data-acquisition bias can make source, scanner, protocol, or care pathway predictive of the target. The authors quantify this shortcut learning and propose PEst, a bias-corrected estimate of external accuracy computed from the development data. The goal is not to remove every shortcut, but to warn when internal performance is likely to be inflated by acquisition-linked information.
 
 ## What convinced me
 
-The argument is not merely that shortcuts exist; it is that **internal validation is structurally incapable of detecting them**. If the shortcut is present in both train and internal test splits — and it usually is, because both come from the same acquisition environment — then a held-out split rewards the shortcut instead of punishing it. High internal accuracy is therefore not weak evidence of generalization. It is *no* evidence, with respect to this failure mode.
-
-That reframing matters for how I read benchmark tables. A reported gap between internal and external performance is not simply "distribution shift happened." It can be a direct measurement of how much the model was relying on the acquisition environment.
+The breadth of the evaluation makes the argument difficult to dismiss as a radiology-specific artifact. The study covers 13 datasets, 207,487 patients, and five data types: X-ray, CT, ECG, lung sounds, and discharge summaries. Internal performance was overestimated by as much as about 20% on average in the affected settings, whereas PEst estimated external accuracy to within roughly 4% on average. This turns a familiar qualitative warning into an operational pre-deployment test.
 
 ## What it leaves open
 
-The method estimates *whether* a model depends on acquisition-linked signals. It does not identify *which* clinical evidence the model should have used instead, nor whether the remaining, non-shortcut signal is clinically meaningful. A model could be free of site shortcuts and still rely on a clinically irrelevant texture.
-
-Detecting shortcut reliance and verifying clinical faithfulness are therefore complementary problems — one rules out a known failure mode, the other asks whether the model's evidence would satisfy a clinician.
+PEst estimates the consequence of acquisition bias; it does not identify the clinically valid evidence a model should use instead. The shuffling-based bias transform also cannot represent every confounding mechanism, especially when disease evidence and acquisition pathways are entangled. A good estimate of external accuracy is therefore not equivalent to a clinical-faithfulness certificate.
 
 ## What I take from it
 
-Three things carry into my own work:
-
-1. **Design the audit for signals the split cannot expose.** If a confounder is shared across splits, no amount of held-out data will reveal it.
-2. **Treat the acquisition environment as a variable, not a background condition.** Scanner, site, and protocol belong in the analysis, not in the "materials" paragraph.
-3. **Estimating generalization without external data is worth pursuing.** Most clinical groups cannot obtain a second institution's data before they need to know whether their model will transfer.
+Acquisition environment should be analyzed as a measured variable, not relegated to the dataset description. I see this paper and evidence-based faithfulness audits as complementary: one asks how much performance may disappear across environments, while the other asks whether the remaining decision rule follows clinically meaningful evidence.
