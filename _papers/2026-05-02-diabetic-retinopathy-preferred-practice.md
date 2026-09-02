@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Deep-learning DR-screening papers usually cite disease severity scales (ICDR, EyePACS) but rarely engage with the full clinical guideline that governs what happens *after* a screening result — referral timing, follow-up intervals, treatment thresholds. I read the PPP to understand the clinical workflow an AI screening tool is actually meant to slot into.
+An AI system for diabetic retinopathy should be evaluated against the clinical workflow it is meant to support, not only against a benchmark label. I read this guideline to identify the decisions, examination conditions, and safety boundaries that give a DR prediction clinical meaning.
 
-## What the document specifies
+## What the guideline provides
 
-The AAO's Preferred Practice Pattern lays out evidence-graded, consensus clinical guidance for diagnosing and managing diabetic retinopathy and diabetic macular edema — screening intervals by disease stage, referral criteria to a retina specialist, and treatment recommendations, developed and externally reviewed by ophthalmology, retina, and endocrinology experts without industry funding.
+The Preferred Practice Pattern organizes evidence for detection, grading, follow-up, treatment, and patient counseling. It distinguishes disease severity from diabetic macular edema, emphasizes adequate retinal examination and image quality, and links findings to management rather than treating the grade as an isolated classification target. The document was approved by the Academy's Board of Trustees on September 13, 2024.
 
 ## What convinced me
 
-Reading the guideline made clear how much of a DR-screening tool's real-world value depends on downstream integration — a model with excellent severity-classification accuracy is only useful if its output maps cleanly onto the referral and follow-up decisions the PPP defines. Accuracy on a held-out DR grade is a necessary but far from sufficient condition for clinical usefulness.
+The clinically important output is not simply "correct class." The guideline repeatedly connects severity, edema, visual symptoms, prior treatment, and systemic context to different monitoring or referral decisions. This exposes a mismatch in many AI studies: a model can agree with a five-level label while failing to recognize an ungradable image, a sight-threatening lesion, or a case whose management depends on information outside the photograph.
 
 ## What it leaves open
 
-The PPP is a synthesis of the current evidence base, not a primary study — it doesn't itself generate new data about AI screening tools, and as guidelines are periodically revised, screening-interval or referral-threshold recommendations here could shift in future updates in ways that would change what "correct" AI output means downstream.
+A guideline is not a machine-readable ontology, and recommendations must still be interpreted for the local setting, available imaging, and patient circumstances. It also cannot substitute for direct evidence that an AI system improves outcomes or workflow. Translating prose recommendations into model targets requires explicit clinical and regulatory choices.
 
 ## What I take from it
 
-I now think about DR-AI evaluation less as "does the model output the right ICDR grade" and more as "does the model's output, plugged into this PPP's referral and follow-up logic, produce the same clinical action a specialist reading the guideline would recommend." A grading model can be accurate on the label yet still misalign with the guideline's decision logic if it's evaluated only against the numeric grade and never against the downstream action the grade is supposed to trigger.
+I would evaluate a retinal AI system as a decision-support pathway: image quality and gradability first, disease and edema evidence second, calibrated referral recommendation third, and uncertainty throughout. Benchmark agreement is necessary, but clinical usefulness begins where the benchmark label ends.
