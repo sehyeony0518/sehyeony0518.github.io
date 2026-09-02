@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Every deep-learning paper I read on automated Kellgren-Lawrence grading or knee-OA severity prediction ultimately reduces to a supervised-learning problem against labels that came from somewhere. This atlas is where a large share of those labels come from. Before judging whether a model's grading is trustworthy, I wanted to understand what the human reference standard actually looks like — and how much judgment is baked into it.
+The OARSI atlas is the visual reference behind many component-level knee labels. I read it because an AI model cannot be more clinically interpretable than the definition and reproducibility of the features it is trained to predict.
 
-## What the atlas provides
+## What the paper provides
 
-Altman and Gold's revision of the 1995 OARSI atlas gives radiologists a set of reference images, organized by joint (hand, hip, knee) and by feature (osteophytes, joint space narrowing, sclerosis, cysts), each graded on an ordinal scale against representative photographs. It is explicitly built for clinical-trial and screening use — a common visual anchor so that "grade 2 osteophyte" means roughly the same thing across readers and sites.
+The revised atlas presents reference radiographs for individual osteoarthritis findings in the hand, hip, and knee. Features such as osteophytes and joint-space narrowing are organized by anatomical location and sequenced from normal through grades 1+, 2+, and 3+. The images were selected and arranged by expert consensus for use in clinical studies and trials.
 
 ## What convinced me
 
-The atlas is not a formula; it is a set of exemplar images and a shared vocabulary. That is a deliberate design choice, and it is also the atlas's core limitation as a machine-learning target: an ordinal category assigned by comparing a new radiograph to a small set of reference photos still carries meaningful inter-observer variability, and a deep model trained on it inherits that variability as label noise rather than a hard ceiling of "ground truth" it should try to exceed.
+The atlas makes severity operational and visual. Rather than relying on a prose definition alone, a grader can compare a specific compartment and feature with ordered exemplars. This is particularly useful for machine learning because it separates anatomy, feature type, and severity — information that a single KL grade collapses.
 
 ## What it leaves open
 
-The atlas does not tell you how to combine individual feature grades into a single severity score, nor how to handle borderline cases between two reference images. It also doesn't quantify how much of the label variability across readers is due to genuinely ambiguous radiographs versus reader inattention or training differences — a distinction that matters enormously for how confidently a model's disagreement with a single reader should be interpreted as model error.
+The atlas is a reference standard, not a guarantee of high reader agreement. The selected examples cannot cover every projection, anatomy, or borderline case, and ordinal categories remain coarse. Joint-space narrowing on a two-dimensional radiograph also reflects positioning and projection, not only cartilage loss.
 
 ## What I take from it
 
-When I read a knee-OA grading paper reporting near-perfect agreement with ground truth, my first question is now: which ground truth, graded by how many readers, using this atlas or a derivative of it? A model that matches one radiologist's atlas-based grade may simply be learning to imitate that radiologist's application of the atlas, not the underlying pathology the atlas is a proxy for. Auditing clinical faithfulness in this domain has to start with auditing the label-generation process, not just the model.
+When using OARSI labels, I would preserve site-specific outputs, document the atlas version and reader protocol, and quantify inter-reader uncertainty. The atlas is most useful as an explicit evidence ontology; the model still needs tests showing that those features, rather than correlated image artifacts, drive its final prediction.
