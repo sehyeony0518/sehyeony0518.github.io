@@ -8,6 +8,9 @@ nav_order: 10
 ---
 
 <style>
+  /* Widen just this page's content column so a 4-up card grid has room to breathe */
+  .container.mt-5 { max-width: 1400px; }
+
   .venue-filter { display: flex; flex-wrap: wrap; gap: .45rem; margin: .3rem 0 1.3rem; }
   .venue-filter .vf-chip {
     display: inline-block; padding: .22rem .7rem; border-radius: 999px;
@@ -21,7 +24,9 @@ nav_order: 10
   .venue-filter .vf-chip .vf-cnt { opacity: .75; font-size: .72rem; margin-left: .15rem; }
 
   .paper-list { margin-top: .5rem; display: grid; grid-template-columns: 1fr; gap: .8rem; }
-  @media (min-width: 576px) { .paper-list { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 576px) { .paper-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .paper-list { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1200px) { .paper-list { grid-template-columns: repeat(4, 1fr); } }
   .paper-list .pr-item {
     display: block; text-decoration: none; color: inherit;
     padding: 1rem 1.15rem; border-radius: 12px;
