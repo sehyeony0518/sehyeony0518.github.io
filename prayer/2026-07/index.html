@@ -2745,11 +2745,6 @@ ninja.data = [{
           description: "A hand-crafted, semi-quantitative ultrasound score (US-FLI) built from four visual features — the kind of clinically legible scoring system that a learned model in the same space should be able to match or explain, not just outperform.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-27-us-fli-fatty-liver-score/";
-            },},{id: "papers-imagenet-a-large-scale-hierarchical-image-database",
-          title: 'ImageNet: A Large-Scale Hierarchical Image Database',
-          description: "The dataset paper behind almost every ImageNet-pretrained backbone medical-imaging models still rely on — worth reading once to remember what &#39;pretrained&#39; actually means, and doesn&#39;t mean, for a chest X-ray or ultrasound task.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2025-10-04-imagenet-large-scale-database/";
             },},{id: "papers-the-model-could-read-the-hospital-variable-generalization-in-pneumonia-detection",
           title: 'The Model Could Read the Hospital: Variable Generalization in Pneumonia Detection',
           description: "CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence — an early, concrete demonstration of confounding by site.",
@@ -2775,11 +2770,6 @@ ninja.data = [{
           description: "During a pandemic, dozens of high-accuracy COVID detectors were published. This paper showed many were reading laterality markers, patient positioning, and dataset provenance.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-11-08-degrave-covid-shortcut/";
-            },},{id: "papers-deep-residual-learning-for-image-recognition",
-          title: 'Deep Residual Learning for Image Recognition',
-          description: "The residual-connection paper — read as a reminder that the backbone underneath most medical-imaging classifiers was optimized for making very deep networks trainable, not for clinical evidence.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2025-11-15-deep-residual-learning-resnet/";
             },},{id: "papers-transfer-learning-with-deep-cnn-for-liver-steatosis-assessment-in-ultrasound",
           title: 'Transfer Learning with Deep CNN for Liver Steatosis Assessment in Ultrasound',
           description: "A transfer-learning pipeline for grading liver steatosis from B-mode ultrasound, benchmarked directly against the hepatorenal index and GLCM texture features — with biopsy as the reference standard.",
@@ -2825,11 +2815,6 @@ ninja.data = [{
           description: "A standards-body review on turning ultrasound attenuation and backscatter into a quantitative, reproducible liver-fat biomarker — the standardization work that any AI liver-steatosis model eventually has to sit on top of.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-24-qiba-liver-fat-attenuation/";
-            },},{id: "papers-densely-connected-convolutional-networks",
-          title: 'Densely Connected Convolutional Networks',
-          description: "DenseNet&#39;s feature-reuse-by-design connectivity — a backbone choice common in chest X-ray AI, read here for what its dense connectivity actually buys over a residual network.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-02-07-densely-connected-densenet/";
             },},{id: "papers-grad-cam-a-localization-map-is-not-an-explanation",
           title: 'Grad-CAM: A Localization Map Is Not an Explanation',
           description: "The saliency method almost every medical-imaging paper cites — and a good place to be precise about what its heatmap actually certifies.",
@@ -2865,11 +2850,6 @@ ninja.data = [{
           description: "Two models with identical training accuracy, identical architecture, and different random seeds can behave completely differently under distribution shift — a Google-scale audit of just how common this is, including in a dermatology model.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-03-28-underspecification-credibility-ml/";
-            },},{id: "papers-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale",
-          title: 'An Image Is Worth 16x16 Words: Transformers for Image Recognition at Scale',
-          description: "The Vision Transformer paper — patches as tokens, no convolutional inductive bias — read for what it costs in data efficiency, since that cost matters directly for medical-imaging datasets orders of magnitude smaller than the ones ViT was trained on.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-04-04-vision-transformer-16x16-words/";
             },},{id: "papers-sanity-checks-for-saliency-maps",
           title: 'Sanity Checks for Saliency Maps',
           description: "Randomize the model&#39;s weights or the labels — some popular saliency methods produce almost the same heatmap anyway.",
@@ -2895,11 +2875,6 @@ ninja.data = [{
           description: "Radiology-specific saliency evaluation: sanity checks and human-alignment tests applied directly to chest radiograph localization tasks.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-05-09-arun-assessing-saliency/";
-            },},{id: "papers-scale-space-theory-a-basic-tool-for-analysing-structures-at-different-scales",
-          title: 'Scale-Space Theory: A Basic Tool for Analysing Structures at Different Scales',
-          description: "A tutorial on multi-scale image representation from before deep learning existed — read to understand what a convolutional network&#39;s receptive-field hierarchy is quietly reinventing, and where that reinvention might be incomplete.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-05-16-scale-space-theory/";
             },},{id: "papers-covariate-adjusted-spearman-39-s-rank-correlation-with-probability-scale-residuals",
           title: 'Covariate-Adjusted Spearman&amp;#39;s Rank Correlation with Probability-Scale Residuals',
           description: "A statistics paper on adjusting rank correlation for confounding covariates — read because so many AI-versus-classical-index comparisons in medical imaging report raw Spearman correlation without asking whether a shared confound is inflating it.",
@@ -2910,16 +2885,6 @@ ninja.data = [{
           description: "A synthesis, aimed at radiologists rather than ML researchers, of how shortcut learning actually shows up in clinical imaging AI — and what to check for before trusting a model.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-06-06-boland-shortcuts-radiology/";
-            },},{id: "papers-swin-transformer-hierarchical-vision-transformer-using-shifted-windows",
-          title: 'Swin Transformer: Hierarchical Vision Transformer Using Shifted Windows',
-          description: "A hierarchical, windowed Transformer designed to fix ViT&#39;s fixed-scale, quadratic-cost weaknesses for dense prediction — the backbone choice behind a growing share of medical image segmentation papers.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-06-13-swin-transformer/";
-            },},{id: "papers-a-convnet-for-the-2020s",
-          title: 'A ConvNet for the 2020s',
-          description: "ConvNeXt takes a plain ResNet and gradually modernizes it with ideas borrowed from Vision Transformers, matching Swin&#39;s accuracy without any attention mechanism at all — a clean natural experiment for how much of ViT&#39;s advantage was really about attention.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-06-20-convnet-for-2020s/";
             },},{id: "papers-learning-causal-alignment-for-reliable-disease-diagnosis",
           title: 'Learning Causal Alignment for Reliable Disease Diagnosis',
           description: "A causal framing of the shortcut-learning problem in disease diagnosis — trying to explicitly align a model&#39;s learned representation with the causal structure of disease, not just penalize known spurious features after the fact.",
@@ -2930,11 +2895,6 @@ ninja.data = [{
           description: "A frequency-domain attention module built to recover the high-frequency texture and boundary information that Vision Transformer segmentation models tend to lose — directly relevant to any medical target defined by fine texture or a sharp boundary.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-07-04-frequency-domain-medical-segmentation/";
-            },},{id: "papers-decoupled-weight-decay-regularization",
-          title: 'Decoupled Weight Decay Regularization',
-          description: "AdamW — the fix for a subtle bug in how Adam interacts with weight decay, now the default optimizer choice underneath nearly every model I read about, medical-imaging included.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-07-11-decoupled-weight-decay-adamw/";
             },},{id: "papers-knee-images-digital-analysis-kida-a-novel-method-to-quantify-radiographic-features-of-knee-oa",
           title: 'Knee Images Digital Analysis (KIDA): A Novel Method to Quantify Radiographic Features of...',
           description: "A pre-deep-learning digital measurement system for knee-OA radiographic features — a reminder that &#39;objective, automated quantification&#39; of joint space and osteophytes predates neural networks by well over a decade.",
@@ -2970,21 +2930,11 @@ ninja.data = [{
           description: "The Rashomon-set argument: for a given dataset, there are often many equally accurate models, some far simpler and more interpretable than others — so &#39;we needed the complex model for accuracy&#39; is a claim that should be checked, not assumed.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-04-existence-of-simpler-models/";
-            },},{id: "papers-efficientnet-rethinking-model-scaling-for-convolutional-neural-networks",
-          title: 'EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks',
-          description: "A principled recipe for scaling a CNN&#39;s depth, width, and resolution together, rather than tuning any one dimension in isolation — relevant to any medical-AI paper reporting results across a family of model sizes.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-09-11-efficientnet-model-scaling/";
             },},{id: "papers-automatic-grading-of-individual-knee-osteoarthritis-features-in-plain-radiographs-using-deep-cnns",
           title: 'Automatic Grading of Individual Knee Osteoarthritis Features in Plain Radiographs Using Deep CNNs...',
           description: "Rather than predicting a single aggregate KL grade, this model grades each individual OARSI-atlas feature — osteophytes, joint space narrowing, and more — separately, matching the atlas&#39;s own granularity.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-18-automatic-grading-knee-oa-features/";
-            },},{id: "papers-training-data-efficient-image-transformers-amp-distillation-through-attention",
-          title: 'Training Data-Efficient Image Transformers &amp;amp; Distillation Through Attention',
-          description: "DeiT trains a competitive Vision Transformer using only ImageNet-scale data and a distillation token instead of ViT&#39;s hundreds of millions of pretraining images — directly relevant to whether ViT-style models are usable at medical-dataset scale at all.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-09-25-data-efficient-image-transformers/";
             },},{id: "papers-silverlining-data-first-mitigation-of-spatial-and-spectral-shortcuts-without-introducing-new-confounders",
           title: 'SilverLining: Data-First Mitigation of Spatial and Spectral Shortcuts Without Introducing New Confounders',
           description: "A McIntosh-lab paper on fixing shortcuts at the data level — laterality markers, scanner noise — without the mitigation itself quietly introducing a new confounder, which the authors show is a real risk of naive data-level fixes.",
@@ -3015,11 +2965,6 @@ ninja.data = [{
           description: "A multitask model that predicts BI-RADS descriptors alongside malignancy — one of the earlier attempts at the same explainable-by-BI-RADS idea that later concept-bottleneck papers pushed further.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-11-06-birads-net-explainable-breast-us/";
-            },},{id: "papers-the-laplacian-pyramid-as-a-compact-image-code",
-          title: 'The Laplacian Pyramid as a Compact Image Code',
-          description: "A 1983 image-coding paper — decades before deep learning — that introduced the multi-scale pyramid representation now echoed in every CNN&#39;s pooling hierarchy and in modern frequency-domain segmentation methods alike.",
-          section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-11-13-laplacian-pyramid-compact-image-code/";
             },},{id: "papers-clear-an-auditable-foundation-model-for-radiology-grounded-in-clinical-concepts",
           title: 'CLEAR: An Auditable Foundation Model for Radiology Grounded in Clinical Concepts',
           description: "A foundation model trained on 0.87 million image-report pairs, built from the ground up around clinical-concept embeddings rather than bolting interpretability onto a black box afterward — auditability as a design constraint, not an add-on.",
