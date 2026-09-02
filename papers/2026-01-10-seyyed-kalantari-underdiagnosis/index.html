@@ -1,10 +1,10 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Underdiagnosis Bias: When the Error Falls on Those Already Underserved | Se-Hyeon Hwang </title> <meta name="author" content="Se-Hyeon Hwang"> <meta name="description" content="Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care."> <meta name="keywords" content="Se-Hyeon Hwang, trustworthy medical AI, clinical evidence auditing, interpretable machine learning, medical imaging, ultrasound AI, Ajou University"> <meta property="og:site_name" content="Se-Hyeon Hwang"> <meta property="og:type" content="website"> <meta property="og:title" content="Se-Hyeon Hwang | Underdiagnosis Bias: When the Error Falls on Those Already Underserved"> <meta property="og:url" content="https://sehyeony0518.github.io/papers/2026-01-10-seyyed-kalantari-underdiagnosis/"> <meta property="og:description" content="Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care."> <meta property="og:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Underdiagnosis Bias: When the Error Falls on Those Already Underserved"> <meta name="twitter:description" content="Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care."> <meta name="twitter:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Chest Radiographs in Under-Served Patient Populations | Se-Hyeon Hwang </title> <meta name="author" content="Se-Hyeon Hwang"> <meta name="description" content="Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care."> <meta name="keywords" content="Se-Hyeon Hwang, trustworthy medical AI, clinical evidence auditing, interpretable machine learning, medical imaging, ultrasound AI, Ajou University"> <meta property="og:site_name" content="Se-Hyeon Hwang"> <meta property="og:type" content="website"> <meta property="og:title" content="Se-Hyeon Hwang | Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Chest Radiographs in Under-Served Patient Populations"> <meta property="og:url" content="https://sehyeony0518.github.io/papers/2026-01-10-seyyed-kalantari-underdiagnosis/"> <meta property="og:description" content="Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care."> <meta property="og:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Chest Radiographs in Under-Served Patient Populations"> <meta name="twitter:description" content="Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care."> <meta name="twitter:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9C%9D%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/papers/2026-01-10-seyyed-kalantari-underdiagnosis/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Underdiagnosis Bias: When the Error Falls on Those Already Underserved</h1> <p class="post-meta"> Created on January 10, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Underdiagnosis bias of artificial intelligence algorithms applied to chest radiographs in under-served patient populations</em> — <a href="https://www.nature.com/articles/s41591-021-01595-0" rel="external nofollow noopener" target="_blank">Nature Medicine 2021</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>Fairness papers often report differences in accuracy or AUROC. This one asks a sharper question: <em>which direction</em> does the error go, and who absorbs it?</p> <h2 id="what-they-found">What they found</h2> <p>Across large public chest radiograph datasets, classifiers showed higher false-negative rates — labeling patients “no finding” when disease was present — for female patients, younger patients, Black patients, Hispanic patients, and those with Medicaid insurance. The disparities compounded at intersections. Larger, more diverse training data did not eliminate them.</p> <h2 id="why-the-direction-matters">Why the direction matters</h2> <p>A false positive triggers further workup. A false negative triggers nothing. Underdiagnosis is the failure mode that is invisible in deployment: the patient is sent home, no alert fires, no correction loop closes. If that error concentrates in populations that already face barriers to care, an ostensibly neutral model widens the gap while reporting excellent aggregate performance.</p> <p>This is why I think “equal AUROC across groups” is a weak fairness criterion. Two groups can share an AUROC while differing in operating-point behavior, and it is the operating point that determines who gets sent home.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>The paper documents the disparity clearly but does not fully resolve the mechanism — how much comes from label noise (were the reports themselves biased?), from prevalence and presentation differences, from representation, or from the model. Those require different fixes, and distinguishing them empirically remains hard.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>Report error rates by direction and by subgroup, at the operating point that will actually be deployed. An audit that stops at discrimination metrics has not yet looked at the harm.</p> </div> </article> </div> </div> <style>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Chest Radiographs in Under-Served Patient Populations</h1> <p class="post-meta"> Created on January 10, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Underdiagnosis bias of artificial intelligence algorithms applied to chest radiographs in under-served patient populations</em> — <a href="https://www.nature.com/articles/s41591-021-01595-0" rel="external nofollow noopener" target="_blank">Nature Medicine 2021</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>Fairness papers often report differences in accuracy or AUROC. This one asks a sharper question: <em>which direction</em> does the error go, and who absorbs it?</p> <h2 id="what-they-found">What they found</h2> <p>Across large public chest radiograph datasets, classifiers showed higher false-negative rates — labeling patients “no finding” when disease was present — for female patients, younger patients, Black patients, Hispanic patients, and those with Medicaid insurance. The disparities compounded at intersections. Larger, more diverse training data did not eliminate them.</p> <h2 id="why-the-direction-matters">Why the direction matters</h2> <p>A false positive triggers further workup. A false negative triggers nothing. Underdiagnosis is the failure mode that is invisible in deployment: the patient is sent home, no alert fires, no correction loop closes. If that error concentrates in populations that already face barriers to care, an ostensibly neutral model widens the gap while reporting excellent aggregate performance.</p> <p>This is why I think “equal AUROC across groups” is a weak fairness criterion. Two groups can share an AUROC while differing in operating-point behavior, and it is the operating point that determines who gets sent home.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>The paper documents the disparity clearly but does not fully resolve the mechanism — how much comes from label noise (were the reports themselves biased?), from prevalence and presentation differences, from representation, or from the model. Those require different fixes, and distinguishing them empirically remains hard.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>Report error rates by direction and by subgroup, at the operating point that will actually be deployed. An audit that stops at discrimination metrics has not yet looked at the harm.</p> </div> </article> </div> </div> <style>
   /* Bold section headings across content pages */
   article h1, article h2, article h3, article h4,
   .post h1, .post h2, .post h3, .post h4,
@@ -2663,8 +2663,8 @@ ninja.data = [{
           section: "News",},{id: "news-journey-mission2035-홈페이지를-열었습니다-선교와-연구의-여정을-기록하고-나누기-위해-이-공간을-만들었습니다",
           title: 'Journey · Mission2035 홈페이지를 열었습니다 — 선교와 연구의 여정을 기록하고 나누기 위해 이...',
           description: "",
-          section: "News",},{id: "papers-shortcut-learning-the-failure-mode-that-explains-most-others",
-          title: 'Shortcut Learning: The Failure Mode That Explains Most Others',
+          section: "News",},{id: "papers-shortcut-learning-in-deep-neural-networks",
+          title: 'Shortcut Learning in Deep Neural Networks',
           description: "The paper that gave the field a shared vocabulary for models that solve the benchmark without solving the task.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-06-geirhos-shortcut-learning/";
@@ -2673,18 +2673,18 @@ ninja.data = [{
           description: "The OARSI atlas that turns joint-space narrowing, osteophytes, and sclerosis into graded reference images — the ground truth that any automated knee-OA grader is ultimately trying to reproduce.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-13-oarsi-atlas-radiographic-features/";
-            },},{id: "papers-interpretability-beyond-feature-attribution-tcav",
-          title: 'Interpretability Beyond Feature Attribution: TCAV',
+            },},{id: "papers-interpretability-beyond-feature-attribution-quantitative-testing-with-concept-activation-vectors-tcav",
+          title: 'Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)',
           description: "TCAV asks whether a model&#39;s prediction is sensitive to a human-named concept, such as &#39;striped&#39; or &#39;malignant,&#39; rather than to a single pixel — the tool that later work on shortcut detection in medical imaging builds directly on.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-20-tcav-concept-activation-vectors/";
-            },},{id: "papers-ultrasonographic-fatty-liver-indicator-a-novel-score-for-nafld",
-          title: 'Ultrasonographic Fatty Liver Indicator: A Novel Score for NAFLD',
+            },},{id: "papers-ultrasonographic-fatty-liver-indicator-a-novel-score-which-rules-out-nash-and-is-correlated-with-metabolic-parameters-in-nafld",
+          title: 'Ultrasonographic Fatty Liver Indicator, a Novel Score Which Rules Out NASH and Is...',
           description: "A hand-crafted, semi-quantitative ultrasound score (US-FLI) built from four visual features — the kind of clinically legible scoring system that a learned model in the same space should be able to match or explain, not just outperform.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-27-us-fli-fatty-liver-score/";
-            },},{id: "papers-the-model-could-read-the-hospital-variable-generalization-in-pneumonia-detection",
-          title: 'The Model Could Read the Hospital: Variable Generalization in Pneumonia Detection',
+            },},{id: "papers-variable-generalization-performance-of-a-deep-learning-model-to-detect-pneumonia-in-chest-radiographs-a-cross-sectional-study",
+          title: 'Variable Generalization Performance of a Deep Learning Model to Detect Pneumonia in Chest...',
           description: "CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence — an early, concrete demonstration of confounding by site.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-10-11-zech-variable-generalization/";
@@ -2703,18 +2703,18 @@ ninja.data = [{
           description: "A concept bottleneck that predicts BI-RADS features before the final cancer classification — and shows that letting a radiologist correct the intermediate concepts actually improves the final diagnosis.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-11-01-concept-bottleneck-breast-ultrasound/";
-            },},{id: "papers-shortcuts-over-signal-what-covid-radiograph-models-actually-learned",
-          title: 'Shortcuts Over Signal: What COVID Radiograph Models Actually Learned',
+            },},{id: "papers-ai-for-radiographic-covid-19-detection-selects-shortcuts-over-signal",
+          title: 'AI for Radiographic COVID-19 Detection Selects Shortcuts Over Signal',
           description: "During a pandemic, dozens of high-accuracy COVID detectors were published. This paper showed many were reading laterality markers, patient positioning, and dataset provenance.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-11-08-degrave-covid-shortcut/";
-            },},{id: "papers-transfer-learning-with-deep-cnn-for-liver-steatosis-assessment-in-ultrasound",
-          title: 'Transfer Learning with Deep CNN for Liver Steatosis Assessment in Ultrasound',
+            },},{id: "papers-transfer-learning-with-deep-convolutional-neural-network-for-liver-steatosis-assessment-in-ultrasound-images",
+          title: 'Transfer Learning with Deep Convolutional Neural Network for Liver Steatosis Assessment in Ultrasound...',
           description: "A transfer-learning pipeline for grading liver steatosis from B-mode ultrasound, benchmarked directly against the hepatorenal index and GLCM texture features — with biopsy as the reference standard.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-11-22-transfer-learning-liver-steatosis/";
-            },},{id: "papers-hidden-stratification-the-failures-the-aggregate-metric-cannot-show",
-          title: 'Hidden Stratification: The Failures the Aggregate Metric Cannot Show',
+            },},{id: "papers-hidden-stratification-causes-clinically-meaningful-failures-in-machine-learning-for-medical-imaging",
+          title: 'Hidden Stratification Causes Clinically Meaningful Failures in Machine Learning for Medical Imaging',
           description: "Within a labeled class there are clinically distinct subsets, and a model can fail on the dangerous ones while the headline number stays high.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-12-06-oakden-rayner-hidden-stratification/";
@@ -2723,8 +2723,8 @@ ninja.data = [{
           description: "An empirical look at how well individual BI-RADS sonographic descriptors actually predict malignancy — the kind of per-feature grounding that a BI-RADS-based concept bottleneck for breast ultrasound is implicitly relying on.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-12-13-birads-sonography-predictive-values/";
-            },},{id: "papers-superiority-of-multiple-joint-space-width-over-minimum-joint-space-width-for-knee-oa",
-          title: 'Superiority of Multiple-Joint Space Width Over Minimum-Joint Space Width for Knee OA',
+            },},{id: "papers-superiority-of-multiple-joint-space-width-over-minimum-joint-space-width-approach-in-the-machine-learning-for-radiographic-severity-and-knee-osteoarthritis-progression",
+          title: 'Superiority of Multiple-Joint Space Width over Minimum-Joint Space Width Approach in the Machine...',
           description: "ResU-Net segmentation feeding 64-point multi-JSW measurements into XGBoost — outperforming the conventional single minimum-JSW pipeline for predicting knee-OA severity and progression, with the segmentation itself validated against a radiologist.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-12-20-multi-joint-space-width-knee-oa/";
@@ -2738,8 +2738,8 @@ ninja.data = [{
           description: "A counterfactual image-editing model that inserts or removes a chest X-ray finding without retraining the classifier under test — used to catch models exploiting institutional, demographic, and device markers as shortcuts.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-03-roentmod-counterfactual-cxr/";
-            },},{id: "papers-underdiagnosis-bias-when-the-error-falls-on-those-already-underserved",
-          title: 'Underdiagnosis Bias: When the Error Falls on Those Already Underserved',
+            },},{id: "papers-underdiagnosis-bias-of-artificial-intelligence-algorithms-applied-to-chest-radiographs-in-under-served-patient-populations",
+          title: 'Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Chest Radiographs in Under-Served Patient...',
           description: "Chest X-ray classifiers assigned &#39;no finding&#39; disproportionately to underserved patients — the error mode that silently denies care.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-10-seyyed-kalantari-underdiagnosis/";
@@ -2748,13 +2748,13 @@ ninja.data = [{
           description: "The internal grading manual behind the EyePACS diabetic-retinopathy dataset — the lesion-by-lesion rulebook that every EyePACS-trained DR model&#39;s labels ultimately trace back to.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-17-eyepacs-grading-protocol/";
-            },},{id: "papers-us-attenuation-for-liver-fat-quantification-the-qiba-pulse-echo-ultrasound-initiative",
-          title: 'US Attenuation for Liver Fat Quantification: The QIBA Pulse-Echo Ultrasound Initiative',
+            },},{id: "papers-us-attenuation-for-liver-fat-quantification-an-aium-rsna-qiba-pulse-echo-quantitative-ultrasound-initiative",
+          title: 'US Attenuation for Liver Fat Quantification: An AIUM-RSNA QIBA Pulse-Echo Quantitative Ultrasound Initiative...',
           description: "A standards-body review on turning ultrasound attenuation and backscatter into a quantitative, reproducible liver-fat biomarker — the standardization work that any AI liver-steatosis model eventually has to sit on top of.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-24-qiba-liver-fat-attenuation/";
-            },},{id: "papers-grad-cam-a-localization-map-is-not-an-explanation",
-          title: 'Grad-CAM: A Localization Map Is Not an Explanation',
+            },},{id: "papers-grad-cam-visual-explanations-from-deep-networks-via-gradient-based-localization",
+          title: 'Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization',
           description: "The saliency method almost every medical-imaging paper cites — and a good place to be precise about what its heatmap actually certifies.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-02-14-selvaraju-gradcam/";
@@ -2763,8 +2763,8 @@ ninja.data = [{
           description: "A biopsy-proven, multi-scanner breast ultrasound dataset with standardized cross-validation partitions — the kind of dataset-hygiene paper that makes fair benchmark comparisons possible in the first place.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-02-21-busbra-breast-ultrasound-dataset/";
-            },},{id: "papers-noninvasive-quantitative-estimation-of-hepatic-steatosis-hepatorenal-index-vs-attenuation-index",
-          title: 'Noninvasive Quantitative Estimation of Hepatic Steatosis: Hepatorenal Index vs. Attenuation Index',
+            },},{id: "papers-noninvasive-quantitative-estimation-of-hepatic-steatosis-by-ultrasound-a-comparison-of-the-hepato-renal-index-and-ultrasound-attenuation-index",
+          title: 'Noninvasive Quantitative Estimation of Hepatic Steatosis by Ultrasound: A Comparison of the Hepato-Renal...',
           description: "A head-to-head comparison of two classical ultrasound-based liver-fat indices in living liver-donor candidates, against biopsy — the pair of legible baselines that any liver-steatosis deep model is implicitly competing with.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-02-28-hepatorenal-index-attenuation-index/";
@@ -2788,13 +2788,13 @@ ninja.data = [{
           description: "Two models with identical training accuracy, identical architecture, and different random seeds can behave completely differently under distribution shift — a Google-scale audit of just how common this is, including in a dermatology model.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-03-28-underspecification-credibility-ml/";
-            },},{id: "papers-sanity-checks-for-saliency-maps",
-          title: 'Sanity Checks for Saliency Maps',
-          description: "Randomize the model&#39;s weights or the labels — some popular saliency methods produce almost the same heatmap anyway.",
+            },},{id: "papers-post-hoc-explanations-may-be-ineffective-for-detecting-unknown-spurious-correlation",
+          title: 'Post hoc Explanations May Be Ineffective for Detecting Unknown Spurious Correlation',
+          description: "A sobering stress test of the exact interpretability toolkit I lean on elsewhere in this collection — feature attribution, concept activation, and training-point ranking — against spurious signals the practitioner doesn&#39;t already know to look for.",
           section: "Papers",handler: () => {
-              window.location.href = "/papers/2026-04-11-adebayo-sanity-checks/";
-            },},{id: "papers-breast-tumor-classification-of-ultrasound-images-using-wavelet-based-channel-energy",
-          title: 'Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy',
+              window.location.href = "/papers/2026-04-11-posthoc-explanations-spurious-correlation/";
+            },},{id: "papers-breast-tumor-classification-of-ultrasound-images-using-wavelet-based-channel-energy-and-imagej",
+          title: 'Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ',
           description: "A pre-deep-learning approach to breast-ultrasound CAD: hand-engineered wavelet channel-energy features meant to capture how infiltrative a lesion&#39;s margin looks — a useful reminder of what feature engineering used to make explicit.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-04-18-wavelet-channel-energy-breast-us/";
@@ -2818,9 +2818,9 @@ ninja.data = [{
           description: "A statistics paper on adjusting rank correlation for confounding covariates — read because so many AI-versus-classical-index comparisons in medical imaging report raw Spearman correlation without asking whether a shared confound is inflating it.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-05-23-covariate-adjusted-spearman-correlation/";
-            },},{id: "papers-shortcut-learning-in-radiology-ai-a-practitioner-39-s-field-guide",
-          title: 'Shortcut Learning in Radiology AI: A Practitioner&amp;#39;s Field Guide',
-          description: "A synthesis, aimed at radiologists rather than ML researchers, of how shortcut learning actually shows up in clinical imaging AI — and what to check for before trusting a model.",
+            },},{id: "papers-there-are-no-shortcuts-to-anywhere-worth-going-identifying-shortcuts-in-deep-learning-models-for-medical-image-analysis",
+          title: 'There Are No Shortcuts to Anywhere Worth Going: Identifying Shortcuts in Deep Learning...',
+          description: "A method for locating which layer of a network a shortcut&#39;s features actually manifest in, using Prediction Depth and KL divergence — moving from &#39;the model has a shortcut&#39; to &#39;here is where in the network it lives.&#39;",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-06-06-boland-shortcuts-radiology/";
             },},{id: "papers-learning-causal-alignment-for-reliable-disease-diagnosis",
@@ -2833,8 +2833,8 @@ ninja.data = [{
           description: "A frequency-domain attention module built to recover the high-frequency texture and boundary information that Vision Transformer segmentation models tend to lose — directly relevant to any medical target defined by fine texture or a sharp boundary.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-07-04-frequency-domain-medical-segmentation/";
-            },},{id: "papers-knee-images-digital-analysis-kida-a-novel-method-to-quantify-radiographic-features-of-knee-oa",
-          title: 'Knee Images Digital Analysis (KIDA): A Novel Method to Quantify Radiographic Features of...',
+            },},{id: "papers-knee-images-digital-analysis-kida-a-novel-method-to-quantify-individual-radiographic-features-of-knee-osteoarthritis-in-detail",
+          title: 'Knee Images Digital Analysis (KIDA): A Novel Method to Quantify Individual Radiographic Features...',
           description: "A pre-deep-learning digital measurement system for knee-OA radiographic features — a reminder that &#39;objective, automated quantification&#39; of joint space and osteophytes predates neural networks by well over a decade.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-07-18-knee-images-digital-analysis-kida/";
@@ -2843,8 +2843,8 @@ ninja.data = [{
           description: "A CAD system targeted specifically at the ambiguous BI-RADS category 3 — &#39;probably benign&#39; masses — testing whether quantitative features can safely reclassify malignant cases that radiologists had grouped as low-risk.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-07-25-quantitative-us-birads-category-3/";
-            },},{id: "papers-ensuring-medical-ai-safety-interpretability-driven-detection-and-mitigation-of-spurious-model-behavior",
-          title: 'Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior',
+            },},{id: "papers-ensuring-medical-ai-safety-interpretability-driven-detection-and-mitigation-of-spurious-model-behavior-and-associated-data",
+          title: 'Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and...',
           description: "A framework connecting interpretability directly to correction: find the spurious behavior with concept-level explanation methods, then fix both the model and the data it came from.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-08-07-reveal-to-revise-spurious-behavior/";
@@ -2858,8 +2858,8 @@ ninja.data = [{
           description: "CDEP — penalizing a model&#39;s contextual-decomposition-based explanation directly during training, so an explanation isn&#39;t just a diagnostic afterward but an actionable lever to fix the model.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-08-21-cdep-penalizing-explanations/";
-            },},{id: "papers-the-model-learned-the-hospital-not-the-disease-shortcut-learning-from-data-acquisition",
-          title: 'The Model Learned the Hospital, Not the Disease: Shortcut Learning from Data Acquisition...',
+            },},{id: "papers-shortcut-learning-in-medical-ai-hinders-generalization-method-for-estimating-ai-model-generalization-without-external-data",
+          title: 'Shortcut Learning in Medical AI Hinders Generalization: Method for Estimating AI Model Generalization...',
           description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-08-28-shortcut-learning-data-acquisition-bias/";
@@ -2898,8 +2898,8 @@ ninja.data = [{
           description: "A method for detecting shortcut reliance by looking directly at correlations in a network&#39;s weight space, rather than at its activations or explanations — a different vantage point on the same underlying question.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-10-30-weight-space-correlation-analysis/";
-            },},{id: "papers-bi-rads-net-an-explainable-multitask-learning-approach-for-cancer-diagnosis-in-breast-ultrasound",
-          title: 'BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagnosis in Breast Ultrasound',
+            },},{id: "papers-bi-rads-net-an-explainable-multitask-learning-approach-for-cancer-diagnosis-in-breast-ultrasound-images",
+          title: 'BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagnosis in Breast Ultrasound Images...',
           description: "A multitask model that predicts BI-RADS descriptors alongside malignancy — one of the earlier attempts at the same explainable-by-BI-RADS idea that later concept-bottleneck papers pushed further.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-11-06-birads-net-explainable-breast-us/";
