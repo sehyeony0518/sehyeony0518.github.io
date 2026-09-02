@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-A large share of the medical-AI interpretability literature I read — including the concept-bottleneck and concept-vector papers I've reviewed elsewhere on this page — traces back to TCAV. I wanted to go to the source rather than keep encountering it secondhand as "the concept-activation-vector method."
+Pixel attributions are often too low-level for clinical reasoning. TCAV is foundational because it lets a researcher ask a model a hypothesis in human terms — for example, whether a class is sensitive to "microaneurysms" or "irregular margin" — using sets of concept examples.
 
 ## What the paper claims
 
-Saliency maps show *where* in an image a model is looking, in pixel space. TCAV instead asks whether a model's prediction is sensitive to a human-interpretable *concept* — "striped," "young," "malignant nuclei" — regardless of where or how that concept appears spatially. It works by collecting example images that do and don't exhibit the concept, training a linear classifier in the model's activation space to separate them, and using the resulting vector's direction to compute a directional derivative: how much would the model's output change if this input moved slightly toward "more striped"? Aggregated across many examples, this gives a concept-level sensitivity score without ever retraining the model or requiring concept labels during training.
+A linear classifier separates concept examples from random examples in a chosen activation space, and its normal vector defines a Concept Activation Vector. The directional derivative of the target logit along that vector measures local concept sensitivity. The TCAV score is the proportion of class examples with positive sensitivity, repeated across random sets for statistical testing.
 
 ## What convinced me
 
-The elegance of the method is that it separates *what concept the model uses* from *how faithfully it uses it*, and it does so post hoc, on any layer of any trained network, using only a handful of example images per concept. The zebra-stripes-versus-random-image validation and the "does a model trained to detect diabetic retinopathy respond to microaneurysms" case study both show the method finding sensible, checkable answers rather than a black box producing an uncheckable score.
+The framework is model- and domain-flexible and makes the hypothesis explicit. The original paper applies it across ImageNet and a diabetic-retinopathy model, showing that concept tests can reveal class-level sensitivities not visible from single-image saliency. Repeating the test with multiple random counterexample sets is also an important guard against reading too much into one fitted direction.
 
 ## What it leaves open
 
-TCAV tells you the model is (or isn't) sensitive to a concept you already thought to test for. It has nothing to say about concepts nobody defined a probe set for — including the acquisition-linked or demographic shortcuts that are often the most clinically dangerous, precisely because no one thought to look for them. The concept examples themselves also need curation, and a poorly chosen concept set can produce a misleading concept vector.
+A CAV is a linear separator whose meaning depends on the examples, layer, and random controls. Correlated concepts may be inseparable, and a high TCAV score means directional sensitivity, not that the concept is necessary or sufficient. The method can test a named concept but cannot guarantee that the concept set is complete or clinically valid.
 
 ## What I take from it
 
-TCAV reframes "is this model faithful to clinical evidence" as a testable, falsifiable question, provided you can name the evidence you expect it to use. That reframing is directly useful for my own audits: rather than asking "is this model interpretable," I can ask "is this model's sensitivity to laterality markers, scanner artifacts, or acquisition site higher than its sensitivity to the pathology it's meant to detect" — and TCAV gives a concrete way to measure that comparison.
+TCAV is best used as a quantitative hypothesis test, followed by intervention. I would validate concept separability out of sample, report stability across layers and random sets, control for correlated concepts, and test whether changing the concept alters the diagnosis as predicted.

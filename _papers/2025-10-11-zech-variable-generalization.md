@@ -12,22 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-This is the study people cite when they say "the model learned the hospital." I wanted to see how directly that was shown, because my own work depends on the claim being real rather than folkloric.
+This paper is an early and unusually clear demonstration that hospital identity can be easier to learn than disease. I read it to understand how prevalence differences across institutions create a shortcut that internal validation actively rewards.
 
-## What they showed
+## What the paper claims
 
-Models trained on chest radiographs from multiple health systems performed worse when transferred externally — the familiar result. The striking part is the mechanism: the authors demonstrated that a CNN could **identify the source institution and even the specific department** from the radiograph itself, with high accuracy. Since pneumonia prevalence differed by site, site identity was a usable predictor of the label.
+Pneumonia classifiers are trained and tested across NIH, Mount Sinai, and Indiana chest-radiograph data. The authors compare internal and external performance, train models to predict hospital and department, and manipulate pneumonia prevalence by site to test whether source becomes a useful proxy for the label.
 
-The model did not need to understand consolidation. It could infer where the image came from and apply that site's base rate.
+## What convinced me
 
-## Why it convinced me
-
-The evidence is constructive rather than inferential. Rather than arguing "performance dropped, therefore confounding," they trained a model to predict the confounder and showed it was recoverable from the pixels. That is the shape of argument I want in my own auditing work: don't infer the shortcut from a performance gap — demonstrate that the signal is present and usable.
+Hospital identity was almost perfectly recoverable: the site classifier correctly identified more than 99.9% of NIH and Mount Sinai test images and about 95.6% of Indiana images. A model trained jointly on Mount Sinai and NIH reached internal AUC 0.931 but only 0.815 at Indiana. When site-specific disease prevalence was artificially imbalanced, internal AUC increased substantially; balancing prevalence reduced the apparent advantage. The model was exploiting a real statistical property of the dataset, not necessarily pneumonia anatomy.
 
 ## What it leaves open
 
-Knowing that site is recoverable does not tell us how much of any given prediction rests on it. The paper establishes availability, not attribution. Quantifying the share of a decision attributable to a confounder — per model, per case — is still open, and is the part I find hardest.
+The study identifies site confounding but cannot enumerate every image feature carrying site identity. External performance varies by which hospitals happen to share acquisition characteristics, so one external site is not a complete robustness test. Report-derived pneumonia labels and different patient populations also contribute to the observed gap.
 
 ## What I take from it
 
-Multi-site training data does not automatically produce site-invariant models. If anything, pooling sites with different prevalences *creates* the shortcut. Data diversity helps only when the diversity is decorrelated from the label.
+Site should be treated as a candidate predictor and stress-tested explicitly. I would report source-classification accuracy, prevalence by site, leave-one-site-out performance, and evidence use within each site. Pooling hospitals can increase sample size while simultaneously strengthening a hospital–label shortcut.

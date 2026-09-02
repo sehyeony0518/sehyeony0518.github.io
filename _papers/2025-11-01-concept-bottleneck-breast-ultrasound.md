@@ -13,20 +13,20 @@ related_posts: false
 
 ## Why I read it
 
-Concept bottleneck models are one of the more concrete answers to "how do you make a model's reasoning checkable by a clinician" — force it to pass through a layer of named, clinically meaningful concepts before the final prediction. I wanted to see the idea applied somewhere I could evaluate the concepts myself: breast ultrasound, where BI-RADS already gives a standard vocabulary.
+BUS-CBM is one of the closest precedents to my interest in auditable-by-design ultrasound models. It unifies lesion detection, BI-RADS concept prediction, cancer classification, and clinician correction within one pipeline, so its intervention evidence matters more than a visually plausible explanation.
 
 ## What the paper claims
 
-BUS-CBM predicts standard BI-RADS lexicon features — shape, margin, orientation, and related descriptors — in an intermediate layer before making a final benign/malignant classification, on a dataset of over 8,000 images from 994 women. It outperforms prior state-of-the-art lesion detection by a wide margin on average precision, and — the result that matters most for trustworthiness — allowing a radiologist to intervene on the predicted BI-RADS concepts (correcting a wrong intermediate prediction) measurably improves the downstream cancer-classification AUC.
+The model detects and segments a lesion, predicts BI-RADS mass descriptors, and then classifies cancer from the concept representation, with variants that trade stricter bottlenecking for additional visual information. It is trained on 8,854 images from 994 women with expert concepts and histologic cancer labels.
 
 ## What convinced me
 
-The concept-intervention result is the strongest evidence I've seen that a bottleneck isn't just cosmetic interpretability bolted onto a black box. If correcting the intermediate concept actually changes the final prediction in the right direction, that means the final layer is genuinely using the concept layer's output as computational substrate, not routing around it. That's a testable, falsifiable claim about faithfulness, not just a plausible-sounding architecture diagram.
+The lesion model reached average precision 0.489, exceeding the compared detection baselines. More importantly, concept intervention improved cancer AUROC from 0.876 to 0.885. The gain is modest, but it is direct evidence that correcting the explanatory interface can improve the final decision. Concept performance was also heterogeneous: echo pattern, shape, margin, and orientation were predicted well, whereas posterior features were harder and had only fair reader agreement.
 
 ## What it leaves open
 
-The bottleneck is only as trustworthy as the completeness of the concept vocabulary — BI-RADS features that aren't in the lexicon can't be checked or corrected, and the model may still be encoding non-BI-RADS shortcut information in the bottleneck's residual capacity if the bottleneck isn't strictly enforced. The paper doesn't fully characterize how much information leaks around the intended concept channel.
+The effect of intervention was mixed across concepts, and the vocabulary may not capture every malignancy cue. Models with an auxiliary visual side channel can perform better but weaken the claim that the decision is fully explained by BI-RADS. The dataset is internal, and concept labels inherit inter-reader subjectivity — posterior features had Cohen's κ around 0.31.
 
 ## What I take from it
 
-Concept intervention is the right standard to ask for from any "interpretable by design" medical model: not "can you name the concepts it uses" but "if I correct one, does the final answer change accordingly." I want to apply exactly this test — intervene on a claimed clinical concept and check whether the prediction moves — to the models I audit for clinical faithfulness in my own research area.
+The paper shows both the promise and cost of concept bottlenecks. I would report the performance–auditability frontier explicitly, test leakage around the bottleneck, and evaluate interventions by concept and subgroup. A concept layer is valuable when correcting it reliably controls the diagnosis, not merely when its labels are readable.

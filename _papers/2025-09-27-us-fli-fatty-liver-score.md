@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Much of my reading on ultrasound-based liver-steatosis AI compares learned models against a small set of classical scores. US-FLI is one of the most cited of those scores, so I wanted to understand exactly what it measures before judging whether a CNN "beating" it is actually learning something new or just interpolating the same handful of visual cues more smoothly.
+US-FLI is a compact example of clinically structured ultrasound reasoning. Instead of learning an unrestricted image representation, it combines a small set of interpretable signs — liver–kidney contrast, attenuation, vessel blurring, diaphragm and gallbladder-wall visibility, and focal sparing.
 
 ## What the paper claims
 
-In 53 patients, the authors built a semi-quantitative score (range 2–8) from four B-mode ultrasound features — hepatorenal echogenicity contrast, posterior beam attenuation, vessel-wall blurring, and difficulty visualizing the gallbladder wall/diaphragm — each scored on a simple ordinal scale and summed. US-FLI correlated with metabolic markers (HOMA-IR, insulin, uric acid, ALT, bilirubin) and, more importantly, was associated with NASH on biopsy (Kleiner criteria), with a US-FLI below 4 giving 94% negative predictive value for severe NASH.
+The score ranges from 2 to 8 and was evaluated in 53 biopsy-confirmed NAFLD patients. The authors test associations with steatosis, metabolic markers, and histologic NASH, and assess interobserver agreement in an additional subset of 31 patients. US-FLI is proposed as a noninvasive tool to better select patients for biopsy.
 
 ## What convinced me
 
-What makes US-FLI a useful comparator rather than a strawman is that it's fully legible: every point in the score maps to a named, visually checkable feature. A radiologist can look at the same four things the score looks at and say why the number is what it is. That is exactly the property that a learned model competing against it needs to either preserve or explicitly justify giving up.
+US-FLI was an independent predictor of NASH, with odds ratio 2.236 per score increase in the reported model. A score below 4 had a 94% negative predictive value for ruling out severe NASH by the specified criterion. AUROC was approximately 0.76–0.80 depending on the histologic definition, and pairwise interobserver agreement was high, around 0.81–0.88. The score also correlated with histologic steatosis and several metabolic measures.
 
 ## What it leaves open
 
-The study is small (53 patients), single-center, and the score's four features were chosen by expert consensus rather than derived data-first — so it's unclear how much of its correlation with NASH reflects genuine biological signal versus features that happen to correlate with disease severity in this particular cohort. It also only weakly discriminates the degree of NASH; it's framed explicitly as a rule-out tool, not a full severity grader.
+The cohort is small, nonconsecutive, and entirely composed of patients with NAFLD. Negative predictive value is prevalence-dependent, and the score did not correlate with fibrosis. Several components remain qualitative and operator-dependent, so high reader agreement in a small expert subset does not guarantee cross-device reproducibility.
 
 ## What I take from it
 
-When I see a deep model outperform US-FLI on an internal test set, my first question is whether the model is finding features beyond these four legible ones — and if so, whether those additional features are visually explainable to a radiologist or are shortcuts correlated with disease in that dataset. A model that only matches US-FLI's four features with more precision is answering a narrower question than a model that claims a genuinely new, clinically groundable signal.
+US-FLI is valuable as a clinical anchor and transparent baseline, not as a perfect ground truth. A learned model should show what it adds beyond these six signs and whether its evidence remains stable across operators, scanners, body habitus, and fibrosis status.

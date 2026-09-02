@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-Fairness and shortcut learning are often discussed as if they're the same problem wearing two names — a model performs worse on some subgroup, therefore it must be relying on a shortcut correlated with that subgroup. This paper is one of the few I've found that treats that assumption as a hypothesis to test rather than a conclusion to assume.
+A sensitive attribute can be encoded by a medical model for many reasons, including legitimate disease associations. I read ShorT because it does not equate attribute predictability with harmful use; it intervenes on how strongly the representation encodes the attribute and tests whether fairness changes.
 
 ## What the paper claims
 
-Using multi-task learning, the authors propose a way to directly test for the *presence* of shortcut learning in a clinical model — whether the model is basing its prediction on an improper correlation, such as a sensitive attribute, rather than genuine disease evidence — and apply it to real radiology and dermatology tasks. Diagnosing this is hard precisely because sensitive attributes (age, sex, skin tone) can be causally linked to disease prevalence, so a model attending to them isn't automatically shortcutting.
+Shortcut Testing uses multitask learning to generate a family of clinical models with different levels of sensitive-attribute encoding. It then measures the association between encoding strength and a prespecified fairness metric. A systematic relationship indicates that the attribute is driving unfair performance; no relationship suggests that another mechanism should be investigated.
 
 ## What convinced me
 
-The paper's most useful move is negative: it shows cases where subgroup performance gaps exist but shortcutting, as directly tested, is *not* responsible. That result argues against a reflexive equivalence between "unfair" and "shortcutting," and toward treating fairness mitigation as needing its own diagnosis rather than inheriting whatever fix worked for a different, superficially similar problem.
+The controlled age–effusion experiment behaves as expected. In the original data, encoding and unfairness had a modest association (Spearman ρ = −0.224); after strengthening the age–label correlation it became much larger (ρ = −0.668), while a balanced dataset showed no significant relationship. For cardiomegaly, race encoding was associated with unfairness (ρ = 0.469, p < 0.001). In contrast, an acne model was unfair and encoded age, but ShorT did not identify age shortcutting, preventing an overly simple diagnosis.
 
 ## What it leaves open
 
-If shortcut learning isn't the cause of an observed disparity, the paper doesn't hand you the actual cause — data imbalance, label noise correlated with subgroup, or genuine differences in how disease presents could each be at play, and distinguishing them needs separate tools. The method also still requires the sensitive attribute or shortcut candidate to be named in advance to test for it.
+The conclusion depends on the fairness criterion, the intervention range, and the assumption that multitask training changes attribute encoding without introducing other systematic differences. A null association can reflect low power or an incomplete intervention. ShorT identifies a mechanism of unfairness; it does not define which fairness objective is clinically appropriate.
 
 ## What I take from it
 
-This is a useful discipline to import directly: when I find a model relying on a spurious correlate, I should not assume that's automatically the explanation for any fairness gap I've also observed in the same model. The two questions — "is this model shortcutting" and "is this model unfair to this subgroup" — need independent evidence, even though they're often caused by the same underlying data problems.
+Fairness auditing needs mechanism tests, not only subgroup gaps and representation probes. ShorT provides a useful pattern: deliberately vary a suspected dependency and observe whether harm tracks it. The same logic can be applied to scanner, frequency band, or clinical-concept reliance.

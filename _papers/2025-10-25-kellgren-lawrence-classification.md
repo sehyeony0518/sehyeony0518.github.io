@@ -12,20 +12,20 @@ related_posts: false
 
 ## Why I read it
 
-I've now read several deep-learning papers that report their model's KL-grade accuracy or agreement with a radiologist as if the scale were a fixed, objective ruler. This clinical-orthopaedics "in brief" piece is the kind of source that explains where the scale actually came from and what it's meant — and not meant — to capture.
+KL grade is one of the most common targets in knee-AI studies, but its familiarity can hide its assumptions and reproducibility problems. I read this review to understand what the ordinal label preserves, what it collapses, and why one-grade disagreements are not surprising.
 
-## What the paper claims
+## What the paper explains
 
-Kohn, Sassoon, and Fernando give a short history and clinical explanation of the Kellgren-Lawrence (KL) system: a five-grade (0–4) radiographic severity scale for knee osteoarthritis, originally developed in 1957 and still the most widely used classification in both clinical practice and research, based primarily on osteophyte formation and joint space narrowing observed on a plain radiograph.
+The Kellgren-Lawrence system assigns grades 0–4 using osteophytes, joint-space narrowing, sclerosis, and deformity. The review traces the historical descriptions, summarizes reliability studies, and discusses how later interpretations have altered the role of individual features. A central issue is that the scale assumes a particular progression pattern, often giving osteophytes a defining role.
 
 ## What convinced me
 
-The piece is upfront that KL grading is an ordinal, holistic judgment rather than a measurement — two radiographs that would earn the same grade can look meaningfully different, and the boundary between adjacent grades (especially grade 1 versus grade 2) is a known source of disagreement between readers, not a bright line.
+The paper documents substantial variability in modern application. Reported reliability can be only moderate or poor in some settings, with ICC values around 0.54 and 0.38 in cited studies. It also highlights an awkward case for the scale: marked joint-space narrowing without definite osteophytes is difficult to represent, despite being clinically meaningful structural disease.
 
 ## What it leaves open
 
-As a short clinical-education piece, it doesn't quantify inter-rater reliability numerically or compare KL to more granular alternatives like the OARSI atlas or automated joint-space-width measurement — it's a primer, not a validation study. It also doesn't address how KL grading correlates (or fails to correlate) with patient-reported pain and function, a well-known clinical mismatch.
+The review does not offer a universally superior replacement. Component scores such as OARSI provide detail but add annotation burden and their own subjectivity. Imaging severity also does not capture symptoms, function, or treatment need. The main lesson is therefore not to discard KL automatically, but to respect its construct limitations.
 
 ## What I take from it
 
-Whenever a paper reports a model achieving high agreement with "ground truth KL grade," I now read that claim as agreement with one or more readers' holistic five-point judgment call, not agreement with an objectively measured quantity. That reframing changes how I weigh reported accuracy numbers — a model matching KL grade near-perfectly on an internal test set may be matching the labeling habits of the specific radiologists in that dataset rather than a stable, transferable notion of severity.
+A KL model should report ordinal agreement, grade-boundary confusion, and component-level evidence rather than accuracy alone. Label uncertainty sets an upper bound on apparent model agreement, and clinically discordant feature combinations deserve separate analysis instead of being forced silently into one grade.
