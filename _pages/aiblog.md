@@ -8,8 +8,13 @@ nav_order: 9
 ---
 
 <style>
+  /* Widen just this page's content column so a 4-up card grid has room to breathe */
+  .container.mt-5 { max-width: 1400px; }
+
   .aiblog-list { margin-top: .5rem; display: grid; grid-template-columns: 1fr; gap: .8rem; }
-  @media (min-width: 576px) { .aiblog-list { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 576px) { .aiblog-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .aiblog-list { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1200px) { .aiblog-list { grid-template-columns: repeat(4, 1fr); } }
   .aiblog-list .ab-item {
     display: block; text-decoration: none; color: inherit;
     padding: 1rem 1.15rem; border-radius: 12px;
@@ -39,7 +44,7 @@ nav_order: 9
         {% if post.tag %}<span class="ab-tag">{{ post.tag }}</span>{% endif %}
         <span class="ab-date">{{ post.date | date: '%B %d, %Y' }}</span>
       </div>
-      <div class="ab-title">{{ post.title | split: ": " | first }}</div>
+      <div class="ab-title">{{ post.title }}</div>
       {% if post.description %}<div class="ab-desc">{{ post.description }}</div>{% endif %}
     </a>
   {% endfor %}

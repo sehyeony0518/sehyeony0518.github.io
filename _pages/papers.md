@@ -118,7 +118,7 @@ nav_order: 10
         {% if r.venue %}<span class="pr-venue">{{ r.venue }}</span>{% endif %}
         <span class="pr-date">{{ r.date | date: '%B %d, %Y' }}</span>
       </div>
-      <div class="pr-title">{{ r.title | split: ": " | first }}</div>
+      <div class="pr-title">{{ r.title }}</div>
       {% if r.authors %}<div class="pr-authors">{{ r.authors }}</div>{% endif %}
       {% if r.description %}<div class="pr-desc">{{ r.description }}</div>{% endif %}
     </a>

@@ -8,6 +8,9 @@ nav_order: 6
 ---
 
 <style>
+  /* Widen just this page's content column so a 4-up photo grid has room to breathe */
+  .container.mt-5 { max-width: 1400px; }
+
   .photo-gallery {
     column-count: 2;
     column-gap: 0.7rem;
