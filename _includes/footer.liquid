@@ -1,4 +1,21 @@
 <style>
+  /* ── Typography: Montserrat display + Inter text, airy academic rhythm ── */
+  body {
+    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+  }
+  h1, h2, h3, h4, h5, h6,
+  .post-title, .navbar-brand.title, .ip-col-title, .mission-title {
+    font-family: Montserrat, Inter, sans-serif;
+    letter-spacing: -0.018em;
+  }
+  /* Generous whitespace between sections; longer measure for prose */
+  article h2, .post h2 { margin-top: 2.5rem; margin-bottom: 0.85rem; }
+  article h3, .post h3 { margin-top: 1.9rem; margin-bottom: 0.6rem; }
+  article p, .post p, article li, .post li { line-height: 1.75; }
+  article p, .post p { margin-bottom: 1.1rem; }
+  .post-description, .post-header .desc { letter-spacing: 0.005em; opacity: 0.72; }
+
   /* Bold section headings across content pages */
   article h1, article h2, article h3, article h4,
   .post h1, .post h2, .post h3, .post h4,
