@@ -129,6 +129,7 @@
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/ministry/"]),
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/prayer/"]),
   html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/photos/"]),
+  html:not([data-mode="mission"]) #navbar li.nav-item:has(> a.nav-link[href*="/diary/"]),
   html:not([data-mode="mission"]) #navbar li.lang-toggle-li {
     display: none !important;
   }
@@ -170,7 +171,7 @@
   (function () {
     // Secret mission mode — determined by the CURRENT PAGE (full separation, no stored state).
     // Mission-side paths show mission tabs only; everything else shows academic tabs only.
-    var missionPaths = ['/mission', '/team', '/ministry', '/prayer', '/photos', '/news'];
+    var missionPaths = ['/mission', '/team', '/ministry', '/prayer', '/photos', '/news', '/diary'];
     var onMission = missionPaths.some(function (p) { return window.location.pathname.indexOf(p) === 0; });
     if (onMission) document.documentElement.setAttribute('data-mode', 'mission');
 
@@ -203,7 +204,7 @@
 
     // On academic pages, strip mission-side entries from the Cmd-K search index.
     if (!onMission) {
-      var missionRe = /\/(mission|team|ministry|prayer|photos|news)\//;
+      var missionRe = /\/(mission|team|ministry|prayer|photos|news|diary)\//;
       var tries = 0;
       var t = setInterval(function () {
         tries++;
