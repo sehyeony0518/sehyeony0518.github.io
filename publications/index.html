@@ -23,6 +23,22 @@
   <span class="na">year</span> <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
   <span class="na">note</span> <span class="p">=</span> <span class="s">{In Korean}</span>
 <span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> </div> </article> </div> </div> <style>
+  /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
+  :root {
+    --global-bg-color: #f9f9f9;
+    --global-text-color: #1c1c1c;
+    --global-text-color-light: #5f6368;
+    --global-divider-color: rgba(28, 28, 28, 0.09);
+  }
+  html[data-theme="dark"] {
+    --global-divider-color: rgba(232, 232, 232, 0.12);
+  }
+  /* Cards lift off the page instead of sinking into it */
+  .paper-list .pr-item, .aiblog-list .ab-item, .ip-item, .proj-card {
+    background: var(--global-card-bg-color);
+    border-color: var(--global-divider-color);
+  }
+
   /* ── Typography: Montserrat display + Inter text, airy academic rhythm ── */
   body {
     font-family: Inter, "Helvetica Neue", Arial, sans-serif;
