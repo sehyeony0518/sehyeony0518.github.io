@@ -34,7 +34,18 @@ blog_preview: true
 
 I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/).
 
-My research interest lies in **trustworthy medical AI**, understanding whether diagnostic models are right *for clinically valid reasons*, and designing models whose evidence can be directly inspected and audited. I am particularly interested in **medical imaging**, working closely with clinicians to build AI that serves real clinical practice.
+**My research focuses on trustworthy and clinically meaningful medical AI.** I study how to audit whether diagnostic models rely on clinically valid evidence, develop ultrasound-based AI for hepatobiliary disease diagnosis, and investigate how medical AI can remain reliable across different clinical environments.
+
+## Research Interests
+
+**Clinical Evidence Auditing**<br>
+I study whether diagnostic AI models make correct predictions for clinically valid reasons, with a focus on evidence attribution, shortcut learning, and auditable model behavior.
+
+**Ultrasound AI for Hepatobiliary Diagnosis**<br>
+I develop ultrasound-based AI models for gallbladder and hepatobiliary disease diagnosis, with an emphasis on clinically informed and interpretable representations.
+
+**Generalizable & Clinically Deployable Medical AI**<br>
+I am interested in building medical AI that remains reliable across hospitals, devices, and patient populations, through external validation, robustness analysis, and clinically grounded evaluation.
 
 Before graduate school, I received my B.S. in Electrical and Computer Engineering from Ajou University. Along the way I have worked on ultrasound diagnostic AI in collaboration with Ajou University Hospital, industrial fault prediction with Samsung Heavy Industries, and clinical research in computational psychiatry. These experiences shaped my conviction that medical AI must earn clinical trust, not just benchmark scores.
 
