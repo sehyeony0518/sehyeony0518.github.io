@@ -7,7 +7,7 @@ first_name: Se-Hyeon
 middle_name:
 last_name: Hwang
 contact_note: >
-  The best way to reach me is by email.
+  The best way to reach me is by email — <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a>
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal academic website of Se-Hyeon Hwang — M.S. student researching trustworthy medical AI, clinical evidence auditing, and medical imaging at Ajou University.
 footer_text: >

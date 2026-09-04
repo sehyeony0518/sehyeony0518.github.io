@@ -13,6 +13,7 @@ profile:
     <p>M.S. Student, AI Convergence Network</p>
     <p><a href="https://eslab.ajou.ac.kr/" target="_blank">Embedded & Software Lab</a></p>
     <p>Ajou University, Suwon</p>
+    <p><a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -37,4 +38,6 @@ My research interest lies in **trustworthy medical AI** — understanding whethe
 
 Before graduate school, I received my B.S. in Electrical and Computer Engineering from Ajou University. Along the way I have worked on ultrasound diagnostic AI in collaboration with Ajou University Hospital, industrial fault prediction with Samsung Heavy Industries, and clinical research in computational psychiatry. These experiences shaped my conviction that medical AI must earn clinical trust — not just benchmark scores.
 
-I am preparing to apply for Ph.D. programs (Fall 2028). More about my work is on the [research](/research/) and [publications](/publications/) pages, and my full CV is available as a [PDF](/assets/pdf/cv-hwang.pdf).
+More about my work is on the [research](/research/) and [publications](/publications/) pages, and my full CV is available as a [PDF](/assets/pdf/cv-hwang.pdf).
+
+**Contact.** The best way to reach me is by email at [bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr). I am always glad to hear from people working on trustworthy medical AI, clinical evidence auditing, or medical imaging — whether about research, collaboration, or a paper worth reading.
