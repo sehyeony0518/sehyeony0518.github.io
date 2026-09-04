@@ -19,6 +19,8 @@ nav_order: 10
     color: var(--global-text-color-light); opacity: .75; margin: .6rem 0 .1rem;
   }
   .venue-filter .vf-row-label:first-child { margin-top: 0; }
+  /* Short trailing group sits on one line: label in the first column, chips in the second */
+  .venue-filter .vf-row-label.vf-inline { width: auto; margin: 0 .35rem 0 0; }
   .venue-filter .vf-chip {
     display: inline-block; padding: .22rem .7rem; border-radius: 999px;
     border: 1px solid rgba(128,128,128,.35); font-size: .8rem; font-weight: 600;
@@ -166,8 +168,8 @@ nav_order: 10
   </div>
 
   {% if misc_main.size > 0 or misc_other_count > 0 %}
-    <div class="vf-row-label">Other</div>
     <div class="vf-row">
+      <span class="vf-row-label vf-inline">Other</span>
       {% for v in misc_main %}
         {% assign v = v | strip %}
         {% if v != "" %}
