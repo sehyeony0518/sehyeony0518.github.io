@@ -4,11 +4,11 @@ title: "Atlas of Individual Radiographic Features in Osteoarthritis, Revised"
 date: 2025-09-13 12:00:00 +0900
 venue: "Osteoarthritis and Cartilage"
 authors: "R. D. Altman, G. E. Gold (2007)"
-description: "The OARSI atlas that turns joint-space narrowing, osteophytes, and sclerosis into graded reference images — the ground truth that any automated knee-OA grader is ultimately trying to reproduce."
+description: "The OARSI atlas that turns joint-space narrowing, osteophytes, and sclerosis into graded reference images, the ground truth that any automated knee-OA grader is ultimately trying to reproduce."
 related_posts: false
 ---
 
-**Paper.** *Atlas of individual radiographic features in osteoarthritis, revised* — [Osteoarthritis and Cartilage (2007)](https://doi.org/10.1016/j.joca.2006.11.009)
+**Paper.** *Atlas of individual radiographic features in osteoarthritis, revised*. [Osteoarthritis and Cartilage (2007)](https://doi.org/10.1016/j.joca.2006.11.009)
 
 ## Why I read it
 
@@ -20,7 +20,7 @@ The revised atlas presents reference radiographs for individual osteoarthritis f
 
 ## What convinced me
 
-The atlas makes severity operational and visual. Rather than relying on a prose definition alone, a grader can compare a specific compartment and feature with ordered exemplars. This is particularly useful for machine learning because it separates anatomy, feature type, and severity — information that a single KL grade collapses.
+The atlas makes severity operational and visual. Rather than relying on a prose definition alone, a grader can compare a specific compartment and feature with ordered exemplars. This is particularly useful for machine learning because it separates anatomy, feature type, and severity, information that a single KL grade collapses.
 
 ## What it leaves open
 

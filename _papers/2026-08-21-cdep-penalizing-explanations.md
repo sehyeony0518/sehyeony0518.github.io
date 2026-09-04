@@ -4,11 +4,11 @@ title: "Interpretations Are Useful: Penalizing Explanations to Align Neural Netw
 date: 2026-08-21 12:00:00 +0900
 venue: "ICML 2020"
 authors: "Laura Rieger, Chandan Singh, W. James Murdoch, Bin Yu (2020)"
-description: "CDEP — penalizing a model's contextual-decomposition-based explanation directly during training, so an explanation isn't just a diagnostic afterward but an actionable lever to fix the model."
+description: "CDEP, penalizing a model's contextual-decomposition-based explanation directly during training, so an explanation isn't just a diagnostic afterward but an actionable lever to fix the model."
 related_posts: false
 ---
 
-**Paper.** *Interpretations are Useful: Penalizing Explanations to Align Neural Networks with Prior Knowledge* — [ICML 2020](https://arxiv.org/abs/1909.13584)
+**Paper.** *Interpretations are Useful: Penalizing Explanations to Align Neural Networks with Prior Knowledge*. [ICML 2020](https://arxiv.org/abs/1909.13584)
 
 ## Why I read it
 

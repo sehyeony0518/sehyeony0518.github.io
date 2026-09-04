@@ -4,11 +4,11 @@ title: "Underspecification Presents Challenges for Credibility in Modern Machine
 date: 2026-03-28 12:00:00 +0900
 venue: "JMLR"
 authors: "Alexander D'Amour, Katherine Heller, Dan Moldovan, Ben Adlam, Babak Alipanahi, Alex Beutel, Christina Chen, Jonathan Deaton, et al. (2020)"
-description: "Two models with identical training accuracy, identical architecture, and different random seeds can behave completely differently under distribution shift — a Google-scale audit of just how common this is, including in a dermatology model."
+description: "Two models with identical training accuracy, identical architecture, and different random seeds can behave completely differently under distribution shift, a Google-scale audit of just how common this is, including in a dermatology model."
 related_posts: false
 ---
 
-**Paper.** *Underspecification Presents Challenges for Credibility in Modern Machine Learning* — [arXiv (2020)](https://arxiv.org/abs/2011.03395)
+**Paper.** *Underspecification Presents Challenges for Credibility in Modern Machine Learning*. [arXiv (2020)](https://arxiv.org/abs/2011.03395)
 
 ## Why I read it
 

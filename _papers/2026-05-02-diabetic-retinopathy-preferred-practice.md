@@ -4,11 +4,11 @@ title: "Diabetic Retinopathy Preferred Practice Pattern"
 date: 2026-05-02 12:00:00 +0900
 venue: "American Academy of Ophthalmology"
 authors: "American Academy of Ophthalmology, Retina/Vitreous PPP Panel (2024)"
-description: "The clinical practice guideline that defines how diabetic retinopathy is actually meant to be screened, staged, and managed — the standard any AI screening tool is ultimately deployed to support, not replace."
+description: "The clinical practice guideline that defines how diabetic retinopathy is actually meant to be screened, staged, and managed, the standard any AI screening tool is ultimately deployed to support, not replace."
 related_posts: false
 ---
 
-**Paper.** *Diabetic Retinopathy Preferred Practice Pattern* — American Academy of Ophthalmology (approved September 2024)
+**Paper.** *Diabetic Retinopathy Preferred Practice Pattern*, American Academy of Ophthalmology (approved September 2024)
 
 ## Why I read it
 

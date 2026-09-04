@@ -4,15 +4,15 @@ title: "US Attenuation for Liver Fat Quantification: An AIUM-RSNA QIBA Pulse-Ech
 date: 2026-01-24 12:00:00 +0900
 venue: "Radiology"
 authors: "Giovanna Ferraioli, Viksit Kumar, Arinc Ozturk, Kibo Nam, Chris L. de Korte, Richard G. Barr (2022)"
-description: "A standards-body review on turning ultrasound attenuation and backscatter into a quantitative, reproducible liver-fat biomarker — the standardization work that any AI liver-steatosis model eventually has to sit on top of."
+description: "A standards-body review on turning ultrasound attenuation and backscatter into a quantitative, reproducible liver-fat biomarker, the standardization work that any AI liver-steatosis model eventually has to sit on top of."
 related_posts: false
 ---
 
-**Paper.** *US Attenuation for Liver Fat Quantification: An AIUM-RSNA QIBA Pulse-Echo Quantitative Ultrasound Initiative* — [Radiology (2022)](https://doi.org/10.1148/radiol.210736)
+**Paper.** *US Attenuation for Liver Fat Quantification: An AIUM-RSNA QIBA Pulse-Echo Quantitative Ultrasound Initiative*. [Radiology (2022)](https://doi.org/10.1148/radiol.210736)
 
 ## Why I read it
 
-A learned ultrasound model is only as portable as the measurement process that produced its inputs. I read this QIBA review because it treats acquisition protocol, confounding factors, repeatability, and cross-vendor standardization as part of the biomarker — not as technical details outside the model.
+A learned ultrasound model is only as portable as the measurement process that produced its inputs. I read this QIBA review because it treats acquisition protocol, confounding factors, repeatability, and cross-vendor standardization as part of the biomarker, not as technical details outside the model.
 
 ## What the paper claims
 
@@ -20,7 +20,7 @@ The initiative reviews attenuation imaging for liver-fat quantification and plac
 
 ## What convinced me
 
-Across the reviewed studies, attenuation methods often achieved strong discrimination for steatosis, with representative AUC around 0.91, and repeatability estimates were generally high, with reported ICCs roughly in the 0.81–0.98 range. At the same time, results and thresholds varied by system, protocol, region-of-interest placement, and reference standard. That combination — promising accuracy but incomplete interchangeability — is exactly why a technical profile is needed.
+Across the reviewed studies, attenuation methods often achieved strong discrimination for steatosis, with representative AUC around 0.91, and repeatability estimates were generally high, with reported ICCs roughly in the 0.81–0.98 range. At the same time, results and thresholds varied by system, protocol, region-of-interest placement, and reference standard. That combination, promising accuracy but incomplete interchangeability, is exactly why a technical profile is needed.
 
 ## What it leaves open
 

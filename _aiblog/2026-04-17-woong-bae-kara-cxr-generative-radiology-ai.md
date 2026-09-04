@@ -18,13 +18,13 @@ The interview was recorded before KARA-CXR became an authorized medical device. 
 
 > **2026 update.** Bae is now co-founder and CEO of Soombit.ai, which was established by members of Kakao Brain's former healthcare team. KARA-CXR was subsequently renamed AIRead-CXR. On April 1, 2026, Korea's Ministry of Food and Drug Safety granted it Class III authorization as the country's first generative AI-based digital medical device. The current product generates preliminary reports from adult frontal chest radiographs for review by qualified physicians; it does not provide an autonomous final diagnosis. ([Soombit.ai][1])
 
-The questions raised in the interview — how to define hallucination, how to evaluate an open-ended report, and how to regulate a model capable of describing many findings — were therefore not abstract questions. They eventually became product, clinical-study, and regulatory-design questions.
+The questions raised in the interview: how to define hallucination, how to evaluate an open-ended report, and how to regulate a model capable of describing many findings, were therefore not abstract questions. They eventually became product, clinical-study, and regulatory-design questions.
 
-## Part 1 — An AI-first company should still begin with a clinical problem
+## Part 1. An AI-first company should still begin with a clinical problem
 
 Kakao Brain was founded as an AI-centered research and product company rather than a healthcare company in the conventional sense.
 
-Its healthcare strategy began by asking where advanced AI could create substantial social impact. The team experimented with several healthcare applications before concentrating on medical imaging and antibody design — areas in which the underlying AI capability was expected to be central to solving the problem.
+Its healthcare strategy began by asking where advanced AI could create substantial social impact. The team experimented with several healthcare applications before concentrating on medical imaging and antibody design, areas in which the underlying AI capability was expected to be central to solving the problem.
 
 But an AI-first strategy does not mean starting with a large model and searching for somewhere to deploy it.
 
@@ -44,7 +44,7 @@ It is:
 
 **Which part of the clinician's work is creating the bottleneck, and what form of assistance would actually change that workflow?**
 
-## Part 2 — From detecting lesions to drafting the report
+## Part 2. From detecting lesions to drafting the report
 
 Bae divided chest X-ray interpretation into four broad stages.
 
@@ -54,13 +54,13 @@ Most early commercial medical-imaging AI systems concentrated on the first stage
 
 That can be useful, but it still leaves most of the interpretive and documentation process to the radiologist.
 
-KARA-CXR took a different approach. A user could upload a frontal chest radiograph — either a standard posteroanterior image or the more variable anteroposterior image frequently obtained from seated, supine, or portable examinations — and receive a preliminary written report.
+KARA-CXR took a different approach. A user could upload a frontal chest radiograph: either a standard posteroanterior image or the more variable anteroposterior image frequently obtained from seated, supine, or portable examinations, and receive a preliminary written report.
 
 Bae described two output styles. A simple version provided a shorter interpretation, while a longer version followed a more structured reporting format containing findings, an impression, and possible recommendations.
 
 The system was not presented as an autonomous radiologist.
 
-Its intended role was closer to that of a first draft. The AI would write a preliminary report, and the radiologist would review, edit, and approve it — similar in concept to the way a supervising physician may review a report initially prepared by a trainee.
+Its intended role was closer to that of a first draft. The AI would write a preliminary report, and the radiologist would review, edit, and approve it, similar in concept to the way a supervising physician may review a report initially prepared by a trainee.
 
 This changes the unit of assistance.
 
@@ -70,11 +70,11 @@ A drafting system attempts to reduce the distance between the image and the comp
 
 KARA-CXR did not literally automate every component of radiological reasoning. For example, the interview focused on a single uploaded image rather than a complete longitudinal comparison with prior examinations. But it moved AI assistance further downstream, from locating selected abnormalities toward synthesizing image findings into clinically usable language.
 
-## Part 3 — Test the workflow before training the model
+## Part 3. Test the workflow before training the model
 
 One of the strongest product-development lessons in the interview came before the discussion of model architecture or training data.
 
-The team first tested whether preliminary reports would actually help radiologists — even before the AI existed.
+The team first tested whether preliminary reports would actually help radiologists, even before the AI existed.
 
 Developing a large medical model requires substantial data, engineering effort, computing resources, clinical collaboration, and regulatory planning. Building the entire system before confirming that its output improves the user's work would therefore be an expensive way to discover that the problem had been framed incorrectly.
 
@@ -98,7 +98,7 @@ Testing the first question independently prevents a team from optimizing a model
 
 In medical AI, a high-performing model can still fail because the intervention itself is poorly designed. Pretotyping the workflow makes it possible to reject the intervention before spending years improving the algorithm.
 
-## Part 4 — Scale expands the vocabulary, but not the certainty
+## Part 4. Scale expands the vocabulary, but not the certainty
 
 Bae said that KARA-CXR had been developed using approximately 16 million chest X-ray images paired with their reports, collected from Korean and international sources covering varied institutions, clinical settings, disease findings, and imaging devices.
 
@@ -118,11 +118,11 @@ A large and diverse training corpus increases the number of situations the model
 
 Generative models expand both the answer space and the failure space.
 
-A fixed classifier may be unable to mention an unmodeled disease. A generative model may mention it — but may also describe it incorrectly, place it in the wrong location, assign it the wrong severity, or generate a plausible sentence unsupported by the image.
+A fixed classifier may be unable to mention an unmodeled disease. A generative model may mention it: but may also describe it incorrectly, place it in the wrong location, assign it the wrong severity, or generate a plausible sentence unsupported by the image.
 
 Scale makes broader capability possible. It does not remove the need to specify what has actually been validated.
 
-## Part 5 — Hallucination must be defined clinically
+## Part 5. Hallucination must be defined clinically
 
 Hallucination is often discussed as though it were one universal phenomenon.
 
@@ -155,7 +155,7 @@ Evaluation must therefore operate at several levels:
 
 The goal is not simply to make the generated text sound radiological. It is to ensure that its clinical claims remain anchored to the image.
 
-## Part 6 — The average can hide the error that destroys trust
+## Part 6. The average can hide the error that destroys trust
 
 Bae described what he called the danger of being deceived by averages.
 
@@ -187,7 +187,7 @@ Does the model fail cautiously, or does it produce confident and polished langua
 
 These questions are not captured by a single AUROC, report-similarity score, or average physician preference.
 
-## Part 7 — What the later studies showed
+## Part 7. What the later studies showed
 
 Several studies published after the interview began to answer the empirical questions Bae had raised.
 
@@ -209,7 +209,7 @@ The system appears capable of producing useful preliminary reports, reducing rep
 
 That is exactly why the product is framed as a drafting assistant rather than an autonomous reporting system.
 
-## Part 8 — Regulation begins with intended use
+## Part 8. Regulation begins with intended use
 
 At the time of the interview, KARA-CXR had not yet received regulatory authorization.
 
@@ -231,7 +231,7 @@ This illustrates a central principle of medical-device regulation:
 
 The narrower specification does not diminish the technology. It creates the conditions under which its safety and effectiveness can be tested.
 
-## Part 9 — Workflow integration is part of the medical device
+## Part 9. Workflow integration is part of the medical device
 
 Bae emphasized that even an accurate AI system can make radiologists less efficient if it is difficult to use.
 
@@ -251,7 +251,7 @@ A system that clearly distinguishes generated text from approved text creates a 
 
 Workflow is therefore part of the intervention and part of the safety case. It should be evaluated alongside model performance, not treated as packaging added after the model has been validated.
 
-## Part 10 — Foundation models will not eliminate the service layer
+## Part 10. Foundation models will not eliminate the service layer
 
 The interview also explored whether increasingly general AI systems would eventually absorb specialized healthcare products.
 
@@ -273,7 +273,7 @@ The foundation model matters.
 
 But the clinical system built around it determines whether the model becomes more than a demonstration.
 
-## Part 11 — The same philosophy extends beyond radiology
+## Part 11. The same philosophy extends beyond radiology
 
 Kakao Brain's healthcare work was not limited to medical imaging.
 
@@ -315,10 +315,10 @@ Average performance may earn attention.
 
 Trust is earned by what happens outside the average.
 
-[1]: https://soombit.ai/about "Soombit.ai — About"
-[2]: https://www.yoonsupchoi.com/2024/03/19/kakao-brain-cho-interview/ "Kakao Brain interview — Yoon Sup Choi"
+[1]: https://soombit.ai/about "Soombit.ai, About"
+[2]: https://www.yoonsupchoi.com/2024/03/19/kakao-brain-cho-interview/ "Kakao Brain interview, Yoon Sup Choi"
 [3]: https://pubs.rsna.org/doi/10.1148/radiol.241476 "Radiology (2025)"
-[4]: https://pubmed.ncbi.nlm.nih.gov/40067108/ "Reader study — PubMed"
+[4]: https://pubmed.ncbi.nlm.nih.gov/40067108/ "Reader study, PubMed"
 [5]: https://pubs.rsna.org/doi/10.1148/radiol.250568 "Radiology (2025), multicohort study"
-[6]: https://soombit.ai/news/license-2 "Soombit.ai — AIRead-CXR MFDS authorization"
-[7]: https://galux.co.kr/ko/sub/newsroom/detail.php?id=1&type=news "Galux — Kakao Brain partnership"
+[6]: https://soombit.ai/news/license-2 "Soombit.ai, AIRead-CXR MFDS authorization"
+[7]: https://galux.co.kr/ko/sub/newsroom/detail.php?id=1&type=news "Galux, Kakao Brain partnership"

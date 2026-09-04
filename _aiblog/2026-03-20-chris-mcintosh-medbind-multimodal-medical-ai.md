@@ -19,11 +19,11 @@ The work presented in the talk corresponds to **MEDBind**, developed by Yuan Gao
 
 McIntosh is a Senior Scientist at University Health Network's Peter Munk Cardiac Centre Research Institute and an Associate Professor at the University of Toronto, with additional appointments in Computer Science and Medical Imaging. His broader research program focuses on moving medical AI beyond isolated technical demonstrations and toward models that can operate across the heterogeneous data encountered in actual healthcare. ([Medical Biophysics][2])
 
-## Part 1 — Medical AI has usually learned one data type at a time
+## Part 1. Medical AI has usually learned one data type at a time
 
 The simplest form of machine learning begins with one modality.
 
-A chest X-ray enters an image encoder. The encoder transforms the image into a vector — a compact numerical representation — and a classifier converts that representation into probabilities for several possible conditions.
+A chest X-ray enters an image encoder. The encoder transforms the image into a vector, a compact numerical representation, and a classifier converts that representation into probabilities for several possible conditions.
 
 The model might estimate, for example, the probability of pneumonia, cardiomegaly, edema, or another abnormality. This is the familiar single-modality setting: one type of input, one learned representation, and one predefined output task.
 
@@ -39,7 +39,7 @@ A single encounter may include a chest X-ray, an ECG, laboratory values, physiol
 
 The real multimodal problem is therefore not merely attaching an image to a language model. It is learning a representation in which different clinical measurements can be recognized as observations of the same underlying patient state.
 
-## Part 2 — Binding different modalities into a shared space
+## Part 2. Binding different modalities into a shared space
 
 MEDBind uses a separate encoder for each of its three modalities.
 
@@ -71,11 +71,11 @@ The MIMIC datasets used in the study contained large collections of chest X-rays
 
 The result is not simply three models placed next to each other. It is a shared coordinate system in which different clinical data types can be compared directly.
 
-## Part 3 — Matching human-interpreted reports without reading them
+## Part 3. Matching human-interpreted reports without reading them
 
 One of the clearest experiments in the talk concerned 30-day hospital readmission and in-hospital mortality.
 
-A previous text-based approach could use clinical documentation — including the written interpretations of chest X-rays and ECGs — to predict these outcomes. The text contains clinically useful information because radiologists and other clinicians have already examined the raw data and summarized what they found.
+A previous text-based approach could use clinical documentation, including the written interpretations of chest X-rays and ECGs, to predict these outcomes. The text contains clinically useful information because radiologists and other clinicians have already examined the raw data and summarized what they found.
 
 MEDBind asks whether those human-written modality reports can be replaced by representations extracted directly from the chest X-ray and ECG.
 
@@ -101,7 +101,7 @@ This does not mean that MEDBind replaced clinical interpretation or demonstrated
 
 It does show, however, that the shared representation preserved information that had previously required modality-specific written summaries.
 
-## Part 4 — Zero-shot and few-shot learning reduce the need to start from zero
+## Part 4. Zero-shot and few-shot learning reduce the need to start from zero
 
 McIntosh then explained two terms that frequently appear in foundation-model research: **zero-shot** and **few-shot** learning.
 
@@ -117,7 +117,7 @@ The model can classify the image according to whichever text description lies cl
 
 No new classifier has been trained specifically for that dataset or disease distinction. The model instead uses relationships learned during pretraining. This is the basic zero-shot setting used in vision-language models.
 
-Few-shot learning provides a small number of labeled examples — perhaps one, two, five, or several dozen — and trains only a lightweight classifier on top of the pretrained representation.
+Few-shot learning provides a small number of labeled examples (perhaps one, two, five, or several dozen) and trains only a lightweight classifier on top of the pretrained representation.
 
 The difference is important for medicine.
 
@@ -131,7 +131,7 @@ Zero-shot should not be interpreted as learning without prior data.
 
 The model had already undergone extensive multimodal pretraining. "Zero" refers to the absence of task-specific supervised training for the new classification problem, not to an absence of prior knowledge.
 
-## Part 5 — Can one modality borrow a disease concept from another?
+## Part 5. Can one modality borrow a disease concept from another?
 
 The most striking part of the lecture was the cross-modal zero-shot experiment.
 
@@ -155,7 +155,7 @@ The model did receive labeled support examples, but those labels were supplied i
 
 This is what makes the result interesting: supervision collected for one clinical measurement may become useful for another.
 
-## Part 6 — The value lies in the relationships between data types
+## Part 6. The value lies in the relationships between data types
 
 Multimodal learning is often described as a way to increase prediction accuracy by adding more inputs.
 
@@ -181,7 +181,7 @@ These numbers should be understood as collaboration heuristics rather than unive
 
 The broader message is nevertheless clear: multimodal pretraining can reduce the amount of new supervision required, but it does not eliminate the need for representative data.
 
-## Part 7 — Binding modalities also creates new questions of trust
+## Part 7. Binding modalities also creates new questions of trust
 
 A shared embedding space is powerful precisely because it compresses many kinds of information into a common representation.
 

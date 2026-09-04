@@ -8,7 +8,7 @@ description: "Radiology-specific saliency evaluation: sanity checks and human-al
 related_posts: false
 ---
 
-**Paper.** *Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging* — [Radiology: Artificial Intelligence 2021](https://pubs.rsna.org/doi/10.1148/ryai.2021200267)
+**Paper.** *Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging*. [Radiology: Artificial Intelligence 2021](https://pubs.rsna.org/doi/10.1148/ryai.2021200267)
 
 ## Why I read it
 

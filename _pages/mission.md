@@ -16,7 +16,7 @@ nav_order: 1
 **Called to Christ. Sent to the Nations.**
 
 > "그러므로 너희는 가서 모든 민족을 제자로 삼아."
-> — 마태복음 28:19
+>: 마태복음 28:19
 
 저는 먼저 예수 그리스도께 부름받은 제자입니다.
 
@@ -55,7 +55,7 @@ JDM에서 받은 가장 중요한 유산은 "만인을 그리스도의 제자로
 
 Mission2035는 저 혼자 감당하는 계획이 아닙니다. 예수 그리스도께 부름받은 제자들이 각자의 전문 영역에서 일하며, 함께 기도하고 준비하며 열방을 향해 걸어가는 자비량 선교팀으로 세워져 가고 있습니다.
 
-우리는 직분이나 역할보다 한 가지 정체성을 공유합니다 — 예수님의 제자라는 것입니다. 각자의 일터와 학업이 곧 선교의 텐트가 되고, 서로의 부르심을 확인하고 지지하는 공동체가 되고자 합니다. 함께하는 지체들은 [team](/team/) 페이지에서 소개합니다.
+우리는 직분이나 역할보다 한 가지 정체성을 공유합니다: 예수님의 제자라는 것입니다. 각자의 일터와 학업이 곧 선교의 텐트가 되고, 서로의 부르심을 확인하고 지지하는 공동체가 되고자 합니다. 함께하는 지체들은 [team](/team/) 페이지에서 소개합니다.
 
 ## 삶 전체로 응답하는 부르심
 
@@ -119,12 +119,12 @@ Mission2035는 그 질문에 대한 현재의 응답입니다. 하나님께서 �
 
 Mission2035는 어느 날 갑자기 세운 계획이 아니라, 말씀과 공동체와 사역의 시간을 통해 하나님께서 오래 빚어 오신 부르심입니다. 그 과정을 담은 대표적인 글을 [reflections](/diary/)에서 옮겨 둡니다.
 
-- [누가복음 사경회 소감문](/diary/2024/luke-bible-conference/) — 부르심 때문에 제자가 된다는 정체성
-- [2024 대학여름집회 소감문](/diary/2024/summer-conference/) — 한 영혼을 섬기는 곳이 부르신 자리
-- [V국 비전트립 소감문](/diary/2024/vision-trip-v/) — 특별한 여행에서 일상의 캠퍼스로 이어지는 선교
-- [I국 비전트립 소감문](/diary/2026/vision-trip-reflection/) — 낮아져 다른 사람의 삶 속으로 들어가는 선교
-- [졸업식 소감](/diary/2026/graduation/) — 공동체와 영적 부모에게서 받은 제자도의 유산
-- [박성혜 교수님과의 만남](/diary/2025/professor-meeting/) — 연구와 강의를 예배로 드리는 삶
+- [누가복음 사경회 소감문](/diary/2024/luke-bible-conference/): 부르심 때문에 제자가 된다는 정체성
+- [2024 대학여름집회 소감문](/diary/2024/summer-conference/): 한 영혼을 섬기는 곳이 부르신 자리
+- [V국 비전트립 소감문](/diary/2024/vision-trip-v/): 특별한 여행에서 일상의 캠퍼스로 이어지는 선교
+- [I국 비전트립 소감문](/diary/2026/vision-trip-reflection/): 낮아져 다른 사람의 삶 속으로 들어가는 선교
+- [졸업식 소감](/diary/2026/graduation/): 공동체와 영적 부모에게서 받은 제자도의 유산
+- [박성혜 교수님과의 만남](/diary/2025/professor-meeting/): 연구와 강의를 예배로 드리는 삶
 
 </div>
 
@@ -135,7 +135,7 @@ Mission2035는 어느 날 갑자기 세운 계획이 아니라, 말씀과 공동
 **Called to Christ. Sent to the Nations.**
 
 > "Therefore go and make disciples of all nations."
-> — Matthew 28:19
+>, Matthew 28:19
 
 I am, first of all, a disciple called by Jesus Christ.
 
@@ -147,12 +147,12 @@ The more I read Scripture, the more I see that mission, too, is not an optional 
 
 **Mission2035** is the personal calling in which this universal call and sending took concrete shape in my life.
 
-God has confirmed that, after I complete a doctorate abroad, He is calling me — beginning in 2035 — to a university in a country where educational resources are scarce and access to the gospel is limited. There I hope to live as an educator and self-supporting (tentmaking) campus missionary, partnering with the local church to share the gospel with students and raise them as disciples of Jesus Christ.
+God has confirmed that, after I complete a doctorate abroad, He is calling me, beginning in 2035, to a university in a country where educational resources are scarce and access to the gospel is limited. There I hope to live as an educator and self-supporting (tentmaking) campus missionary, partnering with the local church to share the gospel with students and raise them as disciples of Jesus Christ.
 
 My goal is not simply to preach the gospel to many people. It is to love the one person God entrusts to me, to share word and life with them, and to walk alongside them until they grow into a disciple who in turn serves their own friends, juniors, campus, and people.
 
 Mission2035 is not the reason I live as a disciple.
-**Mission2035 is the concrete way that I — called as a disciple of Christ — respond to that calling.**
+**Mission2035 is the concrete way that I, called as a disciple of Christ, respond to that calling.**
 
 ## The Call and Discipleship I Learned in JDM
 
@@ -160,7 +160,7 @@ From 2020 to 2026 I learned the vision of gospel proclamation, discipleship trai
 
 The most important legacy I received in JDM is the vision of "everyone a disciple of Christ": a person who hears the gospel grows into a responsible disciple who obeys the word, and that disciple in turn builds up another. Mission2035 is my response, carrying this legacy of the disciple movement and campus mission on to universities among the nations.
 
-I currently serve on the young-adult leadership team and as a college small-group leader at Kyungwon Church. Before speaking of a future mission in a distant land, I believe it comes first to love and build up — through the word — the one person God has entrusted to me here and now. Mission2035 is not a plan that suddenly begins in 2035; it has already begun through the small obediences carried out in today's church and community. My present service is on the [ministry](/ministry/) page.
+I currently serve on the young-adult leadership team and as a college small-group leader at Kyungwon Church. Before speaking of a future mission in a distant land, I believe it comes first to love and build up, through the word, the one person God has entrusted to me here and now. Mission2035 is not a plan that suddenly begins in 2035; it has already begun through the small obediences carried out in today's church and community. My present service is on the [ministry](/ministry/) page.
 
 ## Research as a Tent
 
@@ -172,7 +172,7 @@ In time, research and teaching will be the tent that lets me remain among studen
 
 ## The Tentmaking Team Walking Together
 
-Mission2035 is not a plan I carry alone. Disciples called by Jesus Christ are being built up as a self-supporting (tentmaking) mission team — each working in their own field of expertise, praying and preparing together, and walking toward the nations.
+Mission2035 is not a plan I carry alone. Disciples called by Jesus Christ are being built up as a self-supporting (tentmaking) mission team: each working in their own field of expertise, praying and preparing together, and walking toward the nations.
 
 More than titles or roles, we share one identity: we are disciples of Jesus. Each member's workplace and studies become a tent for mission, and we seek to be a community that confirms and supports one another's calling. The members are introduced on the [team](/team/) page.
 
@@ -238,11 +238,11 @@ Mission2035 is my present answer to that question. Trusting that God will guide 
 
 Mission2035 is not a plan made overnight, but a calling God has long been shaping through the word, community, and seasons of ministry. Representative writings from that journey are gathered in [reflections](/diary/).
 
-- [Reflection on the Luke Bible Conference](/diary/2024/luke-bible-conference/) — the identity of becoming a disciple because of the calling
-- [Reflection on the 2024 University Summer Conference](/diary/2024/summer-conference/) — the place that serves one soul is the place He calls
-- [Reflection on the Vision Trip to Country V](/diary/2024/vision-trip-v/) — mission that carries from a special trip into the everyday campus
-- [Reflection on the Vision Trip to Country I](/diary/2026/vision-trip-reflection/) — mission that lowers itself and enters another's life
-- [Graduation reflection](/diary/2026/graduation/) — the legacy of discipleship received from community and spiritual parents
-- [A meeting with a professor of faith](/diary/2025/professor-meeting/) — a life that offers research and teaching as worship
+- [Reflection on the Luke Bible Conference](/diary/2024/luke-bible-conference/), the identity of becoming a disciple because of the calling
+- [Reflection on the 2024 University Summer Conference](/diary/2024/summer-conference/), the place that serves one soul is the place He calls
+- [Reflection on the Vision Trip to Country V](/diary/2024/vision-trip-v/), mission that carries from a special trip into the everyday campus
+- [Reflection on the Vision Trip to Country I](/diary/2026/vision-trip-reflection/), mission that lowers itself and enters another's life
+- [Graduation reflection](/diary/2026/graduation/), the legacy of discipleship received from community and spiritual parents
+- [A meeting with a professor of faith](/diary/2025/professor-meeting/), a life that offers research and teaching as worship
 
 </div>

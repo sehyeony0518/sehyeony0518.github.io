@@ -4,15 +4,15 @@ title: "Ultrasonographic Fatty Liver Indicator, a Novel Score Which Rules Out NA
 date: 2025-09-27 12:00:00 +0900
 venue: "Liver International"
 authors: "Stefano Ballestri, Amedeo Lonardo, Dante Romagnoli, Lucia Carulli, Luisa Losi, Christopher P. Day, Paola Loria (2012)"
-description: "A hand-crafted, semi-quantitative ultrasound score (US-FLI) built from four visual features — the kind of clinically legible scoring system that a learned model in the same space should be able to match or explain, not just outperform."
+description: "A hand-crafted, semi-quantitative ultrasound score (US-FLI) built from four visual features, the kind of clinically legible scoring system that a learned model in the same space should be able to match or explain, not just outperform."
 related_posts: false
 ---
 
-**Paper.** *Ultrasonographic fatty liver indicator, a novel score which rules out NASH and is correlated with metabolic parameters in NAFLD* — [Liver International (2012)](https://doi.org/10.1111/j.1478-3231.2012.02804.x)
+**Paper.** *Ultrasonographic fatty liver indicator, a novel score which rules out NASH and is correlated with metabolic parameters in NAFLD*. [Liver International (2012)](https://doi.org/10.1111/j.1478-3231.2012.02804.x)
 
 ## Why I read it
 
-US-FLI is a compact example of clinically structured ultrasound reasoning. Instead of learning an unrestricted image representation, it combines a small set of interpretable signs — liver–kidney contrast, attenuation, vessel blurring, diaphragm and gallbladder-wall visibility, and focal sparing.
+US-FLI is a compact example of clinically structured ultrasound reasoning. Instead of learning an unrestricted image representation, it combines a small set of interpretable signs: liver–kidney contrast, attenuation, vessel blurring, diaphragm and gallbladder-wall visibility, and focal sparing.
 
 ## What the paper claims
 

@@ -4,15 +4,15 @@ title: "Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Che
 date: 2026-01-10 12:00:00 +0900
 venue: "Nature Medicine"
 authors: "Seyyed-Kalantari, Zhang, McDermott, Chen, Ghassemi (2021)"
-description: "Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients — the error mode that silently denies care."
+description: "Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients, the error mode that silently denies care."
 related_posts: false
 ---
 
-**Paper.** *Underdiagnosis bias of artificial intelligence algorithms applied to chest radiographs in under-served patient populations* — [Nature Medicine 2021](https://www.nature.com/articles/s41591-021-01595-0)
+**Paper.** *Underdiagnosis bias of artificial intelligence algorithms applied to chest radiographs in under-served patient populations*. [Nature Medicine 2021](https://www.nature.com/articles/s41591-021-01595-0)
 
 ## Why I read it
 
-Fairness metrics can be abstract unless they are tied to a clinically directional harm. This paper focuses on underdiagnosis — diseased patients incorrectly labeled as having "no finding" — and asks which groups bear that error across widely used chest-radiograph datasets.
+Fairness metrics can be abstract unless they are tied to a clinically directional harm. This paper focuses on underdiagnosis, diseased patients incorrectly labeled as having "no finding", and asks which groups bear that error across widely used chest-radiograph datasets.
 
 ## What the paper claims
 

@@ -8,11 +8,11 @@ description: "A framework connecting interpretability directly to correction: fi
 related_posts: false
 ---
 
-**Paper.** *Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data* — [arXiv (2025)](https://arxiv.org/abs/2501.13818)
+**Paper.** *Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data*. [arXiv (2025)](https://arxiv.org/abs/2501.13818)
 
 ## Why I read it
 
-Shortcut papers often isolate one stage — detection, explanation, or mitigation. I read this work because it frames safety as an iterative workflow: reveal suspicious behavior, characterize the concept, revise the model or data, and then test whether the revision actually worked.
+Shortcut papers often isolate one stage: detection, explanation, or mitigation. I read this work because it frames safety as an iterative workflow: reveal suspicious behavior, characterize the concept, revise the model or data, and then test whether the revision actually worked.
 
 ## What the paper claims
 

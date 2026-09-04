@@ -4,11 +4,11 @@ title: "Concept Bottleneck Models"
 date: 2025-12-27 12:00:00 +0900
 venue: "ICML 2020"
 authors: "Pang Wei Koh, Thao Nguyen, Yew Siang Tang, Stephen Mussmann, Emma Pierson, Been Kim, Percy Liang (2020)"
-description: "The paper that named and formalized the concept bottleneck — asking, using the paper's own example, whether a model would still predict severe arthritis if it didn't think there was a bone spur."
+description: "The paper that named and formalized the concept bottleneck: asking, using the paper's own example, whether a model would still predict severe arthritis if it didn't think there was a bone spur."
 related_posts: false
 ---
 
-**Paper.** *Concept Bottleneck Models* — [ICML 2020](https://arxiv.org/abs/2007.04612)
+**Paper.** *Concept Bottleneck Models*. [ICML 2020](https://arxiv.org/abs/2007.04612)
 
 ## Why I read it
 

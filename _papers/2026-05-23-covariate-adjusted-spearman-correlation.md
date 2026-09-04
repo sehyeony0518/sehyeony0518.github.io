@@ -4,11 +4,11 @@ title: "Covariate-Adjusted Spearman's Rank Correlation with Probability-Scale Re
 date: 2026-05-23 12:00:00 +0900
 venue: "Biometrics"
 authors: "Qi Liu, Chun Li, Valentine Wanga, Bryan E. Shepherd (2018)"
-description: "A statistics paper on adjusting rank correlation for confounding covariates — read because so many AI-versus-classical-index comparisons in medical imaging report raw Spearman correlation without asking whether a shared confound is inflating it."
+description: "A statistics paper on adjusting rank correlation for confounding covariates, read because so many AI-versus-classical-index comparisons in medical imaging report raw Spearman correlation without asking whether a shared confound is inflating it."
 related_posts: false
 ---
 
-**Paper.** *Covariate-Adjusted Spearman's Rank Correlation with Probability-Scale Residuals* — [Biometrics (2018)](https://doi.org/10.1111/biom.12812)
+**Paper.** *Covariate-Adjusted Spearman's Rank Correlation with Probability-Scale Residuals*. [Biometrics (2018)](https://doi.org/10.1111/biom.12812)
 
 ## Why I read it
 

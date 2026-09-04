@@ -4,11 +4,11 @@ title: "On Calibration of Modern Neural Networks"
 date: 2026-03-14 12:00:00 +0900
 venue: "ICML"
 authors: "Guo, Pleiss, Sun, Weinberger (2017)"
-description: "Modern networks are more accurate and less calibrated than their predecessors — and the fix (temperature scaling) is almost embarrassingly simple."
+description: "Modern networks are more accurate and less calibrated than their predecessors, and the fix (temperature scaling) is almost embarrassingly simple."
 related_posts: false
 ---
 
-**Paper.** *On Calibration of Modern Neural Networks* — [ICML 2017](https://arxiv.org/abs/1706.04599)
+**Paper.** *On Calibration of Modern Neural Networks*. [ICML 2017](https://arxiv.org/abs/1706.04599)
 
 ## Why I read it
 
@@ -16,7 +16,7 @@ Clinical deployment requires more than ranking patients correctly. A probability
 
 ## What the paper claims
 
-The authors show that architectural and training choices — including depth, width, batch normalization, and weight decay — can improve accuracy while worsening confidence calibration. They compare several post hoc methods and find that temperature scaling, a single scalar applied to logits on a held-out validation set, is a strong and simple baseline.
+The authors show that architectural and training choices (including depth, width, batch normalization, and weight decay) can improve accuracy while worsening confidence calibration. They compare several post hoc methods and find that temperature scaling, a single scalar applied to logits on a held-out validation set, is a strong and simple baseline.
 
 ## What convinced me
 

@@ -4,11 +4,11 @@ title: "Knee Images Digital Analysis (KIDA): A Novel Method to Quantify Individu
 date: 2026-07-18 12:00:00 +0900
 venue: "Osteoarthritis and Cartilage"
 authors: "A. C. A. Marijnissen, K. L. Vincken, P. A. J. M. Vos, D. B. F. Saris, M. A. Viergever, J. W. J. Bijlsma, L. W. Bartels, F. P. J. G. Lafeber (2008)"
-description: "A pre-deep-learning digital measurement system for knee-OA radiographic features — a reminder that 'objective, automated quantification' of joint space and osteophytes predates neural networks by well over a decade."
+description: "A pre-deep-learning digital measurement system for knee-OA radiographic features, a reminder that 'objective, automated quantification' of joint space and osteophytes predates neural networks by well over a decade."
 related_posts: false
 ---
 
-**Paper.** *Knee Images Digital Analysis (KIDA): a novel method to quantify individual radiographic features of knee osteoarthritis in detail* — [Osteoarthritis and Cartilage (2008)](https://doi.org/10.1016/j.joca.2007.06.009)
+**Paper.** *Knee Images Digital Analysis (KIDA): a novel method to quantify individual radiographic features of knee osteoarthritis in detail*. [Osteoarthritis and Cartilage (2008)](https://doi.org/10.1016/j.joca.2007.06.009)
 
 ## Why I read it
 

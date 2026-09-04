@@ -8,7 +8,7 @@ description: "During a pandemic, dozens of high-accuracy COVID detectors were pu
 related_posts: false
 ---
 
-**Paper.** *AI for radiographic COVID-19 detection selects shortcuts over signal* — [Nature Machine Intelligence 2021](https://www.nature.com/articles/s42256-021-00338-7)
+**Paper.** *AI for radiographic COVID-19 detection selects shortcuts over signal*. [Nature Machine Intelligence 2021](https://www.nature.com/articles/s42256-021-00338-7)
 
 ## Why I read it
 

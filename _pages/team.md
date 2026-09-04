@@ -2,7 +2,7 @@
 layout: page
 permalink: /team/
 title: team
-description: Disciples of Jesus — the Mission2035 tentmaking mission team.
+description: Disciples of Jesus, the Mission2035 tentmaking mission team.
 nav: true
 nav_order: 1
 ---
@@ -54,7 +54,7 @@ nav_order: 1
 
 <p class="team-intro">
 <b>Disciples of Jesus, sent to the nations.</b><br>
-A self-supporting (tentmaking) mission team — each member serving in their own field&nbsp;of&nbsp;expertise.
+A self-supporting (tentmaking) mission team, each member serving in their own field&nbsp;of&nbsp;expertise.
 </p>
 
 <div class="team-grid">

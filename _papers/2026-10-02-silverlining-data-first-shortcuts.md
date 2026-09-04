@@ -4,12 +4,12 @@ title: "SilverLining: Data-First Mitigation of Spatial and Spectral Shortcuts Wi
 date: 2026-10-02 12:00:00 +0900
 venue: "WACV 2026"
 authors: "Balagopal Unnikrishnan, Michael Brudno, Chris McIntosh (2026)"
-description: "A McIntosh-lab paper on fixing shortcuts at the data level — laterality markers, scanner noise — without the mitigation itself quietly introducing a new confounder, which the authors show is a real risk of naive data-level fixes."
+description: "A McIntosh-lab paper on fixing shortcuts at the data level (laterality markers, scanner noise) without the mitigation itself quietly introducing a new confounder, which the authors show is a real risk of naive data-level fixes."
 featured: true
 related_posts: false
 ---
 
-**Paper.** *SilverLining: Data-First Mitigation of Spatial and Spectral Shortcuts Without Introducing New Confounders* — WACV 2026
+**Paper.** *SilverLining: Data-First Mitigation of Spatial and Spectral Shortcuts Without Introducing New Confounders*, WACV 2026
 
 ## Why I read it
 

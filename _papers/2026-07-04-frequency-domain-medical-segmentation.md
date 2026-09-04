@@ -4,11 +4,11 @@ title: "Medical Image Segmentation Based on Frequency Domain Decomposition SVD L
 date: 2026-07-04 12:00:00 +0900
 venue: "Scientific Reports"
 authors: "Liu Qiong, Li Chaofan, Teng Jinnan, Chen Liping, Song Jianxiang (2025)"
-description: "A frequency-domain attention module built to recover the high-frequency texture and boundary information that Vision Transformer segmentation models tend to lose — directly relevant to any medical target defined by fine texture or a sharp boundary."
+description: "A frequency-domain attention module built to recover the high-frequency texture and boundary information that Vision Transformer segmentation models tend to lose, directly relevant to any medical target defined by fine texture or a sharp boundary."
 related_posts: false
 ---
 
-**Paper.** *Medical image segmentation based on frequency domain decomposition SVD linear attention* — [Scientific Reports (2025)](https://doi.org/10.1038/s41598-025-86315-1)
+**Paper.** *Medical image segmentation based on frequency domain decomposition SVD linear attention*. [Scientific Reports (2025)](https://doi.org/10.1038/s41598-025-86315-1)
 
 ## Why I read it
 

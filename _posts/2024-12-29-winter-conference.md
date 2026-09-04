@@ -2,7 +2,7 @@
 layout: post
 title: 2025 겨울집회 소감문
 date: 2024-12-29 12:00:00+0900
-description: Rejoice in the Lord — 한 마음 한 뜻이 되어가는 공동체.
+description: Rejoice in the Lord: 한 마음 한 뜻이 되어가는 공동체.
 tags: 소감문
 related_posts: false
 ---

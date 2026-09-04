@@ -4,11 +4,11 @@ title: "Quantitative Ultrasound Analysis for Classification of BI-RADS Category 
 date: 2026-07-25 12:00:00 +0900
 venue: "Journal of Digital Imaging"
 authors: "Woo Kyung Moon, Chung-Ming Lo, Jung Min Chang, Chiun-Sheng Huang, Jeon-Hor Chen, Ruey-Feng Chang (2013)"
-description: "A CAD system targeted specifically at the ambiguous BI-RADS category 3 — 'probably benign' masses — testing whether quantitative features can safely reclassify malignant cases that radiologists had grouped as low-risk."
+description: "A CAD system targeted specifically at the ambiguous BI-RADS category 3, 'probably benign' masses, testing whether quantitative features can safely reclassify malignant cases that radiologists had grouped as low-risk."
 related_posts: false
 ---
 
-**Paper.** *Quantitative Ultrasound Analysis for Classification of BI-RADS Category 3 Breast Masses* — [Journal of Digital Imaging (2013)](https://doi.org/10.1007/s10278-013-9593-8)
+**Paper.** *Quantitative Ultrasound Analysis for Classification of BI-RADS Category 3 Breast Masses*. [Journal of Digital Imaging (2013)](https://doi.org/10.1007/s10278-013-9593-8)
 
 ## Why I read it
 

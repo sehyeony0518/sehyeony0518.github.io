@@ -4,15 +4,15 @@ title: "Interpretability Beyond Feature Attribution: Quantitative Testing with C
 date: 2025-09-20 12:00:00 +0900
 venue: "ICML 2018"
 authors: "Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viégas, Rory Sayres (2018)"
-description: "TCAV asks whether a model's prediction is sensitive to a human-named concept, such as 'striped' or 'malignant,' rather than to a single pixel — the tool that later work on shortcut detection in medical imaging builds directly on."
+description: "TCAV asks whether a model's prediction is sensitive to a human-named concept, such as 'striped' or 'malignant,' rather than to a single pixel, the tool that later work on shortcut detection in medical imaging builds directly on."
 related_posts: false
 ---
 
-**Paper.** *Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)* — [ICML 2018](https://arxiv.org/abs/1711.11279)
+**Paper.** *Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)*. [ICML 2018](https://arxiv.org/abs/1711.11279)
 
 ## Why I read it
 
-Pixel attributions are often too low-level for clinical reasoning. TCAV is foundational because it lets a researcher ask a model a hypothesis in human terms — for example, whether a class is sensitive to "microaneurysms" or "irregular margin" — using sets of concept examples.
+Pixel attributions are often too low-level for clinical reasoning. TCAV is foundational because it lets a researcher ask a model a hypothesis in human terms (for example, whether a class is sensitive to "microaneurysms" or "irregular margin") using sets of concept examples.
 
 ## What the paper claims
 

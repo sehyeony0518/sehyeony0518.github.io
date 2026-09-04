@@ -4,15 +4,15 @@ title: "Learning Causal Alignment for Reliable Disease Diagnosis"
 date: 2026-06-27 12:00:00 +0900
 venue: "ICLR 2025"
 authors: "Mingzhou Liu, Ching-Wen Lee, Xinwei Sun, Xueqing Yu, Qiao Yu, Yizhou Wang (2025)"
-description: "A causal framing of the shortcut-learning problem in disease diagnosis — trying to explicitly align a model's learned representation with the causal structure of disease, not just penalize known spurious features after the fact."
+description: "A causal framing of the shortcut-learning problem in disease diagnosis, trying to explicitly align a model's learned representation with the causal structure of disease, not just penalize known spurious features after the fact."
 related_posts: false
 ---
 
-**Paper.** *Learning Causal Alignment for Reliable Disease Diagnosis* — [ICLR 2025](https://arxiv.org/abs/2310.01766)
+**Paper.** *Learning Causal Alignment for Reliable Disease Diagnosis*. [ICLR 2025](https://arxiv.org/abs/2310.01766)
 
 ## Why I read it
 
-The title is close to the question I am pursuing — whether a diagnostic model follows a clinically valid evidence chain rather than merely correlating with the label. I read it to see how the paper operationalizes "causal alignment" and how strong the resulting evidence really is.
+The title is close to the question I am pursuing, whether a diagnostic model follows a clinically valid evidence chain rather than merely correlating with the label. I read it to see how the paper operationalizes "causal alignment" and how strong the resulting evidence really is.
 
 ## What the paper claims
 

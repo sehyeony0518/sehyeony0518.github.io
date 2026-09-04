@@ -4,15 +4,15 @@ title: "Knee-xRAI: An Explainable AI Framework for Automatic Kellgren-Lawrence G
 date: 2026-11-27 12:00:00 +0900
 venue: "arXiv preprint"
 authors: "Azmul A. Irfan, Nur Ahmad Khatim, Alfan Alfian Irfan, Achmad Zaki, Erike A. Suwarsono, Mansur M. Arief (2026)"
-description: "A framework built around the fact that a single-grade disagreement on the KL scale can redirect a patient from conservative therapy to a surgical pathway — explainability motivated directly by clinical stakes, not as a generic add-on."
+description: "A framework built around the fact that a single-grade disagreement on the KL scale can redirect a patient from conservative therapy to a surgical pathway, explainability motivated directly by clinical stakes, not as a generic add-on."
 related_posts: false
 ---
 
-**Paper.** *Knee-xRAI: An Explainable AI Framework for Automatic Kellgren-Lawrence Grading of Knee Osteoarthritis* — arXiv preprint (2026)
+**Paper.** *Knee-xRAI: An Explainable AI Framework for Automatic Kellgren-Lawrence Grading of Knee Osteoarthritis*, arXiv preprint (2026)
 
 ## Why I read it
 
-I read Knee-xRAI because it attempts something stronger than attaching a heatmap to a Kellgren-Lawrence classifier. The pipeline first measures the radiographic findings that define the grade — joint-space narrowing, osteophytes, and subchondral sclerosis — and then exposes those measurements as an auditable evidence surface.
+I read Knee-xRAI because it attempts something stronger than attaching a heatmap to a Kellgren-Lawrence classifier. The pipeline first measures the radiographic findings that define the grade (joint-space narrowing, osteophytes, and subchondral sclerosis) and then exposes those measurements as an auditable evidence surface.
 
 ## What the paper claims
 
@@ -20,7 +20,7 @@ The framework combines a U-Net++ module for joint-space measurements, a site-spe
 
 ## What convinced me
 
-The most informative result is the intervention study, not the SHAP plot. On 8,260 OAI-derived radiographs, the joint-space module reached a Dice score of 0.8909 and an mJSW ICC of 0.8674. The deployment path achieved QWK 0.8436 and AUC 0.9017. When joint-space evidence was removed, KL4 recall fell from 88% to 0%, while early grades were much less affected — behavior that matches the clinical construction of the KL scale.
+The most informative result is the intervention study, not the SHAP plot. On 8,260 OAI-derived radiographs, the joint-space module reached a Dice score of 0.8909 and an mJSW ICC of 0.8674. The deployment path achieved QWK 0.8436 and AUC 0.9017. When joint-space evidence was removed, KL4 recall fell from 88% to 0%, while early grades were much less affected, behavior that matches the clinical construction of the KL scale.
 
 ## What it leaves open
 

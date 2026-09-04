@@ -8,11 +8,11 @@ description: "The paper that gave the field a shared vocabulary for models that 
 related_posts: false
 ---
 
-**Paper.** *Shortcut Learning in Deep Neural Networks* — [Nature Machine Intelligence 2020](https://www.nature.com/articles/s42256-020-00257-z)
+**Paper.** *Shortcut Learning in Deep Neural Networks*. [Nature Machine Intelligence 2020](https://www.nature.com/articles/s42256-020-00257-z)
 
 ## Why I read it
 
-This perspective provides the conceptual vocabulary for much of my research. It unifies failures that are often described separately — texture bias, background reliance, dataset artifacts, poor transfer — under the idea that a model learns an easy decision rule that succeeds on the benchmark but fails under a more revealing test.
+This perspective provides the conceptual vocabulary for much of my research. It unifies failures that are often described separately (texture bias, background reliance, dataset artifacts, poor transfer) under the idea that a model learns an easy decision rule that succeeds on the benchmark but fails under a more revealing test.
 
 ## What the paper claims
 

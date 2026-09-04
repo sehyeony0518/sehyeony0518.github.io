@@ -12,7 +12,7 @@ This post summarizes a long-form conversation between Dr. Yoon Sup Choi and Anth
 
 > **Update.** Lunit completed the Volpara acquisition in 2024. In November 2025, the company announced that Volpara would operate under the Lunit brand as part of a unified global organization. ([Lunit][3])
 
-## Part 1 — Accuracy is only the entry ticket
+## Part 1. Accuracy is only the entry ticket
 
 Lunit was founded in 2013 with an unusually direct mission: **conquer cancer through AI**.
 
@@ -26,7 +26,7 @@ This is the transition from an **AI-centered product** to a **customer-centered 
 
 In that sense, benchmark accuracy is not the finished product. It is the entry ticket.
 
-## Part 2 — Volpara: acquiring workflow, distribution, and a data flywheel
+## Part 2. Volpara: acquiring workflow, distribution, and a data flywheel
 
 This shift explains why Volpara was strategically attractive.
 
@@ -50,7 +50,7 @@ The final consideration was culture. Paek saw both companies as science-oriented
 
 The broader lesson is that post-merger integration depends on more than a spreadsheet of product synergies. When two organizations must combine teams across countries, languages, and professional backgrounds, culture becomes part of the technical infrastructure.
 
-## Part 3 — From detection models to autonomous cancer workflows
+## Part 3. From detection models to autonomous cancer workflows
 
 Paek used autonomous driving as an analogy for the future of medical AI.
 
@@ -72,7 +72,7 @@ The strategic importance is not merely that one large model can perform more tas
 
 At the same time, this flexibility makes validation harder. A system capable of answering many questions also has many more ways to fail.
 
-## Part 4 — The patient is also part of the platform
+## Part 4. The patient is also part of the platform
 
 Another revealing part of the interview concerned Lunit Care.
 

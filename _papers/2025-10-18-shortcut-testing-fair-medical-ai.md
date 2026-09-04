@@ -4,11 +4,11 @@ title: "Detecting Shortcut Learning for Fair Medical AI Using Shortcut Testing"
 date: 2025-10-18 12:00:00 +0900
 venue: "arXiv preprint"
 authors: "Alexander Brown, Nenad Tomasev, Jan Freyberg, Yuan Liu, Alan Karthikesalingam, Jessica Schrouff (2023)"
-description: "A method (ShorT) for directly testing whether a clinical model is using shortcut correlations — with the uncomfortable finding that shortcuts are not always the reason a model is unfair."
+description: "A method (ShorT) for directly testing whether a clinical model is using shortcut correlations, with the uncomfortable finding that shortcuts are not always the reason a model is unfair."
 related_posts: false
 ---
 
-**Paper.** *Detecting Shortcut Learning for Fair Medical AI Using Shortcut Testing* — Google Research / DeepMind (2023)
+**Paper.** *Detecting Shortcut Learning for Fair Medical AI Using Shortcut Testing*, Google Research / DeepMind (2023)
 
 ## Why I read it
 

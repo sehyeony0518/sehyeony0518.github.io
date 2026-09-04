@@ -4,11 +4,11 @@ title: "RoentMod: A Synthetic Chest X-Ray Modification Model to Identify and Cor
 date: 2026-01-03 12:00:00 +0900
 venue: "npj Digital Medicine"
 authors: "Lauren H. Cooke, Matthias Jung, Jan M. Brendel, Nora M. Kerkovits, Borek Foldyna, Michael T. Lu, Vineet K. Raghu (2026)"
-description: "A counterfactual image-editing model that inserts or removes a chest X-ray finding without retraining the classifier under test — used to catch models exploiting institutional, demographic, and device markers as shortcuts."
+description: "A counterfactual image-editing model that inserts or removes a chest X-ray finding without retraining the classifier under test: used to catch models exploiting institutional, demographic, and device markers as shortcuts."
 related_posts: false
 ---
 
-**Paper.** *RoentMod: a synthetic chest X-ray modification model to identify and correct image interpretation model shortcuts* — [npj Digital Medicine (2026)](https://doi.org/10.1038/s41746-026-02497-6)
+**Paper.** *RoentMod: a synthetic chest X-ray modification model to identify and correct image interpretation model shortcuts*. [npj Digital Medicine (2026)](https://doi.org/10.1038/s41746-026-02497-6)
 
 ## Why I read it
 

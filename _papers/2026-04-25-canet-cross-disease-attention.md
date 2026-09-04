@@ -4,11 +4,11 @@ title: "CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy an
 date: 2026-04-25 12:00:00 +0900
 venue: "IEEE TMI"
 authors: "Xiaomeng Li, Xiaowei Hu, Lequan Yu, Lei Zhu, Chi-Wing Fu, Pheng-Ann Heng (2020)"
-description: "Joint grading of two correlated diabetic-eye diseases via cross-disease attention — a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."
+description: "Joint grading of two correlated diabetic-eye diseases via cross-disease attention, a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."
 related_posts: false
 ---
 
-**Paper.** *CANet: Cross-disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading* — [IEEE Transactions on Medical Imaging (2020)](https://arxiv.org/abs/1911.01376)
+**Paper.** *CANet: Cross-disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading*. [IEEE Transactions on Medical Imaging (2020)](https://arxiv.org/abs/1911.01376)
 
 ## Why I read it
 

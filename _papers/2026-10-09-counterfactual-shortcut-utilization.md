@@ -8,7 +8,7 @@ description: "A counterfactual-generation approach to quantifying shortcut relia
 related_posts: false
 ---
 
-**Paper.** *Evaluating Shortcut Utilization in Deep Learning Disease Classification through Counterfactual Analysis* — MIDL 2025
+**Paper.** *Evaluating Shortcut Utilization in Deep Learning Disease Classification through Counterfactual Analysis*, MIDL 2025
 
 ## Why I read it
 

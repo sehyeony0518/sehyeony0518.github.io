@@ -7,9 +7,9 @@ first_name: Se-Hyeon
 middle_name:
 last_name: Hwang
 contact_note: >
-  The best way to reach me is by email — <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a>
+  The best way to reach me is by email, <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a>
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal academic website of Se-Hyeon Hwang — M.S. student researching trustworthy medical AI, clinical evidence auditing, and medical imaging at Ajou University.
+  Personal academic website of Se-Hyeon Hwang, M.S. student researching trustworthy medical AI, clinical evidence auditing, and medical imaging at Ajou University.
 footer_text: >
   © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br>
   <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</span>

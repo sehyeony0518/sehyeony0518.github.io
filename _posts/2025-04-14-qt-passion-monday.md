@@ -2,7 +2,7 @@
 layout: post
 title: 고난주간 월요일 묵상 (마태복음 21:12-17)
 date: 2025-04-14 18:00:00+0900
-description: 성전 정화 — 나의 마음속 성전은 지금 어떠한가?
+description: 성전 정화: 나의 마음속 성전은 지금 어떠한가?
 tags: 묵상
 related_posts: false
 ---
