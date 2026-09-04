@@ -185,7 +185,7 @@
   #top-social-source { display: none; }
 </style> <script>
   (function () {
-    // Secret mission mode — determined by the CURRENT PAGE (full separation, no stored state).
+    // Secret mission mode: determined by the CURRENT PAGE (full separation, no stored state).
     // Mission-side paths show mission tabs only; everything else shows academic tabs only.
     var missionPaths = ['/mission', '/team', '/ministry', '/prayer', '/photos', '/news', '/diary'];
     var onMission = missionPaths.some(function (p) { return window.location.pathname.indexOf(p) === 0; });
