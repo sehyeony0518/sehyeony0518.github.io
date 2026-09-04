@@ -39,7 +39,7 @@ Whether diagnostic AI models make correct predictions for clinically valid reaso
 **Ultrasound AI for Hepatobiliary Diagnosis**<br>
 Ultrasound-based AI models for gallbladder and hepatobiliary disease diagnosis, with an emphasis on clinically informed and interpretable representations grounded in echogenicity, texture, and anatomical context.
 
-**Generalizable & Clinically Deployable Medical AI**<br>
+**Generalizable Medical AI**<br>
 Medical AI that remains reliable across hospitals, devices, and patient populations, through external validation, robustness analysis, and clinically grounded evaluation of deployed systems.
 
 ## Selected Projects
