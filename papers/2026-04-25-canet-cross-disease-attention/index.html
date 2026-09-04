@@ -1,10 +1,10 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading | Se-Hyeon Hwang </title> <meta name="author" content="Se-Hyeon Hwang"> <meta name="description" content="Joint grading of two correlated diabetic-eye diseases via cross-disease attention — a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."> <meta name="keywords" content="Se-Hyeon Hwang, trustworthy medical AI, clinical evidence auditing, interpretable machine learning, medical imaging, ultrasound AI, Ajou University"> <meta property="og:site_name" content="Se-Hyeon Hwang"> <meta property="og:type" content="website"> <meta property="og:title" content="Se-Hyeon Hwang | CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading"> <meta property="og:url" content="https://sehyeony0518.github.io/papers/2026-04-25-canet-cross-disease-attention/"> <meta property="og:description" content="Joint grading of two correlated diabetic-eye diseases via cross-disease attention — a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."> <meta property="og:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading"> <meta name="twitter:description" content="Joint grading of two correlated diabetic-eye diseases via cross-disease attention — a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."> <meta name="twitter:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading | Se-Hyeon Hwang </title> <meta name="author" content="Se-Hyeon Hwang"> <meta name="description" content="Joint grading of two correlated diabetic-eye diseases via cross-disease attention, a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."> <meta name="keywords" content="Se-Hyeon Hwang, trustworthy medical AI, clinical evidence auditing, interpretable machine learning, medical imaging, ultrasound AI, Ajou University"> <meta property="og:site_name" content="Se-Hyeon Hwang"> <meta property="og:type" content="website"> <meta property="og:title" content="Se-Hyeon Hwang | CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading"> <meta property="og:url" content="https://sehyeony0518.github.io/papers/2026-04-25-canet-cross-disease-attention/"> <meta property="og:description" content="Joint grading of two correlated diabetic-eye diseases via cross-disease attention, a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."> <meta property="og:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading"> <meta name="twitter:description" content="Joint grading of two correlated diabetic-eye diseases via cross-disease attention, a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."> <meta name="twitter:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Montserrat:500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9C%9D%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/papers/2026-04-25-canet-cross-disease-attention/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading</h1> <p class="post-meta"> Created on April 25, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>CANet: Cross-disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading</em> — <a href="https://arxiv.org/abs/1911.01376" rel="external nofollow noopener" target="_blank">IEEE Transactions on Medical Imaging (2020)</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>DR and DME are related but not interchangeable clinical targets. I read CANet to see whether modeling their relationship jointly can improve grading without requiring lesion-level annotations, and whether the resulting attention can support a meaningful explanation claim.</p> <h2 id="what-the-paper-claims">What the paper claims</h2> <p>CANet uses disease-specific attention to learn features for each task and disease-dependent attention to exchange information between the DR and DME branches. It is trained with image-level grades only. The architecture is meant to exploit clinically relevant co-occurrence while retaining task-specific representations.</p> <h2 id="what-convinced-me">What convinced me</h2> <p>The joint formulation improves over the compared single-task and generic multitask baselines. On the IDRiD challenge setting, the reported joint grading accuracy was 65.1%. On Messidor, the model reached AUC 96.3 for DR and 92.4 for DME, with joint accuracy reported at 85.1 in the corresponding evaluation. The ablations indicate that both disease-specific and cross-disease attention contribute rather than one branch simply dominating.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>Attention weights are not lesion annotations and do not prove that the model localized microaneurysms, exudates, or macular involvement faithfully. Disease correlation can also become a shortcut if prevalence or referral patterns change across populations. Image-level supervision leaves open whether the exchanged information is clinically correct or merely statistically convenient.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>Related diagnoses can provide useful inductive structure, but the relationship itself must be audited. I would test whether DME predictions depend on macula-centered evidence and whether the benefit persists when DR–DME prevalence is shifted. Cross-task attention is a hypothesis about reasoning, not yet proof of it.</p> </div> </article> </div> </div> <style>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading</h1> <p class="post-meta"> Created on April 25, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>CANet: Cross-disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading</em>. <a href="https://arxiv.org/abs/1911.01376" rel="external nofollow noopener" target="_blank">IEEE Transactions on Medical Imaging (2020)</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>DR and DME are related but not interchangeable clinical targets. I read CANet to see whether modeling their relationship jointly can improve grading without requiring lesion-level annotations, and whether the resulting attention can support a meaningful explanation claim.</p> <h2 id="what-the-paper-claims">What the paper claims</h2> <p>CANet uses disease-specific attention to learn features for each task and disease-dependent attention to exchange information between the DR and DME branches. It is trained with image-level grades only. The architecture is meant to exploit clinically relevant co-occurrence while retaining task-specific representations.</p> <h2 id="what-convinced-me">What convinced me</h2> <p>The joint formulation improves over the compared single-task and generic multitask baselines. On the IDRiD challenge setting, the reported joint grading accuracy was 65.1%. On Messidor, the model reached AUC 96.3 for DR and 92.4 for DME, with joint accuracy reported at 85.1 in the corresponding evaluation. The ablations indicate that both disease-specific and cross-disease attention contribute rather than one branch simply dominating.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>Attention weights are not lesion annotations and do not prove that the model localized microaneurysms, exudates, or macular involvement faithfully. Disease correlation can also become a shortcut if prevalence or referral patterns change across populations. Image-level supervision leaves open whether the exchanged information is clinically correct or merely statistically convenient.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>Related diagnoses can provide useful inductive structure, but the relationship itself must be audited. I would test whether DME predictions depend on macula-centered evidence and whether the benefit persists when DR–DME prevalence is shifted. Cross-task attention is a hypothesis about reasoning, not yet proof of it.</p> </div> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
   :root {
     --global-bg-color: #f9f9f9;
@@ -273,7 +273,7 @@ ninja.data = [{
           },
         },{id: "nav-team",
           title: "team",
-          description: "Disciples of Jesus — the Mission2035 tentmaking mission team.",
+          description: "Disciples of Jesus, the Mission2035 tentmaking mission team.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/team/";
@@ -284,20 +284,6 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/ministry/";
-          },
-        },{id: "nav-prayer",
-          title: "prayer",
-          description: "Mission2035 기도편지 — 부르심의 여정을 함께 기도해 주세요.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/prayer/";
-          },
-        },{id: "nav-photos",
-          title: "photos",
-          description: "부르심의 여정을 함께한 순간들 — 캠퍼스 선교, 공동체, 사역, 그리고 일상.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/photos/";
           },
         },{id: "nav-research",
           title: "research",
@@ -315,24 +301,10 @@ ninja.data = [{
           },
         },{id: "nav-insights",
           title: "insights",
-          description: "Insights related to my research — the trustworthiness of medical AI models.",
+          description: "Insights related to my research, the trustworthiness of medical AI models.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
-          },
-        },{id: "nav-paper-reviews",
-          title: "paper reviews",
-          description: "Papers I have studied closely — what they claim, how they show it, and what I take from them.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/papers/";
-          },
-        },{id: "nav-gallery",
-          title: "gallery",
-          description: "Moments from research — lab, demos, and presentations.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/gallery/";
           },
         },{id: "nav-reflections",
           title: "reflections",
@@ -341,7 +313,106 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/diary/index.html";
           },
-        },{id: "post-섬세한-사랑을-알아보는-눈",
+        },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2026-08-06-qt-acts-28/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2026-07-30-paul-washer-lordship/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2026-07-22-paul-washer-love/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2026-05-29-qt-matt-15/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2026-04-08-qt-titus-2/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2026-03-10-qt-2cor-11/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2025-05-29-qt-1timothy-4-1/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2025-04-14-qt-passion-monday/";
+          
+        },
+      },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/diary/2026/2024-12-29-winter-conference/";
+          
+        },
+      },{id: "post-섬세한-사랑을-알아보는-눈",
         
           title: "섬세한 사랑을 알아보는 눈",
         
@@ -418,17 +489,6 @@ ninja.data = [{
             window.location.href = "/diary/2026/qt-genesis-1/";
           
         },
-      },{id: "post-사도행전-28-31-큐티묵상-신약-통독을-마치며",
-        
-          title: "사도행전 28:31 큐티묵상 — 신약 통독을 마치며",
-        
-        description: "이제 나에게 주어진 것은 사도행전 29장의 이야기를 써 내려가는 것이다.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2026/qt-acts-28/";
-          
-        },
       },{id: "post-사도행전-21-12-13-22-21-큐티묵상",
         
           title: "사도행전 21:12-13, 22:21 큐티묵상",
@@ -449,17 +509,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/diary/2026/qt-acts-20/";
-          
-        },
-      },{id: "post-폴-워셔-목사님-설교-주재권-구원론과-거듭남",
-        
-          title: "폴 워셔 목사님 설교 — 주재권 구원론과 거듭남",
-        
-        description: "핵심은 인간의 결단이 아니라, 성령의 거듭나게 하시는 능력이 실제로 한 사람을 변화시키는가에 있다.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2026/paul-washer-lordship/";
           
         },
       },{id: "post-사도행전-18-18-24-26-큐티묵상",
@@ -515,17 +564,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/diary/2026/qt-acts-7/";
-          
-        },
-      },{id: "post-폴-워셔-목사님-설교-하나님은-사랑이십니다",
-        
-          title: "폴 워셔 목사님 설교 — 하나님은 사랑이십니다",
-        
-        description: "하나님은 사랑이시며, 그 사랑은 선하여 모든 선한 것을 기뻐하고 모든 악한 것을 미워하신다.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2026/paul-washer-love/";
           
         },
       },{id: "post-사도행전-5-40-42-큐티묵상",
@@ -869,17 +907,6 @@ ninja.data = [{
             window.location.href = "/diary/2026/qt-matt-18/";
           
         },
-      },{id: "post-마태복음-15-12-14-묵상",
-        
-          title: "마태복음 15:12-14 묵상",
-        
-        description: "거룩한 교만 — 가장 위험한 것은 영적 교만이다.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2026/qt-matt-15/";
-          
-        },
       },{id: "post-마태복음-13-52-묵상",
         
           title: "마태복음 13:52 묵상",
@@ -1012,17 +1039,6 @@ ninja.data = [{
             window.location.href = "/diary/2026/qt-philemon-1/";
           
         },
-      },{id: "post-디도서-2-6-묵상",
-        
-          title: "디도서 2:6 묵상",
-        
-        description: "Self-controlled — 성령충만한 영혼이 육신을 통제한다.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2026/qt-titus-2/";
-          
-        },
       },{id: "post-디모데후서-4-2-5-묵상",
         
           title: "디모데후서 4:2-5 묵상",
@@ -1120,17 +1136,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/diary/2026/qt-humility/";
-          
-        },
-      },{id: "post-고린도후서-11-30-묵상",
-        
-          title: "고린도후서 11:30 묵상",
-        
-        description: "나는 내 약점들을 자랑하겠습니다 — 복음의 역설.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2026/qt-2cor-11/";
           
         },
       },{id: "post-중풍병자-묵상-믿음으로-주님께-나아가기",
@@ -1342,17 +1347,6 @@ ninja.data = [{
             window.location.href = "/diary/2025/qt-luke-9-53/";
           
         },
-      },{id: "post-디모데전서-4-1-5-묵상",
-        
-          title: "디모데전서 4:1-5 묵상",
-        
-        description: "하나님의 창조물은 모두 선하다 — 진리 안에서 감사로 받을 때 거룩이 완성된다.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2025/qt-1timothy-4-1/";
-          
-        },
       },{id: "post-디모데전서-1-8-11-묵상",
         
           title: "디모데전서 1:8-11 묵상",
@@ -1406,17 +1400,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/diary/2025/qt-passion-week/";
-          
-        },
-      },{id: "post-고난주간-월요일-묵상-마태복음-21-12-17",
-        
-          title: "고난주간 월요일 묵상 (마태복음 21:12-17)",
-        
-        description: "성전 정화 — 나의 마음속 성전은 지금 어떠한가?",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2025/qt-passion-monday/";
           
         },
       },{id: "post-황재성-소그룹이-시작됩니다",
@@ -1571,17 +1554,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/diary/2025/qt-fathers-heart/";
-          
-        },
-      },{id: "post-2025-겨울집회-소감문",
-        
-          title: "2025 겨울집회 소감문",
-        
-        description: "Rejoice in the Lord — 한 마음 한 뜻이 되어가는 공동체.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/diary/2024/winter-conference/";
           
         },
       },{id: "post-에베소서-6-19-20-묵상-담대히-기도하라",
@@ -2598,7 +2570,7 @@ ninja.data = [{
         },
       },{id: "aiblog-who-does-medical-ai-work-for-why-average-accuracy-is-not-enough",
           title: 'Who Does Medical AI Work For?: Why Average Accuracy Is Not Enough',
-          description: "High average accuracy does not mean medical AI works equally well for every patient. A look at hidden bias, data representation, subgroup performance, and why trustworthy AI must ask who benefits — and who bears the errors.",
+          description: "High average accuracy does not mean medical AI works equally well for every patient. A look at hidden bias, data representation, subgroup performance, and why trustworthy AI must ask who benefits, and who bears the errors.",
           section: "Aiblog",handler: () => {
               window.location.href = "/blog/2025-08-15-medical-ai-fairness-who-benefits-from-accuracy/";
             },},{id: "aiblog-a-bold-number-is-not-evidence-christodoulou-and-colliot-on-performance-reporting-in-medical-imaging-ai",
@@ -2653,7 +2625,7 @@ ninja.data = [{
               window.location.href = "/blog/2026-06-12-chungkeun-lee-regulating-medical-ai/";
             },},{id: "aiblog-transparency-is-infrastructure-not-a-safety-warranty-ricardo-gonzales-on-making-medical-ai-evidence-computable",
           title: 'Transparency Is Infrastructure, Not a Safety Warranty: Ricardo Gonzales on Making Medical AI...',
-          description: "Notes from Ricardo Gonzales&#39;s RISE-MICCAI talk on ROADMAP, RSNA ATLAS, machine-readable performance metrics, LLM-assisted documentation, and why transparency can expose — but not eliminate — gaps in medical AI evidence.",
+          description: "Notes from Ricardo Gonzales&#39;s RISE-MICCAI talk on ROADMAP, RSNA ATLAS, machine-readable performance metrics, LLM-assisted documentation, and why transparency can expose, but not eliminate, gaps in medical AI evidence.",
           section: "Aiblog",handler: () => {
               window.location.href = "/blog/2026-07-17-ricardo-gonzales-medical-ai-evidence-computable/";
             },},{id: "aiblog-korea-39-s-39-ai-basic-healthcare-39-strategy-a-potential-game-changer-for-medical-ai",
@@ -2677,22 +2649,22 @@ ninja.data = [{
           section: "Aiblog",handler: () => {
               window.location.href = "/blog/2026-09-07-taeho-jo-alzheimers-ai-early-detection/";
             },},{id: "news-mission-mission2035-2035년을-향한-부르심을-확인하다-기도-가운데-선교의-부르심을-확인하고-학문과-복음을-함께-준비하는-길로-방향을-정했습니다",
-          title: 'Mission · Mission2035, 2035년을 향한 부르심을 확인하다 — 기도 가운데 선교의 부르심을 확인하고,...',
+          title: 'Mission · Mission2035, 2035년을 향한 부르심을 확인하다: 기도 가운데 선교의 부르심을 확인하고, 학문과...',
           description: "",
           section: "News",},{id: "news-research-첫-학술대회-발표를-마치며-ack-2025-초음파-진단-모델의-신뢰성-요구분석-연구를-처음으로-학회에서-발표했습니다",
-          title: 'Research · 첫 학술대회 발표를 마치며 (ACK 2025) — 초음파 진단 모델의 신뢰성...',
+          title: 'Research · 첫 학술대회 발표를 마치며 (ACK 2025): 초음파 진단 모델의 신뢰성 요구분석...',
           description: "",
           section: "News",},{id: "news-research-석사과정의-시작-아주대학교-ai융합네트워크학과에서-석사과정을-시작했습니다-연구라는-텐트를-세우는-시간입니다",
-          title: 'Research · 석사과정의 시작 — 아주대학교 AI융합네트워크학과에서 석사과정을 시작했습니다. 연구라는 텐트를 세우는 시간입니다....',
+          title: 'Research · 석사과정의 시작: 아주대학교 AI융합네트워크학과에서 석사과정을 시작했습니다. 연구라는 텐트를 세우는 시간입니다.',
           description: "",
           section: "News",},{id: "news-mission-jdm-수원지구-6년의-캠퍼스-선교를-마치며-캠퍼스에서-한-사람을-만나고-말씀으로-동행하는-제자-삼는-삶을-배웠습니다",
-          title: 'Mission · JDM 수원지구 6년의 캠퍼스 선교를 마치며 — 캠퍼스에서 한 사람을 만나고...',
+          title: 'Mission · JDM 수원지구 6년의 캠퍼스 선교를 마치며: 캠퍼스에서 한 사람을 만나고 말씀으로...',
           description: "",
           section: "News",},{id: "news-ministry-경원교회-청년부-수련회를-준비하며-공동체가-말씀-앞에-함께-서는-여름이-되도록-기도하며-준비하고-있습니다",
-          title: 'Ministry · 경원교회 청년부 수련회를 준비하며 — 공동체가 말씀 앞에 함께 서는 여름이...',
+          title: 'Ministry · 경원교회 청년부 수련회를 준비하며: 공동체가 말씀 앞에 함께 서는 여름이 되도록...',
           description: "",
           section: "News",},{id: "news-journey-mission2035-홈페이지를-열었습니다-선교와-연구의-여정을-기록하고-나누기-위해-이-공간을-만들었습니다",
-          title: 'Journey · Mission2035 홈페이지를 열었습니다 — 선교와 연구의 여정을 기록하고 나누기 위해 이...',
+          title: 'Journey · Mission2035 홈페이지를 열었습니다: 선교와 연구의 여정을 기록하고 나누기 위해 이 공간을...',
           description: "",
           section: "News",},{id: "papers-shortcut-learning-in-deep-neural-networks",
           title: 'Shortcut Learning in Deep Neural Networks',
@@ -2701,37 +2673,37 @@ ninja.data = [{
               window.location.href = "/papers/2025-09-06-geirhos-shortcut-learning/";
             },},{id: "papers-atlas-of-individual-radiographic-features-in-osteoarthritis-revised",
           title: 'Atlas of Individual Radiographic Features in Osteoarthritis, Revised',
-          description: "The OARSI atlas that turns joint-space narrowing, osteophytes, and sclerosis into graded reference images — the ground truth that any automated knee-OA grader is ultimately trying to reproduce.",
+          description: "The OARSI atlas that turns joint-space narrowing, osteophytes, and sclerosis into graded reference images, the ground truth that any automated knee-OA grader is ultimately trying to reproduce.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-13-oarsi-atlas-radiographic-features/";
             },},{id: "papers-interpretability-beyond-feature-attribution-quantitative-testing-with-concept-activation-vectors-tcav",
           title: 'Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)',
-          description: "TCAV asks whether a model&#39;s prediction is sensitive to a human-named concept, such as &#39;striped&#39; or &#39;malignant,&#39; rather than to a single pixel — the tool that later work on shortcut detection in medical imaging builds directly on.",
+          description: "TCAV asks whether a model&#39;s prediction is sensitive to a human-named concept, such as &#39;striped&#39; or &#39;malignant,&#39; rather than to a single pixel, the tool that later work on shortcut detection in medical imaging builds directly on.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-20-tcav-concept-activation-vectors/";
             },},{id: "papers-ultrasonographic-fatty-liver-indicator-a-novel-score-which-rules-out-nash-and-is-correlated-with-metabolic-parameters-in-nafld",
           title: 'Ultrasonographic Fatty Liver Indicator, a Novel Score Which Rules Out NASH and Is...',
-          description: "A hand-crafted, semi-quantitative ultrasound score (US-FLI) built from four visual features — the kind of clinically legible scoring system that a learned model in the same space should be able to match or explain, not just outperform.",
+          description: "A hand-crafted, semi-quantitative ultrasound score (US-FLI) built from four visual features, the kind of clinically legible scoring system that a learned model in the same space should be able to match or explain, not just outperform.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-09-27-us-fli-fatty-liver-score/";
             },},{id: "papers-variable-generalization-performance-of-a-deep-learning-model-to-detect-pneumonia-in-chest-radiographs-a-cross-sectional-study",
           title: 'Variable Generalization Performance of a Deep Learning Model to Detect Pneumonia in Chest...',
-          description: "CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence — an early, concrete demonstration of confounding by site.",
+          description: "CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence, an early, concrete demonstration of confounding by site.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-10-11-zech-variable-generalization/";
             },},{id: "papers-detecting-shortcut-learning-for-fair-medical-ai-using-shortcut-testing",
           title: 'Detecting Shortcut Learning for Fair Medical AI Using Shortcut Testing',
-          description: "A method (ShorT) for directly testing whether a clinical model is using shortcut correlations — with the uncomfortable finding that shortcuts are not always the reason a model is unfair.",
+          description: "A method (ShorT) for directly testing whether a clinical model is using shortcut correlations, with the uncomfortable finding that shortcuts are not always the reason a model is unfair.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-10-18-shortcut-testing-fair-medical-ai/";
             },},{id: "papers-classifications-in-brief-kellgren-lawrence-classification-of-osteoarthritis",
           title: 'Classifications in Brief: Kellgren-Lawrence Classification of Osteoarthritis',
-          description: "A short clinical primer on the KL grading scale — the single most common label target for knee-OA deep learning papers, and a reminder of how much subjectivity that five-point scale is quietly absorbing.",
+          description: "A short clinical primer on the KL grading scale, the single most common label target for knee-OA deep learning papers, and a reminder of how much subjectivity that five-point scale is quietly absorbing.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-10-25-kellgren-lawrence-classification/";
             },},{id: "papers-learning-a-clinically-relevant-concept-bottleneck-for-lesion-detection-in-breast-ultrasound",
           title: 'Learning a Clinically-Relevant Concept Bottleneck for Lesion Detection in Breast Ultrasound',
-          description: "A concept bottleneck that predicts BI-RADS features before the final cancer classification — and shows that letting a radiologist correct the intermediate concepts actually improves the final diagnosis.",
+          description: "A concept bottleneck that predicts BI-RADS features before the final cancer classification, and shows that letting a radiologist correct the intermediate concepts actually improves the final diagnosis.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-11-01-concept-bottleneck-breast-ultrasound/";
             },},{id: "papers-ai-for-radiographic-covid-19-detection-selects-shortcuts-over-signal",
@@ -2741,7 +2713,7 @@ ninja.data = [{
               window.location.href = "/papers/2025-11-08-degrave-covid-shortcut/";
             },},{id: "papers-transfer-learning-with-deep-convolutional-neural-network-for-liver-steatosis-assessment-in-ultrasound-images",
           title: 'Transfer Learning with Deep Convolutional Neural Network for Liver Steatosis Assessment in Ultrasound...',
-          description: "A transfer-learning pipeline for grading liver steatosis from B-mode ultrasound, benchmarked directly against the hepatorenal index and GLCM texture features — with biopsy as the reference standard.",
+          description: "A transfer-learning pipeline for grading liver steatosis from B-mode ultrasound, benchmarked directly against the hepatorenal index and GLCM texture features, with biopsy as the reference standard.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-11-22-transfer-learning-liver-steatosis/";
             },},{id: "papers-hidden-stratification-causes-clinically-meaningful-failures-in-machine-learning-for-medical-imaging",
@@ -2751,92 +2723,92 @@ ninja.data = [{
               window.location.href = "/papers/2025-12-06-oakden-rayner-hidden-stratification/";
             },},{id: "papers-bi-rads-for-sonography-positive-and-negative-predictive-values-of-sonographic-features",
           title: 'BI-RADS for Sonography: Positive and Negative Predictive Values of Sonographic Features',
-          description: "An empirical look at how well individual BI-RADS sonographic descriptors actually predict malignancy — the kind of per-feature grounding that a BI-RADS-based concept bottleneck for breast ultrasound is implicitly relying on.",
+          description: "An empirical look at how well individual BI-RADS sonographic descriptors actually predict malignancy, the kind of per-feature grounding that a BI-RADS-based concept bottleneck for breast ultrasound is implicitly relying on.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-12-13-birads-sonography-predictive-values/";
             },},{id: "papers-superiority-of-multiple-joint-space-width-over-minimum-joint-space-width-approach-in-the-machine-learning-for-radiographic-severity-and-knee-osteoarthritis-progression",
           title: 'Superiority of Multiple-Joint Space Width over Minimum-Joint Space Width Approach in the Machine...',
-          description: "ResU-Net segmentation feeding 64-point multi-JSW measurements into XGBoost — outperforming the conventional single minimum-JSW pipeline for predicting knee-OA severity and progression, with the segmentation itself validated against a radiologist.",
+          description: "ResU-Net segmentation feeding 64-point multi-JSW measurements into XGBoost, outperforming the conventional single minimum-JSW pipeline for predicting knee-OA severity and progression, with the segmentation itself validated against a radiologist.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-12-20-multi-joint-space-width-knee-oa/";
             },},{id: "papers-concept-bottleneck-models",
           title: 'Concept Bottleneck Models',
-          description: "The paper that named and formalized the concept bottleneck — asking, using the paper&#39;s own example, whether a model would still predict severe arthritis if it didn&#39;t think there was a bone spur.",
+          description: "The paper that named and formalized the concept bottleneck: asking, using the paper&#39;s own example, whether a model would still predict severe arthritis if it didn&#39;t think there was a bone spur.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2025-12-27-concept-bottleneck-models/";
             },},{id: "papers-roentmod-a-synthetic-chest-x-ray-modification-model-to-identify-and-correct-image-interpretation-model-shortcuts",
           title: 'RoentMod: A Synthetic Chest X-Ray Modification Model to Identify and Correct Image Interpretation...',
-          description: "A counterfactual image-editing model that inserts or removes a chest X-ray finding without retraining the classifier under test — used to catch models exploiting institutional, demographic, and device markers as shortcuts.",
+          description: "A counterfactual image-editing model that inserts or removes a chest X-ray finding without retraining the classifier under test: used to catch models exploiting institutional, demographic, and device markers as shortcuts.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-03-roentmod-counterfactual-cxr/";
             },},{id: "papers-underdiagnosis-bias-of-artificial-intelligence-algorithms-applied-to-chest-radiographs-in-under-served-patient-populations",
           title: 'Underdiagnosis Bias of Artificial Intelligence Algorithms Applied to Chest Radiographs in Under-Served Patient...',
-          description: "Chest X-ray classifiers assigned &#39;no finding&#39; disproportionately to underserved patients — the error mode that silently denies care.",
+          description: "Chest X-ray classifiers assigned &#39;no finding&#39; disproportionately to underserved patients, the error mode that silently denies care.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-10-seyyed-kalantari-underdiagnosis/";
             },},{id: "papers-eyepacs-digital-retinal-image-grading-protocol",
           title: 'EyePACS Digital Retinal Image Grading Protocol',
-          description: "The internal grading manual behind the EyePACS diabetic-retinopathy dataset — the lesion-by-lesion rulebook that every EyePACS-trained DR model&#39;s labels ultimately trace back to.",
+          description: "The internal grading manual behind the EyePACS diabetic-retinopathy dataset, the lesion-by-lesion rulebook that every EyePACS-trained DR model&#39;s labels ultimately trace back to.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-17-eyepacs-grading-protocol/";
             },},{id: "papers-us-attenuation-for-liver-fat-quantification-an-aium-rsna-qiba-pulse-echo-quantitative-ultrasound-initiative",
           title: 'US Attenuation for Liver Fat Quantification: An AIUM-RSNA QIBA Pulse-Echo Quantitative Ultrasound Initiative...',
-          description: "A standards-body review on turning ultrasound attenuation and backscatter into a quantitative, reproducible liver-fat biomarker — the standardization work that any AI liver-steatosis model eventually has to sit on top of.",
+          description: "A standards-body review on turning ultrasound attenuation and backscatter into a quantitative, reproducible liver-fat biomarker, the standardization work that any AI liver-steatosis model eventually has to sit on top of.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-01-24-qiba-liver-fat-attenuation/";
             },},{id: "papers-grad-cam-visual-explanations-from-deep-networks-via-gradient-based-localization",
           title: 'Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization',
-          description: "The saliency method almost every medical-imaging paper cites — and a good place to be precise about what its heatmap actually certifies.",
+          description: "The saliency method almost every medical-imaging paper cites, and a good place to be precise about what its heatmap actually certifies.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-02-14-selvaraju-gradcam/";
             },},{id: "papers-bus-bra-a-breast-ultrasound-dataset-for-assessing-computer-aided-diagnosis-systems",
           title: 'BUS-BRA: A Breast Ultrasound Dataset for Assessing Computer-Aided Diagnosis Systems',
-          description: "A biopsy-proven, multi-scanner breast ultrasound dataset with standardized cross-validation partitions — the kind of dataset-hygiene paper that makes fair benchmark comparisons possible in the first place.",
+          description: "A biopsy-proven, multi-scanner breast ultrasound dataset with standardized cross-validation partitions, the kind of dataset-hygiene paper that makes fair benchmark comparisons possible in the first place.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-02-21-busbra-breast-ultrasound-dataset/";
             },},{id: "papers-noninvasive-quantitative-estimation-of-hepatic-steatosis-by-ultrasound-a-comparison-of-the-hepato-renal-index-and-ultrasound-attenuation-index",
           title: 'Noninvasive Quantitative Estimation of Hepatic Steatosis by Ultrasound: A Comparison of the Hepato-Renal...',
-          description: "A head-to-head comparison of two classical ultrasound-based liver-fat indices in living liver-donor candidates, against biopsy — the pair of legible baselines that any liver-steatosis deep model is implicitly competing with.",
+          description: "A head-to-head comparison of two classical ultrasound-based liver-fat indices in living liver-donor candidates, against biopsy, the pair of legible baselines that any liver-steatosis deep model is implicitly competing with.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-02-28-hepatorenal-index-attenuation-index/";
             },},{id: "papers-regression-concept-vectors-for-bidirectional-explanations-in-histopathology",
           title: 'Regression Concept Vectors for Bidirectional Explanations in Histopathology',
-          description: "An extension of TCAV to continuous, graded concepts — used to show that nuclei texture, not just its presence, is a directional driver of tumor-grade predictions in lymph-node histopathology.",
+          description: "An extension of TCAV to continuous, graded concepts: used to show that nuclei texture, not just its presence, is a directional driver of tumor-grade predictions in lymph-node histopathology.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-03-07-regression-concept-vectors-histopathology/";
             },},{id: "papers-on-calibration-of-modern-neural-networks",
           title: 'On Calibration of Modern Neural Networks',
-          description: "Modern networks are more accurate and less calibrated than their predecessors — and the fix (temperature scaling) is almost embarrassingly simple.",
+          description: "Modern networks are more accurate and less calibrated than their predecessors, and the fix (temperature scaling) is almost embarrassingly simple.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-03-14-guo-calibration/";
             },},{id: "papers-right-for-the-right-reasons-training-differentiable-models-by-constraining-their-explanations",
           title: 'Right for the Right Reasons: Training Differentiable Models by Constraining Their Explanations',
-          description: "A clinical asthma-and-pneumonia case study opens this paper: a model that learned asthma predicts lower readmission risk, backwards from reality, because of how the training data was collected — and a method to penalize a model for explaining itself that way.",
+          description: "A clinical asthma-and-pneumonia case study opens this paper: a model that learned asthma predicts lower readmission risk, backwards from reality, because of how the training data was collected, and a method to penalize a model for explaining itself that way.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-03-21-right-for-the-right-reasons/";
             },},{id: "papers-underspecification-presents-challenges-for-credibility-in-modern-machine-learning",
           title: 'Underspecification Presents Challenges for Credibility in Modern Machine Learning',
-          description: "Two models with identical training accuracy, identical architecture, and different random seeds can behave completely differently under distribution shift — a Google-scale audit of just how common this is, including in a dermatology model.",
+          description: "Two models with identical training accuracy, identical architecture, and different random seeds can behave completely differently under distribution shift, a Google-scale audit of just how common this is, including in a dermatology model.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-03-28-underspecification-credibility-ml/";
             },},{id: "papers-post-hoc-explanations-may-be-ineffective-for-detecting-unknown-spurious-correlation",
           title: 'Post hoc Explanations May Be Ineffective for Detecting Unknown Spurious Correlation',
-          description: "A sobering stress test of the exact interpretability toolkit I lean on elsewhere in this collection — feature attribution, concept activation, and training-point ranking — against spurious signals the practitioner doesn&#39;t already know to look for.",
+          description: "A sobering stress test of the exact interpretability toolkit I lean on elsewhere in this collection (feature attribution, concept activation, and training-point ranking) against spurious signals the practitioner doesn&#39;t already know to look for.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-04-11-posthoc-explanations-spurious-correlation/";
             },},{id: "papers-breast-tumor-classification-of-ultrasound-images-using-wavelet-based-channel-energy-and-imagej",
           title: 'Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ',
-          description: "A pre-deep-learning approach to breast-ultrasound CAD: hand-engineered wavelet channel-energy features meant to capture how infiltrative a lesion&#39;s margin looks — a useful reminder of what feature engineering used to make explicit.",
+          description: "A pre-deep-learning approach to breast-ultrasound CAD: hand-engineered wavelet channel-energy features meant to capture how infiltrative a lesion&#39;s margin looks, a useful reminder of what feature engineering used to make explicit.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-04-18-wavelet-channel-energy-breast-us/";
             },},{id: "papers-canet-cross-disease-attention-network-for-joint-diabetic-retinopathy-and-diabetic-macular-edema-grading",
           title: 'CANet: Cross-Disease Attention Network for Joint Diabetic Retinopathy and Diabetic Macular Edema Grading...',
-          description: "Joint grading of two correlated diabetic-eye diseases via cross-disease attention — a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other.",
+          description: "Joint grading of two correlated diabetic-eye diseases via cross-disease attention, a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-04-25-canet-cross-disease-attention/";
             },},{id: "papers-diabetic-retinopathy-preferred-practice-pattern",
           title: 'Diabetic Retinopathy Preferred Practice Pattern',
-          description: "The clinical practice guideline that defines how diabetic retinopathy is actually meant to be screened, staged, and managed — the standard any AI screening tool is ultimately deployed to support, not replace.",
+          description: "The clinical practice guideline that defines how diabetic retinopathy is actually meant to be screened, staged, and managed, the standard any AI screening tool is ultimately deployed to support, not replace.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-05-02-diabetic-retinopathy-preferred-practice/";
             },},{id: "papers-assessing-the-trustworthiness-of-saliency-maps-for-localizing-abnormalities-in-medical-imaging",
@@ -2846,32 +2818,32 @@ ninja.data = [{
               window.location.href = "/papers/2026-05-09-arun-assessing-saliency/";
             },},{id: "papers-covariate-adjusted-spearman-39-s-rank-correlation-with-probability-scale-residuals",
           title: 'Covariate-Adjusted Spearman&amp;#39;s Rank Correlation with Probability-Scale Residuals',
-          description: "A statistics paper on adjusting rank correlation for confounding covariates — read because so many AI-versus-classical-index comparisons in medical imaging report raw Spearman correlation without asking whether a shared confound is inflating it.",
+          description: "A statistics paper on adjusting rank correlation for confounding covariates, read because so many AI-versus-classical-index comparisons in medical imaging report raw Spearman correlation without asking whether a shared confound is inflating it.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-05-23-covariate-adjusted-spearman-correlation/";
             },},{id: "papers-there-are-no-shortcuts-to-anywhere-worth-going-identifying-shortcuts-in-deep-learning-models-for-medical-image-analysis",
           title: 'There Are No Shortcuts to Anywhere Worth Going: Identifying Shortcuts in Deep Learning...',
-          description: "A method for locating which layer of a network a shortcut&#39;s features actually manifest in, using Prediction Depth and KL divergence — moving from &#39;the model has a shortcut&#39; to &#39;here is where in the network it lives.&#39;",
+          description: "A method for locating which layer of a network a shortcut&#39;s features actually manifest in, using Prediction Depth and KL divergence, moving from &#39;the model has a shortcut&#39; to &#39;here is where in the network it lives.&#39;",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-06-06-boland-shortcuts-radiology/";
             },},{id: "papers-learning-causal-alignment-for-reliable-disease-diagnosis",
           title: 'Learning Causal Alignment for Reliable Disease Diagnosis',
-          description: "A causal framing of the shortcut-learning problem in disease diagnosis — trying to explicitly align a model&#39;s learned representation with the causal structure of disease, not just penalize known spurious features after the fact.",
+          description: "A causal framing of the shortcut-learning problem in disease diagnosis, trying to explicitly align a model&#39;s learned representation with the causal structure of disease, not just penalize known spurious features after the fact.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-06-27-causal-alignment-disease-diagnosis/";
             },},{id: "papers-medical-image-segmentation-based-on-frequency-domain-decomposition-svd-linear-attention",
           title: 'Medical Image Segmentation Based on Frequency Domain Decomposition SVD Linear Attention',
-          description: "A frequency-domain attention module built to recover the high-frequency texture and boundary information that Vision Transformer segmentation models tend to lose — directly relevant to any medical target defined by fine texture or a sharp boundary.",
+          description: "A frequency-domain attention module built to recover the high-frequency texture and boundary information that Vision Transformer segmentation models tend to lose, directly relevant to any medical target defined by fine texture or a sharp boundary.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-07-04-frequency-domain-medical-segmentation/";
             },},{id: "papers-knee-images-digital-analysis-kida-a-novel-method-to-quantify-individual-radiographic-features-of-knee-osteoarthritis-in-detail",
           title: 'Knee Images Digital Analysis (KIDA): A Novel Method to Quantify Individual Radiographic Features...',
-          description: "A pre-deep-learning digital measurement system for knee-OA radiographic features — a reminder that &#39;objective, automated quantification&#39; of joint space and osteophytes predates neural networks by well over a decade.",
+          description: "A pre-deep-learning digital measurement system for knee-OA radiographic features, a reminder that &#39;objective, automated quantification&#39; of joint space and osteophytes predates neural networks by well over a decade.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-07-18-knee-images-digital-analysis-kida/";
             },},{id: "papers-quantitative-ultrasound-analysis-for-classification-of-bi-rads-category-3-breast-masses",
           title: 'Quantitative Ultrasound Analysis for Classification of BI-RADS Category 3 Breast Masses',
-          description: "A CAD system targeted specifically at the ambiguous BI-RADS category 3 — &#39;probably benign&#39; masses — testing whether quantitative features can safely reclassify malignant cases that radiologists had grouped as low-risk.",
+          description: "A CAD system targeted specifically at the ambiguous BI-RADS category 3, &#39;probably benign&#39; masses, testing whether quantitative features can safely reclassify malignant cases that radiologists had grouped as low-risk.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-07-25-quantitative-us-birads-category-3/";
             },},{id: "papers-ensuring-medical-ai-safety-interpretability-driven-detection-and-mitigation-of-spurious-model-behavior-and-associated-data",
@@ -2881,32 +2853,32 @@ ninja.data = [{
               window.location.href = "/papers/2026-08-07-reveal-to-revise-spurious-behavior/";
             },},{id: "papers-detection-of-lesions-in-retina-photographs-based-on-the-wavelet-transform",
           title: 'Detection of Lesions in Retina Photographs Based on the Wavelet Transform',
-          description: "An early, template-based method for finding microaneurysms — the first and smallest lesions of diabetic retinopathy — using wavelet-domain matching rather than a learned classifier.",
+          description: "An early, template-based method for finding microaneurysms, the first and smallest lesions of diabetic retinopathy, using wavelet-domain matching rather than a learned classifier.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-08-14-wavelet-lesion-detection-retina/";
             },},{id: "papers-interpretations-are-useful-penalizing-explanations-to-align-neural-networks-with-prior-knowledge",
           title: 'Interpretations Are Useful: Penalizing Explanations to Align Neural Networks with Prior Knowledge',
-          description: "CDEP — penalizing a model&#39;s contextual-decomposition-based explanation directly during training, so an explanation isn&#39;t just a diagnostic afterward but an actionable lever to fix the model.",
+          description: "CDEP, penalizing a model&#39;s contextual-decomposition-based explanation directly during training, so an explanation isn&#39;t just a diagnostic afterward but an actionable lever to fix the model.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-08-21-cdep-penalizing-explanations/";
             },},{id: "papers-shortcut-learning-in-medical-ai-hinders-generalization-method-for-estimating-ai-model-generalization-without-external-data",
           title: 'Shortcut Learning in Medical AI Hinders Generalization: Method for Estimating AI Model Generalization...',
-          description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere.",
+          description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected, and lose that performance when transferred elsewhere.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-08-28-shortcut-learning-data-acquisition-bias/";
             },},{id: "papers-on-the-existence-of-simpler-machine-learning-models",
           title: 'On the Existence of Simpler Machine Learning Models',
-          description: "The Rashomon-set argument: for a given dataset, there are often many equally accurate models, some far simpler and more interpretable than others — so &#39;we needed the complex model for accuracy&#39; is a claim that should be checked, not assumed.",
+          description: "The Rashomon-set argument: for a given dataset, there are often many equally accurate models, some far simpler and more interpretable than others, so &#39;we needed the complex model for accuracy&#39; is a claim that should be checked, not assumed.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-04-existence-of-simpler-models/";
             },},{id: "papers-automatic-grading-of-individual-knee-osteoarthritis-features-in-plain-radiographs-using-deep-cnns",
           title: 'Automatic Grading of Individual Knee Osteoarthritis Features in Plain Radiographs Using Deep CNNs...',
-          description: "Rather than predicting a single aggregate KL grade, this model grades each individual OARSI-atlas feature — osteophytes, joint space narrowing, and more — separately, matching the atlas&#39;s own granularity.",
+          description: "Rather than predicting a single aggregate KL grade, this model grades each individual OARSI-atlas feature (osteophytes, joint space narrowing, and more) separately, matching the atlas&#39;s own granularity.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-18-automatic-grading-knee-oa-features/";
             },},{id: "papers-silverlining-data-first-mitigation-of-spatial-and-spectral-shortcuts-without-introducing-new-confounders",
           title: 'SilverLining: Data-First Mitigation of Spatial and Spectral Shortcuts Without Introducing New Confounders',
-          description: "A McIntosh-lab paper on fixing shortcuts at the data level — laterality markers, scanner noise — without the mitigation itself quietly introducing a new confounder, which the authors show is a real risk of naive data-level fixes.",
+          description: "A McIntosh-lab paper on fixing shortcuts at the data level (laterality markers, scanner noise) without the mitigation itself quietly introducing a new confounder, which the authors show is a real risk of naive data-level fixes.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-10-02-silverlining-data-first-shortcuts/";
             },},{id: "papers-evaluating-shortcut-utilization-in-deep-learning-disease-classification-through-counterfactual-analysis",
@@ -2916,37 +2888,37 @@ ninja.data = [{
               window.location.href = "/papers/2026-10-09-counterfactual-shortcut-utilization/";
             },},{id: "papers-multi-resolution-tone-mapping-for-high-dynamic-range-medical-ultrasound-images",
           title: 'Multi-Resolution Tone Mapping for High Dynamic Range Medical Ultrasound Images',
-          description: "A tone-mapping method that expands ultrasound&#39;s usable dynamic range before a model — or a clinician — ever sees the image, quantified with real, measurable image-quality gains.",
+          description: "A tone-mapping method that expands ultrasound&#39;s usable dynamic range before a model, or a clinician, ever sees the image, quantified with real, measurable image-quality gains.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-10-16-multi-resolution-tone-mapping-ultrasound/";
             },},{id: "papers-proposed-international-clinical-diabetic-retinopathy-and-diabetic-macular-edema-disease-severity-scales",
           title: 'Proposed International Clinical Diabetic Retinopathy and Diabetic Macular Edema Disease Severity Scales',
-          description: "The ICDR scale — a 31-person, 16-country consensus process behind the DR severity labels nearly every retinal AI paper trains against, built via a modified Delphi method rather than a single objective measurement.",
+          description: "The ICDR scale: a 31-person, 16-country consensus process behind the DR severity labels nearly every retinal AI paper trains against, built via a modified Delphi method rather than a single objective measurement.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-10-23-international-clinical-dr-severity-scale/";
             },},{id: "papers-weight-space-correlation-analysis-quantifying-feature-utilization-in-deep-learning-models",
           title: 'Weight Space Correlation Analysis: Quantifying Feature Utilization in Deep Learning Models',
-          description: "A method for detecting shortcut reliance by looking directly at correlations in a network&#39;s weight space, rather than at its activations or explanations — a different vantage point on the same underlying question.",
+          description: "A method for detecting shortcut reliance by looking directly at correlations in a network&#39;s weight space, rather than at its activations or explanations, a different vantage point on the same underlying question.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-10-30-weight-space-correlation-analysis/";
             },},{id: "papers-bi-rads-net-an-explainable-multitask-learning-approach-for-cancer-diagnosis-in-breast-ultrasound-images",
           title: 'BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagnosis in Breast Ultrasound Images...',
-          description: "A multitask model that predicts BI-RADS descriptors alongside malignancy — one of the earlier attempts at the same explainable-by-BI-RADS idea that later concept-bottleneck papers pushed further.",
+          description: "A multitask model that predicts BI-RADS descriptors alongside malignancy, one of the earlier attempts at the same explainable-by-BI-RADS idea that later concept-bottleneck papers pushed further.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-11-06-birads-net-explainable-breast-us/";
             },},{id: "papers-clear-an-auditable-foundation-model-for-radiology-grounded-in-clinical-concepts",
           title: 'CLEAR: An Auditable Foundation Model for Radiology Grounded in Clinical Concepts',
-          description: "A foundation model trained on 0.87 million image-report pairs, built from the ground up around clinical-concept embeddings rather than bolting interpretability onto a black box afterward — auditability as a design constraint, not an add-on.",
+          description: "A foundation model trained on 0.87 million image-report pairs, built from the ground up around clinical-concept embeddings rather than bolting interpretability onto a black box afterward, auditability as a design constraint, not an add-on.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-11-20-clear-auditable-foundation-model-radiology/";
             },},{id: "papers-knee-xrai-an-explainable-ai-framework-for-automatic-kellgren-lawrence-grading-of-knee-osteoarthritis",
           title: 'Knee-xRAI: An Explainable AI Framework for Automatic Kellgren-Lawrence Grading of Knee Osteoarthritis',
-          description: "A framework built around the fact that a single-grade disagreement on the KL scale can redirect a patient from conservative therapy to a surgical pathway — explainability motivated directly by clinical stakes, not as a generic add-on.",
+          description: "A framework built around the fact that a single-grade disagreement on the KL scale can redirect a patient from conservative therapy to a surgical pathway, explainability motivated directly by clinical stakes, not as a generic add-on.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-11-27-knee-xrai-explainable-kl-grading/";
             },},{id: "papers-auditing-the-inference-processes-of-medical-image-classifiers-by-leveraging-generative-ai-and-the-expertise-of-physicians",
           title: 'Auditing the Inference Processes of Medical-Image Classifiers by Leveraging Generative AI and the...',
-          description: "Generative counterfactuals read by two blinded dermatologists across five academic and consumer skin-lesion classifiers — the closest published template I have found for the audit I want to run on ultrasound models.",
+          description: "Generative counterfactuals read by two blinded dermatologists across five academic and consumer skin-lesion classifiers, the closest published template I have found for the audit I want to run on ultrasound models.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-12-04-auditing-inference-processes-generative-counterfactuals/";
             },},{id: "prayer-2026년-7월호-부르심의-시작",
