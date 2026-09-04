@@ -1,0 +1,9 @@
+{%- assign v = include.venue_group -%}
+{%- case v -%}
+  {%- when "ACM" or "AISTATS" or "CVPR" or "ICCV" or "ICLR" or "ICML" or "IEEE EMBS" or "IEEE ISBI" or "IJCAI" or "MICCAI" or "MIDL" or "NeurIPS" or "WACV" -%}
+    {{- "conference" -}}
+  {%- when "AJR" or "Biology (MDPI)" or "Biometrics" or "Clinical Orthopaedics and Related Research" or "IEEE JSTSP" or "IEEE TMI" or "IJCARS" or "JMLR" or "Journal of Digital Imaging" or "Lancet Digital Health" or "Liver International" or "Medical Physics" or "Medical Ultrasonography" or "Nature Portfolio" or "Ophthalmology" or "Osteoarthritis and Cartilage" or "PLOS" or "Radiology" or "Radiology: Artificial Intelligence" -%}
+    {{- "journal" -}}
+  {%- else -%}
+    {{- "other" -}}
+{%- endcase -%}
