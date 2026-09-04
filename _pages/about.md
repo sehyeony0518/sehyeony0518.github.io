@@ -49,5 +49,4 @@ Studying how medical AI can remain reliable across hospitals, devices, and patie
 
 More about my work is on the [research](/research/) and [publications](/publications/) pages, and my full CV is available as a [PDF](/assets/pdf/cv-hwang.pdf).
 
-**Contact.** I am always happy to discuss research and collaboration in trustworthy medical AI and medical imaging.<br>
-**Email:** [bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr)
+**Contact:** [bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr)
