@@ -4,11 +4,11 @@ title: "Post hoc Explanations May Be Ineffective for Detecting Unknown Spurious 
 date: 2026-04-11 12:00:00 +0900
 venue: "ICLR 2022"
 authors: "Julius Adebayo, Michael Muelly, Hal Abelson, Been Kim (2022)"
-description: "A sobering stress test of the exact interpretability toolkit I lean on elsewhere in this collection — feature attribution, concept activation, and training-point ranking — against spurious signals the practitioner doesn't already know to look for."
+description: "A sobering stress test of the exact interpretability toolkit I lean on elsewhere in this collection (feature attribution, concept activation, and training-point ranking) against spurious signals the practitioner doesn't already know to look for."
 related_posts: false
 ---
 
-**Paper.** *Post hoc Explanations May Be Ineffective for Detecting Unknown Spurious Correlation* — [ICLR 2022](https://arxiv.org/abs/2212.04629)
+**Paper.** *Post hoc Explanations May Be Ineffective for Detecting Unknown Spurious Correlation*. [ICLR 2022](https://arxiv.org/abs/2212.04629)
 
 ## Why I read it
 

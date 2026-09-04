@@ -4,11 +4,11 @@ title: "Classifications in Brief: Kellgren-Lawrence Classification of Osteoarthr
 date: 2025-10-25 12:00:00 +0900
 venue: "Clinical Orthopaedics and Related Research"
 authors: "Mark D. Kohn, Adam A. Sassoon, Navin D. Fernando (2016)"
-description: "A short clinical primer on the KL grading scale — the single most common label target for knee-OA deep learning papers, and a reminder of how much subjectivity that five-point scale is quietly absorbing."
+description: "A short clinical primer on the KL grading scale, the single most common label target for knee-OA deep learning papers, and a reminder of how much subjectivity that five-point scale is quietly absorbing."
 related_posts: false
 ---
 
-**Paper.** *Classifications in Brief: Kellgren-Lawrence Classification of Osteoarthritis* — [Clinical Orthopaedics and Related Research (2016)](https://doi.org/10.1007/s11999-016-4732-4)
+**Paper.** *Classifications in Brief: Kellgren-Lawrence Classification of Osteoarthritis*. [Clinical Orthopaedics and Related Research (2016)](https://doi.org/10.1007/s11999-016-4732-4)
 
 ## Why I read it
 

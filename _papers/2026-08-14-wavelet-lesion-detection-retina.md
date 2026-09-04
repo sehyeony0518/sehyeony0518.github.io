@@ -4,11 +4,11 @@ title: "Detection of Lesions in Retina Photographs Based on the Wavelet Transfor
 date: 2026-08-14 12:00:00 +0900
 venue: "IEEE EMBS 2006"
 authors: "Gwénolé Quellec, Mathieu Lamard, Pierre Marie Josselin, Guy Cazuguel, Béatrice Cochener, Christian Roux (2006)"
-description: "An early, template-based method for finding microaneurysms — the first and smallest lesions of diabetic retinopathy — using wavelet-domain matching rather than a learned classifier."
+description: "An early, template-based method for finding microaneurysms, the first and smallest lesions of diabetic retinopathy, using wavelet-domain matching rather than a learned classifier."
 related_posts: false
 ---
 
-**Paper.** *Detection of lesions in retina photographs based on the wavelet transform* — IEEE EMBS Annual International Conference (2006)
+**Paper.** *Detection of lesions in retina photographs based on the wavelet transform*, IEEE EMBS Annual International Conference (2006)
 
 ## Why I read it
 

@@ -4,11 +4,11 @@ title: "CLEAR: An Auditable Foundation Model for Radiology Grounded in Clinical 
 date: 2026-11-20 12:00:00 +0900
 venue: "Nature Biomedical Engineering"
 authors: "Tianyu Han, Riga Wu, Yu Tian, Firas Khader, Lisa C. Adams, Keno K. Bressem, Christos Davatzikos, Jakob Nikolas Kather, et al. (2026)"
-description: "A foundation model trained on 0.87 million image-report pairs, built from the ground up around clinical-concept embeddings rather than bolting interpretability onto a black box afterward — auditability as a design constraint, not an add-on."
+description: "A foundation model trained on 0.87 million image-report pairs, built from the ground up around clinical-concept embeddings rather than bolting interpretability onto a black box afterward, auditability as a design constraint, not an add-on."
 related_posts: false
 ---
 
-**Paper.** *CLEAR: an auditable foundation model for radiology grounded in clinical concepts* — [Nature Biomedical Engineering (2026)](https://doi.org/10.1038/s41551-026-01741-4)
+**Paper.** *CLEAR: an auditable foundation model for radiology grounded in clinical concepts*. [Nature Biomedical Engineering (2026)](https://doi.org/10.1038/s41551-026-01741-4)
 
 ## Why I read it
 

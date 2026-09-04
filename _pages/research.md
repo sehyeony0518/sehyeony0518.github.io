@@ -27,7 +27,7 @@ I am particularly interested in post-hoc auditing methods that can evaluate mode
 
 ## Ultrasound AI
 
-I study ultrasound AI that reflects clinically and physically meaningful image characteristics — echogenicity, texture, lesion boundaries, anatomical context, and frequency structure.
+I study ultrasound AI that reflects clinically and physically meaningful image characteristics: echogenicity, texture, lesion boundaries, anatomical context, and frequency structure.
 
 Rather than treating interpretability as an additional visualization step, I aim to connect computational evidence with the factors clinicians actually use in practice.
 
@@ -72,7 +72,7 @@ Rather than treating interpretability as an additional visualization step, I aim
   <div class="proj-card">
     <div class="pc-top"><span class="pc-badge">M.S. Thesis</span><span class="pc-period">2025 – Present</span></div>
     <h3>Clinical Faithfulness Auditing for Medical Image Classifiers</h3>
-    <p class="pc-desc">Developing post-hoc methods to examine whether interpretable model readouts rely on clinically valid evidence rather than shortcut features — without retraining the model or requiring faithfulness annotations.</p>
+    <p class="pc-desc">Developing post-hoc methods to examine whether interpretable model readouts rely on clinically valid evidence rather than shortcut features, without retraining the model or requiring faithfulness annotations.</p>
     <div class="pc-tags"><span class="pc-tag">Clinical Faithfulness</span><span class="pc-tag">Shortcut Analysis</span><span class="pc-tag">Post-hoc Auditing</span></div>
   </div>
 
@@ -112,7 +112,7 @@ Rather than treating interpretability as an additional visualization step, I aim
   Contributed to an MSIT-funded project on AI-based gallbladder ultrasound diagnosis in collaboration with Ajou University Hospital; the work continued into my M.S. research. First-authored a reliability requirements study reporting a **~33% improvement in malignant-class detection sensitivity** (C1). Developed clinical-knowledge-guided modeling strategies using echogenicity, texture, lesion margin, wall features, and anatomical context. Presented center research at the ITRC Talent Development Fair in 2025 and 2026.
 
 - **Graduate Researcher**, Diagnostic Prediction via Robotic Motion Anomaly Detection &nbsp;<span style="opacity:.55;">Dec 2025 – Nov 2026</span>
-  <span style="opacity:.55;">Embedded & Software Lab (ESL), Ajou University — funded by Samsung Heavy Industries</span>
+  <span style="opacity:.55;">Embedded & Software Lab (ESL), Ajou University, funded by Samsung Heavy Industries</span>
   Developing machine learning models for robotic motion anomaly detection and equipment fault prediction in smart-factory systems; first-authored a monitoring-software design paper based on international reliability standards (C2).
 
 - **Undergraduate Research Intern**, Dept. of Psychiatry, Ajou University Medical Center &nbsp;<span style="opacity:.55;">May 2024 – Dec 2024</span>
@@ -124,22 +124,22 @@ Rather than treating interpretability as an additional visualization step, I aim
 ## Teaching Experience
 
 - **Teaching Assistant** (Spring 2026) **→ Head Teaching Assistant** (Fall 2026), Logic Circuit Laboratory (undergraduate), Ajou University &nbsp;<span style="opacity:.55;">Mar 2026 – Dec 2026</span>
-  Supervised undergraduate digital logic labs — circuit troubleshooting, team projects, and grading — as TA in Spring 2026, with student evaluation **4.77 / 5.00 (95.4%)**. Served as Head TA in Fall 2026, training and coordinating the course's teaching assistants.
+  Supervised undergraduate digital logic labs (circuit troubleshooting, team projects, and grading) as TA in Spring 2026, with student evaluation **4.77 / 5.00 (95.4%)**. Served as Head TA in Fall 2026, training and coordinating the course's teaching assistants.
 
 - **Undergraduate Research Mentor**, Convergence Electronics Research, Dept. of ECE, Ajou University &nbsp;<span style="opacity:.55;">Jan – Dec 2026</span>
   Mentored an undergraduate research project on ultrasound image segmentation model design and experiments.
 
 ## Selected Projects & Competitions
 
-- **Self-Supervised ECG Anomaly Detection Framework** — ICT Challenge 2026 &nbsp;<span style="opacity:.55;">Jan – Dec 2026</span>
+- **Self-Supervised ECG Anomaly Detection Framework**, ICT Challenge 2026 &nbsp;<span style="opacity:.55;">Jan – Dec 2026</span>
   <span style="opacity:.55;">University ICT Research Center Program</span>
   Designing, training, and optimizing lightweight self-supervised models for ECG anomaly detection.
 
-- **Explainable Diagnostic Framework for Gallbladder Polyp Classification** — ICT Challenge 2025 &nbsp;<span style="opacity:.55;">2025</span>
+- **Explainable Diagnostic Framework for Gallbladder Polyp Classification**, ICT Challenge 2025 &nbsp;<span style="opacity:.55;">2025</span>
   <span style="opacity:.55;">Undergraduate capstone project · Team leader · also presented at the Industry–Academia Fair</span>
   Developed a clinically guided ultrasound classifier using lesion margin, contrast, and liver–gallbladder echogenicity difference as explicit model features. Achieved **93% overall accuracy and 0.90 malignant-class F1** on a public dataset.
 
-- **Conquer Health Hackathon** — Medical Science Foundation Models, hosted by Lunit &nbsp;<span style="opacity:.55;">Aug 2026</span>
+- **Conquer Health Hackathon**, Medical Science Foundation Models, hosted by Lunit &nbsp;<span style="opacity:.55;">Aug 2026</span>
   <span style="opacity:.55;">Team of 2 · system designer and presenter</span>
   Designed *Control Plane for a Frozen Clinician*: an orchestration harness that controls a frozen medical foundation model (Lunit L2) with risk-adaptive clinical-evidence retrieval and source-cited answers, without retraining. Evaluated on HealthBench-based clinical dialogue tasks; presented at the final session.
 
@@ -160,14 +160,14 @@ Rather than treating interpretability as an additional visualization step, I aim
 
 ## Professional Training
 
-- **Digital Healthcare AI Solution Development and Industry Field Experience** — Center for Artificial Intelligence in Healthcare, Seoul National University Bundang Hospital &nbsp;<span style="opacity:.55;">Aug 2024</span>
-- **Convergence Security Workforce Training — Smart Healthcare (Basic)**, 21 hours — Korea Information Security Industry Association (KISIA), Ministry of Science and ICT &nbsp;<span style="opacity:.55;">Jul 2024</span>
+- **Digital Healthcare AI Solution Development and Industry Field Experience**, Center for Artificial Intelligence in Healthcare, Seoul National University Bundang Hospital &nbsp;<span style="opacity:.55;">Aug 2024</span>
+- **Convergence Security Workforce Training: Smart Healthcare (Basic)**, 21 hours, Korea Information Security Industry Association (KISIA), Ministry of Science and ICT &nbsp;<span style="opacity:.55;">Jul 2024</span>
 
 ## Community Service & Military
 
 - **Community Outreach Volunteer**, Sillim-dong, Seoul &nbsp;<span style="opacity:.55;">Mar 2026 – Present</span>
   Participate in regular community outreach, providing practical assistance and ongoing support to local residents.
-- **Sergeant, Republic of Korea Air Force** — 15th Special Mission Wing, honorably discharged &nbsp;<span style="opacity:.55;">Mar 2022 – Dec 2023</span>
+- **Sergeant, Republic of Korea Air Force**, 15th Special Mission Wing, honorably discharged &nbsp;<span style="opacity:.55;">Mar 2022 – Dec 2023</span>
 
 ## Open-Source Software
 
@@ -178,14 +178,14 @@ Selected repositories on [GitHub](https://github.com/sehyeony0518):
   <div class="proj-card">
     <div class="pc-top"><span class="pc-badge">ACK 2025 · C1</span></div>
     <h3>ultrasound-ai-reliability-requirements</h3>
-    <p class="pc-desc">Requirements framework for reliable ultrasound diagnostic AI — data/model attribute pairs made executable as a gallbladder pipeline (paper explainer).</p>
+    <p class="pc-desc">Requirements framework for reliable ultrasound diagnostic AI, data/model attribute pairs made executable as a gallbladder pipeline (paper explainer).</p>
     <a class="pc-link" href="https://github.com/sehyeony0518/ultrasound-ai-reliability-requirements" target="_blank" rel="noopener">→ github.com/sehyeony0518/ultrasound-ai-reliability-requirements</a>
   </div>
 
   <div class="proj-card">
     <div class="pc-top"><span class="pc-badge">KCSE 2026 · C2</span></div>
     <h3>smart-factory-monitoring</h3>
-    <p class="pc-desc">Condition-monitoring console for predictive maintenance of industrial robots — five-layer architecture traced to software quality and functional safety standards (reference implementation).</p>
+    <p class="pc-desc">Condition-monitoring console for predictive maintenance of industrial robots, five-layer architecture traced to software quality and functional safety standards (reference implementation).</p>
     <a class="pc-link" href="https://github.com/sehyeony0518/smart-factory-monitoring" target="_blank" rel="noopener">→ github.com/sehyeony0518/smart-factory-monitoring</a>
   </div>
 
@@ -199,7 +199,7 @@ Selected repositories on [GitHub](https://github.com/sehyeony0518):
   <div class="proj-card">
     <div class="pc-top"><span class="pc-badge">Research Prototype</span></div>
     <h3>scid5-module-j-agent</h3>
-    <p class="pc-desc">LLM-administered SCID-5 Module J (adjustment disorder) interview — DSM-5 criteria as a decision tree, with human-in-the-loop probes on uncertainty.</p>
+    <p class="pc-desc">LLM-administered SCID-5 Module J (adjustment disorder) interview, DSM-5 criteria as a decision tree, with human-in-the-loop probes on uncertainty.</p>
     <a class="pc-link" href="https://github.com/sehyeony0518/scid5-module-j-agent" target="_blank" rel="noopener">→ github.com/sehyeony0518/scid5-module-j-agent</a>
   </div>
 

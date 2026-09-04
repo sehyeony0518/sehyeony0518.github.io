@@ -4,11 +4,11 @@ title: "BI-RADS for Sonography: Positive and Negative Predictive Values of Sonog
 date: 2025-12-13 12:00:00 +0900
 venue: "AJR"
 authors: "Hong et al. (2005)"
-description: "An empirical look at how well individual BI-RADS sonographic descriptors actually predict malignancy — the kind of per-feature grounding that a BI-RADS-based concept bottleneck for breast ultrasound is implicitly relying on."
+description: "An empirical look at how well individual BI-RADS sonographic descriptors actually predict malignancy, the kind of per-feature grounding that a BI-RADS-based concept bottleneck for breast ultrasound is implicitly relying on."
 related_posts: false
 ---
 
-**Paper.** *BI-RADS for Sonography: Positive and Negative Predictive Values of Sonographic Features* — American Journal of Roentgenology (2005)
+**Paper.** *BI-RADS for Sonography: Positive and Negative Predictive Values of Sonographic Features*, American Journal of Roentgenology (2005)
 
 ## Why I read it
 

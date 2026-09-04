@@ -4,11 +4,11 @@ title: "Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Loca
 date: 2026-02-14 12:00:00 +0900
 venue: "ICCV"
 authors: "Selvaraju, Cogswell, Das, Vedantam, Parikh, Batra (2017)"
-description: "The saliency method almost every medical-imaging paper cites — and a good place to be precise about what its heatmap actually certifies."
+description: "The saliency method almost every medical-imaging paper cites, and a good place to be precise about what its heatmap actually certifies."
 related_posts: false
 ---
 
-**Paper.** *Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization* — [ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.html)
+**Paper.** *Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization*. [ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.html)
 
 ## Why I read it
 

@@ -4,11 +4,11 @@ title: "Noninvasive Quantitative Estimation of Hepatic Steatosis by Ultrasound: 
 date: 2026-02-28 12:00:00 +0900
 venue: "Medical Ultrasonography"
 authors: "Heon-Ju Kwon, Kyoung Won Kim, Jin-Hee Jung, Sang Hyun Choi, Woo Kyoung Jeong, Bohyun Kim, Gi-Won Song, Sung-Gyu Lee (2016)"
-description: "A head-to-head comparison of two classical ultrasound-based liver-fat indices in living liver-donor candidates, against biopsy — the pair of legible baselines that any liver-steatosis deep model is implicitly competing with."
+description: "A head-to-head comparison of two classical ultrasound-based liver-fat indices in living liver-donor candidates, against biopsy, the pair of legible baselines that any liver-steatosis deep model is implicitly competing with."
 related_posts: false
 ---
 
-**Paper.** *Noninvasive quantitative estimation of hepatic steatosis by ultrasound: a comparison of the hepatorenal index and ultrasound attenuation index* — [Medical Ultrasonography (2016)](https://doi.org/10.11152/mu-868)
+**Paper.** *Noninvasive quantitative estimation of hepatic steatosis by ultrasound: a comparison of the hepatorenal index and ultrasound attenuation index*. [Medical Ultrasonography (2016)](https://doi.org/10.11152/mu-868)
 
 ## Why I read it
 

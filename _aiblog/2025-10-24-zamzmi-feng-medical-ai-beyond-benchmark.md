@@ -30,7 +30,7 @@ The first talk asks how to prevent foreseeable failures from being designed into
 
 Any errors of interpretation are mine.
 
-## Part 1 — Innovation should begin with the final clinical use
+## Part 1. Innovation should begin with the final clinical use
 
 Zamzmi began by acknowledging the extraordinary pace of technical innovation in medical AI.
 
@@ -68,7 +68,7 @@ The intended use is therefore not merely the wording on an authorization documen
 
 It is the organizing hypothesis of the entire project.
 
-## Part 2 — State-of-the-art performance is not the clinical definition of success
+## Part 2. State-of-the-art performance is not the clinical definition of success
 
 Machine-learning research often defines progress through comparison with the current state of the art.
 
@@ -105,7 +105,7 @@ Metrics should therefore follow the clinical task.
 
 The clinical task should not be reconstructed after researchers have selected the metric they know how to optimize.
 
-## Part 3 — "Good enough" requires a risk-informed boundary
+## Part 3. "Good enough" requires a risk-informed boundary
 
 Once the relevant endpoint has been selected, the next question is what level of performance is acceptable.
 
@@ -141,7 +141,7 @@ Synthetic data may extend a dataset, but only after their intended role and clin
 
 Generated diversity should not be mistaken for valid clinical representation.
 
-## Part 4 — Equal performance is not the whole meaning of equity
+## Part 4. Equal performance is not the whole meaning of equity
 
 Subgroup analysis is essential, but interpreting it requires more than checking whether every group receives the same numerical score.
 
@@ -167,7 +167,7 @@ The objective should not be superficial numerical symmetry.
 
 It should be an evidence-based account of who benefits, who carries the errors, and whether the system reduces or reproduces existing inequities.
 
-## Part 5 — Data quality sets the ceiling
+## Part 5. Data quality sets the ceiling
 
 Medical AI is often described as data-hungry, but Zamzmi emphasized that it is also fundamentally **data-driven**.
 
@@ -201,7 +201,7 @@ The central principle is that annotation quality establishes an upper bound on w
 
 A model should not be described as exceeding clinicians when its "ground truth" is itself an unstable or weak approximation of clinical truth.
 
-## Part 6 — Confounders should be studied before the trial
+## Part 6. Confounders should be studied before the trial
 
 Biases in medical data are not limited to age, sex, or race.
 
@@ -221,7 +221,7 @@ This does not mean every medical-AI study requires a complete causal model of th
 
 A model that predicts well for the wrong reason remains a deployment risk even before any performance decline is observed.
 
-## Part 7 — Deployment is not the end of development
+## Part 7. Deployment is not the end of development
 
 The second half of the webinar begins where many benchmark studies end.
 
@@ -251,9 +251,9 @@ Medical AI, however, requires a clinically grounded definition of the process be
 
 As Zamzmi noted, not every deviation is drift. Some variation reflects the natural course of the disease, seasonal patterns, or expected differences in the clinical population. Developers must understand that baseline variability before defining an alarm.
 
-Otherwise, monitoring may interpret ordinary medicine as model failure — or fail to notice a clinically important change because it is hidden within aggregate stability.
+Otherwise, monitoring may interpret ordinary medicine as model failure, or fail to notice a clinically important change because it is hidden within aggregate stability.
 
-## Part 8 — Detection should be followed by diagnosis, not automatic retraining
+## Part 8. Detection should be followed by diagnosis, not automatic retraining
 
 Once monitoring detects a problem, the intuitive response is to retrain the model.
 
@@ -291,7 +291,7 @@ The principle resembles clinical medicine itself.
 
 Detection establishes that something is wrong. Diagnosis determines what should be treated.
 
-## Part 9 — SHIFT asks where performance changed and why
+## Part 9. SHIFT asks where performance changed and why
 
 Diagnosing performance decay is difficult because clinical AI operates in high-dimensional environments.
 
@@ -329,7 +329,7 @@ Its value lies in narrowing the search.
 
 Instead of responding to an unexplained decline with a full model replacement, the clinical and technical teams receive a testable account of which population and which data-generating differences deserve attention.
 
-## Part 10 — A successful model at Duke did not transfer directly to UCSF
+## Part 10. A successful model at Duke did not transfer directly to UCSF
 
 Feng's first case study concerned a model developed by radiation oncologist Julian Hong and collaborators to predict acute-care needs among patients receiving radiation therapy.
 
@@ -367,7 +367,7 @@ The original model remained useful for much of the new population. Full retraini
 
 The wrapper preserved what was already supported by evidence and changed only the part that the diagnosis identified as deficient.
 
-## Part 11 — The acute kidney injury model did not initially need a new model
+## Part 11. The acute kidney injury model did not initially need a new model
 
 The second case involved a system for predicting intraoperative acute kidney injury.
 
@@ -397,7 +397,7 @@ From the perspective of corrective action, however, they are entirely different 
 
 Model monitoring must therefore be connected to data-pipeline observability and institutional operations. A clinical-AI team cannot maintain performance by studying model weights alone.
 
-## Part 12 — PCCP turns anticipated repair into a regulatory plan
+## Part 12. PCCP turns anticipated repair into a regulatory plan
 
 A model used in clinical care cannot necessarily be modified whenever a monitoring team detects deterioration.
 
@@ -428,7 +428,7 @@ The post-market response should be considered before deployment. If a developer 
 
 The model may change, but the governance of that change should not be improvised after failure occurs.
 
-## Part 13 — Standard benchmarks remain necessary, but they are not sufficient
+## Part 13. Standard benchmarks remain necessary, but they are not sufficient
 
 During the discussion, a participant asked what would be required to create open and trustworthy medical-AI benchmarks.
 
@@ -450,7 +450,7 @@ The benchmark can reduce uncertainty before deployment.
 
 It cannot abolish the need to learn from deployment.
 
-## Part 14 — Translation requires different academic incentives
+## Part 14. Translation requires different academic incentives
 
 The final discussion turned from models to research culture.
 
@@ -530,7 +530,7 @@ A trustworthy audit must therefore ask not only:
 
 It must also ask:
 
-> Under which population, site, version, pipeline, and clinical context does it use that evidence — and how will we know when the answer changes?
+> Under which population, site, version, pipeline, and clinical context does it use that evidence, and how will we know when the answer changes?
 
 The Duke-to-UCSF case is especially instructive. The original model was not globally invalid. Its performance problem was concentrated in a subgroup that had become far more common at the new institution. The best response preserved the original model where its evidence remained relevant and introduced a limited correction where it did not.
 
@@ -548,6 +548,6 @@ Going beyond the benchmark does not mean abandoning technical performance.
 
 It means placing performance inside the system that gives it clinical meaning.
 
-[1]: https://miccai.org/2025/09/03/webinar-beyond-the-benchmark-dataset-october-10-2025/ "Webinar: Beyond the Benchmark Dataset — MICCAI Society"
+[1]: https://miccai.org/2025/09/03/webinar-beyond-the-benchmark-dataset-october-10-2025/ "Webinar: Beyond the Benchmark Dataset, MICCAI Society"
 [2]: https://pmc.ncbi.nlm.nih.gov/articles/PMC12747154/ "SHIFT: Subgroup-scanning Hierarchical Inference Framework for performance drift"
 [3]: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence "FDA Guidance: Predetermined Change Control Plans for AI-Enabled Device Software Functions"

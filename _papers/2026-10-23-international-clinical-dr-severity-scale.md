@@ -4,11 +4,11 @@ title: "Proposed International Clinical Diabetic Retinopathy and Diabetic Macula
 date: 2026-10-23 12:00:00 +0900
 venue: "Ophthalmology"
 authors: "C. P. Wilkinson, Frederick L. Ferris III, Ronald E. Klein, Paul P. Lee, Carl David Agardh, et al. (2003)"
-description: "The ICDR scale — a 31-person, 16-country consensus process behind the DR severity labels nearly every retinal AI paper trains against, built via a modified Delphi method rather than a single objective measurement."
+description: "The ICDR scale: a 31-person, 16-country consensus process behind the DR severity labels nearly every retinal AI paper trains against, built via a modified Delphi method rather than a single objective measurement."
 related_posts: false
 ---
 
-**Paper.** *Proposed International Clinical Diabetic Retinopathy and Diabetic Macular Edema Disease Severity Scales* — [Ophthalmology (2003)](https://doi.org/10.1016/S0161-6420(03)00475-5)
+**Paper.** *Proposed International Clinical Diabetic Retinopathy and Diabetic Macular Edema Disease Severity Scales*. [Ophthalmology (2003)](https://doi.org/10.1016/S0161-6420(03)00475-5)
 
 ## Why I read it
 

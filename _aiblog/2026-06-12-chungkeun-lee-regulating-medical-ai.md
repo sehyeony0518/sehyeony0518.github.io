@@ -21,7 +21,7 @@ The conversation was recorded while Korea's generative-AI medical-device guidanc
 
 Any errors of interpretation are mine.
 
-## Part 1 — A regulator with an engineering view of the problem
+## Part 1. A regulator with an engineering view of the problem
 
 Lee entered regulation through biomedical engineering rather than through policy alone.
 
@@ -31,13 +31,13 @@ His early work covered cardiovascular and imaging equipment, including X-ray sys
 
 That career path matters because medical-AI regulation is not merely a legal question.
 
-A regulator must understand what a system measures, how its software is trained, which components may change, where failure can enter, how clinicians will use the output, and what evidence can reasonably demonstrate safety and effectiveness. In that sense, regulation is another form of system engineering — one conducted under uncertainty and with patient safety as its constraint.
+A regulator must understand what a system measures, how its software is trained, which components may change, where failure can enter, how clinicians will use the output, and what evidence can reasonably demonstrate safety and effectiveness. In that sense, regulation is another form of system engineering, one conducted under uncertainty and with patient safety as its constraint.
 
 Lee's current position at a hospital-based medical-device research center places him on the other side of the same boundary. Instead of reviewing products only when they reach the regulator, he now works closer to the point at which technologies are developed, clinically evaluated, and prepared for market entry.
 
 The two roles reveal the same underlying problem from different directions: a promising technology needs a path into medicine, but that path must make its risks inspectable.
 
-## Part 2 — Korea moved early because industry and regulation moved together
+## Part 2. Korea moved early because industry and regulation moved together
 
 Korea was unusually early in producing guidance for emerging categories such as medical AI, virtual reality, three-dimensional printing, and digital therapeutics.
 
@@ -73,7 +73,7 @@ The anecdote captures how early the field still was. Regulators were not merely 
 
 Korea's advantage was therefore not that it had discovered a perfect regulatory answer. It was that it began turning technical ambiguity into a shared language earlier than many other jurisdictions.
 
-## Part 3 — The central AI-regulation problem is change
+## Part 3. The central AI-regulation problem is change
 
 The most difficult issue in early medical-AI regulation was not simply how to measure the first model's accuracy.
 
@@ -107,7 +107,7 @@ The Korean quality-system approach described by Lee and the FDA's PCCP framework
 
 A sophisticated regulatory system does not merely approve a model. It defines the conditions under which that model may change without becoming a different and untraceable clinical product.
 
-## Part 4 — Generative AI makes the boundary of the device unclear
+## Part 4. Generative AI makes the boundary of the device unclear
 
 Generative AI intensifies nearly every one of these difficulties.
 
@@ -143,7 +143,7 @@ Safety therefore depends partly on the user's relationship with the model.
 
 The product is not only generating information. It is shaping attention, confidence, workload, and clinical behavior.
 
-## Part 5 — Approval is becoming a site-specific lifecycle problem
+## Part 5. Approval is becoming a site-specific lifecycle problem
 
 In the FDA discussions described in the interview, three broad questions organized the debate around generative-AI medical devices:
 
@@ -189,7 +189,7 @@ The larger direction, however, is shared.
 
 Medical-AI authorization can no longer be understood as one strong evaluation conducted at one moment. Approval is becoming the entry point into a continuing process of performance maintenance.
 
-## Part 6 — The choice is not simply locked or continuously learning
+## Part 6. The choice is not simply locked or continuously learning
 
 Regulators have historically preferred locked algorithms because they are easier to identify and evaluate.
 
@@ -222,7 +222,7 @@ The central requirement is not that a medical model must never change. It is tha
 
 Since the interview, Korea's final generative-AI guidance and its first authorization of a generative-AI-based digital medical device have moved this debate from a hypothetical problem toward an operational one. The first approvals do not resolve the lifecycle question. They make resolving it more urgent.
 
-## Part 7 — Should generative AI be governed more like a professional?
+## Part 7. Should generative AI be governed more like a professional?
 
 The interview ends with a more radical regulatory idea.
 
@@ -290,6 +290,6 @@ Korea's early regulatory advantage did not come from removing regulation. It cam
 
 That may be the most durable lesson from Lee's account.
 
-The goal is not to approve medical AI as quickly as possible. It is to create a system in which useful models are allowed to enter care, adapt to reality, and improve — without ever becoming impossible to identify, evaluate, or hold accountable.
+The goal is not to approve medical AI as quickly as possible. It is to create a system in which useful models are allowed to enter care, adapt to reality, and improve: without ever becoming impossible to identify, evaluate, or hold accountable.
 
 Medical AI should be allowed to learn, but never invisibly.

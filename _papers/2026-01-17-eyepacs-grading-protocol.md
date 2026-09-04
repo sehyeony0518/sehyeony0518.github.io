@@ -4,15 +4,15 @@ title: "EyePACS Digital Retinal Image Grading Protocol"
 date: 2026-01-17 12:00:00 +0900
 venue: "EyePACS Grading Protocol"
 authors: "EyePACS"
-description: "The internal grading manual behind the EyePACS diabetic-retinopathy dataset — the lesion-by-lesion rulebook that every EyePACS-trained DR model's labels ultimately trace back to."
+description: "The internal grading manual behind the EyePACS diabetic-retinopathy dataset, the lesion-by-lesion rulebook that every EyePACS-trained DR model's labels ultimately trace back to."
 related_posts: false
 ---
 
-**Paper.** *EyePACS Digital Retinal Image Grading Protocol Narrative* — EyePACS grading documentation
+**Paper.** *EyePACS Digital Retinal Image Grading Protocol Narrative*, EyePACS grading documentation
 
 ## Why I read it
 
-Retinal benchmarks often present a final DR class without showing the grading rules that produced it. I read the EyePACS protocol because label construction — especially image quality, lesion certainty, and missing retinal field — directly determines what model errors mean.
+Retinal benchmarks often present a final DR class without showing the grading rules that produced it. I read the EyePACS protocol because label construction (especially image quality, lesion certainty, and missing retinal field) directly determines what model errors mean.
 
 ## What the protocol specifies
 

@@ -4,11 +4,11 @@ title: "Superiority of Multiple-Joint Space Width over Minimum-Joint Space Width
 date: 2025-12-20 12:00:00 +0900
 venue: "Biology (MDPI)"
 authors: "James Chung-Wai Cheung, Andy Yiu-Chau Tam, Lok-Chun Chan, Ping-Keung Chan, Chunyi Wen (2021)"
-description: "ResU-Net segmentation feeding 64-point multi-JSW measurements into XGBoost — outperforming the conventional single minimum-JSW pipeline for predicting knee-OA severity and progression, with the segmentation itself validated against a radiologist."
+description: "ResU-Net segmentation feeding 64-point multi-JSW measurements into XGBoost, outperforming the conventional single minimum-JSW pipeline for predicting knee-OA severity and progression, with the segmentation itself validated against a radiologist."
 related_posts: false
 ---
 
-**Paper.** *Superiority of Multiple-Joint Space Width over Minimum-Joint Space Width Approach in the Machine Learning for Radiographic Severity and Knee Osteoarthritis Progression* — [Biology (2021)](https://doi.org/10.3390/biology10111107)
+**Paper.** *Superiority of Multiple-Joint Space Width over Minimum-Joint Space Width Approach in the Machine Learning for Radiographic Severity and Knee Osteoarthritis Progression*. [Biology (2021)](https://doi.org/10.3390/biology10111107)
 
 ## Why I read it
 

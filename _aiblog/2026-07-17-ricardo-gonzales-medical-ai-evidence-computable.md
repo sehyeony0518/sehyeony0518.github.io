@@ -2,7 +2,7 @@
 layout: post
 title: "Transparency Is Infrastructure, Not a Safety Warranty: Ricardo Gonzales on Making Medical AI Evidence Computable"
 date: 2026-07-17 12:00:00 +0900
-description: Notes from Ricardo Gonzales's RISE-MICCAI talk on ROADMAP, RSNA ATLAS, machine-readable performance metrics, LLM-assisted documentation, and why transparency can expose — but not eliminate — gaps in medical AI evidence.
+description: Notes from Ricardo Gonzales's RISE-MICCAI talk on ROADMAP, RSNA ATLAS, machine-readable performance metrics, LLM-assisted documentation, and why transparency can expose, but not eliminate, gaps in medical AI evidence.
 tag: "RSNA"
 related_posts: false
 ---
@@ -27,7 +27,7 @@ The most important point, however, is also the most cautious one: structuring ev
 
 Any errors of interpretation are mine.
 
-## Part 1 — The evidence exists, but it is not computable
+## Part 1. The evidence exists, but it is not computable
 
 Gonzales begins with a question that sounds simple:
 
@@ -54,7 +54,7 @@ The purpose of this project is therefore not to create more documentation for it
 
 The shift is from **distributed documentation** to **curatable metadata**.
 
-## Part 2 — ROADMAP gives medical AI a shared language
+## Part 2. ROADMAP gives medical AI a shared language
 
 ROADMAP stands for the **Radiology Ontology of AI Datasets, Models and Projects**.
 
@@ -94,7 +94,7 @@ That strength immediately creates a governance question: when the vocabulary cha
 
 A living standard requires not only technical extensibility but also long-term maintenance, version discipline, and a clearly responsible community.
 
-## Part 3 — A standard should connect existing vocabularies, not create another island
+## Part 3. A standard should connect existing vocabularies, not create another island
 
 A new standard can easily become another silo.
 
@@ -116,7 +116,7 @@ For medical AI, that connection is particularly important because the relevant e
 
 A private vocabulary invented for one database would reproduce the fragmentation that the project is attempting to solve. Reusing existing clinical standards makes the metadata more likely to remain interpretable across institutions and systems.
 
-## Part 4 — Performance metrics need semantics too
+## Part 4. Performance metrics need semantics too
 
 Model and dataset descriptions are only half of the problem. Performance metrics also suffer from inconsistent terminology.
 
@@ -150,7 +150,7 @@ That task belongs to metric-selection frameworks and methodological guidance. RO
 
 This distinction is important. Standardizing the meaning of AUROC does not make AUROC sufficient for a clinical study. It simply makes it possible to determine, at scale, who reported it, what they compared it with, and which other aspects of performance were omitted.
 
-## Part 5 — ATLAS turns the ontology into public infrastructure
+## Part 5. ATLAS turns the ontology into public infrastructure
 
 A vocabulary becomes useful only when people use it to describe actual resources.
 
@@ -184,7 +184,7 @@ A voluntary repository reflects the people, institutions, journals, and subspeci
 
 The repository can be transparent about its contents while still being selective in its coverage.
 
-## Part 6 — LLMs reduce documentation labor, but humans remain responsible
+## Part 6. LLMs reduce documentation labor, but humans remain responsible
 
 Standards often fail because completing them is burdensome.
 
@@ -226,7 +226,7 @@ The LLM provides scale. The ontology provides meaning. Human curators provide ac
 
 None of the three is sufficient alone.
 
-## Part 7 — Once literature is structured, literature itself becomes data
+## Part 7. Once literature is structured, literature itself becomes data
 
 The most interesting consequence of ATLAS may not be the description of one model.
 
@@ -260,7 +260,7 @@ Missingness becomes a result.
 
 That does not explain why the information is absent or prove that a model is inequitable. It establishes, at scale, what the published record does not allow us to evaluate.
 
-## Part 8 — Transparency is not mitigation
+## Part 8. Transparency is not mitigation
 
 The strongest caution in the talk is simple:
 
@@ -290,13 +290,13 @@ The ontology must therefore evolve, but evolution creates versioning and governa
 
 The infrastructure must document not only models and datasets, but also its own changes.
 
-## Part 9 — Adoption will determine whether the standard survives
+## Part 9. Adoption will determine whether the standard survives
 
 The technical system is already operational. The harder question is whether the research community will adopt it.
 
 During the discussion, Gonzales describes several possible routes.
 
-Journals could incorporate structured cards into the publication process, beginning with RSNA journals and later extending to organizations such as MICCAI. Authors of accepted papers could be invited — or eventually required — to review an automatically generated card before publication.
+Journals could incorporate structured cards into the publication process, beginning with RSNA journals and later extending to organizations such as MICCAI. Authors of accepted papers could be invited, or eventually required, to review an automatically generated card before publication.
 
 Researchers could also upload an existing manuscript to ATLAS, allow the LLM pipeline to pre-fill its metadata, correct the result, and publish the reviewed card.
 

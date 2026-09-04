@@ -2,7 +2,7 @@
 layout: post
 title: "Who Does Medical AI Work For?: Why Average Accuracy Is Not Enough"
 date: 2025-08-15 12:00:00 +0900
-description: "High average accuracy does not mean medical AI works equally well for every patient. A look at hidden bias, data representation, subgroup performance, and why trustworthy AI must ask who benefits — and who bears the errors."
+description: "High average accuracy does not mean medical AI works equally well for every patient. A look at hidden bias, data representation, subgroup performance, and why trustworthy AI must ask who benefits, and who bears the errors."
 tag: "Fairness"
 related_posts: false
 ---
@@ -69,7 +69,7 @@ Bias does not always originate in the algorithm. It can already exist in the ins
 
 Pulse oximetry provides an important example. Pulse oximeters estimate arterial oxygen saturation noninvasively using light transmitted through tissue. These measurements are widely used in clinical care and may also serve as inputs or reference measurements for predictive models.
 
-A 2020 study in *The New England Journal of Medicine* found that occult hypoxemia — dangerously low arterial oxygen saturation despite apparently reassuring pulse-oximeter readings — occurred more frequently among Black patients than White patients.[4]
+A 2020 study in *The New England Journal of Medicine* found that occult hypoxemia, dangerously low arterial oxygen saturation despite apparently reassuring pulse-oximeter readings, occurred more frequently among Black patients than White patients.[4]
 
 If an AI system treats such measurements as objective ground truth, it may learn and reproduce the measurement error. The bias is then no longer limited to the original device. It can propagate through the AI system and potentially affect decisions at much larger scale.
 

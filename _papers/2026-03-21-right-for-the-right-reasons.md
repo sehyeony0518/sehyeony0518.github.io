@@ -4,11 +4,11 @@ title: "Right for the Right Reasons: Training Differentiable Models by Constrain
 date: 2026-03-21 12:00:00 +0900
 venue: "IJCAI 2017"
 authors: "Andrew Slavin Ross, Michael C. Hughes, Finale Doshi-Velez (2017)"
-description: "A clinical asthma-and-pneumonia case study opens this paper: a model that learned asthma predicts lower readmission risk, backwards from reality, because of how the training data was collected — and a method to penalize a model for explaining itself that way."
+description: "A clinical asthma-and-pneumonia case study opens this paper: a model that learned asthma predicts lower readmission risk, backwards from reality, because of how the training data was collected, and a method to penalize a model for explaining itself that way."
 related_posts: false
 ---
 
-**Paper.** *Right for the Right Reasons: Training Differentiable Models by Constraining their Explanations* — IJCAI 2017
+**Paper.** *Right for the Right Reasons: Training Differentiable Models by Constraining their Explanations*, IJCAI 2017
 
 ## Why I read it
 

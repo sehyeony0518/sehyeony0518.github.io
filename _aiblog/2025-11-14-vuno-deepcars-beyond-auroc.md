@@ -14,7 +14,7 @@ The case is VUNO, one of Korea's earliest medical-AI companies, and its flagship
 
 The original conversation also covered revenue, investment, and corporate performance. I have mostly left those parts aside to focus on what seems more durable: the path from a promising algorithm to a clinical service that is actually used.
 
-## Part 1 — From early deep learning to medical AI
+## Part 1. From early deep learning to medical AI
 
 VUNO was founded in December 2014, after Lee had worked on deep learning at the Samsung Advanced Institute of Technology. At the time, deep learning was still unfamiliar outside a relatively small research community, so the technology itself was the company's initial advantage. The harder question was where that technology could create meaningful value.
 
@@ -24,11 +24,11 @@ Medical imaging was a natural starting point. Korean hospitals already had exten
 
 DeepCARS represented a different direction. Rather than interpreting an image after a test had been ordered, it asked whether routinely collected data could warn clinicians before a patient deteriorated.
 
-## Part 2 — DeepCARS: designing for the ward, not the benchmark
+## Part 2. DeepCARS: designing for the ward, not the benchmark
 
 The clinical problem begins with a gap in observation. Intensive-care patients are continuously monitored, but patients in general wards may have their vital signs checked only three or four times a day. A patient can worsen substantially between those measurements, and by the time the change becomes obvious, the opportunity for early intervention may already be narrowing.
 
-VUNO began developing DeepCARS with clinicians at Bucheon Sejong Hospital around 2016. The system analyzes four routinely measured vital-sign categories — blood pressure, heart rate, respiratory rate, and body temperature — and estimates the risk of cardiac arrest within the next 24 hours. Instead of treating each measurement as an isolated snapshot, it analyzes the trajectory accumulated from admission onward.
+VUNO began developing DeepCARS with clinicians at Bucheon Sejong Hospital around 2016. The system analyzes four routinely measured vital-sign categories (blood pressure, heart rate, respiratory rate, and body temperature) and estimates the risk of cardiac arrest within the next 24 hours. Instead of treating each measurement as an isolated snapshot, it analyzes the trajectory accumulated from admission onward.
 
 The limited input set was deliberate. Adding laboratory tests and other EHR variables might increase performance in a particular institution, but it would also introduce missingness, hospital-specific testing patterns, and a much larger integration burden. Every hospital measures the four basic vital signs. Using them made the system easier to transfer across institutions of different sizes and levels of care.
 
@@ -42,7 +42,7 @@ The risk score also became a shared language. Instead of a nurse having to call 
 
 By the time of the interview, Lee said DeepCARS was being used in roughly 150 hospitals and more than 50,000 beds, including a substantial share of Korea's tertiary hospitals. Adoption by itself does not prove clinical benefit, but it does show that the product had crossed an operational barrier that many medical-AI systems never reach.
 
-## Part 3 — Accuracy and clinical effectiveness are different claims
+## Part 3. Accuracy and clinical effectiveness are different claims
 
 One of the clearest points in the interview was the distinction between the performance of a medical device and the clinical effectiveness of a medical technology.
 
@@ -56,7 +56,7 @@ The results still need careful interpretation. An early-warning system is not a 
 
 But that is precisely the point. Deployed medical AI is a sociotechnical intervention. Evaluating only the model while ignoring the care pathway around it gives an incomplete account of whether the system works.
 
-## Part 4 — Reimbursement is part of the evidence pipeline
+## Part 4. Reimbursement is part of the evidence pipeline
 
 Korea presents another translation problem: receiving medical-device clearance does not automatically allow a hospital to charge for using the device.
 
@@ -70,7 +70,7 @@ The arrangement was conditional, however. The deferral period existed so that th
 
 This makes clinical evidence more than an academic output or a post-market formality. It becomes part of the product's infrastructure and, in DeepCARS's case, part of the company's ability to continue operating the service.
 
-## Part 5 — Global expansion begins with payment, not approval
+## Part 5. Global expansion begins with payment, not approval
 
 VUNO carried the same lesson into its international strategy. According to Lee, the company began its preparation for the United States not by studying FDA clearance alone, but by studying the American reimbursement system.
 

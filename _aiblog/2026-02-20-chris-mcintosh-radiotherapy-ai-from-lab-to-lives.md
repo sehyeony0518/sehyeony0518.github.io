@@ -7,13 +7,13 @@ tag: "McIntosh Lab"
 related_posts: false
 ---
 
-This post summarizes a Toronto Machine Learning Series lecture by Prof. Chris McIntosh titled *An ML System for Radiotherapy Cancer Care — From Lab to Lives*. It is a particularly valuable case study because the work did not stop at retrospective validation. The system moved through blinded clinical comparison, prospective deployment, regulatory approval, commercialization, and direct use in patient care.
+This post summarizes a Toronto Machine Learning Series lecture by Prof. Chris McIntosh titled *An ML System for Radiotherapy Cancer Care, From Lab to Lives*. It is a particularly valuable case study because the work did not stop at retrospective validation. The system moved through blinded clinical comparison, prospective deployment, regulatory approval, commercialization, and direct use in patient care.
 
 McIntosh is now a Senior Scientist at University Health Network's Peter Munk Cardiac Centre Research Institute and an Associate Professor in the University of Toronto's Department of Medical Biophysics, with additional appointments in Computer Science and Medical Imaging. His lab describes its central objective as advancing medical AI "from bench to bedside," and its official profile states that the radiotherapy technology discussed here is now used in patient care internationally. ([Medical Biophysics][1])
 
 What makes the lecture memorable is not simply that the model performed well. It is that McIntosh followed the model far enough to observe what happens after technical performance is no longer the only variable.
 
-## Part 1 — Radiotherapy planning is not a single prediction task
+## Part 1. Radiotherapy planning is not a single prediction task
 
 Radiotherapy seeks to deliver a high dose of radiation to a tumor while minimizing exposure to surrounding healthy tissue.
 
@@ -31,7 +31,7 @@ Imagine a database containing treatments from highly experienced cancer centers.
 
 The goal is not to reproduce the average plan. It is to make the best available experience accessible for every patient.
 
-## Part 2 — Similarity should be defined by the treatment, not appearance alone
+## Part 2. Similarity should be defined by the treatment, not appearance alone
 
 The first challenge is representing a patient in a way that is relevant to radiation dose.
 
@@ -59,7 +59,7 @@ Another useful property emerges from this design. A poorly planned historical ca
 
 In effect, it learns not only from prior experience, but also **which experience deserves to be trusted**.
 
-## Part 3 — Clinical AI needs an evidence ladder
+## Part 3. Clinical AI needs an evidence ladder
 
 The project progressed through several levels of evaluation.
 
@@ -81,7 +81,7 @@ Clinical acceptability remained relatively stable: 92% in simulation and 86% dur
 
 The model had not suddenly become much worse. The context in which people judged it had changed.
 
-## Part 4 — The deployment gap was partly a human-behavior gap
+## Part 4. The deployment gap was partly a human-behavior gap
 
 In the simulated phase, clinicians could compare the plans without direct consequences for a patient. During prospective deployment, their decision determined which plan would actually be delivered.
 
@@ -111,7 +111,7 @@ The study therefore measured at least three distinct things:
 
 These are related, but they are not interchangeable.
 
-## Part 5 — Workflow improvement is more than reducing computation time
+## Part 5. Workflow improvement is more than reducing computation time
 
 The reported time saving also carries an important operational lesson.
 
@@ -127,7 +127,7 @@ The workflow itself was inverted. Instead of asking whether AI should occasional
 
 The technology was also licensed to RaySearch Laboratories and integrated into RayStation. RaySearch describes the collaboration with Princess Margaret as producing the world's first machine-learning treatment-plan generation module and reports that its platform can now generate personalized plans in minutes. Its 2026 release continues to expand machine-learning planning across additional treatment settings. ([RaySearch Laboratories][4])
 
-## Part 6 — The frozen-model paradox
+## Part 6. The frozen-model paradox
 
 A question from the audience exposed another difficulty that appears only after successful deployment: why not retrain the model using the new, high-quality plans produced during the clinical study?
 
@@ -151,7 +151,7 @@ A radiotherapy model can be assessed at the voxel level, at the level of target 
 
 The design also raises valuable questions for trustworthy AI. Which historical atlases most strongly influence a particular plan? Are they selected because of clinically relevant anatomical relationships? What happens when a new patient is unlike all available atlases? Can the system recognize that no reliable precedent exists? Does its evidence remain valid after transfer to another institution, scanner, protocol, or patient population?
 
-These questions are closely related to why I am interested in clinical evidence auditing. A high-quality output is necessary, but it is not sufficient. We also need to know whether the model arrived there through evidence that remains meaningful across patients and environments — and whether the surrounding workflow can recognize when that evidence is no longer trustworthy.
+These questions are closely related to why I am interested in clinical evidence auditing. A high-quality output is necessary, but it is not sufficient. We also need to know whether the model arrived there through evidence that remains meaningful across patients and environments, and whether the surrounding workflow can recognize when that evidence is no longer trustworthy.
 
 McIntosh's work shows what "bench to bedside" actually requires. It is not a single leap from a paper to a hospital. It is a sequence of increasingly difficult tests: technical accuracy, clinical validity, physical feasibility, human acceptance, workflow integration, regulatory maintenance, and real patient care.
 

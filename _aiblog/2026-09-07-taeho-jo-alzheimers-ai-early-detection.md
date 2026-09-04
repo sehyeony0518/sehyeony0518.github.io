@@ -37,7 +37,7 @@ The technology changes from project to project.
 
 The deeper research program remains the same: use AI not merely to classify disease, but to search through biological information that is too large and complex for a human researcher to inspect exhaustively.
 
-## Part 1 — Alzheimer's detection is a problem of timing
+## Part 1. Alzheimer's detection is a problem of timing
 
 Alzheimer's disease and dementia are related but not identical concepts.
 
@@ -71,7 +71,7 @@ The objective is not to find one magical data source.
 
 It is to identify which combinations of biological signals can reveal risk or disease progression early enough to become useful.
 
-## Part 2 — First, can AI see Alzheimer's pathology in the brain?
+## Part 2. First, can AI see Alzheimer's pathology in the brain?
 
 One of Jo's earlier projects applied deep learning to tau PET imaging.
 
@@ -113,7 +113,7 @@ $$
 
 That second role is particularly important for biomedical discovery.
 
-## Part 3 — Interpretability can turn prediction into a research hypothesis
+## Part 3. Interpretability can turn prediction into a research hypothesis
 
 Explainability is often discussed as a way to reassure clinicians.
 
@@ -151,7 +151,7 @@ The model is not replacing the scientist.
 
 It is narrowing a search space that would otherwise be extremely difficult to inspect.
 
-## Part 4 — But brain imaging may already be too late
+## Part 4. But brain imaging may already be too late
 
 A highly accurate imaging model still leaves a fundamental problem.
 
@@ -177,7 +177,7 @@ Deep learning offers another question:
 
 > Can the genome itself be treated as structured input rather than as millions of isolated statistical tests?
 
-## Part 5 — Turning the genome into something an AI can scan
+## Part 5. Turning the genome into something an AI can scan
 
 One of Jo's approaches is SWAT-CNN: the Sliding Window Association Test combined with convolutional neural networks.
 
@@ -215,7 +215,7 @@ A method claiming to discover Alzheimer's genetic signals should first be able t
 
 Only after that does a newly highlighted region become especially interesting.
 
-## Part 6 — From fixed variants to genetic context
+## Part 6. From fixed variants to genetic context
 
 The next conceptual step is to stop treating neighboring genetic variants as completely independent units.
 
@@ -247,7 +247,7 @@ toward:
 
 That is a much harder problem, but it is also closer to the biological complexity of the disease.
 
-## Part 7 — AI as a genome-scale research assistant
+## Part 7. AI as a genome-scale research assistant
 
 During the interview, Jo uses the emerging language of AI agents to describe the intuition behind this work.
 
@@ -282,7 +282,7 @@ AI can make the search broader.
 
 Science still determines whether what it finds is real.
 
-## Part 8 — From the genome to the blood
+## Part 8. From the genome to the blood
 
 Genomic data provide early information, but whole-genome sequencing remains expensive and analytically demanding.
 
@@ -314,7 +314,7 @@ The sliding-window principle begins in genomics and is adapted when the structur
 
 The algorithm follows the scientific question rather than forcing every dataset into exactly the same architecture.
 
-## Part 9 — Common variants may not explain every patient
+## Part 9. Common variants may not explain every patient
 
 Most large genetic association studies naturally concentrate on variants that occur often enough to support statistical analysis.
 
@@ -344,7 +344,7 @@ AI again functions as a filter across an otherwise overwhelming search space.
 
 It tells researchers where closer inspection may be worthwhile.
 
-## Part 10 — These are discovery tools, not personal Alzheimer's fortune tellers
+## Part 10. These are discovery tools, not personal Alzheimer's fortune tellers
 
 At this point, it would be easy to misunderstand the research.
 
@@ -384,7 +384,7 @@ $$
 
 Most interesting academic discoveries are still somewhere in the middle of that chain.
 
-## Part 11 — From accurate AI to trustworthy AI
+## Part 11. From accurate AI to trustworthy AI
 
 The later part of the interview introduces perhaps the most important shift in Jo's current research.
 
@@ -447,7 +447,7 @@ It is:
 
 > AI should know which cases it can classify more reliably and which cases deserve additional scrutiny.
 
-## Part 12 — Confidence can improve a human–AI system without improving every prediction
+## Part 12. Confidence can improve a human–AI system without improving every prediction
 
 Recent work from Jo's group illustrates the idea with tau PET.
 
@@ -488,7 +488,7 @@ It should examine:
 
 An uncertainty estimator becomes clinically useful only when it changes the decision pathway appropriately.
 
-## Part 13 — Uncertainty is not the same as knowing that the model is right
+## Part 13. Uncertainty is not the same as knowing that the model is right
 
 There is an important limit to this idea.
 
@@ -538,7 +538,7 @@ A model should know when it is uncertain.
 
 Researchers should still investigate what it is certain about.
 
-## Part 14 — The common thread is not an architecture but a question
+## Part 14. The common thread is not an architecture but a question
 
 One of the strongest ideas in the interview appears when Jo reflects on the sequence of his research.
 
@@ -582,7 +582,7 @@ AI can search enormous spaces.
 
 Someone still has to decide which space is worth searching.
 
-## Part 15 — AI has not replaced radiologists; it has changed what they can do
+## Part 15. AI has not replaced radiologists; it has changed what they can do
 
 The interview ends by returning to a prediction that has followed medical AI for a decade.
 
@@ -621,7 +621,7 @@ A better question is:
 
 > Which bottleneck in care can AI reduce, and which decisions should remain under human responsibility?
 
-## Part 16 — Technical capability alone does not determine what gets used
+## Part 16. Technical capability alone does not determine what gets used
 
 Jo also points to a practical reality visible across American hospitals.
 
@@ -647,7 +647,7 @@ $$
 
 Deployment is shaped by safety, workflow, economics, regulation, reimbursement, and the availability of someone who can act on the output.
 
-## Part 17 — Access may become as important as capability
+## Part 17. Access may become as important as capability
 
 The discussion also moves beyond high-income academic hospitals.
 

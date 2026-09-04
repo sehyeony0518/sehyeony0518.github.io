@@ -4,11 +4,11 @@ title: "BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagn
 date: 2026-11-06 12:00:00 +0900
 venue: "IEEE ISBI 2021"
 authors: "Boyu Zhang, Aleksandar Vakanski, Min Xian (2021)"
-description: "A multitask model that predicts BI-RADS descriptors alongside malignancy — one of the earlier attempts at the same explainable-by-BI-RADS idea that later concept-bottleneck papers pushed further."
+description: "A multitask model that predicts BI-RADS descriptors alongside malignancy, one of the earlier attempts at the same explainable-by-BI-RADS idea that later concept-bottleneck papers pushed further."
 related_posts: false
 ---
 
-**Paper.** *BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagnosis in Breast Ultrasound Images* — IEEE ISBI (2021)
+**Paper.** *BI-RADS-Net: An Explainable Multitask Learning Approach for Cancer Diagnosis in Breast Ultrasound Images*, IEEE ISBI (2021)
 
 ## Why I read it
 

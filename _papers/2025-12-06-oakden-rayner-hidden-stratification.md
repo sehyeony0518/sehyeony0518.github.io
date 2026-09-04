@@ -8,7 +8,7 @@ description: "Within a labeled class there are clinically distinct subsets, and 
 related_posts: false
 ---
 
-**Paper.** *Hidden Stratification Causes Clinically Meaningful Failures in Machine Learning for Medical Imaging* — [ACM CHIL 2020](https://dl.acm.org/doi/10.1145/3368555.3384468)
+**Paper.** *Hidden Stratification Causes Clinically Meaningful Failures in Machine Learning for Medical Imaging*. [ACM CHIL 2020](https://dl.acm.org/doi/10.1145/3368555.3384468)
 
 ## Why I read it
 
@@ -20,7 +20,7 @@ Hidden stratification occurs when a coarse target contains clinically distinct s
 
 ## What convinced me
 
-The examples show how reassuring averages can reverse clinical interpretation. A pneumothorax model achieved AUC 0.87 overall and 0.94 in cases with a chest drain, but only 0.77 in cases without one — the untreated cases where detection matters most. In MURA, abnormality AUC was 0.98 for hardware but 0.76 for degenerative disease. Fracture sensitivity was also lower for subtle and cervical fractures than the overall result suggested.
+The examples show how reassuring averages can reverse clinical interpretation. A pneumothorax model achieved AUC 0.87 overall and 0.94 in cases with a chest drain, but only 0.77 in cases without one, the untreated cases where detection matters most. In MURA, abnormality AUC was 0.98 for hardware but 0.76 for degenerative disease. Fracture sensitivity was also lower for subtle and cervical fractures than the overall result suggested.
 
 ## What it leaves open
 

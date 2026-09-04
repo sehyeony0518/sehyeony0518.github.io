@@ -2,7 +2,7 @@
 layout: page
 permalink: /papers/
 title: paper reviews
-description: Papers I have studied closely — what they claim, how they show it, and what I take from them.
+description: Papers I have studied closely: what they claim, how they show it, and what I take from them.
 nav: true
 nav_order: 10
 ---
@@ -64,7 +64,7 @@ nav_order: 10
 {% endfor %}
 {% assign venue_groups = venue_groups | sort %}
 
-{% comment %} Venues with only one review get folded into a single "Other" chip, so the filter row stays short as the library grows — except a short pinned list of venues significant enough to always keep visible on their own. {% endcomment %}
+{% comment %} Venues with only one review get folded into a single "Other" chip, so the filter row stays short as the library grows, except a short pinned list of venues significant enough to always keep visible on their own. {% endcomment %}
 {% assign pinned_venues = "IEEE ISBI,IEEE TMI" | split: "," %}
 {% assign main_groups = "" | split: "," %}
 {% assign other_count = 0 %}
@@ -126,7 +126,7 @@ nav_order: 10
 </div>
 
 {% if site.papers.size == 0 %}
-  <p class="paper-empty">Reviews are being added — the first ones will appear here soon.</p>
+  <p class="paper-empty">Reviews are being added, the first ones will appear here soon.</p>
 {% endif %}
 
 <script>

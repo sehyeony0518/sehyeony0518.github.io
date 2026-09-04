@@ -4,15 +4,15 @@ title: "Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Cha
 date: 2026-04-18 12:00:00 +0900
 venue: "IEEE JSTSP"
 authors: "Hsieh-Wei Lee, Bin-Da Liu, King-Chu Hung, Sheau-Fang Lei, Po-Chin Wang, Tsung-Lung Yang (2009)"
-description: "A pre-deep-learning approach to breast-ultrasound CAD: hand-engineered wavelet channel-energy features meant to capture how infiltrative a lesion's margin looks — a useful reminder of what feature engineering used to make explicit."
+description: "A pre-deep-learning approach to breast-ultrasound CAD: hand-engineered wavelet channel-energy features meant to capture how infiltrative a lesion's margin looks, a useful reminder of what feature engineering used to make explicit."
 related_posts: false
 ---
 
-**Paper.** *Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ* — [IEEE Journal of Selected Topics in Signal Processing (2009)](https://doi.org/10.1109/JSTSP.2008.2011160)
+**Paper.** *Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ*. [IEEE Journal of Selected Topics in Signal Processing (2009)](https://doi.org/10.1109/JSTSP.2008.2011160)
 
 ## Why I read it
 
-This paper is relevant to my ultrasound work because it turns a recognizable BI-RADS idea — the infiltrative or irregular contour of a malignant lesion — into an explicit multiscale signal feature. The evidence path is simple enough to inspect from contour to score.
+This paper is relevant to my ultrasound work because it turns a recognizable BI-RADS idea, the infiltrative or irregular contour of a malignant lesion, into an explicit multiscale signal feature. The evidence path is simple enough to inspect from contour to score.
 
 ## What the paper claims
 

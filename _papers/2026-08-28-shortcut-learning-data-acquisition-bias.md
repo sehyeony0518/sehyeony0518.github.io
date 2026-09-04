@@ -4,13 +4,13 @@ title: "Shortcut Learning in Medical AI Hinders Generalization: Method for Estim
 date: 2026-08-28 12:00:00 +0900
 venue: "npj Digital Medicine"
 authors: "Ong Ly, Nikita Saxena, Sangwook Kim, Chris McIntosh et al. (2024)"
-description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected — and lose that performance when transferred elsewhere."
+description: "A study showing that models can achieve high internal accuracy by exploiting signals tied to how and where data were collected, and lose that performance when transferred elsewhere."
 featured: true
 pinned: true
 related_posts: false
 ---
 
-**Paper.** *Shortcut learning in medical AI hinders generalization: method for estimating AI model generalization without external data* — [npj Digital Medicine (2024)](https://www.nature.com/articles/s41746-024-01118-4)
+**Paper.** *Shortcut learning in medical AI hinders generalization: method for estimating AI model generalization without external data*. [npj Digital Medicine (2024)](https://www.nature.com/articles/s41746-024-01118-4)
 
 ## Why I read it
 

@@ -4,11 +4,11 @@ title: "BUS-BRA: A Breast Ultrasound Dataset for Assessing Computer-Aided Diagno
 date: 2026-02-21 12:00:00 +0900
 venue: "Medical Physics"
 authors: "Wilfrido Gómez-Flores, Maria Julia Gregorio-Calas, Wagner Coelho de Albuquerque Pereira (2024)"
-description: "A biopsy-proven, multi-scanner breast ultrasound dataset with standardized cross-validation partitions — the kind of dataset-hygiene paper that makes fair benchmark comparisons possible in the first place."
+description: "A biopsy-proven, multi-scanner breast ultrasound dataset with standardized cross-validation partitions, the kind of dataset-hygiene paper that makes fair benchmark comparisons possible in the first place."
 related_posts: false
 ---
 
-**Paper.** *BUS-BRA: A breast ultrasound dataset for assessing computer-aided diagnosis systems* — [Medical Physics (2024)](https://doi.org/10.1002/mp.16812)
+**Paper.** *BUS-BRA: A breast ultrasound dataset for assessing computer-aided diagnosis systems*. [Medical Physics (2024)](https://doi.org/10.1002/mp.16812)
 
 ## Why I read it
 

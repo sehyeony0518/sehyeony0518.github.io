@@ -4,15 +4,15 @@ title: "Automatic Grading of Individual Knee Osteoarthritis Features in Plain Ra
 date: 2026-09-18 12:00:00 +0900
 venue: "Scientific Reports"
 authors: "Aleksei Tiulpin, Simo Saarakkala (2020)"
-description: "Rather than predicting a single aggregate KL grade, this model grades each individual OARSI-atlas feature — osteophytes, joint space narrowing, and more — separately, matching the atlas's own granularity."
+description: "Rather than predicting a single aggregate KL grade, this model grades each individual OARSI-atlas feature (osteophytes, joint space narrowing, and more) separately, matching the atlas's own granularity."
 related_posts: false
 ---
 
-**Paper.** *Automatic Grading of Individual Knee Osteoarthritis Features in Plain Radiographs using Deep Convolutional Neural Networks* — [Scientific Reports (2020)](https://arxiv.org/abs/1907.08020)
+**Paper.** *Automatic Grading of Individual Knee Osteoarthritis Features in Plain Radiographs using Deep Convolutional Neural Networks*. [Scientific Reports (2020)](https://arxiv.org/abs/1907.08020)
 
 ## Why I read it
 
-A single KL grade compresses several radiographic processes into one ordinal label. I read this paper to see whether predicting the component features — rather than only the composite grade — can produce a more clinically inspectable assessment of knee osteoarthritis.
+A single KL grade compresses several radiographic processes into one ordinal label. I read this paper to see whether predicting the component features, rather than only the composite grade, can produce a more clinically inspectable assessment of knee osteoarthritis.
 
 ## What the paper claims
 

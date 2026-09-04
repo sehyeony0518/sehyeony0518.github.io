@@ -4,11 +4,11 @@ title: "Weight Space Correlation Analysis: Quantifying Feature Utilization in De
 date: 2026-10-30 12:00:00 +0900
 venue: "MIDL 2026"
 authors: "Chun Kit Wong, Paraskevas Pegios, Nina Weng, Emilie Pi Fogtmann Sejer, Martin Grønnebæk Tolsgaard, Anders Nymark Christensen, Aasa Feragen (2026)"
-description: "A method for detecting shortcut reliance by looking directly at correlations in a network's weight space, rather than at its activations or explanations — a different vantage point on the same underlying question."
+description: "A method for detecting shortcut reliance by looking directly at correlations in a network's weight space, rather than at its activations or explanations, a different vantage point on the same underlying question."
 related_posts: false
 ---
 
-**Paper.** *Weight Space Correlation Analysis: Quantifying Feature Utilization in Deep Learning Models* — MIDL 2026
+**Paper.** *Weight Space Correlation Analysis: Quantifying Feature Utilization in Deep Learning Models*, MIDL 2026
 
 ## Why I read it
 
@@ -20,7 +20,7 @@ The method trains auxiliary heads to predict metadata from a shared representati
 
 ## What convinced me
 
-The paper first validates the measure in controlled shortcut settings, where increasing a spurious association produces the expected increase in weight-space alignment. It then analyzes a spontaneous-preterm-birth ultrasound model. Scanner and other metadata could be decoded from the representation, yet the clinical head aligned more strongly with cervical length — a clinically relevant measurement — than with scanner identity. That result shows why a metadata probe alone can generate false alarms: representation leakage and decision reliance are not the same phenomenon.
+The paper first validates the measure in controlled shortcut settings, where increasing a spurious association produces the expected increase in weight-space alignment. It then analyzes a spontaneous-preterm-birth ultrasound model. Scanner and other metadata could be decoded from the representation, yet the clinical head aligned more strongly with cervical length, a clinically relevant measurement, than with scanner identity. That result shows why a metadata probe alone can generate false alarms: representation leakage and decision reliance are not the same phenomenon.
 
 ## What it leaves open
 

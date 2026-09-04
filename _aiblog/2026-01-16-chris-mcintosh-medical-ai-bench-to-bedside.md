@@ -9,13 +9,13 @@ tag: "McIntosh Lab"
 related_posts: false
 ---
 
-Most discussions of medical AI begin with the model: the architecture, the training data, and the benchmark score. This conversation begins somewhere else — with the clinical problem, the people who will use the system, and the years of work required after a technically successful paper.
+Most discussions of medical AI begin with the model: the architecture, the training data, and the benchmark score. This conversation begins somewhere else: with the clinical problem, the people who will use the system, and the years of work required after a technically successful paper.
 
 This post is based on the [EMJ Podcast episode *AI at the Heart of Medicine*](https://www.emjreviews.com/radiology/podcasts/ai-at-the-heart-of-medicine/), featuring Prof. Chris McIntosh of the University of Toronto and University Health Network. His lab works on artificial intelligence in medicine with an explicit bench-to-bedside orientation. The interview covered his entry into medical AI, clinical collaboration, radiation therapy, transfer learning, explainability, fairness, wearable monitoring, and the future relationship between physicians and AI.
 
 I have focused on the ideas that seem most useful for understanding how medical AI becomes clinical technology. Any errors of interpretation are mine.
 
-## Part 1 — Begin with the clinical problem, not the method
+## Part 1. Begin with the clinical problem, not the method
 
 McIntosh originally entered computer science intending to develop video games. As he learned more about that industry, however, he became less convinced that it was where he wanted to direct his career. An undergraduate research internship introduced him to machine learning in healthcare and showed him that his interests in computing and medicine did not have to remain separate.
 
@@ -29,7 +29,7 @@ This changes the questions asked at the beginning of a project. Who will see the
 
 A model can be highly accurate while answering a question that nobody in the hospital urgently needs answered. Clinical collaboration is therefore not an auxiliary step in medical AI. It determines whether the research problem itself is valid.
 
-## Part 2 — A paper is not a deployment
+## Part 2. A paper is not a deployment
 
 McIntosh's clearest example of bench-to-bedside research comes from radiation therapy.
 
@@ -47,7 +47,7 @@ That remaining work includes software integration, data interfaces, quality assu
 
 The statement does not diminish the importance of papers. A paper isolates and tests a scientific claim. But patient care depends on the entire system surrounding that claim.
 
-## Part 3 — Learning when medical data are limited
+## Part 3. Learning when medical data are limited
 
 A recurring obstacle in medical AI is the mismatch between the amount of data modern deep learning often expects and the amount of data available for a particular clinical problem.
 
@@ -63,7 +63,7 @@ There is, however, an important trustworthiness question beneath this efficiency
 
 Transfer learning helps answer whether a useful model can be built with limited data. It does not by itself answer whether the resulting model will generalize safely or rely on the right reasons.
 
-## Part 4 — Explainability, safety, bias, and fairness are different questions
+## Part 4. Explainability, safety, bias, and fairness are different questions
 
 McIntosh takes a deliberately careful position on explainable AI: explainability and safety should not be treated as synonyms.
 
@@ -81,7 +81,7 @@ McIntosh makes a similar distinction between bias and fairness. Fairness concern
 
 Many of those biases enter before training begins.
 
-He referred to examples from experimental science in which seemingly irrelevant factors — even differences in who handled different groups of laboratory animals — produced confounding effects. Medical datasets contain analogous pathways. Different patient groups may be examined in different departments, on different scanners, with different protocols, or after different referral decisions. A model may learn those acquisition patterns instead of the underlying disease.
+He referred to examples from experimental science in which seemingly irrelevant factors, even differences in who handled different groups of laboratory animals, produced confounding effects. Medical datasets contain analogous pathways. Different patient groups may be examined in different departments, on different scanners, with different protocols, or after different referral decisions. A model may learn those acquisition patterns instead of the underlying disease.
 
 His lab's work on [shortcut learning and data-acquisition bias](https://www.nature.com/articles/s41746-024-01118-4) formalizes this problem: models can achieve high internal accuracy by exploiting signals tied to how and where data were collected, only to lose performance when transferred to another institution.
 
@@ -89,7 +89,7 @@ The practical lesson is that fairness cannot be added after training with a sing
 
 Balanced group counts are important, but they are not sufficient. Two groups can be numerically balanced while differing systematically in disease severity, equipment, missingness, access to care, or labeling quality. Good intentions do not make a dataset neutral. Those assumptions must be examined empirically.
 
-## Part 5 — From clinical snapshots to patient trajectories
+## Part 5. From clinical snapshots to patient trajectories
 
 McIntosh sees wearable technology as one of the most promising directions in cardiovascular care because it changes the temporal scale of medicine.
 
@@ -99,7 +99,7 @@ Wearables offer a longitudinal view. They can provide information about activity
 
 The problem is that continuous monitoring produces far more data than clinicians could review manually. This is where AI becomes essential: not simply to collect more information, but to compress it into a clinically meaningful signal.
 
-McIntosh described a collaboration involving Apple Watch data and patients with heart failure. The goal was to estimate peak oxygen uptake — ordinarily measured through a resource-intensive cardiopulmonary exercise test — from everyday biometric data. At the time of the interview, enrollment had been completed and analysis was underway.
+McIntosh described a collaboration involving Apple Watch data and patients with heart failure. The goal was to estimate peak oxygen uptake, ordinarily measured through a resource-intensive cardiopulmonary exercise test, from everyday biometric data. At the time of the interview, enrollment had been completed and analysis was underway.
 
 The larger idea extends beyond one measurement. Instead of asking a model to make a long-term prediction from a brief hospital encounter, longitudinal AI could identify a patient's baseline, detect meaningful decline, and alert the care team when intervention may be needed.
 

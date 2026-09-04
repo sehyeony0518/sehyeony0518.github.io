@@ -4,11 +4,11 @@ title: "Multi-Resolution Tone Mapping for High Dynamic Range Medical Ultrasound 
 date: 2026-10-16 12:00:00 +0900
 venue: "PLOS ONE"
 authors: "Thi Lan Nhi Vu, Vimal Chandran, Christina Haberl, Otmar Scherzer, Julia Binder (2026)"
-description: "A tone-mapping method that expands ultrasound's usable dynamic range before a model — or a clinician — ever sees the image, quantified with real, measurable image-quality gains."
+description: "A tone-mapping method that expands ultrasound's usable dynamic range before a model, or a clinician, ever sees the image, quantified with real, measurable image-quality gains."
 related_posts: false
 ---
 
-**Paper.** *Multi-resolution tone mapping for high dynamic range medical ultrasound images* — [PLOS ONE (2026)](https://doi.org/10.1371/journal.pone.0340777)
+**Paper.** *Multi-resolution tone mapping for high dynamic range medical ultrasound images*. [PLOS ONE (2026)](https://doi.org/10.1371/journal.pone.0340777)
 
 ## Why I read it
 

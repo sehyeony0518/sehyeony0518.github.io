@@ -4,11 +4,11 @@ title: "There Are No Shortcuts to Anywhere Worth Going: Identifying Shortcuts in
 date: 2026-06-06 12:00:00 +0900
 venue: "MIDL 2024"
 authors: "Christopher Boland, Keith A. Goatman, Sotirios A. Tsaftaris, Sonia Dahdouh (2024)"
-description: "A method for locating which layer of a network a shortcut's features actually manifest in, using Prediction Depth and KL divergence — moving from 'the model has a shortcut' to 'here is where in the network it lives.'"
+description: "A method for locating which layer of a network a shortcut's features actually manifest in, using Prediction Depth and KL divergence, moving from 'the model has a shortcut' to 'here is where in the network it lives.'"
 related_posts: false
 ---
 
-**Paper.** *There Are No Shortcuts to Anywhere Worth Going: Identifying Shortcuts in Deep Learning Models for Medical Image Analysis* — [MIDL 2024](https://proceedings.mlr.press/v250/)
+**Paper.** *There Are No Shortcuts to Anywhere Worth Going: Identifying Shortcuts in Deep Learning Models for Medical Image Analysis*. [MIDL 2024](https://proceedings.mlr.press/v250/)
 
 ## Why I read it
 
