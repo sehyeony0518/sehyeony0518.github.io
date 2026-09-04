@@ -32,20 +32,9 @@ photo_preview: false
 blog_preview: true
 ---
 
-I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/).
+I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). My research focuses on **trustworthy and clinically meaningful medical AI**: diagnostic models that clinicians can rely on, and methods for checking whether that reliance is actually warranted.
 
-**My research focuses on trustworthy and clinically meaningful medical AI, with particular interests in clinical evidence auditing, ultrasound-based diagnosis, and generalizable medical AI.**
-
-## Research Interests
-
-**Clinical Evidence Auditing**<br>
-Auditing whether diagnostic AI models rely on clinically valid evidence rather than shortcuts or spurious correlations.
-
-**Ultrasound AI for Hepatobiliary Diagnosis**<br>
-Developing clinically informed AI models for gallbladder and hepatobiliary disease diagnosis from ultrasound.
-
-**Generalizable Medical AI**<br>
-Studying how medical AI can remain reliable across hospitals, devices, and patient populations.
+My work follows three connected questions. I study **clinical evidence auditing**, asking whether a diagnostic model reaches its prediction through clinically valid evidence rather than shortcuts or spurious correlations, and I develop **ultrasound AI for hepatobiliary diagnosis**, building clinically informed models for gallbladder and hepatobiliary disease. Underlying both is **generalizable medical AI**: whether a model that works in one setting stays reliable across hospitals, devices, and patient populations.
 
 More about my work is on the [research](/research/) and [publications](/publications/) pages, and my full CV is available as a [PDF](/assets/pdf/cv-hwang.pdf).
 
