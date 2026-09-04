@@ -11,7 +11,13 @@ nav_order: 10
   /* Widen just this page's content column so a 4-up card grid has room to breathe */
   .container.mt-5 { max-width: 1400px; }
 
-  .venue-filter { display: flex; flex-wrap: wrap; gap: .45rem; margin: .3rem 0 1.3rem; }
+  .venue-filter { margin: .3rem 0 1.3rem; }
+  .venue-filter .vf-row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-bottom: .5rem; }
+  .venue-filter .vf-row-label {
+    font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--global-text-color-light); opacity: .75; width: 100%; margin: .6rem 0 .1rem;
+  }
+  .venue-filter .vf-row-label:first-child { margin-top: 0; }
   .venue-filter .vf-chip {
     display: inline-block; padding: .22rem .7rem; border-radius: 999px;
     border: 1px solid rgba(128,128,128,.35); font-size: .8rem; font-weight: 600;
@@ -64,10 +70,19 @@ nav_order: 10
 {% endfor %}
 {% assign venue_groups = venue_groups | sort %}
 
-{% comment %} Venues with only one review get folded into a single "Other" chip, so the filter row stays short as the library grows, except a short pinned list of venues significant enough to always keep visible on their own. {% endcomment %}
+{% comment %}
+  Venues are split into three rows: Conference, Journal, and Other (guidelines,
+  protocols, preprints — neither). Within Conference and Journal, a venue with
+  only one review folds into that row's own "Other" chip so the row stays short
+  as the library grows, except a short pinned list of venues significant enough
+  to always keep visible on their own.
+{% endcomment %}
 {% assign pinned_venues = "IEEE ISBI,IEEE TMI" | split: "," %}
-{% assign main_groups = "" | split: "," %}
-{% assign other_count = 0 %}
+{% assign conf_main = "" | split: "," %}
+{% assign journal_main = "" | split: "," %}
+{% assign conf_other_count = 0 %}
+{% assign journal_other_count = 0 %}
+{% assign misc_other_count = 0 %}
 {% for v in venue_groups %}
   {% assign vcount = 0 %}
   {% for r in reviews %}
@@ -75,31 +90,77 @@ nav_order: 10
     {% assign vg = vg | strip %}
     {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
   {% endfor %}
-  {% if vcount >= 2 or pinned_venues contains v %}
-    {% assign one_item = v | split: "," %}
-    {% assign main_groups = main_groups | concat: one_item %}
+  {% capture cat %}{% include venue_category.liquid venue_group=v %}{% endcapture %}
+  {% assign cat = cat | strip %}
+  {% if cat == "conference" %}
+    {% if vcount >= 2 or pinned_venues contains v %}
+      {% assign one_item = v | split: "," %}
+      {% assign conf_main = conf_main | concat: one_item %}
+    {% else %}
+      {% assign conf_other_count = conf_other_count | plus: 1 %}
+    {% endif %}
+  {% elsif cat == "journal" %}
+    {% if vcount >= 2 or pinned_venues contains v %}
+      {% assign one_item = v | split: "," %}
+      {% assign journal_main = journal_main | concat: one_item %}
+    {% else %}
+      {% assign journal_other_count = journal_other_count | plus: 1 %}
+    {% endif %}
   {% else %}
-    {% assign other_count = other_count | plus: 1 %}
+    {% assign misc_other_count = misc_other_count | plus: 1 %}
   {% endif %}
 {% endfor %}
+{% assign own_chip_groups = conf_main | concat: journal_main %}
 
 {% if reviews.size > 0 %}
 <div class="venue-filter" id="venue-filter">
-  <button type="button" class="vf-chip active" data-venue="all">All <span class="vf-cnt">{{ reviews.size }}</span></button>
-  {% for v in main_groups %}
-    {% assign v = v | strip %}
-    {% if v != "" %}
-      {% assign vcount = 0 %}
-      {% for r in reviews %}
-        {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
-        {% assign vg = vg | strip %}
-        {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
-      {% endfor %}
-      <button type="button" class="vf-chip" data-venue="{{ v | slugify }}">{{ v }} <span class="vf-cnt">{{ vcount }}</span></button>
+  <div class="vf-row">
+    <button type="button" class="vf-chip active" data-venue="all">All <span class="vf-cnt">{{ reviews.size }}</span></button>
+  </div>
+
+  <div class="vf-row-label">Conference</div>
+  <div class="vf-row">
+    {% for v in conf_main %}
+      {% assign v = v | strip %}
+      {% if v != "" %}
+        {% assign vcount = 0 %}
+        {% for r in reviews %}
+          {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
+          {% assign vg = vg | strip %}
+          {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
+        {% endfor %}
+        <button type="button" class="vf-chip" data-venue="{{ v | slugify }}">{{ v }} <span class="vf-cnt">{{ vcount }}</span></button>
+      {% endif %}
+    {% endfor %}
+    {% if conf_other_count > 0 %}
+      <button type="button" class="vf-chip" data-venue="conference-other">Other <span class="vf-cnt">{{ conf_other_count }}</span></button>
     {% endif %}
-  {% endfor %}
-  {% if other_count > 0 %}
-    <button type="button" class="vf-chip" data-venue="other">Other <span class="vf-cnt">{{ other_count }}</span></button>
+  </div>
+
+  <div class="vf-row-label">Journal</div>
+  <div class="vf-row">
+    {% for v in journal_main %}
+      {% assign v = v | strip %}
+      {% if v != "" %}
+        {% assign vcount = 0 %}
+        {% for r in reviews %}
+          {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
+          {% assign vg = vg | strip %}
+          {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
+        {% endfor %}
+        <button type="button" class="vf-chip" data-venue="{{ v | slugify }}">{{ v }} <span class="vf-cnt">{{ vcount }}</span></button>
+      {% endif %}
+    {% endfor %}
+    {% if journal_other_count > 0 %}
+      <button type="button" class="vf-chip" data-venue="journal-other">Other <span class="vf-cnt">{{ journal_other_count }}</span></button>
+    {% endif %}
+  </div>
+
+  {% if misc_other_count > 0 %}
+    <div class="vf-row-label">Other</div>
+    <div class="vf-row">
+      <button type="button" class="vf-chip" data-venue="other">Preprints &amp; guidelines <span class="vf-cnt">{{ misc_other_count }}</span></button>
+    </div>
   {% endif %}
 </div>
 {% endif %}
@@ -108,10 +169,18 @@ nav_order: 10
   {% for r in reviews %}
     {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
     {% assign vg = vg | strip %}
-    {% if main_groups contains vg %}
+    {% if own_chip_groups contains vg %}
       {% assign item_venue = vg | slugify %}
     {% else %}
-      {% assign item_venue = "other" %}
+      {% capture cat %}{% include venue_category.liquid venue_group=vg %}{% endcapture %}
+      {% assign cat = cat | strip %}
+      {% if cat == "conference" %}
+        {% assign item_venue = "conference-other" %}
+      {% elsif cat == "journal" %}
+        {% assign item_venue = "journal-other" %}
+      {% else %}
+        {% assign item_venue = "other" %}
+      {% endif %}
     {% endif %}
     <a class="pr-item" data-venue="{{ item_venue }}" href="{{ r.url | relative_url }}">
       <div class="pr-meta">
