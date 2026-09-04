@@ -14,8 +14,9 @@ nav_order: 10
   .venue-filter { margin: .3rem 0 1.3rem; }
   .venue-filter .vf-row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-bottom: .5rem; }
   .venue-filter .vf-row-label {
+    display: block; width: 100%;
     font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--global-text-color-light); opacity: .75; width: 100%; margin: .6rem 0 .1rem;
+    color: var(--global-text-color-light); opacity: .75; margin: .6rem 0 .1rem;
   }
   .venue-filter .vf-row-label:first-child { margin-top: 0; }
   .venue-filter .vf-chip {
@@ -80,6 +81,7 @@ nav_order: 10
 {% assign pinned_venues = "IEEE ISBI,IEEE TMI" | split: "," %}
 {% assign conf_main = "" | split: "," %}
 {% assign journal_main = "" | split: "," %}
+{% assign misc_main = "" | split: "," %}
 {% assign conf_other_count = 0 %}
 {% assign journal_other_count = 0 %}
 {% assign misc_other_count = 0 %}
@@ -92,25 +94,32 @@ nav_order: 10
   {% endfor %}
   {% capture cat %}{% include venue_category.liquid venue_group=v %}{% endcapture %}
   {% assign cat = cat | strip %}
+  {% comment %} Each "Other" chip's count is a sum of papers (vcount), not a count of
+    folded venues — a venue with several papers must add its full weight, not 1. {% endcomment %}
   {% if cat == "conference" %}
     {% if vcount >= 2 or pinned_venues contains v %}
       {% assign one_item = v | split: "," %}
       {% assign conf_main = conf_main | concat: one_item %}
     {% else %}
-      {% assign conf_other_count = conf_other_count | plus: 1 %}
+      {% assign conf_other_count = conf_other_count | plus: vcount %}
     {% endif %}
   {% elsif cat == "journal" %}
     {% if vcount >= 2 or pinned_venues contains v %}
       {% assign one_item = v | split: "," %}
       {% assign journal_main = journal_main | concat: one_item %}
     {% else %}
-      {% assign journal_other_count = journal_other_count | plus: 1 %}
+      {% assign journal_other_count = journal_other_count | plus: vcount %}
     {% endif %}
   {% else %}
-    {% assign misc_other_count = misc_other_count | plus: 1 %}
+    {% if vcount >= 2 %}
+      {% assign one_item = v | split: "," %}
+      {% assign misc_main = misc_main | concat: one_item %}
+    {% else %}
+      {% assign misc_other_count = misc_other_count | plus: vcount %}
+    {% endif %}
   {% endif %}
 {% endfor %}
-{% assign own_chip_groups = conf_main | concat: journal_main %}
+{% assign own_chip_groups = conf_main | concat: journal_main | concat: misc_main %}
 
 {% if reviews.size > 0 %}
 <div class="venue-filter" id="venue-filter">
@@ -156,10 +165,24 @@ nav_order: 10
     {% endif %}
   </div>
 
-  {% if misc_other_count > 0 %}
+  {% if misc_main.size > 0 or misc_other_count > 0 %}
     <div class="vf-row-label">Other</div>
     <div class="vf-row">
-      <button type="button" class="vf-chip" data-venue="other">Preprints &amp; guidelines <span class="vf-cnt">{{ misc_other_count }}</span></button>
+      {% for v in misc_main %}
+        {% assign v = v | strip %}
+        {% if v != "" %}
+          {% assign vcount = 0 %}
+          {% for r in reviews %}
+            {% capture vg %}{% include venue_group.liquid venue=r.venue %}{% endcapture %}
+            {% assign vg = vg | strip %}
+            {% if vg == v %}{% assign vcount = vcount | plus: 1 %}{% endif %}
+          {% endfor %}
+          <button type="button" class="vf-chip" data-venue="{{ v | slugify }}">{{ v }} <span class="vf-cnt">{{ vcount }}</span></button>
+        {% endif %}
+      {% endfor %}
+      {% if misc_other_count > 0 %}
+        <button type="button" class="vf-chip" data-venue="other">Other <span class="vf-cnt">{{ misc_other_count }}</span></button>
+      {% endif %}
     </div>
   {% endif %}
 </div>
