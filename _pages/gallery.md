@@ -2,7 +2,7 @@
 layout: page
 permalink: /gallery/
 title: gallery
-description: Moments from research: lab, demos, and presentations.
+description: "Moments from research: lab, demos, and presentations."
 nav: true
 nav_order: 11
 ---

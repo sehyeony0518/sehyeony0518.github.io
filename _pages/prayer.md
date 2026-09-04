@@ -2,7 +2,7 @@
 layout: page
 permalink: /prayer/
 title: prayer
-description: Mission2035 기도편지: 부르심의 여정을 함께 기도해 주세요.
+description: "Mission2035 기도편지: 부르심의 여정을 함께 기도해 주세요."
 nav: true
 nav_order: 5
 ---
