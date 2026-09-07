@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Deployment, Monitoring, and Human-AI Collaboration"
-description: "Dataset and performance drift after deployment, safety monitoring, automation bias, and what changes when a clinician is in the loop."
-section: "I"
-section_title: "Trustworthy Medical AI"
-branch: "Branch 01"
-order: 13
+description: "Drift after deployment, safety monitoring, automation bias, and what changes with a clinician in the loop."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "systems"
+category_title: "Medical AI Systems & Deployment"
+order: 8
+source: "Independent study"
 written: false
 ---

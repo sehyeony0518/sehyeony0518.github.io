@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Evaluation Beyond AUROC"
-description: "Sensitivity and specificity at the operating point that matters, decision curves, clinical utility, and prospective evaluation."
-section: "I"
-section_title: "Trustworthy Medical AI"
-branch: "Branch 01"
-order: 14
+description: "Sensitivity and specificity at the operating point that matters, decision curves, and clinical utility."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "evaluation"
+category_title: "Evaluation, Generalization & Reliability"
+order: 6
+source: "Independent study"
 written: false
 ---

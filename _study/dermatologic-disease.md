@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Dermatologic Disease"
-description: "Visual diagnosis, dataset bias across skin tones, and the most heavily studied setting for medical image AI failure."
-section: "VI"
-section_title: "Translational Medicine Notes"
-branch: "Branch 02"
-order: 12
+description: "Visual diagnosis, dataset bias across skin tones, and the failure modes this field has documented most thoroughly."
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "dermatology"
+category_title: "Dermatology"
+order: 1
+source: "Lecture"
 written: false
 ---

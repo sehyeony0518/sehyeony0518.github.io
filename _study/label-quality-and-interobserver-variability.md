@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Label Quality and Interobserver Variability"
-description: "What it means to evaluate against labels that expert readers themselves disagree about."
-section: "III"
-section_title: "Medical AI Research Methodology"
-branch: "Branch 01"
+description: "Evaluating against labels that expert readers themselves disagree about."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "evaluation"
+category_title: "Evaluation, Generalization & Reliability"
 order: 3
+source: "Independent study"
 written: false
 ---

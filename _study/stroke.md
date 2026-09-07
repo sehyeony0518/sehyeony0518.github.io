@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Stroke"
 description: "Time-critical diagnosis and imaging triage, and why decision latency is itself a clinical outcome."
-section: "VI"
-section_title: "Translational Medicine Notes"
-branch: "Branch 02"
-order: 2
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "neurology"
+category_title: "Neurology"
+order: 1
+source: "Lecture"
 written: false
 ---

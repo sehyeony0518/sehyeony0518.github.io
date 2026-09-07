@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: study_note
 title: "Geometry of Representation Spaces"
-description: "Cosine similarity, manifolds, metric spaces, and representation geometry, and what the shape of a latent space says about what a model encodes."
-section: "F"
-section_title: "Mathematical and Statistical Foundations"
-branch: "Branch 01"
+description: "Cosine similarity, manifolds, metric spaces, and what the shape of a latent space says about what a model encodes."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "foundations"
+category_title: "Mathematical & Statistical Foundations"
 order: 6
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 A representation space is the set of feature vectors a model produces at a particular layer. Its geometry describes which inputs become close, which become separated, and which changes in an image produce substantial changes in its representation.

@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: study_note
 title: "Linear Algebra for Representation Analysis"
-description: "Eigenvalues, SVD, projection, and PCA, and why they are the working tools for asking what a learned representation actually contains."
-section: "F"
-section_title: "Mathematical and Statistical Foundations"
-branch: "Branch 01"
+description: "Eigenvalues, SVD, projection, and PCA as the working tools for asking what a learned representation contains."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "foundations"
+category_title: "Mathematical & Statistical Foundations"
 order: 1
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 Linear algebra lets me describe a learned representation as a collection of directions, combinations, and subspaces. Eigenvalues, singular value decomposition, and projection turn “the model encodes this” into a more specific question about variation and recoverable structure.

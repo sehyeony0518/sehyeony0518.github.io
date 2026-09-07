@@ -1,10 +1,13 @@
 ---
-layout: page
+layout: study_note
 title: "Diagnostic Markers as Shortcut Cues"
-description: "On-image calipers, annotations, and machine overlays as predictive artifacts, and how removing them changes what a model relies on."
-section: "V"
-section_title: "Clinical Translation for Gallbladder AI"
-branch: "Branch 02"
-order: 3
+description: "Calipers, annotations, and machine overlays as predictive artifacts, and what removing them changes."
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "hepatobiliary"
+category_title: "Hepatobiliary Medicine & Imaging"
+subgroup: "Clinical-to-AI Connections"
+order: 15
+source: "Independent study"
 written: false
 ---

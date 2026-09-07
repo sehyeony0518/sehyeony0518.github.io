@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Data Leakage and Validation Design"
-description: "The ways information crosses from test to train in medical data, and how internal, external, and cross-validation designs differ in what they can claim."
-section: "III"
-section_title: "Medical AI Research Methodology"
-branch: "Branch 01"
+description: "How information crosses from test to train in medical data, and what each validation design can claim."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "evaluation"
+category_title: "Evaluation, Generalization & Reliability"
 order: 4
+source: "Independent study"
 written: false
 ---

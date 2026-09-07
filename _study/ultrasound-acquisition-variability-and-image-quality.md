@@ -1,10 +1,13 @@
 ---
-layout: page
+layout: study_note
 title: "Ultrasound Acquisition Variability and Image Quality"
-description: "Operator, machine, and preset variation as the dominant nuisance factor in gallbladder ultrasound, and what it does to a learned model."
-section: "V"
-section_title: "Clinical Translation for Gallbladder AI"
-branch: "Branch 02"
-order: 2
+description: "Operator, machine, and preset variation as the dominant nuisance factor, and what it does to a learned model."
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "hepatobiliary"
+category_title: "Hepatobiliary Medicine & Imaging"
+subgroup: "Clinical-to-AI Connections"
+order: 14
+source: "Independent study"
 written: false
 ---

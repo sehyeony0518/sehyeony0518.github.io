@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: study_note
 title: "Probability and Bayesian Reasoning"
-description: "Conditional probability, expectation and variance, conditional independence, and Bayes as the grammar for reasoning about diagnostic evidence."
-section: "F"
-section_title: "Mathematical and Statistical Foundations"
-branch: "Branch 01"
+description: "Conditional probability, expectation, independence, and Bayes as the grammar for reasoning about diagnostic evidence."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "foundations"
+category_title: "Mathematical & Statistical Foundations"
 order: 2
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 The probability of a positive test in someone with disease is different from the probability of disease after a positive test. Bayesian reasoning keeps those directions explicit and describes how evidence changes an existing assessment.
