@@ -24,7 +24,7 @@ For gallbladder ultrasound AI, I need to anticipate changes in device settings, 
 
 ### Shift categories describe assumptions about distributions
 
-Under covariate shift, the input distribution P(X) changes while P(Y|X) remains fixed. Under label shift, P(Y) changes while P(X|Y) remains fixed. Conditional or concept shift refers to a change in P(Y|X), although terminology varies. These are useful mathematical distinctions, not diagnoses I can assign from the words “new scanner” or “new hospital.” Real transfers can combine several changes. A label-shift correction, for example, needs more than evidence that disease prevalence differs.
+Under covariate shift, the input distribution $$P(X)$$ changes while $$P(Y \mid X)$$ remains fixed. Under label shift, $$P(Y)$$ changes while $$P(X \mid Y)$$ remains fixed. Conditional or concept shift refers to a change in $$P(Y \mid X)$$, although terminology varies. These are useful mathematical distinctions, not diagnoses I can assign from the words “new scanner” or “new hospital.” Real transfers can combine several changes. A label-shift correction, for example, needs more than evidence that disease prevalence differs.
 
 ### Acquisition and clinical composition can move together
 

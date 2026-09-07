@@ -27,7 +27,7 @@ Knowledge becomes supervision when it changes training rather than serving only 
 
 ### Supervision has several forms
 
-A diagnosis supplies an outcome target; a segmentation supplies spatial information; a clinical feature supplies a semantic target. These are different kinds of evidence. A possible multi-task objective is L = L_diagnosis + Σ λ_j L_feature,j. The weights λ_j control optimization tradeoffs, not clinical importance by definition. Unassessable features require explicit handling rather than being coded as absent.
+A diagnosis supplies an outcome target; a segmentation supplies spatial information; a clinical feature supplies a semantic target. These are different kinds of evidence. A possible multi-task objective is $$L = L_{\text{diagnosis}} + \sum_j \lambda_j L_{\text{feature},j}$$. The weights $$\lambda_j$$ control optimization tradeoffs, not clinical importance by definition. Unassessable features require explicit handling rather than being coded as absent.
 
 ### Constraints can target model behavior
 
@@ -35,7 +35,7 @@ Knowledge can specify where sensitivity should be discouraged or which changes s
 
 ### Architecture can make supervision consequential
 
-In a concept bottleneck, predicted concepts feed the final decision: x → ĉ → ŷ. [Koh and colleagues](https://proceedings.mlr.press/v119/koh20a.html) study this explicit pathway. An auxiliary concept head attached to a shared representation does not impose the same dependency. Even a bottleneck requires scrutiny, because inaccurate or overly expressive concept values may convey information beyond their intended clinical meaning.
+In a concept bottleneck, predicted concepts feed the final decision: $$x \rightarrow \hat{c} \rightarrow \hat{y}$$. [Koh and colleagues](https://proceedings.mlr.press/v119/koh20a.html) study this explicit pathway. An auxiliary concept head attached to a shared representation does not impose the same dependency. Even a bottleneck requires scrutiny, because inaccurate or overly expressive concept values may convey information beyond their intended clinical meaning.
 
 ### Clinical knowledge is incomplete and contextual
 
