@@ -13,11 +13,7 @@ toc:
 
 ## Trustworthy Medical AI Grounded in Clinical Evidence
 
-My research asks a simple but consequential question:
-
-> **When a medical AI model is accurate, is it accurate for clinically valid reasons?**
-
-High predictive performance alone does not guarantee that a model relies on evidence clinicians would consider meaningful. I study how to audit model reasoning, identify shortcut reliance, and evaluate whether interpretable model readouts remain faithful to independent clinical factors.
+High predictive performance does not guarantee that a model relies on evidence clinicians would consider meaningful. I study how to audit model reasoning, identify shortcut reliance, and evaluate whether interpretable model readouts remain faithful to independent clinical factors.
 
 ## Clinical Faithfulness
 

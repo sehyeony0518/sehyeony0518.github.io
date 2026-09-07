@@ -28,12 +28,6 @@ nav_order: 9
   .sl-tab .sl-tab-desc { display: block; font-size: .8rem; line-height: 1.5; opacity: .65; margin-top: .2rem; }
   .sl-tab .sl-tab-cnt { font-size: .72rem; font-weight: 700; opacity: .5; font-variant-numeric: tabular-nums; }
 
-  .sl-question {
-    margin: 1rem 0 .2rem; padding-left: .9rem; border-left: 3px solid var(--global-theme-color);
-    font-size: .93rem; line-height: 1.6; font-style: italic; opacity: .8;
-  }
-
-  /* Category filter */
   .sl-cats { display: flex; flex-wrap: wrap; gap: .3rem; margin: .9rem 0 .2rem; padding-bottom: .7rem;
              border-bottom: 2px solid var(--global-theme-color); }
   .sl-cat {
@@ -50,7 +44,6 @@ nav_order: 9
   .sl-block h2 {
     font-size: 1.12rem; margin: 0 0 .2rem; padding: 0; border: 0; line-height: 1.35;
   }
-  .sl-block .sl-cat-note { font-size: .85rem; line-height: 1.65; opacity: .65; margin: 0 0 .5rem; max-width: 66ch; }
   .sl-sub {
     font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
     color: var(--global-text-color-light); opacity: .8; margin: 1.1rem 0 .1rem;
@@ -92,7 +85,7 @@ nav_order: 9
   .sl-empty { font-size: .87rem; opacity: .6; padding: .6rem 0; }
 </style>
 
-<p class="sl-intro">Notes on trustworthy AI and the clinical knowledge that informs my research. Written as I study, and connected back to the work they bear on. How I choose what to study is in <a href="{{ '/study/study-approach/' | relative_url }}">study approach</a>.</p>
+<p class="sl-intro">Notes on trustworthy AI and the clinical knowledge behind my research.</p>
 
 {% assign all_notes = site.study | where_exp: "n", "n.category" %}
 {% assign written_notes = all_notes | where: "written", true %}
@@ -111,8 +104,6 @@ nav_order: 9
 
 {%- for t in site.data.study_sections.tabs %}
 <div class="sl-pane{% unless forloop.first %} sl-hidden{% endunless %}" data-pane="{{ t.id }}">
-  <p class="sl-question">{{ t.question }}</p>
-
   {%- assign t_cats = site.data.study_sections.categories | where: "tab", t.id %}
   <div class="sl-cats">
     {%- assign t_written = all_notes | where: "tab", t.id | where: "written", true %}
@@ -129,8 +120,6 @@ nav_order: 9
   {%- assign c_planned = c_notes | where: "written", false %}
   <div class="sl-block" data-cat="{{ c.id }}">
     <h2 id="{{ c.id }}">{{ c.title }}</h2>
-    <p class="sl-cat-note">{{ c.note }}</p>
-
     {%- if c_written.size > 0 %}
       {%- assign last_sub = "" %}
       {%- for n in c_written %}
