@@ -10,6 +10,9 @@ order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-08-04-medical-algorithmic-audit"
+  - "2025-10-02-zech-variable-generalization"
 ---
 
 Post-hoc model auditing examines an existing model and its surrounding system against explicit clinical claims. It asks what the current system does, where it fails, and what evidence supports its continued or proposed use.

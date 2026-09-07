@@ -10,6 +10,8 @@ order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-10-02-zech-variable-generalization"
 ---
 
 Confounding occurs when an observed relationship mixes the association of interest with a noncausal pathway through other variables. In medical AI, I use it to ask whether apparent diagnostic evidence or performance partly reflects differences in patients, acquisition, or labeling.

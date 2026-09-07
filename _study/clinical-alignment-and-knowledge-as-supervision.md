@@ -12,6 +12,7 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-11-29-concept-bottleneck-models"
+  - "2026-02-03-right-for-the-right-reasons"
 ---
 
 Clinical alignment uses clinical knowledge to shape a model's learning objective, representation, or decision pathway. The question is whether the resulting behavior reflects the intended evidence, not merely whether its outputs agree with diagnostic labels.
