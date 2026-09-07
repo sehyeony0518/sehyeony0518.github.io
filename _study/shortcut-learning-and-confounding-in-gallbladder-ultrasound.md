@@ -11,6 +11,8 @@ order: 18
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-10-02-zech-variable-generalization"
 ---
 
 Shortcut learning in gallbladder ultrasound occurs when a model relies on cues that satisfy the dataset's prediction task without providing the intended clinical evidence. Confounding is one possible source of misleading associations, but acquisition responses, selection, and label construction create other pathways.
