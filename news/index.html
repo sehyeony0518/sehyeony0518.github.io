@@ -234,6 +234,23 @@
   })();
 
   (function () {
+    // Back link on individual study topic pages, which live one level under /study/
+    if (!/^\/study\/[^/]+\/?$/.test(window.location.pathname)) return;
+    function addBack() {
+      if (document.querySelector('.diary-back')) return;
+      var c = document.querySelector('.post') || document.querySelector('article');
+      if (!c) return;
+      var a = document.createElement('a');
+      a.className = 'diary-back';
+      a.href = '/study/';
+      a.innerHTML = '&larr; study';
+      c.insertBefore(a, c.firstChild);
+    }
+    if (document.readyState !== 'loading') addBack();
+    else document.addEventListener('DOMContentLoaded', addBack);
+  })();
+
+  (function () {
     // Back link on individual reflection (diary) posts
     if (!/^\/diary\/\d{4}\/[^/]+\/?$/.test(window.location.pathname)) return;
     function addBack() {
@@ -2994,6 +3011,341 @@ ninja.data = [{
           description: "",
           section: "Prayer",handler: () => {
               window.location.href = "/prayer/2026-07/";
+            },},{id: "study-abdominal-ultrasound-physics-and-the-gallbladder-examination",
+          title: 'Abdominal Ultrasound Physics and the Gallbladder Examination',
+          description: "Acoustic impedance, attenuation, gain, frequency and depth, harmonics, and the scanning protocol these physics dictate.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/abdominal-ultrasound-physics-and-the-gallbladder-examination/";
+            },},{id: "study-adenomyomatosis-and-gallbladder-wall-thickening",
+          title: 'Adenomyomatosis and Gallbladder Wall Thickening',
+          description: "The benign causes of a thick gallbladder wall, the comet-tail artifact, and the differential a thickened wall opens up.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/adenomyomatosis-and-gallbladder-wall-thickening/";
+            },},{id: "study-allergy-and-immunology",
+          title: 'Allergy and Immunology',
+          description: "Diagnostic testing with imperfect specificity, and the role of clinical history in interpreting a result.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/allergy-and-immunology/";
+            },},{id: "study-attribution-attention-and-counterfactual-explanations",
+          title: 'Attribution, Attention, and Counterfactual Explanations',
+          description: "The main families of post-hoc explanation for medical images, what each one measures, and what each one is routinely assumed to measure but does not.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/attribution-attention-and-counterfactual-explanations/";
+            },},{id: "study-auditing-and-evaluating-generative-medical-ai",
+          title: 'Auditing and Evaluating Generative Medical AI',
+          description: "What evaluation means when the output is text or an image rather than a label, and how reliability is established for large medical models.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/auditing-and-evaluating-generative-medical-ai/";
+            },},{id: "study-auditing-explanation-faithfulness-in-gallbladder-models",
+          title: 'Auditing Explanation Faithfulness in Gallbladder Models',
+          description: "Testing whether a model&#39;s evidence tracks independent clinical factors, without retraining and without faithfulness annotations.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
+            },},{id: "study-bile-duct-obstruction-choledocholithiasis-and-cholangitis",
+          title: 'Bile Duct Obstruction, Choledocholithiasis, and Cholangitis',
+          description: "Duct dilatation, stones in the common bile duct, and the clinical picture that turns an imaging finding into an emergency.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/bile-duct-obstruction-choledocholithiasis-and-cholangitis/";
+            },},{id: "study-calibration-uncertainty-and-selective-prediction",
+          title: 'Calibration, Uncertainty, and Selective Prediction',
+          description: "Whether a stated probability means what it says, and when a model should be allowed to abstain instead of answering.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/calibration-uncertainty-and-selective-prediction/";
+            },},{id: "study-cardiovascular-disease",
+          title: 'Cardiovascular Disease',
+          description: "Risk prediction over long horizons, calibration, and decision thresholds tied to treatment.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/cardiovascular-disease/";
+            },},{id: "study-causal-inference-for-medical-ai",
+          title: 'Causal Inference for Medical AI',
+          description: "Causal graphs, confounders and mediators and colliders, counterfactual reasoning, and intervention, as a language for asking why a feature predicts an outcome.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/causal-inference-for-medical-ai/";
+            },},{id: "study-cerebral-hemorrhage",
+          title: 'Cerebral Hemorrhage',
+          description: "Acute imaging findings, triage, and the asymmetric cost of a missed detection.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/cerebral-hemorrhage/";
+            },},{id: "study-cholangiocarcinoma-and-biliary-strictures",
+          title: 'Cholangiocarcinoma and Biliary Strictures',
+          description: "Distinguishing benign from malignant strictures, and what each imaging modality can and cannot contribute.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/cholangiocarcinoma-and-biliary-strictures/";
+            },},{id: "study-circadian-rhythm-disorders",
+          title: 'Circadian Rhythm Disorders',
+          description: "Continuous and wearable data, and what changes when the signal is a long time series rather than an image.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/circadian-rhythm-disorders/";
+            },},{id: "study-clinical-concepts-and-concept-based-interpretability",
+          title: 'Clinical Concepts and Concept-Based Interpretability',
+          description: "Concept bottlenecks, concept activation vectors, and representation learning for clinical concepts, as attempts to make a model speak in clinical terms.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/clinical-concepts-and-concept-based-interpretability/";
+            },},{id: "study-clinical-faithfulness-and-reliance-on-clinical-evidence",
+          title: 'Clinical Faithfulness and Reliance on Clinical Evidence',
+          description: "My own research question: whether a model&#39;s evidence aligns with independent clinical factors rather than merely looking anatomically reasonable.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/clinical-faithfulness-and-reliance-on-clinical-evidence/";
+            },},{id: "study-clinical-feature-annotation-and-multi-task-learning",
+          title: 'Clinical Feature Annotation and Multi-Task Learning',
+          description: "Building supervision from structured sonographic findings rather than the diagnosis alone, and what a model gains from predicting both.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/clinical-feature-annotation-and-multi-task-learning/";
+            },},{id: "study-clinical-knowledge-guided-representation-learning",
+          title: 'Clinical Knowledge-Guided Representation Learning',
+          description: "Using echogenicity, texture, margin, wall features, and anatomical context as domain priors that shape the representation.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/clinical-knowledge-guided-representation-learning/";
+            },},{id: "study-clinical-validity-and-clinical-utility",
+          title: 'Clinical Validity and Clinical Utility',
+          description: "The difference between a model that measures something real and a model that changes a decision, and why the second does not follow from the first.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/clinical-validity-and-clinical-utility/";
+            },},{id: "study-clinical-workflow-and-task-definition-for-gallbladder-ai",
+          title: 'Clinical Workflow and Task Definition for Gallbladder AI',
+          description: "Deciding which decision a model is meant to support, and letting that decide the label, the metric, and the study design.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/clinical-workflow-and-task-definition-for-gallbladder-ai/";
+            },},{id: "study-data-leakage-and-validation-design",
+          title: 'Data Leakage and Validation Design',
+          description: "The ways information crosses from test to train in medical data, and how internal, external, and cross-validation designs differ in what they can claim.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/data-leakage-and-validation-design/";
+            },},{id: "study-dataset-bias-selection-bias-and-confounding",
+          title: 'Dataset Bias, Selection Bias, and Confounding',
+          description: "How the way a medical dataset was assembled writes itself into the model, through who was scanned, who was labeled, and what was recorded alongside.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/dataset-bias-selection-bias-and-confounding/";
+            },},{id: "study-dataset-design-ground-truth-and-reference-standards",
+          title: 'Dataset Design, Ground Truth, and Reference Standards',
+          description: "What counts as truth in a medical dataset, and how the choice of reference standard bounds every result that follows.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/dataset-design-ground-truth-and-reference-standards/";
+            },},{id: "study-dementia",
+          title: 'Dementia',
+          description: "Slow-onset disease, biomarker-based diagnosis, and the difficulty of validating prediction far ahead of an event.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/dementia/";
+            },},{id: "study-deployment-monitoring-and-human-ai-collaboration",
+          title: 'Deployment, Monitoring, and Human-AI Collaboration',
+          description: "Dataset and performance drift after deployment, safety monitoring, automation bias, and what changes when a clinician is in the loop.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/deployment-monitoring-and-human-ai-collaboration/";
+            },},{id: "study-dermatologic-disease",
+          title: 'Dermatologic Disease',
+          description: "Visual diagnosis, dataset bias across skin tones, and the most heavily studied setting for medical image AI failure.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/dermatologic-disease/";
+            },},{id: "study-diagnostic-markers-as-shortcut-cues",
+          title: 'Diagnostic Markers as Shortcut Cues',
+          description: "On-image calipers, annotations, and machine overlays as predictive artifacts, and how removing them changes what a model relies on.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/diagnostic-markers-as-shortcut-cues/";
+            },},{id: "study-distribution-shift-and-out-of-distribution-generalization",
+          title: 'Distribution Shift and Out-of-Distribution Generalization',
+          description: "What breaks when the hospital, scanner, operator, or patient population changes, and which failures are foreseeable in advance.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/distribution-shift-and-out-of-distribution-generalization/";
+            },},{id: "study-domain-adaptation-domain-generalization-and-test-time-adaptation",
+          title: 'Domain Adaptation, Domain Generalization, and Test-Time Adaptation',
+          description: "Three different answers to the same problem of a model meeting data it was not trained on, and what each one assumes.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/domain-adaptation-domain-generalization-and-test-time-adaptation/";
+            },},{id: "study-end-of-life-care",
+          title: 'End-of-Life Care',
+          description: "Prognostic prediction, and the ethical weight carried by a model whose output shapes goals of care.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/end-of-life-care/";
+            },},{id: "study-error-and-clinical-failure-analysis",
+          title: 'Error and Clinical Failure Analysis',
+          description: "Reading the cases a model gets wrong as evidence about what it learned, rather than as noise around an aggregate score.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/error-and-clinical-failure-analysis/";
+            },},{id: "study-evaluation-beyond-auroc",
+          title: 'Evaluation Beyond AUROC',
+          description: "Sensitivity and specificity at the operating point that matters, decision curves, clinical utility, and prospective evaluation.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/evaluation-beyond-auroc/";
+            },},{id: "study-evidence-auditing-and-post-hoc-model-auditing",
+          title: 'Evidence Auditing and Post-hoc Model Auditing',
+          description: "Ablation, intervention, feature reliance analysis, frequency-domain and representation-level auditing, and what a structured audit of a deployed model looks like.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/evidence-auditing-and-post-hoc-model-auditing/";
+            },},{id: "study-explanation-faithfulness-versus-plausibility",
+          title: 'Explanation Faithfulness versus Plausibility',
+          description: "An explanation that looks right to a clinician and an explanation that reflects the model&#39;s computation are different properties, and the gap between them is where most trouble lives.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/explanation-faithfulness-versus-plausibility/";
+            },},{id: "study-external-validation-failure-analysis-and-clinical-utility",
+          title: 'External Validation, Failure Analysis, and Clinical Utility',
+          description: "What it would take for a gallbladder model to be believed at a second hospital, and what its errors would cost there.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/external-validation-failure-analysis-and-clinical-utility/";
+            },},{id: "study-federated-and-continual-learning-in-healthcare",
+          title: 'Federated and Continual Learning in Healthcare',
+          description: "Training across institutions that cannot share data, and updating a model over time without losing what it already knew.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/federated-and-continual-learning-in-healthcare/";
+            },},{id: "study-foundation-models-for-medical-imaging",
+          title: 'Foundation Models for Medical Imaging',
+          description: "What large pretrained imaging models change about medical AI, and what they do not change about validation.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/foundation-models-for-medical-imaging/";
+            },},{id: "study-from-clinical-problem-to-machine-learning-task",
+          title: 'From Clinical Problem to Machine Learning Task',
+          description: "The translation step where most medical AI projects are decided, long before any model is trained.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/from-clinical-problem-to-machine-learning-task/";
+            },},{id: "study-gallbladder-cancer-and-the-benign-versus-malignant-differential",
+          title: 'Gallbladder Cancer and the Benign versus Malignant Differential',
+          description: "Features that raise concern for malignancy, the clinical risk factors that shift pretest probability, and where imaging alone cannot settle the question.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/gallbladder-cancer-and-the-benign-versus-malignant-differential/";
+            },},{id: "study-gallbladder-polyps-and-their-malignant-potential",
+          title: 'Gallbladder Polyps and Their Malignant Potential',
+          description: "Cholesterol versus adenomatous polyps, the size thresholds that drive management, and why the distinction is hard on ultrasound.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/gallbladder-polyps-and-their-malignant-potential/";
+            },},{id: "study-gallstones-and-cholecystitis",
+          title: 'Gallstones and Cholecystitis',
+          description: "Cholelithiasis, acute and chronic cholecystitis, and the findings that separate them, including the sonographic Murphy sign and pericholecystic fluid.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/gallstones-and-cholecystitis/";
+            },},{id: "study-gastric-cancer",
+          title: 'Gastric Cancer',
+          description: "Endoscopic detection, screening programs, and reader variability in a real-time diagnostic setting.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/gastric-cancer/";
+            },},{id: "study-geometry-of-representation-spaces",
+          title: 'Geometry of Representation Spaces',
+          description: "Cosine similarity, manifolds, metric spaces, and representation geometry, and what the shape of a latent space says about what a model encodes.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/geometry-of-representation-spaces/";
+            },},{id: "study-head-and-neck-cancer",
+          title: 'Head and Neck Cancer',
+          description: "Multimodal staging and the coordination problem between imaging, pathology, and treatment planning.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/head-and-neck-cancer/";
+            },},{id: "study-imaging-across-modalities-guidelines-and-radiology-pathology-correlation",
+          title: 'Imaging Across Modalities, Guidelines, and Radiology-Pathology Correlation',
+          description: "When ultrasound leads to CT, MRI, or MRCP, what the management guidelines say, and how imaging appearances map back to pathology.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/imaging-across-modalities-guidelines-and-radiology-pathology-correlation/";
+            },},{id: "study-information-theory",
+          title: 'Information Theory',
+          description: "Entropy, mutual information, and KL divergence as ways to quantify how much a signal carries and how far two distributions have moved apart.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/information-theory/";
+            },},{id: "study-label-quality-and-interobserver-variability",
+          title: 'Label Quality and Interobserver Variability',
+          description: "What it means to evaluate against labels that expert readers themselves disagree about.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/label-quality-and-interobserver-variability/";
+            },},{id: "study-linear-algebra-for-representation-analysis",
+          title: 'Linear Algebra for Representation Analysis',
+          description: "Eigenvalues, SVD, projection, and PCA, and why they are the working tools for asking what a learned representation actually contains.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/linear-algebra-for-representation-analysis/";
+            },},{id: "study-liver-disease",
+          title: 'Liver Disease',
+          description: "Diffuse parenchymal disease on ultrasound, staging by imaging surrogate, and the limits of a non-invasive proxy.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/liver-disease/";
+            },},{id: "study-lung-cancer",
+          title: 'Lung Cancer',
+          description: "Screening programs, overdiagnosis, and what a screening context does to the meaning of a positive result.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/lung-cancer/";
+            },},{id: "study-medical-ai-agents-and-tool-using-clinical-systems",
+          title: 'Medical AI Agents and Tool-Using Clinical Systems',
+          description: "Observe, reason, act: the loop underneath agent systems, and the memory, verification, and failure recovery problems it creates.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/medical-ai-agents-and-tool-using-clinical-systems/";
+            },},{id: "study-normal-gallbladder-findings-and-the-sonographic-feature-vocabulary",
+          title: 'Normal Gallbladder Findings and the Sonographic Feature Vocabulary',
+          description: "Echogenicity and echotexture, lesion shape and margin, wall features, posterior acoustic behavior, and Doppler vascularity, and which are read together.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/normal-gallbladder-findings-and-the-sonographic-feature-vocabulary/";
+            },},{id: "study-optimization-for-machine-learning",
+          title: 'Optimization for Machine Learning',
+          description: "Gradients, regularization, and constrained optimization, viewed as the assumptions a training procedure quietly imposes on the solution.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/optimization-for-machine-learning/";
+            },},{id: "study-parkinson-39-s-disease",
+          title: 'Parkinson&amp;#39;s Disease',
+          description: "Movement disorder assessment, rating scales as noisy ground truth, and longitudinal measurement.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/parkinsons-disease/";
+            },},{id: "study-probability-and-bayesian-reasoning",
+          title: 'Probability and Bayesian Reasoning',
+          description: "Conditional probability, expectation and variance, conditional independence, and Bayes as the grammar for reasoning about diagnostic evidence.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/probability-and-bayesian-reasoning/";
+            },},{id: "study-reproducibility-benchmarks-and-translational-study-design",
+          title: 'Reproducibility, Benchmarks, and Translational Study Design',
+          description: "Designing studies and benchmarks whose results survive contact with another site, another team, and another year.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/reproducibility-benchmarks-and-translational-study-design/";
+            },},{id: "study-rheumatic-disease",
+          title: 'Rheumatic Disease',
+          description: "Diagnosis from a combination of imaging, serology, and clinical criteria rather than any single test.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/rheumatic-disease/";
+            },},{id: "study-robustness-subgroup-performance-and-external-validation",
+          title: 'Robustness, Subgroup Performance, and External Validation',
+          description: "Robustness to acquisition variability, subgroup and fairness analysis, and multi-center external validation as the tests of clinical generalizability.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/robustness-subgroup-performance-and-external-validation/";
+            },},{id: "study-self-supervised-and-weakly-supervised-learning",
+          title: 'Self-Supervised and Weakly Supervised Learning',
+          description: "Learning from medical data whose labels are scarce, noisy, or only available at the study level.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/self-supervised-and-weakly-supervised-learning/";
+            },},{id: "study-shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+          title: 'Shortcut Learning and Confounding in Gallbladder Ultrasound',
+          description: "The specific confounders present in this problem, and how to tell a genuine sonographic finding from an acquisition correlate.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/shortcut-learning-and-confounding-in-gallbladder-ultrasound/";
+            },},{id: "study-shortcut-learning-and-spurious-correlations",
+          title: 'Shortcut Learning and Spurious Correlations',
+          description: "Why a model reaches high accuracy through cues that are predictive in the training set but carry no clinical meaning.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/shortcut-learning-and-spurious-correlations/";
+            },},{id: "study-statistical-evaluation-of-diagnostic-models",
+          title: 'Statistical Evaluation of Diagnostic Models',
+          description: "Confidence intervals, bootstrapping, hypothesis testing, sample size and power, and the pitfalls that recur in diagnostic accuracy papers.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/statistical-evaluation-of-diagnostic-models/";
+            },},{id: "study-statistical-inference-for-diagnostic-studies",
+          title: 'Statistical Inference for Diagnostic Studies',
+          description: "Hypothesis testing, confidence intervals, effect size, bootstrap, and multiple comparisons, applied to the claims diagnostic AI papers actually make.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/statistical-inference-for-diagnostic-studies/";
+            },},{id: "study-stroke",
+          title: 'Stroke',
+          description: "Time-critical diagnosis and imaging triage, and why decision latency is itself a clinical outcome.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/stroke/";
+            },},{id: "study-translational-science-in-medicine",
+          title: 'Translational Science in Medicine',
+          description: "What the bench-to-bedside pipeline actually consists of, and where most candidate technologies die in it.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/translational-science-in-medicine/";
+            },},{id: "study-ultrasound-acquisition-variability-and-image-quality",
+          title: 'Ultrasound Acquisition Variability and Image Quality',
+          description: "Operator, machine, and preset variation as the dominant nuisance factor in gallbladder ultrasound, and what it does to a learned model.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/ultrasound-acquisition-variability-and-image-quality/";
+            },},{id: "study-ultrasound-anatomy-of-the-liver-and-biliary-system",
+          title: 'Ultrasound Anatomy of the Liver and Biliary System',
+          description: "The anatomy a sonographer works through, including the variants that change what a normal study looks like.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/ultrasound-anatomy-of-the-liver-and-biliary-system/";
+            },},{id: "study-vision-language-and-multimodal-medical-ai",
+          title: 'Vision-Language and Multimodal Medical AI',
+          description: "Image-text alignment, report grounding, and the promise and the failure modes of models that read images and language together.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/vision-language-and-multimodal-medical-ai/";
             },},{
         id: 'social-email',
         title: 'email',
