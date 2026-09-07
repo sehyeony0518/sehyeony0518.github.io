@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: study_note
 title: "Optimization for Machine Learning"
-description: "Gradients, regularization, and constrained optimization, viewed as the assumptions a training procedure quietly imposes on the solution."
-section: "F"
-section_title: "Mathematical and Statistical Foundations"
-branch: "Branch 01"
+description: "Gradients, regularization, and constrained optimization as the assumptions a training procedure quietly imposes."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "foundations"
+category_title: "Mathematical & Statistical Foundations"
 order: 4
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 Training minimizes an objective through a sequence of updates, and both the objective and the update rule influence the solution. I study optimization to understand which preferences enter a medical AI model before anyone evaluates its clinical evidence.

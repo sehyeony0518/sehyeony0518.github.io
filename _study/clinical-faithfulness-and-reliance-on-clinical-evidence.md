@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: study_note
 title: "Clinical Faithfulness and Reliance on Clinical Evidence"
 description: "My own research question: whether a model's evidence aligns with independent clinical factors rather than merely looking anatomically reasonable."
-section: "I"
-section_title: "Trustworthy Medical AI"
-branch: "Branch 01"
-order: 9
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "alignment"
+category_title: "Clinical Alignment & Interpretability"
+order: 5
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 Clinical faithfulness asks whether a model's prediction depends on evidence that is meaningful for the clinical task. In my work, I approach this through the alignment between interpretable model readouts and independent clinical factors, while keeping that alignment distinct from proof of reliance.

@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Dementia"
-description: "Slow-onset disease, biomarker-based diagnosis, and the difficulty of validating prediction far ahead of an event."
-section: "VI"
-section_title: "Translational Medicine Notes"
-branch: "Branch 02"
-order: 3
+description: "Biomarker-based diagnosis and the difficulty of validating prediction far ahead of an event."
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "neurology"
+category_title: "Neurology"
+order: 2
+source: "Lecture"
 written: false
 ---

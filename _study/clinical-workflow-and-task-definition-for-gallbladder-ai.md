@@ -1,10 +1,13 @@
 ---
-layout: page
+layout: study_note
 title: "Clinical Workflow and Task Definition for Gallbladder AI"
-description: "Deciding which decision a model is meant to support, and letting that decide the label, the metric, and the study design."
-section: "V"
-section_title: "Clinical Translation for Gallbladder AI"
-branch: "Branch 02"
-order: 1
+description: "Deciding which decision a model supports, and letting that decide the label, the metric, and the design."
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "hepatobiliary"
+category_title: "Hepatobiliary Medicine & Imaging"
+subgroup: "Clinical-to-AI Connections"
+order: 13
+source: "Independent study"
 written: false
 ---

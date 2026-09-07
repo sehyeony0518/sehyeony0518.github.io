@@ -2,265 +2,224 @@
 layout: page
 permalink: /study/
 title: study
-description: "What I am studying and why: judging when medical AI deserves to be believed, and learning the medicine that makes that judgment possible."
+description: "Notes on trustworthy AI and the clinical knowledge that informs my research."
 nav: true
 nav_order: 9
 ---
 
 <style>
-  .container.mt-5 { max-width: 1280px; }
+  .container.mt-5 { max-width: 1180px; }
 
-  .st-lede { font-size: 1.04rem; line-height: 1.8; }
-  .st-claim {
-    border-left: 3px solid var(--global-theme-color);
-    padding: .1rem 0 .1rem 1.1rem; margin: 1.5rem 0 1.7rem;
-    font-size: 1.05rem; line-height: 1.7; font-weight: 500;
-  }
-  .st-claim .st-claim-sub { display: block; margin-top: .5rem; font-size: .85rem; font-weight: 400; opacity: .6; }
+  .sl-intro { font-size: 1rem; line-height: 1.75; margin-bottom: .3rem; }
+  .sl-intro a { font-weight: 600; }
 
-  .st-qs { list-style: none; padding: 0; margin: .9rem 0 2.2rem; display: grid; grid-template-columns: 1fr; }
-  @media (min-width: 820px) { .st-qs { grid-template-columns: 1fr 1fr; column-gap: 2.2rem; } }
-  .st-qs li {
-    padding: .48rem 0; border-bottom: 1px solid var(--global-divider-color);
-    font-size: .92rem; line-height: 1.55; display: flex; gap: .7rem; align-items: baseline;
+  /* Two top-level tabs */
+  .sl-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.5rem 0 0; }
+  .sl-tab {
+    flex: 1 1 260px; text-align: left; cursor: pointer;
+    padding: .85rem 1.1rem; border-radius: 12px; background: none;
+    border: 1px solid var(--global-divider-color); color: inherit;
+    transition: border-color .15s ease, background .15s ease;
   }
-  .st-qs li .st-qn {
-    font-size: .71rem; font-weight: 800; font-variant-numeric: tabular-nums;
-    color: var(--global-theme-color); opacity: .8; min-width: 1.1rem;
+  .sl-tab:hover { border-color: var(--global-theme-color); }
+  .sl-tab.active { border-color: var(--global-theme-color); background: rgba(128,128,128,.06); }
+  .sl-tab .sl-tab-name { display: block; font-size: 1.02rem; font-weight: 700; line-height: 1.3; }
+  .sl-tab.active .sl-tab-name { color: var(--global-theme-color); }
+  .sl-tab .sl-tab-desc { display: block; font-size: .8rem; line-height: 1.5; opacity: .65; margin-top: .2rem; }
+  .sl-tab .sl-tab-cnt { font-size: .72rem; font-weight: 700; opacity: .5; font-variant-numeric: tabular-nums; }
+
+  .sl-question {
+    margin: 1rem 0 .2rem; padding-left: .9rem; border-left: 3px solid var(--global-theme-color);
+    font-size: .93rem; line-height: 1.6; font-style: italic; opacity: .8;
   }
 
-  /* Section picker: label on the left, selectable sections on the right */
-  .tp-bar {
-    position: sticky; top: 0; z-index: 4;
-    display: flex; align-items: baseline; flex-wrap: wrap; gap: .5rem 1rem;
-    padding: .7rem 0 .55rem; margin: .4rem 0 0;
-    background: var(--global-bg-color);
-    border-bottom: 2px solid var(--global-theme-color);
+  /* Category filter */
+  .sl-cats { display: flex; flex-wrap: wrap; gap: .3rem; margin: .9rem 0 .2rem; padding-bottom: .7rem;
+             border-bottom: 2px solid var(--global-theme-color); }
+  .sl-cat {
+    padding: .18rem .6rem; border-radius: 999px; cursor: pointer; white-space: nowrap;
+    border: 1px solid rgba(128,128,128,.32); background: none; color: inherit;
+    font-size: .755rem; font-weight: 600; transition: all .15s ease;
   }
-  .tp-bar-title { font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
-  .tp-bar-title .tp-bar-branch {
-    display: block; font-size: .66rem; font-weight: 800; letter-spacing: .09em;
-    text-transform: uppercase; color: var(--global-theme-color); opacity: .85; margin-bottom: .12rem;
+  .sl-cat:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+  .sl-cat.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
+  .sl-cat .sl-cat-cnt { opacity: .7; font-size: .69rem; margin-left: .1rem; font-variant-numeric: tabular-nums; }
+
+  .sl-block { margin: 1.9rem 0 0; }
+  .sl-block.sl-hidden, .sl-pane.sl-hidden { display: none; }
+  .sl-block h2 {
+    font-size: 1.12rem; margin: 0 0 .2rem; padding: 0; border: 0; line-height: 1.35;
   }
-  .tp-chips { margin-left: auto; display: flex; flex-wrap: wrap; gap: .32rem; justify-content: flex-end; }
-  .tp-chip {
-    display: inline-block; padding: .2rem .62rem; border-radius: 999px;
-    border: 1px solid rgba(128,128,128,.35); font-size: .76rem; font-weight: 600;
-    background: none; color: inherit; cursor: pointer; transition: all .15s ease; white-space: nowrap;
+  .sl-block .sl-cat-note { font-size: .85rem; line-height: 1.65; opacity: .65; margin: 0 0 .5rem; max-width: 66ch; }
+  .sl-sub {
+    font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--global-text-color-light); opacity: .8; margin: 1.1rem 0 .1rem;
   }
-  .tp-chip:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
-  .tp-chip.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
-  .tp-chip .tp-cnt { opacity: .7; font-size: .69rem; margin-left: .12rem; font-variant-numeric: tabular-nums; }
 
-  .tp-sec { margin: 2rem 0 0; }
-  .tp-sec.tp-hidden { display: none; }
-  .tp-head { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
-  .tp-head h3 { font-size: 1.16rem; margin: 0; line-height: 1.35; }
-  .tp-branch {
-    font-size: .62rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
-    padding: .13rem .5rem; border-radius: 999px; white-space: nowrap;
-    border: 1px solid var(--global-theme-color); color: var(--global-theme-color);
+  /* Note rows */
+  .sl-note {
+    display: block; text-decoration: none; color: inherit;
+    padding: .78rem 0; border-bottom: 1px solid var(--global-divider-color);
   }
-  .tp-branch.tp-b2 { background: var(--global-theme-color); color: #fff; }
-  .tp-note { font-size: .88rem; line-height: 1.7; opacity: .72; margin: .45rem 0 .3rem; max-width: 62ch; }
-
-  .tp-list { margin: .5rem 0 0; padding-left: 1.5rem; }
-  @media (min-width: 900px) { .tp-list { column-count: 2; column-gap: 2.6rem; } }
-  .tp-list li {
-    break-inside: avoid; padding: .5rem 0; line-height: 1.45;
-    border-bottom: 1px solid var(--global-divider-color);
+  a.sl-note:hover .sl-note-title { color: var(--global-theme-color); }
+  a.sl-note:hover .sl-read { opacity: 1; }
+  .sl-note-title { font-size: .97rem; font-weight: 650; line-height: 1.4; }
+  .sl-note-sum { font-size: .845rem; line-height: 1.6; opacity: .68; margin-top: .12rem; max-width: 78ch; }
+  .sl-note-foot { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin-top: .3rem; }
+  .sl-tag {
+    font-size: .68rem; font-weight: 700; letter-spacing: .04em;
+    color: var(--global-text-color-light); opacity: .75;
   }
-  .tp-list li::marker { font-size: .72rem; color: var(--global-text-color-light); font-variant-numeric: tabular-nums; }
-  .tp-list .tp-t { display: block; font-size: .9rem; font-weight: 600; line-height: 1.4; }
-  .tp-list a.tp-t { color: inherit; text-decoration: none; }
-  .tp-list a.tp-t:hover { color: var(--global-theme-color); text-decoration: underline; }
-  .tp-list a.tp-t::after { content: " \2192"; opacity: .35; font-weight: 400; }
-  .tp-list .tp-todo { color: var(--global-text-color-light); opacity: .72; font-weight: 500; }
-  .tp-list .tp-sum { display: block; font-size: .8rem; line-height: 1.55; opacity: .62; margin-top: .12rem; }
+  .sl-read { margin-left: auto; font-size: .78rem; font-weight: 600; color: var(--global-theme-color); opacity: .8; white-space: nowrap; }
 
-  .st-alloc { margin: 1.1rem 0 .5rem; }
-  .st-alloc-row { display: grid; grid-template-columns: 3.1rem 1fr; gap: .8rem; align-items: center; margin-bottom: .8rem; }
-  .st-alloc-pct { font-size: .84rem; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; opacity: .8; }
-  .st-alloc-body .st-alloc-label { font-size: .88rem; line-height: 1.45; margin-bottom: .28rem; }
-  .st-alloc-bar { height: 6px; border-radius: 999px; background: rgba(128,128,128,.16); overflow: hidden; }
-  .st-alloc-bar span { display: block; height: 100%; border-radius: 999px; background: var(--global-theme-color); opacity: .8; }
-
-  .st-not { border: 1px dashed var(--global-divider-color); border-radius: 12px; padding: 1.05rem 1.25rem; margin: 1.1rem 0; }
-  .st-not ul { margin: .5rem 0 .7rem 1.1rem; padding: 0; }
-  .st-not li { font-size: .89rem; line-height: 1.6; margin-bottom: .28rem; opacity: .85; }
-  .st-not p { font-size: .89rem; line-height: 1.7; margin: 0; opacity: .85; }
-
-  .st-link-row { padding: .8rem 0; border-top: 1px solid var(--global-divider-color); }
-  .st-link-row:last-child { border-bottom: 1px solid var(--global-divider-color); }
-  .st-link-from { font-size: .71rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--global-theme-color); }
-  .st-link-to { font-size: .94rem; line-height: 1.6; margin-top: .16rem; }
+  /* Planned topics */
+  .sl-planned { margin: .9rem 0 0; }
+  .sl-planned > summary {
+    cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .78rem; font-weight: 700; letter-spacing: .03em;
+    color: var(--global-text-color-light); opacity: .8; padding: .3rem 0;
+  }
+  .sl-planned > summary::-webkit-details-marker { display: none; }
+  .sl-planned > summary::before { content: "+"; font-weight: 800; opacity: .7; }
+  .sl-planned[open] > summary::before { content: "\2212"; }
+  .sl-planned > summary:hover { color: var(--global-theme-color); opacity: 1; }
+  .sl-planned ul { list-style: none; margin: .35rem 0 .3rem; padding: 0; }
+  @media (min-width: 760px) { .sl-planned ul { column-count: 2; column-gap: 2.4rem; } }
+  .sl-planned li {
+    break-inside: avoid; padding: .28rem 0; font-size: .84rem; line-height: 1.45;
+    opacity: .62; border-bottom: 1px solid var(--global-divider-color);
+  }
+  .sl-empty { font-size: .87rem; opacity: .6; padding: .6rem 0; }
 </style>
 
-<p class="st-lede">Writing code, implementing models, summarizing papers, and running experiments all keep getting cheaper and faster. Judging whether a result deserves to be believed does not. That gap is what I have organized my studying around, and I expect it to widen rather than close.</p>
+<p class="sl-intro">Notes on trustworthy AI and the clinical knowledge that informs my research. Written as I study, and connected back to the work they bear on. How I choose what to study is in <a href="{{ '/study/study-approach/' | relative_url }}">study approach</a>.</p>
 
-<div class="st-claim">
-  I study how we can know whether medical AI models are relying on clinically meaningful evidence, and how to make that reliance measurable and auditable.
-  <span class="st-claim-sub">When models were weak, the research question was whether the AI gets it right. As models get strong, the question moves to whether we should believe it.</span>
+{% assign all_notes = site.study | where_exp: "n", "n.category" %}
+{% assign written_notes = all_notes | where: "written", true %}
+
+<div class="sl-tabs" id="sl-tabs">
+  {%- for t in site.data.study_sections.tabs %}
+  {%- assign t_notes = all_notes | where: "tab", t.id %}
+  {%- assign t_written = t_notes | where: "written", true %}
+  <button type="button" class="sl-tab{% if forloop.first %} active{% endif %}" data-tab="{{ t.id }}">
+    <span class="sl-tab-name">{{ t.title }}</span>
+    <span class="sl-tab-desc">{{ t.description }}</span>
+    <span class="sl-tab-cnt">{{ t_written | size }} of {{ t_notes | size }} written</span>
+  </button>
+  {%- endfor %}
 </div>
 
-<p class="st-lede">Everything below exists to make me better at answering seven questions. They are the ones that stay hard even after implementation becomes free.</p>
+{%- for t in site.data.study_sections.tabs %}
+<div class="sl-pane{% unless forloop.first %} sl-hidden{% endunless %}" data-pane="{{ t.id }}">
+  <p class="sl-question">{{ t.question }}</p>
 
-<ol class="st-qs">
-  <li><span class="st-qn">01</span><span>Which problem actually needs to be solved?</span></li>
-  <li><span class="st-qn">02</span><span>Can this data answer that question at all?</span></li>
-  <li><span class="st-qn">03</span><span>Why did the model reach this decision?</span></li>
-  <li><span class="st-qn">04</span><span>Is the performance gain clinically meaningful?</span></li>
-  <li><span class="st-qn">05</span><span>Has the model learned a shortcut instead?</span></li>
-  <li><span class="st-qn">06</span><span>Does it stay reliable when the distribution changes?</span></li>
-  <li><span class="st-qn">07</span><span>Is there enough evidence to use this on a patient?</span></li>
-</ol>
-
-<p class="st-lede">Answering them takes two different kinds of knowledge, so the topics run in two branches. <strong>Branch 01</strong> is the machinery of belief: trustworthiness, the advancing frontier, and research methodology. <strong>Branch 02</strong> is the domain that gives the belief its content, the medicine itself, without which clinically meaningful evidence is only a phrase. Pick a section to read its list.</p>
-
-<div class="tp-bar" id="tp-bar">
-  <div class="tp-bar-title" id="tp-title"><span class="tp-bar-branch" id="tp-title-branch">Both branches</span>All topics</div>
-  <div class="tp-chips" id="tp-chips">
-      <button type="button" class="tp-chip active" data-sec="all">All <span class="tp-cnt">{{ site.study | size }}</span></button>
-      {%- for sec in site.data.study_sections %}
-      <button type="button" class="tp-chip" data-sec="{{ sec.id }}" data-title="{{ sec.title }}" data-branch="{{ sec.branch }}">{{ sec.id }}. {{ sec.short }} <span class="tp-cnt">{{ sec.count }}</span></button>
-      {%- endfor %}
+  {%- assign t_cats = site.data.study_sections.categories | where: "tab", t.id %}
+  <div class="sl-cats">
+    {%- assign t_written = all_notes | where: "tab", t.id | where: "written", true %}
+    <button type="button" class="sl-cat active" data-cat="all">All <span class="sl-cat-cnt">{{ t_written | size }}</span></button>
+    {%- for c in t_cats %}
+    {%- assign c_written = all_notes | where: "category", c.id | where: "written", true %}
+    <button type="button" class="sl-cat" data-cat="{{ c.id }}">{{ c.title }} <span class="sl-cat-cnt">{{ c_written | size }}</span></button>
+    {%- endfor %}
   </div>
-</div>
 
-<div id="tp-sections">
-{%- for sec in site.data.study_sections %}
-  {%- assign items = site.study | where: "section", sec.id | sort: "order" %}
-  <section class="tp-sec" data-sec="{{ sec.id }}">
-    <div class="tp-head">
-      <span class="tp-branch{% if sec.branch == 'Branch 02' %} tp-b2{% endif %}">{{ sec.branch }}</span>
-      <h3 id="section-{{ sec.id }}">{{ sec.id }}. {{ sec.title }}</h3>
-    </div>
-    <p class="tp-note">{{ sec.note }}</p>
-    <ol class="tp-list">
-      {%- for it in items %}
-      <li>
-        {%- if it.written %}
-        <a class="tp-t" href="{{ it.url | relative_url }}">{{ it.title }}</a>
-        {%- else %}
-        <span class="tp-t tp-todo">{{ it.title }}</span>
+  {%- for c in t_cats %}
+  {%- assign c_notes = all_notes | where: "category", c.id | sort: "order" %}
+  {%- assign c_written = c_notes | where: "written", true %}
+  {%- assign c_planned = c_notes | where: "written", false %}
+  <div class="sl-block" data-cat="{{ c.id }}">
+    <h2 id="{{ c.id }}">{{ c.title }}</h2>
+    <p class="sl-cat-note">{{ c.note }}</p>
+
+    {%- if c_written.size > 0 %}
+      {%- assign last_sub = "" %}
+      {%- for n in c_written %}
+        {%- if n.subgroup and n.subgroup != last_sub %}
+    <div class="sl-sub">{{ n.subgroup }}</div>
+          {%- assign last_sub = n.subgroup %}
         {%- endif %}
-        <span class="tp-sum">{{ it.description }}</span>
-      </li>
+    <a class="sl-note" href="{{ n.url | relative_url }}">
+      <div class="sl-note-title">{{ n.title }}</div>
+      <div class="sl-note-sum">{{ n.description }}</div>
+      <div class="sl-note-foot">
+        <span class="sl-tag">{{ c.title }}{% if n.subgroup %} · {{ n.subgroup }}{% endif %}</span>
+        <span class="sl-read">Read note &rarr;</span>
+      </div>
+    </a>
       {%- endfor %}
-    </ol>
-  </section>
+    {%- else %}
+    <p class="sl-empty">No notes written in this category yet.</p>
+    {%- endif %}
+
+    {%- if c_planned.size > 0 %}
+    <details class="sl-planned">
+      <summary>Planned topics ({{ c_planned | size }})</summary>
+      <ul>
+        {%- for n in c_planned %}
+        <li>{{ n.title }}{% if n.subgroup %} <span style="opacity:.7">· {{ n.subgroup }}</span>{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </details>
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</div>
 {%- endfor %}
-</div>
-
-## Where my time goes
-
-Roughly how the study time divides in the year leading up to doctoral applications. The proportions matter more than the exact numbers, and the first two rows are deliberately the largest.
-
-<div class="st-alloc">
-  <div class="st-alloc-row">
-    <div class="st-alloc-pct">30%</div>
-    <div class="st-alloc-body">
-      <div class="st-alloc-label">Statistics, causal inference, and experimental design</div>
-      <div class="st-alloc-bar"><span style="width:100%"></span></div>
-    </div>
-  </div>
-  <div class="st-alloc-row">
-    <div class="st-alloc-pct">25%</div>
-    <div class="st-alloc-body">
-      <div class="st-alloc-label">Trustworthy AI: shortcut learning, robustness, interpretability</div>
-      <div class="st-alloc-bar"><span style="width:83%"></span></div>
-    </div>
-  </div>
-  <div class="st-alloc-row">
-    <div class="st-alloc-pct">20%</div>
-    <div class="st-alloc-body">
-      <div class="st-alloc-label">Medical imaging, ultrasound, and clinical diagnostic reasoning</div>
-      <div class="st-alloc-bar"><span style="width:67%"></span></div>
-    </div>
-  </div>
-  <div class="st-alloc-row">
-    <div class="st-alloc-pct">15%</div>
-    <div class="st-alloc-body">
-      <div class="st-alloc-label">Representation learning, multimodal, and foundation models</div>
-      <div class="st-alloc-bar"><span style="width:50%"></span></div>
-    </div>
-  </div>
-  <div class="st-alloc-row">
-    <div class="st-alloc-pct">10%</div>
-    <div class="st-alloc-body">
-      <div class="st-alloc-label">Agents, large language models, and AI systems</div>
-      <div class="st-alloc-bar"><span style="width:33%"></span></div>
-    </div>
-  </div>
-</div>
-
-## What I deliberately do not optimize for
-
-<div class="st-not">
-  <ul>
-    <li>Memorizing a hundred CNN architectures</li>
-    <li>Knowing the PyTorch API by heart</li>
-    <li>CUDA implementation detail</li>
-    <li>Model-specific prompting tricks that expire with the next release</li>
-    <li>Every new agent framework as it appears</li>
-  </ul>
-  <p>Being able to implement something when I need it, with whatever tooling is current, is enough. The value of a researcher is shifting away from whether you can implement it and toward whether you know what should be implemented.</p>
-</div>
-
-## Study that turns into research
-
-The rule I hold myself to is that nothing stays as reading. Each topic has to come back as a question about work I am actually doing.
-
-<div class="st-link">
-  <div class="st-link-row">
-    <div class="st-link-from">Causal inference</div>
-    <div class="st-link-to">Can my shortcut audit be expressed as a causal intervention rather than a correlation check?</div>
-  </div>
-  <div class="st-link-row">
-    <div class="st-link-from">Calibration</div>
-    <div class="st-link-to">How does the calibration of the current gallbladder classifier change across subgroups?</div>
-  </div>
-  <div class="st-link-row">
-    <div class="st-link-from">Representation geometry</div>
-    <div class="st-link-to">Can the geometry of the latent space be compared directly against independent clinical factors?</div>
-  </div>
-</div>
-
-The reading itself is on the [paper reviews](/papers/) page, where I write up what each paper claims and what it leaves open, and the longer arguments are in [insights](/blog/). What this studying is for is on the [research](/research/) page.
 
 <script>
   (function () {
-    var bar = document.getElementById('tp-bar');
-    if (!bar) return;
-    var chips = bar.querySelectorAll('.tp-chip');
-    var secs = document.querySelectorAll('#tp-sections .tp-sec');
-    var title = document.getElementById('tp-title');
-    var branch = document.getElementById('tp-title-branch');
+    var tabsEl = document.getElementById('sl-tabs');
+    if (!tabsEl) return;
+    var tabs = tabsEl.querySelectorAll('.sl-tab');
+    var panes = document.querySelectorAll('.sl-pane');
 
-    function select(key) {
-      chips.forEach(function (c) { c.classList.toggle('active', c.getAttribute('data-sec') === key); });
-      secs.forEach(function (s) { s.classList.toggle('tp-hidden', key !== 'all' && s.getAttribute('data-sec') !== key); });
-      var chip = bar.querySelector('.tp-chip[data-sec="' + key + '"]');
-      if (key === 'all') {
-        branch.textContent = 'Both branches';
-        title.lastChild.nodeValue = 'All topics';
-      } else if (chip) {
-        branch.textContent = chip.getAttribute('data-branch');
-        title.lastChild.nodeValue = key + '. ' + chip.getAttribute('data-title');
+    function showTab(id, remember) {
+      var found = false;
+      tabs.forEach(function (b) {
+        var on = b.getAttribute('data-tab') === id;
+        b.classList.toggle('active', on);
+        if (on) found = true;
+      });
+      if (!found) return false;
+      panes.forEach(function (p) { p.classList.toggle('sl-hidden', p.getAttribute('data-pane') !== id); });
+      if (remember) {
+        try { sessionStorage.setItem('studyTab', id); } catch (e) {}
+        if (history.replaceState) history.replaceState(null, '', location.pathname + '#' + id);
       }
-      if (history.replaceState) {
-        history.replaceState(null, '', key === 'all' ? location.pathname : location.pathname + '#section-' + key);
-      }
+      return true;
     }
 
-    bar.addEventListener('click', function (e) {
-      var chip = e.target.closest('.tp-chip');
-      if (!chip) return;
-      select(chip.getAttribute('data-sec'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showCat(pane, cat, remember) {
+      pane.querySelectorAll('.sl-cat').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-cat') === cat);
+      });
+      pane.querySelectorAll('.sl-block').forEach(function (bl) {
+        bl.classList.toggle('sl-hidden', cat !== 'all' && bl.getAttribute('data-cat') !== cat);
+      });
+      if (remember) { try { sessionStorage.setItem('studyCat:' + pane.getAttribute('data-pane'), cat); } catch (e) {} }
+    }
+
+    tabsEl.addEventListener('click', function (e) {
+      var b = e.target.closest('.sl-tab');
+      if (b) showTab(b.getAttribute('data-tab'), true);
     });
 
-    var hash = (location.hash || '').replace('#section-', '');
-    if (hash && bar.querySelector('.tp-chip[data-sec="' + hash + '"]')) select(hash);
+    panes.forEach(function (pane) {
+      pane.addEventListener('click', function (e) {
+        var b = e.target.closest('.sl-cat');
+        if (b) showCat(pane, b.getAttribute('data-cat'), true);
+      });
+    });
+
+    // Restore where the reader was: URL hash first, then the last visit
+    var hash = (location.hash || '').replace('#', '');
+    var stored = null;
+    try { stored = sessionStorage.getItem('studyTab'); } catch (e) {}
+    if (!hash || !showTab(hash, false)) { if (stored) showTab(stored, false); }
+    panes.forEach(function (pane) {
+      var c = null;
+      try { c = sessionStorage.getItem('studyCat:' + pane.getAttribute('data-pane')); } catch (e) {}
+      if (c) showCat(pane, c, false);
+    });
   })();
 </script>

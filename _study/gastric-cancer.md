@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Gastric Cancer"
 description: "Endoscopic detection, screening programs, and reader variability in a real-time diagnostic setting."
-section: "VI"
-section_title: "Translational Medicine Notes"
-branch: "Branch 02"
-order: 15
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "oncology"
+category_title: "Oncology"
+order: 3
+source: "Lecture"
 written: false
 ---

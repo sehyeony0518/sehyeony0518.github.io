@@ -1,10 +1,13 @@
 ---
-layout: page
+layout: study_note
 title: "Cholangiocarcinoma and Biliary Strictures"
-description: "Distinguishing benign from malignant strictures, and what each imaging modality can and cannot contribute."
-section: "IV"
-section_title: "Clinical Translation in Hepatobiliary Imaging"
-branch: "Branch 02"
-order: 9
+description: "Distinguishing benign from malignant strictures, and what each modality can contribute."
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "hepatobiliary"
+category_title: "Hepatobiliary Medicine & Imaging"
+subgroup: "Biliary Disease"
+order: 10
+source: "Independent study"
 written: false
 ---

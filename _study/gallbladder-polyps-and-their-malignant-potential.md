@@ -1,12 +1,16 @@
 ---
-layout: page
+layout: study_note
 title: "Gallbladder Polyps and Their Malignant Potential"
 description: "Cholesterol versus adenomatous polyps, the size thresholds that drive management, and why the distinction is hard on ultrasound."
-section: "IV"
-section_title: "Clinical Translation in Hepatobiliary Imaging"
-branch: "Branch 02"
-order: 5
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "hepatobiliary"
+category_title: "Hepatobiliary Medicine & Imaging"
+subgroup: "Gallbladder Disease"
+order: 4
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 Gallbladder polyps are projections from the gallbladder wall into its lumen, but the imaging label includes lesions with different biological meanings. Most are benign; the clinical problem is identifying those that warrant closer assessment or surgery without treating every polyp as a cancer precursor. [SRU consensus](https://pubs.rsna.org/doi/10.1148/radiol.213079)

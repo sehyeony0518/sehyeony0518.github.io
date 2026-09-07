@@ -1,0 +1,71 @@
+---
+layout: page
+---
+
+{%- assign cat = site.data.study_sections.categories | where: "id", page.category | first -%}
+{%- assign tab = site.data.study_sections.tabs | where: "id", page.tab | first -%}
+
+<style>
+  .sn-crumb { font-size: .76rem; line-height: 1.5; opacity: .62; margin: -.4rem 0 .5rem; }
+  .sn-crumb a { color: inherit; text-decoration: none; }
+  .sn-crumb a:hover { color: var(--global-theme-color); text-decoration: underline; }
+  .sn-meta {
+    display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; align-items: baseline;
+    padding: .45rem 0 .7rem; margin-bottom: 1.4rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    font-size: .76rem; opacity: .6;
+  }
+  .sn-meta .sn-k { font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .67rem; opacity: .8; }
+  .sn-foot { margin-top: 2.6rem; padding-top: 1.2rem; border-top: 1px solid var(--global-divider-color); }
+  .sn-foot h3 { font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+                color: var(--global-text-color-light); opacity: .8; margin: 0 0 .5rem; }
+  .sn-rel { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+  .sn-rel li { padding: .38rem 0; border-bottom: 1px solid var(--global-divider-color); font-size: .875rem; line-height: 1.45; }
+  .sn-rel a { color: inherit; text-decoration: none; }
+  .sn-rel a:hover { color: var(--global-theme-color); text-decoration: underline; }
+  .sn-rel .sn-rel-sum { display: block; font-size: .78rem; opacity: .58; margin-top: .1rem; }
+  .sn-rel .sn-soon { opacity: .5; }
+  .sn-back { display: inline-block; margin-top: .4rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
+  .sn-back:hover { text-decoration: underline; }
+</style>
+
+<div class="sn-crumb">
+  <a href="{{ '/study/' | relative_url }}">Study</a>
+  {%- if tab %} / <a href="{{ '/study/' | relative_url }}#{{ tab.id }}">{{ tab.title }}</a>{% endif -%}
+  {%- if cat %} / {{ cat.title }}{% endif -%}
+  {%- if page.subgroup %} / {{ page.subgroup }}{% endif -%}
+</div>
+
+<div class="sn-meta">
+  {%- if page.updated %}<span><span class="sn-k">Last updated</span> {{ page.updated }}</span>{% endif %}
+  {%- if page.source %}<span><span class="sn-k">Source</span> {{ page.source }}</span>{% endif %}
+</div>
+
+{{ content }}
+
+<div class="sn-foot">
+  {%- assign siblings = site.study | where: "category", page.category | where_exp: "n", "n.url != page.url" | sort: "order" -%}
+  {%- assign sib_written = siblings | where: "written", true -%}
+  {%- if sib_written.size > 0 %}
+  <h3>Related study notes</h3>
+  <ul class="sn-rel">
+    {%- for n in sib_written limit: 5 %}
+    <li><a href="{{ n.url | relative_url }}">{{ n.title }}</a><span class="sn-rel-sum">{{ n.description }}</span></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  {%- if page.papers and page.papers.size > 0 %}
+  <h3>Related paper reviews</h3>
+  <ul class="sn-rel">
+    {%- for slug in page.papers %}
+    {%- assign p = site.papers | where_exp: "r", "r.url contains slug" | first %}
+    {%- if p %}
+    <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a><span class="sn-rel-sum">{{ p.venue }}</span></li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  <a class="sn-back" href="{{ '/study/' | relative_url }}{% if tab %}#{{ tab.id }}{% endif %}">&larr; Back to {% if tab %}{{ tab.title }}{% else %}study{% endif %}</a>
+</div>

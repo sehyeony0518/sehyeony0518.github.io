@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: study_note
 title: "Clinical Validity and Clinical Utility"
-description: "The difference between a model that measures something real and a model that changes a decision, and why the second does not follow from the first."
-section: "I"
-section_title: "Trustworthy Medical AI"
-branch: "Branch 01"
-order: 1
+description: "The difference between a model that measures something real and a model that changes a decision."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "evaluation"
+category_title: "Evaluation, Generalization & Reliability"
+order: 7
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 Clinical validity concerns whether a model's output supports its intended clinical interpretation in the intended population. Clinical utility concerns whether using that output improves care or its delivery compared with a relevant alternative.

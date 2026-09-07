@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: study_note
 title: "Rheumatic Disease"
 description: "Diagnosis from a combination of imaging, serology, and clinical criteria rather than any single test."
-section: "VI"
-section_title: "Translational Medicine Notes"
-branch: "Branch 02"
-order: 9
+tab: "clinical-medicine"
+tab_title: "Clinical Medicine"
+category: "rheum-immunology"
+category_title: "Rheumatology & Clinical Immunology"
+order: 1
+source: "Lecture"
 written: false
 ---

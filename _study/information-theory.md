@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: study_note
 title: "Information Theory"
-description: "Entropy, mutual information, and KL divergence as ways to quantify how much a signal carries and how far two distributions have moved apart."
-section: "F"
-section_title: "Mathematical and Statistical Foundations"
-branch: "Branch 01"
+description: "Entropy, mutual information, and KL divergence as ways to quantify how much a signal carries and how far two distributions have moved."
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "foundations"
+category_title: "Mathematical & Statistical Foundations"
 order: 5
+source: "Independent study"
 written: true
+updated: "2026-09-08"
 ---
 
 Information theory quantifies uncertainty, statistical dependence, and mismatch between probability distributions. These quantities help me ask what a signal carries, while leaving the clinical value and causal role of that information to be established separately.
