@@ -64,14 +64,19 @@ nav_order: 9
   .tp-branch.tp-b2 { background: var(--global-theme-color); color: #fff; }
   .tp-note { font-size: .88rem; line-height: 1.7; opacity: .72; margin: .45rem 0 .3rem; max-width: 62ch; }
 
-  .tp-list { margin: .5rem 0 0; padding-left: 1.4rem; }
-  @media (min-width: 700px) { .tp-list { column-count: 2; column-gap: 2.4rem; } }
-  @media (min-width: 1050px) { .tp-list { column-count: 3; column-gap: 2.2rem; } }
+  .tp-list { margin: .5rem 0 0; padding-left: 1.5rem; }
+  @media (min-width: 900px) { .tp-list { column-count: 2; column-gap: 2.6rem; } }
   .tp-list li {
-    break-inside: avoid; padding: .3rem 0; font-size: .875rem; line-height: 1.5;
+    break-inside: avoid; padding: .5rem 0; line-height: 1.45;
     border-bottom: 1px solid var(--global-divider-color);
   }
-  .tp-list li::marker { font-size: .74rem; color: var(--global-text-color-light); font-variant-numeric: tabular-nums; }
+  .tp-list li::marker { font-size: .72rem; color: var(--global-text-color-light); font-variant-numeric: tabular-nums; }
+  .tp-list .tp-t { display: block; font-size: .9rem; font-weight: 600; line-height: 1.4; }
+  .tp-list a.tp-t { color: inherit; text-decoration: none; }
+  .tp-list a.tp-t:hover { color: var(--global-theme-color); text-decoration: underline; }
+  .tp-list a.tp-t::after { content: " \2192"; opacity: .35; font-weight: 400; }
+  .tp-list .tp-todo { color: var(--global-text-color-light); opacity: .72; font-weight: 500; }
+  .tp-list .tp-sum { display: block; font-size: .8rem; line-height: 1.55; opacity: .62; margin-top: .12rem; }
 
   .st-alloc { margin: 1.1rem 0 .5rem; }
   .st-alloc-row { display: grid; grid-template-columns: 3.1rem 1fr; gap: .8rem; align-items: center; margin-bottom: .8rem; }
@@ -115,256 +120,36 @@ nav_order: 9
 <div class="tp-bar" id="tp-bar">
   <div class="tp-bar-title" id="tp-title"><span class="tp-bar-branch" id="tp-title-branch">Both branches</span>All topics</div>
   <div class="tp-chips" id="tp-chips">
-      <button type="button" class="tp-chip active" data-sec="all">All <span class="tp-cnt">180</span></button>
-      <button type="button" class="tp-chip" data-sec="I" data-title="Trustworthy Medical AI" data-branch="Branch 01">I. Trustworthy AI <span class="tp-cnt">60</span></button>
-      <button type="button" class="tp-chip" data-sec="II" data-title="Advanced Topics in Medical AI" data-branch="Branch 01">II. Advanced Topics <span class="tp-cnt">20</span></button>
-      <button type="button" class="tp-chip" data-sec="III" data-title="Medical AI Research Methodology" data-branch="Branch 01">III. Methodology <span class="tp-cnt">20</span></button>
-      <button type="button" class="tp-chip" data-sec="IV" data-title="Clinical Translation in Hepatobiliary Imaging" data-branch="Branch 02">IV. Hepatobiliary Imaging <span class="tp-cnt">40</span></button>
-      <button type="button" class="tp-chip" data-sec="V" data-title="Clinical Translation for Gallbladder AI" data-branch="Branch 02">V. Gallbladder AI <span class="tp-cnt">25</span></button>
-      <button type="button" class="tp-chip" data-sec="VI" data-title="Translational Medicine Notes" data-branch="Branch 02">VI. Translational Notes <span class="tp-cnt">15</span></button>
+      <button type="button" class="tp-chip active" data-sec="all">All <span class="tp-cnt">{{ site.study | size }}</span></button>
+      {%- for sec in site.data.study_sections %}
+      <button type="button" class="tp-chip" data-sec="{{ sec.id }}" data-title="{{ sec.title }}" data-branch="{{ sec.branch }}">{{ sec.id }}. {{ sec.short }} <span class="tp-cnt">{{ sec.count }}</span></button>
+      {%- endfor %}
   </div>
 </div>
 
 <div id="tp-sections">
-  <section class="tp-sec" data-sec="I">
+{%- for sec in site.data.study_sections %}
+  {%- assign items = site.study | where: "section", sec.id | sort: "order" %}
+  <section class="tp-sec" data-sec="{{ sec.id }}">
     <div class="tp-head">
-      <span class="tp-branch tp-b1">Branch 01</span>
-      <h3 id="section-I">I. Trustworthy Medical AI</h3>
+      <span class="tp-branch{% if sec.branch == 'Branch 02' %} tp-b2{% endif %}">{{ sec.branch }}</span>
+      <h3 id="section-{{ sec.id }}">{{ sec.id }}. {{ sec.title }}</h3>
     </div>
-    <p class="tp-note">The core of my work. Whether a model&#x27;s accuracy comes from clinically valid evidence, and how to make that reliance measurable rather than assumed.</p>
+    <p class="tp-note">{{ sec.note }}</p>
     <ol class="tp-list">
-      <li>Foundations of Trustworthy Medical AI</li>
-      <li>Clinical Validity and Clinical Utility</li>
-      <li>Dataset Bias in Medical AI</li>
-      <li>Confounding in Medical Imaging</li>
-      <li>Selection Bias and Sampling Bias</li>
-      <li>Spurious Correlations in Medical AI</li>
-      <li>Shortcut Learning in Medical Imaging</li>
-      <li>Distribution Shift and Domain Shift</li>
-      <li>Out-of-Distribution Generalization</li>
-      <li>Dataset Shift Across Hospitals and Devices</li>
-      <li>Causal Inference for Medical AI</li>
-      <li>Causal Graphs and Structural Causal Models</li>
-      <li>Confounders, Mediators, and Colliders</li>
-      <li>Counterfactual Reasoning in Medical AI</li>
-      <li>Causal Intervention and Perturbation Analysis</li>
-      <li>Clinical Alignment of Medical AI</li>
-      <li>Clinical Knowledge as Model Supervision</li>
-      <li>Clinical Concept Representation</li>
-      <li>Concept Bottleneck Models</li>
-      <li>Representation Learning for Clinical Concepts</li>
-      <li>Representation Geometry in Medical AI</li>
-      <li>Model Interpretability in Healthcare</li>
-      <li>Attribution Methods for Medical Imaging</li>
-      <li>Attention as Explanation</li>
-      <li>Concept-Based Interpretability</li>
-      <li>Counterfactual Explanations</li>
-      <li>Explanation Faithfulness</li>
-      <li>Explanation Plausibility vs. Faithfulness</li>
-      <li>Clinical Faithfulness of Model Explanations</li>
-      <li>Model Reliance on Clinical Evidence</li>
-      <li>Evidence Auditing in Medical AI</li>
-      <li>Post-hoc Model Auditing</li>
-      <li>Auditable-by-Design Medical AI</li>
-      <li>Shortcut Auditing</li>
-      <li>Feature Reliance Analysis</li>
-      <li>Ablation and Intervention-Based Auditing</li>
-      <li>Frequency-Domain Analysis of Medical Images</li>
-      <li>Representation-Level Auditing</li>
-      <li>Failure Mode Analysis</li>
-      <li>Model Calibration and Uncertainty</li>
-      <li>Selective Prediction and Abstention</li>
-      <li>Reliability Under Distribution Shift</li>
-      <li>Subgroup Robustness and Fairness</li>
-      <li>External Validation of Medical AI</li>
-      <li>Multi-Center Validation</li>
-      <li>Clinical Generalizability</li>
-      <li>Robustness to Acquisition Variability</li>
-      <li>Model Monitoring After Deployment</li>
-      <li>Dataset Drift and Performance Drift</li>
-      <li>Safety Monitoring for Medical AI</li>
-      <li>Human–AI Collaboration in Clinical Practice</li>
-      <li>Automation Bias and Human Reliance</li>
-      <li>Clinical Decision Support Systems</li>
-      <li>Evaluation Beyond AUROC</li>
-      <li>Diagnostic Sensitivity and Specificity</li>
-      <li>Calibration, Decision Curves, and Clinical Utility</li>
-      <li>Translational Evaluation of Medical AI</li>
-      <li>From Bench to Bedside in Medical AI</li>
-      <li>Prospective Evaluation of Medical AI</li>
-      <li>Responsible Deployment of Medical AI</li>
+      {%- for it in items %}
+      <li>
+        {%- if it.written %}
+        <a class="tp-t" href="{{ it.url | relative_url }}">{{ it.title }}</a>
+        {%- else %}
+        <span class="tp-t tp-todo">{{ it.title }}</span>
+        {%- endif %}
+        <span class="tp-sum">{{ it.description }}</span>
+      </li>
+      {%- endfor %}
     </ol>
   </section>
-
-  <section class="tp-sec" data-sec="II">
-    <div class="tp-head">
-      <span class="tp-branch tp-b1">Branch 01</span>
-      <h3 id="section-II">II. Advanced Topics in Medical AI</h3>
-    </div>
-    <p class="tp-note">The moving frontier. I follow the principles here rather than the frameworks, because the names change faster than the ideas underneath them.</p>
-    <ol class="tp-list">
-      <li>Foundation Models for Medical Imaging</li>
-      <li>Vision–Language Models in Medicine</li>
-      <li>Multimodal Medical AI</li>
-      <li>Medical Image–Text Alignment</li>
-      <li>Self-Supervised Learning in Medical Imaging</li>
-      <li>Weakly Supervised Medical Imaging</li>
-      <li>Few-Shot and Zero-Shot Medical AI</li>
-      <li>Domain Adaptation in Medical Imaging</li>
-      <li>Domain Generalization in Medical Imaging</li>
-      <li>Test-Time Adaptation</li>
-      <li>Continual Learning in Healthcare</li>
-      <li>Federated Learning in Medicine</li>
-      <li>Retrieval-Augmented Medical AI</li>
-      <li>Medical AI Agents</li>
-      <li>Tool-Using Clinical AI Systems</li>
-      <li>Verification and Self-Correction in Medical AI</li>
-      <li>AI-Assisted Clinical Reasoning</li>
-      <li>Reliability of Large Medical Models</li>
-      <li>Auditing Foundation Models in Healthcare</li>
-      <li>Evaluation of Generative Medical AI</li>
-    </ol>
-  </section>
-
-  <section class="tp-sec" data-sec="III">
-    <div class="tp-head">
-      <span class="tp-branch tp-b1">Branch 01</span>
-      <h3 id="section-III">III. Medical AI Research Methodology</h3>
-    </div>
-    <p class="tp-note">Statistics and study design. Even when a model writes the code, the judgment about what an evaluation actually establishes stays mine to make.</p>
-    <ol class="tp-list">
-      <li>Clinical Question Formulation</li>
-      <li>From Clinical Problem to Machine Learning Task</li>
-      <li>Dataset Design for Medical AI</li>
-      <li>Ground Truth and Reference Standards</li>
-      <li>Label Quality and Interobserver Variability</li>
-      <li>Data Leakage in Medical AI</li>
-      <li>Train–Validation–Test Design</li>
-      <li>Internal and External Validation</li>
-      <li>Cross-Validation in Medical Imaging</li>
-      <li>Statistical Evaluation of Diagnostic Models</li>
-      <li>Confidence Intervals and Bootstrapping</li>
-      <li>Hypothesis Testing in Medical AI</li>
-      <li>Multiple Comparisons and Statistical Pitfalls</li>
-      <li>Sample Size and Statistical Power</li>
-      <li>Subgroup Analysis</li>
-      <li>Error Analysis</li>
-      <li>Clinical Failure Analysis</li>
-      <li>Reproducibility in Medical AI</li>
-      <li>Benchmark Design</li>
-      <li>Translational Study Design</li>
-    </ol>
-  </section>
-
-  <section class="tp-sec" data-sec="IV">
-    <div class="tp-head">
-      <span class="tp-branch tp-b2">Branch 02</span>
-      <h3 id="section-IV">IV. Clinical Translation in Hepatobiliary Imaging</h3>
-    </div>
-    <p class="tp-note">The medicine itself. Without this, the phrase clinically meaningful evidence has nothing behind it, and a shortcut cannot be told apart from a finding.</p>
-    <ol class="tp-list">
-      <li>Introduction to Hepatobiliary Anatomy</li>
-      <li>Ultrasound Anatomy of the Liver and Biliary System</li>
-      <li>Fundamentals of Abdominal Ultrasound</li>
-      <li>Gallbladder Anatomy and Physiology</li>
-      <li>Ultrasound Examination of the Gallbladder</li>
-      <li>Normal Gallbladder Ultrasound Findings</li>
-      <li>Gallstones and Cholelithiasis</li>
-      <li>Acute Cholecystitis</li>
-      <li>Chronic Cholecystitis</li>
-      <li>Gallbladder Polyps</li>
-      <li>Cholesterol Polyps</li>
-      <li>Adenomatous Gallbladder Polyps</li>
-      <li>Gallbladder Adenomyomatosis</li>
-      <li>Gallbladder Wall Thickening</li>
-      <li>Gallbladder Cancer</li>
-      <li>Differential Diagnosis of Gallbladder Lesions</li>
-      <li>Benign vs. Malignant Gallbladder Lesions</li>
-      <li>Clinical Risk Factors for Gallbladder Malignancy</li>
-      <li>Ultrasound Features of Gallbladder Polyps</li>
-      <li>Echogenicity and Echotexture</li>
-      <li>Lesion Shape and Margin</li>
-      <li>Gallbladder Wall Features</li>
-      <li>Posterior Acoustic Features</li>
-      <li>Vascularity and Doppler Findings</li>
-      <li>Anatomical Context in Gallbladder Diagnosis</li>
-      <li>Common Bile Duct Anatomy</li>
-      <li>Bile Duct Dilatation</li>
-      <li>Choledocholithiasis</li>
-      <li>Cholangitis</li>
-      <li>Biliary Obstruction</li>
-      <li>Cholangiocarcinoma</li>
-      <li>Benign and Malignant Biliary Strictures</li>
-      <li>Hepatobiliary Imaging Across Modalities</li>
-      <li>Ultrasound vs. CT vs. MRI/MRCP</li>
-      <li>Clinical Management of Gallbladder Polyps</li>
-      <li>Imaging Guidelines for Gallbladder Lesions</li>
-      <li>Surgical Indications for Gallbladder Disease</li>
-      <li>Pathology of Gallbladder Lesions</li>
-      <li>Radiology–Pathology Correlation</li>
-      <li>Translating Clinical Knowledge into Medical AI</li>
-    </ol>
-  </section>
-
-  <section class="tp-sec" data-sec="V">
-    <div class="tp-head">
-      <span class="tp-branch tp-b2">Branch 02</span>
-      <h3 id="section-V">V. Clinical Translation for Gallbladder AI</h3>
-    </div>
-    <p class="tp-note">Where the two branches meet, on the actual problem I work on. Every topic here is one I expect to turn into an experiment rather than a note.</p>
-    <ol class="tp-list">
-      <li>Clinical Workflow of Gallbladder Diagnosis</li>
-      <li>Defining the Clinical Task for Gallbladder AI</li>
-      <li>Ultrasound Acquisition Variability</li>
-      <li>Image Quality in Gallbladder Ultrasound</li>
-      <li>Diagnostic Markers and Shortcut Cues</li>
-      <li>Clinical Feature Annotation</li>
-      <li>Gallbladder Lesion Segmentation</li>
-      <li>Gallbladder Lesion Classification</li>
-      <li>Clinical Feature Prediction</li>
-      <li>Multi-Task Learning for Gallbladder Diagnosis</li>
-      <li>Clinical Knowledge-Guided Representation Learning</li>
-      <li>Modeling Echogenicity and Texture</li>
-      <li>Modeling Lesion Margin and Shape</li>
-      <li>Modeling Gallbladder Wall Features</li>
-      <li>Modeling Anatomical Context</li>
-      <li>Shortcut Learning in Gallbladder Ultrasound</li>
-      <li>Confounding in Gallbladder AI</li>
-      <li>Clinical Alignment of Gallbladder Models</li>
-      <li>Explanation Faithfulness in Gallbladder AI</li>
-      <li>Auditing Gallbladder Diagnostic Models</li>
-      <li>External Validation of Gallbladder AI</li>
-      <li>Failure Analysis of Gallbladder Models</li>
-      <li>Clinical Utility of Gallbladder AI</li>
-      <li>Human–AI Collaboration in Gallbladder Diagnosis</li>
-      <li>Translating Gallbladder AI from Bench to Bedside</li>
-    </ol>
-  </section>
-
-  <section class="tp-sec" data-sec="VI">
-    <div class="tp-head">
-      <span class="tp-branch tp-b2">Branch 02</span>
-      <h3 id="section-VI">VI. Translational Medicine Notes</h3>
-    </div>
-    <p class="tp-note">Clinical exposure beyond my own organ system, following a translational medicine curriculum. Reading how other fields cross from bench to bedside keeps my own crossing honest.</p>
-    <ol class="tp-list">
-      <li>Translational Science in Medicine</li>
-      <li>Stroke</li>
-      <li>Dementia</li>
-      <li>Parkinson’s Disease</li>
-      <li>Cerebral Hemorrhage</li>
-      <li>Liver Disease</li>
-      <li>Lung Cancer</li>
-      <li>Head and Neck Cancer</li>
-      <li>Rheumatic Disease</li>
-      <li>Cardiovascular Disease</li>
-      <li>Allergy and Immunology</li>
-      <li>Dermatologic Disease</li>
-      <li>Circadian Rhythm Disorders</li>
-      <li>End-of-Life Care</li>
-      <li>Gastric Cancer</li>
-    </ol>
-  </section>
+{%- endfor %}
 </div>
 
 ## Where my time goes
