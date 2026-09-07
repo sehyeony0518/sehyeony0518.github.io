@@ -10,6 +10,9 @@ order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-11-29-concept-bottleneck-models"
+  - "2025-09-19-tcav-concept-activation-vectors"
 ---
 
 Concept-based interpretability connects model behavior to named properties such as lesion size, attachment morphology, or echogenicity. The central difficulty is ensuring that a quantity given a clinical name actually measures that concept and has the claimed role in prediction.
