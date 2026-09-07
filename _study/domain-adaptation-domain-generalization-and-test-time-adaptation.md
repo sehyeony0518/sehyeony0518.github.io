@@ -16,7 +16,7 @@ Domain adaptation, domain generalization, and test-time adaptation address perfo
 
 ## Core question and definition
 
-I would describe the source distribution P_s(X, Y), the target distribution P_t(X, Y), and the permitted access to each before naming an algorithm. Labeled target cases, an unlabeled target collection, and a stream of individual incoming examinations create different learning problems.
+I would describe the source distribution $$P_s(X, Y)$$, the target distribution $$P_t(X, Y)$$, and the permitted access to each before naming an algorithm. Labeled target cases, an unlabeled target collection, and a stream of individual incoming examinations create different learning problems.
 
 These categories can overlap. Test-time adaptation is a form of adaptation performed during inference, while a model trained for domain generalization may later be adapted locally. The method's name does not replace a clear account of data access and update rules.
 
@@ -32,11 +32,11 @@ Domain generalization aims to perform on target domains unavailable during devel
 
 ### Test-time adaptation updates from incoming inputs
 
-Test-time adaptation modifies parameters or model state using test inputs, often without their labels. [Tent](https://arxiv.org/abs/2006.10726) updates normalization-related components through prediction-entropy minimization. Entropy is H(p) = −Σ_c p_c log p_c; reducing it encourages confidence, not necessarily correctness. Unlike averaging predictions over transformed inputs, this procedure changes the model, so batch composition, case order, and reset rules can affect later outputs.
+Test-time adaptation modifies parameters or model state using test inputs, often without their labels. [Tent](https://arxiv.org/abs/2006.10726) updates normalization-related components through prediction-entropy minimization. Entropy is $$H(p) = -\sum_c p_c \log p_c$$; reducing it encourages confidence, not necessarily correctness. Unlike averaging predictions over transformed inputs, this procedure changes the model, so batch composition, case order, and reset rules can affect later outputs.
 
 ### The type of shift constrains what can work
 
-Under idealized covariate shift, P_s(X) differs from P_t(X) while P_s(Y | X) = P_t(Y | X). Other shifts change disease prevalence, label definitions, or the conditional relationship itself. A scanner change and a different pathology-verification policy may coexist. I would not assume that making images look source-like resolves every change, especially when target cases fall outside source support.
+Under idealized covariate shift, $$P_s(X)$$ differs from $$P_t(X)$$ while $$P_s(Y \mid X) = P_t(Y \mid X)$$. Other shifts change disease prevalence, label definitions, or the conditional relationship itself. A scanner change and a different pathology-verification policy may coexist. I would not assume that making images look source-like resolves every change, especially when target cases fall outside source support.
 
 ## Worked examples in medical AI
 

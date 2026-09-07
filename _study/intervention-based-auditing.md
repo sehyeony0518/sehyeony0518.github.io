@@ -18,7 +18,7 @@ An intervention-based audit changes a specified part of the input or computation
 
 I want to distinguish a model responding to a clinical feature from a model responding to something correlated with that feature. An intervention makes the comparison explicit: evaluate the same model before and after a controlled change. The comparison is stronger than visual agreement alone, but its interpretation remains conditional on the edit.
 
-For a fixed target score s and transformation T, I can measure Δ_T(x) = s(T(x)) − s(x). This is an effect on the model's output under T. It is not automatically the effect of a clinical feature in isolation, and it is not the effect of changing the patient's disease.
+For a fixed target score s and transformation T, I can measure $$\Delta_T(x) = s(T(x)) - s(x)$$. This is an effect on the model's output under T. It is not automatically the effect of a clinical feature in isolation, and it is not the effect of changing the patient's disease.
 
 ## Key concepts
 

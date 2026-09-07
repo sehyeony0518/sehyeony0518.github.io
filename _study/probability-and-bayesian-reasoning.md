@@ -24,11 +24,11 @@ In my research, probability also provides a language for evidence auditing. I wa
 
 ### Conditioning changes the population under discussion
 
-Conditional probability P(A|B) describes A within the circumstances specified by B. Sensitivity is the probability of a positive result given disease; positive predictive value reverses that conditioning. They answer different questions because their denominators describe different groups. For a gallbladder classifier, conditioning on surgery would create another distinction: the probability of malignancy among operated patients need not match the probability among all patients with an ultrasound finding.
+Conditional probability $$P(A \mid B)$$ describes A within the circumstances specified by B. Sensitivity is the probability of a positive result given disease; positive predictive value reverses that conditioning. They answer different questions because their denominators describe different groups. For a gallbladder classifier, conditioning on surgery would create another distinction: the probability of malignancy among operated patients need not match the probability among all patients with an ultrasound finding.
 
 ### Bayes combines prior information with a likelihood
 
-Bayes' rule gives P(D|E) = P(E|D)P(D)/P(E), where D denotes disease and E the observed evidence. The prior describes probability before this evidence, while the likelihood describes how compatible the evidence is with disease. In odds form, posterior odds equal prior odds multiplied by the likelihood ratio. This is the diagnostic update described by [Altman and Bland](https://www.bmj.com/content/329/7458/168). It requires estimates appropriate to the patient population and evidence being evaluated, rather than an assumed universal test property.
+Bayes' rule gives $$P(D \mid E) = \frac{P(E \mid D)\,P(D)}{P(E)}$$, where D denotes disease and E the observed evidence. The prior describes probability before this evidence, while the likelihood describes how compatible the evidence is with disease. In odds form, posterior odds equal prior odds multiplied by the likelihood ratio. This is the diagnostic update described by [Altman and Bland](https://www.bmj.com/content/329/7458/168). It requires estimates appropriate to the patient population and evidence being evaluated, rather than an assumed universal test property.
 
 ### Expectation and variance depend on what is averaged
 

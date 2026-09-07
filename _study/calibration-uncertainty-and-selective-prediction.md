@@ -26,7 +26,7 @@ I keep these questions separate. A calibrated model can still make many mistakes
 
 ### Calibration is a population property
 
-For a binary outcome, ideal calibration satisfies P(Y = 1 | p̂ = p) = p. It concerns outcome frequencies among comparable predictions, not whether an individual patient is partly diseased. [Van Calster and colleagues](https://doi.org/10.1186/s12916-019-1466-7) explain why calibration matters beyond discrimination. Agreement overall can conceal miscalibration in subgroups, and calibration established in one setting need not persist elsewhere.
+For a binary outcome, ideal calibration satisfies $$P(Y = 1 \mid \hat{p} = p) = p$$. It concerns outcome frequencies among comparable predictions, not whether an individual patient is partly diseased. [Van Calster and colleagues](https://doi.org/10.1186/s12916-019-1466-7) explain why calibration matters beyond discrimination. Agreement overall can conceal miscalibration in subgroups, and calibration established in one setting need not persist elsewhere.
 
 ### Uncertainty depends on the information available
 
@@ -38,7 +38,7 @@ Temperature scaling divides logits by a positive parameter fitted on held-out de
 
 ### Abstention trades coverage for retained-case risk
 
-Let a(X) equal one when a prediction is accepted and zero otherwise. Coverage is E[a(X)], and selective risk is E[a(X)ℓ(f(X), Y)]/E[a(X)] for a specified loss ℓ and nonzero coverage. [Geifman and El-Yaniv](https://papers.neurips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html) study selective classification for deep networks. Lower risk among accepted cases is meaningful only alongside coverage and the consequences for rejected cases.
+Let a(X) equal one when a prediction is accepted and zero otherwise. Coverage is $$E[a(X)]$$, and selective risk is $$E[a(X)\,\ell(f(X), Y)] / E[a(X)]$$ for a specified loss $$\ell$$ and nonzero coverage. [Geifman and El-Yaniv](https://papers.neurips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html) study selective classification for deep networks. Lower risk among accepted cases is meaningful only alongside coverage and the consequences for rejected cases.
 
 ## Worked examples in medical AI
 

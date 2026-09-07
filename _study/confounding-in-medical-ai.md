@@ -26,11 +26,11 @@ I distinguish this from estimating predictive performance within a dataset. A mo
 
 ### A common cause creates an alternative path
 
-In the simple graph A ← Z → Y, Z influences both A and Y, creating an association that need not reflect an effect of A on Y. For medical images, the full graph may include referral, acquisition, and label generation between these variables. I would draw those mechanisms explicitly. Hospital identity can summarize several processes without itself being a sufficient explanation of their causal structure.
+In the simple graph $$A \leftarrow Z \rightarrow Y$$, Z influences both A and Y, creating an association that need not reflect an effect of A on Y. For medical images, the full graph may include referral, acquisition, and label generation between these variables. I would draw those mechanisms explicitly. Hospital identity can summarize several processes without itself being a sufficient explanation of their causal structure.
 
 ### Pooled relationships depend on group composition
 
-For a cue N and grouping variable Z, the identity P(Y|N) = Σz P(Y|N,Z=z)P(Z=z|N) shows how a pooled association combines within-group relationships and group proportions. A device-identifying cue can predict disease when devices serve different patient groups, even if it adds no diagnostic information within those groups. I therefore want both pooled and stratified results before interpreting an evidence score as a marker of clinical severity.
+For a cue N and grouping variable Z, the identity $$P(Y \mid N) = \sum_z P(Y \mid N, Z = z)\,P(Z = z \mid N)$$ shows how a pooled association combines within-group relationships and group proportions. A device-identifying cue can predict disease when devices serve different patient groups, even if it adds no diagnostic information within those groups. I therefore want both pooled and stratified results before interpreting an evidence score as a marker of clinical severity.
 
 ### Adjustment requires assumptions beyond recorded covariates
 

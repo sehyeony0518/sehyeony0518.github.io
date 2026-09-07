@@ -16,7 +16,7 @@ A medical dataset is the endpoint of decisions about access, imaging, documentat
 
 ## Core question and definition
 
-The question I ask is whether the analyzed records support an inference about the intended patients. If S indicates inclusion, the observed distribution is P(X,Y|S=1), which need not equal the target distribution. Selection is not automatically bias: its consequences depend on what is being estimated and how the sample relates to that target.
+The question I ask is whether the analyzed records support an inference about the intended patients. If S indicates inclusion, the observed distribution is $$P(X, Y \mid S = 1)$$, which need not equal the target distribution. Selection is not automatically bias: its consequences depend on what is being estimated and how the sample relates to that target.
 
 “Dataset bias” is a broader description that can include selection, measurement, labeling, and representation problems. I would identify the specific mechanism instead of treating imbalance, missingness, and leakage as interchangeable defects. Each requires a different response.
 

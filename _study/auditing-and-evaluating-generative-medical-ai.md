@@ -24,7 +24,7 @@ The central question is conditional correctness. An image can look medically rea
 
 ### Likelihood is not factual support
 
-A conditional generator models an output distribution p_θ(y | x), where x may include images, text, or other context. A likely output under that model need not be true for the patient. The training objective rewards patterns in the available data, which may include common descriptions, incomplete reports, and source-specific conventions.
+A conditional generator models an output distribution $$p_\theta(y \mid x)$$, where x may include images, text, or other context. A likely output under that model need not be true for the patient. The training objective rewards patterns in the available data, which may include common descriptions, incomplete reports, and source-specific conventions.
 
 ### Text must be evaluated as clinical claims
 

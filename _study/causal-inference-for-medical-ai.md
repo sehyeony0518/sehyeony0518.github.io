@@ -32,7 +32,7 @@ A common cause of an exposure and outcome can create confounding. A mediator lie
 
 ### Observation and intervention answer different questions
 
-P(Y|X=x) describes outcomes among observations with X=x. P(Y|do(X=x)) describes a specified intervention that sets X, replacing its usual generating mechanism in the causal model. [Pearl's overview of causal inference](https://doi.org/10.1214/09-SS057) makes this distinction explicit. A comparison between images from different devices remains observational because the patients and examination conditions may differ. Editing a device marker is an intervention on the supplied image, but its effect concerns that edit, not everything that changing the physical device would do.
+$$P(Y \mid X = x)$$ describes outcomes among observations with $$X = x$$. $$P(Y \mid do(X = x))$$ describes a specified intervention that sets X, replacing its usual generating mechanism in the causal model. [Pearl's overview of causal inference](https://doi.org/10.1214/09-SS057) makes this distinction explicit. A comparison between images from different devices remains observational because the patients and examination conditions may differ. Editing a device marker is an intervention on the supplied image, but its effect concerns that edit, not everything that changing the physical device would do.
 
 ### Counterfactuals require a model of what remains the same
 

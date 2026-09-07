@@ -32,7 +32,7 @@ Masked reconstruction trains a model to predict hidden image content from what r
 
 ### Multiple-instance learning separates bags from instances
 
-In multiple-instance learning, a bag B = {x_1, ..., x_m} receives a label while individual instances may remain unlabeled. A classical binary assumption is that a positive bag contains at least one positive instance. That assumption is task-dependent. A malignant patient label does not guarantee that the selected ultrasound frames visibly depict malignancy, so bag construction is part of the scientific model.
+In multiple-instance learning, a bag $$B = \{x_1, \ldots, x_m\}$$ receives a label while individual instances may remain unlabeled. A classical binary assumption is that a positive bag contains at least one positive instance. That assumption is task-dependent. A malignant patient label does not guarantee that the selected ultrasound frames visibly depict malignancy, so bag construction is part of the scientific model.
 
 ### Weak labels have structured errors
 
