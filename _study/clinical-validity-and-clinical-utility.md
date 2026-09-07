@@ -51,3 +51,8 @@ For a gallbladder ultrasound model, I would first specify a proposed action, suc
 - Which gallbladder decision has enough unresolved uncertainty for a model to add useful information beyond the existing assessment?
 - What outcomes and follow-up would capture benefit without overlooking unnecessary procedures or delayed diagnoses?
 - How should evidence from a successful local workflow influence confidence in another hospital with different readers, referral practices, and resources?
+
+## References
+
+- Vickers and Elkin, [Decision curve analysis: a novel method for evaluating prediction models](https://pubmed.ncbi.nlm.nih.gov/17099194/), Medical decision making : an international journal of the Society for Medical Decision Making, 2006.
+- [Reporting guideline for the early stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI | The BMJ](https://www.bmj.com/content/377/bmj-2022-070904).

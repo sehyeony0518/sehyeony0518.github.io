@@ -54,3 +54,7 @@ For gallbladder ultrasound, I would define the clinical factor before choosing a
 - How can I distinguish an unmeasured but valid diagnostic cue from a shortcut without treating current clinical annotations as exhaustive?
 - When clinically meaningful and acquisition features are tightly coupled, which interventions can separate them without creating implausible ultrasound images?
 - How should uncertainty in clinical factors propagate into an audit result for an individual patient?
+
+## References
+
+- Arun et al., [Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging](https://pubs.rsna.org/doi/10.1148/ryai.2021200267), Radiology: Artificial Intelligence, 2021.

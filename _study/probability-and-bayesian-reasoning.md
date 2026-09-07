@@ -51,3 +51,7 @@ For gallbladder ultrasound AI, I would specify whether the target is existing ma
 - Which population provides an appropriate prior when the available labels mainly come from patients selected for surgery?
 - How can I identify redundant clinical evidence before combining model outputs with clinician assessments?
 - When does conditioning on diagnosis clarify within-class evidence alignment, and when does it remove or distort the clinical relationship I want to study?
+
+## References
+
+- Altman and Bland, [Diagnostic tests 4: likelihood ratios](https://www.bmj.com/content/329/7458/168), BMJ, 2004.

@@ -51,3 +51,7 @@ For gallbladder ultrasound AI, I would compare clinically motivated training cha
 - Which ultrasound transformations preserve the clinical target closely enough to justify training for invariance?
 - How should I select a model when predictive performance, calibration, and evidence-alignment measurements disagree?
 - Can a constraint on an interpretable readout improve actual clinical reliance without teaching the model to satisfy the readout while retaining a shortcut?
+
+## References
+
+- Loshchilov and Hutter, [Decoupled Weight Decay Regularization](https://arxiv.org/abs/1711.05101), ICLR, 2019.

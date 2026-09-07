@@ -54,3 +54,8 @@ For gallbladder ultrasound, I would report anatomical agreement, model sensitivi
 - How should I assess stability when different trained models achieve similar performance through different evidence?
 - What evidence would justify using an explanation to influence a clinician's confidence in an individual prediction?
 - How can I communicate a plausible explanation whose model faithfulness remains unresolved without inviting reassurance beyond what was tested?
+
+## References
+
+- Arun et al., [Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging](https://doi.org/10.1148/ryai.2021200267), Radiology: Artificial Intelligence, 2021.
+- Adebayo et al., [Sanity Checks for Saliency Maps](https://proceedings.neurips.cc/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html), NeurIPS, 2018.

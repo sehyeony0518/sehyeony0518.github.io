@@ -52,3 +52,9 @@ For a gallbladder ultrasound audit, I would define the output being explained, i
 - Which perturbations preserve enough image realism to test reliance on a local feature?
 - When explanation methods disagree, how can I determine whether they measure different properties or whether one fails its intended claim?
 - How should I assess generated edits that appear plausible but may change subtle clinical evidence?
+
+## References
+
+- Sundararajan et al., [Axiomatic Attribution for Deep Networks](https://proceedings.mlr.press/v70/sundararajan17a.html), ICML, 2017.
+- Selvaraju et al., [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391), ICCV, 2017.
+- Jain and Wallace, [Attention is not Explanation](https://aclanthology.org/N19-1357/), NAACL, 2019.

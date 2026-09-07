@@ -51,3 +51,7 @@ In a gallbladder ultrasound audit, I would report an evidence-alignment estimate
 - What magnitude of change in an evidence-alignment metric would be meaningful enough to alter a model assessment?
 - How should I represent uncertainty when there are many patients but only a few independent acquisition sites?
 - Which parts of the audit should be prespecified, and how can exploratory findings be confirmed without repeatedly reusing the same evaluation patients?
+
+## References
+
+- Wasserstein and Lazar, [The ASA Statement on p-Values: Context, Process, and Purpose](https://doi.org/10.1080/00031305.2016.1154108), The American Statistician, 2016.
