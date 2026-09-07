@@ -4,11 +4,11 @@ title: "Stress Testing Reveals Gaps in Clinic Readiness of Image-Based Diagnosti
 date: 2026-08-16 12:00:00 +0900
 venue: "npj Digital Medicine"
 authors: "Albert T. Young, Kristen Fernandez, Jacob Pfau, Rasika Reddy, Nhat Anh Cao, Max Y. von Franque, Arjun Johal, Benjamin V. Wu, Rachel R. Wu, Jennifer Y. Chen, Raj P. Fadadu, Juan A. Vasquez, Andrew Tam, Michael J. Keiser, Maria L. Wei (2021)"
-description: "A skin-lesion classifier at dermatologist-level AUC gave false positive or negative predictions for up to 22% of lesions under a simple image rotation — a direct test of whether an acceptable benchmark score means the model is ready for a clinic."
+description: "A skin-lesion classifier at dermatologist-level AUC gave false positive or negative predictions for up to 22% of lesions under a simple image rotation, a direct test of whether an acceptable benchmark score means the model is ready for a clinic."
 related_posts: false
 ---
 
-**Paper.** *Stress testing reveals gaps in clinic readiness of image-based diagnostic artificial intelligence models* — [npj Digital Medicine (2021)](https://doi.org/10.1038/s41746-020-00380-6)
+**Paper.** *Stress testing reveals gaps in clinic readiness of image-based diagnostic artificial intelligence models*. [npj Digital Medicine (2021)](https://doi.org/10.1038/s41746-020-00380-6)
 
 ## Why I read it
 

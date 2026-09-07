@@ -8,7 +8,7 @@ description: "Resampling Uncertainty Estimation asks a narrower, more auditable 
 related_posts: false
 ---
 
-**Paper.** *Can You Trust This Prediction? Auditing Pointwise Reliability After Learning* — [AISTATS 2019](https://proceedings.mlr.press/v89/schulam19a.html)
+**Paper.** *Can You Trust This Prediction? Auditing Pointwise Reliability After Learning*. [AISTATS 2019](https://proceedings.mlr.press/v89/schulam19a.html)
 
 ## Why I read it
 

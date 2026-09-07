@@ -75,7 +75,7 @@ nav_order: 11
 
 {% comment %}
   Venues are split into three rows: Conference, Journal, and Other (guidelines,
-  protocols, preprints — neither). Within Conference and Journal, a venue with
+  protocols, preprints, none of which is either). Within Conference and Journal, a venue with
   only one review folds into that row's own "Other" chip so the row stays short
   as the library grows, except a short pinned list of venues significant enough
   to always keep visible on their own.
@@ -97,7 +97,7 @@ nav_order: 11
   {% capture cat %}{% include venue_category.liquid venue_group=v %}{% endcapture %}
   {% assign cat = cat | strip %}
   {% comment %} Each "Other" chip's count is a sum of papers (vcount), not a count of
-    folded venues — a venue with several papers must add its full weight, not 1. {% endcomment %}
+    folded venues, because a venue with several papers must add its full weight, not 1. {% endcomment %}
   {% if cat == "conference" %}
     {% if vcount >= 2 or pinned_venues contains v %}
       {% assign one_item = v | split: "," %}

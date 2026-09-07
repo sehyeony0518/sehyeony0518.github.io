@@ -4,11 +4,11 @@ title: "Transparent Medical Image AI via an Image-Text Foundation Model Grounded
 date: 2026-08-30 12:00:00 +0900
 venue: "Nature Medicine"
 authors: "Chanwoo Kim, Soham U. Gadgil, Alex J. DeGrave, Jesutofunmi A. Omiye, Zhuo Ran Cai, Roxana Daneshjou, Su-In Lee (2024)"
-description: "MONET learns a dense, concept-scoring image-text space from 105,550 dermatology images paired with literature descriptions, then uses that space for data auditing, model auditing, and interpretation — including recovering a spurious redness-malignancy correlation that flipped sign between two hospitals."
+description: "MONET learns a dense, concept-scoring image-text space from 105,550 dermatology images paired with literature descriptions, then uses that space for data auditing, model auditing, and interpretation, including recovering a spurious redness-malignancy correlation that flipped sign between two hospitals."
 related_posts: false
 ---
 
-**Paper.** *Transparent medical image AI via an image-text foundation model grounded in medical literature* — [Nature Medicine (2024)](https://doi.org/10.1038/s41591-024-02887-x)
+**Paper.** *Transparent medical image AI via an image-text foundation model grounded in medical literature*. [Nature Medicine (2024)](https://doi.org/10.1038/s41591-024-02887-x)
 
 ## Why I read it
 

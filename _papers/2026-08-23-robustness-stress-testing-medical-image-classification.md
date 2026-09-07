@@ -8,7 +8,7 @@ description: "Progressive stress testing with five perturbation types at six sev
 related_posts: false
 ---
 
-**Paper.** *Robustness Stress Testing in Medical Image Classification* — [arXiv (2023)](https://arxiv.org/abs/2308.06889)
+**Paper.** *Robustness Stress Testing in Medical Image Classification*. [arXiv (2023)](https://arxiv.org/abs/2308.06889)
 
 ## Why I read it
 

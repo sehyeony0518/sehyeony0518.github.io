@@ -40,7 +40,7 @@ cv:
         start_date: 2026-02
         end_date: present
         highlights:
-          - Auditing whether model explanations of ultrasound diagnostic models remain faithful to independent clinical factors rather than shortcut cues — core M.S. thesis research on trustworthy medical AI.
+          - Auditing whether model explanations of ultrasound diagnostic models remain faithful to independent clinical factors rather than shortcut cues, the core of my M.S. thesis research on trustworthy medical AI.
           - Studying frequency-band and attention-based representations to analyze model reliance and explanation faithfulness across CNN-, transformer-, graph-, and wavelet-based classifiers.
 
       - company: MIIDS Research Center / Ajou University Hospital collaboration
@@ -51,7 +51,7 @@ cv:
         highlights:
           - Contributed to a 3-year ITRC (IITP-funded) project on AI-based diagnosis of gallbladder disease from ultrasound, spanning clinical problem formulation, modeling, evaluation, and physician collaboration.
           - First-authored a reliability requirements analysis with improved malignant-class detection sensitivity, presented at ACK 2025; continued as M.S. thesis research.
-          - Designed clinical-knowledge-guided modeling strategies using structured ultrasound findings — echogenicity, texture, lesion margin, wall-related features, and anatomical context — as domain priors.
+          - Designed clinical-knowledge-guided modeling strategies using structured ultrasound findings (echogenicity, texture, lesion margin, wall-related features, and anatomical context) as domain priors.
 
       - company: Embedded & Software Lab, Ajou University
         position: Research Intern, Samsung Heavy Industries Project
@@ -71,21 +71,21 @@ cv:
           - Worked on a government-funded computational psychiatry project, gaining hands-on experience with IRB-approved clinical research workflows, clinical data handling, and clinician–AI collaboration.
 
     Ministry & Service:
-      - company: Gyeongwon Church — Young Adults
+      - company: Gyeongwon Church, Young Adults
         position: Leadership Team · University Group Cell Leader (목장장)
         location: Suwon, South Korea
         start_date: 2025
         end_date: present
         highlights:
-          - Serving and discipling university students entrusted to me — training ground for future missions.
+          - Serving and discipling university students entrusted to me, a training ground for future missions.
 
       - company: JDM (Jesus Disciple Movement), Suwon
-        position: Campus Mission & Discipleship — Leader (2021–2026), Student Representative (2025)
+        position: Campus Mission & Discipleship, Leader (2021–2026), Student Representative (2025)
         location: Suwon, South Korea
         start_date: 2020
         end_date: 2026
         highlights:
-          - Learned that the gospel is not a program but walking long with one person — raising disciples who make disciples.
+          - Learned that the gospel is not a program but walking long with one person, raising disciples who make disciples.
 
     Publications:
       - title: Design of Monitoring Software for Predictive Maintenance in Smart Factory
@@ -108,7 +108,7 @@ cv:
 
     Software Registration:
       - name: A Tool for Removing Diagnostic Markers and Restoring Medical Images
-        summary: Software Copyright Registration No. ASSET_0013931 — removes on-image diagnostic markers, a known source of shortcut cues in medical imaging, while preserving downstream diagnostic usability.
+        summary: Software Copyright Registration No. ASSET_0013931. Removes on-image diagnostic markers, a known source of shortcut cues in medical imaging, while preserving downstream diagnostic usability.
 
     Skills:
       - name: Programming
@@ -121,7 +121,7 @@ cv:
         keywords: "Ultrasound imaging, clinical factor analysis, image preprocessing (incl. superpixel segmentation), physician-collaborative research"
 
     Military Service:
-      - company: Republic of Korea Air Force — 15th Special Mission Wing
+      - company: Republic of Korea Air Force, 15th Special Mission Wing
         position: Sergeant, honorably discharged
         location: South Korea
         start_date: 2022-03

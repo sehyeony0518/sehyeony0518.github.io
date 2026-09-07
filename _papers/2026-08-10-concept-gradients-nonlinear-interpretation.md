@@ -8,7 +8,7 @@ description: "TCAV assumes a concept occupies a linear direction in activation s
 related_posts: false
 ---
 
-**Paper.** *Concept Gradients: Concept-Based Interpretation Without Linear Assumption* — [ICLR 2023](https://github.com/jybai/concept-gradients)
+**Paper.** *Concept Gradients: Concept-Based Interpretation Without Linear Assumption*. [ICLR 2023](https://github.com/jybai/concept-gradients)
 
 ## Why I read it
 
