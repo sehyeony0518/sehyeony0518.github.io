@@ -8,7 +8,7 @@ description: "A viewpoint proposing a structured audit process for deployed medi
 related_posts: false
 ---
 
-**Paper.** *The medical algorithmic audit* — [Lancet Digital Health (2022)](https://doi.org/10.1016/S2589-7500(22)00003-6)
+**Paper.** *The medical algorithmic audit*. [Lancet Digital Health (2022)](https://doi.org/10.1016/S2589-7500(22)00003-6)
 
 ## Why I read it
 

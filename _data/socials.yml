@@ -8,7 +8,7 @@ cv_pdf: /assets/pdf/cv-hwang.pdf # CV PDF download
 linkedin_username: sehyeony # your LinkedIn username
 instagram_id: paulvs___ # your Instagram username
 # rss_icon: true # uncomment to show the RSS icon
-# scholar_userid: # your Google Scholar ID — add when you create a Scholar profile
-# cv_pdf: # path to your CV PDF file, e.g. /assets/pdf/cv.pdf — add when ready
+# scholar_userid: # your Google Scholar ID, add when you create a Scholar profile
+# cv_pdf: # path to your CV PDF file, e.g. /assets/pdf/cv.pdf, add when ready
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
