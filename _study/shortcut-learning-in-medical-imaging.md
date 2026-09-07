@@ -10,6 +10,9 @@ order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-09-06-geirhos-shortcut-learning"
+  - "2025-10-28-degrave-covid-shortcut"
 ---
 
 Shortcut learning is the failure mode in which training produces a predictive rule that succeeds on the available examples without satisfying the intended task. In medical imaging, the central question is whether the model's answer depends on clinical evidence or on an easier substitute.

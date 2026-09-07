@@ -10,6 +10,8 @@ order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-03-13-arun-assessing-saliency"
 ---
 
 An explanation is plausible when it agrees with a reader's expectations; it is faithful when it accurately reflects the relevant behavior of the model. A convincing anatomical display can satisfy the first property while providing little evidence for the second.
