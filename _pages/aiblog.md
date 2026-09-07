@@ -4,7 +4,7 @@ permalink: /blog/
 title: insights
 description: Insights related to my research, the trustworthiness of medical AI models.
 nav: true
-nav_order: 9
+nav_order: 10
 ---
 
 <style>
