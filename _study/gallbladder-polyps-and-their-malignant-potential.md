@@ -52,3 +52,9 @@ This topic gives clinical faithfulness auditing a concrete constraint: the evide
 - How can I evaluate malignant potential when pathology is selectively available and surveillance does not provide equivalent histological confirmation?
 - Which ultrasound descriptors are reproducible enough across readers and devices to serve as clinical audit references?
 - How should a model communicate uncertainty near a management threshold when repeated measurements could change the category?
+
+## References
+
+- Kamaya et al., [Management of Incidentally Detected Gallbladder Polyps: Society of Radiologists in Ultrasound Consensus Conference Recommendations](https://pubs.rsna.org/doi/10.1148/radiol.213079), Radiology, 2022.
+- Foley et al., [Management and follow-up of gallbladder polyps: updated joint guidelines between the ESGAR, EAES, EFISDS and ESGE](https://pubmed.ncbi.nlm.nih.gov/34918177/), European radiology, 2022.
+- Chang et al., [Interpretation, Reporting, Imaging-Based Workups, and Surveillance of Incidentally Detected Gallbladder Polyps and Gallbladder Wall Thickening: 2025 Recommendations From the Korean Society of Abdominal Radiology](https://doi.org/10.3348/kjr.2024.0914), Korean Journal of Radiology, 2025.

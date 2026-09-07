@@ -55,3 +55,9 @@ For gallbladder ultrasound, I would start with a small, clinically reviewed conc
 - How can I detect unintended information in continuous concept scores without discarding useful uncertainty?
 - What should a concept intervention do when the requested correction conflicts with other predicted concepts?
 - How can I evaluate a clinically meaningful feature that experts recognize but cannot annotate consistently?
+
+## References
+
+- Koh et al., [Concept Bottleneck Models](https://proceedings.mlr.press/v119/koh20a.html), ICML, 2020.
+- Kim et al., [Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)](https://proceedings.mlr.press/v80/kim18d.html), ICML, 2018.
+- Mahinpei et al., [Promises and Pitfalls of Black-Box Concept Learning Models](https://arxiv.org/abs/2106.13314), arXiv, 2021.

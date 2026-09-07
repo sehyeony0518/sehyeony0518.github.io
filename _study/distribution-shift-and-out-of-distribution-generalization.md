@@ -52,3 +52,7 @@ I would organize gallbladder ultrasound evaluation around plausible changes: a n
 - How can I distinguish a shift in clinical evidence use from a shift in the reliability of the clinical annotations?
 - What evaluation is sufficient when a model may encounter combinations of patient characteristics and devices absent from development?
 - How should an audit respond when performance stays stable but the supporting evidence becomes less clinically aligned?
+
+## References
+
+- Koh et al., [WILDS: A Benchmark of in-the-Wild Distribution Shifts](https://proceedings.mlr.press/v139/koh21a.html), ICML, 2021.

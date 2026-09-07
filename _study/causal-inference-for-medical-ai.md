@@ -52,3 +52,7 @@ For gallbladder ultrasound auditing, I would draw separate relationships for pat
 - How can I define interventions on ultrasound texture without changing several clinically relevant properties at once?
 - When do alternative plausible graphs lead to different interpretations of the same evidence-alignment result?
 - What validation would justify calling a generated image a clinical counterfactual rather than an input that changes the model's answer?
+
+## References
+
+- Pearl, [Causal inference in statistics: An overview](https://doi.org/10.1214/09-SS057), Statistics Surveys, 2009.
