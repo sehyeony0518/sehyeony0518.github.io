@@ -51,3 +51,7 @@ For gallbladder ultrasound shortcut auditing, I would compare dependencies invol
 - Which dependence estimates remain credible when representations have many dimensions and clinically labeled patients are limited?
 - How can I separate additional clinical information from information shared with a device or referral pathway?
 - What distributional changes would justify an audit response when a small aggregate shift could conceal a consequential change in a rare subgroup?
+
+## References
+
+- McAllester and Stratos, [Formal Limitations on the Measurement of Mutual Information](https://proceedings.mlr.press/v108/mcallester20a.html), AISTATS, 2020.

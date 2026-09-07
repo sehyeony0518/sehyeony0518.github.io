@@ -51,3 +51,7 @@ In gallbladder ultrasound shortcut auditing, I would compare neighborhoods again
 - Which distance preserves clinically relevant differences without making acquisition settings the main source of separation?
 - How should I distinguish useful invariance across ultrasound views from the loss of a finding visible in only one view?
 - What evidence would justify interpreting a direction in representation space as a clinical factor rather than a correlated mixture?
+
+## References
+
+- Kornblith et al., [Similarity of Neural Network Representations Revisited](https://proceedings.mlr.press/v97/kornblith19a.html), ICML, 2019.
