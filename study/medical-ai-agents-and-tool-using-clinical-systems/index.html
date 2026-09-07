@@ -1,10 +1,32 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Medical AI Agents and Tool-Using Clinical Systems | Se-Hyeon Hwang </title> <meta name="author" content="Se-Hyeon Hwang"> <meta name="description" content="Observe, reason, act: the loop underneath agent systems, and the memory, verification, and failure recovery problems it creates."> <meta name="keywords" content="Se-Hyeon Hwang, trustworthy medical AI, clinical evidence auditing, interpretable machine learning, medical imaging, ultrasound AI, Ajou University"> <meta property="og:site_name" content="Se-Hyeon Hwang"> <meta property="og:type" content="website"> <meta property="og:title" content="Se-Hyeon Hwang | Medical AI Agents and Tool-Using Clinical Systems"> <meta property="og:url" content="https://sehyeony0518.github.io/study/medical-ai-agents-and-tool-using-clinical-systems/"> <meta property="og:description" content="Observe, reason, act: the loop underneath agent systems, and the memory, verification, and failure recovery problems it creates."> <meta property="og:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Medical AI Agents and Tool-Using Clinical Systems"> <meta name="twitter:description" content="Observe, reason, act: the loop underneath agent systems, and the memory, verification, and failure recovery problems it creates."> <meta name="twitter:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Medical AI Agents and Tool-Using Clinical Systems | Se-Hyeon Hwang </title> <meta name="author" content="Se-Hyeon Hwang"> <meta name="description" content="Observe, reason, act: the loop underneath agent systems, and the verification and recovery problems it creates."> <meta name="keywords" content="Se-Hyeon Hwang, trustworthy medical AI, clinical evidence auditing, interpretable machine learning, medical imaging, ultrasound AI, Ajou University"> <meta property="og:site_name" content="Se-Hyeon Hwang"> <meta property="og:type" content="website"> <meta property="og:title" content="Se-Hyeon Hwang | Medical AI Agents and Tool-Using Clinical Systems"> <meta property="og:url" content="https://sehyeony0518.github.io/study/medical-ai-agents-and-tool-using-clinical-systems/"> <meta property="og:description" content="Observe, reason, act: the loop underneath agent systems, and the verification and recovery problems it creates."> <meta property="og:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Medical AI Agents and Tool-Using Clinical Systems"> <meta name="twitter:description" content="Observe, reason, act: the loop underneath agent systems, and the verification and recovery problems it creates."> <meta name="twitter:image" content="https://sehyeony0518.github.io/assets/img/prof_pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Montserrat:500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9C%9D%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/study/medical-ai-agents-and-tool-using-clinical-systems/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/study/">study <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item "> <a class="nav-link" href="/papers/">paper reviews </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Medical AI Agents and Tool-Using Clinical Systems</h1> <p class="post-description">Observe, reason, act: the loop underneath agent systems, and the memory, verification, and failure recovery problems it creates.</p> </header> <article> </article> </div> </div> <style>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/study/">study <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item "> <a class="nav-link" href="/papers/">paper reviews </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Medical AI Agents and Tool-Using Clinical Systems</h1> <p class="post-description">Observe, reason, act: the loop underneath agent systems, and the verification and recovery problems it creates.</p> </header> <article> <style>
+  .sn-crumb { font-size: .76rem; line-height: 1.5; opacity: .62; margin: -.4rem 0 .5rem; }
+  .sn-crumb a { color: inherit; text-decoration: none; }
+  .sn-crumb a:hover { color: var(--global-theme-color); text-decoration: underline; }
+  .sn-meta {
+    display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; align-items: baseline;
+    padding: .45rem 0 .7rem; margin-bottom: 1.4rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    font-size: .76rem; opacity: .6;
+  }
+  .sn-meta .sn-k { font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .67rem; opacity: .8; }
+  .sn-foot { margin-top: 2.6rem; padding-top: 1.2rem; border-top: 1px solid var(--global-divider-color); }
+  .sn-foot h3 { font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+                color: var(--global-text-color-light); opacity: .8; margin: 0 0 .5rem; }
+  .sn-rel { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+  .sn-rel li { padding: .38rem 0; border-bottom: 1px solid var(--global-divider-color); font-size: .875rem; line-height: 1.45; }
+  .sn-rel a { color: inherit; text-decoration: none; }
+  .sn-rel a:hover { color: var(--global-theme-color); text-decoration: underline; }
+  .sn-rel .sn-rel-sum { display: block; font-size: .78rem; opacity: .58; margin-top: .1rem; }
+  .sn-rel .sn-soon { opacity: .5; }
+  .sn-back { display: inline-block; margin-top: .4rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
+  .sn-back:hover { text-decoration: underline; }
+</style> <div class="sn-crumb"> <a href="/study/">Study</a> / <a href="/study/#trustworthy-ai">Trustworthy AI</a> / Medical AI Systems &amp; Deployment</div> <div class="sn-meta"> <span><span class="sn-k">Source</span> Independent study</span> </div> <div class="sn-foot"> <a class="sn-back" href="/study/#trustworthy-ai">← Back to Trustworthy AI</a> </div> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
   :root {
     --global-bg-color: #f9f9f9;
@@ -333,7 +355,7 @@ ninja.data = [{
           },
         },{id: "nav-study",
           title: "study",
-          description: "What I am studying and why: judging when medical AI deserves to be believed, and learning the medicine that makes that judgment possible.",
+          description: "Notes on trustworthy AI and the clinical knowledge that informs my research.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/study/";
@@ -3009,44 +3031,49 @@ ninja.data = [{
           description: "",
           section: "Prayer",handler: () => {
               window.location.href = "/prayer/2026-07/";
-            },},{id: "study-abdominal-ultrasound-physics-and-the-gallbladder-examination",
-          title: 'Abdominal Ultrasound Physics and the Gallbladder Examination',
-          description: "Acoustic impedance, attenuation, gain, frequency and depth, harmonics, and the scanning protocol these physics dictate.",
+            },},{id: "study-abdominal-ultrasound-physics-and-image-formation",
+          title: 'Abdominal Ultrasound Physics and Image Formation',
+          description: "Impedance, attenuation, gain, frequency and depth, harmonics, and the artifacts these physics produce.",
           section: "Study",handler: () => {
-              window.location.href = "/study/abdominal-ultrasound-physics-and-the-gallbladder-examination/";
+              window.location.href = "/study/abdominal-ultrasound-physics-and-image-formation/";
             },},{id: "study-adenomyomatosis-and-gallbladder-wall-thickening",
           title: 'Adenomyomatosis and Gallbladder Wall Thickening',
-          description: "The benign causes of a thick gallbladder wall, the comet-tail artifact, and the differential a thickened wall opens up.",
+          description: "The benign causes of a thick gallbladder wall, the comet-tail artifact, and the differential it opens.",
           section: "Study",handler: () => {
               window.location.href = "/study/adenomyomatosis-and-gallbladder-wall-thickening/";
-            },},{id: "study-allergy-and-immunology",
-          title: 'Allergy and Immunology',
+            },},{id: "study-allergy-and-clinical-immunology",
+          title: 'Allergy and Clinical Immunology',
           description: "Diagnostic testing with imperfect specificity, and the role of clinical history in interpreting a result.",
           section: "Study",handler: () => {
-              window.location.href = "/study/allergy-and-immunology/";
+              window.location.href = "/study/allergy-and-clinical-immunology/";
             },},{id: "study-attribution-attention-and-counterfactual-explanations",
           title: 'Attribution, Attention, and Counterfactual Explanations',
-          description: "The main families of post-hoc explanation for medical images, what each one measures, and what each one is routinely assumed to measure but does not.",
+          description: "The main families of post-hoc explanation for medical images, and what each actually measures.",
           section: "Study",handler: () => {
               window.location.href = "/study/attribution-attention-and-counterfactual-explanations/";
+            },},{id: "study-auditable-by-design-medical-ai",
+          title: 'Auditable-by-Design Medical AI',
+          description: "Building models whose evidence can be checked, instead of auditing whatever is left afterwards.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/auditable-by-design-medical-ai/";
             },},{id: "study-auditing-and-evaluating-generative-medical-ai",
           title: 'Auditing and Evaluating Generative Medical AI',
-          description: "What evaluation means when the output is text or an image rather than a label, and how reliability is established for large medical models.",
+          description: "What evaluation means when the output is text or an image rather than a label.",
           section: "Study",handler: () => {
               window.location.href = "/study/auditing-and-evaluating-generative-medical-ai/";
             },},{id: "study-auditing-explanation-faithfulness-in-gallbladder-models",
           title: 'Auditing Explanation Faithfulness in Gallbladder Models',
-          description: "Testing whether a model&#39;s evidence tracks independent clinical factors, without retraining and without faithfulness annotations.",
+          description: "Testing whether a model&#39;s evidence tracks independent clinical factors, without retraining.",
           section: "Study",handler: () => {
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
-            },},{id: "study-bile-duct-obstruction-choledocholithiasis-and-cholangitis",
-          title: 'Bile Duct Obstruction, Choledocholithiasis, and Cholangitis',
-          description: "Duct dilatation, stones in the common bile duct, and the clinical picture that turns an imaging finding into an emergency.",
+            },},{id: "study-biliary-obstruction",
+          title: 'Biliary Obstruction',
+          description: "Duct dilatation, the level and cause of obstruction, and what the clinical picture adds.",
           section: "Study",handler: () => {
-              window.location.href = "/study/bile-duct-obstruction-choledocholithiasis-and-cholangitis/";
+              window.location.href = "/study/biliary-obstruction/";
             },},{id: "study-calibration-uncertainty-and-selective-prediction",
           title: 'Calibration, Uncertainty, and Selective Prediction',
-          description: "Whether a stated probability means what it says, and when a model should be allowed to abstain instead of answering.",
+          description: "Whether a stated probability means what it says, and when a model should abstain.",
           section: "Study",handler: () => {
               window.location.href = "/study/calibration-uncertainty-and-selective-prediction/";
             },},{id: "study-cardiovascular-disease",
@@ -3056,27 +3083,32 @@ ninja.data = [{
               window.location.href = "/study/cardiovascular-disease/";
             },},{id: "study-causal-inference-for-medical-ai",
           title: 'Causal Inference for Medical AI',
-          description: "Causal graphs, confounders and mediators and colliders, counterfactual reasoning, and intervention, as a language for asking why a feature predicts an outcome.",
+          description: "Causal graphs, mediators and colliders, counterfactuals, and intervention as a language for asking why a feature predicts an outcome.",
           section: "Study",handler: () => {
               window.location.href = "/study/causal-inference-for-medical-ai/";
-            },},{id: "study-cerebral-hemorrhage",
-          title: 'Cerebral Hemorrhage',
-          description: "Acute imaging findings, triage, and the asymmetric cost of a missed detection.",
-          section: "Study",handler: () => {
-              window.location.href = "/study/cerebral-hemorrhage/";
             },},{id: "study-cholangiocarcinoma-and-biliary-strictures",
           title: 'Cholangiocarcinoma and Biliary Strictures',
-          description: "Distinguishing benign from malignant strictures, and what each imaging modality can and cannot contribute.",
+          description: "Distinguishing benign from malignant strictures, and what each modality can contribute.",
           section: "Study",handler: () => {
               window.location.href = "/study/cholangiocarcinoma-and-biliary-strictures/";
+            },},{id: "study-choledocholithiasis-and-cholangitis",
+          title: 'Choledocholithiasis and Cholangitis',
+          description: "Stones in the common bile duct, and the presentation that turns an imaging finding into an emergency.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/choledocholithiasis-and-cholangitis/";
             },},{id: "study-circadian-rhythm-disorders",
           title: 'Circadian Rhythm Disorders',
-          description: "Continuous and wearable data, and what changes when the signal is a long time series rather than an image.",
+          description: "Wearable and continuous data, and what changes when the signal is a long time series.",
           section: "Study",handler: () => {
               window.location.href = "/study/circadian-rhythm-disorders/";
+            },},{id: "study-clinical-alignment-and-knowledge-as-supervision",
+          title: 'Clinical Alignment and Knowledge as Supervision',
+          description: "Using clinical knowledge to shape what a model learns, rather than only to judge it afterwards.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/clinical-alignment-and-knowledge-as-supervision/";
             },},{id: "study-clinical-concepts-and-concept-based-interpretability",
           title: 'Clinical Concepts and Concept-Based Interpretability',
-          description: "Concept bottlenecks, concept activation vectors, and representation learning for clinical concepts, as attempts to make a model speak in clinical terms.",
+          description: "Concept bottlenecks and concept activation vectors as attempts to make a model speak in clinical terms.",
           section: "Study",handler: () => {
               window.location.href = "/study/clinical-concepts-and-concept-based-interpretability/";
             },},{id: "study-clinical-faithfulness-and-reliance-on-clinical-evidence",
@@ -3086,102 +3118,102 @@ ninja.data = [{
               window.location.href = "/study/clinical-faithfulness-and-reliance-on-clinical-evidence/";
             },},{id: "study-clinical-feature-annotation-and-multi-task-learning",
           title: 'Clinical Feature Annotation and Multi-Task Learning',
-          description: "Building supervision from structured sonographic findings rather than the diagnosis alone, and what a model gains from predicting both.",
+          description: "Building supervision from structured sonographic findings rather than the diagnosis alone.",
           section: "Study",handler: () => {
               window.location.href = "/study/clinical-feature-annotation-and-multi-task-learning/";
             },},{id: "study-clinical-knowledge-guided-representation-learning",
           title: 'Clinical Knowledge-Guided Representation Learning',
-          description: "Using echogenicity, texture, margin, wall features, and anatomical context as domain priors that shape the representation.",
+          description: "Using echogenicity, texture, margin, wall features, and anatomical context as domain priors.",
           section: "Study",handler: () => {
               window.location.href = "/study/clinical-knowledge-guided-representation-learning/";
             },},{id: "study-clinical-validity-and-clinical-utility",
           title: 'Clinical Validity and Clinical Utility',
-          description: "The difference between a model that measures something real and a model that changes a decision, and why the second does not follow from the first.",
+          description: "The difference between a model that measures something real and a model that changes a decision.",
           section: "Study",handler: () => {
               window.location.href = "/study/clinical-validity-and-clinical-utility/";
             },},{id: "study-clinical-workflow-and-task-definition-for-gallbladder-ai",
           title: 'Clinical Workflow and Task Definition for Gallbladder AI',
-          description: "Deciding which decision a model is meant to support, and letting that decide the label, the metric, and the study design.",
+          description: "Deciding which decision a model supports, and letting that decide the label, the metric, and the design.",
           section: "Study",handler: () => {
               window.location.href = "/study/clinical-workflow-and-task-definition-for-gallbladder-ai/";
+            },},{id: "study-confounding-in-medical-ai",
+          title: 'Confounding in Medical AI',
+          description: "A third factor driving both the image and the label, and what it does to a performance estimate.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/confounding-in-medical-ai/";
+            },},{id: "study-critical-care-medicine",
+          title: 'Critical Care Medicine',
+          description: "Continuous monitoring data, deterioration prediction, and the ethical weight carried by such a model.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/critical-care-medicine/";
             },},{id: "study-data-leakage-and-validation-design",
           title: 'Data Leakage and Validation Design',
-          description: "The ways information crosses from test to train in medical data, and how internal, external, and cross-validation designs differ in what they can claim.",
+          description: "How information crosses from test to train in medical data, and what each validation design can claim.",
           section: "Study",handler: () => {
               window.location.href = "/study/data-leakage-and-validation-design/";
-            },},{id: "study-dataset-bias-selection-bias-and-confounding",
-          title: 'Dataset Bias, Selection Bias, and Confounding',
-          description: "How the way a medical dataset was assembled writes itself into the model, through who was scanned, who was labeled, and what was recorded alongside.",
-          section: "Study",handler: () => {
-              window.location.href = "/study/dataset-bias-selection-bias-and-confounding/";
             },},{id: "study-dataset-design-ground-truth-and-reference-standards",
           title: 'Dataset Design, Ground Truth, and Reference Standards',
-          description: "What counts as truth in a medical dataset, and how the choice of reference standard bounds every result that follows.",
+          description: "What counts as truth in a medical dataset, and how that choice bounds every result that follows.",
           section: "Study",handler: () => {
               window.location.href = "/study/dataset-design-ground-truth-and-reference-standards/";
             },},{id: "study-dementia",
           title: 'Dementia',
-          description: "Slow-onset disease, biomarker-based diagnosis, and the difficulty of validating prediction far ahead of an event.",
+          description: "Biomarker-based diagnosis and the difficulty of validating prediction far ahead of an event.",
           section: "Study",handler: () => {
               window.location.href = "/study/dementia/";
             },},{id: "study-deployment-monitoring-and-human-ai-collaboration",
           title: 'Deployment, Monitoring, and Human-AI Collaboration',
-          description: "Dataset and performance drift after deployment, safety monitoring, automation bias, and what changes when a clinician is in the loop.",
+          description: "Drift after deployment, safety monitoring, automation bias, and what changes with a clinician in the loop.",
           section: "Study",handler: () => {
               window.location.href = "/study/deployment-monitoring-and-human-ai-collaboration/";
             },},{id: "study-dermatologic-disease",
           title: 'Dermatologic Disease',
-          description: "Visual diagnosis, dataset bias across skin tones, and the most heavily studied setting for medical image AI failure.",
+          description: "Visual diagnosis, dataset bias across skin tones, and the failure modes this field has documented most thoroughly.",
           section: "Study",handler: () => {
               window.location.href = "/study/dermatologic-disease/";
             },},{id: "study-diagnostic-markers-as-shortcut-cues",
           title: 'Diagnostic Markers as Shortcut Cues',
-          description: "On-image calipers, annotations, and machine overlays as predictive artifacts, and how removing them changes what a model relies on.",
+          description: "Calipers, annotations, and machine overlays as predictive artifacts, and what removing them changes.",
           section: "Study",handler: () => {
               window.location.href = "/study/diagnostic-markers-as-shortcut-cues/";
             },},{id: "study-distribution-shift-and-out-of-distribution-generalization",
           title: 'Distribution Shift and Out-of-Distribution Generalization',
-          description: "What breaks when the hospital, scanner, operator, or patient population changes, and which failures are foreseeable in advance.",
+          description: "What breaks when the hospital, scanner, operator, or population changes, and which failures are foreseeable.",
           section: "Study",handler: () => {
               window.location.href = "/study/distribution-shift-and-out-of-distribution-generalization/";
             },},{id: "study-domain-adaptation-domain-generalization-and-test-time-adaptation",
           title: 'Domain Adaptation, Domain Generalization, and Test-Time Adaptation',
-          description: "Three different answers to the same problem of a model meeting data it was not trained on, and what each one assumes.",
+          description: "Three answers to the same problem of a model meeting data it was not trained on, and what each assumes.",
           section: "Study",handler: () => {
               window.location.href = "/study/domain-adaptation-domain-generalization-and-test-time-adaptation/";
-            },},{id: "study-end-of-life-care",
-          title: 'End-of-Life Care',
-          description: "Prognostic prediction, and the ethical weight carried by a model whose output shapes goals of care.",
+            },},{id: "study-epilepsy",
+          title: 'Epilepsy',
+          description: "Seizure classification, EEG interpretation, and diagnosis built from intermittent evidence.",
           section: "Study",handler: () => {
-              window.location.href = "/study/end-of-life-care/";
+              window.location.href = "/study/epilepsy/";
             },},{id: "study-error-and-clinical-failure-analysis",
           title: 'Error and Clinical Failure Analysis',
-          description: "Reading the cases a model gets wrong as evidence about what it learned, rather than as noise around an aggregate score.",
+          description: "Reading the cases a model gets wrong as evidence about what it learned.",
           section: "Study",handler: () => {
               window.location.href = "/study/error-and-clinical-failure-analysis/";
             },},{id: "study-evaluation-beyond-auroc",
           title: 'Evaluation Beyond AUROC',
-          description: "Sensitivity and specificity at the operating point that matters, decision curves, clinical utility, and prospective evaluation.",
+          description: "Sensitivity and specificity at the operating point that matters, decision curves, and clinical utility.",
           section: "Study",handler: () => {
               window.location.href = "/study/evaluation-beyond-auroc/";
-            },},{id: "study-evidence-auditing-and-post-hoc-model-auditing",
-          title: 'Evidence Auditing and Post-hoc Model Auditing',
-          description: "Ablation, intervention, feature reliance analysis, frequency-domain and representation-level auditing, and what a structured audit of a deployed model looks like.",
-          section: "Study",handler: () => {
-              window.location.href = "/study/evidence-auditing-and-post-hoc-model-auditing/";
             },},{id: "study-explanation-faithfulness-versus-plausibility",
           title: 'Explanation Faithfulness versus Plausibility',
-          description: "An explanation that looks right to a clinician and an explanation that reflects the model&#39;s computation are different properties, and the gap between them is where most trouble lives.",
+          description: "Looking right to a clinician and reflecting the model&#39;s computation are different properties, and the gap between them is where trouble lives.",
           section: "Study",handler: () => {
               window.location.href = "/study/explanation-faithfulness-versus-plausibility/";
-            },},{id: "study-external-validation-failure-analysis-and-clinical-utility",
-          title: 'External Validation, Failure Analysis, and Clinical Utility',
-          description: "What it would take for a gallbladder model to be believed at a second hospital, and what its errors would cost there.",
+            },},{id: "study-external-validation-and-clinical-utility-for-gallbladder-ai",
+          title: 'External Validation and Clinical Utility for Gallbladder AI',
+          description: "What it would take for a gallbladder model to be believed at a second hospital, and what its errors would cost.",
           section: "Study",handler: () => {
-              window.location.href = "/study/external-validation-failure-analysis-and-clinical-utility/";
+              window.location.href = "/study/external-validation-and-clinical-utility-for-gallbladder-ai/";
             },},{id: "study-federated-and-continual-learning-in-healthcare",
           title: 'Federated and Continual Learning in Healthcare',
-          description: "Training across institutions that cannot share data, and updating a model over time without losing what it already knew.",
+          description: "Training across institutions that cannot share data, and updating a model without losing what it knew.",
           section: "Study",handler: () => {
               window.location.href = "/study/federated-and-continual-learning-in-healthcare/";
             },},{id: "study-foundation-models-for-medical-imaging",
@@ -3191,14 +3223,19 @@ ninja.data = [{
               window.location.href = "/study/foundation-models-for-medical-imaging/";
             },},{id: "study-from-clinical-problem-to-machine-learning-task",
           title: 'From Clinical Problem to Machine Learning Task',
-          description: "The translation step where most medical AI projects are decided, long before any model is trained.",
+          description: "The translation step where most medical AI projects are decided, long before a model is trained.",
           section: "Study",handler: () => {
               window.location.href = "/study/from-clinical-problem-to-machine-learning-task/";
-            },},{id: "study-gallbladder-cancer-and-the-benign-versus-malignant-differential",
-          title: 'Gallbladder Cancer and the Benign versus Malignant Differential',
-          description: "Features that raise concern for malignancy, the clinical risk factors that shift pretest probability, and where imaging alone cannot settle the question.",
+            },},{id: "study-gallbladder-cancer",
+          title: 'Gallbladder Cancer',
+          description: "Features that raise concern for malignancy, the risk factors that shift pretest probability, and where imaging alone cannot settle it.",
           section: "Study",handler: () => {
-              window.location.href = "/study/gallbladder-cancer-and-the-benign-versus-malignant-differential/";
+              window.location.href = "/study/gallbladder-cancer/";
+            },},{id: "study-gallbladder-examination-and-normal-findings",
+          title: 'Gallbladder Examination and Normal Findings',
+          description: "The scanning protocol, what normal looks like, and the sonographic feature vocabulary: echogenicity, margin, wall, posterior acoustics, Doppler.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/gallbladder-examination-and-normal-findings/";
             },},{id: "study-gallbladder-polyps-and-their-malignant-potential",
           title: 'Gallbladder Polyps and Their Malignant Potential',
           description: "Cholesterol versus adenomatous polyps, the size thresholds that drive management, and why the distinction is hard on ultrasound.",
@@ -3206,7 +3243,7 @@ ninja.data = [{
               window.location.href = "/study/gallbladder-polyps-and-their-malignant-potential/";
             },},{id: "study-gallstones-and-cholecystitis",
           title: 'Gallstones and Cholecystitis',
-          description: "Cholelithiasis, acute and chronic cholecystitis, and the findings that separate them, including the sonographic Murphy sign and pericholecystic fluid.",
+          description: "Cholelithiasis, acute and chronic cholecystitis, and the findings that separate them.",
           section: "Study",handler: () => {
               window.location.href = "/study/gallstones-and-cholecystitis/";
             },},{id: "study-gastric-cancer",
@@ -3216,7 +3253,7 @@ ninja.data = [{
               window.location.href = "/study/gastric-cancer/";
             },},{id: "study-geometry-of-representation-spaces",
           title: 'Geometry of Representation Spaces',
-          description: "Cosine similarity, manifolds, metric spaces, and representation geometry, and what the shape of a latent space says about what a model encodes.",
+          description: "Cosine similarity, manifolds, metric spaces, and what the shape of a latent space says about what a model encodes.",
           section: "Study",handler: () => {
               window.location.href = "/study/geometry-of-representation-spaces/";
             },},{id: "study-head-and-neck-cancer",
@@ -3224,31 +3261,36 @@ ninja.data = [{
           description: "Multimodal staging and the coordination problem between imaging, pathology, and treatment planning.",
           section: "Study",handler: () => {
               window.location.href = "/study/head-and-neck-cancer/";
-            },},{id: "study-imaging-across-modalities-guidelines-and-radiology-pathology-correlation",
-          title: 'Imaging Across Modalities, Guidelines, and Radiology-Pathology Correlation',
-          description: "When ultrasound leads to CT, MRI, or MRCP, what the management guidelines say, and how imaging appearances map back to pathology.",
+            },},{id: "study-imaging-across-modalities-and-radiology-pathology-correlation",
+          title: 'Imaging Across Modalities and Radiology-Pathology Correlation',
+          description: "When ultrasound leads to CT, MRI, or MRCP, and how imaging appearances map back to pathology.",
           section: "Study",handler: () => {
-              window.location.href = "/study/imaging-across-modalities-guidelines-and-radiology-pathology-correlation/";
+              window.location.href = "/study/imaging-across-modalities-and-radiology-pathology-correlation/";
             },},{id: "study-information-theory",
           title: 'Information Theory',
-          description: "Entropy, mutual information, and KL divergence as ways to quantify how much a signal carries and how far two distributions have moved apart.",
+          description: "Entropy, mutual information, and KL divergence as ways to quantify how much a signal carries and how far two distributions have moved.",
           section: "Study",handler: () => {
               window.location.href = "/study/information-theory/";
+            },},{id: "study-intervention-based-auditing",
+          title: 'Intervention-Based Auditing',
+          description: "Ablation, masking, and controlled edits as tests of what a prediction actually depends on.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/intervention-based-auditing/";
             },},{id: "study-label-quality-and-interobserver-variability",
           title: 'Label Quality and Interobserver Variability',
-          description: "What it means to evaluate against labels that expert readers themselves disagree about.",
+          description: "Evaluating against labels that expert readers themselves disagree about.",
           section: "Study",handler: () => {
               window.location.href = "/study/label-quality-and-interobserver-variability/";
             },},{id: "study-linear-algebra-for-representation-analysis",
           title: 'Linear Algebra for Representation Analysis',
-          description: "Eigenvalues, SVD, projection, and PCA, and why they are the working tools for asking what a learned representation actually contains.",
+          description: "Eigenvalues, SVD, projection, and PCA as the working tools for asking what a learned representation contains.",
           section: "Study",handler: () => {
               window.location.href = "/study/linear-algebra-for-representation-analysis/";
-            },},{id: "study-liver-disease",
-          title: 'Liver Disease',
-          description: "Diffuse parenchymal disease on ultrasound, staging by imaging surrogate, and the limits of a non-invasive proxy.",
+            },},{id: "study-liver-cancer",
+          title: 'Liver Cancer',
+          description: "Hepatocellular carcinoma and hepatic metastasis: surveillance, imaging diagnosis, and the reporting systems used.",
           section: "Study",handler: () => {
-              window.location.href = "/study/liver-disease/";
+              window.location.href = "/study/liver-cancer/";
             },},{id: "study-lung-cancer",
           title: 'Lung Cancer',
           description: "Screening programs, overdiagnosis, and what a screening context does to the meaning of a positive result.",
@@ -3256,17 +3298,17 @@ ninja.data = [{
               window.location.href = "/study/lung-cancer/";
             },},{id: "study-medical-ai-agents-and-tool-using-clinical-systems",
           title: 'Medical AI Agents and Tool-Using Clinical Systems',
-          description: "Observe, reason, act: the loop underneath agent systems, and the memory, verification, and failure recovery problems it creates.",
+          description: "Observe, reason, act: the loop underneath agent systems, and the verification and recovery problems it creates.",
           section: "Study",handler: () => {
               window.location.href = "/study/medical-ai-agents-and-tool-using-clinical-systems/";
-            },},{id: "study-normal-gallbladder-findings-and-the-sonographic-feature-vocabulary",
-          title: 'Normal Gallbladder Findings and the Sonographic Feature Vocabulary',
-          description: "Echogenicity and echotexture, lesion shape and margin, wall features, posterior acoustic behavior, and Doppler vascularity, and which are read together.",
+            },},{id: "study-model-reliance-on-clinical-evidence",
+          title: 'Model Reliance on Clinical Evidence',
+          description: "Moving from an alignment claim to a dependence claim, and what that step requires.",
           section: "Study",handler: () => {
-              window.location.href = "/study/normal-gallbladder-findings-and-the-sonographic-feature-vocabulary/";
+              window.location.href = "/study/model-reliance-on-clinical-evidence/";
             },},{id: "study-optimization-for-machine-learning",
           title: 'Optimization for Machine Learning',
-          description: "Gradients, regularization, and constrained optimization, viewed as the assumptions a training procedure quietly imposes on the solution.",
+          description: "Gradients, regularization, and constrained optimization as the assumptions a training procedure quietly imposes.",
           section: "Study",handler: () => {
               window.location.href = "/study/optimization-for-machine-learning/";
             },},{id: "study-parkinson-39-s-disease",
@@ -3274,14 +3316,24 @@ ninja.data = [{
           description: "Movement disorder assessment, rating scales as noisy ground truth, and longitudinal measurement.",
           section: "Study",handler: () => {
               window.location.href = "/study/parkinsons-disease/";
+            },},{id: "study-post-hoc-model-auditing",
+          title: 'Post-hoc Model Auditing',
+          description: "Auditing a model as it stands, and what a structured audit of a deployed system contains.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/post-hoc-model-auditing/";
             },},{id: "study-probability-and-bayesian-reasoning",
           title: 'Probability and Bayesian Reasoning',
-          description: "Conditional probability, expectation and variance, conditional independence, and Bayes as the grammar for reasoning about diagnostic evidence.",
+          description: "Conditional probability, expectation, independence, and Bayes as the grammar for reasoning about diagnostic evidence.",
           section: "Study",handler: () => {
               window.location.href = "/study/probability-and-bayesian-reasoning/";
+            },},{id: "study-representation-level-auditing",
+          title: 'Representation-Level Auditing',
+          description: "Probing, frequency analysis, and representation comparison as evidence about what formed inside the model.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/representation-level-auditing/";
             },},{id: "study-reproducibility-benchmarks-and-translational-study-design",
           title: 'Reproducibility, Benchmarks, and Translational Study Design',
-          description: "Designing studies and benchmarks whose results survive contact with another site, another team, and another year.",
+          description: "Designing studies whose results survive contact with another site and another team.",
           section: "Study",handler: () => {
               window.location.href = "/study/reproducibility-benchmarks-and-translational-study-design/";
             },},{id: "study-rheumatic-disease",
@@ -3291,9 +3343,14 @@ ninja.data = [{
               window.location.href = "/study/rheumatic-disease/";
             },},{id: "study-robustness-subgroup-performance-and-external-validation",
           title: 'Robustness, Subgroup Performance, and External Validation',
-          description: "Robustness to acquisition variability, subgroup and fairness analysis, and multi-center external validation as the tests of clinical generalizability.",
+          description: "Robustness to acquisition variability, subgroup analysis, and multi-center validation as tests of generalizability.",
           section: "Study",handler: () => {
               window.location.href = "/study/robustness-subgroup-performance-and-external-validation/";
+            },},{id: "study-selection-bias-and-dataset-bias",
+          title: 'Selection Bias and Dataset Bias',
+          description: "How the assembly of a medical dataset, through who was scanned, labeled, and recorded, writes itself into the model.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/selection-bias-and-dataset-bias/";
             },},{id: "study-self-supervised-and-weakly-supervised-learning",
           title: 'Self-Supervised and Weakly Supervised Learning',
           description: "Learning from medical data whose labels are scarce, noisy, or only available at the study level.",
@@ -3301,22 +3358,27 @@ ninja.data = [{
               window.location.href = "/study/self-supervised-and-weakly-supervised-learning/";
             },},{id: "study-shortcut-learning-and-confounding-in-gallbladder-ultrasound",
           title: 'Shortcut Learning and Confounding in Gallbladder Ultrasound',
-          description: "The specific confounders present in this problem, and how to tell a genuine sonographic finding from an acquisition correlate.",
+          description: "The confounders specific to this problem, and telling a sonographic finding from an acquisition correlate.",
           section: "Study",handler: () => {
               window.location.href = "/study/shortcut-learning-and-confounding-in-gallbladder-ultrasound/";
-            },},{id: "study-shortcut-learning-and-spurious-correlations",
-          title: 'Shortcut Learning and Spurious Correlations',
-          description: "Why a model reaches high accuracy through cues that are predictive in the training set but carry no clinical meaning.",
+            },},{id: "study-shortcut-learning-in-medical-imaging",
+          title: 'Shortcut Learning in Medical Imaging',
+          description: "The failure mode where a model reaches the right answer through a cue nobody intended it to use.",
           section: "Study",handler: () => {
-              window.location.href = "/study/shortcut-learning-and-spurious-correlations/";
+              window.location.href = "/study/shortcut-learning-in-medical-imaging/";
+            },},{id: "study-spurious-correlations-in-medical-ai",
+          title: 'Spurious Correlations in Medical AI',
+          description: "Associations that hold in the training distribution and carry no clinical meaning, and how to tell them apart from real signal.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/spurious-correlations-in-medical-ai/";
             },},{id: "study-statistical-evaluation-of-diagnostic-models",
           title: 'Statistical Evaluation of Diagnostic Models',
-          description: "Confidence intervals, bootstrapping, hypothesis testing, sample size and power, and the pitfalls that recur in diagnostic accuracy papers.",
+          description: "Confidence intervals, bootstrapping, power, and the pitfalls that recur in diagnostic accuracy papers.",
           section: "Study",handler: () => {
               window.location.href = "/study/statistical-evaluation-of-diagnostic-models/";
             },},{id: "study-statistical-inference-for-diagnostic-studies",
           title: 'Statistical Inference for Diagnostic Studies',
-          description: "Hypothesis testing, confidence intervals, effect size, bootstrap, and multiple comparisons, applied to the claims diagnostic AI papers actually make.",
+          description: "Hypothesis testing, confidence intervals, effect size, bootstrap, and multiple comparisons, applied to the claims diagnostic AI papers make.",
           section: "Study",handler: () => {
               window.location.href = "/study/statistical-inference-for-diagnostic-studies/";
             },},{id: "study-stroke",
@@ -3324,14 +3386,19 @@ ninja.data = [{
           description: "Time-critical diagnosis and imaging triage, and why decision latency is itself a clinical outcome.",
           section: "Study",handler: () => {
               window.location.href = "/study/stroke/";
+            },},{id: "study-study-approach",
+          title: 'Study Approach',
+          description: "How I decide what to study, where the time goes, and what I deliberately leave alone.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/study-approach/";
             },},{id: "study-translational-science-in-medicine",
           title: 'Translational Science in Medicine',
-          description: "What the bench-to-bedside pipeline actually consists of, and where most candidate technologies die in it.",
+          description: "What the bench-to-bedside pipeline consists of, and where most candidate technologies die in it.",
           section: "Study",handler: () => {
               window.location.href = "/study/translational-science-in-medicine/";
             },},{id: "study-ultrasound-acquisition-variability-and-image-quality",
           title: 'Ultrasound Acquisition Variability and Image Quality',
-          description: "Operator, machine, and preset variation as the dominant nuisance factor in gallbladder ultrasound, and what it does to a learned model.",
+          description: "Operator, machine, and preset variation as the dominant nuisance factor, and what it does to a learned model.",
           section: "Study",handler: () => {
               window.location.href = "/study/ultrasound-acquisition-variability-and-image-quality/";
             },},{id: "study-ultrasound-anatomy-of-the-liver-and-biliary-system",
@@ -3341,7 +3408,7 @@ ninja.data = [{
               window.location.href = "/study/ultrasound-anatomy-of-the-liver-and-biliary-system/";
             },},{id: "study-vision-language-and-multimodal-medical-ai",
           title: 'Vision-Language and Multimodal Medical AI',
-          description: "Image-text alignment, report grounding, and the promise and the failure modes of models that read images and language together.",
+          description: "Image-text alignment, report grounding, and the failure modes of models that read images and language together.",
           section: "Study",handler: () => {
               window.location.href = "/study/vision-language-and-multimodal-medical-ai/";
             },},{
