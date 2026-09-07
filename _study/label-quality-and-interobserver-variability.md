@@ -28,7 +28,13 @@ Readers may use different definitions, interpret a borderline finding differentl
 
 ### Agreement measures depend on the target
 
-For two readers assigning nominal categories, Cohen's $$\kappa = \frac{p_o - p_e}{1 - p_e}$$, where $$p_o$$ is observed agreement and $$p_e$$ is agreement expected from their marginal category frequencies. [Cohen](https://doi.org/10.1177/001316446002000104) introduced this coefficient. Its dependence on those frequencies means raw agreement and the category table should also be reported. No universal verbal label for a $$\kappa$$ value establishes clinical acceptability.
+For two readers assigning nominal categories, Cohen's kappa is
+
+$$
+\kappa = \frac{p_o - p_e}{1 - p_e},
+$$
+
+where $$p_o$$ is observed agreement and $$p_e$$ is agreement expected from their marginal category frequencies. [Cohen](https://doi.org/10.1177/001316446002000104) introduced this coefficient. Its dependence on those frequencies means raw agreement and the category table should also be reported. No universal verbal label for a $$\kappa$$ value establishes clinical acceptability.
 
 ### Measurement agreement differs from correlation
 

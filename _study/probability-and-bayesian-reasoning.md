@@ -28,7 +28,13 @@ Conditional probability $$P(A \mid B)$$ describes A within the circumstances spe
 
 ### Bayes combines prior information with a likelihood
 
-Bayes' rule gives $$P(D \mid E) = \frac{P(E \mid D)\,P(D)}{P(E)}$$, where D denotes disease and E the observed evidence. The prior describes probability before this evidence, while the likelihood describes how compatible the evidence is with disease. In odds form, posterior odds equal prior odds multiplied by the likelihood ratio. This is the diagnostic update described by [Altman and Bland](https://www.bmj.com/content/329/7458/168). It requires estimates appropriate to the patient population and evidence being evaluated, rather than an assumed universal test property.
+Bayes' rule gives
+
+$$
+P(D \mid E) = \frac{P(E \mid D)\,P(D)}{P(E)},
+$$
+
+where $$D$$ denotes disease and $$E$$ the observed evidence. The prior describes probability before this evidence, while the likelihood describes how compatible the evidence is with disease. In odds form, posterior odds equal prior odds multiplied by the likelihood ratio. This is the diagnostic update described by [Altman and Bland](https://www.bmj.com/content/329/7458/168). It requires estimates appropriate to the patient population and evidence being evaluated, rather than an assumed universal test property.
 
 ### Expectation and variance depend on what is averaged
 

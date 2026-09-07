@@ -27,7 +27,13 @@ Knowledge becomes supervision when it changes training rather than serving only 
 
 ### Supervision has several forms
 
-A diagnosis supplies an outcome target; a segmentation supplies spatial information; a clinical feature supplies a semantic target. These are different kinds of evidence. A possible multi-task objective is $$L = L_{\text{diagnosis}} + \sum_j \lambda_j L_{\text{feature},j}$$. The weights $$\lambda_j$$ control optimization tradeoffs, not clinical importance by definition. Unassessable features require explicit handling rather than being coded as absent.
+A diagnosis supplies an outcome target; a segmentation supplies spatial information; a clinical feature supplies a semantic target. These are different kinds of evidence. A possible multi-task objective is
+
+$$
+L = L_{\text{diagnosis}} + \sum_j \lambda_j L_{\text{feature},j}.
+$$
+
+The weights $$\lambda_j$$ control optimization tradeoffs, not clinical importance by definition. Unassessable features require explicit handling rather than being coded as absent.
 
 ### Constraints can target model behavior
 

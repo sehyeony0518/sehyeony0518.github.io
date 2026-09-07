@@ -38,7 +38,13 @@ Temperature scaling divides logits by a positive parameter fitted on held-out de
 
 ### Abstention trades coverage for retained-case risk
 
-Let a(X) equal one when a prediction is accepted and zero otherwise. Coverage is $$E[a(X)]$$, and selective risk is $$E[a(X)\,\ell(f(X), Y)] / E[a(X)]$$ for a specified loss $$\ell$$ and nonzero coverage. [Geifman and El-Yaniv](https://papers.neurips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html) study selective classification for deep networks. Lower risk among accepted cases is meaningful only alongside coverage and the consequences for rejected cases.
+Let a(X) equal one when a prediction is accepted and zero otherwise. Coverage is $$E[a(X)]$$, and selective risk is
+
+$$
+\frac{E[a(X)\,\ell(f(X), Y)]}{E[a(X)]}
+$$
+
+for a specified loss $$\ell$$ and nonzero coverage. [Geifman and El-Yaniv](https://papers.neurips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html) study selective classification for deep networks. Lower risk among accepted cases is meaningful only alongside coverage and the consequences for rejected cases.
 
 ## Worked examples in medical AI
 

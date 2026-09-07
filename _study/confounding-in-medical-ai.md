@@ -30,7 +30,13 @@ In the simple graph $$A \leftarrow Z \rightarrow Y$$, Z influences both A and Y,
 
 ### Pooled relationships depend on group composition
 
-For a cue N and grouping variable Z, the identity $$P(Y \mid N) = \sum_z P(Y \mid N, Z = z)\,P(Z = z \mid N)$$ shows how a pooled association combines within-group relationships and group proportions. A device-identifying cue can predict disease when devices serve different patient groups, even if it adds no diagnostic information within those groups. I therefore want both pooled and stratified results before interpreting an evidence score as a marker of clinical severity.
+For a cue N and grouping variable Z, the identity
+
+$$
+P(Y \mid N) = \sum_z P(Y \mid N, Z = z)\,P(Z = z \mid N)
+$$
+
+shows how a pooled association combines within-group relationships and group proportions. A device-identifying cue can predict disease when devices serve different patient groups, even if it adds no diagnostic information within those groups. I therefore want both pooled and stratified results before interpreting an evidence score as a marker of clinical severity.
 
 ### Adjustment requires assumptions beyond recorded covariates
 
