@@ -193,6 +193,9 @@ collections:
   papers:
     output: true
     permalink: /papers/:name/
+  study:
+    output: true
+    permalink: /study/:name/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings

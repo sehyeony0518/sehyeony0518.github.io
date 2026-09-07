@@ -1,0 +1,43 @@
+# Sections of the study curriculum. Topic pages live in _study/ and join by `section`.
+- id: "F"
+  short: "Foundations"
+  title: "Mathematical and Statistical Foundations"
+  branch: "Branch 01"
+  note: "The part that does not expire. Whatever writes the code, these are the tools I use to decide what an experiment established."
+  count: 6
+- id: "I"
+  short: "Trustworthy AI"
+  title: "Trustworthy Medical AI"
+  branch: "Branch 01"
+  note: "The core of my work. Whether a model's accuracy comes from clinically valid evidence, and how to make that reliance measurable rather than assumed."
+  count: 14
+- id: "II"
+  short: "Advanced Topics"
+  title: "Advanced Topics in Medical AI"
+  branch: "Branch 01"
+  note: "The moving frontier. I follow the principles here rather than the frameworks, because the names change faster than the ideas underneath them."
+  count: 7
+- id: "III"
+  short: "Methodology"
+  title: "Medical AI Research Methodology"
+  branch: "Branch 01"
+  note: "Study design and statistics. Even when a model writes the code, the judgment about what an evaluation actually establishes stays mine to make."
+  count: 7
+- id: "IV"
+  short: "Hepatobiliary Imaging"
+  title: "Clinical Translation in Hepatobiliary Imaging"
+  branch: "Branch 02"
+  note: "The medicine itself. Without this, the phrase clinically meaningful evidence has nothing behind it, and a shortcut cannot be told apart from a finding."
+  count: 10
+- id: "V"
+  short: "Gallbladder AI"
+  title: "Clinical Translation for Gallbladder AI"
+  branch: "Branch 02"
+  note: "Where the two branches meet, on the actual problem I work on. Every topic here is one I expect to turn into an experiment rather than a note."
+  count: 8
+- id: "VI"
+  short: "Translational Notes"
+  title: "Translational Medicine Notes"
+  branch: "Branch 02"
+  note: "Clinical exposure beyond my own organ system, following a translational medicine curriculum. Reading how other fields cross from bench to bedside keeps my own crossing honest."
+  count: 15

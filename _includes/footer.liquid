@@ -228,6 +228,23 @@
   })();
 
   (function () {
+    // Back link on individual study topic pages, which live one level under /study/
+    if (!/^\/study\/[^/]+\/?$/.test(window.location.pathname)) return;
+    function addBack() {
+      if (document.querySelector('.diary-back')) return;
+      var c = document.querySelector('.post') || document.querySelector('article');
+      if (!c) return;
+      var a = document.createElement('a');
+      a.className = 'diary-back';
+      a.href = '/study/';
+      a.innerHTML = '&larr; study';
+      c.insertBefore(a, c.firstChild);
+    }
+    if (document.readyState !== 'loading') addBack();
+    else document.addEventListener('DOMContentLoaded', addBack);
+  })();
+
+  (function () {
     // Back link on individual reflection (diary) posts
     if (!/^\/diary\/\d{4}\/[^/]+\/?$/.test(window.location.pathname)) return;
     function addBack() {
