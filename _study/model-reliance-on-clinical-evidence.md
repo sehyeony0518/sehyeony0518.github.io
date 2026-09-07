@@ -30,7 +30,13 @@ A score may correlate with an independently annotated feature because both track
 
 ### Reliance needs an operational definition
 
-One possible quantity is $$R_T(f) = E[\ell(f(T(X)), Y) - \ell(f(X), Y)]$$, where $$T$$ disrupts specified evidence and $$\ell$$ measures prediction loss against a fixed reference. Its interpretation depends on whether retaining Y is appropriate for the comparison. [Fisher, Rudin, and Dominici](https://jmlr.org/papers/v20/18-760.html) formalize related reliance measures through feature scrambling. Different transformations define different questions, not interchangeable estimates of one intrinsic importance.
+One possible quantity is
+
+$$
+R_T(f) = E[\ell(f(T(X)), Y) - \ell(f(X), Y)],
+$$
+
+where $$T$$ disrupts specified evidence and $$\ell$$ measures prediction loss against a fixed reference. Its interpretation depends on whether retaining Y is appropriate for the comparison. [Fisher, Rudin, and Dominici](https://jmlr.org/papers/v20/18-760.html) formalize related reliance measures through feature scrambling. Different transformations define different questions, not interchangeable estimates of one intrinsic importance.
 
 ### Local and population reliance differ
 

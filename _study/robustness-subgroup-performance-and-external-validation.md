@@ -31,7 +31,13 @@ For a transformation T that preserves the relevant evidence, I may expect f(T(x)
 
 ### Averages depend on the mixture of patients
 
-For a loss $$\ell$$ and mutually exclusive groups $$G$$, overall risk equals $$\sum_g P(G = g)\, E[\ell \mid G = g]$$. A large, easier group can dominate this average. I would examine clinically important subtypes alongside demographic and acquisition groups. Similar AUROC across groups also does not establish similar sensitivity at the deployed threshold, calibration, or consequences of error.
+For a loss $$\ell$$ and mutually exclusive groups $$G$$, overall risk equals
+
+$$
+\sum_g P(G = g)\, E[\ell \mid G = g].
+$$
+
+A large, easier group can dominate this average. I would examine clinically important subtypes alongside demographic and acquisition groups. Similar AUROC across groups also does not establish similar sensitivity at the deployed threshold, calibration, or consequences of error.
 
 ### External validation has a defined scope
 

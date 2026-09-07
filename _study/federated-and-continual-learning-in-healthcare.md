@@ -24,7 +24,13 @@ The question is whether collaboration and updating improve the intended clinical
 
 ### Aggregation defines whose data shape the model
 
-In a basic federated objective, $$F(\theta) = \sum_k w_k F_k(\theta)$$, where $$F_k$$ is a site's loss and the weights sum to one. [McMahan and colleagues](https://proceedings.mlr.press/v54/mcmahan17a.html) introduced Federated Averaging, which combines locally trained model parameters. Weighting by sample count gives larger contributors more influence. Equal site weighting answers a different optimization question; neither choice automatically reflects clinical importance or fairness.
+In a basic federated objective,
+
+$$
+F(\theta) = \sum_k w_k F_k(\theta),
+$$
+
+where $$F_k$$ is a site's loss and the weights sum to one. [McMahan and colleagues](https://proceedings.mlr.press/v54/mcmahan17a.html) introduced Federated Averaging, which combines locally trained model parameters. Weighting by sample count gives larger contributors more influence. Equal site weighting answers a different optimization question; neither choice automatically reflects clinical importance or fairness.
 
 ### Institutional heterogeneity remains inside the federation
 

@@ -27,7 +27,13 @@ A suspicious association alone is not shortcut learning. The model must actually
 
 ### The objective rewards predictions without specifying their evidence
 
-Empirical risk minimizes an average loss: $$\hat{R}(f) = \frac{1}{n}\sum_i \ell(f(x_i), y_i)$$. Unless additional structure is imposed, the objective does not distinguish two rules that predict the training labels equally well for different reasons. An acquisition cue can therefore be rewarded alongside morphology. I would examine sampling weights and the unit of observation too, because repeated frames can make particular patients or protocols disproportionately influential during learning.
+Empirical risk minimizes an average loss:
+
+$$
+\hat{R}(f) = \frac{1}{n}\sum_i \ell(f(x_i), y_i).
+$$
+
+Unless additional structure is imposed, the objective does not distinguish two rules that predict the training labels equally well for different reasons. An acquisition cue can therefore be rewarded alongside morphology. I would examine sampling weights and the unit of observation too, because repeated frames can make particular patients or protocols disproportionately influential during learning.
 
 ### Data and optimization determine which rule is acquired
 
