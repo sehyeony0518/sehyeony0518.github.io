@@ -36,7 +36,7 @@ Precision, or positive predictive value, is TP/(TP + FP); recall is sensitivity.
 
 ### Decision curves make the tradeoff explicit
 
-In [Vickers and Elkin's decision curve analysis](https://doi.org/10.1177/0272989X06295361), net benefit = TP/n − (FP/n) × p_t/(1 − p_t). Here p_t is the threshold probability at which the modeled action becomes worthwhile, and its odds encode the relative weight of false-positive harm against true-positive benefit. This threshold expresses a decision preference; it is not simply the cutoff that maximizes a statistical index. Relevant comparisons include acting on everyone, acting on no one, and existing practice.
+In [Vickers and Elkin's decision curve analysis](https://doi.org/10.1177/0272989X06295361), $$\text{net benefit} = \frac{TP}{n} - \frac{FP}{n} \times \frac{p_t}{1 - p_t}$$. Here $$p_t$$ is the threshold probability at which the modeled action becomes worthwhile, and its odds encode the relative weight of false-positive harm against true-positive benefit. This threshold expresses a decision preference; it is not simply the cutoff that maximizes a statistical index. Relevant comparisons include acting on everyone, acting on no one, and existing practice.
 
 ## Worked examples in medical AI
 

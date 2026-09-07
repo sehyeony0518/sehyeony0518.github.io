@@ -28,7 +28,7 @@ A small p-value can support incompatibility with a specified null association un
 
 ### Conditional comparisons can test alternative explanations
 
-Let N be a suspected nuisance, C measured clinical factors, and Y the target. The condition P(Y|N,C)=P(Y|C) means N adds no information about Y after C is known. It does not prove that N is clinically meaningless: N could duplicate valid information, and C may be incomplete or measured poorly. Failure of the condition likewise does not establish a valid diagnostic mechanism.
+Let N be a suspected nuisance, C measured clinical factors, and Y the target. The condition $$P(Y \mid N, C) = P(Y \mid C)$$ means N adds no information about Y after C is known. It does not prove that N is clinically meaningless: N could duplicate valid information, and C may be incomplete or measured poorly. Failure of the condition likewise does not establish a valid diagnostic mechanism.
 
 ### Stability depends on which environments are observed
 

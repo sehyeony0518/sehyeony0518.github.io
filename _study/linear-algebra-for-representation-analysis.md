@@ -32,11 +32,11 @@ An eigenvector of a square matrix is a direction that the matrix maps to a scala
 
 ### SVD connects the data matrix to its covariance
 
-The singular value decomposition writes X as UΣVᵀ, separating observation patterns, nonnegative singular values, and feature directions. For centered X with n observations, the eigenvalues of XᵀX/(n-1) are the squared singular values divided by n-1. This connects SVD directly to covariance-based analysis without requiring X to be square. Retaining the largest singular values gives a best approximation of a chosen rank under squared reconstruction error, but that criterion does not know which clinical information matters.
+The singular value decomposition writes $$X$$ as $$U\Sigma V^{\top}$$, separating observation patterns, nonnegative singular values, and feature directions. For centered $$X$$ with $$n$$ observations, the eigenvalues of $$X^{\top}X/(n-1)$$ are the squared singular values divided by $$n-1$$. This connects SVD directly to covariance-based analysis without requiring X to be square. Retaining the largest singular values gives a best approximation of a chosen rank under squared reconstruction error, but that criterion does not know which clinical information matters.
 
 ### Projection selects a subspace and leaves a residual
 
-For a column vector z and a matrix Q with orthonormal columns, QQᵀz is its orthogonal projection onto the subspace spanned by Q. The remaining vector is orthogonal to that subspace. This makes projection useful for examining candidate clinical or acquisition directions. Orthogonality, however, does not imply statistical independence. Removing a direction associated with scanner identity may leave scanner information elsewhere, or remove clinical information that shared the same direction.
+For a column vector $$z$$ and a matrix $$Q$$ with orthonormal columns, $$QQ^{\top}z$$ is its orthogonal projection onto the subspace spanned by $$Q$$. The remaining vector is orthogonal to that subspace. This makes projection useful for examining candidate clinical or acquisition directions. Orthogonality, however, does not imply statistical independence. Removing a direction associated with scanner identity may leave scanner information elsewhere, or remove clinical information that shared the same direction.
 
 ### PCA prioritizes variance rather than diagnostic relevance
 

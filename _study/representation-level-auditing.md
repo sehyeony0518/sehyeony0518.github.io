@@ -38,7 +38,7 @@ Spatial Fourier analysis can characterize images or spatial feature maps, and fr
 
 ### Representation comparison is descriptive
 
-Centered kernel alignment compares relationships among matched examples across representations. For centered feature matrices H and G with matched example rows, linear CKA is ||HᵀG||²_F divided by ||HᵀH||_F ||GᵀG||_F. Here ||·||_F denotes the Frobenius norm. [Kornblith and colleagues](https://proceedings.mlr.press/v97/kornblith19a.html) develop this comparison framework. High similarity does not guarantee equal clinical behavior, and low similarity does not identify which representation is more appropriate. Sample composition and preprocessing affect the comparison.
+Centered kernel alignment compares relationships among matched examples across representations. For centered feature matrices $$H$$ and $$G$$ with matched example rows, linear CKA is $$\|H^{\top}G\|_F^2$$ divided by $$\|H^{\top}H\|_F \, \|G^{\top}G\|_F$$, where $$\|\cdot\|_F$$ denotes the Frobenius norm. [Kornblith and colleagues](https://proceedings.mlr.press/v97/kornblith19a.html) develop this comparison framework. High similarity does not guarantee equal clinical behavior, and low similarity does not identify which representation is more appropriate. Sample composition and preprocessing affect the comparison.
 
 ## Worked examples in medical AI
 
