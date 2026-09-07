@@ -32,7 +32,13 @@ Domain generalization aims to perform on target domains unavailable during devel
 
 ### Test-time adaptation updates from incoming inputs
 
-Test-time adaptation modifies parameters or model state using test inputs, often without their labels. [Tent](https://arxiv.org/abs/2006.10726) updates normalization-related components through prediction-entropy minimization. Entropy is $$H(p) = -\sum_c p_c \log p_c$$; reducing it encourages confidence, not necessarily correctness. Unlike averaging predictions over transformed inputs, this procedure changes the model, so batch composition, case order, and reset rules can affect later outputs.
+Test-time adaptation modifies parameters or model state using test inputs, often without their labels. [Tent](https://arxiv.org/abs/2006.10726) updates normalization-related components through prediction-entropy minimization. Entropy is
+
+$$
+H(p) = -\sum_c p_c \log p_c,
+$$
+
+and reducing it encourages confidence, not necessarily correctness. Unlike averaging predictions over transformed inputs, this procedure changes the model, so batch composition, case order, and reset rules can affect later outputs.
 
 ### The type of shift constrains what can work
 
