@@ -72,15 +72,16 @@ layout: default
       // and for anyone who has asked for reduced motion.
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      // Positions the research actually takes, each one argued in the notes,
-      // resolving into who is making the argument.
+      // Claims argued in the notes, each carrying the field's own vocabulary,
+      // moving from misleading performance and explanations to what an audit
+      // actually requires, then resolving into who is making the argument.
       var phrases = [
-        'Accuracy is not evidence',
-        'Shortcuts survive validation',
-        'Plausible is not faithful',
-        'Acquisition is a confounder',
-        'Averages hide subgroups',
-        'Auditing over benchmarking',
+        'AUROC can reward spurious cues',
+        'Plausibility is not faithfulness',
+        'Attribution is not reliance',
+        'Feature reliance needs comparisons',
+        'Interventions need artifact checks',
+        'Post-hoc audits need clinical data',
         'Medical XAI Researcher'
       ];
       var TYPE = 52, ERASE = 26, HOLD = 820;
