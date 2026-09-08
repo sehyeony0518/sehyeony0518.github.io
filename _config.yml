@@ -297,6 +297,23 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # Keep the mission side out of the sitemap as well as out of robots.txt, so it
+  # is neither offered to crawlers nor reachable by them.
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+      type: "prayer"
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
