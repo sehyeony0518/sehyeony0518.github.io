@@ -21,46 +21,76 @@
     "https://github.com/sehyeony0518"
   ]
 }
-</script> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Se-Hyeon</span> Hwang </h1> <p class="hero-tagline"><span class="hero-text">Medical XAI</span><span class="hero-caret" aria-hidden="true"></span></p> <p class="desc">M.S. Student, AI Convergence Network, Ajou University</p> </header> <style>
+</script> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Se-Hyeon</span> Hwang </h1> <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p> <p class="desc">M.S. Student, AI Convergence Network, Ajou University</p> </header> <style>
     .hero-tagline {
-      margin: 0.15rem 0 0.35rem;
-      font-family: Montserrat, Inter, sans-serif;
-      font-size: clamp(1.5rem, 3.4vw, 2.15rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      color: var(--global-theme-color);
-      min-height: 1.15em; /* hold the line so typing does not shift the page */
+      margin: 0.3rem 0 0.4rem;
+      /* Inter rather than the Montserrat of the name above, so the two lines read
+         as different things rather than competing */
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.62rem);
+      font-weight: 600;
+      letter-spacing: -0.012em;
+      line-height: 1.25;
+      color: var(--global-text-color);
+      min-height: 1.25em; /* hold the line so the rotation does not shift the page */
     }
+    .hero-tagline .hero-text { color: var(--global-theme-color); }
     .hero-caret {
       display: inline-block;
-      width: 0.06em;
-      height: 0.92em;
-      margin-left: 0.08em;
-      vertical-align: -0.08em;
-      background: currentColor;
+      width: 2px;
+      height: 0.95em;
+      margin-left: 0.1em;
+      vertical-align: -0.1em;
+      background: var(--global-theme-color);
       opacity: 0;
     }
     .hero-caret.on { animation: heroBlink 1.05s steps(1, end) infinite; }
-    @keyframes heroBlink { 0%, 50% { opacity: 0.85; } 50.01%, 100% { opacity: 0; } }
+    @keyframes heroBlink { 0%, 50% { opacity: 0.9; } 50.01%, 100% { opacity: 0; } }
   </style> <script>
     (function () {
       var el = document.querySelector('.hero-tagline .hero-text');
       var caret = document.querySelector('.hero-tagline .hero-caret');
       if (!el || !caret) return;
-      // The text is already in the HTML, so it stands without JS or with motion reduced
+      // The resting phrase is already in the HTML, so it stands without JS
+      // and for anyone who has asked for reduced motion.
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var full = el.textContent;
+
+      var phrases = [
+        'Explainable AI',
+        'Clinical Faithfulness Auditing',
+        'Shortcut Learning',
+        'Hepatobiliary Ultrasound AI',
+        'Medical XAI Researcher'
+      ];
+      var TYPE = 68, ERASE = 32, HOLD = 950;
+      var p = 0, i = 0, erasing = false;
+
       el.textContent = '';
       caret.classList.add('on');
-      var i = 0;
+
       (function step() {
-        if (i <= full.length) {
-          el.textContent = full.slice(0, i++);
-          setTimeout(step, 78);
-        } else {
-          setTimeout(function () { caret.classList.remove('on'); caret.style.opacity = '0'; }, 2600);
+        var word = phrases[p];
+        var last = p === phrases.length - 1;
+
+        if (!erasing) {
+          el.textContent = word.slice(0, ++i);
+          if (i < word.length) return setTimeout(step, TYPE);
+          if (last) {
+            // settle here: retire the caret and leave the phrase up
+            return setTimeout(function () {
+              caret.classList.remove('on');
+              caret.style.opacity = '0';
+            }, 2400);
+          }
+          erasing = true;
+          return setTimeout(step, HOLD);
         }
+
+        el.textContent = word.slice(0, --i);
+        if (i > 0) return setTimeout(step, ERASE);
+        erasing = false;
+        p++;
+        setTimeout(step, 220);
       })();
     })();
   </script> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/prof_pic.jpg?v=d5aa7cb94990004759b6ffc5d51f10bc" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="prof_pic.jpg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <p><strong>Se-Hyeon Hwang</strong> (황세현)</p> <p>M.S. Student, AI Convergence Network</p> <p><a href="https://eslab.ajou.ac.kr/" target="_blank" rel="external nofollow noopener">Embedded &amp; Software Lab</a></p> <p>Ajou University, Suwon</p> <p><a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p> </div> </div> <div class="clearfix"> <style>
