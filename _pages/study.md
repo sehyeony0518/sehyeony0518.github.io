@@ -8,7 +8,6 @@ nav_order: 9
 ---
 
 <style>
-  .container.mt-5 { max-width: 1180px; }
 
   .sl-intro { font-size: 1rem; line-height: 1.75; margin-bottom: .3rem; }
   .sl-intro a { font-weight: 600; }
