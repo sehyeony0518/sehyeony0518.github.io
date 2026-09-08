@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Auditing Explanation Faithfulness in Gallbladder Models"
-description: "Testing whether a model's evidence tracks independent clinical factors, without retraining."
+description: "How the evidence a diagnostic model exposes can be checked against clinical information assessed separately from it."
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"
@@ -56,7 +56,7 @@ An explanation does not resolve an indeterminate lesion or replace the usual dia
 
 I would freeze model weights, preprocessing, and the output being explained. For a reviewed transformation T, the paired score change $$\Delta = s(T(x)) - s(x)$$ measures sensitivity to that edit. I would compare it with the explanation's predicted importance and with control edits of similar extent. [Yeh and colleagues](https://papers.nips.cc/paper_files/paper/2019/hash/a7471fdc77b3435276507cc8f2dc2569-Abstract.html) formalize relationships between explanations and perturbation-induced output changes. The result remains conditional on the perturbation design; masking tissue can create unrealistic inputs.
 
-Separately, I would test whether predefined attribution summaries, such as absolute attribution within an annotated region, track independently annotated clinical factors, accounting for region size, visibility, and acquisition differences. I would estimate uncertainty at the patient level and prespecify primary comparisons. Such associations support alignment, not causal reliance. Shuffled-factor and simple spatial baselines can reveal trivial agreement. [Adebayo and colleagues](https://papers.nips.cc/paper_files/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html) show why visually convincing saliency requires sanity checks. My aim is converging evidence from clinical annotation, prediction changes, and explanation behavior without retraining. Remaining failures should be reported by clinical factor and case type, rather than compressed into one faithfulness score.
+A second question is whether summaries of attribution relate to clinical information annotated separately from the model, and what would have to be controlled for such a comparison to mean anything: region size, visibility, and acquisition differences among them. Any such analysis also needs uncertainty estimated at the patient level and its primary comparisons fixed in advance. Such associations support alignment, not causal reliance. Shuffled-factor and simple spatial baselines can reveal trivial agreement. [Adebayo and colleagues](https://papers.nips.cc/paper_files/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html) show why visually convincing saliency requires sanity checks. My aim is converging evidence from clinical annotation, prediction changes, and explanation behavior without retraining. Remaining failures should be reported by clinical factor and case type, rather than compressed into one faithfulness score.
 
 ## References
 

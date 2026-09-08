@@ -24,7 +24,7 @@ I use clinical faithfulness as a research objective connecting three properties:
 
 Clinical relevance asks whether a finding informs the specified task. Explanation faithfulness asks whether a readout describes the model behavior it claims to explain. Reliance asks whether changing particular information changes the prediction under a defined comparison. An explanation can faithfully expose reliance on calipers. Conversely, an attractive map over a lesion can be clinically plausible without identifying what the classifier uses.
 
-My immediate objective is narrower than recovering a complete diagnostic reasoning process: evaluate an existing classifier against independently assessed clinical factors, then test selected dependence hypotheses. This can proceed without retraining the classifier, but it still requires annotation, methodological controls, and a clearly bounded claim.
+The tractable version of this question is narrower than recovering a complete diagnostic reasoning process. It asks whether a model's evidence relates to clinical information assessed separately from it, and what would be needed to move from such a relationship to a claim about dependence. Either way it requires annotation, methodological controls, and a clearly bounded claim.
 
 ## Key concepts
 
