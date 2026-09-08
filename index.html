@@ -168,7 +168,11 @@
   @media (max-width: 700px) { .kg-chip { flex: 0 0 auto; } }
   .kg-chip i { width: .5rem; height: .5rem; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
   .kg-chip:hover { border-color: currentColor; }
-  .kg-chip.off { opacity: .34; }
+  .kg-chip { opacity: .62; }
+  .kg-chip:hover { opacity: 1; }
+  .kg-chip.on { opacity: 1; border-color: currentColor; background: rgba(128,128,128,.09); }
+  .kg-all { margin-top: .35rem; justify-content: center; font-weight: 700;
+            letter-spacing: .05em; text-transform: uppercase; font-size: .66rem; }
   .kg-box {
     position: relative; width: 100%; border-radius: 14px; overflow: hidden;
     border: 1px solid var(--kg-border);
@@ -236,7 +240,6 @@
     function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
     var SECTOR_COLOR = PALETTE[isDark() ? 'dark' : 'light'];
     function paint(d) { return SECTOR_COLOR[d.sector] || SECTOR_COLOR._; }
-    var hidden = {};
     var KIND = { concept: 'Concept', note: 'Study note', review: 'Paper review', insight: 'Insight' };
     var started = false;
 
@@ -404,20 +407,38 @@
       box.appendChild(c);
 
       if (bar) {
+        // Everything that touches a sector, not only the nodes filed under it
+        var touches = {};
+        data.links.forEach(function (l) {
+          if (l.target.kind === 'concept') {
+            (touches[l.target.sector] = touches[l.target.sector] || {})[l.source.id] = 1;
+            touches[l.target.sector][l.target.id] = 1;
+          }
+        });
+
+        function select(sector) {
+          bar.querySelectorAll('.kg-chip').forEach(function (b) {
+            b.classList.toggle('on', b.getAttribute('data-s') === sector);
+          });
+          var keep = sector === 'all' ? null : (touches[sector] || {});
+          node.style('display', function (d) { return (!keep || keep[d.id]) ? null : 'none'; });
+          link.style('display', function (l) {
+            return (!keep || (keep[l.source.id] && keep[l.target.id])) ? null : 'none';
+          });
+        }
+
         ORDER.forEach(function (name) {
           var b = document.createElement('button');
-          b.type = 'button'; b.className = 'kg-chip';
+          b.type = 'button'; b.className = 'kg-chip'; b.setAttribute('data-s', name);
           b.innerHTML = '<i style="background:' + SECTOR_COLOR[name] + '"></i>' + name;
-          b.addEventListener('click', function () {
-            hidden[name] = !hidden[name];
-            b.classList.toggle('off', !!hidden[name]);
-            node.style('display', function (d) { return hidden[d.sector] ? 'none' : null; });
-            link.style('display', function (l) {
-              return (hidden[l.source.sector] || hidden[l.target.sector]) ? 'none' : null;
-            });
-          });
+          b.addEventListener('click', function () { select(name); });
           bar.appendChild(b);
         });
+        var all = document.createElement('button');
+        all.type = 'button'; all.className = 'kg-chip kg-all on'; all.setAttribute('data-s', 'all');
+        all.textContent = 'All';
+        all.addEventListener('click', function () { select('all'); });
+        bar.appendChild(all);
       }
     }
 
@@ -3599,7 +3620,7 @@ ninja.data = [{
               window.location.href = "/study/auditing-and-evaluating-generative-medical-ai/";
             },},{id: "study-auditing-explanation-faithfulness-in-gallbladder-models",
           title: 'Auditing Explanation Faithfulness in Gallbladder Models',
-          description: "Testing whether a model&#39;s evidence tracks independent clinical factors, without retraining.",
+          description: "How the evidence a diagnostic model exposes can be checked against clinical information assessed separately from it.",
           section: "Study",handler: () => {
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
             },},{id: "study-biliary-obstruction",
