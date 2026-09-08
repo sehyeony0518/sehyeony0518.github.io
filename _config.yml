@@ -13,7 +13,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br>
   <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</span>
-keywords: Se-Hyeon Hwang, 황세현, 아주대학교, 의료 인공지능, 설명가능 인공지능, trustworthy medical AI, medical XAI, clinical evidence auditing, interpretable machine learning, medical imaging, ultrasound AI, Ajou University # add your own keywords or leave empty
+keywords: 황세현, 아주대 황세현, 아주대학교, 아주대, Ajou University, Ajou, Sehyeon Hwang, Se-Hyeon Hwang, Sehyeon, Hwang, 의료 인공지능, 설명가능 인공지능, 의료 AI 신뢰성, medical AI audit, medical XAI, trustworthy medical AI, clinical evidence auditing, shortcut learning, interpretable machine learning, medical imaging, ultrasound AI # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ✝️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
