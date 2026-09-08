@@ -6,14 +6,6 @@ description: Trustworthy medical AI grounded in clinical evidence.
 nav: true
 nav_order: 7
 ---
-<style>
-  /* No TOC sidebar here, so the column can use the width instead */
-  .container.mt-5 { max-width: 1080px; }
-  /* Prose stays at a comfortable measure; grids and cards below use the full width */
-  .post-content > p, .post-content > ul, .post-content > ol,
-  article > p, article > ul, article > ol { max-width: 52rem; }
-</style>
-
 <a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a>
 
 I study the reliability of medical image classifiers, with a focus on ultrasound AI for gallbladder and hepatobiliary diagnosis. My research concerns the relationship between diagnostic performance and the evidence a model uses: whether a correct prediction is supported by clinically meaningful image characteristics, how that reliance can be examined, and where it becomes unstable.

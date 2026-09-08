@@ -8,8 +8,6 @@ nav_order: 10
 ---
 
 <style>
-  /* Widen just this page's content column so a 4-up card grid has room to breathe */
-  .container.mt-5 { max-width: 1400px; }
 
   .aiblog-list { margin-top: .5rem; display: grid; grid-template-columns: 1fr; gap: .8rem; }
   @media (min-width: 576px) { .aiblog-list { grid-template-columns: repeat(2, 1fr); } }
