@@ -52,7 +52,7 @@ Tests should include missing records, ambiguous identifiers, conflicting finding
 
 ## Research connections and open questions
 
-For my clinical faithfulness work, an agent could organize existing image models and evidence audits without retraining them. I would want its conclusion to remain traceable to the ultrasound, independent clinical factors, and verified tool results, rather than to an internally coherent narrative.
+In an evidence auditing setting, an agent could organise existing image models and analyses rather than train new ones. The conclusion would need to stay traceable to the image, the clinical information, and verified tool results, rather than to an internally coherent narrative.
 
 - Which actions require clinical judgment that cannot be reduced to a tool's input schema?
 - How can I test whether retrieved evidence changes a conclusion for the right reason?
