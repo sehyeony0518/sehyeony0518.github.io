@@ -40,24 +40,20 @@
   .kg-stage > .kg-box { flex: 1 1 auto; min-width: 0; }
   .kg-bar {
     flex: 0 0 auto; width: 12.4rem; display: flex; flex-direction: column;
-    gap: .3rem; justify-content: stretch;
+    gap: .28rem; justify-content: flex-start;
   }
   @media (max-width: 700px) {
     .kg-stage { flex-direction: column; }
     .kg-bar { width: auto; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
   }
   .kg-chip {
-    /* Share the column height so the strip fills the panel instead of
-       clustering at the top with dead space under it */
-    flex: 1 1 0; min-height: 2.3rem;
-    padding: .5rem .7rem; border-radius: 9px; cursor: pointer;
+    flex: 0 0 auto;
+    padding: .34rem .65rem; border-radius: 8px; cursor: pointer;
     border: 1px solid var(--kg-border); background: none; color: inherit;
-    font-size: .8rem; font-weight: 600; letter-spacing: .005em; transition: all .14s ease;
-    display: flex; align-items: center; gap: .5rem; text-align: left; line-height: 1.25;
+    font-size: .74rem; font-weight: 600; letter-spacing: .005em; transition: all .14s ease;
+    display: flex; align-items: center; gap: .45rem; text-align: left; line-height: 1.25;
   }
-  @media (max-width: 700px) {
-    .kg-chip { flex: 0 0 auto; min-height: 0; padding: .3rem .65rem; font-size: .74rem; }
-  }
+  @media (max-width: 700px) { .kg-chip { padding: .3rem .6rem; font-size: .72rem; } }
   .kg-chip i { width: .6rem; height: .6rem; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
   .kg-chip:hover { border-color: currentColor; }
   .kg-chip { opacity: .62; }
@@ -86,6 +82,22 @@
   }
   .kg-label.kg-hub { font-size: 11px; font-weight: 700; fill: var(--kg-hub); }
   .kg-legendline { font-size: .7rem; opacity: .55; margin: .5rem 0 0; line-height: 1.6; }
+  /* Links into the collections, pinned to the foot of the column */
+  .kg-links { margin-top: auto; padding-top: .7rem; border-top: 1px solid var(--kg-border);
+              display: flex; flex-direction: column; gap: .05rem; }
+  .kg-links a {
+    display: flex; align-items: baseline; gap: .4rem; padding: .3rem .1rem;
+    text-decoration: none; color: inherit; font-size: .76rem; font-weight: 600;
+    opacity: .72; transition: opacity .14s ease, color .14s ease;
+  }
+  .kg-links a:hover { opacity: 1; color: var(--global-theme-color); }
+  .kg-links .kl-n { margin-left: auto; font-size: .68rem; font-weight: 700; opacity: .55;
+                    font-variant-numeric: tabular-nums; }
+  @media (max-width: 700px) {
+    .kg-links { margin-top: .5rem; flex-direction: row; flex-wrap: wrap; gap: .2rem .9rem; }
+    .kg-links a { padding: .2rem 0; }
+    .kg-links .kl-n { margin-left: .25rem; }
+  }
   .kg-note { font-size: .75rem; opacity: .55; margin: .35rem 0 0; line-height: 1.6; }
   .kg-tip {
     position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s ease;
@@ -114,7 +126,14 @@
       <div class="kg-cover">Loading the graph…</div>
       <div class="kg-title">knowledge graph</div>
     </div>
-    <div class="kg-bar" id="kg-bar{% if kg_full %}-full{% endif %}"></div>
+    <div class="kg-bar" id="kg-bar{% if kg_full %}-full{% endif %}">
+      {%- assign n_study = site.study | where_exp: "n", "n.category" | size %}
+      <div class="kg-links">
+        <a href="{{ '/study/' | relative_url }}">study notes <span class="kl-n">{{ n_study }}</span></a>
+        <a href="{{ '/papers/' | relative_url }}">paper reviews <span class="kl-n">{{ site.papers | size }}</span></a>
+        <a href="{{ '/blog/' | relative_url }}">insights <span class="kl-n">{{ site.aiblog | size }}</span></a>
+      </div>
+    </div>
     <div class="kg-tip"></div>
   </div>
   {% unless kg_full %}<p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="{{ '/research/#graph' | relative_url }}">Open the full graph</a>.</p>{% endunless %}
@@ -338,13 +357,13 @@
         all.type = 'button'; all.className = 'kg-chip kg-all on'; all.setAttribute('data-s', 'all');
         all.textContent = 'All';
         all.addEventListener('click', function () { select('all'); });
-        bar.appendChild(all);
+        bar.insertBefore(all, bar.querySelector('.kg-links'));
         ORDER.forEach(function (name) {
           var b = document.createElement('button');
           b.type = 'button'; b.className = 'kg-chip'; b.setAttribute('data-s', name);
           b.innerHTML = '<i style="background:' + SECTOR_COLOR[name] + '"></i>' + name;
           b.addEventListener('click', function () { select(name); });
-          bar.appendChild(b);
+          bar.insertBefore(b, bar.querySelector('.kg-links'));
         });
       }
     }
