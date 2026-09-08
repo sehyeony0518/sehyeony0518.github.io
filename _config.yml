@@ -353,6 +353,9 @@ terser:
 jekyll-archives:
   posts:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+    # These are mission-side pages; keep them out of the sitemap like the rest
+    defaults:
+      sitemap: false
     permalinks:
       year: "/diary/:year/"
       tags: "/diary/:type/:name/"
