@@ -8,7 +8,7 @@
   /* Light is the default; dark takes over with the site's own theme switch and
      with the system preference when the reader has not chosen. */
   .kg-wrap {
-    position: relative; margin: .45rem 0 0;
+    position: relative; margin: .2rem 0 0;
     --kg-g1: #ffffff; --kg-g2: #f3f5f9; --kg-g3: #eceff5;
     --kg-border: rgba(0,0,0,.09);
     --kg-label: #22262e; --kg-label-stroke: #ffffff;
@@ -34,7 +34,7 @@
   .kg-stage > .kg-box { flex: 1 1 auto; min-width: 0; }
   .kg-bar {
     flex: 0 0 auto; width: 11.6rem; display: flex; flex-direction: column;
-    gap: .26rem; justify-content: center;
+    gap: .26rem; justify-content: flex-start;
   }
   @media (max-width: 700px) {
     .kg-stage { flex-direction: column; }
@@ -82,11 +82,16 @@
               text-transform: uppercase; opacity: .5; margin-bottom: .12rem; }
   .kg-cover { position: absolute; inset: 0; display: flex; align-items: center;
               justify-content: center; font-size: .78rem; color: var(--kg-dim); }
+  .kg-title {
+    position: absolute; right: .8rem; top: .65rem; font-size: .68rem; font-weight: 700;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--kg-dim);
+    pointer-events: none; z-index: 2;
+  }
   .kg-count {
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
   }
-</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box-full" style="height: 700px;"> <div class="kg-cover">Loading the graph…</div> </div> <div class="kg-bar" id="kg-bar-full"></div> <div class="kg-tip"></div> </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box-full" style="height: 700px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> </div> <div class="kg-bar" id="kg-bar-full"></div> <div class="kg-tip"></div> </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box-full';
     var FULL = true;
@@ -125,7 +130,7 @@
     }
 
     function render(data) {
-      box.innerHTML = '';
+      box.innerHTML = '<div class="kg-title">knowledge graph</div>';
       var W = box.clientWidth, H = box.clientHeight;
       var R = FULL ? 0.95 : 0.72;
       var svg = d3.select(box).append('svg').attr('viewBox', [0, 0, W, H]);
