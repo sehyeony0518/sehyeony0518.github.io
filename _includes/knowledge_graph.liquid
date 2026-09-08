@@ -1,8 +1,10 @@
 {% comment %}
-  Knowledge graph of the site's own corpus. Nodes are study notes, the taxonomy
-  above them, and the paper reviews and insights they connect to. Edges are the
-  taxonomy itself plus citation overlap between pieces, computed at build time
-  into assets/json/knowledge-graph.json.
+  Knowledge graph of the site's own corpus, drawn along the axis the research
+  actually sits on. Clinical concepts on the left, computational concepts on the
+  right, and every study note, paper review and insight linked to the concepts it
+  discusses, so the writing that joins both sides is visible as such. Concept
+  assignment is by keyword frequency over the corpus, computed at build time into
+  assets/json/knowledge-graph.json.
   Params: full (true for the interactive version), height.
 {% endcomment %}
 {% assign kg_full = include.full | default: false %}
@@ -63,12 +65,12 @@
   </div>
   <div class="kg-tip"></div>
   <div class="kg-legend">
-    <span><i style="background:#7C6BF2"></i>Trustworthy AI</span>
-    <span><i style="background:#3BA0D9"></i>Clinical Medicine</span>
-    <span><i style="background:#E4736B"></i>Paper reviews</span>
-    <span><i style="background:#4FBFA8"></i>Insights</span>
+    <span><i style="background:#E08A5B"></i>Clinical concept</span>
+    <span><i style="background:#7C6BF2"></i>Computational concept</span>
+    <span><i style="background:#4FBFA8"></i>Writing that joins both</span>
+    <span><i style="background:#9AA3AE"></i>Writing on one side</span>
   </div>
-  {% unless kg_full %}<p class="kg-note">Every study note, the categories above it, and the reviews it shares citations with. <a href="{{ '/research/#graph' | relative_url }}">Open the full graph</a>.</p>{% endunless %}
+  {% unless kg_full %}<p class="kg-note">Clinical vocabulary on the left, computational on the right, and every piece of writing placed by what it actually discusses. <a href="{{ '/research/#graph' | relative_url }}">Open the full graph</a>.</p>{% endunless %}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
@@ -80,8 +82,9 @@
     if (!box) return;
     var wrap = box.closest('.kg-wrap');
     var tip = wrap.querySelector('.kg-tip');
-    var COLOR = { 'trustworthy-ai': '#7C6BF2', 'clinical-medicine': '#3BA0D9', papers: '#E4736B', insights: '#4FBFA8' };
-    var KIND = { tab: 'Branch', cat: 'Category', note: 'Study note', review: 'Paper review', insight: 'Insight' };
+    var COLOR = { clinical: '#E08A5B', computational: '#7C6BF2', bridge: '#4FBFA8' };
+    function paint(d) { return d.kind === 'concept' ? COLOR[d.fam] : (d.fam === 'bridge' ? COLOR.bridge : '#9AA3AE'); }
+    var KIND = { concept: 'Concept', note: 'Study note', review: 'Paper review', insight: 'Insight' };
     var started = false;
 
     function boot() {
@@ -101,58 +104,53 @@
 
       var maxDeg = d3.max(data.nodes.filter(function (d) { return d.kind === 'note' || d.kind === 'review'; }), function (d) { return d.deg; }) || 1;
       function radius(d) {
-        var base = d.kind === 'tab' ? 9 : d.kind === 'cat' ? 5.4 : 2.6;
-        return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'note' ? 3.4 : 2)) * R;
+        var base = d.kind === 'concept' ? 5.2 : 2.6;
+        return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'concept' ? 6 : 2.6)) * R;
       }
 
       var link = g.append('g')
         .selectAll('path').data(data.links).join('path')
         .attr('class', 'kg-link')
-        .attr('stroke', function (d) {
-          var f = (d.source && d.source.fam) || '';
-          return COLOR[f] || 'var(--global-text-color-light)';
-        })
-        .attr('stroke-opacity', function (d) { return d.kind === 'taxonomy' ? 0.22 : 0.42; })
-        .attr('stroke-width', function (d) { return (d.kind === 'taxonomy' ? 0.8 : Math.min(2.4, 0.8 + d.w * 0.4)) * R; });
+        .attr('stroke', function (d) { return d.kind === 'clinical' ? COLOR.clinical : COLOR.computational; })
+        .attr('stroke-opacity', function (d) { return d.w > 1 ? 0.34 : 0.13; })
+        .attr('stroke-width', function (d) { return (d.w > 1 ? 1.15 : 0.7) * R; });
 
       var node = g.append('g').selectAll('g').data(data.nodes).join('g').attr('class', 'kg-node');
-      node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
+      node.filter(function (d) { return d.kind === 'concept'; })
         .append('circle').attr('class', 'kg-ring')
         .attr('r', function (d) { return radius(d) + 4 * R; })
-        .attr('stroke', function (d) { return COLOR[d.fam] || '#888'; });
+        .attr('stroke', paint);
       node.append('circle')
         .attr('r', radius)
-        .attr('fill', function (d) { return COLOR[d.fam] || '#8a8a8a'; })
+        .attr('fill', paint)
         .attr('fill-opacity', function (d) { return d.kind === 'note' ? 0.85 : 1; })
         .attr('stroke', 'var(--global-card-bg-color)')
         .attr('stroke-width', function (d) { return d.kind === 'note' ? 1 : 1.6; });
 
-      node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
-        .append('text')
-        .attr('class', function (d) { return 'kg-label ' + (d.kind === 'tab' ? 'kg-tab' : 'kg-hub'); })
+      node.filter(function (d) { return d.kind === 'concept'; })
+        .append('text').attr('class', 'kg-label kg-hub')
         .attr('dy', function (d) { return -radius(d) - 5 * R; })
         .attr('text-anchor', 'middle')
-        .text(function (d) { return d.kind === 'tab' ? d.label : d.label.replace(/ &.*/, '').replace(/^Mathematical.*/, 'Foundations'); });
+        .text(function (d) { return d.label; });
 
       // Give each family its own territory so the four groups read as groups,
       // and cross-links between them bend toward each other rather than mixing.
-      var HOME = {
-        'trustworthy-ai':   [0.26, 0.30],
-        'clinical-medicine':[0.26, 0.74],
-        'papers':           [0.76, 0.36],
-        'insights':         [0.77, 0.80]
-      };
-      function hx(d) { return (HOME[d.fam] ? HOME[d.fam][0] : 0.5) * W; }
-      function hy(d) { return (HOME[d.fam] ? HOME[d.fam][1] : 0.5) * H; }
-      function pull(d) { return d.kind === 'tab' ? 0.5 : d.kind === 'cat' ? 0.24 : 0.11; }
+      // Clinical vocabulary to the left, computational to the right. The writing is
+      // not placed at all: where a piece lands is decided by what it actually cites.
+      function hx(d) {
+        if (d.kind !== 'concept') return W * 0.5;
+        return (d.fam === 'clinical' ? 0.13 : 0.87) * W;
+      }
+      function hy(d) { return H * 0.5; }
+      function pull(d) { return d.kind === 'concept' ? 0.30 : 0.012; }
 
       var sim = d3.forceSimulation(data.nodes)
         .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
-          .distance(function (d) { return (d.kind === 'taxonomy' ? 26 : 58) * R; })
-          .strength(function (d) { return d.kind === 'taxonomy' ? 0.95 : 0.05; }))
+          .distance(function (d) { return (d.w > 1 ? 46 : 78) * R; })
+          .strength(function (d) { return d.w > 1 ? 0.34 : 0.10; }))
         .force('charge', d3.forceManyBody().strength(FULL ? -52 : -30).distanceMax(230))
         .force('x', d3.forceX(hx).strength(pull))
-        .force('y', d3.forceY(hy).strength(pull))
+        .force('y', d3.forceY(hy).strength(function (d) { return d.kind === 'concept' ? 0.045 : 0.02; }))
         .force('collide', d3.forceCollide().radius(function (d) { return radius(d) + 2.4 * R; }).iterations(2));
 
       function arc(d) {
@@ -199,7 +197,7 @@
         })
         .on('mouseleave', function () {
           tip.style.opacity = 0;
-          link.attr('stroke-opacity', function (l) { return l.kind === 'taxonomy' ? 0.22 : 0.42; });
+          link.attr('stroke-opacity', function (l) { return l.w > 1 ? 0.34 : 0.13; });
           node.selectAll('circle').attr('opacity', 1);
           node.selectAll('text').attr('opacity', 1);
         })
