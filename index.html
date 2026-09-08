@@ -104,7 +104,31 @@
   /* The intro sits beside the profile photo, so hold it tighter than the site default */
   article > .clearfix p { max-width: 44rem; }
 </style> <p>I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at <a href="https://www.ajou.ac.kr/en/index.do" rel="external nofollow noopener" target="_blank">Ajou University</a>, advised by Prof. Jung-Won Lee at the <a href="https://eslab.ajou.ac.kr/" rel="external nofollow noopener" target="_blank">Embedded &amp; Software Lab</a>. I work on the reliability of medical image classifiers and on the clinical knowledge needed to judge it. I am preparing PhD applications, and my <a href="/publications/">publications</a> and <a href="/assets/pdf/cv-hwang.pdf">CV</a> are available here.</p> <p>I organize my <a href="/research/">research</a> around two directions. In <strong>Reliable medical AI models</strong>, I examine whether diagnostic accuracy comes from clinically valid evidence or from shortcuts and spurious correlations. My work on clinical faithfulness auditing focuses on making a classifier’s reliance on evidence measurable and auditable. I also study robustness under distribution shift.</p> <p>In <strong>Clinical translation</strong>, I study the diseases, imaging findings, and diagnostic reasoning behind a diagnosis, currently in hepatobiliary ultrasound. This gives clinical evidence the medical detail needed to assess a model’s reasoning. My growing library of <a href="/study/">study notes</a> covers trustworthy medical AI and the clinical knowledge needed to understand and evaluate it.</p> <p><strong>Contact:</strong> <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p> </div> <div class="hb-head"> <h2 id="hb-title">knowledge graph</h2> <div class="hb-toggle" id="hb-toggle"> <button type="button" class="hb-btn active" data-view="map">graph</button> <button type="button" class="hb-btn" data-view="reading">selected reading</button> </div> </div> <div class="hb-pane" data-pane="map"> <style>
-  .kg-wrap { position: relative; margin: .7rem 0 0; }
+  /* Light is the default; dark takes over with the site's own theme switch and
+     with the system preference when the reader has not chosen. */
+  .kg-wrap {
+    position: relative; margin: .7rem 0 0;
+    --kg-g1: #ffffff; --kg-g2: #f3f5f9; --kg-g3: #eceff5;
+    --kg-border: rgba(0,0,0,.09);
+    --kg-label: #22262e; --kg-label-stroke: #ffffff;
+    --kg-hub: #101319;
+    --kg-line: #55607a;
+    --kg-halo-c: .13; --kg-halo-p: .10;
+    --kg-tip-bg: #ffffff; --kg-tip-fg: #1c1c1c; --kg-tip-bd: rgba(0,0,0,.12);
+    --kg-tip-sh: rgba(0,0,0,.14);
+    --kg-dim: #8a94a6; --kg-node-stroke: #ffffff;
+  }
+  html[data-theme="dark"] .kg-wrap {
+    --kg-g1: #16161f; --kg-g2: #0c0c12; --kg-g3: #08080c;
+    --kg-border: rgba(255,255,255,.07);
+    --kg-label: #cbd2dc; --kg-label-stroke: #0a0a0f;
+    --kg-hub: #e8edf4;
+    --kg-line: #6b7280;
+    --kg-halo-c: .16; --kg-halo-p: .09;
+    --kg-tip-bg: #12121a; --kg-tip-fg: #e8edf4; --kg-tip-bd: rgba(255,255,255,.11);
+    --kg-tip-sh: rgba(0,0,0,.5);
+    --kg-dim: #4b5563; --kg-node-stroke: #0a0a0f;
+  }
   .kg-bar { display: flex; flex-wrap: wrap; gap: .3rem; margin: 0 0 .5rem; }
   .kg-chip {
     padding: .17rem .6rem; border-radius: 999px; cursor: pointer; white-space: nowrap;
@@ -117,9 +141,9 @@
   .kg-chip.off { opacity: .34; }
   .kg-box {
     position: relative; width: 100%; border-radius: 14px; overflow: hidden;
-    border: 1px solid rgba(255,255,255,.07);
+    border: 1px solid var(--kg-border);
     background:
-      radial-gradient(90% 70% at 50% 40%, #16161f 0%, #0c0c12 55%, #08080c 100%);
+      radial-gradient(90% 70% at 50% 40%, var(--kg-g1) 0%, var(--kg-g2) 55%, var(--kg-g3) 100%);
   }
   .kg-box svg { display: block; width: 100%; height: 100%; cursor: grab; }
   .kg-box svg.kg-drag { cursor: grabbing; }
@@ -130,25 +154,25 @@
   .kg-node circle { transition: opacity .18s ease; }
   .kg-halo { pointer-events: none; }
   .kg-label {
-    font-size: 9.5px; fill: #cbd2dc; pointer-events: none; font-weight: 600;
+    font-size: 9.5px; fill: var(--kg-label); pointer-events: none; font-weight: 600;
     letter-spacing: .005em; transition: opacity .18s ease;
-    paint-order: stroke; stroke: #0a0a0f; stroke-width: 3px; stroke-linejoin: round;
+    paint-order: stroke; stroke: var(--kg-label-stroke); stroke-width: 3px; stroke-linejoin: round;
   }
-  .kg-label.kg-hub { font-size: 11px; font-weight: 700; fill: #e8edf4; }
+  .kg-label.kg-hub { font-size: 11px; font-weight: 700; fill: var(--kg-hub); }
   .kg-legendline { font-size: .7rem; opacity: .55; margin: .5rem 0 0; line-height: 1.6; }
   .kg-note { font-size: .75rem; opacity: .55; margin: .35rem 0 0; line-height: 1.6; }
   .kg-tip {
     position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s ease;
-    background: #12121a; border: 1px solid rgba(255,255,255,.11); color: #e8edf4;
+    background: var(--kg-tip-bg); border: 1px solid var(--kg-tip-bd); color: var(--kg-tip-fg);
     border-radius: 8px; padding: .4rem .62rem; font-size: .76rem; max-width: 18rem;
-    line-height: 1.4; box-shadow: 0 6px 22px rgba(0,0,0,.5); z-index: 3;
+    line-height: 1.4; box-shadow: 0 6px 22px var(--kg-tip-sh); z-index: 3;
   }
   .kg-tip b { display: block; font-size: .64rem; font-weight: 800; letter-spacing: .07em;
               text-transform: uppercase; opacity: .5; margin-bottom: .12rem; }
   .kg-cover { position: absolute; inset: 0; display: flex; align-items: center;
-              justify-content: center; font-size: .78rem; color: #6b7280; }
+              justify-content: center; font-size: .78rem; color: var(--kg-dim); }
   .kg-count {
-    position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: #4b5563;
+    position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
   }
 </style> <div class="kg-wrap"> <div class="kg-bar" id="kg-bar"></div> <div class="kg-box" id="kg-box" style="height: 520px;"> <div class="kg-cover">Loading the graph…</div> </div> <div class="kg-tip"></div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
@@ -190,6 +214,9 @@
       var svg = d3.select(box).append('svg').attr('viewBox', [0, 0, W, H]);
       var g = svg.append('g').attr('class', 'kg-canvas');
 
+      var cs = getComputedStyle(wrap);
+      var CH = parseFloat(cs.getPropertyValue('--kg-halo-c')) || 0.16;
+      var PH = parseFloat(cs.getPropertyValue('--kg-halo-p')) || 0.09;
       var maxDeg = d3.max(data.nodes.filter(function (d) { return d.kind === 'note' || d.kind === 'review'; }), function (d) { return d.deg; }) || 1;
       function radius(d) {
         var base = d.kind === 'concept' ? 5.2 : 2.6;
@@ -199,7 +226,7 @@
       var link = g.append('g')
         .selectAll('path').data(data.links).join('path')
         .attr('class', 'kg-link')
-        .attr('stroke', function (d) { var t = d.target; return (t && t.sector && SECTOR_COLOR[t.sector]) || '#6b7280'; })
+        .attr('stroke', function (d) { var t = d.target; return (t && t.sector && SECTOR_COLOR[t.sector]) || 'var(--kg-line)'; })
         .attr('stroke-opacity', function (d) { return d.w > 1 ? 0.30 : 0.11; })
         .attr('stroke-width', function (d) { return (d.w > 1 ? 1.15 : 0.7) * R; });
 
@@ -207,12 +234,12 @@
       node.append('circle').attr('class', 'kg-halo')
         .attr('r', function (d) { return radius(d) * (d.kind === 'concept' ? 2.6 : 2.2); })
         .attr('fill', paint)
-        .attr('fill-opacity', function (d) { return d.kind === 'concept' ? 0.16 : 0.09; });
+        .attr('fill-opacity', function (d) { return d.kind === 'concept' ? CH : PH; });
       node.append('circle')
         .attr('r', radius)
         .attr('fill', paint)
         .attr('fill-opacity', function (d) { return d.kind === 'concept' ? 1 : 0.82; })
-        .attr('stroke', function (d) { return d.kind === 'concept' ? '#0a0a0f' : 'none'; })
+        .attr('stroke', function (d) { return d.kind === 'concept' ? 'var(--kg-node-stroke)' : 'none'; })
         .attr('stroke-width', 1.2);
 
       node.filter(function (d) { return d.kind === 'concept'; })
@@ -300,6 +327,15 @@
           .on('drag', function (e, d) { d.fx = e.x; d.fy = e.y; })
           .on('end', function (e, d) { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; svg.classed('kg-drag', false); }));
       }
+
+      new MutationObserver(function () {
+        var g = getComputedStyle(wrap);
+        var ch = parseFloat(g.getPropertyValue('--kg-halo-c')) || CH;
+        var ph = parseFloat(g.getPropertyValue('--kg-halo-p')) || PH;
+        node.selectAll('.kg-halo').attr('fill-opacity', function () {
+          return d3.select(this.parentNode).datum().kind === 'concept' ? ch : ph;
+        });
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
       var c = document.createElement('div');
       c.className = 'kg-count';
