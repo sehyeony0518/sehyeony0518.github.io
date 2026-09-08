@@ -31,6 +31,12 @@ latest_posts:
 photo_preview: false
 blog_preview: true
 ---
+<style>
+  /* Wider than the 930px theme default so "selected reading" can run three columns */
+  .container.mt-5 { max-width: 1180px; }
+  /* but keep the intro prose at a readable measure rather than letting it stretch */
+  article > .clearfix p { max-width: 44rem; }
+</style>
 
 I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). My research focuses on **trustworthy and clinically meaningful medical AI**: diagnostic models that clinicians can rely on, and methods for checking whether that reliance is actually warranted.
 

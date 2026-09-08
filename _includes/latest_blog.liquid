@@ -2,6 +2,7 @@
   .ip-section { margin-top: 0.6rem; }
   .ip-grid { display: grid; grid-template-columns: 1fr; gap: 1.6rem; }
   @media (min-width: 768px) { .ip-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .ip-grid { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; } }
   .ip-col-head {
     display: flex; align-items: baseline; justify-content: space-between;
     margin: 0 0 0.6rem;
@@ -31,6 +32,7 @@
     color: var(--global-theme-color); white-space: nowrap;
   }
   .ip-date { font-size: 0.72rem; opacity: 0.5; font-variant-numeric: tabular-nums; }
+  .ip-sub { font-size: 0.72rem; opacity: 0.5; }
   .ip-title { font-weight: 600; font-size: 0.92rem; line-height: 1.4; margin-top: 0.15rem; }
   .ip-more {
     display: inline-block; margin-top: 0.7rem; font-size: 0.8rem;
@@ -92,6 +94,31 @@
         {% endfor %}
       </div>
       <a class="ip-more" href="{{ '/papers/' | relative_url }}">View All Reviews &rarr;</a>
+    </div>
+
+    <div class="ip-col">
+      <div class="ip-col-head">
+        <a class="ip-col-title" href="{{ '/study/' | relative_url }}">study notes</a>
+      </div>
+      <div class="ip-list">
+        {% comment %} Featured notes first, pinned at the top, then the rest of the library {% endcomment %}
+        {% assign st_all = site.study | where_exp: "n", "n.category" %}
+        {% assign st_featured = st_all | where: "featured", true %}
+        {% assign st_pinned = st_featured | where: "pinned", true %}
+        {% assign st_rest_featured = st_featured | where_exp: "n", "n.pinned != true" %}
+        {% assign st_fill = st_all | where_exp: "n", "n.featured != true" %}
+        {% assign st_sorted = st_pinned | concat: st_rest_featured | concat: st_fill %}
+        {% for item in st_sorted limit: 6 %}
+          <a class="ip-item" href="{{ item.url | relative_url }}">
+            <div class="ip-meta">
+              <span class="ip-chip">{{ item.tab_title }}</span>
+              <span class="ip-sub">{{ item.category_title }}</span>
+            </div>
+            <div class="ip-title">{{ item.title }}</div>
+          </a>
+        {% endfor %}
+      </div>
+      <a class="ip-more" href="{{ '/study/' | relative_url }}">View All Notes &rarr;</a>
     </div>
 
   </div>

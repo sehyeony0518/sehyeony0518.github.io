@@ -11,6 +11,7 @@ order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+featured: true
 ---
 
 Gallbladder polyps are projections from the gallbladder wall into its lumen, but the imaging label includes lesions with different biological meanings. Most are benign; the clinical problem is identifying those that warrant closer assessment or surgery without treating every polyp as a cancer precursor. [SRU consensus](https://pubs.rsna.org/doi/10.1148/radiol.213079)

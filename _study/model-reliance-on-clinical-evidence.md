@@ -12,6 +12,7 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-10-28-degrave-covid-shortcut"
+featured: true
 ---
 
 A model relies on clinical evidence when its predictions depend on that evidence under a specified comparison. Moving from alignment to reliance requires testing a dependency, rather than showing that a feature and a prediction occur together.

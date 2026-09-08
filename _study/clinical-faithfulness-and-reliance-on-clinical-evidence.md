@@ -12,6 +12,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2026-03-13-arun-assessing-saliency"
+featured: true
+pinned: true
 ---
 
 Clinical faithfulness asks whether a model's prediction depends on evidence that is meaningful for the clinical task. In my work, I approach this through the alignment between interpretable model readouts and independent clinical factors, while keeping that alignment distinct from proof of reliance.
