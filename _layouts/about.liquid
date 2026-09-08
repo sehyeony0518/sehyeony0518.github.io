@@ -19,6 +19,21 @@ layout: default
   ]
 }
 </script>
+<script>
+  // First visit lands in dark. theme.js reads localStorage "theme" and falls back
+  // to the system setting, so seeding the key is enough; a reader who picks a
+  // theme afterwards keeps their choice.
+  (function () {
+    try {
+      if (localStorage.getItem('theme')) return;
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute('data-theme-setting', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (typeof applyTheme === 'function') applyTheme();
+    } catch (e) {}
+  })();
+</script>
+
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
