@@ -38,10 +38,10 @@ blog_preview: true
   article > .clearfix p { max-width: 44rem; }
 </style>
 
-I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). I work on medical image classifiers and ultrasound AI for gallbladder and hepatobiliary diagnosis. I am preparing PhD applications, and my [publications](/publications/) and [CV](/assets/pdf/cv-hwang.pdf) are available here.
+I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). I work on the reliability of medical image classifiers and on the clinical knowledge needed to judge it. I am preparing PhD applications, and my [publications](/publications/) and [CV](/assets/pdf/cv-hwang.pdf) are available here.
 
 I organize my [research](/research/) around two directions. In **Reliable medical AI models**, I examine whether diagnostic accuracy comes from clinically valid evidence or from shortcuts and spurious correlations. My work on clinical faithfulness auditing focuses on making a classifier's reliance on evidence measurable and auditable. I also study robustness under distribution shift.
 
-In **Clinical translation**, I study the diseases, imaging findings, and diagnostic reasoning involved in medical diagnosis, with particular attention to gallbladder and hepatobiliary ultrasound. This gives clinical evidence the medical detail needed to assess a model's reasoning. My growing library of [study notes](/study/) covers trustworthy medical AI and the clinical knowledge needed to understand and evaluate it.
+In **Clinical translation**, I study the diseases, imaging findings, and diagnostic reasoning behind a diagnosis, currently in hepatobiliary ultrasound. This gives clinical evidence the medical detail needed to assess a model's reasoning. My growing library of [study notes](/study/) covers trustworthy medical AI and the clinical knowledge needed to understand and evaluate it.
 
 **Contact:** [bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr)
