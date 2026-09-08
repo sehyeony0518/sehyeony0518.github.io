@@ -31,8 +31,8 @@
   .kg-label.kg-hub { font-size: 11.5px; font-weight: 700; }
   .kg-label.kg-tab { font-size: 13px; font-weight: 800; letter-spacing: -.02em; }
   .kg-legend {
-    display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: .6rem 0 0;
-    font-size: .72rem; opacity: .68;
+    display: flex; flex-wrap: wrap; gap: .18rem .85rem; margin: .6rem 0 0;
+    font-size: .69rem; opacity: .66; line-height: 1.5;
   }
   .kg-legend span { display: inline-flex; align-items: center; gap: .34rem; }
   .kg-legend i { width: .56rem; height: .56rem; border-radius: 50%; display: inline-block; }
@@ -51,7 +51,7 @@
     position: absolute; right: .7rem; bottom: .6rem; font-size: .68rem; opacity: .4;
     font-variant-numeric: tabular-nums; pointer-events: none;
   }
-</style> <div class="kg-wrap"> <div class="kg-box" id="kg-box-full" style="height: 620px;"> <div class="kg-cover">Loading the graph…</div> </div> <div class="kg-tip"></div> <div class="kg-legend"> <span><i style="background:#E08A5B"></i>Clinical concept</span> <span><i style="background:#7C6BF2"></i>Computational concept</span> <span><i style="background:#4FBFA8"></i>Writing that joins both</span> <span><i style="background:#9AA3AE"></i>Writing on one side</span> </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-box" id="kg-box-full" style="height: 620px;"> <div class="kg-cover">Loading the graph…</div> </div> <div class="kg-tip"></div> <div class="kg-legend"> <span><i style="background:#E8A33D"></i>Imaging &amp; acquisition</span> <span><i style="background:#E4736B"></i>Disease &amp; pathology</span> <span><i style="background:#D2607F"></i>Clinical practice</span> <span><i style="background:#8B6BF0"></i>Interpretability</span> <span><i style="background:#5D7CE8"></i>Auditing &amp; causality</span> <span><i style="background:#2FA3C7"></i>Evaluation &amp; reliability</span> <span><i style="background:#3FB6A0"></i>Systems &amp; deployment</span> <span><i style="background:#8E97A3"></i>Writing joining both halves</span> </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box-full';
     var FULL = true;
@@ -59,8 +59,21 @@
     if (!box) return;
     var wrap = box.closest('.kg-wrap');
     var tip = wrap.querySelector('.kg-tip');
-    var COLOR = { clinical: '#E08A5B', computational: '#7C6BF2', bridge: '#4FBFA8' };
-    function paint(d) { return d.kind === 'concept' ? COLOR[d.fam] : (d.fam === 'bridge' ? COLOR.bridge : '#9AA3AE'); }
+    var ORDER = ['Imaging & acquisition','Disease & pathology','Clinical practice',
+                 'Interpretability','Auditing & causality','Evaluation & reliability','Systems & deployment'];
+    var SECTOR_COLOR = {
+      'Imaging & acquisition':    '#E8A33D',
+      'Disease & pathology':      '#E4736B',
+      'Clinical practice':        '#D2607F',
+      'Interpretability':         '#8B6BF0',
+      'Auditing & causality':     '#5D7CE8',
+      'Evaluation & reliability': '#2FA3C7',
+      'Systems & deployment':     '#3FB6A0'
+    };
+    function paint(d) {
+      if (d.kind === 'concept') return SECTOR_COLOR[d.sector] || '#8a8a8a';
+      return d.fam === 'bridge' ? '#8E97A3' : (SECTOR_COLOR[d.sector] || '#9AA3AE');
+    }
     var KIND = { concept: 'Concept', note: 'Study note', review: 'Paper review', insight: 'Insight' };
     var started = false;
 
@@ -88,7 +101,7 @@
       var link = g.append('g')
         .selectAll('path').data(data.links).join('path')
         .attr('class', 'kg-link')
-        .attr('stroke', function (d) { return d.kind === 'clinical' ? COLOR.clinical : COLOR.computational; })
+        .attr('stroke', function (d) { var t = d.target; return (t && t.sector && SECTOR_COLOR[t.sector]) || 'var(--global-text-color-light)'; })
         .attr('stroke-opacity', function (d) { return d.w > 1 ? 0.34 : 0.13; })
         .attr('stroke-width', function (d) { return (d.w > 1 ? 1.15 : 0.7) * R; });
 
@@ -112,14 +125,17 @@
 
       // Give each family its own territory so the four groups read as groups,
       // and cross-links between them bend toward each other rather than mixing.
-      // Clinical vocabulary to the left, computational to the right. The writing is
-      // not placed at all: where a piece lands is decided by what it actually cites.
-      function hx(d) {
-        if (d.kind !== 'concept') return W * 0.5;
-        return (d.fam === 'clinical' ? 0.13 : 0.87) * W;
-      }
-      function hy(d) { return H * 0.5; }
-      function pull(d) { return d.kind === 'concept' ? 0.30 : 0.012; }
+      // Seven sectors around a ring, clinical through the top half and computational
+      // through the bottom. Only concepts are placed; the writing settles wherever
+      // its own links pull it, which is the part worth looking at.
+      var cx = W / 2, cy = H / 2, rad = Math.min(W, H) * (FULL ? 0.40 : 0.42);
+      var ANG = {};
+      ORDER.forEach(function (name, i) { ANG[name] = (-Math.PI / 2) + (i / ORDER.length) * Math.PI * 2; });
+      function ax(d) { return ANG[d.sector] === undefined ? cx : cx + Math.cos(ANG[d.sector]) * rad; }
+      function ay(d) { return ANG[d.sector] === undefined ? cy : cy + Math.sin(ANG[d.sector]) * rad * 0.86; }
+      function hx(d) { return d.kind === 'concept' ? ax(d) : cx; }
+      function hy(d) { return d.kind === 'concept' ? ay(d) : cy; }
+      function pull(d) { return d.kind === 'concept' ? 0.34 : 0.008; }
 
       var sim = d3.forceSimulation(data.nodes)
         .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
@@ -127,7 +143,7 @@
           .strength(function (d) { return d.w > 1 ? 0.34 : 0.10; }))
         .force('charge', d3.forceManyBody().strength(FULL ? -52 : -30).distanceMax(230))
         .force('x', d3.forceX(hx).strength(pull))
-        .force('y', d3.forceY(hy).strength(function (d) { return d.kind === 'concept' ? 0.045 : 0.02; }))
+        .force('y', d3.forceY(hy).strength(pull))
         .force('collide', d3.forceCollide().radius(function (d) { return radius(d) + 2.4 * R; }).iterations(2));
 
       function arc(d) {
