@@ -50,7 +50,7 @@ A Bayesian posterior incorporates a prior and a likelihood; it does not remove u
 
 ## Where it touches my work
 
-For gallbladder ultrasound AI, I would specify whether the target is existing malignancy, a pathological category, or a management outcome before interpreting any probability. In clinical faithfulness auditing, I would examine how the association between an evidence readout and a clinical factor changes when acquisition conditions or diagnostic categories are considered. I would choose those conditioning variables from a defensible account of how the data arose. Adding more variables does not automatically make the resulting claim more credible.
+For gallbladder ultrasound AI, I would specify whether the target is existing malignancy, a pathological category, or a management outcome before interpreting any probability. This is the shape of the problem in clinical faithfulness auditing, where an association can change once acquisition conditions or diagnostic categories are taken into account. I would choose those conditioning variables from a defensible account of how the data arose. Adding more variables does not automatically make the resulting claim more credible.
 
 ## What I have not resolved
 

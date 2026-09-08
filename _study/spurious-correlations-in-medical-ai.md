@@ -114,13 +114,13 @@ Group distributionally robust optimization targets the largest training-group lo
 
 ### Pair additions and removals with controls
 
-For authentic marked and unmarked versions $$x_i(1)$$ and $$x_i(0)$$, I would report the paired score difference
+For authentic marked and unmarked versions $$x_i(1)$$ and $$x_i(0)$$, the quantity of interest is the paired difference
 
 $$
-\Delta_i=s_f(x_i(1))-s_f(x_i(0)),
+\Delta_i=s(x_i(1))-s(x_i(0)),
 $$
 
-where $$s_f$$ is the frozen model's selected scalar output. I would inspect the distribution of differences, their direction by diagnosis, and decision changes at a prespecified threshold.
+where $$s$$ is a chosen scalar output of the model. What matters is the distribution of those differences, their direction by diagnosis, and whether decisions change at a fixed threshold.
 
 A near-zero mean can conceal large positive and negative effects. I would therefore report absolute changes as well as signed changes, preserving patient clustering.
 
