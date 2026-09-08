@@ -112,7 +112,7 @@ A synthetic edit intended to change the diagnosis needs a justified counterfactu
 
 ### Require controls and adequate coverage
 
-I would prespecify the primary transformation and output, retain all eligible patients, and use patient-level paired uncertainty estimates. Matched control edits should challenge explanations based on edit area, boundary artifacts, or global normalization. Multiple replacement methods provide sensitivity analyses rather than extra independent patients.
+The primary transformation and output have to be fixed in advance, all eligible patients retained, and uncertainty estimated at the patient level. Matched control edits should challenge explanations based on edit area, boundary artifacts, or global normalization. Multiple replacement methods provide sensitivity analyses rather than extra independent patients.
 
 Natural matched comparisons need overlap. If every malignant case has calipers and no benign case does, statistical adjustment cannot recover an unobserved combination without extrapolation. I would report that limitation directly and seek additional data.
 

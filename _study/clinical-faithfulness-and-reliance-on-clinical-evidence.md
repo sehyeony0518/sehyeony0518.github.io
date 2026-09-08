@@ -30,7 +30,7 @@ The tractable version of this question is narrower than recovering a complete di
 
 ### Independence is about how the reference was constructed
 
-I would define clinical factors before inspecting explanations: focal versus diffuse wall thickening, attachment morphology, intramural cystic spaces, or posterior shadowing, depending on the target diagnosis. Readers would record presence, absence, uncertainty, and whether the relevant evidence is assessable. “Not visible” must not become “absent.”
+Clinical factors have to be defined before anyone inspects an explanation, and which ones are relevant follows from the target diagnosis: focal versus diffuse wall thickening, attachment morphology, intramural cystic spaces, or posterior shadowing. Readers would record presence, absence, uncertainty, and whether the relevant evidence is assessable. “Not visible” must not become “absent.”
 
 Independence means that the factor label was not derived from the explanation being tested. It does not imply statistical independence from diagnosis. A reader tracing a region after seeing the heatmap creates circular validation, even if that reader is clinically experienced. Blinding readers to model scores and, where feasible, final diagnosis reduces separate sources of expectation bias.
 
@@ -76,7 +76,7 @@ I would compare adequately visualized benign wall-thickening cases with and with
 
 Consider a hypothetical stored image in which calipers bracket an irregular gallbladder lesion. The operator noticed the lesion, froze a diagnostic view, and added measurements before export. Marker geometry therefore records an action downstream of clinical suspicion.
 
-An attribution map can overlap the lesion precisely because the calipers overlap it. I would seek two exports of the identical frozen image, with and without the overlay, and verify that tissue pixels and preprocessing match. A score change would support sensitivity to the annotation layer. A nearby cine frame would be weaker evidence because breathing, probe movement, and speckle also change.
+An attribution map can overlap the lesion precisely because the calipers overlap it. Comparing an image with and without an overlay only works if the two exports come from the same acquisition and survive preprocessing unchanged, which is worth verifying rather than assuming. A score change would support sensitivity to the annotation layer. A nearby cine frame would be weaker evidence because breathing, probe movement, and speckle also change.
 
 This example makes anatomical overlap ambiguous in a specific way: tissue morphology and documentation occupy the same region but enter the image through different mechanisms.
 
@@ -84,11 +84,11 @@ This example makes anatomical overlap ambiguous in a specific way: tissue morpho
 
 ### Test alignment and faithfulness separately
 
-For an ordinal clinical factor, I would prespecify a readout and examine rank association alongside the underlying distributions. I would report results within clinically relevant diagnostic groups where sufficient variation exists. A pooled association could simply separate large malignant lesions from small benign findings.
+A relationship between an interpretable readout and a clinical factor is one kind of evidence, and whether the model depends on that factor is another. Conflating them is the common error. I would report results within clinically relevant diagnostic groups where sufficient variation exists. A pooled association could simply separate large malignant lesions from small benign findings.
 
 Factor-label permutations must respect the analysis unit and intended null. Shuffling labels across frames independently would destroy patient structure and create an inappropriate reference distribution. If permutations are restricted within machine or diagnosis groups, I would report that they test a correspondingly narrower association.
 
-Parameter-randomization checks examine whether a readout depends on learned weights. The training-label randomization experiment in [Adebayo and colleagues](https://papers.nips.cc/paper_files/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html) additionally requires training comparison models. For a strictly frozen-model audit, I would state which checks are feasible and avoid implying that a weight check covers both.
+Parameter-randomization checks examine whether a readout depends on learned weights. The training-label randomization experiment in [Adebayo and colleagues](https://papers.nips.cc/paper_files/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html) additionally requires training comparison models. Which checks are even available depends on the access a setting allows, and a claim should not imply a check the access did not permit.
 
 ### Preserve the limits of the evidence
 

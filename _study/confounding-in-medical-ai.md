@@ -126,7 +126,7 @@ If trimming extreme weights changes the conclusion, I would report the sensitivi
 
 A classifier trained only on machine, service, or acquisition metadata measures how much label information those variables contain. A successful metadata baseline does not establish that an image model uses the same information.
 
-I would connect that result to frozen-model tests: performance within acquisition groups, performance when cue-label associations weaken, and paired edits targeting a visible cue. An external performance drop alone remains ambiguous because label definitions, disease spectrum, and image quality may change together.
+Such a result is worth connecting to behaviour on the model itself: performance within acquisition groups, performance when cue and label associations weaken, and controlled edits to a visible cue. An external performance drop alone remains ambiguous because label definitions, disease spectrum, and image quality may change together.
 
 Uncertainty intervals should preserve patient clustering. More frames from the same suspicious lesion do not provide the same independent evidence as more patients with comparable lesions.
 

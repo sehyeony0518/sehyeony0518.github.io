@@ -53,7 +53,7 @@ Markers do not establish whether a finding is sludge, a polyp, a stone, or wall 
 
 The risk has direct ultrasound evidence outside the gallbladder setting: [Lin and colleagues](https://papers.miccai.org/miccai-2024/695-Paper0423.html) demonstrated caliper-related shortcut learning in fetal ultrasound segmentation. I take this as a reason to investigate the mechanism locally, not as evidence that my own models necessarily use it. Marker presence, count, and geometry should be examined as candidate predictors before stronger claims are made.
 
-For a frozen gallbladder model, I would compare predictions on reviewed marked and unmarked versions and include control edits with similar image disruption away from the marker. A change would establish sensitivity to that intervention, not automatically prove exclusive marker reliance. Training and testing separate cleaned models would answer a different question about mitigation. I would also check whether removal leaves recognizable traces or merely shifts reliance to zoom, framing, or measurement-associated texture.
+Comparing predictions on reviewed marked and unmarked versions is the obvious test, and it needs control edits of similar disruption away from the marker before the difference means anything. A change would establish sensitivity to that intervention, not automatically prove exclusive marker reliance. Training and testing separate cleaned models would answer a different question about mitigation. I would also check whether removal leaves recognizable traces or merely shifts reliance to zoom, framing, or measurement-associated texture.
 
 ## References
 

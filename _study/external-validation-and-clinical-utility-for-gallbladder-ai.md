@@ -53,7 +53,7 @@ Missing a concerning lesion can delay assessment, while overcalling a benign fin
 
 ## Implications for medical AI
 
-I would evaluate a frozen gallbladder pipeline on eligible patients from the second hospital, retaining difficult and limited studies. Site-specific acquisition, lesion presentation, verification method, and disease frequency should accompany the results. Sensitivity at the intended operating point, calibration, predictive values, and referral burden need uncertainty estimates based on independent patients.
+An external evaluation runs the pipeline unchanged on eligible patients at the second hospital, and it has to retain the difficult and limited studies rather than quietly dropping them. Site-specific acquisition, lesion presentation, verification method, and disease frequency should accompany the results. Sensitivity at the intended operating point, calibration, predictive values, and referral burden need uncertainty estimates based on independent patients.
 
 This suggests to me that clinical faithfulness auditing belongs beside external performance assessment. I would examine whether the model uses morphology or site-specific annotations, then test clinician-assisted decisions against the relevant usual-care comparator. Better classification alone would not establish fewer missed cancers, more appropriate referrals, or reduced unnecessary follow-up.
 
