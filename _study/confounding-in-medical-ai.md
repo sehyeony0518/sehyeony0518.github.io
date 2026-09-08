@@ -14,59 +14,133 @@ papers:
   - "2025-10-02-zech-variable-generalization"
 ---
 
-Confounding occurs when an observed relationship mixes the association of interest with a noncausal pathway through other variables. In medical AI, I use it to ask whether apparent diagnostic evidence or performance partly reflects differences in patients, acquisition, or labeling.
+A scanner-associated pattern can predict a diagnosis without measuring the abnormality I want the classifier to recognize. I need to identify the pathway producing that association before interpreting performance or clinical-feature alignment.
 
 ## Core question and definition
 
-The question is not simply whether a third variable predicts the label. It is whether that variable creates an alternative explanation for the relationship being interpreted. A confounder must therefore be defined relative to specified variables and a causal question, rather than identified from correlation alone.
+Confounding concerns a particular relationship and causal question. In the simple structure $$A\leftarrow Z\rightarrow Y$$, a common cause $$Z$$ creates an association between $$A$$ and $$Y$$ that does not require an effect of $$A$$ on $$Y$$. A variable does not become a confounder merely because it predicts the label.
 
-I distinguish this from estimating predictive performance within a dataset. A model can genuinely discriminate labels in that population by using hospital-associated information. The estimate may be valid for the sampled mixture while failing to establish that the model recognizes pathology or will perform similarly elsewhere.
+In medical AI, “confounded performance” often refers more loosely to a predictor exploiting population or acquisition differences. I would make the distinction explicit. An AUROC can correctly describe discrimination in a sampled hospital mixture while providing weak evidence that the model recognizes disease morphology.
+
+My immediate audit question is usually whether an observed relationship between a model readout and a clinical factor has an alternative explanation. That is different from estimating the biological effect of the factor, and different again from estimating the effect of editing the classifier's input.
 
 ## Key concepts
 
-### A common cause creates an alternative path
+### Replace hospital identity with the mechanisms it summarizes
 
-In the simple graph $$A \leftarrow Z \rightarrow Y$$, Z influences both A and Y, creating an association that need not reflect an effect of A on Y. For medical images, the full graph may include referral, acquisition, and label generation between these variables. I would draw those mechanisms explicitly. Hospital identity can summarize several processes without itself being a sufficient explanation of their causal structure.
+A hospital identifier may stand for referral patterns, scanner allocation, image processing, reporting conventions, and verification practices. These mechanisms have different positions in a causal account.
 
-### Pooled relationships depend on group composition
+For example, a specialist referral service might receive more suspicious gallbladder lesions and use a particular machine. The resulting machine texture can correlate with malignancy because patient routing connects disease prevalence and equipment exposure. Alternatively, a reporting service might use a different label-extraction rule, connecting hospital identity to the recorded label even when underlying disease frequencies are similar.
 
-For a cue N and grouping variable Z, the identity
+I would distinguish underlying disease $$D$$ from recorded diagnosis $$Y$$. A pathway into $$Y$$ through report language or reference-standard choice is not equivalent to a pathway into $$D$$. Adding “hospital” to a regression does not explain which process was operating.
+
+### Pooled associations contain a composition term
+
+For nuisance cue $$N$$, outcome $$Y$$, and a discrete grouping variable $$Z$$,
 
 $$
-P(Y \mid N) = \sum_z P(Y \mid N, Z = z)\,P(Z = z \mid N)
+P(Y=1\mid N=n)
+=
+\sum_z P(Y=1\mid N=n,Z=z)P(Z=z\mid N=n).
 $$
 
-shows how a pooled association combines within-group relationships and group proportions. A device-identifying cue can predict disease when devices serve different patient groups, even if it adds no diagnostic information within those groups. I therefore want both pooled and stratified results before interpreting an evidence score as a marker of clinical severity.
+Even if $$N$$ adds no information within every group, its pooled association with disease can arise because the groups have different disease frequencies and $$N$$ identifies group membership.
 
-### Adjustment requires assumptions beyond recorded covariates
+The corresponding issue for an evidence readout can be written using the law of total covariance:
 
-Adjustment aims to close the relevant noncausal paths. It requires an appropriate variable set, adequate overlap, and suitable estimation; recording many covariates does not guarantee these conditions. [Pearl's causal framework](https://doi.org/10.1214/09-SS057) makes the distinction between observational and interventional quantities explicit. I would not call a covariate-adjusted correlation a causal effect. Measurement error, omitted causes, and incorrectly specified relationships can leave its interpretation unresolved.
+$$
+\operatorname{Cov}(A,C)
+=
+E[\operatorname{Cov}(A,C\mid Z)]
++
+\operatorname{Cov}(E[A\mid Z],E[C\mid Z]).
+$$
 
-### Controlling for a variable can change the question
+Here, $$A$$ is a scalar model readout and $$C$$ a numerical clinical descriptor. The first term averages within-group covariance. The second measures how their group means move together. A pooled alignment result can therefore be driven by group composition even when within-group alignment is weak.
 
-A mediator lies on a causal pathway, while a collider is a common effect of other variables. Adjusting for the former can remove part of an effect; conditioning on the latter can introduce an association. Similarly, controlling for diagnostic class in an evidence audit asks about variation within classes. That may be useful, but it can remove clinically meaningful between-class variation. I need to justify this choice before comparing adjusted and unadjusted results.
+I would inspect both terms conceptually before assigning clinical meaning to a single correlation coefficient.
+
+### Common causes and downstream decisions are different
+
+Suppose visible irregularity prompts the operator to increase zoom and add calipers. Those acquisition decisions occur downstream of the observed finding. They can become shortcuts, but calling them common-cause confounders of every image-label relationship would obscure their timing.
+
+The appropriate adjustment set depends on the relationship being estimated. [Pearl's overview](https://doi.org/10.1214/09-SS057) explains why causal structure, rather than predictive association alone, determines adjustment.
+
+For my audit, protocol adjustment might ask whether a readout tracks irregularity among similarly acquired images. It would not estimate what the readout would have been if the same lesion had been scanned differently. That stronger claim requires additional assumptions or a paired acquisition design.
+
+### Overlap is a property of the available comparisons
+
+If all suspicious masses were scanned using one protocol and all benign lesions using another, protocol and diagnosis cannot be separated credibly from those observations alone. A regression still returns coefficients, but their interpretation may depend on extrapolation into combinations absent from the data.
+
+I would inspect distributions of lesion morphology, size, visibility, and acquisition settings jointly. “Both machines are represented” is insufficient if comparable clinical presentations are missing from one machine.
+
+Restricting analysis to shared support can improve comparability, but changes the population. I would report which patients were excluded and avoid extending the resulting estimate to presentations removed by that restriction.
 
 ## Worked examples in medical AI
 
-[Zech and colleagues](https://doi.org/10.1371/journal.pmed.1002683) studied pneumonia classification across hospital systems. Their experiments showed that hospital-identifying information, combined with differences in pneumonia prevalence, could support internal performance that did not transfer reliably. I read this as evidence that a pooled diagnostic benchmark can reward recognition of where an image originated.
+### Pneumonia discrimination through hospital recognition
 
-Consider a hypothetical gallbladder dataset in which suspicious lesions are examined using a different protocol. A model evidence score and clinician-rated lesion irregularity might correlate partly because both vary across protocol groups. Comparing their relationship within protocols would test one explanation, but would remain inconclusive if clinically comparable lesions were absent from one group.
+[Zech and colleagues](https://doi.org/10.1371/journal.pmed.1002683) evaluated pneumonia classification using chest radiographs from the NIH Clinical Center, Mount Sinai, and Indiana University. Their experiments connected hospital-identifying information and differences in pneumonia prevalence to variable external generalization.
+
+The important mechanism is not simply that hospitals produce different images. Hospital recognition becomes useful for the diagnostic objective when hospital membership predicts the label. Their engineered prevalence comparisons helped examine that dependency.
+
+I read this as a warning about pooled AUROC. A score that primarily orders hospitals by disease prevalence can correctly rank many positive-negative pairs drawn from different hospitals while offering little discrimination between patients within the same hospital.
+
+For a score $$s$$, AUROC equals the probability that an independently drawn positive receives a higher score than a negative, plus half the probability of a tie. That definition contains no requirement that the ordering use pathology.
+
+### Gallbladder morphology and targeted acquisition
+
+Consider a proposed audit of model attention to an irregular gallbladder wall. Suspicious cases might have targeted, enlarged views, whereas other cases have broad survey images. A readout measuring attribution inside the wall can then increase because the wall occupies more pixels, because image detail changes, or because irregularity itself influences the model.
+
+I would independently annotate irregularity, wall-region area, and assessability, then recover zoom or acquisition information where available. Comparing similarly visible lesions within acquisition groups would challenge the simplest protocol explanation.
+
+The clinical comparison also needs benign structural alternatives. Adenomyomatosis can produce a thickened wall containing intramural cystic spaces, as described by [Bonatti and colleagues](https://pubmed.ncbi.nlm.nih.gov/28127678/). I would include such cases to distinguish generic sensitivity to wall abnormality from sensitivity to the finding relevant to the stated differential.
+
+This remains a proposed observational audit. A residual association after adjustment would not establish which pixels causally drive the prediction.
 
 ## Evaluation methods and limitations
 
-I would begin with a causal account, inspect joint distributions of clinical and acquisition variables, and report performance and evidence alignment within relevant strata. Matching, weighting, and regression can support specific comparisons when their assumptions are credible. A cue-only predictor can reveal how much predictive opportunity exists in metadata, without proving that the image classifier uses it.
+### Specify the estimand and adjustment rationale
 
-Patient-level uncertainty estimates remain necessary, but narrow intervals cannot repair missing overlap or unmeasured causes. External evaluation can challenge a site-associated relationship; a performance change alone cannot identify which acquisition or clinical mechanism produced it.
+Before fitting a model, I would write whether the target is overall clinical-factor alignment, alignment within diagnosis, or alignment among comparable acquisition conditions. Those are different estimands.
+
+Conditioning on diagnostic class removes between-class variation. This can reveal whether a readout distinguishes degrees of irregularity within malignant lesions, but it may also discard the variation that made the factor diagnostically useful. I would report the pooled and conditional questions separately.
+
+For confounding analyses, I would draw plausible arrows and justify included covariates. I would also state which variables were unavailable, such as prior clinical suspicion or the reason for selecting a particular transducer.
+
+### Use balancing methods with diagnostics
+
+Matching, stratification, outcome regression, and inverse-probability weighting can support adjusted comparisons. None supplies the missing causal assumptions. Weighting particularly requires attention to overlap and model specification, discussed by [Cole and Hernán](https://pubmed.ncbi.nlm.nih.gov/18682488/).
+
+I would inspect covariate balance after matching or weighting, not assume that applying the method achieved it. For weights $$w_i$$ over $$n$$ observations, a useful concentration diagnostic is
+
+$$
+n_{\mathrm{eff}}=\frac{(\sum_{i=1}^{n}w_i)^2}{\sum_{i=1}^{n}w_i^2}.
+$$
+
+This effective sample size decreases when a few observations dominate. It is not a replacement for patient-level uncertainty estimation or a correction for unmeasured confounding.
+
+If trimming extreme weights changes the conclusion, I would report the sensitivity and the associated change in the comparison population.
+
+### Separate predictive opportunity from model reliance
+
+A classifier trained only on machine, service, or acquisition metadata measures how much label information those variables contain. A successful metadata baseline does not establish that an image model uses the same information.
+
+I would connect that result to frozen-model tests: performance within acquisition groups, performance when cue-label associations weaken, and paired edits targeting a visible cue. An external performance drop alone remains ambiguous because label definitions, disease spectrum, and image quality may change together.
+
+Uncertainty intervals should preserve patient clustering. More frames from the same suspicious lesion do not provide the same independent evidence as more patients with comparable lesions.
 
 ## Research connections and open questions
 
-For gallbladder ultrasound clinical faithfulness auditing, I want each alignment claim to include its clinical reference, adjustment rationale, and population. This would make “the readout tracks a clinical factor” a more precise and challengeable statement.
+My first question is whether attribution-clinical-factor associations survive adjustment for region area and independently rated visibility within acquisition groups. This requires a modest, blinded annotation study rather than new model training.
 
-- Which acquisition variables capture the relevant mechanisms, rather than merely naming the device?
-- When does controlling for diagnosis clarify evidence alignment, and when does it remove the signal of interest?
-- How should I report an association when the available patients provide insufficient overlap for a credible adjusted comparison?
+Second, I would test whether frame count, caliper presence, or zoom predicts diagnosis beyond machine identity. If so, reconstructing the examination workflow may explain more than a device-level label.
+
+Third, I would map missing combinations explicitly: benign irregular walls on each machine, unmarked suspicious lesions, and marked benign lesions. That map could guide targeted data collection. When overlap is absent, the useful research result is a precise statement of which dependence cannot yet be distinguished, followed by a plan to acquire the missing comparison.
 
 ## References
 
 - Pearl, [Causal inference in statistics: An overview](https://doi.org/10.1214/09-SS057), Statistics Surveys 2009.
 - Zech et al., [Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study](https://doi.org/10.1371/journal.pmed.1002683), PLOS Medicine 2018.
+- Cole and Hernán, [Constructing inverse probability weights for marginal structural models](https://pubmed.ncbi.nlm.nih.gov/18682488/), American Journal of Epidemiology 2008.
+- Bonatti et al., [Gallbladder adenomyomatosis: imaging findings, tricks and pitfalls](https://pubmed.ncbi.nlm.nih.gov/28127678/), Insights into Imaging 2017.
