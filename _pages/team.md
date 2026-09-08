@@ -5,6 +5,7 @@ title: team
 description: Disciples of Jesus, the Mission2035 tentmaking mission team.
 nav: true
 nav_order: 1
+sitemap: false
 ---
 
 <style>

@@ -5,6 +5,7 @@ title: photos
 description: "부르심의 여정을 함께한 순간들: 캠퍼스 선교, 공동체, 사역, 그리고 일상."
 nav: true
 nav_order: 6
+sitemap: false
 ---
 
 <style>

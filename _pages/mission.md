@@ -5,6 +5,7 @@ title: mission2035
 description: 부르심을 따라 제자로 살고, 보내심을 따라 열방으로 나아가며, 삶을 드려 하나님 나라의 임하심을 구한다.
 nav: true
 nav_order: 1
+sitemap: false
 ---
 
 <img id="mission-profile" src="/assets/img/prof_pic.jpg?v=2" alt="Se-Hyeon Hwang" loading="eager">
