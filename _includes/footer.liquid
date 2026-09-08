@@ -116,15 +116,21 @@
   }
 
   /* Small social-icon row, shown once under the navbar (same links as the footer) */
-  /* Lives inside the page container, so its right edge is the same edge the
-     profile photo floats to. No geometry is duplicated, so nothing can drift. */
+  /* Sits directly above the profile photo, inside the same floated column, so it
+     shares the photo's width and right edge. Pages without a photo fall back to
+     the top of the content container. */
   #top-social-bar {
     display: none; /* becomes flex via JS once populated */
     justify-content: flex-end;
     gap: 0.85rem;
-    margin: 0 0 0.35rem;
+    margin: 0 0 0.45rem;
     font-size: 0.92rem;
     opacity: 0.75;
+  }
+  /* On mobile the photo moves to the bottom of the page, where the footer already
+     carries the same icons, so the duplicate is not worth the row */
+  @media (max-width: 575.98px) {
+    .profile #top-social-bar { display: none !important; }
   }
   #top-social-bar a { color: inherit; }
   #top-social-bar a:hover { color: var(--global-theme-color); }
@@ -162,9 +168,11 @@
       bar.id = 'top-social-bar';
       bar.innerHTML = icons.innerHTML;
       bar.style.display = 'flex';
-      // Put it in the content container so it shares the page's right edge
+      // Prefer directly above the profile photo, inside its floated column
+      var profile = document.querySelector('article > .profile');
       var host = document.querySelector('.container.mt-5');
-      if (host) host.insertBefore(bar, host.firstChild);
+      if (profile) profile.insertBefore(bar, profile.firstChild);
+      else if (host) host.insertBefore(bar, host.firstChild);
       else nav.parentNode.insertBefore(bar, nav.nextSibling);
     }
     if (document.readyState !== 'loading') addTopSocialBar();
