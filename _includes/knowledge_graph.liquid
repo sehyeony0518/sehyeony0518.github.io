@@ -39,27 +39,32 @@
   .kg-stage { position: relative; display: flex; align-items: stretch; gap: .7rem; }
   .kg-stage > .kg-box { flex: 1 1 auto; min-width: 0; }
   .kg-bar {
-    flex: 0 0 auto; width: 11.6rem; display: flex; flex-direction: column;
-    gap: .26rem; justify-content: flex-start;
+    flex: 0 0 auto; width: 12.4rem; display: flex; flex-direction: column;
+    gap: .3rem; justify-content: stretch;
   }
   @media (max-width: 700px) {
     .kg-stage { flex-direction: column; }
     .kg-bar { width: auto; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
   }
   .kg-chip {
-    padding: .26rem .6rem; border-radius: 8px; cursor: pointer;
+    /* Share the column height so the strip fills the panel instead of
+       clustering at the top with dead space under it */
+    flex: 1 1 0; min-height: 2.3rem;
+    padding: .5rem .7rem; border-radius: 9px; cursor: pointer;
     border: 1px solid var(--kg-border); background: none; color: inherit;
-    font-size: .7rem; font-weight: 600; letter-spacing: .01em; transition: all .14s ease;
-    display: flex; align-items: center; gap: .42rem; text-align: left; line-height: 1.25;
+    font-size: .8rem; font-weight: 600; letter-spacing: .005em; transition: all .14s ease;
+    display: flex; align-items: center; gap: .5rem; text-align: left; line-height: 1.25;
   }
-  @media (max-width: 700px) { .kg-chip { flex: 0 0 auto; } }
-  .kg-chip i { width: .5rem; height: .5rem; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
+  @media (max-width: 700px) {
+    .kg-chip { flex: 0 0 auto; min-height: 0; padding: .3rem .65rem; font-size: .74rem; }
+  }
+  .kg-chip i { width: .6rem; height: .6rem; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
   .kg-chip:hover { border-color: currentColor; }
   .kg-chip { opacity: .62; }
   .kg-chip:hover { opacity: 1; }
   .kg-chip.on { opacity: 1; border-color: currentColor; background: rgba(128,128,128,.09); }
-  .kg-all { margin-bottom: .35rem; justify-content: center; font-weight: 700;
-            letter-spacing: .05em; text-transform: uppercase; font-size: .66rem; }
+  .kg-all { margin-bottom: .4rem; justify-content: center; font-weight: 800;
+            letter-spacing: .08em; text-transform: uppercase; font-size: .74rem; }
   .kg-box {
     position: relative; width: 100%; border-radius: 14px; overflow: hidden;
     border: 1px solid var(--kg-border);
