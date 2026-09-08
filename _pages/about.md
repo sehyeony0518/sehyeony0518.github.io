@@ -9,11 +9,8 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p><strong>Se-Hyeon Hwang</strong> (황세현)</p>
-    <p>M.S. Student, AI Convergence Network</p>
     <p><a href="https://eslab.ajou.ac.kr/" target="_blank">Embedded & Software Lab</a></p>
     <p>Ajou University, Suwon</p>
-    <p><a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -38,9 +35,12 @@ blog_preview: true
 <style>
   /* The intro sits beside the profile photo, so hold it tighter than the site default */
   article > .clearfix p { max-width: 44rem; }
-  /* Pull the photo up alongside the tagline instead of starting below the header */
+  /* Sit the photo alongside the tagline and keep the block roughly as tall as the
+     text beside it, so both end near the contact line */
   @media (min-width: 576px) {
-    article > .profile.float-right { margin-top: -4.2rem; }
+    article > .profile.float-right { margin-top: -4.6rem; width: 23%; }
+    .profile .more-info { margin-top: .5rem; font-size: .78rem; line-height: 1.5; }
+    .profile .more-info p { display: block; margin: 0; }
   }
 </style>
 
