@@ -145,6 +145,19 @@
   #top-social-bar .contact-note { display: none; } /* keep only icons up top */
   #top-social-source { display: none; }
 </style> <script>
+  // First visit lands in dark. theme.js reads localStorage "theme" and falls back
+  // to the system setting, so seeding the key is enough; a reader who picks a
+  // theme afterwards keeps their choice.
+  (function () {
+    try {
+      if (localStorage.getItem('theme')) return;
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute('data-theme-setting', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (typeof applyTheme === 'function') applyTheme();
+    } catch (e) {}
+  })();
+</script> <script>
   (function () {
     // Secret mission mode: determined by the CURRENT PAGE (full separation, no stored state).
     // Mission-side paths show mission tabs only; everything else shows academic tabs only.

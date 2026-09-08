@@ -21,6 +21,19 @@
     "https://github.com/sehyeony0518"
   ]
 }
+</script> <script>
+  // First visit lands in dark. theme.js reads localStorage "theme" and falls back
+  // to the system setting, so seeding the key is enough; a reader who picks a
+  // theme afterwards keeps their choice.
+  (function () {
+    try {
+      if (localStorage.getItem('theme')) return;
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute('data-theme-setting', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (typeof applyTheme === 'function') applyTheme();
+    } catch (e) {}
+  })();
 </script> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Se-Hyeon</span> Hwang </h1> <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p> <p class="desc">M.S. Student, AI Convergence Network, Ajou University</p> </header> <style>
     .hero-tagline {
       margin: 0.3rem 0 0.4rem;
@@ -103,7 +116,11 @@
   </script> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/prof_pic.jpg?v=d5aa7cb94990004759b6ffc5d51f10bc" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="prof_pic.jpg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <p><strong>Se-Hyeon Hwang</strong> (황세현)</p> <p>M.S. Student, AI Convergence Network</p> <p><a href="https://eslab.ajou.ac.kr/" target="_blank" rel="external nofollow noopener">Embedded &amp; Software Lab</a></p> <p>Ajou University, Suwon</p> <p><a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p> </div> </div> <div class="clearfix"> <style>
   /* The intro sits beside the profile photo, so hold it tighter than the site default */
   article > .clearfix p { max-width: 44rem; }
-</style> <p>I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at <a href="https://www.ajou.ac.kr/en/index.do" rel="external nofollow noopener" target="_blank">Ajou University</a>, advised by Prof. Jung-Won Lee at the <a href="https://eslab.ajou.ac.kr/" rel="external nofollow noopener" target="_blank">Embedded &amp; Software Lab</a>. I work on the reliability of medical image classifiers and on the clinical knowledge needed to judge it. I am preparing PhD applications, and my <a href="/publications/">publications</a> and <a href="/assets/pdf/cv-hwang.pdf">CV</a> are available here.</p> <p>I organize my <a href="/research/">research</a> around two directions. In <strong>Reliable medical AI models</strong>, I examine whether diagnostic accuracy comes from clinically valid evidence or from shortcuts and spurious correlations. My work on clinical faithfulness auditing focuses on making a classifier’s reliance on evidence measurable and auditable. I also study robustness under distribution shift.</p> <p>In <strong>Clinical translation</strong>, I study the diseases, imaging findings, and diagnostic reasoning behind a diagnosis, currently in hepatobiliary ultrasound. This gives clinical evidence the medical detail needed to assess a model’s reasoning. My growing library of <a href="/study/">study notes</a> covers trustworthy medical AI and the clinical knowledge needed to understand and evaluate it.</p> <p><strong>Contact:</strong> <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p> </div> <div class="hb-head"> <h2 id="hb-title">knowledge graph</h2> <div class="hb-toggle" id="hb-toggle"> <button type="button" class="hb-btn active" data-view="map">graph</button> <button type="button" class="hb-btn" data-view="reading">selected reading</button> </div> </div> <div class="hb-pane" data-pane="map"> <style>
+  /* Pull the photo up alongside the tagline instead of starting below the header */
+  @media (min-width: 576px) {
+    article > .profile.float-right { margin-top: -4.2rem; }
+  }
+</style> <p>I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at <a href="https://www.ajou.ac.kr/en/index.do" rel="external nofollow noopener" target="_blank">Ajou University</a>, advised by Prof. Jung-Won Lee at the <a href="https://eslab.ajou.ac.kr/" rel="external nofollow noopener" target="_blank">Embedded &amp; Software Lab</a>. I am preparing PhD applications, and my <a href="/publications/">publications</a> and <a href="/assets/pdf/cv-hwang.pdf">CV</a> are available here.</p> <p>My <a href="/research/">research</a> runs in two directions. In <strong>reliable medical AI models</strong> I examine whether diagnostic accuracy comes from clinically valid evidence or from shortcuts, and work on making that reliance measurable. In <strong>clinical translation</strong> I study the diseases, imaging findings, and diagnostic reasoning that give clinical evidence its content, currently in hepatobiliary ultrasound. My <a href="/study/">study notes</a> cover both.</p> <p><strong>Contact:</strong> <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p> </div> <div class="hb-head"> <h2 id="hb-title">knowledge graph</h2> <div class="hb-toggle" id="hb-toggle"> <button type="button" class="hb-btn active" data-view="map">graph</button> <button type="button" class="hb-btn" data-view="reading">selected reading</button> </div> </div> <div class="hb-pane" data-pane="map"> <style>
   /* Light is the default; dark takes over with the site's own theme switch and
      with the system preference when the reader has not chosen. */
   .kg-wrap {
@@ -622,6 +639,19 @@
   #top-social-bar .contact-note { display: none; } /* keep only icons up top */
   #top-social-source { display: none; }
 </style> <script>
+  // First visit lands in dark. theme.js reads localStorage "theme" and falls back
+  // to the system setting, so seeding the key is enough; a reader who picks a
+  // theme afterwards keeps their choice.
+  (function () {
+    try {
+      if (localStorage.getItem('theme')) return;
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute('data-theme-setting', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (typeof applyTheme === 'function') applyTheme();
+    } catch (e) {}
+  })();
+</script> <script>
   (function () {
     // Secret mission mode: determined by the CURRENT PAGE (full separation, no stored state).
     // Mission-side paths show mission tabs only; everything else shows academic tabs only.
