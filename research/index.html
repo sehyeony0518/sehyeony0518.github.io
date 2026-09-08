@@ -145,23 +145,15 @@
   }
 
   /* Small social-icon row, shown once under the navbar (same links as the footer) */
+  /* Lives inside the page container, so its right edge is the same edge the
+     profile photo floats to. No geometry is duplicated, so nothing can drift. */
   #top-social-bar {
-    display: none; /* becomes block via JS once populated */
-    padding: 0.35rem 0;
-    font-size: 0.92rem;
-    opacity: 0.75;
-  }
-  /* Mirrors the navbar's own .container geometry exactly, so the icons end on the
-     same line as the tabs no matter how wide the window is */
-  #top-social-bar .tsb-inner {
-    width: 100%;
-    max-width: var(--max-content-width);
-    margin-inline: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    display: flex;
+    display: none; /* becomes flex via JS once populated */
     justify-content: flex-end;
     gap: 0.85rem;
+    margin: 0 0 0.35rem;
+    font-size: 0.92rem;
+    opacity: 0.75;
   }
   #top-social-bar a { color: inherit; }
   #top-social-bar a:hover { color: var(--global-theme-color); }
@@ -195,12 +187,12 @@
       if (!icons || !icons.children.length) return;
       var bar = document.createElement('div');
       bar.id = 'top-social-bar';
-      var inner = document.createElement('div');
-      inner.className = 'tsb-inner';
-      inner.innerHTML = icons.innerHTML;
-      bar.appendChild(inner);
-      bar.style.display = 'block';
-      nav.parentNode.insertBefore(bar, nav.nextSibling);
+      bar.innerHTML = icons.innerHTML;
+      bar.style.display = 'flex';
+      // Put it in the content container so it shares the page's right edge
+      var host = document.querySelector('.container.mt-5');
+      if (host) host.insertBefore(bar, host.firstChild);
+      else nav.parentNode.insertBefore(bar, nav.nextSibling);
     }
     if (document.readyState !== 'loading') addTopSocialBar();
     else document.addEventListener('DOMContentLoaded', addTopSocialBar);
