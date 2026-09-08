@@ -7,43 +7,57 @@ nav: true
 nav_order: 10
 ---
 
-<style>
+{% include entry_list.liquid %}
 
-  .aiblog-list { margin-top: .5rem; display: grid; grid-template-columns: 1fr; gap: .8rem; }
-  @media (min-width: 576px) { .aiblog-list { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 900px) { .aiblog-list { grid-template-columns: repeat(3, 1fr); } }
-  @media (min-width: 1200px) { .aiblog-list { grid-template-columns: repeat(4, 1fr); } }
-  .aiblog-list .ab-item {
-    display: block; text-decoration: none; color: inherit;
-    padding: 1rem 1.15rem; border-radius: 12px;
-    border: 1px solid rgba(128,128,128,.18); background: rgba(128,128,128,.035);
-    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
-  }
-  .aiblog-list .ab-item:hover {
-    border-color: var(--global-theme-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,.07);
-  }
-  .aiblog-list .ab-meta { display: flex; align-items: baseline; gap: .55rem; }
-  .aiblog-list .ab-tag {
-    font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
-    color: var(--global-theme-color); white-space: nowrap;
-  }
-  .aiblog-list .ab-date { font-size: .76rem; opacity: .5; font-variant-numeric: tabular-nums; }
-  .aiblog-list .ab-title { font-weight: 700; font-size: 1.08rem; line-height: 1.4; margin-top: .15rem; }
-  .aiblog-list .ab-desc { font-size: .86rem; opacity: .7; margin-top: .25rem; line-height: 1.55; }
-</style>
+{% assign posts_sorted = site.aiblog | sort: "date" | reverse %}
 
-<div class="aiblog-list">
-  {% assign posts_sorted = site.aiblog | sort: "date" | reverse %}
+{%- assign tags = "" | split: "," -%}
+{%- for post in posts_sorted -%}
+  {%- assign t = post.tag | default: "Other" | strip -%}
+  {%- unless tags contains t -%}{%- assign one = t | split: "," -%}{%- assign tags = tags | concat: one -%}{%- endunless -%}
+{%- endfor -%}
+{%- assign tags = tags | sort -%}
+
+<div class="el-cats" id="ab-filter">
+  <button type="button" class="el-cat active" data-k="all">All <span class="el-cnt">{{ posts_sorted | size }}</span></button>
+  {%- for t in tags %}
+  {%- assign n = posts_sorted | where: "tag", t | size %}
+  <button type="button" class="el-cat" data-k="{{ t | slugify }}">{{ t }} <span class="el-cnt">{{ n }}</span></button>
+  {%- endfor %}
+</div>
+
+<div class="el-list" id="ab-list">
   {% for post in posts_sorted %}
-    <a class="ab-item" href="{{ post.url | relative_url }}">
-      <div class="ab-meta">
-        {% if post.tag %}<span class="ab-tag">{{ post.tag }}</span>{% endif %}
-        <span class="ab-date">{{ post.date | date: '%B %d, %Y' }}</span>
+    {% assign t = post.tag | default: "Other" | strip %}
+    <a class="el-row" data-k="{{ t | slugify }}" href="{{ post.url | relative_url }}">
+      <div class="el-title">{{ post.title }}</div>
+      {% if post.description %}<div class="el-sum">{{ post.description }}</div>{% endif %}
+      <div class="el-foot">
+        <span class="el-tag">{{ t }}</span>
+        <span class="el-date">{{ post.date | date: '%B %-d, %Y' }}</span>
+        <span class="el-read">Read &rarr;</span>
       </div>
-      <div class="ab-title">{{ post.title }}</div>
-      {% if post.description %}<div class="ab-desc">{{ post.description }}</div>{% endif %}
     </a>
   {% endfor %}
 </div>
+
+{% if site.aiblog.size == 0 %}<p class="el-empty">Posts are being added, the first ones will appear here soon.</p>{% endif %}
+
+<script>
+  (function () {
+    var f = document.getElementById('ab-filter');
+    if (!f) return;
+    var chips = f.querySelectorAll('.el-cat');
+    var rows = document.querySelectorAll('#ab-list .el-row');
+    f.addEventListener('click', function (e) {
+      var c = e.target.closest('.el-cat');
+      if (!c) return;
+      chips.forEach(function (x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var k = c.getAttribute('data-k');
+      rows.forEach(function (r) {
+        r.classList.toggle('el-hidden', k !== 'all' && r.getAttribute('data-k') !== k);
+      });
+    });
+  })();
+</script>
