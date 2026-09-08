@@ -222,10 +222,11 @@
       var cs = getComputedStyle(wrap);
       var CH = parseFloat(cs.getPropertyValue('--kg-halo-c')) || 0.16;
       var PH = parseFloat(cs.getPropertyValue('--kg-halo-p')) || 0.09;
-      var maxDeg = d3.max(data.nodes.filter(function (d) { return d.kind === 'note' || d.kind === 'review'; }), function (d) { return d.deg; }) || 1;
+      var maxPiece = d3.max(data.nodes.filter(function (d) { return d.kind !== 'concept'; }), function (d) { return d.deg; }) || 1;
+      var maxHub = d3.max(data.nodes.filter(function (d) { return d.kind === 'concept'; }), function (d) { return d.deg; }) || 1;
       function radius(d) {
-        var base = d.kind === 'concept' ? 4.0 : 1.75;
-        return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'concept' ? 4.6 : 1.9)) * R;
+        if (d.kind === 'concept') return (3.4 + Math.sqrt(d.deg / maxHub) * 3.2) * R;
+        return (1.7 + Math.sqrt(d.deg / maxPiece) * 1.7) * R;
       }
 
       var link = g.append('g')
@@ -259,13 +260,24 @@
       // through the bottom. Only concepts are placed; the writing settles wherever
       // its own links pull it, which is the part worth looking at.
       var cx = W / 2, cy = H / 2, rad = Math.min(W, H) * (FULL ? 0.46 : 0.50);
-      var ANG = {};
-      ORDER.forEach(function (name, i) { ANG[name] = (-Math.PI / 2) + (i / ORDER.length) * Math.PI * 2; });
-      function ax(d) { return ANG[d.sector] === undefined ? cx : cx + Math.cos(ANG[d.sector]) * rad; }
-      function ay(d) { return ANG[d.sector] === undefined ? cy : cy + Math.sin(ANG[d.sector]) * rad * 0.86; }
+      // One slot per concept around the ring, ordered so a sector occupies a
+      // contiguous arc. Sending six concepts to one sector anchor piled them up.
+      var hubs = data.nodes.filter(function (d) { return d.kind === 'concept'; });
+      hubs.sort(function (a, b) {
+        var t = ORDER.indexOf(a.sector) - ORDER.indexOf(b.sector);
+        return t || a.label.localeCompare(b.label);
+      });
+      var GAP = 0.055, span = (Math.PI * 2) - ORDER.length * GAP;
+      var ANG = {}, at = -Math.PI / 2, prev = null;
+      hubs.forEach(function (d) {
+        if (prev !== null && d.sector !== prev) at += GAP;
+        ANG[d.id] = at; at += span / hubs.length; prev = d.sector;
+      });
+      function ax(d) { return ANG[d.id] === undefined ? cx : cx + Math.cos(ANG[d.id]) * rad * 1.32; }
+      function ay(d) { return ANG[d.id] === undefined ? cy : cy + Math.sin(ANG[d.id]) * rad * 0.90; }
       function hx(d) { return d.kind === 'concept' ? ax(d) : cx; }
       function hy(d) { return d.kind === 'concept' ? ay(d) : cy; }
-      function pull(d) { return d.kind === 'concept' ? 0.34 : 0.008; }
+      function pull(d) { return d.kind === 'concept' ? 0.62 : 0.006; }
 
       var sim = d3.forceSimulation(data.nodes)
         .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
