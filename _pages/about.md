@@ -31,6 +31,8 @@ latest_posts:
 photo_preview: false
 blog_preview: true
 ---
+
+
 <style>
   /* Wider than the 930px theme default so "selected reading" can run three columns */
   .container.mt-5 { max-width: 1180px; }
@@ -38,10 +40,10 @@ blog_preview: true
   article > .clearfix p { max-width: 44rem; }
 </style>
 
-I am an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). My research focuses on **trustworthy and clinically meaningful medical AI**: diagnostic models that clinicians can rely on, and methods for checking whether that reliance is actually warranted.
+I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by Prof. Jung-Won Lee at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). I work on medical image classifiers and ultrasound AI for gallbladder and hepatobiliary diagnosis. I am preparing PhD applications, and my [publications](/publications/) and [CV](/assets/pdf/cv-hwang.pdf) are available here.
 
-My work follows three connected questions. I study **clinical evidence auditing**, asking whether a diagnostic model reaches its prediction through clinically valid evidence rather than shortcuts or spurious correlations, and I develop **ultrasound AI for hepatobiliary diagnosis**, building clinically informed models for gallbladder and hepatobiliary disease. Underlying both is **generalizable medical AI**: whether a model that works in one setting stays reliable across hospitals, devices, and patient populations.
+I organize my [research](/research/) around two directions. In **Reliable medical AI models**, I examine whether diagnostic accuracy comes from clinically valid evidence or from shortcuts and spurious correlations. My work on clinical faithfulness auditing focuses on making a classifier's reliance on evidence measurable and auditable. I also study robustness under distribution shift.
 
-More about my work is on the [research](/research/) and [publications](/publications/) pages, and my full CV is available as a [PDF](/assets/pdf/cv-hwang.pdf).
+In **Clinical translation**, I study the diseases, imaging findings, and diagnostic reasoning involved in medical diagnosis, with particular attention to gallbladder and hepatobiliary ultrasound. This gives clinical evidence the medical detail needed to assess a model's reasoning. My growing library of [study notes](/study/) covers trustworthy medical AI and the clinical knowledge needed to understand and evaluate it.
 
 **Contact:** [bikmiso3@ajou.ac.kr](mailto:bikmiso3@ajou.ac.kr)
