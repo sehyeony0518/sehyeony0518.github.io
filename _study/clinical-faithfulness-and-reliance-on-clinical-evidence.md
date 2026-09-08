@@ -9,54 +9,104 @@ category_title: "Clinical Alignment & Interpretability"
 order: 5
 source: "Independent study"
 written: true
+featured: true
+pinned: true
 updated: "2026-09-08"
 papers:
   - "2026-03-13-arun-assessing-saliency"
-featured: true
-pinned: true
 ---
 
-Clinical faithfulness asks whether a model's prediction depends on evidence that is meaningful for the clinical task. In my work, I approach this through the alignment between interpretable model readouts and independent clinical factors, while keeping that alignment distinct from proof of reliance.
+I want to know whether a medical image classifier relies on clinically meaningful evidence, and how to make that reliance measurable and auditable. A heatmap that falls inside the gallbladder is a starting observation, not an answer.
 
-## Why it matters here
+## Core question and definition
 
-A correct prediction leaves its supporting evidence unspecified. A model may use a lesion characteristic, an acquisition cue, or a mixture that works within one dataset. Trustworthy medical AI therefore needs evidence about how predictions are supported, alongside evidence about discrimination, calibration, and performance in other settings.
+I use clinical faithfulness as a research objective connecting three properties: the clinical relevance of evidence, the faithfulness of a model readout, and the predictor's reliance on that evidence. I do not treat it as an established metric with a universal acceptance threshold.
 
-This is the central question in my research: how can I make a claim about clinical evidence use measurable and auditable? I am interested in evaluating trained medical image classifiers without retraining them or requiring direct annotations of faithfulness. That still requires clinical reference information and explicit assumptions about what each measurement can establish.
+Clinical relevance asks whether a finding informs the specified task. Explanation faithfulness asks whether a readout describes the model behavior it claims to explain. Reliance asks whether changing particular information changes the prediction under a defined comparison. An explanation can faithfully expose reliance on calipers. Conversely, an attractive map over a lesion can be clinically plausible without identifying what the classifier uses.
 
-## The core ideas
+My immediate objective is narrower than recovering a complete diagnostic reasoning process: evaluate an existing classifier against independently assessed clinical factors, then test selected dependence hypotheses. This can proceed without retraining the classifier, but it still requires annotation, methodological controls, and a clearly bounded claim.
 
-### Clinical relevance, explanation faithfulness, and reliance
+## Key concepts
 
-Clinical relevance concerns whether a feature is meaningful for the diagnostic task. Explanation faithfulness concerns whether a readout accurately reflects the model's behavior. Reliance concerns whether that feature contributes to the prediction under a specified comparison or intervention. These properties can come apart. An explanation might accurately reveal dependence on an irrelevant marker, while an anatomically plausible heatmap might poorly reflect the predictor. I need to specify which property an audit actually tests.
+### Independence is about how the reference was constructed
 
-### Independent clinical factors provide an external reference
+I would define clinical factors before inspecting explanations: focal versus diffuse wall thickening, attachment morphology, intramural cystic spaces, or posterior shadowing, depending on the target diagnosis. Readers would record presence, absence, uncertainty, and whether the relevant evidence is assessable. “Not visible” must not become “absent.”
 
-A clinical factor might be a separately assessed morphological feature, a severity grade, or a measurement with a documented clinical interpretation. Independence here means that the reference was not manufactured from the model readout being evaluated. It does not mean statistical independence from the diagnosis or freedom from measurement error. Blinded assessment can reduce circularity. Agreement between readers and the provenance of each factor still matter, particularly when the factor and diagnostic label come from the same image.
+Independence means that the factor label was not derived from the explanation being tested. It does not imply statistical independence from diagnosis. A reader tracing a region after seeing the heatmap creates circular validation, even if that reader is clinically experienced. Blinding readers to model scores and, where feasible, final diagnosis reduces separate sources of expectation bias.
 
-### Anatomical overlap is an incomplete test
+I would also distinguish a frame annotation from an examination finding. A still image can show an echogenic focus and its shadow; it cannot establish mobility across patient positions. An examination-level mobility label assigned to every frame would give the audit a reference that some inputs cannot support.
 
-A heatmap overlapping the gallbladder tells me where its displayed attribution falls. It does not identify which property within that region supports the prediction. Texture associated with an acquisition setting could occupy the same pixels as a clinically relevant finding. [Arun and colleagues](https://pubs.rsna.org/doi/10.1148/ryai.2021200267) evaluated localization alongside model sensitivity and reproducibility, illustrating why these require separate checks. I would use anatomical overlap to narrow an audit question, then test the proposed evidence more directly.
+### Anatomical agreement does not identify the feature
 
-### Association can support alignment without establishing dependence
+For attribution values $$a_j(x)$$ at pixels $$j$$ and an independently annotated region $$M$$, one descriptive measure is the fraction of absolute attribution inside that region:
 
-Suppose an evidence score increases with an independently assessed clinical factor. That association supports a specific alignment claim, but both quantities could vary with diagnosis, lesion size, or acquisition conditions. Stratification or covariate adjustment may help examine alternatives. The adjustment set needs a clinical rationale, because controlling for a variable on the relevant pathway can remove the relationship of interest. A pooled association also does not establish faithful evidence use for every patient.
+$$
+A_M(x)=\frac{\sum_{j\in M}|a_j(x)|}{\sum_j|a_j(x)|}.
+$$
 
-### Interventions strengthen the question but introduce assumptions
+I would leave this undefined when the denominator is zero. Absolute values combine contributions supporting and opposing the explained score, so the measure describes attribution concentration, not positive diagnostic evidence.
 
-A reliance test asks how the prediction changes when specified evidence changes. Removing an annotation while preserving the underlying image could test one suspected shortcut. Editing lesion morphology is harder because the edit must preserve other relevant properties and remain plausible. A confidence drop after masking might reflect an unfamiliar input rather than removal of diagnostic evidence. I would combine interventions with matched observational comparisons, negative controls, and evaluation across acquisition settings, reporting what each test leaves open.
+A large region can capture much attribution by chance. Comparing $$A_M(x)$$ with the area fraction $$|M|/|\Omega|$$, where $$\Omega$$ is the evaluated image domain, checks one trivial explanation. It does not correct for an organ's habitual position or a method's tendency to emphasize edges. Average anatomical masks and simple edge maps provide additional spatial baselines.
 
-## Where it touches my work
+In chest radiography, [Arun and colleagues](https://pubs.rsna.org/doi/10.1148/ryai.2021200267) evaluated saliency on the SIIM-ACR pneumothorax and RSNA pneumonia datasets using localization, weight randomization, repeatability, and reproducibility. I take that separation seriously: localization evaluates where a map falls; the other tests examine different properties.
 
-For gallbladder ultrasound, I would define the clinical factor before choosing an explanation method: for example, lesion size or attachment morphology, where relevant to the target diagnosis. I would then examine whether a readout tracks that factor, whether the relationship persists across device groups, and whether suspected shortcuts change the output under defensible interventions. The audit record should identify the model, patients, factor definitions, readout, and comparison. I want a result another researcher can challenge at the level of its assumptions and measurements.
+### The readout determines the explanatory claim
 
-## What I have not resolved
+A gradient measures local score sensitivity. Integrated Gradients allocates a score difference relative to a baseline along a chosen path. Its completeness property makes the attributions sum to that difference, subject to numerical approximation. Completeness does not establish that the baseline or path represents a plausible ultrasound comparison. [Sundararajan, Taly, and Yan](https://proceedings.mlr.press/v70/sundararajan17a.html) provide the method's axiomatic formulation.
 
-- How much converging evidence is sufficient to move from “clinically aligned readout” to a defensible claim of clinical reliance?
-- How can I distinguish an unmeasured but valid diagnostic cue from a shortcut without treating current clinical annotations as exhaustive?
-- When clinically meaningful and acquisition features are tightly coupled, which interventions can separate them without creating implausible ultrasound images?
-- How should uncertainty in clinical factors propagate into an audit result for an individual patient?
+For my audit, the explained class, output scale, baseline, layer, and normalization must be fixed before comparing patients. Independently rescaling every map to its brightest pixel can make weak and strong responses look equally persuasive. A method that discards negative attribution also cannot answer a question about evidence against malignancy.
+
+### Alignment can arise through competing pathways
+
+Suppose a wall-region readout increases with reader-rated irregularity. One explanation is sensitivity to irregular morphology. Another is that suspicious walls receive tighter zoom and additional measurements, making both the clinical feature and annotation edges more prominent.
+
+I would examine diagnosis, lesion extent, visibility, machine, and overlays as candidate explanations for that association. These variables are not an automatic adjustment list. Zoom can improve visibility, and selection for surgery can depend on suspicious findings. Adjusting without considering those pathways can remove relevant variation or introduce selection bias.
+
+## Worked examples in medical AI
+
+### A thick wall with a benign structural explanation
+
+Adenomyomatosis provides a useful test case because “attention to the thickened wall” leaves the discriminating finding unresolved. Its characteristic structural feature is Rokitansky-Aschoff sinuses, mucosal invaginations that may appear as intramural cystic spaces. Echogenic contents can produce comet-tail artifacts. These are established imaging findings, described by [Bonatti and colleagues](https://pubmed.ncbi.nlm.nih.gov/28127678/), rather than features invented for an explanation benchmark.
+
+In a proposed benign-versus-malignant gallbladder audit, I would separately annotate wall thickening, assessable intramural spaces, and supporting acoustic artifacts. A malignancy heatmap could overlap the wall while responding mainly to its overall thickness. I read this as a reason to test feature specificity within the same anatomical compartment.
+
+I would compare adequately visualized benign wall-thickening cases with and without visible intramural spaces, then examine whether the relationship survives differences in zoom and machine. This remains observational alignment. It does not justify synthetically erasing cystic spaces and declaring the altered image malignant.
+
+### A measurement marker inside the correct region
+
+Consider a hypothetical stored image in which calipers bracket an irregular gallbladder lesion. The operator noticed the lesion, froze a diagnostic view, and added measurements before export. Marker geometry therefore records an action downstream of clinical suspicion.
+
+An attribution map can overlap the lesion precisely because the calipers overlap it. I would seek two exports of the identical frozen image, with and without the overlay, and verify that tissue pixels and preprocessing match. A score change would support sensitivity to the annotation layer. A nearby cine frame would be weaker evidence because breathing, probe movement, and speckle also change.
+
+This example makes anatomical overlap ambiguous in a specific way: tissue morphology and documentation occupy the same region but enter the image through different mechanisms.
+
+## Evaluation methods and limitations
+
+### Test alignment and faithfulness separately
+
+For an ordinal clinical factor, I would prespecify a readout and examine rank association alongside the underlying distributions. I would report results within clinically relevant diagnostic groups where sufficient variation exists. A pooled association could simply separate large malignant lesions from small benign findings.
+
+Factor-label permutations must respect the analysis unit and intended null. Shuffling labels across frames independently would destroy patient structure and create an inappropriate reference distribution. If permutations are restricted within machine or diagnosis groups, I would report that they test a correspondingly narrower association.
+
+Parameter-randomization checks examine whether a readout depends on learned weights. The training-label randomization experiment in [Adebayo and colleagues](https://papers.nips.cc/paper_files/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html) additionally requires training comparison models. For a strictly frozen-model audit, I would state which checks are feasible and avoid implying that a weight check covers both.
+
+### Preserve the limits of the evidence
+
+Reader disagreement should remain visible through reader-specific analyses and adjudication records. A consensus label is useful, but it does not erase uncertainty about a subtle finding. Confidence intervals should resample patients with all their associated frames, rather than count frames as independent observations.
+
+I would report anatomical agreement, clinical-factor alignment, and intervention effects separately. Combining them into one score would require a justified weighting scheme and could hide a decisive failure behind favorable averages. Agreement across methods is persuasive only to the extent that their errors differ.
+
+## Research connections and open questions
+
+My first feasible question is whether attribution concentration in an annotated wall region tracks specific wall findings after accounting for region area and visibility. I can attack this with blinded annotation and predefined spatial baselines, before attempting difficult morphology edits.
+
+Second, among cases with identical marked and unmarked exports, does marker sensitivity explain cases where anatomical overlap looks favorable but clinical-factor alignment is weak? This directly connects an apparently reassuring display to a testable documentation mechanism.
+
+Third, how sensitive are alignment conclusions to reader disagreement about intramural spaces? I would repeat the analysis using each reader's labels, adjudicated labels, and an explicitly assessable subset. Differences would identify which clinical references need better acquisition or annotation before a stronger reliance claim is warranted.
 
 ## References
 
 - Arun et al., [Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging](https://pubs.rsna.org/doi/10.1148/ryai.2021200267), Radiology: Artificial Intelligence, 2021.
+- Sundararajan, Taly, and Yan, [Axiomatic Attribution for Deep Networks](https://proceedings.mlr.press/v70/sundararajan17a.html), ICML 2017.
+- Bonatti et al., [Gallbladder adenomyomatosis: imaging findings, tricks and pitfalls](https://pubmed.ncbi.nlm.nih.gov/28127678/), Insights into Imaging 2017.
+- Adebayo et al., [Sanity Checks for Saliency Maps](https://papers.nips.cc/paper_files/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html), NeurIPS 2018.
