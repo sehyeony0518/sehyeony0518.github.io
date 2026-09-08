@@ -70,6 +70,12 @@ I want to develop a reproducible post-hoc audit protocol that connects model rea
 
 Alongside this, I want to investigate ultrasound representations whose clinical descriptors can be evaluated individually. During PhD study, I hope to extend these evaluations across acquisition settings and patient populations, with clearly defined diagnostic tasks and reference standards.
 
+## The Map {#map}
+
+Every study note, the categories above them, and the paper reviews and insights they share citations with. A line is either the taxonomy or a source two pieces both cite. Hovering isolates a node's connections, dragging rearranges the layout, and clicking opens the piece.
+
+{% include knowledge_graph.liquid full=true height=620 %}
+
 ## Selected Projects
 
 <style>

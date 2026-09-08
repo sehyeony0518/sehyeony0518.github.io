@@ -1,0 +1,156 @@
+{% comment %}
+  Knowledge graph of the site's own corpus. Nodes are study notes, the taxonomy
+  above them, and the paper reviews and insights they connect to. Edges are the
+  taxonomy itself plus citation overlap between pieces, computed at build time
+  into assets/json/knowledge-graph.json.
+  Params: full (true for the interactive version), height.
+{% endcomment %}
+{% assign kg_full = include.full | default: false %}
+{% assign kg_h = include.height | default: 340 %}
+
+<style>
+  .kg-wrap { position: relative; margin: .6rem 0 0; }
+  .kg-box {
+    position: relative; width: 100%; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--global-divider-color); background: var(--global-card-bg-color);
+  }
+  .kg-box svg { display: block; width: 100%; height: 100%; cursor: grab; }
+  .kg-box svg.kg-drag { cursor: grabbing; }
+  .kg-link { stroke: var(--global-text-color-light); }
+  .kg-node { cursor: pointer; }
+  .kg-node circle { stroke: var(--global-card-bg-color); stroke-width: 1.2; }
+  .kg-label {
+    font-size: 9.5px; fill: var(--global-text-color); paint-order: stroke;
+    stroke: var(--global-card-bg-color); stroke-width: 2.6px; stroke-linejoin: round;
+    pointer-events: none; font-weight: 600;
+  }
+  .kg-label.kg-hub { font-size: 11px; font-weight: 700; }
+  .kg-legend { display: flex; flex-wrap: wrap; gap: .2rem .9rem; margin: .5rem 0 0; font-size: .72rem; opacity: .7; }
+  .kg-legend span { display: inline-flex; align-items: center; gap: .3rem; }
+  .kg-legend i { width: .58rem; height: .58rem; border-radius: 50%; display: inline-block; }
+  .kg-note { font-size: .74rem; opacity: .55; margin: .35rem 0 0; }
+  .kg-tip {
+    position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s ease;
+    background: var(--global-bg-color); border: 1px solid var(--global-divider-color);
+    border-radius: 7px; padding: .3rem .55rem; font-size: .76rem; max-width: 17rem;
+    line-height: 1.35; box-shadow: 0 3px 12px rgba(0,0,0,.1); z-index: 3;
+  }
+  .kg-cover {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: .8rem; opacity: .5;
+  }
+</style>
+
+<div class="kg-wrap">
+  <div class="kg-box" id="kg-box{% if kg_full %}-full{% endif %}" style="height: {{ kg_h }}px;">
+    <div class="kg-cover">Loading the map…</div>
+  </div>
+  <div class="kg-tip"></div>
+  <div class="kg-legend">
+    <span><i style="background:#6a4c93"></i>Trustworthy AI</span>
+    <span><i style="background:#1982c4"></i>Clinical Medicine</span>
+    <span><i style="background:#c9184a"></i>Paper reviews</span>
+    <span><i style="background:#2a9d8f"></i>Insights</span>
+  </div>
+  {% unless kg_full %}<p class="kg-note">Every study note, the categories above them, and the reviews they share citations with. <a href="{{ '/research/#map' | relative_url }}">Open the full map</a>.</p>{% endunless %}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<script>
+  (function () {
+    var boxId = 'kg-box{% if kg_full %}-full{% endif %}';
+    var FULL = {{ kg_full }};
+    var box = document.getElementById(boxId);
+    if (!box) return;
+    var wrap = box.closest('.kg-wrap');
+    var tip = wrap.querySelector('.kg-tip');
+    var COLOR = { 'trustworthy-ai': '#6a4c93', 'clinical-medicine': '#1982c4', papers: '#c9184a', insights: '#2a9d8f' };
+    var started = false;
+
+    function boot() {
+      if (started || !window.d3) return;
+      started = true;
+      d3.json('{{ "/assets/json/knowledge-graph.json" | relative_url }}').then(render).catch(function () {
+        box.innerHTML = '<div class="kg-cover">The map could not be loaded.</div>';
+      });
+    }
+
+    function render(data) {
+      box.innerHTML = '';
+      var W = box.clientWidth, H = box.clientHeight;
+      var svg = d3.select(box).append('svg').attr('viewBox', [0, 0, W, H]);
+      var g = svg.append('g');
+
+      var link = g.append('g').attr('class', 'kg-links')
+        .selectAll('line').data(data.links).join('line')
+        .attr('class', 'kg-link')
+        .attr('stroke-opacity', function (d) { return d.kind === 'taxonomy' ? 0.18 : 0.4; })
+        .attr('stroke-width', function (d) { return d.kind === 'taxonomy' ? 0.7 : Math.min(2.2, 0.7 + d.w * 0.35); });
+
+      var node = g.append('g').selectAll('g').data(data.nodes).join('g').attr('class', 'kg-node');
+      node.append('circle')
+        .attr('r', function (d) { return d.size * (FULL ? 3.1 : 2.4); })
+        .attr('fill', function (d) { return COLOR[d.group] || '#888'; })
+        .attr('fill-opacity', function (d) { return d.kind === 'note' ? 0.9 : 1; });
+
+      node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
+        .append('text').attr('class', 'kg-label kg-hub')
+        .attr('dy', function (d) { return -d.size * (FULL ? 3.1 : 2.4) - 3; })
+        .attr('text-anchor', 'middle')
+        .text(function (d) { return d.kind === 'tab' ? d.label : d.label.replace(/ &.*/, ''); });
+
+      var sim = d3.forceSimulation(data.nodes)
+        .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
+          .distance(function (d) { return d.kind === 'taxonomy' ? 26 : 46; })
+          .strength(function (d) { return d.kind === 'taxonomy' ? 0.9 : 0.16; }))
+        .force('charge', d3.forceManyBody().strength(FULL ? -58 : -34))
+        .force('center', d3.forceCenter(W / 2, H / 2))
+        .force('collide', d3.forceCollide().radius(function (d) { return d.size * (FULL ? 3.6 : 2.9) + 2; }));
+
+      function tick() {
+        link.attr('x1', function (d) { return d.source.x; }).attr('y1', function (d) { return d.source.y; })
+            .attr('x2', function (d) { return d.target.x; }).attr('y2', function (d) { return d.target.y; });
+        node.attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+      }
+
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) { sim.stop(); for (var i = 0; i < 220; i++) sim.tick(); tick(); }
+      else sim.on('tick', tick);
+
+      svg.call(d3.zoom().scaleExtent([0.45, 4]).on('zoom', function (e) { g.attr('transform', e.transform); }));
+
+      node.on('mouseenter', function (e, d) {
+          tip.textContent = d.label;
+          var r = box.getBoundingClientRect();
+          tip.style.left = Math.min(r.width - 180, e.clientX - r.left + 10) + 'px';
+          tip.style.top = (e.clientY - r.top + 10) + 'px';
+          tip.style.opacity = 1;
+          link.attr('stroke-opacity', function (l) {
+            return (l.source.id === d.id || l.target.id === d.id) ? 0.85 : 0.06;
+          });
+        })
+        .on('mouseleave', function () {
+          tip.style.opacity = 0;
+          link.attr('stroke-opacity', function (l) { return l.kind === 'taxonomy' ? 0.18 : 0.4; });
+        })
+        .on('click', function (e, d) { if (d.url) window.location.href = d.url; });
+
+      if (FULL) {
+        node.call(d3.drag()
+          .on('start', function (e, d) { if (!e.active) sim.alphaTarget(0.25).restart(); d.fx = d.x; d.fy = d.y; svg.classed('kg-drag', true); })
+          .on('drag', function (e, d) { d.fx = e.x; d.fy = e.y; })
+          .on('end', function (e, d) { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; svg.classed('kg-drag', false); }));
+      }
+    }
+
+    // Only build it once it is actually on screen
+    var io = new IntersectionObserver(function (entries) {
+      if (entries.some(function (x) { return x.isIntersecting; })) {
+        io.disconnect();
+        if (window.d3) boot();
+        else { var t = setInterval(function () { if (window.d3) { clearInterval(t); boot(); } }, 60); setTimeout(function(){ clearInterval(t); }, 8000); }
+      }
+    }, { rootMargin: '150px' });
+    io.observe(box);
+  })();
+</script>
