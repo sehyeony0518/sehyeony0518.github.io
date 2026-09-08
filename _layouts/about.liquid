@@ -186,11 +186,71 @@ layout: default
 
     <!-- Latest insights + paper reviews (medical AI / digital healthcare) -->
     {% if page.blog_preview %}
-      <h2>selected reading</h2>
-      {% include latest_blog.liquid %}
+      <div class="hb-head">
+        <h2 id="hb-title">the map</h2>
+        <div class="hb-toggle" id="hb-toggle">
+          <button type="button" class="hb-btn active" data-view="map">map</button>
+          <button type="button" class="hb-btn" data-view="reading">selected reading</button>
+        </div>
+      </div>
 
-      <h2>the map</h2>
-      {% include knowledge_graph.liquid height=340 %}
+      <div class="hb-pane" data-pane="map">
+        {% include knowledge_graph.liquid height=360 %}
+      </div>
+      <div class="hb-pane hb-hidden" data-pane="reading">
+        {% include latest_blog.liquid %}
+      </div>
+
+      <style>
+        .hb-head {
+          display: flex; align-items: baseline; justify-content: space-between;
+          flex-wrap: wrap; gap: .4rem 1rem;
+        }
+        .hb-head h2 { margin-bottom: 0; }
+        .hb-toggle { display: flex; gap: .3rem; }
+        .hb-btn {
+          padding: .2rem .68rem; border-radius: 999px; cursor: pointer; white-space: nowrap;
+          border: 1px solid rgba(128,128,128,.32); background: none; color: inherit;
+          font-size: .76rem; font-weight: 600; transition: all .15s ease;
+        }
+        .hb-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+        .hb-btn.active {
+          background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff;
+        }
+        .hb-pane.hb-hidden { display: none; }
+      </style>
+      <script>
+        (function () {
+          var bar = document.getElementById('hb-toggle');
+          if (!bar) return;
+          var title = document.getElementById('hb-title');
+          var names = { map: 'the map', reading: 'selected reading' };
+          var panes = document.querySelectorAll('.hb-pane');
+
+          function show(view, remember) {
+            if (!names[view]) return;
+            bar.querySelectorAll('.hb-btn').forEach(function (b) {
+              b.classList.toggle('active', b.getAttribute('data-view') === view);
+            });
+            panes.forEach(function (p) {
+              p.classList.toggle('hb-hidden', p.getAttribute('data-pane') !== view);
+            });
+            title.textContent = names[view];
+            // The graph builds on an IntersectionObserver, so revealing the pane
+            // is enough: it draws itself the first time it is actually on screen.
+            if (remember) { try { sessionStorage.setItem('homeView', view); } catch (e) {} }
+          }
+
+          bar.addEventListener('click', function (e) {
+            var b = e.target.closest('.hb-btn');
+            if (b) show(b.getAttribute('data-view'), true);
+          });
+
+          var saved = null;
+          try { saved = sessionStorage.getItem('homeView'); } catch (e) {}
+          if (saved && saved !== 'map') show(saved, false);
+        })();
+      </script>
     {% endif %}
 
     <!-- Latest posts -->
