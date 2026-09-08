@@ -215,6 +215,46 @@ layout: default
       </div>
       </div>
 
+      <div class="nav-cards">
+        {%- assign n_study = site.study | where_exp: "n", "n.category" | size %}
+        <a class="nav-card" href="{{ '/study/' | relative_url }}">
+          <span class="nc-name">study notes</span>
+          <span class="nc-desc">Trustworthy AI and the clinical knowledge behind it, written up as I go.</span>
+          <span class="nc-count">{{ n_study }} notes</span>
+        </a>
+        <a class="nav-card" href="{{ '/papers/' | relative_url }}">
+          <span class="nc-name">paper reviews</span>
+          <span class="nc-desc">What each paper claims, how it shows it, and what it leaves open.</span>
+          <span class="nc-count">{{ site.papers | size }} reviews</span>
+        </a>
+        <a class="nav-card" href="{{ '/blog/' | relative_url }}">
+          <span class="nc-name">insights</span>
+          <span class="nc-desc">Notes from talks and webinars, and the longer arguments they start.</span>
+          <span class="nc-count">{{ site.aiblog | size }} posts</span>
+        </a>
+      </div>
+
+      <style>
+        .nav-cards {
+          display: grid; grid-template-columns: 1fr; gap: .8rem; margin: 2.2rem 0 .5rem;
+        }
+        @media (min-width: 700px) { .nav-cards { grid-template-columns: repeat(3, 1fr); } }
+        .nav-card {
+          display: flex; flex-direction: column; gap: .3rem;
+          padding: 1rem 1.15rem; border-radius: 12px; text-decoration: none; color: inherit;
+          border: 1px solid var(--global-divider-color); background: var(--global-card-bg-color);
+          transition: border-color .15s ease, transform .15s ease;
+        }
+        .nav-card:hover { border-color: var(--global-theme-color); transform: translateY(-2px); }
+        .nav-card:hover .nc-name { color: var(--global-theme-color); }
+        .nc-name { font-size: 1rem; font-weight: 700; letter-spacing: -.01em; }
+        .nc-desc { font-size: .83rem; line-height: 1.6; opacity: .66; flex-grow: 1; }
+        .nc-count {
+          font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+          color: var(--global-theme-color); opacity: .75; margin-top: .2rem;
+        }
+      </style>
+
       <style>
         /* The heading is gone: the panel names itself in its own top corner, and the
            switch sits on the panel's top line at the right, over the filter column. */
