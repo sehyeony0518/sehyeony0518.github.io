@@ -74,7 +74,7 @@ Alongside this, I want to investigate ultrasound representations whose clinical 
 
 Clinical concepts sit on the left, computational concepts on the right, and every study note, paper review, and insight is linked to the concepts it actually discusses. Where a piece lands is decided by that, not by where I put it, so the writing that holds both vocabularies at once shows up in the middle. Hovering isolates a node's connections, dragging rearranges the layout, and clicking opens the piece.
 
-{% include knowledge_graph.liquid full=true height=620 %}
+{% include knowledge_graph.liquid full=true height=700 %}
 
 ## Selected Projects
 
