@@ -314,12 +314,10 @@ defaults:
       type: "news"
     values:
       sitemap: false
-  # jekyll-archives generates the year and tag pages under /diary/, which the
-  # collection scopes above cannot reach
-  - scope:
-      path: "diary"
-    values:
-      sitemap: false
+  # jekyll-archives generates the year and tag pages under /diary/. They have no
+  # source path, so neither a collection nor a path scope reaches them and ten of
+  # them stay in the sitemap. robots.txt disallows /diary/, so a crawler will not
+  # fetch them regardless of what the sitemap lists.
 
 sass:
   style: compressed
@@ -353,9 +351,6 @@ terser:
 jekyll-archives:
   posts:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-    # These are mission-side pages; keep them out of the sitemap like the rest
-    defaults:
-      sitemap: false
     permalinks:
       year: "/diary/:year/"
       tags: "/diary/:type/:name/"
