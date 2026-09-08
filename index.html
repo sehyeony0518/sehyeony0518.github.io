@@ -34,6 +34,9 @@
       color: var(--global-text-color);
       min-height: 1.25em; /* hold the line so the rotation does not shift the page */
     }
+    @media (max-width: 480px) {
+      .hero-tagline { min-height: 2.5em; } /* room for a wrap on narrow screens */
+    }
     .hero-tagline .hero-text { color: var(--global-theme-color); }
     .hero-caret {
       display: inline-block;
@@ -55,14 +58,18 @@
       // and for anyone who has asked for reduced motion.
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+      // Positions the research actually takes, each one argued in the notes,
+      // resolving into who is making the argument.
       var phrases = [
-        'Explainable AI',
-        'Clinical Faithfulness Auditing',
-        'Shortcut Learning',
-        'Hepatobiliary Ultrasound AI',
+        'Accuracy is not evidence',
+        'Shortcuts survive validation',
+        'Plausible is not faithful',
+        'Acquisition is a confounder',
+        'Averages hide subgroups',
+        'Auditing over benchmarking',
         'Medical XAI Researcher'
       ];
-      var TYPE = 68, ERASE = 32, HOLD = 950;
+      var TYPE = 52, ERASE = 26, HOLD = 820;
       var p = 0, i = 0, erasing = false;
 
       el.textContent = '';
