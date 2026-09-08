@@ -72,16 +72,15 @@ layout: default
       // and for anyone who has asked for reduced motion.
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      // Claims argued in the notes, each carrying the field's own vocabulary,
-      // moving from misleading performance and explanations to what an audit
-      // actually requires, then resolving into who is making the argument.
+      // Claims argued in the notes, in the field's own vocabulary. Weighted toward
+      // interpretability and auditing of image models, which is where the work sits.
       var phrases = [
-        'AUROC can reward spurious cues',
-        'Plausibility is not faithfulness',
-        'Attribution is not reliance',
-        'Feature reliance needs comparisons',
-        'Interventions need artifact checks',
-        'Post-hoc audits need clinical data',
+        'AUROC depends on disease spectrum',
+        'Decodability is not reliance',
+        'Completeness is not plausibility',
+        'TCAV is not a causal proportion',
+        'Deletion curves depend on edits',
+        'Null ablations can hide redundancy',
         'Medical XAI Researcher'
       ];
       var TYPE = 52, ERASE = 26, HOLD = 820;
