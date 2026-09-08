@@ -8,8 +8,6 @@ nav_order: 11
 ---
 
 <style>
-  /* Widen just this page's content column so a 4-up card grid has room to breathe */
-  .container.mt-5 { max-width: 1400px; }
 
   .venue-filter { margin: .3rem 0 1.3rem; }
   .venue-filter .vf-row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-bottom: .5rem; }

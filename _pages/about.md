@@ -34,9 +34,7 @@ blog_preview: true
 
 
 <style>
-  /* Wider than the 930px theme default so "selected reading" can run three columns */
-  .container.mt-5 { max-width: 1180px; }
-  /* but keep the intro prose at a readable measure rather than letting it stretch */
+  /* The intro sits beside the profile photo, so hold it tighter than the site default */
   article > .clearfix p { max-width: 44rem; }
 </style>
 
