@@ -129,6 +129,12 @@
     line-height: 1.5; transition: all .15s ease;
   }
   .lang-toggle-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+  /* One content width for the whole site. The navbar container reads the same
+     variable, so the tabs line up with the page instead of sitting narrower. */
+  :root { --max-content-width: 1280px; }
+  /* Long-form prose stays at a readable measure inside the wider column */
+  article > p, article > ul, article > ol, article > blockquote { max-width: 52rem; }
+
   /* Keep the brand visible in the navbar (including the home page) */
   #navbar .navbar-brand.title { opacity: 1 !important; }
   /* Keep brand + nav on ONE row, aligned with the content column (brand lines up with the page title) */
@@ -136,8 +142,8 @@
     #navbar > .container { flex-wrap: nowrap; justify-content: space-between; }
     #navbar .navbar-collapse { flex-basis: auto; width: auto; flex-grow: 0; }
     #navbar .navbar-nav { margin-left: auto; }
-    #navbar .navbar-nav .nav-link { padding-left: 0.38rem; padding-right: 0.38rem; font-size: 0.85rem; }
-    #navbar .navbar-brand.title { font-size: 1.1rem; }
+    #navbar .navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; font-size: 0.95rem; }
+    #navbar .navbar-brand.title { font-size: 1.28rem; }
   }
   /* Back link on individual reflection posts */
   .diary-back { display: inline-block; margin: 0 0 1.2rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }

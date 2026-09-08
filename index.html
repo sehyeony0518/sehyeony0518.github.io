@@ -22,9 +22,7 @@
   ]
 }
 </script> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Se-Hyeon</span> Hwang </h1> <p class="desc">M.S. Student, AI Convergence Network, Ajou University</p> </header> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/prof_pic.jpg?v=d5aa7cb94990004759b6ffc5d51f10bc" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="prof_pic.jpg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <p><strong>Se-Hyeon Hwang</strong> (황세현)</p> <p>M.S. Student, AI Convergence Network</p> <p><a href="https://eslab.ajou.ac.kr/" target="_blank" rel="external nofollow noopener">Embedded &amp; Software Lab</a></p> <p>Ajou University, Suwon</p> <p><a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p> </div> </div> <div class="clearfix"> <style>
-  /* Wider than the 930px theme default so "selected reading" can run three columns */
-  .container.mt-5 { max-width: 1180px; }
-  /* but keep the intro prose at a readable measure rather than letting it stretch */
+  /* The intro sits beside the profile photo, so hold it tighter than the site default */
   article > .clearfix p { max-width: 44rem; }
 </style> <p>I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at <a href="https://www.ajou.ac.kr/en/index.do" rel="external nofollow noopener" target="_blank">Ajou University</a>, advised by Prof. Jung-Won Lee at the <a href="https://eslab.ajou.ac.kr/" rel="external nofollow noopener" target="_blank">Embedded &amp; Software Lab</a>. I work on medical image classifiers and ultrasound AI for gallbladder and hepatobiliary diagnosis. I am preparing PhD applications, and my <a href="/publications/">publications</a> and <a href="/assets/pdf/cv-hwang.pdf">CV</a> are available here.</p> <p>I organize my <a href="/research/">research</a> around two directions. In <strong>Reliable medical AI models</strong>, I examine whether diagnostic accuracy comes from clinically valid evidence or from shortcuts and spurious correlations. My work on clinical faithfulness auditing focuses on making a classifier’s reliance on evidence measurable and auditable. I also study robustness under distribution shift.</p> <p>In <strong>Clinical translation</strong>, I study the diseases, imaging findings, and diagnostic reasoning involved in medical diagnosis, with particular attention to gallbladder and hepatobiliary ultrasound. This gives clinical evidence the medical detail needed to assess a model’s reasoning. My growing library of <a href="/study/">study notes</a> covers trustworthy medical AI and the clinical knowledge needed to understand and evaluate it.</p> <p><strong>Contact:</strong> <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a></p> </div> <h2>selected reading</h2> <style>
   .ip-section { margin-top: 0.6rem; }
@@ -130,6 +128,12 @@
     line-height: 1.5; transition: all .15s ease;
   }
   .lang-toggle-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+  /* One content width for the whole site. The navbar container reads the same
+     variable, so the tabs line up with the page instead of sitting narrower. */
+  :root { --max-content-width: 1280px; }
+  /* Long-form prose stays at a readable measure inside the wider column */
+  article > p, article > ul, article > ol, article > blockquote { max-width: 52rem; }
+
   /* Keep the brand visible in the navbar (including the home page) */
   #navbar .navbar-brand.title { opacity: 1 !important; }
   /* Keep brand + nav on ONE row, aligned with the content column (brand lines up with the page title) */
@@ -137,8 +141,8 @@
     #navbar > .container { flex-wrap: nowrap; justify-content: space-between; }
     #navbar .navbar-collapse { flex-basis: auto; width: auto; flex-grow: 0; }
     #navbar .navbar-nav { margin-left: auto; }
-    #navbar .navbar-nav .nav-link { padding-left: 0.38rem; padding-right: 0.38rem; font-size: 0.85rem; }
-    #navbar .navbar-brand.title { font-size: 1.1rem; }
+    #navbar .navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; font-size: 0.95rem; }
+    #navbar .navbar-brand.title { font-size: 1.28rem; }
   }
   /* Back link on individual reflection posts */
   .diary-back { display: inline-block; margin: 0 0 1.2rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
