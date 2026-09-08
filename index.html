@@ -173,11 +173,11 @@
     function render(data) {
       box.innerHTML = '';
       var W = box.clientWidth, H = box.clientHeight;
-      var R = FULL ? 1 : 0.82;
+      var R = FULL ? 0.95 : 0.72;
       var svg = d3.select(box).append('svg').attr('viewBox', [0, 0, W, H]);
       var g = svg.append('g').attr('class', 'kg-canvas');
 
-      var maxDeg = d3.max(data.nodes, function (d) { return d.deg; }) || 1;
+      var maxDeg = d3.max(data.nodes.filter(function (d) { return d.kind === 'note' || d.kind === 'review'; }), function (d) { return d.deg; }) || 1;
       function radius(d) {
         var base = d.kind === 'tab' ? 9 : d.kind === 'cat' ? 5.4 : 2.6;
         return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'note' ? 3.4 : 2)) * R;
@@ -187,8 +187,8 @@
         .selectAll('path').data(data.links).join('path')
         .attr('class', 'kg-link')
         .attr('stroke', function (d) {
-          var s = d.source.group || d.source, t = d.target.group || d.target;
-          return COLOR[typeof s === 'string' ? s : ''] || 'var(--global-text-color-light)';
+          var f = (d.source && d.source.fam) || '';
+          return COLOR[f] || 'var(--global-text-color-light)';
         })
         .attr('stroke-opacity', function (d) { return d.kind === 'taxonomy' ? 0.22 : 0.42; })
         .attr('stroke-width', function (d) { return (d.kind === 'taxonomy' ? 0.8 : Math.min(2.4, 0.8 + d.w * 0.4)) * R; });
@@ -197,10 +197,10 @@
       node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
         .append('circle').attr('class', 'kg-ring')
         .attr('r', function (d) { return radius(d) + 4 * R; })
-        .attr('stroke', function (d) { return COLOR[d.group] || '#888'; });
+        .attr('stroke', function (d) { return COLOR[d.fam] || '#888'; });
       node.append('circle')
         .attr('r', radius)
-        .attr('fill', function (d) { return COLOR[d.group] || '#8a8a8a'; })
+        .attr('fill', function (d) { return COLOR[d.fam] || '#8a8a8a'; })
         .attr('fill-opacity', function (d) { return d.kind === 'note' ? 0.85 : 1; })
         .attr('stroke', 'var(--global-card-bg-color)')
         .attr('stroke-width', function (d) { return d.kind === 'note' ? 1 : 1.6; });
@@ -212,15 +212,26 @@
         .attr('text-anchor', 'middle')
         .text(function (d) { return d.kind === 'tab' ? d.label : d.label.replace(/ &.*/, '').replace(/^Mathematical.*/, 'Foundations'); });
 
+      // Give each family its own territory so the four groups read as groups,
+      // and cross-links between them bend toward each other rather than mixing.
+      var HOME = {
+        'trustworthy-ai':   [0.26, 0.30],
+        'clinical-medicine':[0.26, 0.74],
+        'papers':           [0.76, 0.36],
+        'insights':         [0.77, 0.80]
+      };
+      function hx(d) { return (HOME[d.fam] ? HOME[d.fam][0] : 0.5) * W; }
+      function hy(d) { return (HOME[d.fam] ? HOME[d.fam][1] : 0.5) * H; }
+      function pull(d) { return d.kind === 'tab' ? 0.5 : d.kind === 'cat' ? 0.24 : 0.11; }
+
       var sim = d3.forceSimulation(data.nodes)
         .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
-          .distance(function (d) { return (d.kind === 'taxonomy' ? 30 : 52) * R; })
-          .strength(function (d) { return d.kind === 'taxonomy' ? 0.92 : 0.14; }))
-        .force('charge', d3.forceManyBody().strength(FULL ? -64 : -40))
-        .force('center', d3.forceCenter(W / 2, H / 2))
-        .force('x', d3.forceX(W / 2).strength(0.035))
-        .force('y', d3.forceY(H / 2).strength(0.05))
-        .force('collide', d3.forceCollide().radius(function (d) { return radius(d) + 3 * R; }));
+          .distance(function (d) { return (d.kind === 'taxonomy' ? 26 : 58) * R; })
+          .strength(function (d) { return d.kind === 'taxonomy' ? 0.95 : 0.05; }))
+        .force('charge', d3.forceManyBody().strength(FULL ? -52 : -30).distanceMax(230))
+        .force('x', d3.forceX(hx).strength(pull))
+        .force('y', d3.forceY(hy).strength(pull))
+        .force('collide', d3.forceCollide().radius(function (d) { return radius(d) + 2.4 * R; }).iterations(2));
 
       function arc(d) {
         var dx = d.target.x - d.source.x, dy = d.target.y - d.source.y;
