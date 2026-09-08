@@ -12,53 +12,114 @@ written: true
 updated: "2026-09-08"
 ---
 
-An intervention-based audit changes a specified part of the input or computation and measures what happens to the prediction. Its value depends on whether the intervention isolates the evidence named in the question.
+The difficult part of an intervention audit is knowing what the edit changed. I want each experiment to test a named dependency while measuring the artifacts and information loss introduced by the test itself.
 
 ## Core question and definition
 
-I want to distinguish a model responding to a clinical feature from a model responding to something correlated with that feature. An intervention makes the comparison explicit: evaluate the same model before and after a controlled change. The comparison is stronger than visual agreement alone, but its interpretation remains conditional on the edit.
+An intervention-based audit changes an input or internal computation and measures the response of a fixed predictor. For a scalar score $$s_f$$ and an edit $$T$$,
 
-For a fixed target score s and transformation T, I can measure $$\Delta_T(x) = s(T(x)) - s(x)$$. This is an effect on the model's output under T. It is not automatically the effect of a clinical feature in isolation, and it is not the effect of changing the patient's disease.
+$$
+\Delta_T(x)=s_f(T(x))-s_f(x).
+$$
+
+The sign describes movement in the selected score, not whether the response is desirable. Removing a diagnostic finding can appropriately reduce a disease score; removing peripheral documentation should usually preserve the clinical information available to an image-only task.
+
+I would specify the edit's target, replacement procedure, affected region, expected preserved information, and validity checks before inference. “Remove the lesion” is inadequate because masking, blurring, and synthesizing tissue produce different inputs. The resulting claim concerns the implemented intervention, and expands to a clinical feature only if the edit isolates that feature credibly.
 
 ## Key concepts
 
-### Ablation requires a defined replacement
+### Replacement defines the experiment
 
-Masking a region can mean setting it to zero, replacing it with a local average, blurring it, or synthesizing replacement tissue. These operations remove different information and introduce different artifacts. I would describe the replacement explicitly rather than write only “the lesion was removed.” Cropping also changes context and scale, so its effect cannot always be attributed to the excluded region.
+Zeroing pixels introduces a constant patch and an artificial boundary. Mean filling removes local texture but also creates an unusually homogeneous region. Blurring suppresses fine structure while retaining coarse intensity patterns. Inpainting estimates missing content from surrounding information and its training distribution.
 
-### Necessity and sufficiency are conditional
+These operations can yield different responses even when their masks are identical. For gallbladder ultrasound, a blurred wall may lose both a clinical feature and speckle structure. An inpainted marker may be replaced by an invented wall contour. I would retain the edited images and record the exact replacement method, parameters, masks, and random seeds.
 
-Removing evidence tests whether it is needed under that removal procedure. Retaining evidence while removing other content tests a restricted form of sufficiency. Redundant cues can make a useful feature appear unnecessary. An artificial retained-region image can preserve a prediction for reasons unrelated to the intended evidence. These tests need complementary controls before they support a broad reliance claim.
+The position of the edit within the pipeline matters. If the clinical application normalizes after decoding, an edit before normalization can propagate beyond the mask. I would distinguish a test of the complete application from a tensor-level test designed to hold already-normalized surrounding pixels fixed.
 
-### Controls test the intervention itself
+### There is a hierarchy of evidence preservation
 
-A useful control changes a comparable area, intensity range, or image property without targeting the proposed evidence. Multiple replacement methods can expose sensitivity to the editing technique. Clinical review should assess whether relevant morphology remains interpretable. I would also examine unintended changes around the edited region, especially when a generative method can modify texture beyond the requested target.
+Removing a separately stored overlay from the identical frozen image is generally a stronger comparison than estimating tissue hidden beneath burned-in pixels. Two neighboring cine frames preserve the patient but may differ in probe angle, breathing phase, and visible morphology. Images from different patients introduce additional biological differences.
 
-### Retraining changes the question
+I would not collapse these comparisons into a single category of “counterfactual images.” Their strengths differ because the unedited information is controlled differently. An authentic unmarked export still needs verification that dimensions, compression, grayscale mapping, and tissue content match.
 
-Testing a frozen model measures its response to altered inputs. Removing features and retraining measures what a new training procedure can recover from the remaining data. [Hooker and colleagues](https://papers.nips.cc/paper_files/paper/2019/hash/fe4b8556000d0f0cae99daa5c5c5a410-Abstract.html) introduced a removal-and-retraining benchmark for feature importance. That approach addresses limitations of evaluating corrupted inputs directly, but it does not reveal the unchanged model's exact dependency.
+Editing anatomy is more demanding. Clinical findings often occur together because they arise from one process. A visually smooth replacement wall may remove irregularity, change thickness, and eliminate small cystic spaces simultaneously. Reader agreement that an image looks realistic is necessary evidence for some edits, but does not establish feature isolation.
+
+### Controls challenge alternative explanations
+
+I would include sham processing, in which the image passes through the editing and export pipeline without changing the target. A control region should be chosen for the suspected artifact: similar area and boundary length for mask-edge effects, or comparable depth and texture for ultrasound appearance changes.
+
+For target edit $$T$$ and control edit $$C$$, a paired contrast is
+
+$$
+D(x)=\left[s_f(T(x))-s_f(x)\right]
+-\left[s_f(C(x))-s_f(x)\right].
+$$
+
+This contrast removes a shared baseline algebraically. It isolates target-specific sensitivity only insofar as the control reproduces relevant nonspecific effects. A same-size patch in a different acoustic compartment may be a poor control despite matching pixel count.
+
+I would compare several defensible replacements when possible. Agreement across them makes one particular editing artifact less plausible, but shared destruction of contextual evidence can still explain the result.
+
+### Retraining answers a different question
+
+[Hooker and colleagues](https://papers.nips.cc/paper_files/paper/2019/hash/fe4b8556000d0f0cae99daa5c5c5a410-Abstract.html) introduced ROAR, Remove And Retrain, to evaluate feature-importance rankings after removing ranked information and retraining models on modified data. Retraining addresses the distribution mismatch created when only test images are corrupted.
+
+For my purpose, that changes the object of inference. A newly trained model can discover alternative cues that the original classifier did not use. ROAR evaluates the usefulness of information under a new learning procedure; a frozen-model audit evaluates the current predictor's response. I would report these experiments separately if both are available.
 
 ## Worked examples in medical AI
 
-[Lin and colleagues](https://papers.miccai.org/miccai-2024/695-Paper0423.html) investigated calipers and text as shortcuts in fetal ultrasound segmentation. This is a published example where changing clinical annotations helps expose a model's dependence on the documentation process. It motivates a gallbladder marker audit, while leaving the magnitude and form of any local reliance to be established.
+### Clinical annotations in fetal ultrasound
 
-In a hypothetical gallbladder experiment, I would compare a marked frame with its original unmarked counterpart when available. Removing a caliper over the wall through inpainting would be a less direct comparison because the hidden tissue must be estimated. A separate intervention suppressing posterior shadowing would need review for changes to the stone and surrounding tissue. These interventions target different evidence and should not be summarized as one generic robustness test.
+[Lin and colleagues](https://papers.miccai.org/miccai-2024/695-Paper0423.html) investigated calipers and text as shortcuts in fetal ultrasound segmentation. Clinical annotations correlate with the anatomical planes being documented, and segmentation can fail when a system trained with those cues encounters images without them.
+
+The acquisition sequence explains why the problem matters: annotations are added during documentation, while a live segmentation application may need to operate before they exist. Precise-looking segmentation on stored images therefore does not establish independence from the documentation process.
+
+I take this as motivation for a gallbladder experiment, not evidence that my classifier has the same dependency. I would first inventory which annotations survive export and determine when they become available relative to the intended prediction.
+
+### Caliper removal with a known underlying image
+
+My preferred proposed experiment uses an unmarked frozen gallbladder frame and the same frame with measurement calipers. The target is the annotation layer, not the measured lesion.
+
+I would compare tissue pixels outside the overlay, run both through the deployed pipeline, and record score changes. If source files permit faithful reconstruction, adding the authentic overlay to the unmarked frame gives a complementary insertion test. I would also test sham re-export to detect encoding changes.
+
+If only burned-in calipers exist, I would use more than one reconstruction and ask blinded readers whether the lesion boundary, wall thickness, and attachment remain assessable. Cases where the marker obscures the feature of interest would retain an explicit limitation: the original hidden tissue is unknown.
+
+### Suppressing a stone's posterior shadow
+
+A stone's echogenic appearance and posterior acoustic shadow are related evidence, described in the gallbladder ultrasound review by [Lucius and colleagues](https://pubmed.ncbi.nlm.nih.gov/40566593/). The shadow occupies tissue distal to the suspected stone, so an organ-only mask can exclude part of the relevant image evidence.
+
+In a proposed shadow audit, replacing the distal dark region with surrounding texture does more than erase a dark patch: it invents information that was not visible through the original acoustic path. I would preserve the visible stone boundary, annotate the shadow's origin and extent, and compare edits in nearby regions with similar depth.
+
+A score response would establish sensitivity to the reviewed shadow-suppression operation. I would not call the edited image a stone-free counterfactual, because the visible stone and the patient's reference diagnosis remain unchanged.
 
 ## Evaluation methods and limitations
 
-I would preserve model weights, preprocessing, and the target output, then report paired score changes and clinically relevant decision changes. Multiple edits from one patient are correlated observations. Uncertainty estimates should reflect that structure, and primary contrasts should be specified before examining favorable examples.
+### Evaluate edit validity before selecting model results
 
-An intervention audit should report edit validity alongside prediction effects. Large changes under visibly implausible edits are difficult to interpret; small changes can reflect redundancy, output saturation, or incomplete removal. Performance against an unchanged disease label can measure information loss, but a synthetic disease-changing counterfactual needs its own justified target. Neither visual realism nor stable predictions establishes that the intended feature was isolated.
+Readers assessing edits should be blinded to prediction changes. I would record target modification, preservation of other findings, boundary artifacts, and overall assessability separately. Accepting only edits that produce the expected score change would make the experiment circular.
+
+The report should show the proportion of eligible cases for which an acceptable edit was possible, with rejection reasons. Effects among editable cases may not generalize to small lesions, heavy annotation overlap, or poorly visualized walls. Invalid-edit responses can remain a separate stress test, without supporting the clinical dependence estimate.
+
+Stochastic inpainting requires repeated realizations to characterize reconstruction variability. Those realizations are nested within images and patients. They increase knowledge about edit uncertainty, not the number of independent clinical observations.
+
+### Connect attribution rankings to actual responses
+
+Deletion tests progressively replace highly ranked regions; insertion tests progressively restore them from a specified reference. I would define whether progression is measured by pixels, patches, or anatomical regions and compare with random and simple spatial rankings.
+
+A steep deletion curve can reflect effective destruction of evidence or effective creation of unfamiliar inputs. [Yeh and colleagues](https://papers.nips.cc/paper_files/paper/2019/hash/a7471fdc77b3435276507cc8f2dc2569-Abstract.html) formalize explanation infidelity through disagreement between attribution-predicted effects and perturbation-induced score changes. That framework reinforces my need to specify the perturbation distribution; changing it changes what fidelity means.
+
+I would report paired probability changes, logits where accessible, and decision changes at a fixed threshold. Patient-level resampling should preserve all associated edits. A small average response needs inspection for cancellation, output saturation, incomplete removal, and redundant evidence before receiving a “no reliance” interpretation.
 
 ## Research connections and open questions
 
-For clinical faithfulness auditing, I see interventions as tests of specific dependence hypotheses in an existing gallbladder model. I would combine them with independent feature annotations and report where realistic isolation was impossible, rather than treat every editable pixel pattern as a valid clinical factor.
+The first practical question is how often authentic marked and unmarked gallbladder pairs can be recovered. Their availability determines whether the cleanest documentation experiment covers routine cases or only a selected subset.
 
-- Which gallbladder findings can be altered independently enough to support a meaningful paired comparison?
-- How should I quantify edit validity when the source tissue is obscured by an annotation?
-- What controls distinguish reliance on posterior acoustics from sensitivity to the texture changes introduced while editing them?
+Second, which inpainting method best preserves reader-assessed wall morphology beneath sparse calipers? I would choose the method using blinded preservation assessments on recoverable examples, then evaluate model effects on separate cases.
+
+Third, does shadow-edit sensitivity exceed sensitivity to comparable distal texture edits, and is that difference concentrated in frames where readers agree the shadow is assessable? This provides a feasible test of a named acoustic-evidence hypothesis while exposing the limits of synthetic reconstruction.
 
 ## References
 
 - Hooker et al., [A Benchmark for Interpretability Methods in Deep Neural Networks](https://papers.nips.cc/paper_files/paper/2019/hash/fe4b8556000d0f0cae99daa5c5c5a410-Abstract.html), NeurIPS 2019.
 - Lin et al., [Shortcut Learning in Medical Image Segmentation](https://papers.miccai.org/miccai-2024/695-Paper0423.html), MICCAI 2024.
+- Lucius et al., [Ultrasound of the Gallbladder: An Update on Measurements, Reference Values, Variants and Frequent Pathologies: A Scoping Review](https://pubmed.ncbi.nlm.nih.gov/40566593/), Life 2025.
+- Yeh et al., [On the (In)fidelity and Sensitivity of Explanations](https://papers.nips.cc/paper_files/paper/2019/hash/a7471fdc77b3435276507cc8f2dc2569-Abstract.html), NeurIPS 2019.

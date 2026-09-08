@@ -10,6 +10,8 @@ order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-01-01-selvaraju-gradcam"
 ---
 
 A saliency map, an attention matrix, and an edited image answer different questions about a model. I treat each explanation as the result of a specified computation, whose meaning depends on its target, reference, and assumptions.

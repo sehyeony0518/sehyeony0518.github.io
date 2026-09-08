@@ -11,9 +11,9 @@ order: 17
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+featured: true
 papers:
   - "2025-11-29-concept-bottleneck-models"
-featured: true
 ---
 
 Clinical knowledge-guided representation learning uses domain knowledge to influence what a model encodes. In gallbladder ultrasound, the relevant knowledge concerns tissue appearance, acoustic behavior, wall architecture, and the anatomical relationships that make a finding interpretable.

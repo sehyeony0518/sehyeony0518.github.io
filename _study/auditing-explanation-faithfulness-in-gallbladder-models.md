@@ -11,9 +11,9 @@ order: 19
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+featured: true
 papers:
   - "2026-08-04-medical-algorithmic-audit"
-featured: true
 ---
 
 An explanation audit asks whether a gallbladder model's reported evidence reflects its prediction process and aligns with independently assessed clinical findings. Anatomical plausibility, computational faithfulness, and clinical relevance are separate properties.
