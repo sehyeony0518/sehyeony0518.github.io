@@ -104,16 +104,21 @@
     var tip = wrap.querySelector('.kg-tip');
     var ORDER = ['Imaging & acquisition','Disease & pathology','Clinical practice',
                  'Interpretability','Auditing & causality','Evaluation & reliability','Systems & deployment'];
-    var SECTOR_COLOR = {
-      'Imaging & acquisition':    '#eab308',
-      'Disease & pathology':      '#fd7318',
-      'Clinical practice':        '#f472b6',
-      'Interpretability':         '#a78bfa',
-      'Auditing & causality':     '#3b82f6',
-      'Evaluation & reliability': '#5fadfe',
-      'Systems & deployment':     '#10b981'
+    var PALETTE = {
+      dark: {
+        'Imaging & acquisition':'#eab308','Disease & pathology':'#fd7318','Clinical practice':'#f472b6',
+        'Interpretability':'#a78bfa','Auditing & causality':'#3b82f6',
+        'Evaluation & reliability':'#5fadfe','Systems & deployment':'#10b981', _: '#6b7280'
+      },
+      light: {
+        'Imaging & acquisition':'#B9860C','Disease & pathology':'#D2601B','Clinical practice':'#C8437A',
+        'Interpretability':'#6D4FD6','Auditing & causality':'#2563EB',
+        'Evaluation & reliability':'#2B86C5','Systems & deployment':'#0E9B73', _: '#7A8494'
+      }
     };
-    function paint(d) { return SECTOR_COLOR[d.sector] || '#6b7280'; }
+    function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
+    var SECTOR_COLOR = PALETTE[isDark() ? 'dark' : 'light'];
+    function paint(d) { return SECTOR_COLOR[d.sector] || SECTOR_COLOR._; }
     var hidden = {};
     var KIND = { concept: 'Concept', note: 'Study note', review: 'Paper review', insight: 'Insight' };
     var started = false;
@@ -138,20 +143,20 @@
       var PH = parseFloat(cs.getPropertyValue('--kg-halo-p')) || 0.09;
       var maxDeg = d3.max(data.nodes.filter(function (d) { return d.kind === 'note' || d.kind === 'review'; }), function (d) { return d.deg; }) || 1;
       function radius(d) {
-        var base = d.kind === 'concept' ? 5.2 : 2.6;
-        return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'concept' ? 6 : 2.6)) * R;
+        var base = d.kind === 'concept' ? 4.0 : 1.75;
+        return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'concept' ? 4.6 : 1.9)) * R;
       }
 
       var link = g.append('g')
         .selectAll('path').data(data.links).join('path')
         .attr('class', 'kg-link')
-        .attr('stroke', function (d) { var t = d.target; return (t && t.sector && SECTOR_COLOR[t.sector]) || 'var(--kg-line)'; })
+        .attr('stroke', function (d) { var t = d.target; return (t && SECTOR_COLOR[t.sector]) || SECTOR_COLOR._; })
         .attr('stroke-opacity', function (d) { return d.w > 1 ? 0.30 : 0.11; })
         .attr('stroke-width', function (d) { return (d.w > 1 ? 1.15 : 0.7) * R; });
 
       var node = g.append('g').selectAll('g').data(data.nodes).join('g').attr('class', 'kg-node');
       node.append('circle').attr('class', 'kg-halo')
-        .attr('r', function (d) { return radius(d) * (d.kind === 'concept' ? 2.6 : 2.2); })
+        .attr('r', function (d) { return radius(d) * (d.kind === 'concept' ? 2.2 : 1.9); })
         .attr('fill', paint)
         .attr('fill-opacity', function (d) { return d.kind === 'concept' ? CH : PH; });
       node.append('circle')
@@ -172,7 +177,7 @@
       // Seven sectors around a ring, clinical through the top half and computational
       // through the bottom. Only concepts are placed; the writing settles wherever
       // its own links pull it, which is the part worth looking at.
-      var cx = W / 2, cy = H / 2, rad = Math.min(W, H) * (FULL ? 0.40 : 0.42);
+      var cx = W / 2, cy = H / 2, rad = Math.min(W, H) * (FULL ? 0.46 : 0.50);
       var ANG = {};
       ORDER.forEach(function (name, i) { ANG[name] = (-Math.PI / 2) + (i / ORDER.length) * Math.PI * 2; });
       function ax(d) { return ANG[d.sector] === undefined ? cx : cx + Math.cos(ANG[d.sector]) * rad; }
@@ -183,12 +188,12 @@
 
       var sim = d3.forceSimulation(data.nodes)
         .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
-          .distance(function (d) { return (d.w > 1 ? 46 : 78) * R; })
+          .distance(function (d) { return (d.w > 1 ? 64 : 108) * R; })
           .strength(function (d) { return d.w > 1 ? 0.34 : 0.10; }))
-        .force('charge', d3.forceManyBody().strength(FULL ? -52 : -30).distanceMax(230))
+        .force('charge', d3.forceManyBody().strength(FULL ? -108 : -74).distanceMax(340))
         .force('x', d3.forceX(hx).strength(pull))
         .force('y', d3.forceY(hy).strength(pull))
-        .force('collide', d3.forceCollide().radius(function (d) { return radius(d) + 2.4 * R; }).iterations(2));
+        .force('collide', d3.forceCollide().radius(function (d) { return radius(d) * 1.5 + 7 * R; }).iterations(3));
 
       function arc(d) {
         var dx = d.target.x - d.source.x, dy = d.target.y - d.source.y;
@@ -247,12 +252,20 @@
           .on('end', function (e, d) { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; svg.classed('kg-drag', false); }));
       }
 
+      var bar = document.getElementById('kg-bar{% if kg_full %}-full{% endif %}');
+
       new MutationObserver(function () {
         var g = getComputedStyle(wrap);
         var ch = parseFloat(g.getPropertyValue('--kg-halo-c')) || CH;
         var ph = parseFloat(g.getPropertyValue('--kg-halo-p')) || PH;
+        SECTOR_COLOR = PALETTE[isDark() ? 'dark' : 'light'];
+        node.selectAll('circle').attr('fill', function () { return paint(d3.select(this.parentNode).datum()); });
         node.selectAll('.kg-halo').attr('fill-opacity', function () {
           return d3.select(this.parentNode).datum().kind === 'concept' ? ch : ph;
+        });
+        link.attr('stroke', function (l) { return SECTOR_COLOR[l.target.sector] || SECTOR_COLOR._; });
+        if (bar) bar.querySelectorAll('.kg-chip i').forEach(function (el, i) {
+          el.style.background = SECTOR_COLOR[ORDER[i]];
         });
       }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
@@ -261,7 +274,6 @@
       c.textContent = data.nodes.length + ' nodes, ' + data.links.length + ' links';
       box.appendChild(c);
 
-      var bar = document.getElementById('kg-bar{% if kg_full %}-full{% endif %}');
       if (bar) {
         ORDER.forEach(function (name) {
           var b = document.createElement('button');
