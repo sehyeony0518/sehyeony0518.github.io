@@ -187,15 +187,15 @@ layout: default
     <!-- Latest insights + paper reviews (medical AI / digital healthcare) -->
     {% if page.blog_preview %}
       <div class="hb-head">
-        <h2 id="hb-title">the map</h2>
+        <h2 id="hb-title">knowledge graph</h2>
         <div class="hb-toggle" id="hb-toggle">
-          <button type="button" class="hb-btn active" data-view="map">map</button>
+          <button type="button" class="hb-btn active" data-view="map">graph</button>
           <button type="button" class="hb-btn" data-view="reading">selected reading</button>
         </div>
       </div>
 
       <div class="hb-pane" data-pane="map">
-        {% include knowledge_graph.liquid height=360 %}
+        {% include knowledge_graph.liquid height=520 %}
       </div>
       <div class="hb-pane hb-hidden" data-pane="reading">
         {% include latest_blog.liquid %}
@@ -224,7 +224,7 @@ layout: default
           var bar = document.getElementById('hb-toggle');
           if (!bar) return;
           var title = document.getElementById('hb-title');
-          var names = { map: 'the map', reading: 'selected reading' };
+          var names = { map: 'knowledge graph', reading: 'selected reading' };
           var panes = document.querySelectorAll('.hb-pane');
 
           function show(view, remember) {

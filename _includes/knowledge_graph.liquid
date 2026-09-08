@@ -6,53 +6,69 @@
   Params: full (true for the interactive version), height.
 {% endcomment %}
 {% assign kg_full = include.full | default: false %}
-{% assign kg_h = include.height | default: 340 %}
+{% assign kg_h = include.height | default: 480 %}
 
 <style>
-  .kg-wrap { position: relative; margin: .6rem 0 0; }
+  .kg-wrap { position: relative; margin: .7rem 0 0; }
   .kg-box {
-    position: relative; width: 100%; border-radius: 12px; overflow: hidden;
-    border: 1px solid var(--global-divider-color); background: var(--global-card-bg-color);
+    position: relative; width: 100%; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--global-divider-color);
+    background:
+      radial-gradient(120% 90% at 30% 0%, rgba(124,107,242,.09), transparent 60%),
+      radial-gradient(120% 90% at 80% 100%, rgba(59,160,217,.09), transparent 62%),
+      var(--global-card-bg-color);
   }
   .kg-box svg { display: block; width: 100%; height: 100%; cursor: grab; }
   .kg-box svg.kg-drag { cursor: grabbing; }
-  .kg-link { stroke: var(--global-text-color-light); }
+  .kg-canvas { opacity: 0; transition: opacity .5s ease; }
+  .kg-canvas.kg-in { opacity: 1; }
+  .kg-link { fill: none; transition: stroke-opacity .18s ease; }
   .kg-node { cursor: pointer; }
-  .kg-node circle { stroke: var(--global-card-bg-color); stroke-width: 1.2; }
+  .kg-node circle { transition: opacity .18s ease; }
+  .kg-node .kg-ring { fill: none; stroke-width: 1.1; opacity: .32; }
   .kg-label {
     font-size: 9.5px; fill: var(--global-text-color); paint-order: stroke;
-    stroke: var(--global-card-bg-color); stroke-width: 2.6px; stroke-linejoin: round;
-    pointer-events: none; font-weight: 600;
+    stroke: var(--global-card-bg-color); stroke-width: 3px; stroke-linejoin: round;
+    pointer-events: none; font-weight: 600; letter-spacing: -.01em;
+    transition: opacity .18s ease;
   }
-  .kg-label.kg-hub { font-size: 11px; font-weight: 700; }
-  .kg-legend { display: flex; flex-wrap: wrap; gap: .2rem .9rem; margin: .5rem 0 0; font-size: .72rem; opacity: .7; }
-  .kg-legend span { display: inline-flex; align-items: center; gap: .3rem; }
-  .kg-legend i { width: .58rem; height: .58rem; border-radius: 50%; display: inline-block; }
-  .kg-note { font-size: .74rem; opacity: .55; margin: .35rem 0 0; }
+  .kg-label.kg-hub { font-size: 11.5px; font-weight: 700; }
+  .kg-label.kg-tab { font-size: 13px; font-weight: 800; letter-spacing: -.02em; }
+  .kg-legend {
+    display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: .6rem 0 0;
+    font-size: .72rem; opacity: .68;
+  }
+  .kg-legend span { display: inline-flex; align-items: center; gap: .34rem; }
+  .kg-legend i { width: .56rem; height: .56rem; border-radius: 50%; display: inline-block; }
+  .kg-note { font-size: .75rem; opacity: .55; margin: .4rem 0 0; line-height: 1.6; }
   .kg-tip {
     position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s ease;
     background: var(--global-bg-color); border: 1px solid var(--global-divider-color);
-    border-radius: 7px; padding: .3rem .55rem; font-size: .76rem; max-width: 17rem;
-    line-height: 1.35; box-shadow: 0 3px 12px rgba(0,0,0,.1); z-index: 3;
+    border-radius: 8px; padding: .38rem .6rem; font-size: .77rem; max-width: 18rem;
+    line-height: 1.4; box-shadow: 0 4px 18px rgba(0,0,0,.13); z-index: 3;
   }
-  .kg-cover {
-    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-size: .8rem; opacity: .5;
+  .kg-tip b { display: block; font-size: .68rem; font-weight: 800; letter-spacing: .05em;
+              text-transform: uppercase; opacity: .55; margin-bottom: .1rem; }
+  .kg-cover { position: absolute; inset: 0; display: flex; align-items: center;
+              justify-content: center; font-size: .8rem; opacity: .45; }
+  .kg-count {
+    position: absolute; right: .7rem; bottom: .6rem; font-size: .68rem; opacity: .4;
+    font-variant-numeric: tabular-nums; pointer-events: none;
   }
 </style>
 
 <div class="kg-wrap">
   <div class="kg-box" id="kg-box{% if kg_full %}-full{% endif %}" style="height: {{ kg_h }}px;">
-    <div class="kg-cover">Loading the map…</div>
+    <div class="kg-cover">Loading the graph…</div>
   </div>
   <div class="kg-tip"></div>
   <div class="kg-legend">
-    <span><i style="background:#6a4c93"></i>Trustworthy AI</span>
-    <span><i style="background:#1982c4"></i>Clinical Medicine</span>
-    <span><i style="background:#c9184a"></i>Paper reviews</span>
-    <span><i style="background:#2a9d8f"></i>Insights</span>
+    <span><i style="background:#7C6BF2"></i>Trustworthy AI</span>
+    <span><i style="background:#3BA0D9"></i>Clinical Medicine</span>
+    <span><i style="background:#E4736B"></i>Paper reviews</span>
+    <span><i style="background:#4FBFA8"></i>Insights</span>
   </div>
-  {% unless kg_full %}<p class="kg-note">Every study note, the categories above them, and the reviews they share citations with. <a href="{{ '/research/#map' | relative_url }}">Open the full map</a>.</p>{% endunless %}
+  {% unless kg_full %}<p class="kg-note">Every study note, the categories above it, and the reviews it shares citations with. <a href="{{ '/research/#graph' | relative_url }}">Open the full graph</a>.</p>{% endunless %}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
@@ -64,74 +80,117 @@
     if (!box) return;
     var wrap = box.closest('.kg-wrap');
     var tip = wrap.querySelector('.kg-tip');
-    var COLOR = { 'trustworthy-ai': '#6a4c93', 'clinical-medicine': '#1982c4', papers: '#c9184a', insights: '#2a9d8f' };
+    var COLOR = { 'trustworthy-ai': '#7C6BF2', 'clinical-medicine': '#3BA0D9', papers: '#E4736B', insights: '#4FBFA8' };
+    var KIND = { tab: 'Branch', cat: 'Category', note: 'Study note', review: 'Paper review', insight: 'Insight' };
     var started = false;
 
     function boot() {
       if (started || !window.d3) return;
       started = true;
       d3.json('{{ "/assets/json/knowledge-graph.json" | relative_url }}').then(render).catch(function () {
-        box.innerHTML = '<div class="kg-cover">The map could not be loaded.</div>';
+        box.innerHTML = '<div class="kg-cover">The graph could not be loaded.</div>';
       });
     }
 
     function render(data) {
       box.innerHTML = '';
       var W = box.clientWidth, H = box.clientHeight;
+      var R = FULL ? 1 : 0.82;
       var svg = d3.select(box).append('svg').attr('viewBox', [0, 0, W, H]);
-      var g = svg.append('g');
+      var g = svg.append('g').attr('class', 'kg-canvas');
 
-      var link = g.append('g').attr('class', 'kg-links')
-        .selectAll('line').data(data.links).join('line')
+      var maxDeg = d3.max(data.nodes, function (d) { return d.deg; }) || 1;
+      function radius(d) {
+        var base = d.kind === 'tab' ? 9 : d.kind === 'cat' ? 5.4 : 2.6;
+        return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'note' ? 3.4 : 2)) * R;
+      }
+
+      var link = g.append('g')
+        .selectAll('path').data(data.links).join('path')
         .attr('class', 'kg-link')
-        .attr('stroke-opacity', function (d) { return d.kind === 'taxonomy' ? 0.18 : 0.4; })
-        .attr('stroke-width', function (d) { return d.kind === 'taxonomy' ? 0.7 : Math.min(2.2, 0.7 + d.w * 0.35); });
+        .attr('stroke', function (d) {
+          var s = d.source.group || d.source, t = d.target.group || d.target;
+          return COLOR[typeof s === 'string' ? s : ''] || 'var(--global-text-color-light)';
+        })
+        .attr('stroke-opacity', function (d) { return d.kind === 'taxonomy' ? 0.22 : 0.42; })
+        .attr('stroke-width', function (d) { return (d.kind === 'taxonomy' ? 0.8 : Math.min(2.4, 0.8 + d.w * 0.4)) * R; });
 
       var node = g.append('g').selectAll('g').data(data.nodes).join('g').attr('class', 'kg-node');
+      node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
+        .append('circle').attr('class', 'kg-ring')
+        .attr('r', function (d) { return radius(d) + 4 * R; })
+        .attr('stroke', function (d) { return COLOR[d.group] || '#888'; });
       node.append('circle')
-        .attr('r', function (d) { return d.size * (FULL ? 3.1 : 2.4); })
-        .attr('fill', function (d) { return COLOR[d.group] || '#888'; })
-        .attr('fill-opacity', function (d) { return d.kind === 'note' ? 0.9 : 1; });
+        .attr('r', radius)
+        .attr('fill', function (d) { return COLOR[d.group] || '#8a8a8a'; })
+        .attr('fill-opacity', function (d) { return d.kind === 'note' ? 0.85 : 1; })
+        .attr('stroke', 'var(--global-card-bg-color)')
+        .attr('stroke-width', function (d) { return d.kind === 'note' ? 1 : 1.6; });
 
       node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
-        .append('text').attr('class', 'kg-label kg-hub')
-        .attr('dy', function (d) { return -d.size * (FULL ? 3.1 : 2.4) - 3; })
+        .append('text')
+        .attr('class', function (d) { return 'kg-label ' + (d.kind === 'tab' ? 'kg-tab' : 'kg-hub'); })
+        .attr('dy', function (d) { return -radius(d) - 5 * R; })
         .attr('text-anchor', 'middle')
-        .text(function (d) { return d.kind === 'tab' ? d.label : d.label.replace(/ &.*/, ''); });
+        .text(function (d) { return d.kind === 'tab' ? d.label : d.label.replace(/ &.*/, '').replace(/^Mathematical.*/, 'Foundations'); });
 
       var sim = d3.forceSimulation(data.nodes)
         .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
-          .distance(function (d) { return d.kind === 'taxonomy' ? 26 : 46; })
-          .strength(function (d) { return d.kind === 'taxonomy' ? 0.9 : 0.16; }))
-        .force('charge', d3.forceManyBody().strength(FULL ? -58 : -34))
+          .distance(function (d) { return (d.kind === 'taxonomy' ? 30 : 52) * R; })
+          .strength(function (d) { return d.kind === 'taxonomy' ? 0.92 : 0.14; }))
+        .force('charge', d3.forceManyBody().strength(FULL ? -64 : -40))
         .force('center', d3.forceCenter(W / 2, H / 2))
-        .force('collide', d3.forceCollide().radius(function (d) { return d.size * (FULL ? 3.6 : 2.9) + 2; }));
+        .force('x', d3.forceX(W / 2).strength(0.035))
+        .force('y', d3.forceY(H / 2).strength(0.05))
+        .force('collide', d3.forceCollide().radius(function (d) { return radius(d) + 3 * R; }));
 
+      function arc(d) {
+        var dx = d.target.x - d.source.x, dy = d.target.y - d.source.y;
+        var dr = Math.sqrt(dx * dx + dy * dy) * 2.6;
+        return 'M' + d.source.x + ',' + d.source.y + 'A' + dr + ',' + dr + ' 0 0,1 ' + d.target.x + ',' + d.target.y;
+      }
       function tick() {
-        link.attr('x1', function (d) { return d.source.x; }).attr('y1', function (d) { return d.source.y; })
-            .attr('x2', function (d) { return d.target.x; }).attr('y2', function (d) { return d.target.y; });
+        link.attr('d', arc);
         node.attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
       }
 
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) { sim.stop(); for (var i = 0; i < 220; i++) sim.tick(); tick(); }
+      if (reduce) { sim.stop(); for (var i = 0; i < 260; i++) sim.tick(); tick(); }
       else sim.on('tick', tick);
+      requestAnimationFrame(function () { g.classed('kg-in', true); });
 
-      svg.call(d3.zoom().scaleExtent([0.45, 4]).on('zoom', function (e) { g.attr('transform', e.transform); }));
+      svg.call(d3.zoom().scaleExtent([0.4, 5]).on('zoom', function (e) { g.attr('transform', e.transform); }));
+
+      var neighbours = {};
+      data.links.forEach(function (l) {
+        (neighbours[l.source.id] = neighbours[l.source.id] || {})[l.target.id] = 1;
+        (neighbours[l.target.id] = neighbours[l.target.id] || {})[l.source.id] = 1;
+      });
 
       node.on('mouseenter', function (e, d) {
-          tip.textContent = d.label;
+          tip.innerHTML = '<b>' + (KIND[d.kind] || '') + '</b>' + d.label;
           var r = box.getBoundingClientRect();
-          tip.style.left = Math.min(r.width - 180, e.clientX - r.left + 10) + 'px';
-          tip.style.top = (e.clientY - r.top + 10) + 'px';
+          tip.style.left = Math.max(4, Math.min(r.width - 200, e.clientX - r.left + 12)) + 'px';
+          tip.style.top = Math.min(r.height - 60, e.clientY - r.top + 12) + 'px';
           tip.style.opacity = 1;
+          var near = neighbours[d.id] || {};
           link.attr('stroke-opacity', function (l) {
-            return (l.source.id === d.id || l.target.id === d.id) ? 0.85 : 0.06;
+            return (l.source.id === d.id || l.target.id === d.id) ? 0.9 : 0.04;
+          });
+          node.selectAll('circle').attr('opacity', function () {
+            var n = d3.select(this.parentNode).datum();
+            return (n.id === d.id || near[n.id]) ? 1 : 0.14;
+          });
+          node.selectAll('text').attr('opacity', function () {
+            var n = d3.select(this.parentNode).datum();
+            return (n.id === d.id || near[n.id]) ? 1 : 0.12;
           });
         })
         .on('mouseleave', function () {
           tip.style.opacity = 0;
-          link.attr('stroke-opacity', function (l) { return l.kind === 'taxonomy' ? 0.18 : 0.4; });
+          link.attr('stroke-opacity', function (l) { return l.kind === 'taxonomy' ? 0.22 : 0.42; });
+          node.selectAll('circle').attr('opacity', 1);
+          node.selectAll('text').attr('opacity', 1);
         })
         .on('click', function (e, d) { if (d.url) window.location.href = d.url; });
 
@@ -141,9 +200,13 @@
           .on('drag', function (e, d) { d.fx = e.x; d.fy = e.y; })
           .on('end', function (e, d) { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; svg.classed('kg-drag', false); }));
       }
+
+      var c = document.createElement('div');
+      c.className = 'kg-count';
+      c.textContent = data.nodes.length + ' nodes, ' + data.links.length + ' links';
+      box.appendChild(c);
     }
 
-    // Only build it once it is actually on screen
     var io = new IntersectionObserver(function (entries) {
       if (entries.some(function (x) { return x.isIntersecting; })) {
         io.disconnect();
