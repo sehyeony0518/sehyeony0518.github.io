@@ -4,38 +4,54 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Montserrat:500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9C%9D%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/research/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item active"> <a class="nav-link" href="/research/">research <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item "> <a class="nav-link" href="/papers/">paper reviews </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">research</h1> <p class="post-description">Trustworthy medical AI grounded in clinical evidence.</p> </header> <article> <p><a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a></p> <p>I study the reliability of medical image classifiers, with a focus on ultrasound AI for gallbladder and hepatobiliary diagnosis. My research concerns the relationship between diagnostic performance and the evidence a model uses: whether a correct prediction is supported by clinically meaningful image characteristics, how that reliance can be examined, and where it becomes unstable.</p> <p>I organize this work around two directions. In reliable medical AI models, I investigate clinical faithfulness auditing and study robustness under distribution shift. In clinical translation, I study the diseases, imaging findings, and diagnostic reasoning needed to define what an audit should check. My M.S. research at Ajou University, advised by Prof. Jung-Won Lee in the Embedded &amp; Software Lab, connects these directions through ultrasound classification.</p> <h2 id="reliable-medical-ai-models">Reliable Medical AI Models</h2> <h3 id="diagnostic-performance-and-shortcut-reliance">Diagnostic performance and shortcut reliance</h3> <p>A classifier can achieve good diagnostic accuracy while using features whose relationship with disease depends on how images were acquired or selected. Hospital-specific image formatting, measurement markers, and acquisition settings can become predictive when they occur unevenly across diagnostic groups. A random split may preserve these relationships in both training and test data, allowing an apparently successful evaluation to leave the underlying reliance unexamined.</p> <p>I distinguish a cue’s association with the target from the model’s reliance on that cue. A marker-only baseline could establish that annotations contain predictive information. It would take additional comparisons, such as controlled marker edits and corresponding changes in classifier outputs, to establish sensitivity to those annotations. Conversely, an unfamiliar image feature is not automatically a shortcut. Its diagnostic relevance needs investigation before it can be classified as clinically inappropriate.</p> <h3 id="clinical-faithfulness-auditing">Clinical faithfulness auditing</h3> <p>My current research focuses on clinical faithfulness: whether interpretable model readouts align with independently defined clinical factors. These factors may describe lesion morphology, diagnostic findings, or clinical severity. I am developing post-hoc approaches that examine trained classifiers without retraining them or requiring direct annotations of whether each explanation is faithful.</p> <p>This constraint still requires clinical reference information. A diagnosis label alone cannot establish which evidence supports a prediction. I need factors defined independently of the model readout, with their provenance and measurement limitations recorded. Otherwise, an audit risks validating an explanation against information derived from the same model or against a descriptor that merely repeats the target label.</p> <p>I use frequency-band, attention, and attribution analyses to examine model evidence. Each exposes a different quantity, and each requires a specific interpretation. Attention weights describe an internal weighting operation; attribution methods estimate an input’s contribution under particular assumptions. Neither automatically establishes a clinically valid explanation. Frequency-band sensitivity can identify dependence on image structure at particular scales, but a frequency band has no fixed clinical meaning across acquisition conditions.</p> <p>For an audit, I would specify the readout and clinical factor before measuring their relationship. Candidate measurements include the association between an evidence score and an ordinal clinical descriptor, attribution concentrated within independently delineated regions, and prediction changes following a controlled modification. Comparisons within diagnostic groups can help determine whether apparent alignment is explained mainly by the shared class label. Acquisition-stratified analyses can examine whether it persists under different recording conditions.</p> <p>These measurements support different conclusions. Spatial overlap establishes localization, while a controlled edit tests sensitivity to the edited information. An edit may also damage relevant tissue or introduce an artifact. I therefore want audits to report agreement and disagreement across checks, with uncertainty estimated at the patient level when multiple images belong to one person. Clinical alignment provides evidence for a bounded claim about model behavior; it does not by itself establish a causal account of the decision.</p> <h3 id="robustness-across-clinical-settings">Robustness across clinical settings</h3> <p>I study generalisation as part of model reliability. Hospitals can differ in equipment, referral patterns, disease prevalence, image selection, and reference-label procedures. A performance change across sites may reflect several of these mechanisms simultaneously. External validation needs enough information about the evaluation population and acquisition process to investigate those differences.</p> <p>In future evaluations, I would pair diagnostic performance with evidence audits across hospitals, devices, and patient groups. Relevant outcomes include malignant-class sensitivity at a specified threshold, calibration, and uncertainty within clinically meaningful subgroups. Patient-level separation is necessary to avoid leakage between related images. The model and preprocessing should remain fixed during an external test, with any subsequent adaptation evaluated separately. I would also examine whether stable aggregate performance conceals changes in which clinical findings or acquisition cues drive predictions.</p> <h2 id="clinical-translation">Clinical Translation</h2> <h3 id="gallbladder-and-hepatobiliary-evidence">Gallbladder and hepatobiliary evidence</h3> <p>Gallbladder ultrasound gives this work a concrete clinical setting. My published ACK 2025 paper examines data and model requirements for reliable ultrasound diagnosis. My ongoing work on clinical faithfulness and clinically grounded representation learning is listed as manuscripts in preparation on the <a href="/publications/">publications page</a>.</p> <p>In my ultrasound work, I have explored clinically guided modeling using echogenicity, texture, lesion margin, wall features, and anatomical context. These descriptors require explicit definitions. Echogenicity needs a reference tissue and an appropriate comparison region. Texture depends on the spatial scale being measured. Margin assessment requires a visible boundary, while wall findings need their location and relationship to the lesion preserved.</p> <p>Anatomical context determines how such observations should be interpreted. A representation centered tightly on a lesion may exclude its attachment to the wall or its relationship with surrounding liver tissue. A wider field can retain useful context while also admitting unrelated image content. I am interested in making these representation choices explicit enough that their diagnostic contribution can be examined.</p> <h3 id="acquisition-variability-and-on-image-markers">Acquisition variability and on-image markers</h3> <p>Ultrasound appearance depends on acquisition as well as tissue. Gain, imaging depth, probe orientation, and image processing can change brightness, apparent texture, and boundary visibility. Consequently, a numerical feature described as echogenicity or texture may partly measure acquisition conditions. Normalization can reduce some variability, but it may also remove relative contrast that matters clinically.</p> <p>On-image markers introduce another source of ambiguity. Calipers and annotations may record a clinician’s selection or measurement decision. If their presence or style differs across diagnostic groups, a classifier can receive information about the care process alongside the tissue image. Whether that information is appropriate depends on the intended point of use.</p> <p>I would examine marker presence, location, and overlap with relevant anatomy before interpreting a removal experiment. Removing a marker can erase tissue, while restoration can introduce synthetic structure. A change in prediction therefore needs controls for the editing operation itself. This is especially relevant when auditing texture or frequency sensitivity, since the edit may alter exactly those image properties.</p> <h3 id="clinical-knowledge-as-the-audit-reference">Clinical knowledge as the audit reference</h3> <p>I study hepatobiliary medicine because clinical factors need a defensible interpretation before they can serve as audit references. Wall thickening, for example, has overlapping inflammatory, neoplastic, and systemic explanations. A familiar descriptor can be measured accurately while remaining insufficient for the diagnostic claim being tested.</p> <p>My <a href="/study/">study notes</a> cover anatomy, imaging findings, differential diagnosis, and clinical evaluation alongside machine learning. This study helps me distinguish an absent finding from one that is unassessable in the available view. It also clarifies what a selected still image cannot establish about an examination.</p> <p>Reference standards need similar attention. Histopathology and longitudinal imaging provide different forms of evidence, and patients receiving surgery may differ systematically from those followed without intervention. I want these distinctions reflected in evaluation design, including how labels are assigned and which patients the resulting claims cover.</p> <h2 id="research-directions">Research Directions</h2> <p>I want to develop a reproducible post-hoc audit protocol that connects model readouts to independent clinical factors and tests plausible acquisition-related alternatives. My next priorities are to specify the scope of each measurement, examine disagreement between audit methods, and assess how conclusions depend on image editing and clinical-factor quality.</p> <p>Alongside this, I want to investigate ultrasound representations whose clinical descriptors can be evaluated individually. During PhD study, I hope to extend these evaluations across acquisition settings and patient populations, with clearly defined diagnostic tasks and reference standards.</p> <h2 id="map">The Map</h2> <p>Every study note, the categories above them, and the paper reviews and insights they share citations with. A line is either the taxonomy or a source two pieces both cite. Hovering isolates a node’s connections, dragging rearranges the layout, and clicking opens the piece.</p> <style>
-  .kg-wrap { position: relative; margin: .6rem 0 0; }
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item active"> <a class="nav-link" href="/research/">research <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item "> <a class="nav-link" href="/papers/">paper reviews </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">research</h1> <p class="post-description">Trustworthy medical AI grounded in clinical evidence.</p> </header> <article> <p><a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a></p> <p>I study the reliability of medical image classifiers, with a focus on ultrasound AI for gallbladder and hepatobiliary diagnosis. My research concerns the relationship between diagnostic performance and the evidence a model uses: whether a correct prediction is supported by clinically meaningful image characteristics, how that reliance can be examined, and where it becomes unstable.</p> <p>I organize this work around two directions. In reliable medical AI models, I investigate clinical faithfulness auditing and study robustness under distribution shift. In clinical translation, I study the diseases, imaging findings, and diagnostic reasoning needed to define what an audit should check. My M.S. research at Ajou University, advised by Prof. Jung-Won Lee in the Embedded &amp; Software Lab, connects these directions through ultrasound classification.</p> <h2 id="reliable-medical-ai-models">Reliable Medical AI Models</h2> <h3 id="diagnostic-performance-and-shortcut-reliance">Diagnostic performance and shortcut reliance</h3> <p>A classifier can achieve good diagnostic accuracy while using features whose relationship with disease depends on how images were acquired or selected. Hospital-specific image formatting, measurement markers, and acquisition settings can become predictive when they occur unevenly across diagnostic groups. A random split may preserve these relationships in both training and test data, allowing an apparently successful evaluation to leave the underlying reliance unexamined.</p> <p>I distinguish a cue’s association with the target from the model’s reliance on that cue. A marker-only baseline could establish that annotations contain predictive information. It would take additional comparisons, such as controlled marker edits and corresponding changes in classifier outputs, to establish sensitivity to those annotations. Conversely, an unfamiliar image feature is not automatically a shortcut. Its diagnostic relevance needs investigation before it can be classified as clinically inappropriate.</p> <h3 id="clinical-faithfulness-auditing">Clinical faithfulness auditing</h3> <p>My current research focuses on clinical faithfulness: whether interpretable model readouts align with independently defined clinical factors. These factors may describe lesion morphology, diagnostic findings, or clinical severity. I am developing post-hoc approaches that examine trained classifiers without retraining them or requiring direct annotations of whether each explanation is faithful.</p> <p>This constraint still requires clinical reference information. A diagnosis label alone cannot establish which evidence supports a prediction. I need factors defined independently of the model readout, with their provenance and measurement limitations recorded. Otherwise, an audit risks validating an explanation against information derived from the same model or against a descriptor that merely repeats the target label.</p> <p>I use frequency-band, attention, and attribution analyses to examine model evidence. Each exposes a different quantity, and each requires a specific interpretation. Attention weights describe an internal weighting operation; attribution methods estimate an input’s contribution under particular assumptions. Neither automatically establishes a clinically valid explanation. Frequency-band sensitivity can identify dependence on image structure at particular scales, but a frequency band has no fixed clinical meaning across acquisition conditions.</p> <p>For an audit, I would specify the readout and clinical factor before measuring their relationship. Candidate measurements include the association between an evidence score and an ordinal clinical descriptor, attribution concentrated within independently delineated regions, and prediction changes following a controlled modification. Comparisons within diagnostic groups can help determine whether apparent alignment is explained mainly by the shared class label. Acquisition-stratified analyses can examine whether it persists under different recording conditions.</p> <p>These measurements support different conclusions. Spatial overlap establishes localization, while a controlled edit tests sensitivity to the edited information. An edit may also damage relevant tissue or introduce an artifact. I therefore want audits to report agreement and disagreement across checks, with uncertainty estimated at the patient level when multiple images belong to one person. Clinical alignment provides evidence for a bounded claim about model behavior; it does not by itself establish a causal account of the decision.</p> <h3 id="robustness-across-clinical-settings">Robustness across clinical settings</h3> <p>I study generalisation as part of model reliability. Hospitals can differ in equipment, referral patterns, disease prevalence, image selection, and reference-label procedures. A performance change across sites may reflect several of these mechanisms simultaneously. External validation needs enough information about the evaluation population and acquisition process to investigate those differences.</p> <p>In future evaluations, I would pair diagnostic performance with evidence audits across hospitals, devices, and patient groups. Relevant outcomes include malignant-class sensitivity at a specified threshold, calibration, and uncertainty within clinically meaningful subgroups. Patient-level separation is necessary to avoid leakage between related images. The model and preprocessing should remain fixed during an external test, with any subsequent adaptation evaluated separately. I would also examine whether stable aggregate performance conceals changes in which clinical findings or acquisition cues drive predictions.</p> <h2 id="clinical-translation">Clinical Translation</h2> <h3 id="gallbladder-and-hepatobiliary-evidence">Gallbladder and hepatobiliary evidence</h3> <p>Gallbladder ultrasound gives this work a concrete clinical setting. My published ACK 2025 paper examines data and model requirements for reliable ultrasound diagnosis. My ongoing work on clinical faithfulness and clinically grounded representation learning is listed as manuscripts in preparation on the <a href="/publications/">publications page</a>.</p> <p>In my ultrasound work, I have explored clinically guided modeling using echogenicity, texture, lesion margin, wall features, and anatomical context. These descriptors require explicit definitions. Echogenicity needs a reference tissue and an appropriate comparison region. Texture depends on the spatial scale being measured. Margin assessment requires a visible boundary, while wall findings need their location and relationship to the lesion preserved.</p> <p>Anatomical context determines how such observations should be interpreted. A representation centered tightly on a lesion may exclude its attachment to the wall or its relationship with surrounding liver tissue. A wider field can retain useful context while also admitting unrelated image content. I am interested in making these representation choices explicit enough that their diagnostic contribution can be examined.</p> <h3 id="acquisition-variability-and-on-image-markers">Acquisition variability and on-image markers</h3> <p>Ultrasound appearance depends on acquisition as well as tissue. Gain, imaging depth, probe orientation, and image processing can change brightness, apparent texture, and boundary visibility. Consequently, a numerical feature described as echogenicity or texture may partly measure acquisition conditions. Normalization can reduce some variability, but it may also remove relative contrast that matters clinically.</p> <p>On-image markers introduce another source of ambiguity. Calipers and annotations may record a clinician’s selection or measurement decision. If their presence or style differs across diagnostic groups, a classifier can receive information about the care process alongside the tissue image. Whether that information is appropriate depends on the intended point of use.</p> <p>I would examine marker presence, location, and overlap with relevant anatomy before interpreting a removal experiment. Removing a marker can erase tissue, while restoration can introduce synthetic structure. A change in prediction therefore needs controls for the editing operation itself. This is especially relevant when auditing texture or frequency sensitivity, since the edit may alter exactly those image properties.</p> <h3 id="clinical-knowledge-as-the-audit-reference">Clinical knowledge as the audit reference</h3> <p>I study hepatobiliary medicine because clinical factors need a defensible interpretation before they can serve as audit references. Wall thickening, for example, has overlapping inflammatory, neoplastic, and systemic explanations. A familiar descriptor can be measured accurately while remaining insufficient for the diagnostic claim being tested.</p> <p>My <a href="/study/">study notes</a> cover anatomy, imaging findings, differential diagnosis, and clinical evaluation alongside machine learning. This study helps me distinguish an absent finding from one that is unassessable in the available view. It also clarifies what a selected still image cannot establish about an examination.</p> <p>Reference standards need similar attention. Histopathology and longitudinal imaging provide different forms of evidence, and patients receiving surgery may differ systematically from those followed without intervention. I want these distinctions reflected in evaluation design, including how labels are assigned and which patients the resulting claims cover.</p> <h2 id="research-directions">Research Directions</h2> <p>I want to develop a reproducible post-hoc audit protocol that connects model readouts to independent clinical factors and tests plausible acquisition-related alternatives. My next priorities are to specify the scope of each measurement, examine disagreement between audit methods, and assess how conclusions depend on image editing and clinical-factor quality.</p> <p>Alongside this, I want to investigate ultrasound representations whose clinical descriptors can be evaluated individually. During PhD study, I hope to extend these evaluations across acquisition settings and patient populations, with clearly defined diagnostic tasks and reference standards.</p> <h2 id="graph">Knowledge Graph</h2> <p>Every study note, the categories above it, and the paper reviews and insights it shares citations with. A line is either the taxonomy or a source two pieces both cite. Hovering isolates a node’s connections, dragging rearranges the layout, and clicking opens the piece.</p> <style>
+  .kg-wrap { position: relative; margin: .7rem 0 0; }
   .kg-box {
-    position: relative; width: 100%; border-radius: 12px; overflow: hidden;
-    border: 1px solid var(--global-divider-color); background: var(--global-card-bg-color);
+    position: relative; width: 100%; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--global-divider-color);
+    background:
+      radial-gradient(120% 90% at 30% 0%, rgba(124,107,242,.09), transparent 60%),
+      radial-gradient(120% 90% at 80% 100%, rgba(59,160,217,.09), transparent 62%),
+      var(--global-card-bg-color);
   }
   .kg-box svg { display: block; width: 100%; height: 100%; cursor: grab; }
   .kg-box svg.kg-drag { cursor: grabbing; }
-  .kg-link { stroke: var(--global-text-color-light); }
+  .kg-canvas { opacity: 0; transition: opacity .5s ease; }
+  .kg-canvas.kg-in { opacity: 1; }
+  .kg-link { fill: none; transition: stroke-opacity .18s ease; }
   .kg-node { cursor: pointer; }
-  .kg-node circle { stroke: var(--global-card-bg-color); stroke-width: 1.2; }
+  .kg-node circle { transition: opacity .18s ease; }
+  .kg-node .kg-ring { fill: none; stroke-width: 1.1; opacity: .32; }
   .kg-label {
     font-size: 9.5px; fill: var(--global-text-color); paint-order: stroke;
-    stroke: var(--global-card-bg-color); stroke-width: 2.6px; stroke-linejoin: round;
-    pointer-events: none; font-weight: 600;
+    stroke: var(--global-card-bg-color); stroke-width: 3px; stroke-linejoin: round;
+    pointer-events: none; font-weight: 600; letter-spacing: -.01em;
+    transition: opacity .18s ease;
   }
-  .kg-label.kg-hub { font-size: 11px; font-weight: 700; }
-  .kg-legend { display: flex; flex-wrap: wrap; gap: .2rem .9rem; margin: .5rem 0 0; font-size: .72rem; opacity: .7; }
-  .kg-legend span { display: inline-flex; align-items: center; gap: .3rem; }
-  .kg-legend i { width: .58rem; height: .58rem; border-radius: 50%; display: inline-block; }
-  .kg-note { font-size: .74rem; opacity: .55; margin: .35rem 0 0; }
+  .kg-label.kg-hub { font-size: 11.5px; font-weight: 700; }
+  .kg-label.kg-tab { font-size: 13px; font-weight: 800; letter-spacing: -.02em; }
+  .kg-legend {
+    display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: .6rem 0 0;
+    font-size: .72rem; opacity: .68;
+  }
+  .kg-legend span { display: inline-flex; align-items: center; gap: .34rem; }
+  .kg-legend i { width: .56rem; height: .56rem; border-radius: 50%; display: inline-block; }
+  .kg-note { font-size: .75rem; opacity: .55; margin: .4rem 0 0; line-height: 1.6; }
   .kg-tip {
     position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s ease;
     background: var(--global-bg-color); border: 1px solid var(--global-divider-color);
-    border-radius: 7px; padding: .3rem .55rem; font-size: .76rem; max-width: 17rem;
-    line-height: 1.35; box-shadow: 0 3px 12px rgba(0,0,0,.1); z-index: 3;
+    border-radius: 8px; padding: .38rem .6rem; font-size: .77rem; max-width: 18rem;
+    line-height: 1.4; box-shadow: 0 4px 18px rgba(0,0,0,.13); z-index: 3;
   }
-  .kg-cover {
-    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-size: .8rem; opacity: .5;
+  .kg-tip b { display: block; font-size: .68rem; font-weight: 800; letter-spacing: .05em;
+              text-transform: uppercase; opacity: .55; margin-bottom: .1rem; }
+  .kg-cover { position: absolute; inset: 0; display: flex; align-items: center;
+              justify-content: center; font-size: .8rem; opacity: .45; }
+  .kg-count {
+    position: absolute; right: .7rem; bottom: .6rem; font-size: .68rem; opacity: .4;
+    font-variant-numeric: tabular-nums; pointer-events: none;
   }
-</style> <div class="kg-wrap"> <div class="kg-box" id="kg-box-full" style="height: 620px;"> <div class="kg-cover">Loading the map…</div> </div> <div class="kg-tip"></div> <div class="kg-legend"> <span><i style="background:#6a4c93"></i>Trustworthy AI</span> <span><i style="background:#1982c4"></i>Clinical Medicine</span> <span><i style="background:#c9184a"></i>Paper reviews</span> <span><i style="background:#2a9d8f"></i>Insights</span> </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-box" id="kg-box-full" style="height: 620px;"> <div class="kg-cover">Loading the graph…</div> </div> <div class="kg-tip"></div> <div class="kg-legend"> <span><i style="background:#7C6BF2"></i>Trustworthy AI</span> <span><i style="background:#3BA0D9"></i>Clinical Medicine</span> <span><i style="background:#E4736B"></i>Paper reviews</span> <span><i style="background:#4FBFA8"></i>Insights</span> </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box-full';
     var FULL = true;
@@ -43,74 +59,117 @@
     if (!box) return;
     var wrap = box.closest('.kg-wrap');
     var tip = wrap.querySelector('.kg-tip');
-    var COLOR = { 'trustworthy-ai': '#6a4c93', 'clinical-medicine': '#1982c4', papers: '#c9184a', insights: '#2a9d8f' };
+    var COLOR = { 'trustworthy-ai': '#7C6BF2', 'clinical-medicine': '#3BA0D9', papers: '#E4736B', insights: '#4FBFA8' };
+    var KIND = { tab: 'Branch', cat: 'Category', note: 'Study note', review: 'Paper review', insight: 'Insight' };
     var started = false;
 
     function boot() {
       if (started || !window.d3) return;
       started = true;
       d3.json('/assets/json/knowledge-graph.json').then(render).catch(function () {
-        box.innerHTML = '<div class="kg-cover">The map could not be loaded.</div>';
+        box.innerHTML = '<div class="kg-cover">The graph could not be loaded.</div>';
       });
     }
 
     function render(data) {
       box.innerHTML = '';
       var W = box.clientWidth, H = box.clientHeight;
+      var R = FULL ? 1 : 0.82;
       var svg = d3.select(box).append('svg').attr('viewBox', [0, 0, W, H]);
-      var g = svg.append('g');
+      var g = svg.append('g').attr('class', 'kg-canvas');
 
-      var link = g.append('g').attr('class', 'kg-links')
-        .selectAll('line').data(data.links).join('line')
+      var maxDeg = d3.max(data.nodes, function (d) { return d.deg; }) || 1;
+      function radius(d) {
+        var base = d.kind === 'tab' ? 9 : d.kind === 'cat' ? 5.4 : 2.6;
+        return (base + Math.sqrt(d.deg / maxDeg) * (d.kind === 'note' ? 3.4 : 2)) * R;
+      }
+
+      var link = g.append('g')
+        .selectAll('path').data(data.links).join('path')
         .attr('class', 'kg-link')
-        .attr('stroke-opacity', function (d) { return d.kind === 'taxonomy' ? 0.18 : 0.4; })
-        .attr('stroke-width', function (d) { return d.kind === 'taxonomy' ? 0.7 : Math.min(2.2, 0.7 + d.w * 0.35); });
+        .attr('stroke', function (d) {
+          var s = d.source.group || d.source, t = d.target.group || d.target;
+          return COLOR[typeof s === 'string' ? s : ''] || 'var(--global-text-color-light)';
+        })
+        .attr('stroke-opacity', function (d) { return d.kind === 'taxonomy' ? 0.22 : 0.42; })
+        .attr('stroke-width', function (d) { return (d.kind === 'taxonomy' ? 0.8 : Math.min(2.4, 0.8 + d.w * 0.4)) * R; });
 
       var node = g.append('g').selectAll('g').data(data.nodes).join('g').attr('class', 'kg-node');
+      node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
+        .append('circle').attr('class', 'kg-ring')
+        .attr('r', function (d) { return radius(d) + 4 * R; })
+        .attr('stroke', function (d) { return COLOR[d.group] || '#888'; });
       node.append('circle')
-        .attr('r', function (d) { return d.size * (FULL ? 3.1 : 2.4); })
-        .attr('fill', function (d) { return COLOR[d.group] || '#888'; })
-        .attr('fill-opacity', function (d) { return d.kind === 'note' ? 0.9 : 1; });
+        .attr('r', radius)
+        .attr('fill', function (d) { return COLOR[d.group] || '#8a8a8a'; })
+        .attr('fill-opacity', function (d) { return d.kind === 'note' ? 0.85 : 1; })
+        .attr('stroke', 'var(--global-card-bg-color)')
+        .attr('stroke-width', function (d) { return d.kind === 'note' ? 1 : 1.6; });
 
       node.filter(function (d) { return d.kind === 'tab' || d.kind === 'cat'; })
-        .append('text').attr('class', 'kg-label kg-hub')
-        .attr('dy', function (d) { return -d.size * (FULL ? 3.1 : 2.4) - 3; })
+        .append('text')
+        .attr('class', function (d) { return 'kg-label ' + (d.kind === 'tab' ? 'kg-tab' : 'kg-hub'); })
+        .attr('dy', function (d) { return -radius(d) - 5 * R; })
         .attr('text-anchor', 'middle')
-        .text(function (d) { return d.kind === 'tab' ? d.label : d.label.replace(/ &.*/, ''); });
+        .text(function (d) { return d.kind === 'tab' ? d.label : d.label.replace(/ &.*/, '').replace(/^Mathematical.*/, 'Foundations'); });
 
       var sim = d3.forceSimulation(data.nodes)
         .force('link', d3.forceLink(data.links).id(function (d) { return d.id; })
-          .distance(function (d) { return d.kind === 'taxonomy' ? 26 : 46; })
-          .strength(function (d) { return d.kind === 'taxonomy' ? 0.9 : 0.16; }))
-        .force('charge', d3.forceManyBody().strength(FULL ? -58 : -34))
+          .distance(function (d) { return (d.kind === 'taxonomy' ? 30 : 52) * R; })
+          .strength(function (d) { return d.kind === 'taxonomy' ? 0.92 : 0.14; }))
+        .force('charge', d3.forceManyBody().strength(FULL ? -64 : -40))
         .force('center', d3.forceCenter(W / 2, H / 2))
-        .force('collide', d3.forceCollide().radius(function (d) { return d.size * (FULL ? 3.6 : 2.9) + 2; }));
+        .force('x', d3.forceX(W / 2).strength(0.035))
+        .force('y', d3.forceY(H / 2).strength(0.05))
+        .force('collide', d3.forceCollide().radius(function (d) { return radius(d) + 3 * R; }));
 
+      function arc(d) {
+        var dx = d.target.x - d.source.x, dy = d.target.y - d.source.y;
+        var dr = Math.sqrt(dx * dx + dy * dy) * 2.6;
+        return 'M' + d.source.x + ',' + d.source.y + 'A' + dr + ',' + dr + ' 0 0,1 ' + d.target.x + ',' + d.target.y;
+      }
       function tick() {
-        link.attr('x1', function (d) { return d.source.x; }).attr('y1', function (d) { return d.source.y; })
-            .attr('x2', function (d) { return d.target.x; }).attr('y2', function (d) { return d.target.y; });
+        link.attr('d', arc);
         node.attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
       }
 
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) { sim.stop(); for (var i = 0; i < 220; i++) sim.tick(); tick(); }
+      if (reduce) { sim.stop(); for (var i = 0; i < 260; i++) sim.tick(); tick(); }
       else sim.on('tick', tick);
+      requestAnimationFrame(function () { g.classed('kg-in', true); });
 
-      svg.call(d3.zoom().scaleExtent([0.45, 4]).on('zoom', function (e) { g.attr('transform', e.transform); }));
+      svg.call(d3.zoom().scaleExtent([0.4, 5]).on('zoom', function (e) { g.attr('transform', e.transform); }));
+
+      var neighbours = {};
+      data.links.forEach(function (l) {
+        (neighbours[l.source.id] = neighbours[l.source.id] || {})[l.target.id] = 1;
+        (neighbours[l.target.id] = neighbours[l.target.id] || {})[l.source.id] = 1;
+      });
 
       node.on('mouseenter', function (e, d) {
-          tip.textContent = d.label;
+          tip.innerHTML = '<b>' + (KIND[d.kind] || '') + '</b>' + d.label;
           var r = box.getBoundingClientRect();
-          tip.style.left = Math.min(r.width - 180, e.clientX - r.left + 10) + 'px';
-          tip.style.top = (e.clientY - r.top + 10) + 'px';
+          tip.style.left = Math.max(4, Math.min(r.width - 200, e.clientX - r.left + 12)) + 'px';
+          tip.style.top = Math.min(r.height - 60, e.clientY - r.top + 12) + 'px';
           tip.style.opacity = 1;
+          var near = neighbours[d.id] || {};
           link.attr('stroke-opacity', function (l) {
-            return (l.source.id === d.id || l.target.id === d.id) ? 0.85 : 0.06;
+            return (l.source.id === d.id || l.target.id === d.id) ? 0.9 : 0.04;
+          });
+          node.selectAll('circle').attr('opacity', function () {
+            var n = d3.select(this.parentNode).datum();
+            return (n.id === d.id || near[n.id]) ? 1 : 0.14;
+          });
+          node.selectAll('text').attr('opacity', function () {
+            var n = d3.select(this.parentNode).datum();
+            return (n.id === d.id || near[n.id]) ? 1 : 0.12;
           });
         })
         .on('mouseleave', function () {
           tip.style.opacity = 0;
-          link.attr('stroke-opacity', function (l) { return l.kind === 'taxonomy' ? 0.18 : 0.4; });
+          link.attr('stroke-opacity', function (l) { return l.kind === 'taxonomy' ? 0.22 : 0.42; });
+          node.selectAll('circle').attr('opacity', 1);
+          node.selectAll('text').attr('opacity', 1);
         })
         .on('click', function (e, d) { if (d.url) window.location.href = d.url; });
 
@@ -120,9 +179,13 @@
           .on('drag', function (e, d) { d.fx = e.x; d.fy = e.y; })
           .on('end', function (e, d) { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; svg.classed('kg-drag', false); }));
       }
+
+      var c = document.createElement('div');
+      c.className = 'kg-count';
+      c.textContent = data.nodes.length + ' nodes, ' + data.links.length + ' links';
+      box.appendChild(c);
     }
 
-    // Only build it once it is actually on screen
     var io = new IntersectionObserver(function (entries) {
       if (entries.some(function (x) { return x.isIntersecting; })) {
         io.disconnect();
