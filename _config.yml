@@ -314,6 +314,12 @@ defaults:
       type: "news"
     values:
       sitemap: false
+  # jekyll-archives generates the year and tag pages under /diary/, which the
+  # collection scopes above cannot reach
+  - scope:
+      path: "diary"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
