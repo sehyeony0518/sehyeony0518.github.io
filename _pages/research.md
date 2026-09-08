@@ -8,73 +8,25 @@ nav_order: 7
 ---
 <a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a>
 
-I study the reliability of medical image classifiers, with a focus on ultrasound AI for gallbladder and hepatobiliary diagnosis. My research concerns the relationship between diagnostic performance and the evidence a model uses: whether a correct prediction is supported by clinically meaningful image characteristics, how that reliance can be examined, and where it becomes unstable.
+I study the reliability of medical image classifiers: whether a model's accuracy rests on evidence a clinician would recognise as relevant, and how that question can be examined rather than assumed.
 
-I organize this work around two directions. In reliable medical AI models, I investigate clinical faithfulness auditing and study robustness under distribution shift. In clinical translation, I study the diseases, imaging findings, and diagnostic reasoning needed to define what an audit should check. My M.S. research at Ajou University, advised by Prof. Jung-Won Lee in the Embedded & Software Lab, connects these directions through ultrasound classification.
+The work runs in two directions. **Reliable medical AI models** asks what a diagnostic model is actually responding to and when that response can be trusted. **Clinical translation** is the medical study that gives the first question something to check against. My M.S. research at Ajou University, advised by Prof. Jung-Won Lee in the Embedded & Software Lab, sits where the two meet, in ultrasound diagnosis.
 
 ## Reliable Medical AI Models
 
-### Diagnostic performance and shortcut reliance
+A classifier can reach good diagnostic accuracy using features whose relationship to disease depends on how the images were acquired or selected rather than on the disease itself. Hospital-specific formatting, measurement markers, and acquisition settings can all carry predictive signal, and a random split preserves those relationships in training and test alike, so an evaluation can look successful while leaving the question untouched.
 
-A classifier can achieve good diagnostic accuracy while using features whose relationship with disease depends on how images were acquired or selected. Hospital-specific image formatting, measurement markers, and acquisition settings can become predictive when they occur unevenly across diagnostic groups. A random split may preserve these relationships in both training and test data, allowing an apparently successful evaluation to leave the underlying reliance unexamined.
+My interest is in the gap between a model's stated evidence and its actual reliance. An explanation that looks anatomically reasonable is not thereby faithful to the computation, and a readout that correlates with a clinical factor has not thereby been shown to drive the prediction. I work on how those distinctions can be made measurable, and on what has to hold before a result counts as evidence rather than a plausible picture.
 
-I distinguish a cue's association with the target from the model's reliance on that cue. A marker-only baseline could establish that annotations contain predictive information. It would take additional comparisons, such as controlled marker edits and corresponding changes in classifier outputs, to establish sensitivity to those annotations. Conversely, an unfamiliar image feature is not automatically a shortcut. Its diagnostic relevance needs investigation before it can be classified as clinically inappropriate.
-
-### Clinical faithfulness auditing
-
-My current research focuses on clinical faithfulness: whether interpretable model readouts align with independently defined clinical factors. These factors may describe lesion morphology, diagnostic findings, or clinical severity. I am developing post-hoc approaches that examine trained classifiers without retraining them or requiring direct annotations of whether each explanation is faithful.
-
-This constraint still requires clinical reference information. A diagnosis label alone cannot establish which evidence supports a prediction. I need factors defined independently of the model readout, with their provenance and measurement limitations recorded. Otherwise, an audit risks validating an explanation against information derived from the same model or against a descriptor that merely repeats the target label.
-
-I use frequency-band, attention, and attribution analyses to examine model evidence. Each exposes a different quantity, and each requires a specific interpretation. Attention weights describe an internal weighting operation; attribution methods estimate an input's contribution under particular assumptions. Neither automatically establishes a clinically valid explanation. Frequency-band sensitivity can identify dependence on image structure at particular scales, but a frequency band has no fixed clinical meaning across acquisition conditions.
-
-For an audit, I would specify the readout and clinical factor before measuring their relationship. Candidate measurements include the association between an evidence score and an ordinal clinical descriptor, attribution concentrated within independently delineated regions, and prediction changes following a controlled modification. Comparisons within diagnostic groups can help determine whether apparent alignment is explained mainly by the shared class label. Acquisition-stratified analyses can examine whether it persists under different recording conditions.
-
-These measurements support different conclusions. Spatial overlap establishes localization, while a controlled edit tests sensitivity to the edited information. An edit may also damage relevant tissue or introduce an artifact. I therefore want audits to report agreement and disagreement across checks, with uncertainty estimated at the patient level when multiple images belong to one person. Clinical alignment provides evidence for a bounded claim about model behavior; it does not by itself establish a causal account of the decision.
-
-### Robustness across clinical settings
-
-I study generalisation as part of model reliability. Hospitals can differ in equipment, referral patterns, disease prevalence, image selection, and reference-label procedures. A performance change across sites may reflect several of these mechanisms simultaneously. External validation needs enough information about the evaluation population and acquisition process to investigate those differences.
-
-In future evaluations, I would pair diagnostic performance with evidence audits across hospitals, devices, and patient groups. Relevant outcomes include malignant-class sensitivity at a specified threshold, calibration, and uncertainty within clinically meaningful subgroups. Patient-level separation is necessary to avoid leakage between related images. The model and preprocessing should remain fixed during an external test, with any subsequent adaptation evaluated separately. I would also examine whether stable aggregate performance conceals changes in which clinical findings or acquisition cues drive predictions.
+The same question extends to generalisation. Performance that holds on internal data can fail across hospitals, devices, and patient populations, and stable aggregate accuracy can hide a change in what the model is responding to.
 
 ## Clinical Translation
 
-### Gallbladder and hepatobiliary evidence
+The clinical half is not a supporting activity. Terms like clinically meaningful evidence have no content until the medicine behind them is understood, and without that content there is nothing for an audit to check against.
 
-Gallbladder ultrasound gives this work a concrete clinical setting. My published ACK 2025 paper examines data and model requirements for reliable ultrasound diagnosis. My ongoing work on clinical faithfulness and clinically grounded representation learning is listed as manuscripts in preparation on the [publications page](/publications/).
+So I study the diseases, the imaging findings, and the diagnostic reasoning that produce a diagnosis: which features a radiologist reads and in what order, which findings are interpreted together, what a reference standard does and does not establish, and how patients who receive one workup differ from those who receive another. I also study ultrasound acquisition itself, since operator, machine, and preset variation are a property of the examination rather than of the patient, and telling those apart is a prerequisite for calling anything a shortcut.
 
-In my ultrasound work, I have explored clinically guided modeling using echogenicity, texture, lesion margin, wall features, and anatomical context. These descriptors require explicit definitions. Echogenicity needs a reference tissue and an appropriate comparison region. Texture depends on the spatial scale being measured. Margin assessment requires a visible boundary, while wall findings need their location and relationship to the lesion preserved.
-
-Anatomical context determines how such observations should be interpreted. A representation centered tightly on a lesion may exclude its attachment to the wall or its relationship with surrounding liver tissue. A wider field can retain useful context while also admitting unrelated image content. I am interested in making these representation choices explicit enough that their diagnostic contribution can be examined.
-
-### Acquisition variability and on-image markers
-
-Ultrasound appearance depends on acquisition as well as tissue. Gain, imaging depth, probe orientation, and image processing can change brightness, apparent texture, and boundary visibility. Consequently, a numerical feature described as echogenicity or texture may partly measure acquisition conditions. Normalization can reduce some variability, but it may also remove relative contrast that matters clinically.
-
-On-image markers introduce another source of ambiguity. Calipers and annotations may record a clinician's selection or measurement decision. If their presence or style differs across diagnostic groups, a classifier can receive information about the care process alongside the tissue image. Whether that information is appropriate depends on the intended point of use.
-
-I would examine marker presence, location, and overlap with relevant anatomy before interpreting a removal experiment. Removing a marker can erase tissue, while restoration can introduce synthetic structure. A change in prediction therefore needs controls for the editing operation itself. This is especially relevant when auditing texture or frequency sensitivity, since the edit may alter exactly those image properties.
-
-### Clinical knowledge as the audit reference
-
-I study hepatobiliary medicine because clinical factors need a defensible interpretation before they can serve as audit references. Wall thickening, for example, has overlapping inflammatory, neoplastic, and systemic explanations. A familiar descriptor can be measured accurately while remaining insufficient for the diagnostic claim being tested.
-
-My [study notes](/study/) cover anatomy, imaging findings, differential diagnosis, and clinical evaluation alongside machine learning. This study helps me distinguish an absent finding from one that is unassessable in the available view. It also clarifies what a selected still image cannot establish about an examination.
-
-Reference standards need similar attention. Histopathology and longitudinal imaging provide different forms of evidence, and patients receiving surgery may differ systematically from those followed without intervention. I want these distinctions reflected in evaluation design, including how labels are assigned and which patients the resulting claims cover.
-
-## Research Directions
-
-I want to develop a reproducible post-hoc audit protocol that connects model readouts to independent clinical factors and tests plausible acquisition-related alternatives. My next priorities are to specify the scope of each measurement, examine disagreement between audit methods, and assess how conclusions depend on image editing and clinical-factor quality.
-
-Alongside this, I want to investigate ultrasound representations whose clinical descriptors can be evaluated individually. During PhD study, I hope to extend these evaluations across acquisition settings and patient populations, with clearly defined diagnostic tasks and reference standards.
-
-## Knowledge Graph {#graph}
-
-Clinical concepts sit on the left, computational concepts on the right, and every study note, paper review, and insight is linked to the concepts it actually discusses. Where a piece lands is decided by that, not by where I put it, so the writing that holds both vocabularies at once shows up in the middle. Hovering isolates a node's connections, dragging rearranges the layout, and clicking opens the piece.
-
-{% include knowledge_graph.liquid full=true height=700 %}
+My [study notes](/study/) cover both directions in more detail, and my [publications](/publications/) list the work that has appeared.
 
 ## Selected Projects
 
@@ -108,7 +60,7 @@ Clinical concepts sit on the left, computational concepts on the right, and ever
   <div class="proj-card">
     <div class="pc-top"><span class="pc-badge">M.S. Thesis</span><span class="pc-period">2025 – Present</span></div>
     <h3>Clinical Faithfulness Auditing for Medical Image Classifiers</h3>
-    <p class="pc-desc">Developing post-hoc methods to examine whether interpretable model readouts rely on clinically valid evidence rather than shortcut features, without retraining the model or requiring faithfulness annotations.</p>
+    <p class="pc-desc">M.S. thesis research on whether interpretable readouts from medical image classifiers correspond to clinically valid evidence, and on how that correspondence can be evaluated.</p>
     <div class="pc-tags"><span class="pc-tag">Clinical Faithfulness</span><span class="pc-tag">Shortcut Analysis</span><span class="pc-tag">Post-hoc Auditing</span></div>
   </div>
 
