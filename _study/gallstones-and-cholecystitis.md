@@ -13,52 +13,100 @@ written: true
 updated: "2026-09-08"
 ---
 
-Cholelithiasis means gallstones are present; cholecystitis means the gallbladder is inflamed. The diagnostic task is to establish whether stones are incidental, causing transient obstruction, or associated with active inflammation and its complications.
+A gallstone explains an echogenic focus more readily than it explains a patient's current illness. I separate stone formation, transient obstruction, acute inflammation, and chronic structural damage because each requires different evidence.
 
 ## Clinical overview
 
-Gallstones may remain asymptomatic or cause episodes of biliary pain. Acute cholecystitis more often presents with persistent upper abdominal pain and evidence of inflammation, while chronic cholecystitis reflects longstanding inflammatory and fibrotic change. I distinguish stone detection from explaining the current illness.
+Cholelithiasis means stones are present in the gallbladder. Many are incidental. Symptomatic stones can produce biliary pain when gallbladder emptying encounters an obstructed outlet, while acute cholecystitis involves sustained inflammation. Despite the term “biliary colic,” the pain can be steady during an episode. Persistent pain, focal tenderness, fever, and inflammatory laboratory abnormalities change the diagnostic question from stone detection to an inflammatory syndrome.
+
+Chronic cholecystitis describes longstanding inflammatory and fibrotic changes, often associated with stones. It is not established merely by a history of recurrent pain, nor does its presence exclude a superimposed acute episode. I would retain the distinction between a clinical presentation, an imaging impression, and a pathological diagnosis when reading a case or constructing its label.
 
 ## Anatomy and pathophysiology
 
-In acute calculous cholecystitis, obstruction at the gallbladder neck or cystic duct promotes distension, inflammation, and potentially impaired perfusion. Infection may contribute, but inflammation is not simply synonymous with bacterial infection. Complications include necrosis, perforation, and localized collections.
+### Stone formation and outlet obstruction are different mechanisms
 
-Acute acalculous cholecystitis occurs without an obstructing stone and is particularly important in critically ill patients, where stasis and ischemic injury can contribute. Chronic inflammation can produce fibrosis and a contracted, thick-walled gallbladder. Acute inflammation can develop over chronic structural change.
+Cholesterol stone formation involves cholesterol supersaturation of bile, crystal nucleation, and retention promoted by impaired gallbladder emptying. Pigment stones have different compositional pathways: black pigment stones are associated with conditions including chronic hemolysis, while brown pigment stones are associated with biliary infection and stasis. These mechanisms explain predisposition, but ultrasound appearance alone does not reliably establish stone composition. The [EASL gallstone guideline](https://doi.org/10.1016/j.jhep.2016.03.005) reviews these distinctions.
+
+A stone lodged at the neck or cystic duct impedes gallbladder drainage. Continued secretion and distension increase intraluminal pressure, while inflammation and edema can compromise mural perfusion. Secondary bacterial infection may contribute, but the initiating injury is not necessarily infectious. Progression can produce gangrene, perforation, or a pericholecystic abscess.
+
+The obstruction's location matters. Isolated cystic duct obstruction need not dilate the common bile duct. A stone that has migrated into the common bile duct creates a separate problem, potentially producing jaundice, pancreatitis, or cholangitis.
+
+### Acalculous and chronic disease complicate the expected pattern
+
+Acute acalculous cholecystitis occurs without an obstructing stone, particularly during critical illness. Gallbladder stasis and ischemic injury can contribute. The same patients may also have fasting-related distension, sludge, ascites, and systemic edema, so several supportive ultrasound findings have competing explanations.
+
+Chronic injury can leave a fibrotic, contracted gallbladder containing stones. However, physiological contraction after eating also reduces the lumen and makes the wall appear thicker. I read this overlap as a requirement to establish preparation and distension before interpreting contraction as disease.
 
 ## Diagnostic workflow and imaging findings
 
-### Establish the clinical inflammatory context
+### Establish the inflammatory syndrome
 
-The [Tokyo Guidelines 2018](https://pubmed.ncbi.nlm.nih.gov/29032636/) combine local inflammatory signs, systemic inflammatory findings, and characteristic imaging for a definite diagnosis of acute cholecystitis. Local findings include right upper quadrant tenderness or a Murphy sign; systemic evidence includes fever or inflammatory laboratory abnormalities. I read this as a reminder that neither an isolated thick wall nor pain alone establishes the diagnosis.
+The [Tokyo Guidelines 2018](https://pubmed.ncbi.nlm.nih.gov/29032636/) organize acute cholecystitis diagnosis into local inflammatory findings, systemic inflammatory findings, and characteristic imaging. Local findings include right upper quadrant tenderness or a Murphy sign; systemic findings include fever, elevated C-reactive protein, or an abnormal white blood cell count. Local plus systemic evidence supports a suspected diagnosis, with characteristic imaging required for a definite diagnosis under this framework.
 
-### Identify stones and assess obstruction
+I would preserve the timing of these observations. An examination after analgesia or treatment does not represent the same clinical state as the initial assessment. Likewise, a pathology report describing chronic inflammation cannot retrospectively establish whether systemic inflammation was present when an ultrasound frame was acquired.
 
-Typical gallstones are echogenic intraluminal foci with posterior acoustic shadowing and movement on repositioning. Very small stones may not produce a clear shadow, and impacted neck stones may remain fixed. A stone-filled gallbladder can produce a wall-echo-shadow complex, obscuring the lumen behind strong interfaces. Sludge more often forms dependent low-level echoes without clean shadowing. These appearances are described by [Yu and colleagues](https://doi.org/10.3748/wjg.v26.i22.2967). The neck and visible bile ducts require attention even when stones are obvious elsewhere.
+### Demonstrate the stone and its acoustic behavior
 
-### Look for a constellation of acute findings
+Typical stones are echogenic intraluminal structures with posterior acoustic shadowing. Strong reflection and attenuation reduce the returning signal behind the stone. Repositioning helps demonstrate movement, but an impacted neck stone can remain fixed. Small stones may produce an inconspicuous shadow, particularly when acquisition settings or beam geometry are unfavorable.
 
-Supportive findings include gallbladder distension, mural thickening or edema, increased mural Doppler flow, pericholecystic fluid, and focal tenderness under the transducer. No single feature is sufficiently specific in isolation. Analgesia, altered consciousness, or advanced wall injury can make tenderness less informative. Fluid and wall edema can also occur with systemic illness. A negative or equivocal ultrasound therefore does not settle every clinically suspected case.
+The wall-echo-shadow complex occurs when a stone-filled gallbladder presents closely spaced reflective interfaces followed by shadowing. The apparent absence of a visible fluid-filled lumen should not automatically be interpreted as failure to find the organ. Sludge generally produces dependent low-level echoes without a clean shadow, although compact sludge can appear mass-like. [Yu and colleagues](https://doi.org/10.3748/wjg.v26.i22.2967) illustrate these patterns and their mimics.
 
-### Separate chronic change and search for complications
+I would inspect the neck separately from the body. A conspicuous mobile fundal stone can attract attention while an impacted stone at the outlet remains hidden by bowel gas or an incomplete sweep.
 
-Chronic cholecystitis may show a contracted gallbladder containing stones and a fibrotic thickened wall, without the surrounding inflammatory changes expected in an acute episode. Recent eating can also cause contraction. Irregular wall disruption, intraluminal membranes, adjacent collections, or gas raise concern for complicated inflammation. Gas may produce reverberation and dirty shadowing rather than a stone's cleaner shadow. Ultrasound can suggest these complications, but further imaging may be needed to define their extent.
+### Evaluate inflammation as a constellation
 
-### Resolve uncertainty with the appropriate next test
+Relevant findings include distension, mural edema, wall thickening, mural hyperemia, pericholecystic fluid, and focal tenderness directly over the imaged gallbladder. The sonographic Murphy sign requires transducer localization and patient interaction. A grayscale frame cannot establish it.
 
-When acute cholecystitis remains suspected after inconclusive ultrasound, hepatobiliary scintigraphy can assess cystic duct obstruction in a suitable clinical setting. CT is useful for complications and alternative diagnoses; MRI or MRCP can help assess biliary obstruction. Test selection depends on urgency and the unresolved question. The [WSES guidelines](https://doi.org/10.1186/s13017-020-00336-x) discuss additional imaging and emphasize that diagnosis integrates clinical, laboratory, and imaging information.
+Each finding needs a competing explanation. Ascites can account for surrounding fluid; venous congestion can thicken the wall; recent food intake can alter its apparent thickness. Doppler hyperemia depends on gain, velocity scale, wall filtering, and motion. “No increased flow detected” is therefore different from demonstrating normal perfusion.
+
+In a hypothetical ultrasound examination, a patient has a mobile shadowing stone, a well-distended gallbladder with a thin wall, and no surrounding inflammatory change. The image supports cholelithiasis. If pain has resolved and inflammatory findings are absent, uncomplicated biliary pain remains plausible. Calling this acute cholecystitis from the stone alone would omit the evidence that distinguishes the diagnoses.
+
+### Search for complications and resolve uncertainty
+
+Irregular wall defects, sloughed intraluminal membranes, adjacent collections, and gas raise concern for complicated inflammation. Gas may produce reverberation and dirty shadowing. Advanced wall injury can make the expected tenderness response less dependable. These findings require assessment beyond a simple stone count.
+
+When ultrasound is inconclusive, the next test should address the unresolved mechanism. Hepatobiliary scintigraphy follows hepatocyte uptake and biliary excretion of a radiotracer. Persistent gallbladder nonvisualization under an appropriate protocol supports cystic duct obstruction. Prolonged fasting, severe illness, and hepatocellular dysfunction can complicate interpretation, as described in the [SNM practice guideline](https://pubmed.ncbi.nlm.nih.gov/21078782/).
+
+CT can assess perforation, collections, gas, and alternative abdominal diagnoses. MRI or MRCP can investigate associated duct disease. I would not treat these examinations as interchangeable confirmations of the same image feature.
 
 ## Differential diagnosis and management context
 
-Differentials include uncomplicated biliary colic, pancreatitis, hepatitis, peptic disease, and systemic causes of gallbladder edema. Common bile duct obstruction and cholangitis require separate assessment. In suitable patients with acute calculous cholecystitis, WSES supports early laparoscopic cholecystectomy, alongside supportive care and appropriately selected antimicrobials. Patients unsuitable for surgery may need a different strategy, including drainage.
+The differential includes uncomplicated biliary pain, pancreatitis, hepatitis, peptic disease, and systemic gallbladder edema. Marked jaundice or duct dilatation requires a separate assessment for extrahepatic obstruction. An inflammatory gallbladder appearance also does not exclude an underlying tumor, particularly when a focal irregular abnormality persists.
+
+The [2020 WSES guideline](https://doi.org/10.1186/s13017-020-00336-x) supports early laparoscopic cholecystectomy for suitable patients with acute calculous cholecystitis. Supportive care and antimicrobial decisions accompany source management. Being medically high risk is not identical to being unsuitable for surgery; drainage is an option for selected patients who cannot undergo an operation.
+
+For study purposes, I distinguish treatment choice from disease severity. Drainage may reflect comorbidity, physiological instability, or local expertise. It should not automatically become a label for more severe image morphology.
 
 ## Implications for medical AI
 
-I read this clinical distinction as a labeling requirement: “stone present,” “acute inflammation,” and “complicated cholecystitis” should not be collapsed into one category. Tenderness, inflammatory blood tests, and disease timing are not fully represented by the image. A model trained on the final clinical diagnosis may therefore be judged against information it never received.
+### Test whether the model separates stones from inflammation
 
-For gallbladder ultrasound auditing, I would examine whether predictions track the relevant constellation rather than stones alone. Device settings influence hyperemia and shadow visibility, while analgesia and clinical documentation affect the reference. This suggests to me that disagreement between an image model and a clinical diagnosis needs case review before being attributed solely to model error.
+I would construct separate references for stone presence, acute clinical cholecystitis, and complications. For the acute diagnosis, adjudication would include contemporaneous symptoms, laboratory findings, and imaging. For frame-level features, readers would independently annotate visible stones, wall edema, surrounding fluid, and assessability.
+
+A feasible audit would compare four groups: stones with acute inflammation, stones without acute inflammation, acalculous inflammation, and neither finding. This exposes a classifier that succeeds mainly by recognizing shadowing stones. Performance in an unstratified cohort could conceal that failure.
+
+For a fixed decision threshold $$t$$ and score $$s_i$$, sensitivity among patients in subgroup $$G$$ is
+
+$$
+\mathrm{Sensitivity}_G(t)=
+\frac{\sum_{i\in G}\mathbf{1}(y_i=1)\mathbf{1}(s_i\geq t)}
+{\sum_{i\in G}\mathbf{1}(y_i=1)}.
+$$
+
+Here, $$y_i=1$$ denotes the adjudicated acute diagnosis, and $$\mathbf{1}$$ is the indicator function. The quantity is undefined if the subgroup contains no positive cases. I would choose the threshold before examining subgroup results and calculate uncertainty at the patient level.
+
+### Audit acquisition and documentation pathways
+
+A specific shortcut hypothesis is that suspected inflammation prompts wall measurements and Doppler acquisition, whereas routine stone examinations contribute mainly grayscale images. Calipers, color boxes, or a bedside scanner's export layout could therefore predict the diagnosis through clinical workflow.
+
+I would first measure these associations, then test paired marked and unmarked exports where identical tissue pixels are available. Removing an overlay from a different frame would also change anatomy and speckle, weakening the interpretation.
+
+Another attackable question is whether errors concentrate in stone-positive cases with systemic edema. Readers could annotate the inflammatory constellation while blinded to model scores. I read this as a test of whether the classifier distinguishes local inflammatory evidence from a thick wall that has another plausible cause.
 
 ## References
 
 - Yokoe et al., [Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis (with videos)](https://pubmed.ncbi.nlm.nih.gov/29032636/), Journal of Hepato-Biliary-Pancreatic Sciences 2018.
 - Yu et al., [Benign gallbladder diseases: Imaging techniques and tips for differentiating with malignant gallbladder diseases](https://doi.org/10.3748/wjg.v26.i22.2967), World Journal of Gastroenterology 2020.
 - Pisano et al., [2020 World Society of Emergency Surgery updated guidelines for the diagnosis and treatment of acute calculus cholecystitis](https://doi.org/10.1186/s13017-020-00336-x), World Journal of Emergency Surgery 2020.
+- EASL, [EASL Clinical Practice Guidelines on the prevention, diagnosis and treatment of gallstones](https://doi.org/10.1016/j.jhep.2016.03.005), Journal of Hepatology 2016.
+- Tulchinsky et al., [SNM practice guideline for hepatobiliary scintigraphy 4.0](https://pubmed.ncbi.nlm.nih.gov/21078782/), Journal of Nuclear Medicine Technology 2010.
