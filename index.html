@@ -303,8 +303,8 @@
       var maxPiece = d3.max(data.nodes.filter(function (d) { return d.kind !== 'concept'; }), function (d) { return d.deg; }) || 1;
       var maxHub = d3.max(data.nodes.filter(function (d) { return d.kind === 'concept'; }), function (d) { return d.deg; }) || 1;
       function radius(d) {
-        if (d.kind === 'concept') return (3.4 + Math.sqrt(d.deg / maxHub) * 3.2) * R;
-        return (1.7 + Math.sqrt(d.deg / maxPiece) * 1.7) * R;
+        if (d.kind === 'concept') return (3.6 + Math.sqrt(d.deg / maxHub) * 3.4) * R;
+        return (2.0 + Math.sqrt(d.deg / maxPiece) * 2.0) * R;
       }
 
       var link = g.append('g')
