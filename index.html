@@ -39,7 +39,7 @@
       if (typeof applyTheme === 'function') applyTheme();
     } catch (e) {}
   })();
-</script> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Se-Hyeon</span> Hwang <span class="h1-ko" lang="ko">황세현</span> </h1> <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p> <p class="desc">M.S. Student, AI Convergence Network, Ajou University</p> </header> <style>
+</script> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Se-Hyeon</span> Hwang <span class="h1-ko" lang="ko">황세현</span> </h1> <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p> <p class="desc"></p> </header> <style>
     .h1-ko { font-size: .52em; font-weight: 600; opacity: .55; letter-spacing: -.01em; margin-left: .18em; }
     .hero-tagline {
       margin: 0.3rem 0 0.4rem;
@@ -257,16 +257,19 @@
     var stage = box.parentNode;
     var ORDER = ['Imaging & acquisition','Disease & pathology','Clinical practice',
                  'Interpretability','Auditing & causality','Evaluation & reliability','Systems & deployment'];
+    // One burgundy family rather than seven unrelated hues: the ramp walks from
+    // a warm clay at the clinical end to a cool plum at the computational end,
+    // so the sectors stay told apart by step while the graph reads as one thing.
     var PALETTE = {
       dark: {
-        'Imaging & acquisition':'#eab308','Disease & pathology':'#fd7318','Clinical practice':'#f472b6',
-        'Interpretability':'#a78bfa','Auditing & causality':'#3b82f6',
-        'Evaluation & reliability':'#5fadfe','Systems & deployment':'#10b981', _: '#6b7280'
+        'Imaging & acquisition':'#d99a6c','Disease & pathology':'#d4726a','Clinical practice':'#c9536a',
+        'Interpretability':'#b84a72','Auditing & causality':'#a4507f',
+        'Evaluation & reliability':'#8f5a8c','Systems & deployment':'#7a6690', _: '#6b7280'
       },
       light: {
-        'Imaging & acquisition':'#B9860C','Disease & pathology':'#D2601B','Clinical practice':'#C8437A',
-        'Interpretability':'#6D4FD6','Auditing & causality':'#2563EB',
-        'Evaluation & reliability':'#2B86C5','Systems & deployment':'#0E9B73', _: '#7A8494'
+        'Imaging & acquisition':'#9c6321','Disease & pathology':'#a83f36','Clinical practice':'#99253f',
+        'Interpretability':'#8b1f4d','Auditing & causality':'#7a2359',
+        'Evaluation & reliability':'#6b2d63','Systems & deployment':'#5b3a6d', _: '#7A8494'
       }
     };
     function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
