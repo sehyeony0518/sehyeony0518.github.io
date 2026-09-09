@@ -570,25 +570,29 @@
           try { saved = sessionStorage.getItem('homeView'); } catch (e) {}
           if (saved && saved !== 'map') show(saved, false);
         })();
-      </script> <div class="affil"> <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab"> <img src="/assets/img/logos/ens.png" alt="Embedded &amp; Software Lab" loading="lazy"> </a> <a href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University"> <img src="/assets/img/logos/ajou.png" alt="Ajou University" loading="lazy"> </a> <a href="https://itrc.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="ITRC"> <img src="/assets/img/logos/itrc.png" alt="ITRC" loading="lazy"> </a> </div> <style>
+      </script> <div class="affil"> <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab"> <img src="/assets/img/logos/ens.png" alt="Embedded &amp; Software Lab" loading="lazy"> </a> <a href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University"> <img src="/assets/img/logos/ajou.png" alt="Ajou University" loading="lazy"> </a> <a href="https://hosp.ajoumc.or.kr/" target="_blank" rel="noopener" aria-label="Ajou University Hospital"> <img src="/assets/img/logos/ajoumc.png" alt="Ajou University Hospital" loading="lazy"> </a> <a href="https://itrc.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="ITRC"> <img src="/assets/img/logos/itrc.png" alt="ITRC" loading="lazy"> </a> </div> <style>
       .affil {
         display: flex; align-items: center; justify-content: space-between;
-        gap: 1.4rem; margin: 2.6rem 0 .4rem; padding-top: 1.4rem;
+        flex-wrap: wrap; gap: 2.2rem 1.6rem;
+        margin: 4.2rem 0 1.4rem; padding-top: 3rem;
         border-top: 1px solid var(--global-divider-color);
       }
       .affil a { display: flex; align-items: center; justify-content: center; flex: 1 1 0; min-width: 0; }
+      /* The square marks are height-bound and the wordmark width-bound, so the
+         two caps together keep four different aspect ratios optically even. */
       .affil img {
-        max-width: 100%; max-height: 44px; width: auto; object-fit: contain;
+        max-width: 100%; max-height: 104px; width: auto; object-fit: contain;
         /* The files are already greyscale with transparent grounds, so one
            brightness step per theme is enough to sit them on either. */
-        filter: brightness(.45); opacity: .62;
+        filter: brightness(.45); opacity: .7;
         transition: opacity .15s ease, filter .15s ease;
       }
-      html[data-theme="dark"] .affil img { filter: brightness(1.9); opacity: .5; }
+      html[data-theme="dark"] .affil img { filter: brightness(1.9); opacity: .58; }
       .affil a:hover img { opacity: 1; }
-      @media (max-width: 575.98px) {
-        .affil { gap: .9rem; }
-        .affil img { max-height: 30px; }
+      @media (max-width: 767.98px) {
+        .affil { gap: 2rem 1.2rem; margin-top: 3rem; padding-top: 2.2rem; }
+        .affil a { flex: 0 1 40%; }
+        .affil img { max-height: 72px; }
       }
     </style> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
