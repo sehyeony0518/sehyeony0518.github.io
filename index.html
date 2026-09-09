@@ -313,18 +313,26 @@
     // cool where it is judged, and the threats last.
     var ONTO_ORDER = ['EvidenceSource','Finding','ClinicalTarget','Standard',
                       'Method','ModelFamily','Metric','Property','Threat'];
-    var ONTO_PALETTE = {
-      dark: {
-        EvidenceSource:'#c0a055', Finding:'#c9884a', ClinicalTarget:'#c64f3b',
-        Standard:'#c56796', Method:'#b13dc4', ModelFamily:'#7b6ad6',
-        Metric:'#5c73ce', Property:'#41a0bf', Threat:'#8addaf', _:'#6b7280'
-      },
-      light: {
-        EvidenceSource:'#967531', Finding:'#9a5a22', ClinicalTarget:'#bb3a2f',
-        Standard:'#b04e81', Method:'#9a31b9', ModelFamily:'#5b46a8',
-        Metric:'#3154a5', Property:'#327078', Threat:'#278b40', _:'#7A8494'
-      }
-    };
+    // Built from _data/ontology.yml so the graph and the study page cannot drift.
+    var ONTO_PALETTE = { dark: { _: '#6b7280' }, light: { _: '#7A8494' } };
+    ONTO_PALETTE.light['EvidenceSource'] = '#967531';
+    ONTO_PALETTE.dark['EvidenceSource'] = '#c0a055';
+    ONTO_PALETTE.light['Finding'] = '#9a5a22';
+    ONTO_PALETTE.dark['Finding'] = '#c9884a';
+    ONTO_PALETTE.light['ClinicalTarget'] = '#bb3a2f';
+    ONTO_PALETTE.dark['ClinicalTarget'] = '#c64f3b';
+    ONTO_PALETTE.light['Standard'] = '#b04e81';
+    ONTO_PALETTE.dark['Standard'] = '#c56796';
+    ONTO_PALETTE.light['Method'] = '#9a31b9';
+    ONTO_PALETTE.dark['Method'] = '#b13dc4';
+    ONTO_PALETTE.light['ModelFamily'] = '#5b46a8';
+    ONTO_PALETTE.dark['ModelFamily'] = '#7b6ad6';
+    ONTO_PALETTE.light['Metric'] = '#3154a5';
+    ONTO_PALETTE.dark['Metric'] = '#5c73ce';
+    ONTO_PALETTE.light['Property'] = '#327078';
+    ONTO_PALETTE.dark['Property'] = '#41a0bf';
+    ONTO_PALETTE.light['Threat'] = '#278b40';
+    ONTO_PALETTE.dark['Threat'] = '#8addaf';
     function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
     var SECTOR_COLOR = PALETTE[isDark() ? 'dark' : 'light'];
     function paint(d) { return SECTOR_COLOR[d.sector] || SECTOR_COLOR._; }
