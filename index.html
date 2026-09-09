@@ -256,10 +256,17 @@
   .kg-cover { position: absolute; inset: 0; display: flex; align-items: center;
               justify-content: center; font-size: .78rem; color: var(--kg-dim); }
   .kg-title {
-    position: absolute; left: .9rem; top: .7rem; font-size: .7rem; font-weight: 700;
-    letter-spacing: .1em; text-transform: uppercase; color: var(--global-theme-color);
-    opacity: 1; pointer-events: none; z-index: 2;
+    position: absolute; left: .9rem; top: .7rem; z-index: 2;
+    display: flex; gap: .55rem; align-items: baseline;
   }
+  .kg-vw {
+    font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    background: none; border: 0; padding: 0; font-family: inherit; line-height: 1.2;
+    color: var(--kg-dim); cursor: pointer; transition: color .15s ease;
+  }
+  .kg-vw.on { color: var(--global-theme-color); cursor: default; }
+  span.kg-vw { cursor: default; }
+  .kg-vw:not(.on):hover { color: var(--kg-hub); }
   .kg-count {
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
@@ -300,16 +307,47 @@
     var KIND = { concept: 'Concept', note: 'Study note', review: 'Paper review', insight: 'Insight' };
     var started = false;
 
+    // Two datasets over the same concepts: the corpus graph, where every edge is
+    // "this piece of writing discusses this concept", and the ontology, where the
+    // concepts are typed and the edges are assertions between them. The ontology
+    // is optional -- if its file is absent the switch simply does not appear.
+    var VIEWS = { graph: null, onto: null };
+    var view = 'graph';
+
     function boot() {
       if (started || !window.d3) return;
       started = true;
-      d3.json('/assets/json/knowledge-graph.json').then(render).catch(function () {
+      var corpus = d3.json('/assets/json/knowledge-graph.json');
+      var onto = d3.json('/assets/json/ontology.json').catch(function () { return null; });
+      Promise.all([corpus, onto]).then(function (r) {
+        VIEWS.graph = r[0];
+        VIEWS.onto = r[1] && r[1].nodes && r[1].nodes.length ? r[1] : null;
+        render(VIEWS.graph);
+      }).catch(function () {
         box.innerHTML = '<div class="kg-cover">The graph could not be loaded.</div>';
       });
     }
 
+    function chrome() {
+      var t = '<div class="kg-title">';
+      if (VIEWS.onto) {
+        t += '<button type="button" class="kg-vw' + (view === 'graph' ? ' on' : '') + '" data-v="graph">knowledge graph</button>'
+           + '<button type="button" class="kg-vw' + (view === 'onto' ? ' on' : '') + '" data-v="onto">ontology</button>';
+      } else {
+        t += '<span class="kg-vw on">knowledge graph</span>';
+      }
+      return t + '</div><div class="kg-hint">click to zoom</div>';
+    }
+
     function render(data) {
-      box.innerHTML = '<div class="kg-title">knowledge graph</div>';
+      box.innerHTML = chrome();
+      var vw = box.querySelector('.kg-title');
+      vw.addEventListener('click', function (e) {
+        var b = e.target.closest('.kg-vw[data-v]');
+        if (!b || b.getAttribute('data-v') === view) return;
+        view = b.getAttribute('data-v');
+        render(VIEWS[view]);
+      });
       var W = box.clientWidth, H = box.clientHeight;
       var R = FULL ? 0.95 : 0.72;
       var svg = d3.select(box).append('svg').attr('viewBox', [0, 0, W, H]);
