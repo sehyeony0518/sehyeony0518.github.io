@@ -35,7 +35,7 @@ nav_order: 9
     font-size: .755rem; font-weight: 600; transition: all .15s ease;
   }
   .sl-cat:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
-  .sl-cat.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: var(--site-on-accent); }
+  .sl-cat.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
   .sl-cat .sl-cat-cnt { opacity: .7; font-size: .69rem; margin-left: .1rem; font-variant-numeric: tabular-nums; }
 
   .sl-block { margin: 1.9rem 0 0; }

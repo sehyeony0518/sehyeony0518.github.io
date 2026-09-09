@@ -31,9 +31,9 @@ layout: default
   (function () {
     try {
       if (localStorage.getItem('theme')) return;
-      localStorage.setItem('theme', 'light');
-      document.documentElement.setAttribute('data-theme-setting', 'light');
-      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute('data-theme-setting', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
       if (typeof applyTheme === 'function') applyTheme();
     } catch (e) {}
   })();
@@ -46,7 +46,7 @@ layout: default
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
         {{ site.last_name }}
       {% else %}
-        Se-Hyeon Hwang <span class="h1-ko" lang="ko">황세현</span>
+        <span class="font-weight-bold">Se-Hyeon</span> Hwang <span class="h1-ko" lang="ko">황세현</span>
       {% endif %}
     </h1>
     <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p>
@@ -54,22 +54,15 @@ layout: default
   </header>
 
   <style>
-    /* The name carries the page on its own; a bolded half and a tight track
-       were doing the work that size and air should do. */
-    .post-header .post-title { font-size: var(--site-display); font-weight: 300;
-      letter-spacing: var(--site-tracking-display); line-height: 1.12; }
-    .h1-ko { font-size: .5em; font-weight: 400; letter-spacing: 0; margin-left: .3em;
-      color: var(--global-text-color-light); opacity: 1; }
-    /* A hairline under the identity, the way the reference sets its lab name */
-    .post-header { padding-bottom: 1.1rem; border-bottom: var(--site-rule); margin-bottom: 1.8rem; }
-    .post-header .desc { font-size: var(--site-meta); letter-spacing: var(--site-tracking-label);
-      text-transform: uppercase; color: var(--global-text-color-light); opacity: 1; margin: .55rem 0 0; }
+    .h1-ko { font-size: .52em; font-weight: 600; opacity: .55; letter-spacing: -.01em; margin-left: .18em; }
     .hero-tagline {
       margin: 0.3rem 0 0.4rem;
+      /* Inter rather than the Montserrat of the name above, so the two lines read
+         as different things rather than competing */
       font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-      font-size: clamp(1.05rem, 2vw, 1.3rem);
-      font-weight: 400;
-      letter-spacing: .004em;
+      font-size: clamp(1.2rem, 2.5vw, 1.62rem);
+      font-weight: 600;
+      letter-spacing: -0.012em;
       line-height: 1.25;
       color: var(--global-text-color);
       min-height: 1.25em; /* hold the line so the rotation does not shift the page */
@@ -193,7 +186,7 @@ layout: default
         @media (max-width: 520px) { .rp-card { flex-direction: column; } .rp-card .rp-thumb { flex-basis: 150px; max-width: none; height: 150px; } }
         .rp-card .rp-body { padding: 1rem 1.15rem; display: flex; flex-direction: column; }
         .rp-card .rp-badge { align-self: flex-start; font-size: .68rem; font-weight: 800; letter-spacing: .04em;
-          padding: .16rem .55rem; border-radius: 999px; background: var(--global-theme-color); color: var(--site-on-accent); margin-bottom: .45rem; }
+          padding: .16rem .55rem; border-radius: 999px; background: var(--global-theme-color); color: #fff; margin-bottom: .45rem; }
         .rp-card h3 { margin: 0 0 .4rem; font-size: 1.08rem; line-height: 1.35; }
         .rp-card .rp-sum { font-size: .85rem; opacity: .7; line-height: 1.55; margin: 0; }
         .rp-viewall { display: inline-block; margin: .85rem 0 0; font-size: .82rem; text-decoration: none; color: var(--global-theme-color); }
@@ -247,7 +240,7 @@ layout: default
         }
         .hb-btn:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
         .hb-btn.active {
-          background: var(--global-theme-color); border-color: var(--global-theme-color); color: var(--site-on-accent);
+          background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff;
         }
         .hb-pane.hb-hidden { display: none; }
       </style>
@@ -348,8 +341,7 @@ layout: default
       .affil {
         width: min(1180px, 94vw); margin-left: 50%; transform: translateX(-50%);
         display: flex; align-items: center; justify-content: space-between;
-        gap: 1.1rem; height: 150px; margin-bottom: .6rem;
-        margin-top: 3.2rem; padding-top: 3rem; border-top: var(--site-rule);
+        gap: 1.1rem; height: 150px; margin-top: 3.2rem; margin-bottom: .6rem;
       }
       .affil a { display: flex; align-items: center; justify-content: center; height: 100%; min-width: 0; }
       /* Set to a shared height the seals read level, but the wordmark is three
