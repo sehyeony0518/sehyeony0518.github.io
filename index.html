@@ -570,7 +570,27 @@
           try { saved = sessionStorage.getItem('homeView'); } catch (e) {}
           if (saved && saved !== 'map') show(saved, false);
         })();
-      </script> <div class="social"> <div class="contact-icons"> <a href="mailto:bikmiso3@ajou.ac.kr" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/sehyeony0518" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="/assets/pdf/cv-hwang.pdf" title="Cv pdf"><i class="ai ai-cv"></i></a> <a href="https://www.linkedin.com/in/sehyeony" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://instagram.com/paulvs___" title="Instagram id" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-instagram"></i></a> </div> <div class="contact-note">The best way to reach me is by email, <a href="mailto:bikmiso3@ajou.ac.kr">bikmiso3@ajou.ac.kr</a> </div> </div> </article> </div> </div> <style>
+      </script> <div class="affil"> <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab"> <img src="/assets/img/logos/ens.png" alt="Embedded &amp; Software Lab" loading="lazy"> </a> <a href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University"> <img src="/assets/img/logos/ajou.png" alt="Ajou University" loading="lazy"> </a> <a href="https://itrc.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="ITRC"> <img src="/assets/img/logos/itrc.png" alt="ITRC" loading="lazy"> </a> </div> <style>
+      .affil {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 1.4rem; margin: 2.6rem 0 .4rem; padding-top: 1.4rem;
+        border-top: 1px solid var(--global-divider-color);
+      }
+      .affil a { display: flex; align-items: center; justify-content: center; flex: 1 1 0; min-width: 0; }
+      .affil img {
+        max-width: 100%; max-height: 44px; width: auto; object-fit: contain;
+        /* The files are already greyscale with transparent grounds, so one
+           brightness step per theme is enough to sit them on either. */
+        filter: brightness(.45); opacity: .62;
+        transition: opacity .15s ease, filter .15s ease;
+      }
+      html[data-theme="dark"] .affil img { filter: brightness(1.9); opacity: .5; }
+      .affil a:hover img { opacity: 1; }
+      @media (max-width: 575.98px) {
+        .affil { gap: .9rem; }
+        .affil img { max-height: 30px; }
+      }
+    </style> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
   :root {
     --global-bg-color: #f9f9f9;
