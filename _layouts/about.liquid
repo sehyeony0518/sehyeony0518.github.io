@@ -318,42 +318,46 @@ layout: default
          repeating them here only duplicated them. -->
     <div class="affil">
       <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab">
-        <img src="{{ '/assets/img/logos/ens.png' | relative_url }}" alt="Embedded &amp; Software Lab" loading="lazy">
+        <img class="lo-l" src="{{ '/assets/img/logos/ens.png' | relative_url }}" alt="Embedded &amp; Software Lab" loading="lazy">
+        <img class="lo-d" src="{{ '/assets/img/logos/ens_dark.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
       </a>
       <a href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University">
-        <img src="{{ '/assets/img/logos/ajou.png' | relative_url }}" alt="Ajou University" loading="lazy">
+        <img class="lo-l" src="{{ '/assets/img/logos/ajou.png' | relative_url }}" alt="Ajou University" loading="lazy">
+        <img class="lo-d" src="{{ '/assets/img/logos/ajou_dark.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
       </a>
-      <a href="https://hosp.ajoumc.or.kr/" target="_blank" rel="noopener" aria-label="Ajou University Hospital">
-        <img src="{{ '/assets/img/logos/ajoumc.png' | relative_url }}" alt="Ajou University Hospital" loading="lazy">
+      <a href="https://hosp.ajoumc.or.kr/" target="_blank" rel="noopener" aria-label="Ajou University Medical Center">
+        <img class="lo-l" src="{{ '/assets/img/logos/ajoumc.png' | relative_url }}" alt="Ajou University Medical Center" loading="lazy">
+        <img class="lo-d" src="{{ '/assets/img/logos/ajoumc_dark.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
       </a>
       <a href="https://itrc.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="ITRC">
-        <img src="{{ '/assets/img/logos/itrc.png' | relative_url }}" alt="ITRC" loading="lazy">
+        <img class="lo-l" src="{{ '/assets/img/logos/itrc.png' | relative_url }}" alt="ITRC" loading="lazy">
+        <img class="lo-d" src="{{ '/assets/img/logos/itrc_dark.png' | relative_url }}" alt="" aria-hidden="true" loading="lazy">
       </a>
     </div>
 
     <style>
+      /* The row deliberately breaks out past the prose column: these are the
+         page's closing marks, and at body width they read as thumbnails. */
       .affil {
+        width: min(1180px, 94vw); margin-left: 50%; transform: translateX(-50%);
         display: flex; align-items: center; justify-content: space-between;
-        flex-wrap: wrap; gap: 2.2rem 1.6rem;
-        margin: 4.2rem 0 1.4rem; padding-top: 3rem;
-        border-top: 1px solid var(--global-divider-color);
+        gap: 1.1rem; height: 150px; margin-top: 1rem; margin-bottom: .6rem;
       }
-      .affil a { display: flex; align-items: center; justify-content: center; flex: 1 1 0; min-width: 0; }
-      /* The square marks are height-bound and the wordmark width-bound, so the
-         two caps together keep four different aspect ratios optically even. */
-      .affil img {
-        max-width: 100%; max-height: 104px; width: auto; object-fit: contain;
-        /* The files are already greyscale with transparent grounds, so one
-           brightness step per theme is enough to sit them on either. */
-        filter: brightness(.45); opacity: .7;
-        transition: opacity .15s ease, filter .15s ease;
-      }
-      html[data-theme="dark"] .affil img { filter: brightness(1.9); opacity: .58; }
+      .affil a { display: flex; align-items: center; justify-content: center; height: 100%; min-width: 0; }
+      /* One shared height rather than a shared box: a wordmark and three seals
+         only look level when they are set to the same cap height. */
+      .affil img { height: 100%; width: auto; max-width: 100%; object-fit: contain;
+        opacity: .82; transition: opacity .15s ease; }
       .affil a:hover img { opacity: 1; }
-      @media (max-width: 767.98px) {
-        .affil { gap: 2rem 1.2rem; margin-top: 3rem; padding-top: 2.2rem; }
-        .affil a { flex: 0 1 40%; }
-        .affil img { max-height: 72px; }
+      /* Each mark ships twice — the ink is inverted in lightness for the dark
+         ground, so black type reads white while the blues and reds stay themselves. */
+      .affil .lo-d { display: none; }
+      html[data-theme="dark"] .affil .lo-l { display: none; }
+      html[data-theme="dark"] .affil .lo-d { display: block; }
+      @media (max-width: 900px) { .affil { height: 104px; } }
+      @media (max-width: 640px) {
+        .affil { height: auto; flex-wrap: wrap; justify-content: center; gap: 1.6rem 1.4rem; }
+        .affil a { height: 66px; flex: 0 0 auto; }
       }
     </style>
 
