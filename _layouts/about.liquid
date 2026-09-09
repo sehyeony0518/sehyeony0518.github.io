@@ -280,6 +280,9 @@ layout: default
       </script>
     {% endif %}
 
+    <!-- Repositories, under the graph -->
+    {% include github_projects.liquid %}
+
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
