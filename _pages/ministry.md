@@ -21,7 +21,7 @@ sitemap: false
   }
   .mj-tab:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
   .mj-tab.active {
-    background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff;
+    background: var(--global-theme-color); border-color: var(--global-theme-color); color: var(--site-on-accent);
   }
   .mj-share {
     margin-left: auto; display: inline-flex; align-items: center; gap: .35rem;
