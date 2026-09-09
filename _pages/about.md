@@ -36,6 +36,7 @@ blog_preview: true
 <style>
   /* The intro sits beside the profile photo, so hold it tighter than the site default */
   article > .clearfix p { max-width: 44rem; }
+  .intro-ko { font-size: .88rem; opacity: .62; line-height: 1.75; }
   /* Sit the photo alongside the tagline and keep the block roughly as tall as the
      text beside it, so both end near the contact line */
   @media (min-width: 576px) {
@@ -48,3 +49,5 @@ blog_preview: true
 Hi, I am Se-Hyeon Hwang (황세현), an M.S. student in the Department of AI Convergence Network at [Ajou University](https://www.ajou.ac.kr/en/index.do), advised by [Prof. Jung-Won Lee](https://scholar.google.com/citations?user=9sVITQIAAAAJ&hl=en) at the [Embedded & Software Lab](https://eslab.ajou.ac.kr/). I am preparing PhD applications, and my [publications](/publications/) and [CV](/assets/pdf/cv-hwang.pdf) are available here.
 
 My [research](/research/) runs in two directions. In **reliable medical AI models** I examine whether diagnostic accuracy comes from clinically valid evidence or from shortcuts, and work on making that reliance measurable. In **clinical translation** I study the diseases, imaging findings, and diagnostic reasoning across medical imaging that give clinical evidence its content. My [study notes](/study/) cover both.
+
+<p lang="ko" class="intro-ko">아주대학교 AI융합네트워크학과 석사과정 황세현입니다. 의료 인공지능이 임상적으로 타당한 근거에 기대고 있는지를 검증하는 연구를 합니다.</p>
