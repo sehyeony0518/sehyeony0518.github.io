@@ -316,14 +316,41 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
+    <!-- Affiliations. The social icons live in the bar under the navbar, so
+         repeating them here only duplicated them. -->
+    <div class="affil">
+      <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab">
+        <img src="{{ '/assets/img/logos/ens.png' | relative_url }}" alt="Embedded &amp; Software Lab" loading="lazy">
+      </a>
+      <a href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University">
+        <img src="{{ '/assets/img/logos/ajou.png' | relative_url }}" alt="Ajou University" loading="lazy">
+      </a>
+      <a href="https://itrc.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="ITRC">
+        <img src="{{ '/assets/img/logos/itrc.png' | relative_url }}" alt="ITRC" loading="lazy">
+      </a>
+    </div>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
+    <style>
+      .affil {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 1.4rem; margin: 2.6rem 0 .4rem; padding-top: 1.4rem;
+        border-top: 1px solid var(--global-divider-color);
+      }
+      .affil a { display: flex; align-items: center; justify-content: center; flex: 1 1 0; min-width: 0; }
+      .affil img {
+        max-width: 100%; max-height: 44px; width: auto; object-fit: contain;
+        /* The files are already greyscale with transparent grounds, so one
+           brightness step per theme is enough to sit them on either. */
+        filter: brightness(.45); opacity: .62;
+        transition: opacity .15s ease, filter .15s ease;
+      }
+      html[data-theme="dark"] .affil img { filter: brightness(1.9); opacity: .5; }
+      .affil a:hover img { opacity: 1; }
+      @media (max-width: 575.98px) {
+        .affil { gap: .9rem; }
+        .affil img { max-height: 30px; }
+      }
+    </style>
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% if site.plugins contains 'al_newsletter' %}
