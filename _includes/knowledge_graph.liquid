@@ -120,8 +120,8 @@
               justify-content: center; font-size: .78rem; color: var(--kg-dim); }
   .kg-title {
     position: absolute; left: .9rem; top: .7rem; font-size: .7rem; font-weight: 700;
-    letter-spacing: .1em; text-transform: uppercase; color: var(--kg-hub);
-    opacity: .82; pointer-events: none; z-index: 2;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--global-theme-color);
+    opacity: 1; pointer-events: none; z-index: 2;
   }
   .kg-count {
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
@@ -161,22 +161,23 @@
     var stage = box.parentNode;
     var ORDER = ['Imaging & acquisition','Disease & pathology','Clinical practice',
                  'Interpretability','Auditing & causality','Evaluation & reliability','Systems & deployment'];
-    // Hue still walks one arc, warm clay at the clinical end to violet at the
-    // computational end, but seven steps along an arc that narrow were only
-    // 11 dE apart -- close enough that neighbouring sectors read as one colour.
-    // Value now does the separating: lightness zigzags between the steps while
-    // saturation stays capped, which more than doubles the separation (25 dE
-    // dark, 28 light) without any step turning fluorescent.
+    // Keeping every sector inside the burgundy arc capped the separation at about
+    // 25 dE even with lightness doing the work, and at the size these dots are
+    // drawn that still read as one colour. Hue now spans the wheel -- warm at the
+    // clinical end, cool at the computational, so the axis is still legible in the
+    // order -- with saturation capped so it stays an editorial palette rather than
+    // a neon one. Separation is 45 dE in both themes; every step clears 3.9:1 on
+    // its ground. The burgundy stays where it belongs, on the site's own type.
     var PALETTE = {
       dark: {
-        'Imaging & acquisition':'#dec7ae','Disease & pathology':'#a15544','Clinical practice':'#de9b9f',
-        'Interpretability':'#a93964','Auditing & causality':'#dd92c6',
-        'Evaluation & reliability':'#b952b6','Systems & deployment':'#d7c0de', _: '#6b7280'
+        'Imaging & acquisition':'#c0a055','Disease & pathology':'#c64f3b','Clinical practice':'#c56796',
+        'Interpretability':'#b13dc4','Auditing & causality':'#5c73ce',
+        'Evaluation & reliability':'#41a0bf','Systems & deployment':'#8addaf', _: '#6b7280'
       },
       light: {
-        'Imaging & acquisition':'#ad7d53','Disease & pathology':'#783825','Clinical practice':'#b54f62',
-        'Interpretability':'#5f2941','Auditing & causality':'#c468ab',
-        'Evaluation & reliability':'#712572','Systems & deployment':'#a53dc3', _: '#7A8494'
+        'Imaging & acquisition':'#967531','Disease & pathology':'#bb3a2f','Clinical practice':'#b04e81',
+        'Interpretability':'#9a31b9','Auditing & causality':'#3154a5',
+        'Evaluation & reliability':'#327078','Systems & deployment':'#278b40', _: '#7A8494'
       }
     };
     function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
