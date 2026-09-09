@@ -257,19 +257,22 @@
     var stage = box.parentNode;
     var ORDER = ['Imaging & acquisition','Disease & pathology','Clinical practice',
                  'Interpretability','Auditing & causality','Evaluation & reliability','Systems & deployment'];
-    // One burgundy family rather than seven unrelated hues: the ramp walks from
-    // a warm clay at the clinical end to a cool plum at the computational end,
-    // so the sectors stay told apart by step while the graph reads as one thing.
+    // Hue still walks one arc, warm clay at the clinical end to violet at the
+    // computational end, but seven steps along an arc that narrow were only
+    // 11 dE apart -- close enough that neighbouring sectors read as one colour.
+    // Value now does the separating: lightness zigzags between the steps while
+    // saturation stays capped, which more than doubles the separation (25 dE
+    // dark, 28 light) without any step turning fluorescent.
     var PALETTE = {
       dark: {
-        'Imaging & acquisition':'#d99a6c','Disease & pathology':'#d4726a','Clinical practice':'#c9536a',
-        'Interpretability':'#b84a72','Auditing & causality':'#a4507f',
-        'Evaluation & reliability':'#8f5a8c','Systems & deployment':'#7a6690', _: '#6b7280'
+        'Imaging & acquisition':'#dec7ae','Disease & pathology':'#a15544','Clinical practice':'#de9b9f',
+        'Interpretability':'#a93964','Auditing & causality':'#dd92c6',
+        'Evaluation & reliability':'#b952b6','Systems & deployment':'#d7c0de', _: '#6b7280'
       },
       light: {
-        'Imaging & acquisition':'#9c6321','Disease & pathology':'#a83f36','Clinical practice':'#99253f',
-        'Interpretability':'#8b1f4d','Auditing & causality':'#7a2359',
-        'Evaluation & reliability':'#6b2d63','Systems & deployment':'#5b3a6d', _: '#7A8494'
+        'Imaging & acquisition':'#ad7d53','Disease & pathology':'#783825','Clinical practice':'#b54f62',
+        'Interpretability':'#5f2941','Auditing & causality':'#c468ab',
+        'Evaluation & reliability':'#712572','Systems & deployment':'#a53dc3', _: '#7A8494'
       }
     };
     function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
@@ -603,8 +606,8 @@
       /* The row deliberately breaks out past the prose column: these are the
          page's closing marks, and at body width they read as thumbnails. */
       .affil {
-        width: min(1440px, 90vw); margin-left: 50%; transform: translateX(-50%);
-        display: flex; align-items: center; gap: 1.1rem; margin-bottom: .6rem;
+        width: min(1240px, 84vw); margin-left: 50%; transform: translateX(-50%);
+        display: flex; align-items: center; gap: 2.6rem; margin-bottom: .6rem;
         margin-top: 2.6rem; padding-top: 2.6rem;
         border-top: 1px solid var(--global-divider-color);
       }
