@@ -69,6 +69,15 @@
   }
   .kg-box svg { display: block; width: 100%; height: 100%; cursor: grab; }
   .kg-box svg.kg-drag { cursor: grabbing; }
+  .kg-hint {
+    position: absolute; left: 50%; bottom: .7rem; transform: translateX(-50%);
+    padding: .22rem .7rem; border-radius: 999px; pointer-events: none;
+    font-size: .68rem; letter-spacing: .04em; white-space: nowrap;
+    color: var(--kg-tip-fg); background: var(--kg-tip-bg); border: 1px solid var(--kg-tip-bd);
+    opacity: 0; transition: opacity .18s ease;
+  }
+  .kg-box:hover .kg-hint { opacity: .75; }
+  .kg-box.kg-armed .kg-hint { opacity: 0; }
   .kg-canvas { opacity: 0; transition: opacity .6s ease; }
   .kg-canvas.kg-in { opacity: 1; }
   .kg-link { fill: none; transition: stroke-opacity .18s ease; }
@@ -125,6 +134,7 @@
     <div class="kg-box" id="kg-box{% if kg_full %}-full{% endif %}" style="height: {{ kg_h }}px;">
       <div class="kg-cover">Loading the graph…</div>
       <div class="kg-title">knowledge graph</div>
+      <div class="kg-hint">click to zoom</div>
     </div>
     <div class="kg-bar" id="kg-bar{% if kg_full %}-full{% endif %}">
       {%- assign n_study = site.study | where_exp: "n", "n.category" | size %}
@@ -268,7 +278,30 @@
       else sim.on('tick', tick);
       requestAnimationFrame(function () { g.classed('kg-in', true); });
 
-      svg.call(d3.zoom().scaleExtent([0.4, 5]).on('zoom', function (e) { g.attr('transform', e.transform); }));
+      // The graph fills most of the viewport, so a wheel over it used to swallow
+      // the page scroll. Zoom is armed by a click and dropped on the way out;
+      // an unarmed wheel is simply not handled, and the page scrolls as normal.
+      var armed = false;
+      function arm(on) {
+        if (armed === on) return;
+        armed = on;
+        box.classList.toggle('kg-armed', on);
+      }
+      var zoom = d3.zoom().scaleExtent([0.4, 5])
+        .filter(function (e) {
+          if (e.type === 'wheel') return armed;
+          // A pinch is deliberate enough to allow unarmed; a one-finger drag is
+          // how the page is scrolled on touch, so that one waits to be armed.
+          if (e.type === 'touchstart' || e.type === 'touchmove') return armed || (e.touches && e.touches.length > 1);
+          return !e.ctrlKey && !e.button;
+        })
+        .on('zoom', function (e) { g.attr('transform', e.transform); });
+      svg.call(zoom);
+
+      box.addEventListener('pointerdown', function () { arm(true); });
+      box.addEventListener('pointerleave', function () { arm(false); });
+      document.addEventListener('pointerdown', function (e) { if (!box.contains(e.target)) arm(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') arm(false); });
 
       var neighbours = {};
       data.links.forEach(function (l) {
