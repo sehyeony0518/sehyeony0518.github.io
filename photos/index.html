@@ -214,14 +214,24 @@
   /* On mobile, the home profile photo moves to the very bottom of the page content */
   @media (max-width: 575.98px) {
     /* The photo led the page before the graph was added and sending it to the
-       foot buried it. It comes back to the top, centred and small enough that
-       the opening text still starts inside the first screen. */
+       foot buried it. It comes back to the top, and the contact lines sit beside
+       it rather than under it -- stacked, they cost three rows of height and the
+       opening text fell out of the first screen. */
     article:has(> .profile) { display: flex; flex-direction: column; }
     article:has(> .profile) > .profile {
-      order: -1; float: none !important; width: 58%; max-width: 190px;
-      margin: 0 auto 1.1rem; text-align: center;
+      order: -1; float: none !important; width: 100%; max-width: none;
+      margin: 0 0 1.2rem; display: flex; align-items: center; gap: .9rem; text-align: left;
     }
-    article:has(> .profile) > .profile .more-info { text-align: center; }
+    article:has(> .profile) > .profile figure { flex: 0 0 36%; max-width: 128px; margin: 0; }
+    article:has(> .profile) > .profile .more-info {
+      flex: 1 1 auto; min-width: 0; text-align: left; margin: 0;
+      /* Each line is held to one row: the type scales with the viewport so the
+         longest of them, the lab name, still fits the column beside the photo. */
+      font-size: clamp(.62rem, 2.9vw, .78rem); line-height: 1.6;
+    }
+    article:has(> .profile) > .profile .more-info p {
+      display: block; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
   }
   /* Clickable profile photo on the mission page (the way back) */
   #mission-profile {
