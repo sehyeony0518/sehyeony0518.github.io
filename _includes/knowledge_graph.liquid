@@ -46,6 +46,19 @@
     .kg-stage { flex-direction: column; }
     .kg-bar { width: auto; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
   }
+  .kg-find {
+    flex: 0 0 auto; width: 100%; box-sizing: border-box; margin-bottom: .3rem;
+    padding: .38rem .6rem; border-radius: 8px; font-size: .74rem; line-height: 1.25;
+    border: 1px solid var(--kg-border); background: none; color: inherit;
+    transition: border-color .14s ease;
+  }
+  .kg-find::placeholder { color: var(--kg-dim); }
+  .kg-find:focus { outline: none; border-color: var(--global-theme-color); }
+  .kg-found {
+    flex: 0 0 auto; font-size: .68rem; color: var(--kg-dim); margin: -.1rem 0 .3rem .1rem;
+    font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 700px) { .kg-find { width: 100%; } .kg-found { width: 100%; } }
   .kg-chip {
     flex: 0 0 auto;
     padding: .34rem .65rem; border-radius: 8px; cursor: pointer;
@@ -137,6 +150,9 @@
       <div class="kg-hint">click to zoom</div>
     </div>
     <div class="kg-bar" id="kg-bar{% if kg_full %}-full{% endif %}">
+      <input class="kg-find" type="search" autocomplete="off" spellcheck="false"
+             placeholder="search the graph" aria-label="Search the knowledge graph">
+      <div class="kg-found" hidden></div>
       {%- assign n_study = site.study | where_exp: "n", "n.category" | size %}
       <div class="kg-links">
         <a href="{{ '/study/' | relative_url }}">study notes <span class="kl-n">{{ n_study }}</span></a>
@@ -416,11 +432,9 @@
           }
         });
 
-        function select(sector) {
-          bar.querySelectorAll('.kg-chip').forEach(function (b) {
-            b.classList.toggle('on', b.getAttribute('data-s') === sector);
-          });
-          var keep = sector === 'all' ? null : (touches[sector] || {});
+        // A search and a sector chip are two ways of choosing the same thing, so
+        // they share one path: `keep` is the id set to show, or null for all.
+        function apply(keep) {
           node.style('display', function (d) {
             d._hidden = !(!keep || keep[d.id]);
             return d._hidden ? 'none' : null;
@@ -432,6 +446,59 @@
           // so the survivors are re-chosen against what is actually on screen.
           declutter();
         }
+
+        function select(sector) {
+          bar.querySelectorAll('.kg-chip').forEach(function (b) {
+            b.classList.toggle('on', b.getAttribute('data-s') === sector);
+          });
+          find.value = '';
+          found.hidden = true;
+          apply(sector === 'all' ? null : (touches[sector] || {}));
+        }
+
+        // Search keeps a match and everything one link away from it, so a hit
+        // arrives with the context that explains why it is a hit.
+        var find = wrap.querySelector('.kg-find');
+        var found = wrap.querySelector('.kg-found');
+        var adj = {};
+        data.links.forEach(function (l) {
+          (adj[l.source.id] = adj[l.source.id] || []).push(l.target.id);
+          (adj[l.target.id] = adj[l.target.id] || []).push(l.source.id);
+        });
+        function search(q) {
+          q = (q || '').trim().toLowerCase();
+          if (!q) {
+            found.hidden = true;
+            var on = bar.querySelector('.kg-chip.on');
+            var sec = on ? on.getAttribute('data-s') : 'all';
+            apply(sec === 'all' ? null : (touches[sec] || {}));
+            return;
+          }
+          bar.querySelectorAll('.kg-chip').forEach(function (b) {
+            b.classList.toggle('on', b.getAttribute('data-s') === 'all');
+          });
+          var hits = data.nodes.filter(function (d) {
+            return (d.label || '').toLowerCase().indexOf(q) !== -1;
+          });
+          var keep = {};
+          hits.forEach(function (d) {
+            keep[d.id] = 1;
+            (adj[d.id] || []).forEach(function (n) { keep[n] = 1; });
+          });
+          found.hidden = false;
+          found.textContent = hits.length
+            ? hits.length + (hits.length === 1 ? ' match' : ' matches') + ', with what they link to'
+            : 'no match';
+          apply(hits.length ? keep : {});
+        }
+        var findTimer = null;
+        find.addEventListener('input', function () {
+          clearTimeout(findTimer);
+          findTimer = setTimeout(function () { search(find.value); }, 130);
+        });
+        find.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { find.value = ''; search(''); find.blur(); }
+        });
 
         var all = document.createElement('button');
         all.type = 'button'; all.className = 'kg-chip kg-all on'; all.setAttribute('data-s', 'all');
