@@ -2,7 +2,6 @@
 layout: about
 title: about
 permalink: /
-subtitle: M.S. Student, AI Convergence Network, Ajou University
 
 profile:
   align: right
