@@ -253,6 +253,12 @@
   }
   .kg-tip b { display: block; font-size: .64rem; font-weight: 800; letter-spacing: .07em;
               text-transform: uppercase; opacity: .5; margin-bottom: .12rem; }
+  .kg-tip .kg-triple { display: block; font-weight: 600; margin-bottom: .3rem; }
+  .kg-tip .kg-triple em { font-style: normal; color: var(--global-theme-color); }
+  .kg-tip .kg-note { display: block; font-weight: 400; opacity: .8; line-height: 1.45; }
+  .kg-tip .kg-src { display: block; margin-top: .3rem; font-size: .62rem; opacity: .55;
+                    font-variant-numeric: tabular-nums; }
+  .kg-tip .kg-nosrc { font-style: italic; }
   .kg-cover { position: absolute; inset: 0; display: flex; align-items: center;
               justify-content: center; font-size: .78rem; color: var(--kg-dim); }
   .kg-title {
@@ -280,8 +286,9 @@
     var wrap = box.closest('.kg-wrap');
     var tip = wrap.querySelector('.kg-tip');
     var stage = box.parentNode;
-    var ORDER = ['Imaging & acquisition','Disease & pathology','Clinical practice',
+    var SECTOR_ORDER = ['Imaging & acquisition','Disease & pathology','Clinical practice',
                  'Interpretability','Auditing & causality','Evaluation & reliability','Systems & deployment'];
+    var ORDER = SECTOR_ORDER;
     // Keeping every sector inside the burgundy arc capped the separation at about
     // 25 dE even with lightness doing the work, and at the size these dots are
     // drawn that still read as one colour. Hue now spans the wheel -- warm at the
@@ -299,6 +306,23 @@
         'Imaging & acquisition':'#967531','Disease & pathology':'#bb3a2f','Clinical practice':'#b04e81',
         'Interpretability':'#9a31b9','Auditing & causality':'#3154a5',
         'Evaluation & reliability':'#327078','Systems & deployment':'#278b40', _: '#7A8494'
+      }
+    };
+    // The ontology rings on entity type rather than sector, so it needs its own
+    // order and palette. Same construction: warm where evidence is gathered,
+    // cool where it is judged, and the threats last.
+    var ONTO_ORDER = ['EvidenceSource','Finding','ClinicalTarget','Standard',
+                      'Method','ModelFamily','Metric','Property','Threat'];
+    var ONTO_PALETTE = {
+      dark: {
+        EvidenceSource:'#c0a055', Finding:'#c9884a', ClinicalTarget:'#c64f3b',
+        Standard:'#c56796', Method:'#b13dc4', ModelFamily:'#7b6ad6',
+        Metric:'#5c73ce', Property:'#41a0bf', Threat:'#8addaf', _:'#6b7280'
+      },
+      light: {
+        EvidenceSource:'#967531', Finding:'#9a5a22', ClinicalTarget:'#bb3a2f',
+        Standard:'#b04e81', Method:'#9a31b9', ModelFamily:'#5b46a8',
+        Metric:'#3154a5', Property:'#327078', Threat:'#278b40', _:'#7A8494'
       }
     };
     function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
@@ -340,6 +364,9 @@
     }
 
     function render(data) {
+      var onto = view === 'onto';
+      SECTOR_COLOR = (onto ? ONTO_PALETTE : PALETTE)[isDark() ? 'dark' : 'light'];
+      ORDER = onto ? ONTO_ORDER : SECTOR_ORDER;
       box.innerHTML = chrome();
       var vw = box.querySelector('.kg-title');
       vw.addEventListener('click', function (e) {
@@ -502,8 +529,34 @@
         (neighbours[l.target.id] = neighbours[l.target.id] || {})[l.source.id] = 1;
       });
 
+      if (onto) {
+        link.style('cursor', 'help')
+          .on('mouseenter', function (e, l) {
+            // An edge here is an assertion, so hovering has to show the claim,
+            // how strong it is, and whether anything published stands behind it.
+            var badge = { D: 'definitional', M: 'methodological', E: 'empirical' }[l.claim] || '';
+            var src = l.src
+              ? '<span class="kg-src">' + (/^arXiv:/.test(l.src)
+                  ? l.src
+                  : 'doi:' + l.src) + '</span>'
+              : '<span class="kg-src kg-nosrc">no source asserted</span>';
+            tip.innerHTML = '<b>' + l.id + ' &middot; ' + badge + ' &middot; ' + l.conf + '</b>'
+              + '<span class="kg-triple">' + l.source.label + ' <em>' + l.rel + '</em> ' + l.target.label + '</span>'
+              + '<span class="kg-note">' + l.note + '</span>' + src;
+            var r = stage.getBoundingClientRect();
+            tip.style.left = Math.max(4, Math.min(box.clientWidth - 240, e.clientX - r.left + 12)) + 'px';
+            tip.style.top = Math.min(r.height - 90, e.clientY - r.top + 12) + 'px';
+            tip.style.opacity = 1;
+            link.attr('stroke-opacity', function (x) { return x === l ? 0.9 : 0.04; });
+          })
+          .on('mouseleave', function () {
+            tip.style.opacity = 0;
+            link.attr('stroke-opacity', function (d) { return d.w > 1 ? 0.30 : 0.11; });
+          });
+      }
+
       node.on('mouseenter', function (e, d) {
-          tip.innerHTML = '<b>' + (KIND[d.kind] || '') + '</b>' + d.label;
+          tip.innerHTML = '<b>' + (onto ? d.sector : (KIND[d.kind] || '')) + '</b>' + d.label;
           var r = stage.getBoundingClientRect();
           tip.style.left = Math.max(4, Math.min(box.clientWidth - 200, e.clientX - r.left + 12)) + 'px';
           tip.style.top = Math.min(r.height - 60, e.clientY - r.top + 12) + 'px';
@@ -627,15 +680,26 @@
             : 'no match';
           apply(hits.length ? keep : {});
         }
-        var findTimer = null;
-        find.addEventListener('input', function () {
-          clearTimeout(findTimer);
-          findTimer = setTimeout(function () { search(find.value); }, 130);
-        });
-        find.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') { find.value = ''; search(''); find.blur(); }
-        });
+        // The input survives re-renders, so its listeners are attached once and
+        // then re-pointed at the current view's search closure.
+        find._kgSearch = search;
+        if (!find._kgBound) {
+          find._kgBound = true;
+          var findTimer = null;
+          find.addEventListener('input', function () {
+            clearTimeout(findTimer);
+            findTimer = setTimeout(function () { find._kgSearch(find.value); }, 130);
+          });
+          find.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { find.value = ''; find._kgSearch(''); find.blur(); }
+          });
+        }
+        find.value = '';
+        found.hidden = true;
 
+        // render() runs again on every view switch, so the chips are rebuilt from
+        // whichever ORDER is current rather than left describing the other view.
+        bar.querySelectorAll('.kg-chip').forEach(function (b) { b.remove(); });
         var all = document.createElement('button');
         all.type = 'button'; all.className = 'kg-chip kg-all on'; all.setAttribute('data-s', 'all');
         all.textContent = 'All';
