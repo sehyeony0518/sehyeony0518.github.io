@@ -21,6 +21,8 @@ def main():
     errs = []
     if set(ORDER) != set(types):
         errs.append(f"ring order does not cover the types: {set(ORDER) ^ set(types)}")
+    if set(d.get("colors", {})) != set(types):
+        errs.append(f"colours do not cover the types: {set(d.get('colors', {})) ^ set(types)}")
     seen, ids = set(), set()
     for a in asserts:
         eid, s, rel, o, kind, conf, note, src = a
@@ -63,6 +65,9 @@ def main():
         "nodes": nodes, "links": links,
         "order": ORDER,
         "types": types,
+        # The page and the graph must not drift apart on colour, so it ships here
+        # rather than being written twice.
+        "colors": d["colors"],
         "relations": {k: v["gloss"] for k, v in rels.items()},
     }, ensure_ascii=False), encoding="utf-8")
     print(f"wrote {OUT}: {len(nodes)} concepts, {len(links)} assertions, "
