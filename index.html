@@ -599,21 +599,19 @@
           try { saved = sessionStorage.getItem('homeView'); } catch (e) {}
           if (saved && saved !== 'map') show(saved, false);
         })();
-      </script> <div class="affil"> <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab"> <img class="lo-l" src="/assets/img/logos/ens.png" alt="Embedded &amp; Software Lab" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ens_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University"> <img class="lo-l" src="/assets/img/logos/ajou.png" alt="Ajou University" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajou_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a href="https://hosp.ajoumc.or.kr/" target="_blank" rel="noopener" aria-label="Ajou University Medical Center"> <img class="lo-l" src="/assets/img/logos/ajoumc.png" alt="Ajou University Medical Center" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajoumc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a class="lo-wide" href="https://itrc.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="ITRC"> <img class="lo-l" src="/assets/img/logos/itrc.png" alt="ITRC" loading="lazy"> <img class="lo-d" src="/assets/img/logos/itrc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> </div> <style>
+      </script> <div class="affil"> <a href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab"> <img class="lo-l" src="/assets/img/logos/ens.png" alt="Embedded &amp; Software Lab" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ens_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University"> <img class="lo-l" src="/assets/img/logos/ajou.png" alt="Ajou University" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajou_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a href="https://hosp.ajoumc.or.kr/" target="_blank" rel="noopener" aria-label="Ajou University Medical Center"> <img class="lo-l" src="/assets/img/logos/ajoumc.png" alt="Ajou University Medical Center" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajoumc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a href="https://itrc.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="ITRC"> <img class="lo-l" src="/assets/img/logos/itrc.png" alt="ITRC" loading="lazy"> <img class="lo-d" src="/assets/img/logos/itrc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> </div> <style>
       /* The row deliberately breaks out past the prose column: these are the
          page's closing marks, and at body width they read as thumbnails. */
       .affil {
         width: min(1320px, 95vw); margin-left: 50%; transform: translateX(-50%);
         display: flex; align-items: center; justify-content: space-between;
-        gap: 1.1rem; height: 84px; margin-bottom: .6rem;
+        gap: 1.1rem; height: 88px; margin-bottom: .6rem;
         margin-top: 2.6rem; padding-top: 2.6rem;
         border-top: 1px solid var(--global-divider-color);
       }
       .affil a { display: flex; align-items: center; justify-content: center; height: 100%; min-width: 0; }
-      /* Three of the four stack two lines of type, so they carry a shared height
-         evenly. ITRC is a single line of large letters and reads as the biggest
-         thing on the row at that height, so it is held back a little. */
-      .affil .lo-wide { height: 84%; }
+      /* All four are now multi-line wordmarks of a similar proportion, so a
+         single shared cap height is enough to make them read as one row. */
       .affil img { height: 100%; width: auto; max-width: 100%; object-fit: contain;
         opacity: .82; transition: opacity .15s ease; }
       .affil a:hover img { opacity: 1; }
@@ -625,8 +623,7 @@
       @media (max-width: 900px) { .affil { height: 62px; } }
       @media (max-width: 640px) {
         .affil { height: auto; flex-wrap: wrap; justify-content: center; gap: 1.6rem 2rem; }
-        .affil a { height: 52px; flex: 0 0 auto; }
-        .affil .lo-wide { height: 44px; }
+        .affil a { height: 54px; flex: 0 0 auto; }
       }
     </style> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
