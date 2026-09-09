@@ -12,7 +12,12 @@ layout: default
   "jobTitle": "M.S. Student, AI Convergence Network",
   "affiliation": { "@type": "CollegeOrUniversity", "name": "Ajou University" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Ajou University" },
-  "knowsAbout": ["Trustworthy AI", "Interpretable machine learning", "Medical imaging AI", "Ultrasound AI", "Clinical faithfulness"],
+  "givenName": "Se-Hyeon",
+  "familyName": "Hwang",
+  "description": "Se-Hyeon Hwang (황세현) is an M.S. student at Ajou University researching trustworthy and explainable medical AI. 아주대학교 AI융합네트워크학과 석사과정으로 의료 인공지능의 신뢰성과 설명가능성을 연구합니다.",
+  "knowsLanguage": ["ko", "en"],
+  "worksFor": { "@type": "Organization", "name": "Embedded & Software Lab, Ajou University", "url": "https://eslab.ajou.ac.kr/" },
+  "knowsAbout": ["Trustworthy AI", "Explainable AI", "Medical XAI", "Interpretable machine learning", "Medical imaging AI", "Ultrasound AI", "Clinical faithfulness", "의료 인공지능", "설명가능 인공지능"],
   "sameAs": [
     "https://www.linkedin.com/in/sehyeony",
     "https://github.com/sehyeony0518"
@@ -41,7 +46,7 @@ layout: default
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
         {{ site.last_name }}
       {% else %}
-        <span class="font-weight-bold">Se-Hyeon</span> Hwang
+        <span class="font-weight-bold">Se-Hyeon</span> Hwang <span class="h1-ko" lang="ko">황세현</span>
       {% endif %}
     </h1>
     <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p>
@@ -49,6 +54,7 @@ layout: default
   </header>
 
   <style>
+    .h1-ko { font-size: .52em; font-weight: 600; opacity: .55; letter-spacing: -.01em; margin-left: .18em; }
     .hero-tagline {
       margin: 0.3rem 0 0.4rem;
       /* Inter rather than the Montserrat of the name above, so the two lines read
