@@ -211,3 +211,5 @@ nav_order: 9
     });
   })();
 </script>
+
+{% include ontology_table.liquid %}

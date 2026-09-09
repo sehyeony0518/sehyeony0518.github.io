@@ -1,0 +1,122 @@
+{%- comment -%}
+  The assertions, read straight from _data/ontology.yml. The graph shows the shape
+  of this; the list is where the claims are actually legible, with their kind,
+  their confidence and their source.
+{%- endcomment -%}
+{%- assign onto = site.data.ontology -%}
+{%- if onto and onto.assertions -%}
+  <div class="on-wrap">
+    <h2 class="on-h">Ontology</h2>
+    <p class="on-lead">
+      The <a href="{{ '/research/#graph' | relative_url }}">knowledge graph</a> records which of these notes
+      discusses which concept. This is a different thing: what kind of entity each concept is, and what
+      I hold to be true between them. Every line below is an assertion, so every line is disputable, and
+      the ones resting on published work carry the source. <strong>{{ onto.assertions | size }}</strong>
+      assertions over <strong>{{ onto.concepts | size }}</strong> concepts, in
+      <strong>{{ onto.relations | size }}</strong> relations.
+    </p>
+
+    <div class="on-types">
+      {%- for t in onto.colors %}
+        {%- assign tname = t[0] %}
+        {%- assign n = 0 %}
+        {%- for c in onto.concepts %}{% if c[1] == tname %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
+        <span class="on-type" title="{{ onto.types[tname] }}">
+          <i style="background: {{ t[1].light }}"></i>{{ tname }}<b>{{ n }}</b>
+        </span>
+      {%- endfor %}
+    </div>
+
+    {%- for r in onto.relations %}
+      {%- assign rname = r[0] %}
+      <section class="on-rel">
+        <h3 class="on-rel-h">{{ rname }}</h3>
+        <p class="on-rel-sig">
+          <span class="on-dr">{{ r[1].domain | join: " · " }}</span>
+          <span class="on-arrow">&rarr;</span>
+          <span class="on-dr">{{ r[1].range | join: " · " }}</span>
+        </p>
+        <p class="on-rel-gloss">{{ r[1].gloss }}</p>
+        <ul class="on-list">
+          {%- for a in onto.assertions %}
+            {%- if a[2] == rname %}
+              <li class="on-item">
+                <span class="on-triple">
+                  <span class="on-c" style="--t: {{ onto.colors[onto.concepts[a[1]]].light }}">{{ a[1] }}</span>
+                  <span class="on-rel-in">{{ rname }}</span>
+                  <span class="on-c" style="--t: {{ onto.colors[onto.concepts[a[3]]].light }}">{{ a[3] }}</span>
+                </span>
+                <span class="on-meta">
+                  <span class="on-kind on-k-{{ a[4] }}">{%- case a[4] -%}
+                    {%- when 'D' -%}definitional{%- when 'M' -%}methodological{%- else -%}empirical{%- endcase -%}</span>
+                  <span class="on-conf">{{ a[5] }} confidence</span>
+                  <span class="on-id">{{ a[0] }}</span>
+                </span>
+                <span class="on-note">{{ a[6] }}</span>
+                {%- if a[7] %}
+                  {%- assign src = a[7] %}
+                  {%- if src contains 'arXiv:' %}
+                    {%- assign aid = src | remove: 'arXiv:' %}
+                    <a class="on-src" href="https://arxiv.org/abs/{{ aid }}" target="_blank" rel="noopener">arXiv:{{ aid }}</a>
+                  {%- else %}
+                    <a class="on-src" href="https://doi.org/{{ src }}" target="_blank" rel="noopener">doi:{{ src }}</a>
+                  {%- endif %}
+                {%- else %}
+                  <span class="on-src on-nosrc">no source asserted</span>
+                {%- endif %}
+              </li>
+            {%- endif %}
+          {%- endfor %}
+        </ul>
+      </section>
+    {%- endfor %}
+
+    <p class="on-foot">
+      Absence of an edge means not asserted, not false. <code>doesNotEstablish</code> is itself a positive
+      claim of non-entailment, not a claim of incompatibility. None of this determines whether a particular
+      trained model uses a shortcut; that needs an experiment.
+    </p>
+  </div>
+
+  <style>
+    .on-wrap { margin-top: 3.2rem; padding-top: 1.6rem; border-top: 1px solid var(--global-divider-color); }
+    .on-h { margin: 0 0 .5rem; }
+    .on-lead { font-size: .92rem; line-height: 1.7; max-width: 46rem; opacity: .88; }
+    .on-types { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 1.8rem; }
+    .on-type {
+      display: inline-flex; align-items: center; gap: .4rem; cursor: help;
+      padding: .26rem .6rem; border-radius: 999px; font-size: .74rem;
+      border: 1px solid var(--global-divider-color);
+    }
+    .on-type i { width: .55rem; height: .55rem; border-radius: 50%; flex: 0 0 auto; }
+    .on-type b { font-weight: 700; opacity: .45; font-variant-numeric: tabular-nums; }
+
+    .on-rel { margin: 0 0 1.7rem; }
+    .on-rel-h { margin: 0; font-size: 1rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .on-rel-sig { margin: .15rem 0 .1rem; font-size: .72rem; opacity: .5; }
+    .on-arrow { margin: 0 .35rem; }
+    .on-rel-gloss { margin: 0 0 .6rem; font-size: .84rem; opacity: .72; max-width: 46rem; line-height: 1.6; }
+
+    .on-list { list-style: none; margin: 0; padding: 0; }
+    /* A rule per assertion rather than a card each: fifty-eight boxes would read
+       as a wall, and the claim is the thing worth seeing. */
+    .on-item { padding: .6rem 0; border-top: 1px solid var(--global-divider-color); }
+    .on-triple { display: block; font-size: .9rem; line-height: 1.5; }
+    .on-c { font-weight: 600; border-bottom: 2px solid var(--t); }
+    .on-rel-in {
+      margin: 0 .35rem; font-size: .76rem; opacity: .5;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .on-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin: .25rem 0 .2rem; font-size: .68rem; }
+    .on-kind { font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+    .on-k-D { color: var(--global-text-color-light); }
+    .on-k-M { color: var(--global-theme-color); }
+    .on-k-E { color: var(--global-theme-color); opacity: .75; }
+    .on-conf, .on-id { opacity: .45; font-variant-numeric: tabular-nums; }
+    .on-note { display: block; font-size: .84rem; line-height: 1.6; opacity: .78; max-width: 48rem; }
+    .on-src { display: inline-block; margin-top: .25rem; font-size: .7rem; opacity: .6;
+              font-variant-numeric: tabular-nums; }
+    .on-nosrc { font-style: italic; opacity: .38; }
+    .on-foot { margin-top: 1.6rem; font-size: .82rem; opacity: .6; line-height: 1.65; max-width: 46rem; }
+  </style>
+{%- endif -%}

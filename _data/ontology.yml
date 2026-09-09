@@ -24,6 +24,18 @@ types:
   Standard: "A normative document specifying clinical or reporting requirements."
   ModelFamily: "A family of trained computational systems."
 
+# One definition of the ring colours, read by both the graph and the study page.
+colors:
+  EvidenceSource: {light: "#967531", dark: "#c0a055"}
+  Finding:        {light: "#9a5a22", dark: "#c9884a"}
+  ClinicalTarget: {light: "#bb3a2f", dark: "#c64f3b"}
+  Standard:       {light: "#b04e81", dark: "#c56796"}
+  Method:         {light: "#9a31b9", dark: "#b13dc4"}
+  ModelFamily:    {light: "#5b46a8", dark: "#7b6ad6"}
+  Metric:         {light: "#3154a5", dark: "#5c73ce"}
+  Property:       {light: "#327078", dark: "#41a0bf"}
+  Threat:         {light: "#278b40", dark: "#8addaf"}
+
 relations:
   assessesProperty:
     domain: [Method, Metric]
