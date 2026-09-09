@@ -111,7 +111,9 @@
     #navbar > .container { flex-wrap: nowrap; justify-content: space-between; }
     #navbar .navbar-collapse { flex-basis: auto; width: auto; flex-grow: 0; }
     #navbar .navbar-nav { margin-left: auto; }
-    #navbar .navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; font-size: 0.95rem; }
+    #navbar .navbar-nav { flex-wrap: nowrap; }
+    /* "paper reviews" is the only two-word tab, and it was the one breaking */
+    #navbar .navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; font-size: 0.95rem; white-space: nowrap; }
     #navbar .navbar-brand.title { font-size: 1.28rem; }
   }
   /* The brand carries the Korean name for search, which makes it long enough to
