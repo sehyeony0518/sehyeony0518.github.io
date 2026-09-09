@@ -32,7 +32,7 @@ sitemap: false
   .pl-card .pl-badge {
     align-self: flex-start; font-size: .68rem; font-weight: 800; letter-spacing: .04em;
     padding: .16rem .55rem; border-radius: 999px;
-    background: var(--global-theme-color); color: var(--site-on-accent); margin-bottom: .5rem;
+    background: var(--global-theme-color); color: #fff; margin-bottom: .5rem;
   }
   .pl-card h3 { margin: 0 0 .4rem; font-size: 1.12rem; line-height: 1.35; }
   .pl-card .pl-sum { font-size: .86rem; opacity: .7; line-height: 1.55; margin: 0 0 .6rem; }
