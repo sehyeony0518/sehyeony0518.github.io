@@ -1,0 +1,163 @@
+# Evidence-and-auditing ontology over the concepts already in the corpus graph.
+#
+# The corpus graph says "this piece of writing discusses this concept". This file
+# says something different: what kind of thing each concept is, and what holds
+# between them. Every edge is an assertion, so every edge is disputable, and the
+# ones resting on published results carry the source.
+#
+# claim: D definitional/logical | M methodological capability, not a demonstrated
+#        result | E empirical, context-dependent
+# Absence of an edge means not asserted, not false. `doesNotEstablish` is itself a
+# positive assertion of non-entailment.
+#
+# Designed with GPT (session ontology-0909-1620); every citation checked against
+# CrossRef/arXiv before being written here.
+
+types:
+  Method: "An analytical technique, learning procedure, or organised clinical or audit workflow."
+  Metric: "A family of numerical evaluation measures."
+  Property: "A characteristic assessed for a specified model, explanation, or population."
+  Threat: "A mechanism or condition that can compromise an evidential inference or its transportability."
+  ClinicalTarget: "The clinical question or domain for which evidence is being assessed."
+  EvidenceSource: "An acquisition or examination process whose observations can supply evidence."
+  Finding: "A family of observations interpretable from an examination or image."
+  Standard: "A normative document specifying clinical or reporting requirements."
+  ModelFamily: "A family of trained computational systems."
+
+relations:
+  assessesProperty:
+    domain: [Method, Metric]
+    range: [Property]
+    gloss: "Provides a procedure or numerical assessment of the property, without establishing it conclusively."
+  probesThreat:
+    domain: [Method]
+    range: [Threat]
+    gloss: "Can investigate a hypothesis about the threat; nominating a candidate is not confirming a mechanism."
+  canIntroduce:
+    domain: [Method, Threat, EvidenceSource]
+    range: [Threat]
+    gloss: "Can create or enable the object. Neither inevitability nor sufficient causation is implied."
+  usesEvidence:
+    domain: [Method]
+    range: [EvidenceSource, Finding]
+    gloss: "Observations from the object enter the subject's assessment or reasoning."
+  providesEvidenceFor:
+    domain: [EvidenceSource, Finding]
+    range: [ClinicalTarget]
+    gloss: "Can supply observations bearing on the clinical question, without alone resolving it."
+  constrainsProcedure:
+    domain: [Standard]
+    range: [Method, Metric]
+    gloss: "Specifies decision rules or reporting requirements. Compliance is not guaranteed."
+  warrantsReassessmentOf:
+    domain: [Threat]
+    range: [Property, Method]
+    gloss: "Gives reason to reassess; does not assert that anything has deteriorated."
+  doesNotEstablish:
+    domain: [Property, Method, Metric, EvidenceSource, Standard]
+    range: [Property, Finding]
+    gloss: "The subject alone is insufficient to establish the object. Non-entailment, not incompatibility."
+  canAudit:
+    domain: [Method]
+    range: [Method, ModelFamily, EvidenceSource]
+    gloss: "Instances or outputs of the object can be explicit inspection targets of the subject."
+  changesObservabilityOf:
+    domain: [EvidenceSource, Method]
+    range: [Finding]
+    gloss: "Can change the visibility or assessability of findings without a change in underlying disease."
+
+concepts:
+  Auditing: Method
+  Intervention & ablation: Method
+  Shortcut learning: Threat
+  Causal inference: Method
+  Confounding: Threat
+  Spurious correlation: Threat
+  Clinical guidelines: Standard
+  Screening programs: Method
+  Diagnostic reasoning: Method
+  Gallbladder disease: ClinicalTarget
+  Malignancy & staging: ClinicalTarget
+  Liver & hepatobiliary: ClinicalTarget
+  Histopathology: EvidenceSource
+  Neurological disease: ClinicalTarget
+  Biliary tract: ClinicalTarget
+  Uncertainty & abstention: Method
+  Reporting standards: Standard
+  Subgroup & fairness: Method
+  Calibration: Property
+  Evaluation metrics: Metric
+  Distribution shift: Threat
+  Ultrasound acquisition: EvidenceSource
+  Cross-sectional imaging: EvidenceSource
+  Sonographic features: Finding
+  Representation learning: Method
+  Attribution & saliency: Method
+  Faithfulness: Property
+  Concept-based methods: Method
+  Plausibility: Property
+  Counterfactual: Method
+  Segmentation & detection: Method
+  Deployment & drift: Method
+  Foundation models: ModelFamily
+
+# id | subject | relation | object | claim | confidence | note | source
+assertions:
+  - [E01, Auditing, assessesProperty, Faithfulness, M, high, "A frozen-model explanation audit compares the readout's stated importance against the behaviour it purports to explain.", null]
+  - [E02, Intervention & ablation, assessesProperty, Faithfulness, M, high, "Controlled perturbations compare attribution-predicted effects with actual score changes, conditional on the perturbation design.", "arXiv:1901.09392"]
+  - [E03, Evaluation metrics, assessesProperty, Calibration, D, high, "Calibration measures quantify the discrepancy between predicted probabilities and observed frequencies in a specified population.", "arXiv:1706.04599"]
+  - [E04, Evaluation metrics, assessesProperty, Faithfulness, D, high, "Scope: explanation-specific metrics, which quantify agreement between attributed importance and responses under a defined perturbation distribution.", "arXiv:1901.09392"]
+  - [E05, Auditing, assessesProperty, Plausibility, M, high, "Blinded clinical review can assess whether an explanation looks reasonable for the task, separately from computational testing.", null]
+  - [E06, Subgroup & fairness, assessesProperty, Calibration, M, high, "Calibration can be assessed within prespecified patient or acquisition groups; this does not establish fairness under every criterion.", null]
+  - [E07, Auditing, assessesProperty, Calibration, M, high, "An audit can compare frozen-model probabilities with independently obtained outcomes on a declared evaluation population.", null]
+  - [E08, Auditing, probesThreat, Shortcut learning, M, high, "Shortcut hypotheses are explicit audit targets requiring task-specific investigation, not aggregate accuracy.", "10.1016/S2589-7500(22)00003-6"]
+  - [E09, Intervention & ablation, probesThreat, Shortcut learning, E, high, "Controlled changes to suspected non-diagnostic cues reveal predictor sensitivity; shown on COVID-19 radiograph classifiers, not gallbladder models.", "10.1038/s42256-021-00338-7"]
+  - [E10, Counterfactual, probesThreat, Shortcut learning, E, medium, "Generative comparisons can expose candidate cues, but coupled edits prevent treating each comparison as an isolated intervention.", "10.1038/s42256-021-00338-7"]
+  - [E11, Causal inference, probesThreat, Confounding, D, high, "An explicit causal model identifies candidate confounding paths relative to an estimand; it does not discover unmeasured confounders.", "10.1214/09-SS057"]
+  - [E12, Causal inference, probesThreat, Spurious correlation, M, high, "Causal analysis separates an observed association from the intervention claim it might be taken to support.", "10.1214/09-SS057"]
+  - [E13, Subgroup & fairness, probesThreat, Shortcut learning, M, medium, "Stratifying by suspected cue availability can reveal shortcut-compatible failures; severity and case-mix remain alternative explanations.", null]
+  - [E14, Attribution & saliency, probesThreat, Shortcut learning, E, medium, "Attributions nominate suspicious regions for controlled testing; they do not independently establish reliance.", "10.1038/s42256-021-00338-7"]
+  - [E15, Confounding, canIntroduce, Spurious correlation, D, high, "A common-cause pathway produces association that does not represent the causal effect being estimated.", "10.1214/09-SS057"]
+  - [E16, Spurious correlation, canIntroduce, Shortcut learning, E, high, "An association available in training can support a rule that fails when it changes; learning that rule is not inevitable.", "arXiv:2004.07780"]
+  - [E17, Representation learning, canIntroduce, Shortcut learning, E, high, "Learned representations can privilege easy predictive cues over the evidence the task intends.", "arXiv:2004.07780"]
+  - [E18, Ultrasound acquisition, canIntroduce, Spurious correlation, E, high, "Acquisition and documentation workflows can couple annotations with the target imaged; demonstrated on fetal-ultrasound calipers.", "10.1007/978-3-031-72111-3_59"]
+  - [E19, Intervention & ablation, canIntroduce, Distribution shift, E, high, "Removing or replacing regions at test time creates inputs unlike training data; ROAR answers this by retraining, which changes the question.", "arXiv:1806.10758"]
+  - [E20, Screening programs, canIntroduce, Distribution shift, M, high, "Moving a model from referred symptomatic patients into screening changes eligibility, prevalence and disease spectrum.", null]
+  - [E21, Deployment & drift, canIntroduce, Distribution shift, E, high, "Moving between institutions changes acquisition and patient distributions, as shown for pneumonia models across hospitals.", "10.1371/journal.pmed.1002683"]
+  - [E22, Diagnostic reasoning, usesEvidence, Sonographic features, D, high, "Observed morphology and acoustic findings feed task-specific reasoning without determining the diagnosis alone.", null]
+  - [E23, Diagnostic reasoning, usesEvidence, Histopathology, M, high, "A matched tissue result can be incorporated while retaining specimen, sampling and timing limits.", null]
+  - [E24, Diagnostic reasoning, usesEvidence, Cross-sectional imaging, M, high, "CT/MRI observations contribute when they address the unresolved clinical question.", null]
+  - [E25, Auditing, usesEvidence, Sonographic features, M, high, "Independently assessed findings can anchor an ultrasound evidence audit; annotations derived from the explanation would be circular.", null]
+  - [E26, Auditing, usesEvidence, Histopathology, M, high, "Matched tissue diagnoses support outcome verification but cannot substitute for annotations of image-visible evidence.", null]
+  - [E27, Concept-based methods, usesEvidence, Sonographic features, M, medium, "Independently annotated sonographic findings can be operationalised as concepts, given validated measurement and separation.", null]
+  - [E28, Ultrasound acquisition, providesEvidenceFor, Gallbladder disease, E, high, "Adequately acquired ultrasound supplies diagnostically relevant gallbladder observations.", "10.1007/s13244-017-0544-7"]
+  - [E29, Sonographic features, providesEvidenceFor, Gallbladder disease, E, high, "Findings such as intramural cystic spaces support particular differentials; no generic feature establishes every disease.", "10.1007/s13244-017-0544-7"]
+  - [E30, Sonographic features, providesEvidenceFor, Malignancy & staging, E, high, "Scope: malignancy-risk assessment of gallbladder polyps. Morphology and size inform risk, not a pathological stage.", "10.1007/s00330-021-08384-w"]
+  - [E31, Histopathology, providesEvidenceFor, Malignancy & staging, E, high, "Appropriately sampled tissue establishes malignant histology and sampled invasion, not necessarily the complete stage.", null]
+  - [E32, Cross-sectional imaging, providesEvidenceFor, Malignancy & staging, E, high, "CT/MRI supplies evidence about tumour extent and spread, with limits for microscopic disease.", "10.1259/bjr.20200726"]
+  - [E33, Cross-sectional imaging, providesEvidenceFor, Biliary tract, E, high, "Scope: MRCP assessment of ductal configuration, narrowing and filling defects; these do not alone determine cause.", null]
+  - [E34, Ultrasound acquisition, providesEvidenceFor, Liver & hepatobiliary, E, high, "Ultrasound supplies observations of parenchyma and the visible hepatobiliary system, subject to acoustic access.", null]
+  - [E35, Cross-sectional imaging, providesEvidenceFor, Neurological disease, E, high, "Scope: CT/MRI in stroke assessment, including haemorrhage or ischaemic injury; not every neurological diagnosis.", "10.3174/ajnr.A3690"]
+  - [E36, Histopathology, providesEvidenceFor, Gallbladder disease, E, high, "A matched specimen provides tissue-level evidence for the sampled lesion; surgical selection limits generalisation.", null]
+  - [E37, Clinical guidelines, constrainsProcedure, Diagnostic reasoning, M, high, "Applicable guidelines specify how defined findings and risk factors inform a decision; the example is polyp management.", "10.1007/s00330-021-08384-w"]
+  - [E38, Clinical guidelines, constrainsProcedure, Screening programs, M, high, "A screening guideline supplies eligibility and follow-up rules against which a workflow can be specified and audited.", null]
+  - [E39, Reporting standards, constrainsProcedure, Auditing, M, high, "Scope: diagnostic-accuracy components. STARD specifies reporting of participants, reference procedures and analysis.", "10.1136/bmj.h5527"]
+  - [E40, Reporting standards, constrainsProcedure, Evaluation metrics, M, high, "Reporting requires specified estimates and their precision; compliance does not make a metric appropriate for every claim.", "10.1136/bmj.h5527"]
+  - [E41, Distribution shift, warrantsReassessmentOf, Calibration, M, high, "Calibration established on one distribution need not persist on another, so reassessment is warranted.", "arXiv:1906.02530"]
+  - [E42, Distribution shift, warrantsReassessmentOf, Uncertainty & abstention, M, high, "Shift motivates checking uncertainty quality and the risk and coverage of any acceptance policy.", "arXiv:1906.02530"]
+  - [E43, Distribution shift, warrantsReassessmentOf, Subgroup & fairness, M, high, "Changed populations or acquisition conditions require reassessing subgroup performance; aggregate results cannot answer it.", null]
+  - [E44, Plausibility, doesNotEstablish, Faithfulness, D, high, "A visually convincing explanation can be insensitive to learned parameters, so reasonableness does not entail faithfulness.", "arXiv:1810.03292"]
+  - [E45, Faithfulness, doesNotEstablish, Plausibility, D, high, "A faithful explanation of caliper reliance accurately describes an inappropriate rule without making it clinically plausible.", null]
+  - [E46, Calibration, doesNotEstablish, Faithfulness, D, high, "Agreement between probabilities and outcome frequencies does not constrain whether an explanation describes the predictor.", null]
+  - [E47, Evaluation metrics, doesNotEstablish, Faithfulness, D, high, "Scope: predictive-performance metrics such as AUROC. They describe predictions against labels, not the computation.", null]
+  - [E48, Segmentation & detection, doesNotEstablish, Faithfulness, D, high, "Localisation or mask overlap does not establish that an explanation identifies the evidence a diagnostic predictor used.", null]
+  - [E49, Histopathology, doesNotEstablish, Sonographic features, D, high, "A tissue diagnosis does not establish that a finding was visible or assessable in the frame supplied to the model.", null]
+  - [E50, Reporting standards, doesNotEstablish, Faithfulness, D, high, "A compliant report can describe a method whose faithfulness claim remains unsupported.", null]
+  - [E51, Auditing, canAudit, Foundation models, M, high, "An adapted instance can be frozen and audited for its evidence use; pretraining scale is not an exemption.", null]
+  - [E52, Auditing, canAudit, Representation learning, M, high, "Representations can be inspected for encoded clinical and acquisition information, keeping decodability separate from reliance.", null]
+  - [E53, Auditing, canAudit, Segmentation & detection, M, high, "Segmentation outputs can be audited for dependence on documentation cues.", "10.1007/978-3-031-72111-3_59"]
+  - [E54, Auditing, canAudit, Attribution & saliency, M, high, "Parameter and label randomisation test whether attribution outputs respond to the learned predictor at all.", "arXiv:1810.03292"]
+  - [E55, Auditing, canAudit, Concept-based methods, M, high, "Audit the concept examples, held-out measurement quality, correlated concepts and claimed sensitivity.", null]
+  - [E56, Auditing, canAudit, Counterfactual, M, high, "Inspect whether an edited comparison changes its intended target while preserving other evidence.", null]
+  - [E57, Ultrasound acquisition, changesObservabilityOf, Sonographic features, E, high, "Acquisition modes alter acoustic findings; spatial compounding changed shadow appearance in a stone phantom.", "10.1148/rg.2017160175"]
+  - [E58, Intervention & ablation, changesObservabilityOf, Sonographic features, M, high, "Masking can erase diagnostically relevant morphology as well as the suspected nuisance cue.", null]
