@@ -91,6 +91,18 @@
     #navbar .navbar-nav .nav-link { padding-left: 0.6rem; padding-right: 0.6rem; font-size: 0.95rem; }
     #navbar .navbar-brand.title { font-size: 1.28rem; }
   }
+  /* The brand carries the Korean name for search, which makes it long enough to
+     push the tabs onto a second row. Setting the Korean smaller and quieter buys
+     back the width without dropping the name. */
+  #navbar .navbar-brand .brand-ko {
+    font-size: .68em; font-weight: 400; opacity: .6; margin-left: .12em;
+    letter-spacing: 0; vertical-align: .04em;
+  }
+  /* The squeeze is worst between the mobile menu and a wide desktop */
+  @media (min-width: 576px) and (max-width: 1100px) {
+    #navbar .navbar-brand.title { font-size: 1.08rem; }
+    #navbar .navbar-nav .nav-link { padding-left: .42rem; padding-right: .42rem; font-size: .88rem; }
+  }
   /* Back link on individual reflection posts */
   .diary-back { display: inline-block; margin: 0 0 1.2rem; font-size: .85rem; text-decoration: none; color: var(--global-theme-color); }
   .diary-back:hover { text-decoration: underline; }
@@ -269,6 +281,27 @@
     }
     if (document.readyState !== 'loading') addBrand();
     else document.addEventListener('DOMContentLoaded', addBrand);
+  })();
+
+  (function () {
+    // The theme prints site.title as one text node, so the Korean half cannot be
+    // styled from CSS alone. Wrap it once, here, rather than putting markup in
+    // _config.yml, where the same string also feeds <title> and the meta tags.
+    function shrinkKo() {
+      var b = document.querySelector('#navbar .navbar-brand.title');
+      if (!b || b.querySelector('.brand-ko')) return;
+      var t = b.textContent.trim();
+      var m = t.match(/^(.*?)\s*(\([^)]*[가-힣][^)]*\))$/);
+      if (!m) return;
+      b.textContent = m[1] + ' ';
+      var span = document.createElement('span');
+      span.className = 'brand-ko';
+      span.setAttribute('lang', 'ko');
+      span.textContent = m[2];
+      b.appendChild(span);
+    }
+    if (document.readyState !== 'loading') shrinkKo();
+    else document.addEventListener('DOMContentLoaded', shrinkKo);
   })();
 
   (function () {
