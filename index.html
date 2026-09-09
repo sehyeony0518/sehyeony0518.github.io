@@ -41,6 +41,11 @@
   })();
 </script> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Se-Hyeon</span> Hwang <span class="h1-ko" lang="ko">황세현</span> </h1> <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p> <p class="desc"></p> </header> <style>
     .h1-ko { font-size: .52em; font-weight: 600; opacity: .55; letter-spacing: -.01em; margin-left: .18em; }
+    /* On a phone the heading has no room for both names and the Korean was the
+       half getting clipped. It is dropped from the heading there; the name is
+       still in the title tag, the JSON-LD and the page body, so nothing that
+       search reads is lost. */
+    @media (max-width: 575.98px) { .h1-ko { display: none; } }
     .hero-tagline {
       margin: 0.3rem 0 0.4rem;
       /* Inter rather than the Montserrat of the name above, so the two lines read
@@ -793,8 +798,15 @@
   }
   /* On mobile, the home profile photo moves to the very bottom of the page content */
   @media (max-width: 575.98px) {
+    /* The photo led the page before the graph was added and sending it to the
+       foot buried it. It comes back to the top, centred and small enough that
+       the opening text still starts inside the first screen. */
     article:has(> .profile) { display: flex; flex-direction: column; }
-    article:has(> .profile) > .profile { order: 99; float: none !important; width: 100%; max-width: 320px; margin: 1.2rem auto 0; }
+    article:has(> .profile) > .profile {
+      order: -1; float: none !important; width: 58%; max-width: 190px;
+      margin: 0 auto 1.1rem; text-align: center;
+    }
+    article:has(> .profile) > .profile .more-info { text-align: center; }
   }
   /* Clickable profile photo on the mission page (the way back) */
   #mission-profile {
