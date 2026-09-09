@@ -40,9 +40,17 @@
     --global-text-color: #1c1c1c;
     --global-text-color-light: #5f6368;
     --global-divider-color: rgba(28, 28, 28, 0.09);
+    /* A dark burgundy in place of the theme's stock magenta. It is referenced
+       across fifteen of our own files, so it is retuned once here rather than
+       at every call site. The dark theme needs a lighter tint of it: #8B0000
+       only reaches 1.7:1 on the dark ground, where #c9737d clears AA. */
+    --global-theme-color: #8b0000;
+    --global-hover-color: #a3202a;
   }
   html[data-theme="dark"] {
     --global-divider-color: rgba(232, 232, 232, 0.12);
+    --global-theme-color: #c9737d;
+    --global-hover-color: #dc939b;
   }
   /* Cards lift off the page instead of sinking into it */
   .paper-list .pr-item, .aiblog-list .ab-item, .ip-item, .proj-card {
