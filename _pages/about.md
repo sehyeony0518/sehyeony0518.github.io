@@ -36,12 +36,6 @@ blog_preview: true
 <style>
   /* The intro sits beside the profile photo, so hold it tighter than the site default */
   article > .clearfix p { max-width: 44rem; }
-  /* Sits at the foot of the page, quiet but readable. Not hidden: hidden text
-     is a policy violation and would cost more than the placement gains. */
-  .intro-ko {
-    font-size: .8rem; opacity: .5; line-height: 1.7; margin: 2.4rem 0 0;
-    padding-top: 1rem; border-top: 1px solid var(--global-divider-color); max-width: 44rem;
-  }
   /* Sit the photo alongside the tagline and keep the block roughly as tall as the
      text beside it, so both end near the contact line */
   @media (min-width: 576px) {
