@@ -230,11 +230,41 @@
         .attr('stroke', function (d) { return d.kind === 'concept' ? 'var(--kg-node-stroke)' : 'none'; })
         .attr('stroke-width', 1.2);
 
-      node.filter(function (d) { return d.kind === 'concept'; })
+      var hubLabel = node.filter(function (d) { return d.kind === 'concept'; })
         .append('text').attr('class', 'kg-label kg-hub')
         .attr('dy', function (d) { return -radius(d) - 5 * R; })
         .attr('text-anchor', 'middle')
         .text(function (d) { return d.label; });
+
+      // Fifty labels on a settling force layout will collide. Measure each one
+      // once -- the text sits inside the zoomed group, so its size in layout
+      // coordinates is fixed and the result does not change with zoom -- then
+      // keep the labels greedily, busiest concept first. A concept that loses
+      // its label still has its colour, its size and its tooltip.
+      hubLabel.each(function (d) {
+        var w = 0;
+        try { w = this.getComputedTextLength(); } catch (e) {}
+        d._lw = w || d.label.length * 5.6;
+        d._lh = 11;
+        d._ldy = -radius(d) - 5 * R;
+      });
+      function declutter() {
+        var placed = [];
+        var pad = 2.5;
+        data.nodes
+          .filter(function (d) { return d.kind === 'concept' && d._hidden !== true; })
+          .sort(function (a, b) { return b.deg - a.deg; })
+          .forEach(function (d) {
+            var w = d._lw + pad * 2, h = d._lh + pad * 2;
+            var x0 = d.x - w / 2, y0 = d.y + d._ldy - h, x1 = x0 + w, y1 = y0 + h;
+            var hit = placed.some(function (p) {
+              return !(x1 < p[0] || x0 > p[2] || y1 < p[1] || y0 > p[3]);
+            });
+            d._labelOn = !hit;
+            if (!hit) placed.push([x0, y0, x1, y1]);
+          });
+        hubLabel.attr('display', function (d) { return d._labelOn === false ? 'none' : null; });
+      }
 
       // Give each family its own territory so the four groups read as groups,
       // and cross-links between them bend toward each other rather than mixing.
@@ -275,14 +305,18 @@
         var dr = Math.sqrt(dx * dx + dy * dy) * 2.6;
         return 'M' + d.source.x + ',' + d.source.y + 'A' + dr + ',' + dr + ' 0 0,1 ' + d.target.x + ',' + d.target.y;
       }
+      var tickN = 0;
       function tick() {
         link.attr('d', arc);
         node.attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+        // Re-pick the labels a few times on the way down rather than only at rest,
+        // so the overlap is not on screen for the whole settle.
+        if (++tickN % 12 === 0 && sim.alpha() < 0.2) declutter();
       }
 
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) { sim.stop(); for (var i = 0; i < 260; i++) sim.tick(); tick(); }
-      else sim.on('tick', tick);
+      if (reduce) { sim.stop(); for (var i = 0; i < 260; i++) sim.tick(); tick(); declutter(); }
+      else { sim.on('tick', tick); sim.on('end', declutter); }
       requestAnimationFrame(function () { g.classed('kg-in', true); });
 
       // The graph fills most of the viewport, so a wheel over it used to swallow
@@ -387,10 +421,16 @@
             b.classList.toggle('on', b.getAttribute('data-s') === sector);
           });
           var keep = sector === 'all' ? null : (touches[sector] || {});
-          node.style('display', function (d) { return (!keep || keep[d.id]) ? null : 'none'; });
+          node.style('display', function (d) {
+            d._hidden = !(!keep || keep[d.id]);
+            return d._hidden ? 'none' : null;
+          });
           link.style('display', function (l) {
             return (!keep || (keep[l.source.id] && keep[l.target.id])) ? null : 'none';
           });
+          // Isolating a sector frees the space the hidden labels were taking,
+          // so the survivors are re-chosen against what is actually on screen.
+          declutter();
         }
 
         var all = document.createElement('button');
