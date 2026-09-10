@@ -3,7 +3,7 @@ layout: post
 title: "Biohub on Frontier Biology, Emergent Protein Design, and Reading a Model's Representations"
 date: 2026-09-11 14:00:00 +0900
 description: "Notes on why biology's bottleneck is data that does not exist yet, what it means that protein design arrived without antibody-specific model development, and the argument that interpretability could yield biological knowledge."
-tag: "No Priors"
+tag: "Biohub"
 related_posts: false
 ---
 
