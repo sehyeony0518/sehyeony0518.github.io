@@ -9,10 +9,8 @@
 {%- endcomment -%}
 {%- assign gc = site.analytics.goatcounter -%}
 {%- if gc and gc != "" -%}
-  <span class="pv" id="pv" hidden>
-    <span class="pv-i">today <b id="pv-day">–</b></span>
-    <span class="pv-sep">·</span>
-    <span class="pv-i">total <b id="pv-all">–</b></span>
+  <span class="pv" id="pv" hidden title="views today / views all time">
+    <b id="pv-day">–</b><span class="pv-sep">/</span><b id="pv-all">–</b>
   </span>
 
   <script data-goatcounter="https://{{ gc }}.goatcounter.com/count"
@@ -40,22 +38,40 @@
 
       // Only reveal the line once at least one number arrived; a counter showing
       // dashes because the request failed is worse than no counter.
+      // The markup is emitted in the footer because that is where the include
+      // sits, but it belongs under the navbar with the contact icons. That bar is
+      // built on DOMContentLoaded, so wait for it before moving in; if it never
+      // appears the counter simply stays where it was rendered.
+      function reseat() {
+        var bar = document.getElementById('top-social-bar');
+        if (bar && wrap.parentNode !== bar) { bar.appendChild(wrap); wrap.classList.add('pv-top'); }
+      }
+
       Promise.all([
         put('pv-all', base),
         put('pv-day', base + '?start=' + today)
       ]).then(function (ok) {
-        if (ok[0] || ok[1]) wrap.hidden = false;
+        if (!(ok[0] || ok[1])) return;
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function () { reseat(); wrap.hidden = false; });
+        } else {
+          reseat(); wrap.hidden = false;
+        }
       });
     })();
   </script>
 
   <style>
     .pv {
-      display: inline-flex; align-items: baseline; gap: .4rem;
+      display: inline-flex; align-items: baseline; gap: .18rem;
       font-size: .72rem; opacity: .55; font-variant-numeric: tabular-nums;
-      margin-left: .6rem;
+      margin-left: .6rem; cursor: help;
     }
     .pv b { font-weight: 600; }
-    .pv-sep { opacity: .5; }
+    .pv-sep { opacity: .45; }
+    /* In the top bar it sits with the contact icons, so it takes their size and
+       weight rather than the footer's. */
+    .pv.pv-top { margin-left: .15rem; font-size: .7rem; opacity: .6; align-self: center; }
+    .pv.pv-top:hover { opacity: .9; }
   </style>
 {%- endif -%}
