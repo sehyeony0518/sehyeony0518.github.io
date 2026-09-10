@@ -465,7 +465,7 @@
     if (document.readyState !== 'loading') addBack();
     else document.addEventListener('DOMContentLoaded', addBack);
   })();
-</script> <div id="top-social-source"> <div class="contact-icons"> <a href="mailto:bikmiso3@ajou.ac.kr" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/sehyeony0518" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="/assets/pdf/cv-hwang.pdf" title="Cv pdf"><i class="ai ai-cv"></i></a> <a href="https://www.linkedin.com/in/sehyeony" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://instagram.com/paulvs___" title="Instagram id" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-instagram"></i></a> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> <span class="pv" id="pv" hidden> <span class="pv-i">today <b id="pv-day">–</b></span> <span class="pv-sep">·</span> <span class="pv-i">total <b id="pv-all">–</b></span> </span> <script data-goatcounter="https://sehyeony.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> <script>
+</script> <div id="top-social-source"> <div class="contact-icons"> <a href="mailto:bikmiso3@ajou.ac.kr" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/sehyeony0518" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="/assets/pdf/cv-hwang.pdf" title="Cv pdf"><i class="ai ai-cv"></i></a> <a href="https://www.linkedin.com/in/sehyeony" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://instagram.com/paulvs___" title="Instagram id" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-instagram"></i></a> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © 2026 Se-Hyeon Hwang · <b>Soli Deo Gloria</b><br> <span style="font-size:0.8em; opacity:0.7;">Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> <span class="pv" id="pv" hidden title="views today / views all time"> <b id="pv-day">–</b><span class="pv-sep">/</span><b id="pv-all">–</b> </span> <script data-goatcounter="https://sehyeony.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> <script>
     (function () {
       var base = 'https://sehyeony.goatcounter.com/counter/TOTAL.json';
       // Local date, not UTC: "today" should mean the reader's today.
@@ -488,21 +488,39 @@
 
       // Only reveal the line once at least one number arrived; a counter showing
       // dashes because the request failed is worse than no counter.
+      // The markup is emitted in the footer because that is where the include
+      // sits, but it belongs under the navbar with the contact icons. That bar is
+      // built on DOMContentLoaded, so wait for it before moving in; if it never
+      // appears the counter simply stays where it was rendered.
+      function reseat() {
+        var bar = document.getElementById('top-social-bar');
+        if (bar && wrap.parentNode !== bar) { bar.appendChild(wrap); wrap.classList.add('pv-top'); }
+      }
+
       Promise.all([
         put('pv-all', base),
         put('pv-day', base + '?start=' + today)
       ]).then(function (ok) {
-        if (ok[0] || ok[1]) wrap.hidden = false;
+        if (!(ok[0] || ok[1])) return;
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function () { reseat(); wrap.hidden = false; });
+        } else {
+          reseat(); wrap.hidden = false;
+        }
       });
     })();
   </script> <style>
     .pv {
-      display: inline-flex; align-items: baseline; gap: .4rem;
+      display: inline-flex; align-items: baseline; gap: .18rem;
       font-size: .72rem; opacity: .55; font-variant-numeric: tabular-nums;
-      margin-left: .6rem;
+      margin-left: .6rem; cursor: help;
     }
     .pv b { font-weight: 600; }
-    .pv-sep { opacity: .5; }
+    .pv-sep { opacity: .45; }
+    /* In the top bar it sits with the contact icons, so it takes their size and
+       weight rather than the footer's. */
+    .pv.pv-top { margin-left: .15rem; font-size: .7rem; opacity: .6; align-self: center; }
+    .pv.pv-top:hover { opacity: .9; }
   </style> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
