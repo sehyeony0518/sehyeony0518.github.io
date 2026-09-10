@@ -115,7 +115,7 @@ analytics:
   # GoatCounter is the only one of these that can also print the count on the page.
   # Put the site code here -- the MYCODE in https://MYCODE.goatcounter.com -- and a
   # today/total line appears in the footer. Leave it blank and nothing is loaded.
-  goatcounter: # your GoatCounter site code
+  goatcounter: sehyeony # -> https://sehyeony.goatcounter.com
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)
