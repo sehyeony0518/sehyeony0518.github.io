@@ -1,0 +1,61 @@
+{%- comment -%}
+  A visible view counter. GoatCounter is used rather than the analytics options
+  already wired into the theme because it is the only one that will hand back a
+  number the page can print: /counter/TOTAL.json for the running total, and the
+  same path with ?start=<today> for the day. It sets no cookies and collects no
+  personal data, so no consent banner is owed.
+
+  Nothing here loads until site.analytics.goatcounter is set.
+{%- endcomment -%}
+{%- assign gc = site.analytics.goatcounter -%}
+{%- if gc and gc != "" -%}
+  <span class="pv" id="pv" hidden>
+    <span class="pv-i">today <b id="pv-day">–</b></span>
+    <span class="pv-sep">·</span>
+    <span class="pv-i">total <b id="pv-all">–</b></span>
+  </span>
+
+  <script data-goatcounter="https://{{ gc }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var base = 'https://{{ gc }}.goatcounter.com/counter/TOTAL.json';
+      // Local date, not UTC: "today" should mean the reader's today.
+      var d = new Date();
+      var today = d.getFullYear() + '-' +
+                  String(d.getMonth() + 1).padStart(2, '0') + '-' +
+                  String(d.getDate()).padStart(2, '0');
+      var wrap = document.getElementById('pv');
+
+      function put(id, url) {
+        return fetch(url)
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (j) {
+            if (!j || j.count == null) return false;
+            document.getElementById(id).textContent = j.count;
+            return true;
+          })
+          .catch(function () { return false; });
+      }
+
+      // Only reveal the line once at least one number arrived; a counter showing
+      // dashes because the request failed is worse than no counter.
+      Promise.all([
+        put('pv-all', base),
+        put('pv-day', base + '?start=' + today)
+      ]).then(function (ok) {
+        if (ok[0] || ok[1]) wrap.hidden = false;
+      });
+    })();
+  </script>
+
+  <style>
+    .pv {
+      display: inline-flex; align-items: baseline; gap: .4rem;
+      font-size: .72rem; opacity: .55; font-variant-numeric: tabular-nums;
+      margin-left: .6rem;
+    }
+    .pv b { font-weight: 600; }
+    .pv-sep { opacity: .5; }
+  </style>
+{%- endif -%}
