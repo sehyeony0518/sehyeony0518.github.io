@@ -112,6 +112,10 @@ analytics:
   cronitor: # cronitor RUM analytics site ID (format: XXXXXXXXX)
   pirsch: # your Pirsch analytics site ID (length 32 characters)
   openpanel: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+  # GoatCounter is the only one of these that can also print the count on the page.
+  # Put the site code here -- the MYCODE in https://MYCODE.goatcounter.com -- and a
+  # today/total line appears in the footer. Leave it blank and nothing is loaded.
+  goatcounter: # your GoatCounter site code
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)

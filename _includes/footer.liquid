@@ -358,6 +358,7 @@
   {% if site.last_updated %}
     Last updated: {{ 'now' | date: '%B %d, %Y' }}.
   {% endif %}
+  {% include pageviews.liquid %}
 {% endcapture %}
 
 {% if site.footer_fixed %}
