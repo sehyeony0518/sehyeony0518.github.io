@@ -8,17 +8,17 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 118
+   "deg": 114
   },
   {
    "id": "c:Diagnostic reasoning",
    "label": "Diagnostic reasoning",
    "kind": "concept",
    "url": null,
-   "size": 3.79,
+   "size": 3.65,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 35
+   "deg": 32
   },
   {
    "id": "c:Gallbladder disease",
@@ -28,7 +28,7 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 67
+   "deg": 61
   },
   {
    "id": "c:Liver & hepatobiliary",
@@ -48,7 +48,7 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 79
+   "deg": 75
   },
   {
    "id": "c:Cross-sectional imaging",
@@ -75,10 +75,10 @@
    "label": "Faithfulness",
    "kind": "concept",
    "url": null,
-   "size": 4.25,
+   "size": 4.06,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 45
+   "deg": 41
   },
   {
    "id": "c:Inverse reconstruction",
@@ -95,10 +95,10 @@
    "label": "Clinical assessability",
    "kind": "concept",
    "url": null,
-   "size": 4.56,
+   "size": 4.65,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 52
+   "deg": 54
   },
   {
    "id": "c:Neoplastic invasion",
@@ -148,27 +148,27 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 86
+   "deg": 87
   },
   {
    "id": "c:Malignancy & staging",
    "label": "Malignancy & staging",
    "kind": "concept",
    "url": null,
-   "size": 3.93,
+   "size": 3.88,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 38
+   "deg": 37
   },
   {
    "id": "c:Histopathology",
    "label": "Histopathology",
    "kind": "concept",
    "url": null,
-   "size": 3.52,
+   "size": 3.56,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 29
+   "deg": 30
   },
   {
    "id": "c:Attribution & saliency",
@@ -185,10 +185,10 @@
    "label": "Inflammatory change",
    "kind": "concept",
    "url": null,
-   "size": 3.38,
+   "size": 3.34,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 26
+   "deg": 25
   },
   {
    "id": "c:Benign wall remodelling",
@@ -225,10 +225,10 @@
    "label": "Robustness",
    "kind": "concept",
    "url": null,
-   "size": 3.52,
+   "size": 3.61,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 29
+   "deg": 31
   },
   {
    "id": "c:Internal validation",
@@ -261,24 +261,34 @@
    "deg": 4
   },
   {
+   "id": "c:Operating point selection",
+   "label": "Operating point selection",
+   "kind": "concept",
+   "url": null,
+   "size": 3.47,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 28
+  },
+  {
    "id": "c:Reference standard adjudication",
    "label": "Reference standard adjudication",
    "kind": "concept",
    "url": null,
-   "size": 4.25,
+   "size": 4.29,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 45
+   "deg": 46
   },
   {
    "id": "c:Segmentation & detection",
    "label": "Segmentation & detection",
    "kind": "concept",
    "url": null,
-   "size": 3.79,
+   "size": 3.75,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 35
+   "deg": 34
   },
   {
    "id": "c:Post-processing",
@@ -365,30 +375,30 @@
    "label": "Clinical evidence reliance",
    "kind": "concept",
    "url": null,
-   "size": 4.34,
+   "size": 4.29,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 47
+   "deg": 46
   },
   {
    "id": "c:Reporting standards",
    "label": "Reporting standards",
    "kind": "concept",
    "url": null,
-   "size": 2.61,
+   "size": 2.52,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 9
+   "deg": 7
   },
   {
    "id": "c:Calibration",
    "label": "Calibration",
    "kind": "concept",
    "url": null,
-   "size": 4.52,
+   "size": 4.61,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 51
+   "deg": 53
   },
   {
    "id": "c:Evaluation metrics",
@@ -421,34 +431,44 @@
    "deg": 17
   },
   {
-   "id": "c:Clinical feature annotation",
-   "label": "Clinical feature annotation",
+   "id": "c:Comparative workflow evaluation",
+   "label": "Comparative workflow evaluation",
    "kind": "concept",
    "url": null,
-   "size": 2.65,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 10
+   "deg": 6
+  },
+  {
+   "id": "c:Pretest probability",
+   "label": "Pretest probability",
+   "kind": "concept",
+   "url": null,
+   "size": 4.29,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 46
   },
   {
    "id": "c:Clinical utility",
    "label": "Clinical utility",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.25,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 19
+   "deg": 23
   },
   {
-   "id": "c:Operating point selection",
-   "label": "Operating point selection",
+   "id": "c:Clinical feature annotation",
+   "label": "Clinical feature annotation",
    "kind": "concept",
    "url": null,
-   "size": 3.43,
+   "size": 2.61,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 27
+   "deg": 9
   },
   {
    "id": "c:Bayesian decision analysis",
@@ -459,16 +479,6 @@
    "fam": "computational",
    "sector": "Systems & deployment",
    "deg": 4
-  },
-  {
-   "id": "c:Pretest probability",
-   "label": "Pretest probability",
-   "kind": "concept",
-   "url": null,
-   "size": 4.15,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 43
   },
   {
    "id": "c:Uncertainty & abstention",
@@ -565,10 +575,10 @@
    "label": "Clinical history & examination",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.43,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 4
+   "deg": 5
   },
   {
    "id": "c:Cardiovascular risk",
@@ -595,10 +605,10 @@
    "label": "Confounding",
    "kind": "concept",
    "url": null,
-   "size": 3.2,
+   "size": 3.25,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 22
+   "deg": 23
   },
   {
    "id": "c:Identifiability criterion",
@@ -685,10 +695,10 @@
    "label": "Selection & verification bias",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.56,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 7
+   "deg": 8
   },
   {
    "id": "c:Representation learning",
@@ -745,10 +755,10 @@
    "label": "Transportability",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 7
+   "deg": 6
   },
   {
    "id": "c:Deployment feedback loop",
@@ -839,16 +849,6 @@
    "fam": "computational",
    "sector": "Evaluation & reliability",
    "deg": 1
-  },
-  {
-   "id": "c:Comparative workflow evaluation",
-   "label": "Comparative workflow evaluation",
-   "kind": "concept",
-   "url": null,
-   "size": 2.52,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 7
   },
   {
    "id": "c:Hypothesis testing",
@@ -1037,8 +1037,8 @@
    "url": "/study/allergy-and-clinical-immunology/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
-   "deg": 7
+   "sector": "Systems & deployment",
+   "deg": 3
   },
   {
    "id": "note:anchor-boxes-and-non-maximum-suppression",
@@ -1086,9 +1086,9 @@
    "kind": "note",
    "url": "/study/auditing-and-evaluating-generative-medical-ai/",
    "size": 1.8,
-   "fam": "bridge",
+   "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 8
+   "deg": 9
   },
   {
    "id": "note:auditing-explanation-faithfulness-in-gallbladder-models",
@@ -1786,9 +1786,9 @@
    "kind": "note",
    "url": "/study/medical-ai-agents-and-tool-using-clinical-systems/",
    "size": 1.8,
-   "fam": "bridge",
+   "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 2
   },
   {
    "id": "note:model-reliance-on-clinical-evidence",
@@ -1936,9 +1936,9 @@
    "kind": "note",
    "url": "/study/reproducibility-benchmarks-and-translational-study-design/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 7
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 8
   },
   {
    "id": "note:resampling-and-anti-aliasing",
@@ -1957,8 +1957,8 @@
    "url": "/study/rheumatic-disease/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
-   "deg": 7
+   "sector": "Systems & deployment",
+   "deg": 6
   },
   {
    "id": "note:robustness-subgroup-performance-and-external-validation",
@@ -2207,8 +2207,8 @@
    "url": "/study/translational-science-in-medicine/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
-   "deg": 14
+   "sector": "Evaluation & reliability",
+   "deg": 8
   },
   {
    "id": "note:ultrasound-acquisition-variability-and-image-quality",
@@ -3266,31 +3266,7 @@
   },
   {
    "source": "note:allergy-and-clinical-immunology",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:allergy-and-clinical-immunology",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
-   "w": 2
-  },
-  {
-   "source": "note:allergy-and-clinical-immunology",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:allergy-and-clinical-immunology",
-   "target": "c:Ultrasound acquisition",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:allergy-and-clinical-immunology",
-   "target": "c:Faithfulness",
+   "target": "c:Operating point selection",
    "kind": "computational",
    "w": 1
   },
@@ -3542,21 +3518,9 @@
   },
   {
    "source": "note:auditing-and-evaluating-generative-medical-ai",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:auditing-and-evaluating-generative-medical-ai",
-   "target": "c:Malignancy & staging",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:auditing-and-evaluating-generative-medical-ai",
-   "target": "c:Faithfulness",
+   "target": "c:Calibration",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:auditing-and-evaluating-generative-medical-ai",
@@ -3572,13 +3536,31 @@
   },
   {
    "source": "note:auditing-and-evaluating-generative-medical-ai",
+   "target": "c:Comparative workflow evaluation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-and-evaluating-generative-medical-ai",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-and-evaluating-generative-medical-ai",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-and-evaluating-generative-medical-ai",
    "target": "c:Clinical validity",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:auditing-and-evaluating-generative-medical-ai",
-   "target": "c:Clinical evidence reliance",
+   "target": "c:Clinical utility",
    "kind": "computational",
    "w": 1
   },
@@ -8108,20 +8090,14 @@
   },
   {
    "source": "note:medical-ai-agents-and-tool-using-clinical-systems",
-   "target": "c:Auditing",
+   "target": "c:Shortcut learning",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:medical-ai-agents-and-tool-using-clinical-systems",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:medical-ai-agents-and-tool-using-clinical-systems",
-   "target": "c:Ultrasound acquisition",
-   "kind": "clinical",
+   "target": "c:Clinical utility",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -8762,26 +8738,8 @@
   },
   {
    "source": "note:reproducibility-benchmarks-and-translational-study-design",
-   "target": "c:Auditing",
+   "target": "c:Confounding",
    "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:reproducibility-benchmarks-and-translational-study-design",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:reproducibility-benchmarks-and-translational-study-design",
-   "target": "c:Reporting standards",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:reproducibility-benchmarks-and-translational-study-design",
-   "target": "c:Ultrasound acquisition",
-   "kind": "clinical",
    "w": 1
   },
   {
@@ -8792,13 +8750,37 @@
   },
   {
    "source": "note:reproducibility-benchmarks-and-translational-study-design",
-   "target": "c:Comparative workflow evaluation",
+   "target": "c:Robustness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:reproducibility-benchmarks-and-translational-study-design",
-   "target": "c:Transportability",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:reproducibility-benchmarks-and-translational-study-design",
+   "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:reproducibility-benchmarks-and-translational-study-design",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:reproducibility-benchmarks-and-translational-study-design",
+   "target": "c:Clinical utility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:reproducibility-benchmarks-and-translational-study-design",
+   "target": "c:Selection & verification bias",
    "kind": "computational",
    "w": 1
   },
@@ -8852,18 +8834,6 @@
   },
   {
    "source": "note:rheumatic-disease",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
-   "w": 2
-  },
-  {
-   "source": "note:rheumatic-disease",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:rheumatic-disease",
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 1
@@ -8876,14 +8846,20 @@
   },
   {
    "source": "note:rheumatic-disease",
-   "target": "c:Faithfulness",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:rheumatic-disease",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:rheumatic-disease",
-   "target": "c:Clinical feature annotation",
-   "kind": "computational",
+   "target": "c:Clinical history & examination",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -10070,37 +10046,13 @@
   },
   {
    "source": "note:translational-science-in-medicine",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:translational-science-in-medicine",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
-   "w": 2
-  },
-  {
-   "source": "note:translational-science-in-medicine",
-   "target": "c:Gallbladder disease",
+   "target": "c:Histopathology",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "note:translational-science-in-medicine",
-   "target": "c:Reporting standards",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:translational-science-in-medicine",
-   "target": "c:Ultrasound acquisition",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:translational-science-in-medicine",
-   "target": "c:Faithfulness",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
@@ -10112,7 +10064,7 @@
   },
   {
    "source": "note:translational-science-in-medicine",
-   "target": "c:Segmentation & detection",
+   "target": "c:Robustness",
    "kind": "computational",
    "w": 1
   },
@@ -10124,19 +10076,7 @@
   },
   {
    "source": "note:translational-science-in-medicine",
-   "target": "c:Reference standard adjudication",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:translational-science-in-medicine",
-   "target": "c:External validation",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:translational-science-in-medicine",
-   "target": "c:Comparative workflow evaluation",
+   "target": "c:Pretest probability",
    "kind": "computational",
    "w": 1
   },
@@ -10144,12 +10084,12 @@
    "source": "note:translational-science-in-medicine",
    "target": "c:Clinical validity",
    "kind": "computational",
-   "w": 2
+   "w": 1
   },
   {
    "source": "note:translational-science-in-medicine",
-   "target": "c:Inflammatory change",
-   "kind": "clinical",
+   "target": "c:Clinical utility",
+   "kind": "computational",
    "w": 1
   },
   {
