@@ -3197,6 +3197,11 @@ ninja.data = [{
           description: "Diagnostic testing with imperfect specificity, and the role of clinical history in interpreting a result.",
           section: "Study",handler: () => {
               window.location.href = "/study/allergy-and-clinical-immunology/";
+            },},{id: "study-anchor-boxes-and-non-maximum-suppression-where-the-priors-are-hidden",
+          title: 'Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden',
+          description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/anchor-boxes-and-non-maximum-suppression/";
             },},{id: "study-attribution-attention-and-counterfactual-explanations",
           title: 'Attribution, Attention, and Counterfactual Explanations',
           description: "The main families of post-hoc explanation for medical images, and what each actually measures.",
@@ -3272,6 +3277,11 @@ ninja.data = [{
           description: "Three answers to the same question, what each one optimises, and which of them needs an integral nobody can evaluate.",
           section: "Study",handler: () => {
               window.location.href = "/study/choosing-an-estimator/";
+            },},{id: "study-choosing-the-loss-squared-error-absolute-error-and-what-each-one-believes",
+          title: 'Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes',
+          description: "The loss is where you state what counts as a good answer. Squaring makes one bad point outvote nine good ones — and the arithmetic of how badly is worth seeing.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/choosing-the-loss-function/";
             },},{id: "study-circadian-rhythm-disorders",
           title: 'Circadian Rhythm Disorders',
           description: "Wearable and continuous data, and what changes when the signal is a long time series.",
@@ -3402,6 +3412,11 @@ ninja.data = [{
           description: "Looking right to a clinician and reflecting the model&#39;s computation are different properties, and the gap between them is where trouble lives.",
           section: "Study",handler: () => {
               window.location.href = "/study/explanation-faithfulness-versus-plausibility/";
+            },},{id: "study-the-exponential-moving-average-one-recursion-behind-momentum-rmsprop-and-adam",
+          title: 'The Exponential Moving Average: One Recursion Behind Momentum, RMSProp and Adam',
+          description: "A single line of algebra that replaces a buffer with one number — and once you recognise it, most of the optimiser zoo stops being a zoo.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/exponential-moving-averages-in-optimisers/";
             },},{id: "study-external-validation-and-clinical-utility-for-gallbladder-ai",
           title: 'External Validation and Clinical Utility for Gallbladder AI',
           description: "What it would take for a gallbladder model to be believed at a second hospital, and what its errors would cost.",
@@ -3437,6 +3452,11 @@ ninja.data = [{
           description: "The translation step where most medical AI projects are decided, long before a model is trained.",
           section: "Study",handler: () => {
               window.location.href = "/study/from-clinical-problem-to-machine-learning-task/";
+            },},{id: "study-fully-convolutional-networks-and-why-detection-needed-its-own-metric",
+          title: 'Fully Convolutional Networks, and Why Detection Needed Its Own Metric',
+          description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists — the same argument against accuracy that class imbalance forces on classification, arriving by a different road.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/fully-convolutional-networks-and-detection-metrics/";
             },},{id: "study-gallbladder-cancer",
           title: 'Gallbladder Cancer',
           description: "Features that raise concern for malignancy, the risk factors that shift pretest probability, and where imaging alone cannot settle it.",
@@ -3637,6 +3657,11 @@ ninja.data = [{
           description: "Robustness to acquisition variability, subgroup analysis, and multi-center validation as tests of generalizability.",
           section: "Study",handler: () => {
               window.location.href = "/study/robustness-subgroup-performance-and-external-validation/";
+            },},{id: "study-segmentation-resolution-against-context-and-the-things-stuff-divide",
+          title: 'Segmentation: Resolution Against Context, and the Things/Stuff Divide',
+          description: "Every segmentation architecture is an answer to one conflict — you need to see widely and label precisely, and pooling buys the first with the second. Four answers, and why panoptic needed a new output format.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/segmentation-semantic-instance-and-panoptic/";
             },},{id: "study-selection-bias-and-dataset-bias",
           title: 'Selection Bias and Dataset Bias',
           description: "How the assembly of a medical dataset, through who was scanned, labeled, and recorded, writes itself into the model.",
@@ -3692,6 +3717,11 @@ ninja.data = [{
           description: "Deriving the hard-margin problem from a stability argument, watching it become infeasible when the classes overlap, and reading the soft-margin fix as a priced assumption rather than a repair.",
           section: "Study",handler: () => {
               window.location.href = "/study/support-vector-machines/";
+            },},{id: "study-the-combinatorial-explosion-and-why-pruning-alone-is-not-enough",
+          title: 'The Combinatorial Explosion, and Why Pruning Alone Is Not Enough',
+          description: "Lighthill&#39;s 1973 case against AI was arithmetically correct and is still correct. What changed is that nobody searches the tree any more — and working the numbers shows that pruning the branches only solves half of it.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/the-combinatorial-explosion-and-learned-pruning/";
             },},{id: "study-the-fft-where-a-200-speedup-comes-from",
           title: 'The FFT: Where a 200× Speedup Comes From',
           description: "Splitting a transform into its even and odd samples, the recursion that turns N² into N log N, and why an algorithm can matter more than the hardware.",
@@ -3707,6 +3737,16 @@ ninja.data = [{
           description: "Why the SVM dual admits a kernel at all, what a kernel is being asked to encode, and how one-class SVM and SVDD turn the same machinery into novelty detection.",
           section: "Study",handler: () => {
               window.location.href = "/study/the-kernel-trick/";
+            },},{id: "study-the-proxy-objective-training-on-one-thing-being-judged-on-another",
+          title: 'The Proxy Objective: Training on One Thing, Being Judged on Another',
+          description: "Cross-entropy is not what anyone wants. The metric that matters is usually non-differentiable, unaffordable, or lives in a person&#39;s head — so we optimise a stand-in and hope. The gap is structural, not sloppiness.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/the-proxy-objective-problem/";
+            },},{id: "study-invariance-and-equivariance-two-jobs-one-network-cannot-do-at-once",
+          title: 'Invariance and Equivariance: Two Jobs One Network Cannot Do at Once',
+          description: "Detection asks a network to be blind to translation and to track it, simultaneously. R-FCN&#39;s fix and the feature pyramid are both answers to that conflict, and the conflict generalises well past detection.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/translation-invariance-and-equivariance/";
             },},{id: "study-translational-science-in-medicine",
           title: 'Translational Science in Medicine',
           description: "What the bench-to-bedside pipeline consists of, and where most candidate technologies die in it.",
