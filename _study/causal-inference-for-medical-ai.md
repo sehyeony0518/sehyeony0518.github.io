@@ -79,11 +79,17 @@ I would reserve stronger counterfactual language for interventions whose unit an
 
 ## Worked examples in medical AI
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### Software inputs escape the fundamental problem of causal inference
 
-A positive effect means the marked version raises the selected score. It does not show that calipers cause malignancy, that all annotations have the same effect, or that operator behavior caused the learned dependency.
+For a patient, a treatment and its absence cannot both be observed; one potential outcome is always missing. That is the fundamental problem of causal inference, and it is why so much of the field is devoted to approximating the arm that did not happen.
 
-If only burned-in markers exist, reconstruction adds another mechanism. The contrast then concerns marker removal plus the chosen replacement of hidden pixels.
+Inputs to a model are different. Both versions of an input can be presented, because nothing about presenting one forecloses the other. This is a genuine structural advantage and it is worth being precise about what it does and does not buy.
+
+What it buys is that the missing-arm problem does not arise for the computation.
+
+What it does not buy is a claim about the patient. Establishing that a model responds to some property of an image says nothing about whether that property causes disease, whether every instance of it behaves alike, or what clinical process put it there. Those remain separate questions, and the ease of the computational comparison is a standing temptation to answer them as though they were one.
+
+Comparability also has to be argued rather than assumed. Two versions of an image differ in the intended way only if tissue content, dimensions, compression behaviour and preprocessing are otherwise identical — and when the property of interest is burned into the pixels rather than stored separately, removing it necessarily introduces whatever replaces it, so the comparison acquires a second mechanism that was not part of the question.
 
 ### Adjusting away the effect of improved visibility
 
