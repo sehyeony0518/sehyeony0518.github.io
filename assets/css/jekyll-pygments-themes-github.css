@@ -50,7 +50,11 @@
 .highlight .kr {
   color: #000000;
   font-weight: bold;
-} /* Keyword.Reserved */ /* Keyword.Type */
+} /* Keyword.Reserved */
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+} /* Keyword.Type */
 .highlight .m {
   color: #009999;
 } /* Literal.Number */
