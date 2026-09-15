@@ -277,7 +277,7 @@
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
   }
-</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">75</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">78</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box';
     var FULL = false;
@@ -4087,6 +4087,11 @@ ninja.data = [{
           description: "How the evidence a diagnostic model exposes can be checked against clinical information assessed separately from it.",
           section: "Study",handler: () => {
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
+            },},{id: "study-bayesian-inverse-problems-in-imaging",
+          title: 'Bayesian Inverse Problems in Imaging',
+          description: "Denoising and restoration written as inference: an acquisition model as the likelihood, an image prior as the assumption, and what a Markov random field assumes to stay computable.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/bayesian-inverse-problems-in-imaging/";
             },},{id: "study-biliary-obstruction",
           title: 'Biliary Obstruction',
           description: "Duct dilatation, the level and cause of obstruction, and what the clinical picture adds.",
@@ -4217,6 +4222,11 @@ ninja.data = [{
           description: "Reading the cases a model gets wrong as evidence about what it learned.",
           section: "Study",handler: () => {
               window.location.href = "/study/error-and-clinical-failure-analysis/";
+            },},{id: "study-estimation-likelihood-posterior-and-what-few-observations-permit",
+          title: 'Estimation: Likelihood, Posterior, and What Few Observations Permit',
+          description: "What maximum likelihood actually claims, what a prior adds, and why five observations and five hundred do not license the same statement.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/estimation-likelihood-and-posterior/";
             },},{id: "study-evaluation-beyond-auroc",
           title: 'Evaluation Beyond AUROC',
           description: "Sensitivity and specificity at the operating point that matters, decision curves, and clinical utility.",
@@ -4302,6 +4312,11 @@ ninja.data = [{
           description: "Evaluating against labels that expert readers themselves disagree about.",
           section: "Study",handler: () => {
               window.location.href = "/study/label-quality-and-interobserver-variability/";
+            },},{id: "study-latent-variables-em-and-variational-inference",
+          title: 'Latent Variables: EM and Variational Inference',
+          description: "What to do when neither the parameter nor the variable that produced the data was observed, and why the posterior usually has to be approximated rather than computed.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/latent-variables-em-and-variational-inference/";
             },},{id: "study-linear-algebra-for-representation-analysis",
           title: 'Linear Algebra for Representation Analysis',
           description: "Eigenvalues, SVD, projection, and PCA as the working tools for asking what a learned representation contains.",
