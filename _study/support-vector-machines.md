@@ -86,6 +86,49 @@ A point on the right side of the margin has $$\xi_i = 0$$ and costs nothing. A p
 
 What the slack does *not* do is make the linear-separability assumption true. It converts a hard constraint into a cost, and hands the exchange rate to the practitioner as $$C$$. There is no value of $$C$$ the data alone can supply; it encodes how much margin you are willing to trade for one misclassification, and that is a judgement about the deployment.
 
+### The same problem written as a loss
+
+Rearranging the slack constraint gives $$\xi_i \ge 1 - y_i f(x_i)$$, and since the objective is pushing every $$\xi_i$$ down, the optimum sets $$\xi_i = \max(0,\,1 - y_i f(x_i))$$. The constrained problem is therefore an unconstrained one:
+
+$$
+\min_{w,b}\ \tfrac{1}{2}\lVert w\rVert^2 \;+\; C\sum_i \max\!\big(0,\ 1 - y_i f(x_i)\big).
+$$
+
+Read left to right: a term that prefers small $$w$$ — pure regularisation, indifferent to the labels — and a term that evaluates classification. The second is the **hinge loss**: zero once a sample is correctly classified with margin, then growing linearly.
+
+The loss you actually want is 0–1 — one unit of penalty per mistake, nothing otherwise. It is discontinuous and non-convex, so nobody optimises it directly. Hinge is the convex surrogate that stays closest to the shape. Swap it for log loss and the same regulariser gives regularised logistic regression; **the choice of surrogate is what distinguishes the two methods**, not anything about the hypothesis class.
+
+### The dual, and why kernels require it
+
+Attaching multipliers $$\alpha_i \ge 0$$ to the margin constraints and $$\beta_i \ge 0$$ to $$\xi_i \ge 0$$, the stationarity conditions of the Lagrangian are
+
+$$
+w = \sum_i \alpha_i y_i x_i,
+\qquad
+\sum_i \alpha_i y_i = 0,
+\qquad
+\alpha_i + \beta_i = C,
+$$
+
+the first of which is the representation claimed earlier, now derived rather than asserted. Substituting back eliminates $$w$$, $$b$$ and $$\xi$$ entirely:
+
+$$
+\max_{\alpha}\ \sum_i \alpha_i - \tfrac12 \sum_{i,j}\alpha_i\alpha_j y_i y_j \langle x_i, x_j\rangle
+\quad\text{s.t.}\quad 0 \le \alpha_i \le C,\ \ \sum_i \alpha_i y_i = 0 .
+$$
+
+The box $$0\le\alpha_i\le C$$ is exactly $$\alpha_i + \beta_i = C$$ with $$\beta_i \ge 0$$ — the soft-margin penalty becomes a ceiling on how much influence any one sample can buy.
+
+The primal has $$d+1$$ unknowns and the dual has $$n$$, so which is smaller is a property of the dataset, not a general fact. What is general is that the data enter the dual **only** through $$\langle x_i, x_j\rangle$$. Replace that inner product with a kernel and the feature space may be infinite-dimensional while the problem stays $$n$$-dimensional. The primal cannot do this; there is no finite $$w$$ to solve for. That is the reason the dual is the standard route, and the reason it is worth deriving rather than quoting.
+
+### A worked application: sliding windows and the anti-model
+
+A linear SVM over HOG features was, for years, the pedestrian detector. Two ideas carry it. **Sliding window** converts detection into a very large number of binary classification problems — slide a fixed $$64\times128$$ window over the image and ask "person or not" at each position. For people at different scales the instinct is a bigger window; the better answer is to shrink the *image* and reuse the one classifier, which is why the pyramid exists.
+
+The second idea is in how the negatives are collected. Positives were on the order of a thousand images, doubled by mirroring. Negatives could be unlimited — every window of every person-free photograph — and taking them all would swamp the positives and waste capacity on easy examples. Instead: train once, run the classifier over person-free images, keep the **false positives**, and retrain on those. Hard negative mining is a deliberate choice to spend the training budget where the model is already wrong.
+
+Because the model is linear, $$w$$ can be looked at directly. Splitting it into positive and negative weights gives two pictures: the positive half resembles a person's outline, and the negative half is an **anti-model** — what the detector treats as person-shaped but decidedly not a person. It is populated by vertical-edge structures: poles, hydrants, sign posts. That picture is the entire decision rule, visible, with nothing left over.
+
 ## Why it matters for my work
 
 Two things carry over, and they pull in opposite directions.
@@ -93,6 +136,8 @@ Two things carry over, and they pull in opposite directions.
 The first is that infeasibility is a form of honest reporting that most evaluation lacks. A hard-margin SVM on overlapping classes refuses to answer. A deep classifier on the same data returns a confident boundary and an accuracy figure, and nothing in the output announces that the classes overlap in the feature space it learned. Overlap is precisely the situation in which an [operating-point](/study/statistical-inference-for-diagnostic-studies/) is a clinical policy choice rather than a technical one, and the model's silence on it is a genuine loss of information. Designing evaluations that can come back "this question is not answerable from these features" is harder than it looks and worth more than another decimal place.
 
 The second is the warning against reading the margin story as a reliability guarantee. Large margin means stable under *small perturbations in the learned feature space*. If that space encodes a [shortcut](/study/shortcut-learning-in-medical-imaging/) — a scanner artefact, an annotation marker — the SVM will place a wide, stable, maximally confident boundary through it. Margin measures separation, not whether the thing being separated is the thing you meant. The same is true of $$C$$: tuning it on a validation set drawn from the same source optimises the exchange rate for that source and says nothing about the next one.
+
+What the anti-model picture shows is the standard this displaced. A linear SVM's decision rule can be laid out in full and inspected for what it has confused with the target — and the answer, hydrants and sign posts, is legible enough to argue with. No [post-hoc attribution](/study/attribution-attention-and-counterfactual-explanations/) recovers that; it recovers a picture of one decision, and whether the picture is [faithful](/study/auditing-explanation-faithfulness-in-gallbladder-models/) to the rule is itself the open question. Capacity was traded for inspectability, and it was the right trade on accuracy grounds. Naming what was given up is not an argument for going back.
 
 ---
 
