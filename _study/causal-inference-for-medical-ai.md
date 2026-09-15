@@ -86,21 +86,17 @@ I would reserve stronger counterfactual language for interventions whose unit an
 
 ## Worked examples in medical AI
 
-### An overlay intervention with observable paired outcomes
+### Software inputs escape the fundamental problem of causal inference
 
-Suppose an archive contains identical frozen gallbladder images exported with and without a separately stored annotation layer. Define $$x_i(1)$$ and $$x_i(0)$$ as the marked and unmarked versions for case $$i$$, and $$s_f$$ as the fixed classifier's scalar score.
+For a patient, a treatment and its absence cannot both be observed; one potential outcome is always missing. That is the fundamental problem of causal inference, and it is why so much of the field is devoted to approximating the arm that did not happen.
 
-The paired computational effect is
+Inputs to a model are different. Both versions of an input can be presented, because nothing about presenting one forecloses the other. This is a genuine structural advantage and it is worth being precise about what it does and does not buy.
 
-$$
-\Delta_i=s_f(x_i(1))-s_f(x_i(0)).
-$$
+What it buys is that the missing-arm problem does not arise for the computation.
 
-Unlike mutually exclusive patient treatments, both software inputs can be evaluated. I would verify identical tissue content, dimensions, compression behavior, and preprocessing, then summarize paired effects with patient-level uncertainty.
+What it does not buy is a claim about the patient. Establishing that a model responds to some property of an image says nothing about whether that property causes disease, whether every instance of it behaves alike, or what clinical process put it there. Those remain separate questions, and the ease of the computational comparison is a standing temptation to answer them as though they were one.
 
-A positive effect means the marked version raises the selected score. It does not show that calipers cause malignancy, that all annotations have the same effect, or that operator behavior caused the learned dependency.
-
-If only burned-in markers exist, reconstruction adds another mechanism. The contrast then concerns marker removal plus the chosen replacement of hidden pixels.
+Comparability also has to be argued rather than assumed. Two versions of an image differ in the intended way only if tissue content, dimensions, compression behaviour and preprocessing are otherwise identical — and when the property of interest is burned into the pixels rather than stored separately, removing it necessarily introduces whatever replaces it, so the comparison acquires a second mechanism that was not part of the question.
 
 ### Adjusting away the effect of improved visibility
 
