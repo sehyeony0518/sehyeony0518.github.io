@@ -277,7 +277,7 @@
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
   }
-</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">83</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">85</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box';
     var FULL = false;
@@ -4117,6 +4117,11 @@ ninja.data = [{
           description: "Causal graphs, mediators and colliders, counterfactuals, and intervention as a language for asking why a feature predicts an outcome.",
           section: "Study",handler: () => {
               window.location.href = "/study/causal-inference-for-medical-ai/";
+            },},{id: "study-the-central-limit-theorem-via-characteristic-functions",
+          title: 'The Central Limit Theorem, via Characteristic Functions',
+          description: "Why sums of independent quantities turn Gaussian, shown by the transform that turns convolution into multiplication.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/central-limit-theorem-via-characteristic-functions/";
             },},{id: "study-cholangiocarcinoma-and-biliary-strictures",
           title: 'Cholangiocarcinoma and Biliary Strictures',
           description: "Distinguishing benign from malignant strictures, and what each modality can contribute.",
@@ -4442,6 +4447,11 @@ ninja.data = [{
           description: "Hypothesis testing, confidence intervals, effect size, bootstrap, and multiple comparisons, applied to the claims diagnostic AI papers make.",
           section: "Study",handler: () => {
               window.location.href = "/study/statistical-inference-for-diagnostic-studies/";
+            },},{id: "study-stochastic-gradient-descent-and-the-optimisers-built-on-it",
+          title: 'Stochastic Gradient Descent and the Optimisers Built On It',
+          description: "Why the gradient is estimated from a handful of examples, what momentum and per-parameter rates each fix, and why saddle points replaced local minima as the suspected obstacle.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/stochastic-gradient-descent-and-optimisers/";
             },},{id: "study-stroke",
           title: 'Stroke',
           description: "Time-critical diagnosis and imaging triage, and why decision latency is itself a clinical outcome.",
