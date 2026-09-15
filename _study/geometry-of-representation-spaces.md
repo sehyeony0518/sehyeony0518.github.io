@@ -2,9 +2,9 @@
 layout: study_note
 title: "Geometry of Representation Spaces"
 description: "Cosine similarity, manifolds, metric spaces, and what the shape of a latent space says about what a model encodes."
-tab: "trustworthy-ai"
-tab_title: "Trustworthy AI"
-category: "foundations"
+tab: "ai-foundations"
+tab_title: "AI Foundations"
+category: "math-foundations"
 category_title: "Mathematical & Statistical Foundations"
 order: 6
 source: "Independent study"

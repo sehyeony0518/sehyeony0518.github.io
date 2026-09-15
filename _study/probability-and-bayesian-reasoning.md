@@ -2,9 +2,9 @@
 layout: study_note
 title: "Probability and Bayesian Reasoning"
 description: "Conditional probability, expectation, independence, and Bayes as the grammar for reasoning about diagnostic evidence."
-tab: "trustworthy-ai"
-tab_title: "Trustworthy AI"
-category: "foundations"
+tab: "ai-foundations"
+tab_title: "AI Foundations"
+category: "math-foundations"
 category_title: "Mathematical & Statistical Foundations"
 order: 2
 source: "Independent study"

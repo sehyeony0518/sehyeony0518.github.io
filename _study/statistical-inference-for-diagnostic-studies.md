@@ -2,9 +2,9 @@
 layout: study_note
 title: "Statistical Inference for Diagnostic Studies"
 description: "Hypothesis testing, confidence intervals, effect size, bootstrap, and multiple comparisons, applied to the claims diagnostic AI papers make."
-tab: "trustworthy-ai"
-tab_title: "Trustworthy AI"
-category: "foundations"
+tab: "ai-foundations"
+tab_title: "AI Foundations"
+category: "math-foundations"
 category_title: "Mathematical & Statistical Foundations"
 order: 3
 source: "Independent study"

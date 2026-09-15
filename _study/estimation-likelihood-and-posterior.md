@@ -2,9 +2,9 @@
 layout: study_note
 title: "Estimation: Likelihood, Posterior, and What Few Observations Permit"
 description: "What maximum likelihood actually claims, what a prior adds, and why five observations and five hundred do not license the same statement."
-tab: "trustworthy-ai"
-tab_title: "Trustworthy AI"
-category: "foundations"
+tab: "ai-foundations"
+tab_title: "AI Foundations"
+category: "math-foundations"
 category_title: "Mathematical & Statistical Foundations"
 order: 7
 source: "Independent study"
