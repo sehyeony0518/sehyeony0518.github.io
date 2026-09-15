@@ -120,8 +120,15 @@ concepts:
   Preprocessing & resampling: Method
   Deployment feedback loop: Threat
   Similarity & graph construction: Method
+  Proxy objective: Threat
+  Operating point selection: Method
+  Translation invariance: Property
+  Post-processing: Method
+  Objective design: Method
+  Outlier influence: Threat
 
 # id | subject | relation | object | claim | confidence | note | source
+
 assertions:
   - [E01, Auditing, assessesProperty, Faithfulness, M, high, "A frozen-model explanation audit compares the readout's stated importance against the behaviour it purports to explain.", null]
   - [E02, Intervention & ablation, assessesProperty, Faithfulness, M, high, "Controlled perturbations compare attribution-predicted effects with actual score changes, conditional on the perturbation design.", "arXiv:1901.09392"]
@@ -205,3 +212,17 @@ assertions:
   - [E80, Deployment feedback loop, warrantsReassessmentOf, Calibration, D, high, "Once the data reflect the model's own influence, agreement between predictions and recorded outcomes stops being evidence of calibration.", null]
   - [E81, Deployment feedback loop, canIntroduce, Spurious correlation, M, high, "Under-flagging a subgroup yields fewer confirmed cases in it, which trains the next model to under-flag it further.", "arXiv:1706.09847"]
   - [E82, Sensitivity analysis, probesThreat, Deployment feedback loop, M, medium, "Comparing a prospectively recruited stream against operational data can expose divergence the operational data alone cannot show.", null]
+  - [E83, Objective design, canIntroduce, Proxy objective, D, high, "Choosing a differentiable stand-in for a non-differentiable evaluation target is what creates the gap; the gap follows from the choice, not from poor execution.", null]
+  - [E84, Proxy objective, warrantsReassessmentOf, Faithfulness, D, high, "A model optimised toward a stand-in has been selected for scoring well on the stand-in; that its reliance matches the target is a question the training never posed.", null]
+  - [E85, Proxy objective, canIntroduce, Shortcut learning, M, high, "A shortcut is precisely a solution scoring well on the proxy and badly on the target, so proxy optimisation is the mechanism that rewards it.", null]
+  - [E86, Proxy objective, warrantsReassessmentOf, Auditing, D, high, "When the audit's own measure is itself a stand-in for what is being audited, the audit inherits the gap it was meant to detect.", null]
+  - [E87, Proxy objective, warrantsReassessmentOf, Uncertainty & abstention, D, medium, "Confidence calibrated against the training objective expresses certainty about the stand-in, which is not certainty about the clinical target.", null]
+  - [E88, Operating point selection, canAudit, Subgroup & fairness, M, high, "One threshold applied across groups of differing prevalence produces different error profiles per group; sweeping it exposes that dependence.", "10.1145/3287560.3287598"]
+  - [E89, Reporting standards, constrainsProcedure, Operating point selection, D, high, "Reporting a threshold-free summary alone leaves the clinically consequential choice of operating point undocumented.", "10.1371/journal.pone.0118432"]
+  - [E90, Post-processing, changesObservabilityOf, Sonographic features, M, high, "Overlap-based suppression deletes true detections lying closer than its threshold, after the model has already scored them.", "10.1109/TPAMI.2016.2577031"]
+  - [E91, Auditing, canAudit, Post-processing, M, high, "The steps between a network's output and the reported result are a separate inspection target; a fault there is invisible to any method examining only the model.", null]
+  - [E92, Translation invariance, doesNotEstablish, Faithfulness, D, high, "A representation trained to be unchanged by position has been rewarded for discarding the spatial correspondence that an attribution map asserts.", null]
+  - [E93, Intervention & ablation, assessesProperty, Translation invariance, M, high, "Shifting the input and measuring the output is a direct test of invariance against equivariance, and the two requirements conflict in any task that both classifies and localises.", "arXiv:1605.06409"]
+  - [E94, Objective design, canIntroduce, Outlier influence, D, high, "A squared residual grants a point influence proportional to its error, so the most anomalous record outweighs many sound ones.", "10.1214/aoms/1177703732"]
+  - [E95, Outlier influence, warrantsReassessmentOf, Robustness, D, high, "A fit skewed by a few contaminated records reports an ordinary residual and an ordinary summary; nothing in the output marks the disproportion.", null]
+  - [E96, Auditing, canAudit, Objective design, M, high, "Loss choice and per-sample weighting are where class priorities are actually encoded; reading them is more direct than inferring priorities from performance.", null]
