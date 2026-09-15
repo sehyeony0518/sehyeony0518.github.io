@@ -126,6 +126,11 @@ concepts:
   Post-processing: Method
   Objective design: Method
   Outlier influence: Threat
+  Attention mechanism: Method
+  Ensembling: Method
+  Label noise: Threat
+  Pseudo-labelling: Method
+  Implicit representation: Method
 
 # id | subject | relation | object | claim | confidence | note | source
 
@@ -226,3 +231,13 @@ assertions:
   - [E94, Objective design, canIntroduce, Outlier influence, D, high, "A squared residual grants a point influence proportional to its error, so the most anomalous record outweighs many sound ones.", "10.1214/aoms/1177703732"]
   - [E95, Outlier influence, warrantsReassessmentOf, Robustness, D, high, "A fit skewed by a few contaminated records reports an ordinary residual and an ordinary summary; nothing in the output marks the disproportion.", null]
   - [E96, Auditing, canAudit, Objective design, M, high, "Loss choice and per-sample weighting are where class priorities are actually encoded; reading them is more direct than inferring priorities from performance.", null]
+  - [E97, Attention mechanism, doesNotEstablish, Faithfulness, D, high, "An attention weight reports how much a value vector was routed into an update; by the second layer that vector already summarises much of the sequence, so the weight is a routing diagram and not an attribution.", "arXiv:1706.03762"]
+  - [E98, Ensembling, assessesProperty, Calibration, M, high, "Spread across independently initialised models supplies a predictive distribution where a point estimate supplies only a score.", "arXiv:1612.01474"]
+  - [E99, Ensembling, probesThreat, Distribution shift, M, high, "Members that converged to different modes agree where the data constrained the function and diverge where they did not, which is a signal a single model cannot produce.", "arXiv:2002.08791"]
+  - [E100, Shortcut learning, warrantsReassessmentOf, Ensembling, D, high, "Members sharing an architecture, a training set and a preprocessing pipeline share every bias those impose, so a shortcut present in the data leaves them agreeing confidently and wrong together.", null]
+  - [E101, Pseudo-labelling, canIntroduce, Label noise, M, high, "A teacher's outputs become the student's training targets, so the teacher's errors are inherited by construction rather than averaged away.", "10.1109/CVPR42600.2020.01070"]
+  - [E102, Pseudo-labelling, canIntroduce, Spurious correlation, M, high, "Random teacher error cancels across many examples; systematic error compounds, and a subgroup the teacher under-detects trains the student to under-detect it further.", "10.1109/CVPR46437.2021.01139"]
+  - [E103, Label noise, warrantsReassessmentOf, Auditing, D, high, "When the reference standard is itself several points from correct, disagreement between model and standard no longer separates model error from annotation error.", "arXiv:2006.07159"]
+  - [E104, Label noise, warrantsReassessmentOf, Calibration, D, high, "Probabilities fitted to agree with noisy labels are calibrated to the annotation process, and the agreement is evidence about that process rather than about the condition.", "arXiv:2006.07159"]
+  - [E105, Auditing, canAudit, Pseudo-labelling, M, high, "The labelling model is an inspection target in its own right, and one that evaluating the final model against those same labels cannot reach.", null]
+  - [E106, Implicit representation, changesObservabilityOf, Sonographic features, M, medium, "A field queried between its training views renders interpolated structure with the same appearance as measured structure, and the output carries no marker separating them.", "10.1007/978-3-030-58452-8_24"]
