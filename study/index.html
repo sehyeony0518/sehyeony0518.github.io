@@ -268,8 +268,14 @@
     // The ontology rings on entity type rather than sector, so it needs its own
     // order and palette. Same construction: warm where evidence is gathered,
     // cool where it is judged, and the threats last.
-    var ONTO_ORDER = ['EvidenceSource','Finding','ClinicalTarget','Standard',
-                      'Method','ModelFamily','Metric','Property','Threat'];
+    // Generated from _data/ontology.yml, not hand-listed: a hardcoded copy silently
+    // drifted when two types were added and left every node of the new types without
+    // a ring position, which emptied the canvas.
+    var ONTO_ORDER = ['Mechanism', 'EvidenceSource', 'Finding', 'ClinicalTarget', 'Standard', 'Principle', 'Method', 'ModelFamily', 'Metric', 'Property', 'Threat'];
+    if (!ONTO_ORDER.length) {
+      ONTO_ORDER = ['EvidenceSource','Finding','ClinicalTarget','Standard',
+                    'Method','ModelFamily','Metric','Property','Threat'];
+    }
     // Built from _data/ontology.yml so the graph and the study page cannot drift.
     var ONTO_PALETTE = { dark: { _: '#6b7280' }, light: { _: '#7A8494' } };
     ONTO_PALETTE.light['EvidenceSource'] = '#967531';
@@ -315,7 +321,12 @@
       Promise.all([corpus, onto]).then(function (r) {
         VIEWS.graph = r[0];
         VIEWS.onto = r[1] && r[1].nodes && r[1].nodes.length ? r[1] : null;
-        render(VIEWS.graph);
+        // Honour the requested initial view. This used to render VIEWS.graph
+        // unconditionally, so a page asking for view="onto" got the ontology's ring
+        // order and palette applied to corpus data, whose sectors have no position
+        // in that ring - an empty canvas with the wrong node counts.
+        if (view === 'onto' && !VIEWS.onto) view = 'graph';
+        render(VIEWS[view]);
       }).catch(function () {
         box.innerHTML = '<div class="kg-cover">The graph could not be loaded.</div>';
       });
@@ -335,7 +346,7 @@
     function render(data) {
       var onto = view === 'onto';
       SECTOR_COLOR = (onto ? ONTO_PALETTE : PALETTE)[isDark() ? 'dark' : 'light'];
-      ORDER = onto ? ONTO_ORDER : SECTOR_ORDER;
+      ORDER = onto ? ((data && data.order && data.order.length) ? data.order : ONTO_ORDER) : SECTOR_ORDER;
       box.innerHTML = chrome();
       var vw = box.querySelector('.kg-title');
       vw.addEventListener('click', function (e) {
