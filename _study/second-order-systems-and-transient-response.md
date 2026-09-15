@@ -3,7 +3,7 @@ layout: study_note
 title: "Second-Order Systems: Four Numbers You Can Ask For, and Where They Put the Poles"
 description: "Rise time, overshoot, peak time and settling time are not four independent wishes — each one carves a region out of the complex plane, and the design is whatever survives the intersection."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "feedback-control"
 category_title: "Feedback Control & Classical Design"
 order: 2

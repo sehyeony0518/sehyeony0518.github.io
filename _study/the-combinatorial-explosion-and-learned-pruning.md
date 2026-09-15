@@ -3,7 +3,7 @@ layout: study_note
 title: "The Combinatorial Explosion, and Why Pruning Alone Is Not Enough"
 description: "Lighthill's 1973 case against AI was arithmetically correct and is still correct. What changed is that nobody searches the tree any more — and working the numbers shows that pruning the branches only solves half of it."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "decision-and-control"
 category_title: "Decision Making & Reinforcement Learning"
 order: 3

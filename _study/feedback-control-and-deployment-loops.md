@@ -3,7 +3,7 @@ layout: study_note
 title: "Feedback Control: Open Loop, Feedforward, and Why More Feedback Can Be Worse"
 description: "The three ways to make a system do what you want, the shower that scalds you because the thermostat is by the door, and what that says about a model retraining on data its own deployment produced."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "feedback-control"
 category_title: "Feedback Control & Classical Design"
 order: 1

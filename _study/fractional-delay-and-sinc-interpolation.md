@@ -3,7 +3,7 @@ layout: study_note
 title: "Fractional Delay: Half a Sample Is Not Half of Two Samples"
 description: "What it means to shift a discrete signal by a non-integer amount, why the answer is spread over all time, and why the intuitive picture is the one that is wrong."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
 order: 7

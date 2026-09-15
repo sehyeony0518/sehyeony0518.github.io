@@ -3,7 +3,7 @@ layout: study_note
 title: "Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes"
 description: "The loss is where you state what counts as a good answer. Squaring makes one bad point outvote nine good ones — and the arithmetic of how badly is worth seeing."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "algebra-and-optimisation"
 category_title: "Linear Algebra & Optimisation"
 order: 10

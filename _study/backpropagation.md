@@ -3,7 +3,7 @@ layout: study_note
 title: "Backpropagation, in Scalars and in Matrices"
 description: "Why a procedure for computing derivatives is the whole of a training algorithm, and what the backward pass turns out to be for a dense layer and for a convolution."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 2

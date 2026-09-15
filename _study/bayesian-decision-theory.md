@@ -3,7 +3,7 @@ layout: study_note
 title: "Bayesian Decision Theory: Risk, Loss, and Where the Boundary Goes"
 description: "Why the best decision is not always the most probable class, and what a cost matrix does to a threshold."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
 order: 4
