@@ -114,6 +114,7 @@ concepts:
   Foundation models: ModelFamily
   Exploration & stress testing: Method
   Robustness: Property
+  Sensitivity analysis: Method
 
 # id | subject | relation | object | claim | confidence | note | source
 assertions:
@@ -182,3 +183,6 @@ assertions:
   - [E63, Evaluation metrics, doesNotEstablish, Robustness, D, high, "A score on a held-out sample from one distribution quantifies performance on that distribution and asserts nothing about behaviour under shift.", null]
   - [E64, Distribution shift, warrantsReassessmentOf, Robustness, D, high, "A realised shift places the deployment outside the conditions under which robustness was assessed.", null]
   - [E65, Robustness, doesNotEstablish, Faithfulness, D, high, "Stability under perturbation of the learned representation is compatible with that representation encoding a shortcut; a wide margin around the wrong feature is still a wide margin.", null]
+  - [E66, Sensitivity analysis, assessesProperty, Robustness, M, high, "Varying one design decision at a time measures how much the reported result depends on it, for the decisions someone chose to vary.", null]
+  - [E67, Sensitivity analysis, probesThreat, Distribution shift, M, high, "Leave-one-site-out and cohort re-weighting rehearse a shift using variation already present in the assembled data, and reach no further than that variation.", null]
+  - [E68, Evaluation metrics, doesNotEstablish, Plausibility, D, high, "A performance figure quantifies agreement with labels and carries no claim about whether the model's reasoning would be recognised as sensible.", null]
