@@ -3,7 +3,7 @@ layout: study_note
 title: "Stochastic Gradient Descent and the Optimisers Built On It"
 description: "Why the gradient is estimated from a handful of examples, what momentum and per-parameter rates each fix, and why saddle points replaced local minima as the suspected obstacle."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "algebra-and-optimisation"
 category_title: "Linear Algebra & Optimisation"
 order: 5

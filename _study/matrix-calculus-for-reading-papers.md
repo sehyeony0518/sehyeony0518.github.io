@@ -3,7 +3,7 @@ layout: study_note
 title: "Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gaussian MLE"
 description: "The minimum of matrix differentiation that lets you read a derivation instead of skipping it — and the derivation of the Gaussian mean and covariance estimators that it exists to serve."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "algebra-and-optimisation"
 category_title: "Linear Algebra & Optimisation"
 order: 2

@@ -3,7 +3,7 @@ layout: study_note
 title: "Perception as Inference: Illusions Are Not Failures, and the Easy Problems Were the Hard Ones"
 description: "Why the retinal image cannot determine what you see, why walking took a billion years and calculus took a hundred thousand, and where the functional definition of AI runs out."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 1

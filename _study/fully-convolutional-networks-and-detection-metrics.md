@@ -3,7 +3,7 @@ layout: study_note
 title: "Fully Convolutional Networks, and Why Detection Needed Its Own Metric"
 description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists — the same argument against accuracy that class imbalance forces on classification, arriving by a different road."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 9

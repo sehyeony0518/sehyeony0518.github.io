@@ -3,7 +3,7 @@ layout: study_note
 title: "Neural Radiance Fields: A Scene Stored as a Function"
 description: "NeRF replaces the 3-D data structure with a network you query. 5 MB holds what a voxel grid needs 500 MB for — and the bill arrives at 123 million network calls per frame."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 14

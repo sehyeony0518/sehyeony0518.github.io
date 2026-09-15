@@ -9,6 +9,7 @@
 {% endcomment %}
 {% assign kg_full = include.full | default: false %}
 {% assign kg_h = include.height | default: 480 %}
+{% assign kg_view = include.view | default: "graph" %}
 
 <style>
   /* Light is the default; dark takes over with the site's own theme switch and
@@ -232,7 +233,7 @@
     // concepts are typed and the edges are assertions between them. The ontology
     // is optional -- if its file is absent the switch simply does not appear.
     var VIEWS = { graph: null, onto: null };
-    var view = 'graph';
+    var view = '{{ kg_view }}';
 
     function boot() {
       if (started || !window.d3) return;
