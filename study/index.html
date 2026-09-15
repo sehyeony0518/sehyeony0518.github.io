@@ -593,12 +593,20 @@
 
       if (bar) {
         // Everything that touches a sector, not only the nodes filed under it
+        // Register a link under the sector of EVERY concept endpoint, not just the
+        // target's. In the corpus graph only the target is ever a concept, so this
+        // is unchanged there. In the ontology both ends are concepts, and keying on
+        // the target alone left any type that only ever appears as a source with no
+        // bucket at all - Mechanism, Standard and Principle - so their chips called
+        // apply({}) and hid the entire graph.
         var touches = {};
         data.links.forEach(function (l) {
-          if (l.target.kind === 'concept') {
-            (touches[l.target.sector] = touches[l.target.sector] || {})[l.source.id] = 1;
-            touches[l.target.sector][l.target.id] = 1;
-          }
+          [l.source, l.target].forEach(function (e) {
+            if (!e || e.kind !== 'concept') return;
+            var bucket = touches[e.sector] = touches[e.sector] || {};
+            bucket[l.source.id] = 1;
+            bucket[l.target.id] = 1;
+          });
         });
 
         // A search and a sector chip are two ways of choosing the same thing, so
