@@ -173,6 +173,12 @@ nav_order: 9
 {%- endfor %}
 
 <div class="sl-pane sl-hidden" data-pane="ontology">
+  {%- comment -%}
+    The map first: the shape of the thing before the claims that make it up. The
+    include defers its own boot to an IntersectionObserver, so rendering inside a
+    hidden pane is safe — it sizes itself when the tab is first opened.
+  {%- endcomment -%}
+  {% include knowledge_graph.liquid height=520 view="onto" %}
   {% include ontology_table.liquid %}
 </div>
 

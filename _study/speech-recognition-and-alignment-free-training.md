@@ -3,7 +3,7 @@ layout: study_note
 title: "Speech Recognition: Learning Without Knowing Where Anything Starts"
 description: "You can label an utterance; you cannot label a 10-millisecond frame. CTC sums over all 28 trillion ways the label could line up — and that trick is worth more than the speech application."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
 order: 12

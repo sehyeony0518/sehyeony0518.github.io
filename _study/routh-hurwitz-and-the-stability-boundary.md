@@ -3,7 +3,7 @@ layout: study_note
 title: "Routh–Hurwitz: Deciding Stability Without Finding a Single Root"
 description: "A table of divisions answers a question about polynomial roots that has no formula past degree four, and turns 'is this stable?' into 'for which gains is this stable?'"
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "feedback-control"
 category_title: "Feedback Control & Classical Design"
 order: 3

@@ -3,7 +3,7 @@ layout: study_note
 title: "Root Locus and Stability Margins: Two Pictures of the Same Boundary"
 description: "Watching the closed-loop poles move as a gain sweeps, and reading how much gain and phase you have left off a plot of the open loop — two methods that meet exactly at the edge of stability."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "feedback-control"
 category_title: "Feedback Control & Classical Design"
 order: 5

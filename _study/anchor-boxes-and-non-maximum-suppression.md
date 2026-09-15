@@ -3,7 +3,7 @@ layout: study_note
 title: "Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden"
 description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 10

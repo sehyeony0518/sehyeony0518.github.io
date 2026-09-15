@@ -3,7 +3,7 @@ layout: study_note
 title: "Probability and Bayesian Reasoning"
 description: "Conditional probability, expectation, independence, and Bayes as the grammar for reasoning about diagnostic evidence."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
 order: 1

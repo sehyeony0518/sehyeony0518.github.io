@@ -3,7 +3,7 @@ layout: study_note
 title: "Self-Supervised and Weakly Supervised Learning"
 description: "Learning from medical data whose labels are scarce, noisy, or only available at the study level."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 5

@@ -3,7 +3,7 @@ layout: study_note
 title: "Hypothesis Testing and Sampling Distributions: What a p-Value Can and Cannot Say"
 description: "The conditional form of every test, why 'at least as extreme' is the operative phrase, and the t and chi-squared distributions that make the calculation possible at all."
 tab: "ai-foundations"
-tab_title: "AI Foundations"
+tab_title: "Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
 order: 6
