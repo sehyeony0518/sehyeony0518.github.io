@@ -4,9 +4,9 @@ title: "Latent Variables: EM and Variational Inference"
 description: "What to do when neither the parameter nor the variable that produced the data was observed, and why the posterior usually has to be approximated rather than computed."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 8
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 10
 source: "Independent study"
 written: true
 updated: "2026-09-15"

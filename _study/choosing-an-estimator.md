@@ -4,9 +4,9 @@ title: "Choosing an Estimator: MMSE, MAP, and Maximum Likelihood"
 description: "Three answers to the same question, what each one optimises, and which of them needs an integral nobody can evaluate."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 12
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-15"

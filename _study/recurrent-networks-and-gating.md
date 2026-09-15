@@ -4,8 +4,8 @@ title: "Recurrent Networks and Gating"
 description: "State carried across time, why gradients through it vanish or explode, and what a gate is actually doing about it."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Paradigms & Representations"
+category: "neural-networks"
+category_title: "Neural Networks & Representation"
 order: 4
 source: "Independent study"
 written: true

@@ -4,9 +4,9 @@ title: "KKT Conditions and Shadow Prices: What a Lagrange Multiplier Is Actually
 description: "Complementary slackness, the multiplier as the sensitivity of the optimum to its constraint, and reading the SVM's alphas as a statement about which samples matter."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 20
+category: "algebra-and-optimisation"
+category_title: "Linear Algebra & Optimisation"
+order: 8
 source: "Independent study"
 written: true
 updated: "2026-09-15"

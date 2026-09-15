@@ -4,9 +4,9 @@ title: "Geometry of Representation Spaces"
 description: "Cosine similarity, manifolds, metric spaces, and what the shape of a latent space says about what a model encodes."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 6
+category: "algebra-and-optimisation"
+category_title: "Linear Algebra & Optimisation"
+order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"

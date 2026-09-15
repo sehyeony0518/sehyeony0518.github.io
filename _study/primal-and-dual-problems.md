@@ -4,9 +4,9 @@ title: "Primal and Dual Problems: The Max-Min Inequality and What the Gap Certif
 description: "The one inequality the whole of Lagrangian duality rests on, why swapping to the dual changes the size of the problem, and why a duality gap is useful information rather than a failure."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 19
+category: "algebra-and-optimisation"
+category_title: "Linear Algebra & Optimisation"
+order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-15"

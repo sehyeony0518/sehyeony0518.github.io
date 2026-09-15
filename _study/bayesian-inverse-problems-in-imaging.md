@@ -4,9 +4,9 @@ title: "Bayesian Inverse Problems in Imaging"
 description: "Denoising and restoration written as inference: an acquisition model as the likelihood, an image prior as the assumption, and what a Markov random field assumes to stay computable."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 9
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 12
 source: "Independent study"
 written: true
 updated: "2026-09-15"

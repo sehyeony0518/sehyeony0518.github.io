@@ -4,9 +4,9 @@ title: "Self-Supervised and Weakly Supervised Learning"
 description: "Learning from medical data whose labels are scarce, noisy, or only available at the study level."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Paradigms & Representations"
-order: 1
+category: "neural-networks"
+category_title: "Neural Networks & Representation"
+order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-08"

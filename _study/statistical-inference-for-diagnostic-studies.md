@@ -4,9 +4,9 @@ title: "Statistical Inference for Diagnostic Studies"
 description: "Hypothesis testing, confidence intervals, effect size, bootstrap, and multiple comparisons, applied to the claims diagnostic AI papers make."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 3
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-08"
