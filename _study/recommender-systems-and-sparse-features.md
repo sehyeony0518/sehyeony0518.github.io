@@ -3,7 +3,7 @@ layout: study_note
 title: "Recommender Systems: Embeddings, Interactions, and a Field That Audited Itself"
 description: "Why recommendation is a ranking problem over extremely sparse categorical features, how embeddings and feature interactions address that, and the reproducibility study that found most of the progress was not there."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 8

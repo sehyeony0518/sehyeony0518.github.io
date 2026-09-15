@@ -3,7 +3,7 @@ layout: study_note
 title: "Monte Carlo Tree Search: Exploration, Exploitation, and the Cost of Never Looking"
 description: "Why randomness earns a place inside a search algorithm, what the UCT formula is actually balancing, and the sense in which a fixed test suite is a policy that stopped exploring."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "decision-and-control"
 category_title: "Decision Making & Reinforcement Learning"
 order: 2

@@ -3,7 +3,7 @@ layout: study_note
 title: "Poles and Zeros: What Comes Out Uninvited, and What Goes In and Vanishes"
 description: "Why exponentials are the natural test input for a linear system, the physical reading of a pole and a zero, and how a plot of two sets of points summarises a whole system."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
 order: 2
