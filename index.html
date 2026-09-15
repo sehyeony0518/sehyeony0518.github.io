@@ -277,7 +277,7 @@
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
   }
-</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">80</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">83</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box';
     var FULL = false;
@@ -4087,6 +4087,11 @@ ninja.data = [{
           description: "How the evidence a diagnostic model exposes can be checked against clinical information assessed separately from it.",
           section: "Study",handler: () => {
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
+            },},{id: "study-backpropagation-in-scalars-and-in-matrices",
+          title: 'Backpropagation, in Scalars and in Matrices',
+          description: "Why a procedure for computing derivatives is the whole of a training algorithm, and what the backward pass turns out to be for a dense layer and for a convolution.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/backpropagation/";
             },},{id: "study-bayesian-inverse-problems-in-imaging",
           title: 'Bayesian Inverse Problems in Imaging',
           description: "Denoising and restoration written as inference: an acquisition model as the likelihood, an image prior as the assumption, and what a Markov random field assumes to stay computable.",
@@ -4122,6 +4127,11 @@ ninja.data = [{
           description: "Stones in the common bile duct, and the presentation that turns an imaging finding into an emergency.",
           section: "Study",handler: () => {
               window.location.href = "/study/choledocholithiasis-and-cholangitis/";
+            },},{id: "study-choosing-an-estimator-mmse-map-and-maximum-likelihood",
+          title: 'Choosing an Estimator: MMSE, MAP, and Maximum Likelihood',
+          description: "Three answers to the same question, what each one optimises, and which of them needs an integral nobody can evaluate.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/choosing-an-estimator/";
             },},{id: "study-circadian-rhythm-disorders",
           title: 'Circadian Rhythm Disorders',
           description: "Wearable and continuous data, and what changes when the signal is a long time series.",
@@ -4352,6 +4362,11 @@ ninja.data = [{
           description: "Moving from an alignment claim to a dependence claim, and what that step requires.",
           section: "Study",handler: () => {
               window.location.href = "/study/model-reliance-on-clinical-evidence/";
+            },},{id: "study-optimising-the-input-visualisation-style-and-adversarial-examples",
+          title: 'Optimising the Input: Visualisation, Style, and Adversarial Examples',
+          description: "What happens when the weights are frozen and the image becomes the free variable, and why the same procedure produces both a picture of a concept and a picture that fools the model.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/optimising-the-input/";
             },},{id: "study-optimization-for-machine-learning",
           title: 'Optimization for Machine Learning',
           description: "Gradients, regularization, and constrained optimization as the assumptions a training procedure quietly imposes.",
