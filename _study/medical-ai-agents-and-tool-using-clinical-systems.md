@@ -6,7 +6,7 @@ tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"
 category_title: "Medical AI Systems & Deployment"
-order: 6
+order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-08"

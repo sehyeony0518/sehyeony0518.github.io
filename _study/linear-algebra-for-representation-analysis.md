@@ -2,9 +2,9 @@
 layout: study_note
 title: "Linear Algebra for Representation Analysis"
 description: "Eigenvalues, SVD, projection, and PCA as the working tools for asking what a learned representation contains."
-tab: "trustworthy-ai"
-tab_title: "Trustworthy AI"
-category: "foundations"
+tab: "ai-foundations"
+tab_title: "AI Foundations"
+category: "math-foundations"
 category_title: "Mathematical & Statistical Foundations"
 order: 1
 source: "Independent study"

@@ -2,9 +2,9 @@
 layout: study_note
 title: "Optimization for Machine Learning"
 description: "Gradients, regularization, and constrained optimization as the assumptions a training procedure quietly imposes."
-tab: "trustworthy-ai"
-tab_title: "Trustworthy AI"
-category: "foundations"
+tab: "ai-foundations"
+tab_title: "AI Foundations"
+category: "math-foundations"
 category_title: "Mathematical & Statistical Foundations"
 order: 4
 source: "Independent study"
