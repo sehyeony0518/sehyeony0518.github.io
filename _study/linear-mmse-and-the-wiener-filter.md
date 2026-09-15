@@ -4,9 +4,9 @@ title: "Linear MMSE Estimation and the Wiener Filter"
 description: "The best linear estimate of one quantity from another, and why it needs only means and covariances rather than a distribution."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 10
+category: "signals-and-systems"
+category_title: "Signals, Systems & Transforms"
+order: 8
 source: "Independent study"
 written: true
 updated: "2026-09-15"

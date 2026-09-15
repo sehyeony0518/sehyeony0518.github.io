@@ -4,9 +4,9 @@ title: "Perception as Inference: Illusions Are Not Failures, and the Easy Proble
 description: "Why the retinal image cannot determine what you see, why walking took a billion years and calculus took a hundred thousand, and where the functional definition of AI runs out."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
-order: 16
+category: "neural-networks"
+category_title: "Neural Networks & Representation"
+order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-15"

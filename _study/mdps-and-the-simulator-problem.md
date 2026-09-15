@@ -4,9 +4,9 @@ title: "MDPs and the Simulator Problem: Every RL Paper Starts After the Hard Par
 description: "The five-tuple that defines an environment, why a plan is not a policy, and the reason reinforcement learning works on games and struggles everywhere the simulator has to be built."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
-order: 17
+category: "decision-and-control"
+category_title: "Decision, Control & Reinforcement Learning"
+order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-15"
