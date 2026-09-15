@@ -8,7 +8,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 121
+   "deg": 122
   },
   {
    "id": "c:Diagnostic reasoning",
@@ -28,7 +28,7 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 72
+   "deg": 71
   },
   {
    "id": "c:Liver & hepatobiliary",
@@ -75,10 +75,10 @@
    "label": "Faithfulness",
    "kind": "concept",
    "url": null,
-   "size": 4.56,
+   "size": 4.43,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 52
+   "deg": 49
   },
   {
    "id": "c:Inverse reconstruction",
@@ -95,10 +95,10 @@
    "label": "Clinical assessability",
    "kind": "concept",
    "url": null,
-   "size": 3.93,
+   "size": 4.15,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 38
+   "deg": 43
   },
   {
    "id": "c:Neoplastic invasion",
@@ -148,17 +148,17 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 82
+   "deg": 84
   },
   {
    "id": "c:Malignancy & staging",
    "label": "Malignancy & staging",
    "kind": "concept",
    "url": null,
-   "size": 3.93,
+   "size": 3.97,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 38
+   "deg": 39
   },
   {
    "id": "c:Histopathology",
@@ -215,10 +215,10 @@
    "label": "Subgroup & fairness",
    "kind": "concept",
    "url": null,
-   "size": 4.61,
+   "size": 4.65,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 53
+   "deg": 54
   },
   {
    "id": "c:Robustness",
@@ -235,10 +235,10 @@
    "label": "Internal validation",
    "kind": "concept",
    "url": null,
-   "size": 3.2,
+   "size": 3.25,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 22
+   "deg": 23
   },
   {
    "id": "c:Electrophysiological recording",
@@ -265,20 +265,20 @@
    "label": "Reference standard adjudication",
    "kind": "concept",
    "url": null,
-   "size": 3.84,
+   "size": 3.88,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 36
+   "deg": 37
   },
   {
    "id": "c:Segmentation & detection",
    "label": "Segmentation & detection",
    "kind": "concept",
    "url": null,
-   "size": 3.7,
+   "size": 3.75,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 33
+   "deg": 34
   },
   {
    "id": "c:Post-processing",
@@ -315,10 +315,10 @@
    "label": "Plausibility",
    "kind": "concept",
    "url": null,
-   "size": 3.11,
+   "size": 3.06,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 20
+   "deg": 19
   },
   {
    "id": "c:Translation invariance",
@@ -351,6 +351,16 @@
    "deg": 19
   },
   {
+   "id": "c:Clinical validity",
+   "label": "Clinical validity",
+   "kind": "concept",
+   "url": null,
+   "size": 2.88,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 15
+  },
+  {
    "id": "c:Clinical evidence reliance",
    "label": "Clinical evidence reliance",
    "kind": "concept",
@@ -375,20 +385,20 @@
    "label": "Calibration",
    "kind": "concept",
    "url": null,
-   "size": 4.43,
+   "size": 4.47,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 49
+   "deg": 50
   },
   {
    "id": "c:Evaluation metrics",
    "label": "Evaluation metrics",
    "kind": "concept",
    "url": null,
-   "size": 4.15,
+   "size": 4.11,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 43
+   "deg": 42
   },
   {
    "id": "c:Concept-based methods",
@@ -411,34 +421,24 @@
    "deg": 17
   },
   {
-   "id": "c:Clinical validity",
-   "label": "Clinical validity",
-   "kind": "concept",
-   "url": null,
-   "size": 2.88,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 15
-  },
-  {
    "id": "c:Clinical feature annotation",
    "label": "Clinical feature annotation",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.61,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 6
+   "deg": 9
   },
   {
    "id": "c:Operating point selection",
    "label": "Operating point selection",
    "kind": "concept",
    "url": null,
-   "size": 3.29,
+   "size": 3.34,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 24
+   "deg": 25
   },
   {
    "id": "c:Bayesian decision analysis",
@@ -465,10 +465,10 @@
    "label": "Uncertainty & abstention",
    "kind": "concept",
    "url": null,
-   "size": 2.75,
+   "size": 2.84,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 12
+   "deg": 14
   },
   {
    "id": "c:Out-of-distribution detection",
@@ -545,10 +545,10 @@
    "label": "Clinical utility",
    "kind": "concept",
    "url": null,
-   "size": 2.88,
+   "size": 2.93,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 15
+   "deg": 16
   },
   {
    "id": "c:Cardiovascular risk",
@@ -575,20 +575,20 @@
    "label": "Causal inference",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.38,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 4
   },
   {
    "id": "c:Confounding",
    "label": "Confounding",
    "kind": "concept",
    "url": null,
-   "size": 3.11,
+   "size": 3.15,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 20
+   "deg": 21
   },
   {
    "id": "c:Identifiability criterion",
@@ -645,10 +645,10 @@
    "label": "Deployment & drift",
    "kind": "concept",
    "url": null,
-   "size": 4.56,
+   "size": 4.61,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 52
+   "deg": 53
   },
   {
    "id": "c:Outlier influence",
@@ -659,6 +659,16 @@
    "fam": "computational",
    "sector": "Auditing & causality",
    "deg": 2
+  },
+  {
+   "id": "c:Intended use specification",
+   "label": "Intended use specification",
+   "kind": "concept",
+   "url": null,
+   "size": 2.84,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 14
   },
   {
    "id": "c:Selection & verification bias",
@@ -685,20 +695,20 @@
    "label": "Longitudinal follow-up",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.38,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 3
+   "deg": 4
   },
   {
    "id": "c:Predictive values",
    "label": "Predictive values",
    "kind": "concept",
    "url": null,
-   "size": 2.97,
+   "size": 3.02,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 17
+   "deg": 18
   },
   {
    "id": "c:Screening programs",
@@ -725,10 +735,10 @@
    "label": "Transportability",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.52,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 6
+   "deg": 7
   },
   {
    "id": "c:Deployment feedback loop",
@@ -749,16 +759,6 @@
    "fam": "computational",
    "sector": "Evaluation & reliability",
    "deg": 11
-  },
-  {
-   "id": "c:Intended use specification",
-   "label": "Intended use specification",
-   "kind": "concept",
-   "url": null,
-   "size": 2.75,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 12
   },
   {
    "id": "c:Pseudo-labelling",
@@ -791,6 +791,16 @@
    "deg": 4
   },
   {
+   "id": "c:Intervention & ablation",
+   "label": "Intervention & ablation",
+   "kind": "concept",
+   "url": null,
+   "size": 2.29,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 2
+  },
+  {
    "id": "c:Sampling theorem",
    "label": "Sampling theorem",
    "kind": "concept",
@@ -809,6 +819,26 @@
    "fam": "computational",
    "sector": "Systems & deployment",
    "deg": 11
+  },
+  {
+   "id": "c:Bayes error bound",
+   "label": "Bayes error bound",
+   "kind": "concept",
+   "url": null,
+   "size": 2.25,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 1
+  },
+  {
+   "id": "c:Comparative workflow evaluation",
+   "label": "Comparative workflow evaluation",
+   "kind": "concept",
+   "url": null,
+   "size": 2.52,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 7
   },
   {
    "id": "c:Clinical history & examination",
@@ -893,26 +923,6 @@
   {
    "id": "c:Implicit representation",
    "label": "Implicit representation",
-   "kind": "concept",
-   "url": null,
-   "size": 2.25,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 1
-  },
-  {
-   "id": "c:Comparative workflow evaluation",
-   "label": "Comparative workflow evaluation",
-   "kind": "concept",
-   "url": null,
-   "size": 2.47,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 6
-  },
-  {
-   "id": "c:Intervention & ablation",
-   "label": "Intervention & ablation",
    "kind": "concept",
    "url": null,
    "size": 2.25,
@@ -1057,8 +1067,8 @@
    "url": "/study/attribution-attention-and-counterfactual-explanations/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Interpretability",
-   "deg": 9
+   "sector": "Systems & deployment",
+   "deg": 10
   },
   {
    "id": "note:auditable-by-design-medical-ai",
@@ -1228,7 +1238,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 7
+   "deg": 14
   },
   {
    "id": "note:clinical-concepts-and-concept-based-interpretability",
@@ -1237,8 +1247,8 @@
    "url": "/study/clinical-concepts-and-concept-based-interpretability/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Systems & deployment",
-   "deg": 7
+   "sector": "Auditing & causality",
+   "deg": 12
   },
   {
    "id": "note:clinical-faithfulness-and-reliance-on-clinical-evidence",
@@ -1277,7 +1287,7 @@
    "url": "/study/clinical-validity-and-clinical-utility/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Interpretability",
+   "sector": "Evaluation & reliability",
    "deg": 13
   },
   {
@@ -1468,7 +1478,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Interpretability",
-   "deg": 8
+   "deg": 12
   },
   {
    "id": "note:exponential-moving-averages-in-optimisers",
@@ -1548,7 +1558,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Disease & pathology",
-   "deg": 7
+   "deg": 16
   },
   {
    "id": "note:fully-convolutional-networks-and-detection-metrics",
@@ -2657,7 +2667,7 @@
    "url": "/papers/2026-05-30-automatic-grading-knee-oa-features/",
    "size": 1.3,
    "fam": "computational",
-   "sector": "Interpretability",
+   "sector": "Evaluation & reliability",
    "deg": 4
   },
   {
@@ -3382,8 +3392,8 @@
   },
   {
    "source": "note:attribution-attention-and-counterfactual-explanations",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
+   "target": "c:Shortcut learning",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -3396,17 +3406,11 @@
    "source": "note:attribution-attention-and-counterfactual-explanations",
    "target": "c:Attribution & saliency",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:attribution-attention-and-counterfactual-explanations",
    "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:attribution-attention-and-counterfactual-explanations",
-   "target": "c:Plausibility",
    "kind": "computational",
    "w": 1
   },
@@ -3419,6 +3423,18 @@
   {
    "source": "note:attribution-attention-and-counterfactual-explanations",
    "target": "c:Segmentation & detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:attribution-attention-and-counterfactual-explanations",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:attribution-attention-and-counterfactual-explanations",
+   "target": "c:Clinical validity",
    "kind": "computational",
    "w": 1
   },
@@ -4288,8 +4304,32 @@
   },
   {
    "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
    "target": "c:Gallbladder disease",
    "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Malignancy & staging",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Uncertainty & abstention",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -4306,12 +4346,6 @@
   },
   {
    "source": "note:clinical-alignment-and-knowledge-as-supervision",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:clinical-alignment-and-knowledge-as-supervision",
    "target": "c:Concept-based methods",
    "kind": "computational",
    "w": 1
@@ -4323,8 +4357,38 @@
    "w": 1
   },
   {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-alignment-and-knowledge-as-supervision",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "note:clinical-concepts-and-concept-based-interpretability",
    "target": "c:Auditing",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:clinical-concepts-and-concept-based-interpretability",
+   "target": "c:Confounding",
    "kind": "computational",
    "w": 1
   },
@@ -4348,15 +4412,39 @@
   },
   {
    "source": "note:clinical-concepts-and-concept-based-interpretability",
-   "target": "c:Faithfulness",
+   "target": "c:Concept-based methods",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:clinical-concepts-and-concept-based-interpretability",
+   "target": "c:Deployment & drift",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:clinical-concepts-and-concept-based-interpretability",
-   "target": "c:Concept-based methods",
+   "target": "c:Reference standard adjudication",
    "kind": "computational",
-   "w": 2
+   "w": 1
+  },
+  {
+   "source": "note:clinical-concepts-and-concept-based-interpretability",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-concepts-and-concept-based-interpretability",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-concepts-and-concept-based-interpretability",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "note:clinical-concepts-and-concept-based-interpretability",
@@ -5926,9 +6014,27 @@
   },
   {
    "source": "note:explanation-faithfulness-versus-plausibility",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:explanation-faithfulness-versus-plausibility",
+   "target": "c:Intervention & ablation",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:explanation-faithfulness-versus-plausibility",
    "target": "c:Shortcut learning",
    "kind": "computational",
    "w": 1
+  },
+  {
+   "source": "note:explanation-faithfulness-versus-plausibility",
+   "target": "c:Causal inference",
+   "kind": "computational",
+   "w": 2
   },
   {
    "source": "note:explanation-faithfulness-versus-plausibility",
@@ -5962,7 +6068,13 @@
   },
   {
    "source": "note:explanation-faithfulness-versus-plausibility",
-   "target": "c:Clinical validity",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:explanation-faithfulness-versus-plausibility",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -6300,12 +6412,18 @@
    "source": "note:from-clinical-problem-to-machine-learning-task",
    "target": "c:Gallbladder disease",
    "kind": "clinical",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:from-clinical-problem-to-machine-learning-task",
    "target": "c:Malignancy & staging",
    "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Uncertainty & abstention",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -6316,13 +6434,31 @@
   },
   {
    "source": "note:from-clinical-problem-to-machine-learning-task",
-   "target": "c:Evaluation metrics",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:from-clinical-problem-to-machine-learning-task",
-   "target": "c:Faithfulness",
+   "target": "c:Segmentation & detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Bayes error bound",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Intended use specification",
    "kind": "computational",
    "w": 1
   },
@@ -6330,11 +6466,41 @@
    "source": "note:from-clinical-problem-to-machine-learning-task",
    "target": "c:Reference standard adjudication",
    "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Comparative workflow evaluation",
+   "kind": "computational",
    "w": 1
   },
   {
    "source": "note:from-clinical-problem-to-machine-learning-task",
-   "target": "c:Clinical evidence reliance",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Clinical utility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Transportability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Longitudinal follow-up",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:from-clinical-problem-to-machine-learning-task",
+   "target": "c:Predictive values",
    "kind": "computational",
    "w": 1
   },
