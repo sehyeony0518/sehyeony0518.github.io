@@ -27,6 +27,22 @@ types:
   Principle: "A mathematical identity, theorem, or inferential condition whose assumptions delimit a claim."
 
 # One definition of the ring colours, read by both the graph and the study page.
+# Ring order for the ontology graph: warm where evidence is gathered, cool where it
+# is judged, threats last. Must cover `types` exactly - the builder checks it, and a
+# type missing here leaves its nodes without a ring position.
+order:
+  - Mechanism
+  - EvidenceSource
+  - Finding
+  - ClinicalTarget
+  - Standard
+  - Principle
+  - Method
+  - ModelFamily
+  - Metric
+  - Property
+  - Threat
+
 colors:
   EvidenceSource: {light: "#967531", dark: "#c0a055"}
   Finding:        {light: "#9a5a22", dark: "#c9884a"}

@@ -11,12 +11,11 @@ import json, sys, yaml, collections, pathlib
 SRC = pathlib.Path("_data/ontology.yml")
 OUT = pathlib.Path("assets/json/ontology.json")
 # Evidence at one end, the things that can undermine it at the other.
-ORDER = ["Mechanism", "EvidenceSource", "Finding", "ClinicalTarget", "Standard",
-         "Principle", "Method", "ModelFamily", "Metric", "Property", "Threat"]
 
 def main():
     d = yaml.safe_load(SRC.read_text(encoding="utf-8"))
     types, rels, concepts, asserts = d["types"], d["relations"], d["concepts"], d["assertions"]
+    ORDER = d["order"]   # single source of truth, shared with the graph include
 
     errs = []
     if set(ORDER) != set(types):
