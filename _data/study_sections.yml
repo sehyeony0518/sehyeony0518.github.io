@@ -4,13 +4,13 @@
 tabs:
   - id: "ai-foundations"
     title: "AI Foundations"
-    description: "The mathematics and learning principles underneath, true of any model rather than medical ones."
+    description: "The machinery: mathematics and learning principles."
   - id: "clinical-medicine"
     title: "Clinical Medicine"
-    description: "Hepatobiliary imaging and other clinical fields — the prior a model's evidence is judged against."
+    description: "The prior: clinical knowledge across fields."
   - id: "trustworthy-ai"
     title: "Trustworthy AI"
-    description: "Causality, interpretability, auditing, evaluation, and deployment — what the other two are for."
+    description: "The purpose: causality, auditing, evaluation, deployment."
 categories:
   - id: "math-foundations"
     tab: "ai-foundations"
