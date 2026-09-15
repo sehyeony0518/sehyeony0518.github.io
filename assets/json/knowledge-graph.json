@@ -8,7 +8,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 124
+   "deg": 123
   },
   {
    "id": "c:Diagnostic reasoning",
@@ -28,7 +28,7 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 73
+   "deg": 72
   },
   {
    "id": "c:Liver & hepatobiliary",
@@ -75,30 +75,30 @@
    "label": "Faithfulness",
    "kind": "concept",
    "url": null,
-   "size": 4.84,
+   "size": 4.75,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 58
+   "deg": 56
   },
   {
    "id": "c:Inverse reconstruction",
    "label": "Inverse reconstruction",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 19
+   "deg": 20
   },
   {
    "id": "c:Clinical assessability",
    "label": "Clinical assessability",
    "kind": "concept",
    "url": null,
-   "size": 3.79,
+   "size": 3.84,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 35
+   "deg": 36
   },
   {
    "id": "c:Neoplastic invasion",
@@ -155,20 +155,20 @@
    "label": "Malignancy & staging",
    "kind": "concept",
    "url": null,
-   "size": 4.06,
+   "size": 3.97,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 41
+   "deg": 39
   },
   {
    "id": "c:Histopathology",
    "label": "Histopathology",
    "kind": "concept",
    "url": null,
-   "size": 3.34,
+   "size": 3.29,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 25
+   "deg": 24
   },
   {
    "id": "c:Attribution & saliency",
@@ -265,20 +265,20 @@
    "label": "Reference standard adjudication",
    "kind": "concept",
    "url": null,
-   "size": 3.75,
+   "size": 3.79,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 34
+   "deg": 35
   },
   {
    "id": "c:Segmentation & detection",
    "label": "Segmentation & detection",
    "kind": "concept",
    "url": null,
-   "size": 3.7,
+   "size": 3.75,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 33
+   "deg": 34
   },
   {
    "id": "c:Post-processing",
@@ -325,10 +325,10 @@
    "label": "Translation invariance",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.38,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 3
+   "deg": 4
   },
   {
    "id": "c:Attention mechanism",
@@ -355,30 +355,30 @@
    "label": "Clinical evidence reliance",
    "kind": "concept",
    "url": null,
-   "size": 3.88,
+   "size": 4.02,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 37
+   "deg": 40
   },
   {
    "id": "c:Reporting standards",
    "label": "Reporting standards",
    "kind": "concept",
    "url": null,
-   "size": 2.7,
+   "size": 2.65,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 11
+   "deg": 10
   },
   {
    "id": "c:Calibration",
    "label": "Calibration",
    "kind": "concept",
    "url": null,
-   "size": 4.34,
+   "size": 4.43,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 47
+   "deg": 49
   },
   {
    "id": "c:Evaluation metrics",
@@ -415,30 +415,30 @@
    "label": "Clinical validity",
    "kind": "concept",
    "url": null,
-   "size": 2.65,
+   "size": 2.7,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 10
+   "deg": 11
   },
   {
    "id": "c:Clinical feature annotation",
    "label": "Clinical feature annotation",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 5
+   "deg": 6
   },
   {
    "id": "c:Operating point selection",
    "label": "Operating point selection",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.2,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 19
+   "deg": 22
   },
   {
    "id": "c:Bayesian decision analysis",
@@ -455,20 +455,20 @@
    "label": "Pretest probability",
    "kind": "concept",
    "url": null,
-   "size": 3.88,
+   "size": 4.02,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 37
+   "deg": 40
   },
   {
    "id": "c:Uncertainty & abstention",
    "label": "Uncertainty & abstention",
    "kind": "concept",
    "url": null,
-   "size": 2.65,
+   "size": 2.75,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 10
+   "deg": 12
   },
   {
    "id": "c:Out-of-distribution detection",
@@ -545,10 +545,10 @@
    "label": "Clinical utility",
    "kind": "concept",
    "url": null,
-   "size": 2.7,
+   "size": 2.84,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 11
+   "deg": 14
   },
   {
    "id": "c:Cardiovascular risk",
@@ -595,40 +595,40 @@
    "label": "Identifiability criterion",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 5
+   "deg": 6
   },
   {
    "id": "c:Identifiability analysis",
    "label": "Identifiability analysis",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 5
+   "deg": 6
   },
   {
    "id": "c:Causal identifiability",
    "label": "Causal identifiability",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 5
+   "deg": 6
   },
   {
    "id": "c:Measurement identifiability",
    "label": "Measurement identifiability",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 5
+   "deg": 6
   },
   {
    "id": "c:Clinical guidelines",
@@ -645,10 +645,10 @@
    "label": "Deployment & drift",
    "kind": "concept",
    "url": null,
-   "size": 4.47,
+   "size": 4.52,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 50
+   "deg": 51
   },
   {
    "id": "c:Outlier influence",
@@ -665,10 +665,10 @@
    "label": "Selection & verification bias",
    "kind": "concept",
    "url": null,
-   "size": 2.56,
+   "size": 2.52,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 8
+   "deg": 7
   },
   {
    "id": "c:Representation learning",
@@ -695,10 +695,10 @@
    "label": "Predictive values",
    "kind": "concept",
    "url": null,
-   "size": 2.93,
+   "size": 2.97,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 16
+   "deg": 17
   },
   {
    "id": "c:Screening programs",
@@ -725,10 +725,10 @@
    "label": "Transportability",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 4
+   "deg": 6
   },
   {
    "id": "c:Distribution shift",
@@ -745,10 +745,10 @@
    "label": "Intended use specification",
    "kind": "concept",
    "url": null,
-   "size": 2.65,
+   "size": 2.7,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 10
+   "deg": 11
   },
   {
    "id": "c:Neuronal network activity",
@@ -759,6 +759,16 @@
    "fam": "clinical",
    "sector": "Disease & pathology",
    "deg": 2
+  },
+  {
+   "id": "c:Sensitivity analysis",
+   "label": "Sensitivity analysis",
+   "kind": "concept",
+   "url": null,
+   "size": 2.34,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 3
   },
   {
    "id": "c:Sampling theorem",
@@ -815,10 +825,10 @@
    "label": "Exploration & stress testing",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.38,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 5
+   "deg": 4
   },
   {
    "id": "c:Constrained optimisation",
@@ -831,16 +841,6 @@
    "deg": 3
   },
   {
-   "id": "c:Label noise",
-   "label": "Label noise",
-   "kind": "concept",
-   "url": null,
-   "size": 2.29,
-   "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 2
-  },
-  {
    "id": "c:Singular value analysis",
    "label": "Singular value analysis",
    "kind": "concept",
@@ -849,6 +849,16 @@
    "fam": "computational",
    "sector": "Systems & deployment",
    "deg": 2
+  },
+  {
+   "id": "c:Label noise",
+   "label": "Label noise",
+   "kind": "concept",
+   "url": null,
+   "size": 2.25,
+   "fam": "computational",
+   "sector": "Auditing & causality",
+   "deg": 1
   },
   {
    "id": "c:Simulation-based policy evaluation",
@@ -979,16 +989,6 @@
    "fam": "computational",
    "sector": "Systems & deployment",
    "deg": 1
-  },
-  {
-   "id": "c:Sensitivity analysis",
-   "label": "Sensitivity analysis",
-   "kind": "concept",
-   "url": null,
-   "size": 2.29,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 2
   },
   {
    "id": "note:abdominal-ultrasound-physics-and-image-formation",
@@ -1358,7 +1358,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 12
+   "deg": 14
   },
   {
    "id": "note:dementia",
@@ -1438,7 +1438,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 5
+   "deg": 14
   },
   {
    "id": "note:estimation-likelihood-and-posterior",
@@ -1627,7 +1627,7 @@
    "url": "/study/head-and-neck-cancer/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Disease & pathology",
+   "sector": "Clinical practice",
    "deg": 12
   },
   {
@@ -1687,8 +1687,8 @@
    "url": "/study/label-quality-and-interobserver-variability/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Systems & deployment",
-   "deg": 7
+   "sector": "Auditing & causality",
+   "deg": 9
   },
   {
    "id": "note:latent-variables-em-and-variational-inference",
@@ -1737,7 +1737,7 @@
    "url": "/study/lung-cancer/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Disease & pathology",
+   "sector": "Evaluation & reliability",
    "deg": 21
   },
   {
@@ -1957,8 +1957,8 @@
    "url": "/study/robustness-subgroup-performance-and-external-validation/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Systems & deployment",
-   "deg": 16
+   "sector": "Auditing & causality",
+   "deg": 24
   },
   {
    "id": "note:root-locus-and-stability-margins",
@@ -2076,9 +2076,9 @@
    "kind": "note",
    "url": "/study/statistical-evaluation-of-diagnostic-models/",
    "size": 1.8,
-   "fam": "bridge",
+   "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 10
+   "deg": 11
   },
   {
    "id": "note:statistical-inference-for-diagnostic-studies",
@@ -5086,31 +5086,7 @@
   },
   {
    "source": "note:dataset-design-ground-truth-and-reference-standards",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:dataset-design-ground-truth-and-reference-standards",
    "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:dataset-design-ground-truth-and-reference-standards",
-   "target": "c:Malignancy & staging",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:dataset-design-ground-truth-and-reference-standards",
-   "target": "c:Histopathology",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:dataset-design-ground-truth-and-reference-standards",
-   "target": "c:Reporting standards",
    "kind": "clinical",
    "w": 1
   },
@@ -5122,9 +5098,21 @@
   },
   {
    "source": "note:dataset-design-ground-truth-and-reference-standards",
-   "target": "c:Faithfulness",
+   "target": "c:Operating point selection",
    "kind": "computational",
    "w": 1
+  },
+  {
+   "source": "note:dataset-design-ground-truth-and-reference-standards",
+   "target": "c:Identifiability criterion",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:dataset-design-ground-truth-and-reference-standards",
+   "target": "c:Identifiability analysis",
+   "kind": "computational",
+   "w": 2
   },
   {
    "source": "note:dataset-design-ground-truth-and-reference-standards",
@@ -5134,7 +5122,31 @@
   },
   {
    "source": "note:dataset-design-ground-truth-and-reference-standards",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:dataset-design-ground-truth-and-reference-standards",
+   "target": "c:Measurement identifiability",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:dataset-design-ground-truth-and-reference-standards",
    "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:dataset-design-ground-truth-and-reference-standards",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:dataset-design-ground-truth-and-reference-standards",
+   "target": "c:Clinical validity",
    "kind": "computational",
    "w": 1
   },
@@ -5154,7 +5166,7 @@
    "source": "note:dataset-design-ground-truth-and-reference-standards",
    "target": "c:Selection & verification bias",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:dementia",
@@ -5716,13 +5728,67 @@
   },
   {
    "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Uncertainty & abstention",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
    "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
    "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Sensitivity analysis",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:error-and-clinical-failure-analysis",
+   "target": "c:Clinical utility",
    "kind": "computational",
    "w": 1
   },
@@ -7156,19 +7222,31 @@
   },
   {
    "source": "note:label-quality-and-interobserver-variability",
-   "target": "c:Label noise",
+   "target": "c:Reference standard adjudication",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:label-quality-and-interobserver-variability",
-   "target": "c:Reference standard adjudication",
+   "target": "c:Clinical feature annotation",
    "kind": "computational",
-   "w": 2
+   "w": 1
   },
   {
    "source": "note:label-quality-and-interobserver-variability",
    "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:label-quality-and-interobserver-variability",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:label-quality-and-interobserver-variability",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
@@ -8292,12 +8370,18 @@
    "source": "note:robustness-subgroup-performance-and-external-validation",
    "target": "c:Shortcut learning",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:robustness-subgroup-performance-and-external-validation",
    "target": "c:Gallbladder disease",
    "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Uncertainty & abstention",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -8326,7 +8410,7 @@
   },
   {
    "source": "note:robustness-subgroup-performance-and-external-validation",
-   "target": "c:Faithfulness",
+   "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 1
   },
@@ -8338,21 +8422,45 @@
   },
   {
    "source": "note:robustness-subgroup-performance-and-external-validation",
-   "target": "c:Exploration & stress testing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:robustness-subgroup-performance-and-external-validation",
    "target": "c:Robustness",
    "kind": "computational",
    "w": 2
   },
   {
    "source": "note:robustness-subgroup-performance-and-external-validation",
-   "target": "c:Internal validation",
+   "target": "c:Operating point selection",
    "kind": "computational",
    "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Translation invariance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 2
   },
   {
    "source": "note:robustness-subgroup-performance-and-external-validation",
@@ -8375,6 +8483,24 @@
   {
    "source": "note:robustness-subgroup-performance-and-external-validation",
    "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Clinical utility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Transportability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:robustness-subgroup-performance-and-external-validation",
+   "target": "c:Predictive values",
    "kind": "computational",
    "w": 1
   },
@@ -8884,19 +9010,13 @@
   },
   {
    "source": "note:statistical-evaluation-of-diagnostic-models",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:statistical-evaluation-of-diagnostic-models",
-   "target": "c:Malignancy & staging",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:statistical-evaluation-of-diagnostic-models",
    "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:statistical-evaluation-of-diagnostic-models",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
@@ -8920,7 +9040,7 @@
   },
   {
    "source": "note:statistical-evaluation-of-diagnostic-models",
-   "target": "c:Reference standard adjudication",
+   "target": "c:Operating point selection",
    "kind": "computational",
    "w": 1
   },
@@ -8932,7 +9052,19 @@
   },
   {
    "source": "note:statistical-evaluation-of-diagnostic-models",
-   "target": "c:Selection & verification bias",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:statistical-evaluation-of-diagnostic-models",
+   "target": "c:Clinical utility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:statistical-evaluation-of-diagnostic-models",
+   "target": "c:Transportability",
    "kind": "computational",
    "w": 1
   },
