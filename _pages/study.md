@@ -10,6 +10,10 @@ nav_order: 9
 <style>
 
   .sl-intro { font-size: 1rem; line-height: 1.75; margin-bottom: .3rem; }
+  /* The ontology is its own tab now, so it no longer needs the bottom-of-page
+     separator, and its heading would only repeat the tab it sits under. */
+  .sl-pane .on-wrap { margin-top: 1.4rem; padding-top: 0; border-top: 0; }
+  .sl-pane .on-h { display: none; }
   .sl-intro a { font-weight: 600; }
 
   /* Two top-level tabs */
@@ -84,7 +88,7 @@ nav_order: 9
   .sl-empty { font-size: .87rem; opacity: .6; padding: .6rem 0; }
 </style>
 
-<p class="sl-intro">Three parts, in the order they build on each other.</p>
+<p class="sl-intro">Three parts, in the order they build on each other &mdash; and the ontology that ties them together.</p>
 
 {% assign all_notes = site.study | where_exp: "n", "n.category" %}
 {% assign written_notes = all_notes | where: "written", true %}
@@ -99,6 +103,12 @@ nav_order: 9
     <span class="sl-tab-cnt">{{ t_written | size }} of {{ t_notes | size }} written</span>
   </button>
   {%- endfor %}
+  {%- assign onto = site.data.ontology %}
+  <button type="button" class="sl-tab" data-tab="ontology">
+    <span class="sl-tab-name">Ontology</span>
+    <span class="sl-tab-desc">The claims: what each concept is, and what holds between them.</span>
+    <span class="sl-tab-cnt">{{ onto.assertions | size }} assertions over {{ onto.concepts | size }} concepts</span>
+  </button>
 </div>
 
 {%- for t in site.data.study_sections.tabs %}
@@ -153,6 +163,10 @@ nav_order: 9
   {%- endfor %}
 </div>
 {%- endfor %}
+
+<div class="sl-pane sl-hidden" data-pane="ontology">
+  {% include ontology_table.liquid %}
+</div>
 
 <script>
   (function () {
@@ -212,4 +226,3 @@ nav_order: 9
   })();
 </script>
 
-{% include ontology_table.liquid %}
