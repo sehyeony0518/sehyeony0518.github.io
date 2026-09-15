@@ -115,6 +115,8 @@ concepts:
   Exploration & stress testing: Method
   Robustness: Property
   Sensitivity analysis: Method
+  Out-of-distribution detection: Method
+  Similarity & graph construction: Method
 
 # id | subject | relation | object | claim | confidence | note | source
 assertions:
@@ -186,3 +188,8 @@ assertions:
   - [E66, Sensitivity analysis, assessesProperty, Robustness, M, high, "Varying one design decision at a time measures how much the reported result depends on it, for the decisions someone chose to vary.", null]
   - [E67, Sensitivity analysis, probesThreat, Distribution shift, M, high, "Leave-one-site-out and cohort re-weighting rehearse a shift using variation already present in the assembled data, and reach no further than that variation.", null]
   - [E68, Evaluation metrics, doesNotEstablish, Plausibility, D, high, "A performance figure quantifies agreement with labels and carries no claim about whether the model's reasoning would be recognised as sensible.", null]
+  - [E69, Out-of-distribution detection, probesThreat, Distribution shift, M, high, "A support or density estimate can flag inputs unlike the training set, for the notion of likeness the model was given.", "10.1162/089976601750264965"]
+  - [E70, Shortcut learning, warrantsReassessmentOf, Out-of-distribution detection, D, high, "If a site signature is part of what the detector learned to call normal, it flags a new scanner and passes novel pathology from the familiar one.", null]
+  - [E71, Out-of-distribution detection, doesNotEstablish, Robustness, D, high, "Declining to answer on inputs judged unfamiliar is not evidence of correct behaviour on inputs judged familiar.", null]
+  - [E72, Similarity & graph construction, canIntroduce, Spurious correlation, M, high, "A kernel or affinity matrix asserts which cases count as comparable; if acquisition rather than biology drives that similarity, downstream structure inherits it.", null]
+  - [E73, Subgroup & fairness, canAudit, Similarity & graph construction, M, medium, "Degree normalisation decides how far the densely connected majority sets the geometry, so the graph construction is itself a legitimate target of subgroup analysis.", null]
