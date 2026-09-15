@@ -8,17 +8,17 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 120
+   "deg": 118
   },
   {
    "id": "c:Diagnostic reasoning",
    "label": "Diagnostic reasoning",
    "kind": "concept",
    "url": null,
-   "size": 3.97,
+   "size": 3.79,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 39
+   "deg": 35
   },
   {
    "id": "c:Gallbladder disease",
@@ -35,10 +35,10 @@
    "label": "Liver & hepatobiliary",
    "kind": "concept",
    "url": null,
-   "size": 3.38,
+   "size": 3.47,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 26
+   "deg": 28
   },
   {
    "id": "c:Ultrasound acquisition",
@@ -48,7 +48,7 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 78
+   "deg": 79
   },
   {
    "id": "c:Cross-sectional imaging",
@@ -65,80 +65,80 @@
    "label": "Sonographic features",
    "kind": "concept",
    "url": null,
-   "size": 3.25,
+   "size": 3.29,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 23
+   "deg": 24
   },
   {
    "id": "c:Faithfulness",
    "label": "Faithfulness",
    "kind": "concept",
    "url": null,
-   "size": 4.34,
+   "size": 4.25,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 47
+   "deg": 45
   },
   {
    "id": "c:Inverse reconstruction",
    "label": "Inverse reconstruction",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 19
+   "deg": 20
   },
   {
    "id": "c:Clinical assessability",
    "label": "Clinical assessability",
    "kind": "concept",
    "url": null,
-   "size": 4.38,
+   "size": 4.56,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 48
+   "deg": 52
   },
   {
    "id": "c:Neoplastic invasion",
    "label": "Neoplastic invasion",
    "kind": "concept",
    "url": null,
-   "size": 2.75,
+   "size": 2.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 12
+   "deg": 16
   },
   {
    "id": "c:Acoustic propagation",
    "label": "Acoustic propagation",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.65,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 6
+   "deg": 10
   },
   {
    "id": "c:Intramural cystic spaces",
    "label": "Intramural cystic spaces",
    "kind": "concept",
    "url": null,
-   "size": 2.84,
+   "size": 2.88,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 14
+   "deg": 15
   },
   {
    "id": "c:Posterior acoustic effects",
    "label": "Posterior acoustic effects",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.52,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 5
+   "deg": 7
   },
   {
    "id": "c:Shortcut learning",
@@ -148,27 +148,27 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 85
+   "deg": 86
   },
   {
    "id": "c:Malignancy & staging",
    "label": "Malignancy & staging",
    "kind": "concept",
    "url": null,
-   "size": 3.97,
+   "size": 3.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 39
+   "deg": 38
   },
   {
    "id": "c:Histopathology",
    "label": "Histopathology",
    "kind": "concept",
    "url": null,
-   "size": 3.34,
+   "size": 3.52,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 25
+   "deg": 29
   },
   {
    "id": "c:Attribution & saliency",
@@ -185,20 +185,20 @@
    "label": "Inflammatory change",
    "kind": "concept",
    "url": null,
-   "size": 3.34,
+   "size": 3.38,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 25
+   "deg": 26
   },
   {
    "id": "c:Benign wall remodelling",
    "label": "Benign wall remodelling",
    "kind": "concept",
    "url": null,
-   "size": 2.75,
+   "size": 2.84,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 12
+   "deg": 14
   },
   {
    "id": "c:Wall thickening",
@@ -215,30 +215,30 @@
    "label": "Subgroup & fairness",
    "kind": "concept",
    "url": null,
-   "size": 4.65,
+   "size": 4.61,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 54
+   "deg": 53
   },
   {
    "id": "c:Robustness",
    "label": "Robustness",
    "kind": "concept",
    "url": null,
-   "size": 3.56,
+   "size": 3.52,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 30
+   "deg": 29
   },
   {
    "id": "c:Internal validation",
    "label": "Internal validation",
    "kind": "concept",
    "url": null,
-   "size": 3.25,
+   "size": 3.2,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 23
+   "deg": 22
   },
   {
    "id": "c:Electrophysiological recording",
@@ -265,10 +265,10 @@
    "label": "Reference standard adjudication",
    "kind": "concept",
    "url": null,
-   "size": 4.11,
+   "size": 4.25,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 42
+   "deg": 45
   },
   {
    "id": "c:Segmentation & detection",
@@ -285,10 +285,10 @@
    "label": "Post-processing",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.29,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 2
   },
   {
    "id": "c:Objective design",
@@ -315,10 +315,10 @@
    "label": "Plausibility",
    "kind": "concept",
    "url": null,
-   "size": 3.02,
+   "size": 3.06,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 18
+   "deg": 19
   },
   {
    "id": "c:Translation invariance",
@@ -345,30 +345,30 @@
    "label": "Counterfactual",
    "kind": "concept",
    "url": null,
-   "size": 3.11,
+   "size": 3.06,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 20
+   "deg": 19
   },
   {
    "id": "c:Clinical validity",
    "label": "Clinical validity",
    "kind": "concept",
    "url": null,
-   "size": 2.88,
+   "size": 2.93,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 15
+   "deg": 16
   },
   {
    "id": "c:Clinical evidence reliance",
    "label": "Clinical evidence reliance",
    "kind": "concept",
    "url": null,
-   "size": 4.15,
+   "size": 4.34,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 43
+   "deg": 47
   },
   {
    "id": "c:Reporting standards",
@@ -395,10 +395,10 @@
    "label": "Evaluation metrics",
    "kind": "concept",
    "url": null,
-   "size": 4.15,
+   "size": 4.2,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 43
+   "deg": 44
   },
   {
    "id": "c:Concept-based methods",
@@ -425,10 +425,20 @@
    "label": "Clinical feature annotation",
    "kind": "concept",
    "url": null,
-   "size": 2.61,
+   "size": 2.65,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 9
+   "deg": 10
+  },
+  {
+   "id": "c:Clinical utility",
+   "label": "Clinical utility",
+   "kind": "concept",
+   "url": null,
+   "size": 3.06,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 19
   },
   {
    "id": "c:Operating point selection",
@@ -465,10 +475,10 @@
    "label": "Uncertainty & abstention",
    "kind": "concept",
    "url": null,
-   "size": 2.84,
+   "size": 2.88,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 14
+   "deg": 15
   },
   {
    "id": "c:Out-of-distribution detection",
@@ -541,16 +551,6 @@
    "deg": 4
   },
   {
-   "id": "c:Clinical utility",
-   "label": "Clinical utility",
-   "kind": "concept",
-   "url": null,
-   "size": 3.02,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 18
-  },
-  {
    "id": "c:Deployment & drift",
    "label": "Deployment & drift",
    "kind": "concept",
@@ -605,40 +605,40 @@
    "label": "Identifiability criterion",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.52,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 6
+   "deg": 7
   },
   {
    "id": "c:Identifiability analysis",
    "label": "Identifiability analysis",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.52,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 6
+   "deg": 7
   },
   {
    "id": "c:Causal identifiability",
    "label": "Causal identifiability",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.52,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 6
+   "deg": 7
   },
   {
    "id": "c:Measurement identifiability",
    "label": "Measurement identifiability",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.52,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 6
+   "deg": 7
   },
   {
    "id": "c:Clinical guidelines",
@@ -675,10 +675,10 @@
    "label": "Intended use specification",
    "kind": "concept",
    "url": null,
-   "size": 2.93,
+   "size": 3.06,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 16
+   "deg": 19
   },
   {
    "id": "c:Selection & verification bias",
@@ -1098,7 +1098,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 12
+   "deg": 21
   },
   {
    "id": "note:bayesian-decision-theory",
@@ -1257,7 +1257,7 @@
    "url": "/study/clinical-faithfulness-and-reliance-on-clinical-evidence/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Interpretability",
+   "sector": "Evaluation & reliability",
    "deg": 16
   },
   {
@@ -1277,8 +1277,8 @@
    "url": "/study/clinical-knowledge-guided-representation-learning/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
-   "deg": 17
+   "sector": "Imaging & acquisition",
+   "deg": 19
   },
   {
    "id": "note:clinical-validity-and-clinical-utility",
@@ -1408,7 +1408,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 7
+   "deg": 19
   },
   {
    "id": "note:distribution-shift-and-out-of-distribution-generalization",
@@ -1498,7 +1498,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Disease & pathology",
-   "deg": 20
+   "deg": 26
   },
   {
    "id": "note:federated-and-continual-learning-in-healthcare",
@@ -1637,7 +1637,7 @@
    "url": "/study/head-and-neck-cancer/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
+   "sector": "Disease & pathology",
    "deg": 12
   },
   {
@@ -2038,7 +2038,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 13
+   "deg": 18
   },
   {
    "id": "note:shortcut-learning-in-medical-imaging",
@@ -3592,7 +3592,7 @@
    "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
    "target": "c:Diagnostic reasoning",
    "kind": "clinical",
-   "w": 2
+   "w": 1
   },
   {
    "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
@@ -3603,6 +3603,30 @@
   {
    "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
    "target": "c:Malignancy & staging",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Liver & hepatobiliary",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Histopathology",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Sonographic features",
    "kind": "clinical",
    "w": 1
   },
@@ -3626,13 +3650,31 @@
   },
   {
    "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
-   "target": "c:Counterfactual",
+   "target": "c:Reference standard adjudication",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
    "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Clinical utility",
    "kind": "computational",
    "w": 1
   },
@@ -3644,13 +3686,25 @@
   },
   {
    "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
-   "target": "c:Wall thickening",
+   "target": "c:Neoplastic invasion",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
-   "target": "c:Posterior acoustic effects",
+   "target": "c:Benign wall remodelling",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Acoustic propagation",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:auditing-explanation-faithfulness-in-gallbladder-models",
+   "target": "c:Wall thickening",
    "kind": "clinical",
    "w": 1
   },
@@ -4634,25 +4688,13 @@
   },
   {
    "source": "note:clinical-feature-annotation-and-multi-task-learning",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:clinical-feature-annotation-and-multi-task-learning",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
-   "w": 2
-  },
-  {
-   "source": "note:clinical-feature-annotation-and-multi-task-learning",
    "target": "c:Gallbladder disease",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "note:clinical-feature-annotation-and-multi-task-learning",
-   "target": "c:Malignancy & staging",
+   "target": "c:Liver & hepatobiliary",
    "kind": "clinical",
    "w": 1
   },
@@ -4672,12 +4714,6 @@
    "source": "note:clinical-feature-annotation-and-multi-task-learning",
    "target": "c:Sonographic features",
    "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:clinical-feature-annotation-and-multi-task-learning",
-   "target": "c:Faithfulness",
-   "kind": "computational",
    "w": 1
   },
   {
@@ -4706,13 +4742,31 @@
   },
   {
    "source": "note:clinical-feature-annotation-and-multi-task-learning",
+   "target": "c:Clinical validity",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-feature-annotation-and-multi-task-learning",
    "target": "c:Inflammatory change",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "note:clinical-feature-annotation-and-multi-task-learning",
+   "target": "c:Neoplastic invasion",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-feature-annotation-and-multi-task-learning",
    "target": "c:Benign wall remodelling",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-feature-annotation-and-multi-task-learning",
+   "target": "c:Acoustic propagation",
    "kind": "clinical",
    "w": 1
   },
@@ -4732,7 +4786,7 @@
    "source": "note:clinical-knowledge-guided-representation-learning",
    "target": "c:Diagnostic reasoning",
    "kind": "clinical",
-   "w": 2
+   "w": 1
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
@@ -4754,9 +4808,15 @@
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
+   "target": "c:Histopathology",
+   "kind": "clinical",
+   "w": 2
+  },
+  {
+   "source": "note:clinical-knowledge-guided-representation-learning",
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
@@ -4772,31 +4832,25 @@
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:clinical-knowledge-guided-representation-learning",
    "target": "c:Concept-based methods",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
-   "target": "c:Robustness",
+   "target": "c:Clinical feature annotation",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
-   "target": "c:Post-processing",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
-   "target": "c:Internal validation",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
@@ -4820,6 +4874,12 @@
   },
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
+   "target": "c:Acoustic propagation",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-knowledge-guided-representation-learning",
    "target": "c:Wall thickening",
    "kind": "clinical",
    "w": 1
@@ -4827,6 +4887,12 @@
   {
    "source": "note:clinical-knowledge-guided-representation-learning",
    "target": "c:Intramural cystic spaces",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:clinical-knowledge-guided-representation-learning",
+   "target": "c:Posterior acoustic effects",
    "kind": "clinical",
    "w": 1
   },
@@ -5600,13 +5666,13 @@
   },
   {
    "source": "note:diagnostic-markers-as-shortcut-cues",
-   "target": "c:Diagnostic reasoning",
+   "target": "c:Gallbladder disease",
    "kind": "clinical",
-   "w": 2
+   "w": 1
   },
   {
    "source": "note:diagnostic-markers-as-shortcut-cues",
-   "target": "c:Gallbladder disease",
+   "target": "c:Histopathology",
    "kind": "clinical",
    "w": 1
   },
@@ -5624,13 +5690,85 @@
   },
   {
    "source": "note:diagnostic-markers-as-shortcut-cues",
-   "target": "c:Segmentation & detection",
+   "target": "c:Identifiability criterion",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Identifiability analysis",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Measurement identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Inflammatory change",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Neoplastic invasion",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Acoustic propagation",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
    "target": "c:Wall thickening",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Intramural cystic spaces",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:diagnostic-markers-as-shortcut-cues",
+   "target": "c:Posterior acoustic effects",
    "kind": "clinical",
    "w": 1
   },
@@ -6236,9 +6374,9 @@
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
-   "w": 2
+   "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
@@ -6254,19 +6392,25 @@
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
-   "target": "c:Liver & hepatobiliary",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
    "target": "c:Histopathology",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Uncertainty & abstention",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
    "target": "c:Calibration",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Evaluation metrics",
    "kind": "computational",
    "w": 1
   },
@@ -6284,13 +6428,19 @@
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
-   "target": "c:Sonographic features",
-   "kind": "clinical",
+   "target": "c:Faithfulness",
+   "kind": "computational",
    "w": 1
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
-   "target": "c:Faithfulness",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 1
   },
@@ -6302,9 +6452,39 @@
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
    "target": "c:External validation",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
@@ -6316,7 +6496,7 @@
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
    "target": "c:Predictive values",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
@@ -6339,12 +6519,6 @@
   {
    "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
    "target": "c:Wall thickening",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:external-validation-and-clinical-utility-for-gallbladder-ai",
-   "target": "c:Intramural cystic spaces",
    "kind": "clinical",
    "w": 1
   },
@@ -9062,12 +9236,6 @@
   },
   {
    "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
    "target": "c:Shortcut learning",
    "kind": "computational",
    "w": 2
@@ -9076,12 +9244,6 @@
    "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
    "target": "c:Confounding",
    "kind": "computational",
-   "w": 2
-  },
-  {
-   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
    "w": 2
   },
   {
@@ -9098,8 +9260,14 @@
   },
   {
    "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
+   "target": "c:Liver & hepatobiliary",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+   "target": "c:Histopathology",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -9110,13 +9278,25 @@
   },
   {
    "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
-   "target": "c:Clinical assessability",
+   "target": "c:Sonographic features",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+   "target": "c:Intended use specification",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
-   "target": "c:Pretest probability",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -9134,7 +9314,31 @@
   },
   {
    "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+   "target": "c:Neoplastic invasion",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+   "target": "c:Benign wall remodelling",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
    "target": "c:Wall thickening",
+   "kind": "clinical",
+   "w": 2
+  },
+  {
+   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+   "target": "c:Intramural cystic spaces",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
+   "target": "c:Posterior acoustic effects",
    "kind": "clinical",
    "w": 1
   },
