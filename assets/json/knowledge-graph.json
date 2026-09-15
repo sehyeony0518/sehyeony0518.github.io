@@ -8,7 +8,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 122
+   "deg": 120
   },
   {
    "id": "c:Diagnostic reasoning",
@@ -28,7 +28,7 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 71
+   "deg": 67
   },
   {
    "id": "c:Liver & hepatobiliary",
@@ -48,7 +48,7 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 79
+   "deg": 78
   },
   {
    "id": "c:Cross-sectional imaging",
@@ -75,10 +75,10 @@
    "label": "Faithfulness",
    "kind": "concept",
    "url": null,
-   "size": 4.43,
+   "size": 4.34,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 49
+   "deg": 47
   },
   {
    "id": "c:Inverse reconstruction",
@@ -95,10 +95,10 @@
    "label": "Clinical assessability",
    "kind": "concept",
    "url": null,
-   "size": 4.15,
+   "size": 4.38,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 43
+   "deg": 48
   },
   {
    "id": "c:Neoplastic invasion",
@@ -148,7 +148,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 84
+   "deg": 85
   },
   {
    "id": "c:Malignancy & staging",
@@ -165,10 +165,10 @@
    "label": "Histopathology",
    "kind": "concept",
    "url": null,
-   "size": 3.29,
+   "size": 3.34,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 24
+   "deg": 25
   },
   {
    "id": "c:Attribution & saliency",
@@ -245,40 +245,40 @@
    "label": "Electrophysiological recording",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.38,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 3
+   "deg": 4
   },
   {
    "id": "c:Electrophysiological features",
    "label": "Electrophysiological features",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.38,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 3
+   "deg": 4
   },
   {
    "id": "c:Reference standard adjudication",
    "label": "Reference standard adjudication",
    "kind": "concept",
    "url": null,
-   "size": 3.88,
+   "size": 4.11,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 37
+   "deg": 42
   },
   {
    "id": "c:Segmentation & detection",
    "label": "Segmentation & detection",
    "kind": "concept",
    "url": null,
-   "size": 3.75,
+   "size": 3.79,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 34
+   "deg": 35
   },
   {
    "id": "c:Post-processing",
@@ -305,20 +305,20 @@
    "label": "External validation",
    "kind": "concept",
    "url": null,
-   "size": 3.2,
+   "size": 3.15,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 22
+   "deg": 21
   },
   {
    "id": "c:Plausibility",
    "label": "Plausibility",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.02,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 19
+   "deg": 18
   },
   {
    "id": "c:Translation invariance",
@@ -345,10 +345,10 @@
    "label": "Counterfactual",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 19
+   "deg": 20
   },
   {
    "id": "c:Clinical validity",
@@ -365,10 +365,10 @@
    "label": "Clinical evidence reliance",
    "kind": "concept",
    "url": null,
-   "size": 4.06,
+   "size": 4.15,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 41
+   "deg": 43
   },
   {
    "id": "c:Reporting standards",
@@ -385,20 +385,20 @@
    "label": "Calibration",
    "kind": "concept",
    "url": null,
-   "size": 4.47,
+   "size": 4.52,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 50
+   "deg": 51
   },
   {
    "id": "c:Evaluation metrics",
    "label": "Evaluation metrics",
    "kind": "concept",
    "url": null,
-   "size": 4.11,
+   "size": 4.15,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 42
+   "deg": 43
   },
   {
    "id": "c:Concept-based methods",
@@ -435,30 +435,30 @@
    "label": "Operating point selection",
    "kind": "concept",
    "url": null,
-   "size": 3.34,
+   "size": 3.43,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 25
+   "deg": 27
   },
   {
    "id": "c:Bayesian decision analysis",
    "label": "Bayesian decision analysis",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.38,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 4
   },
   {
    "id": "c:Pretest probability",
    "label": "Pretest probability",
    "kind": "concept",
    "url": null,
-   "size": 4.11,
+   "size": 4.15,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 42
+   "deg": 43
   },
   {
    "id": "c:Uncertainty & abstention",
@@ -545,10 +545,30 @@
    "label": "Clinical utility",
    "kind": "concept",
    "url": null,
-   "size": 2.93,
+   "size": 3.02,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 16
+   "deg": 18
+  },
+  {
+   "id": "c:Deployment & drift",
+   "label": "Deployment & drift",
+   "kind": "concept",
+   "url": null,
+   "size": 4.7,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 55
+  },
+  {
+   "id": "c:Clinical history & examination",
+   "label": "Clinical history & examination",
+   "kind": "concept",
+   "url": null,
+   "size": 2.38,
+   "fam": "clinical",
+   "sector": "Imaging & acquisition",
+   "deg": 4
   },
   {
    "id": "c:Cardiovascular risk",
@@ -559,16 +579,6 @@
    "fam": "clinical",
    "sector": "Disease & pathology",
    "deg": 1
-  },
-  {
-   "id": "c:Acute stroke triage",
-   "label": "Acute stroke triage",
-   "kind": "concept",
-   "url": null,
-   "size": 2.38,
-   "fam": "clinical",
-   "sector": "Disease & pathology",
-   "deg": 4
   },
   {
    "id": "c:Causal inference",
@@ -585,10 +595,10 @@
    "label": "Confounding",
    "kind": "concept",
    "url": null,
-   "size": 3.15,
+   "size": 3.2,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 21
+   "deg": 22
   },
   {
    "id": "c:Identifiability criterion",
@@ -635,20 +645,10 @@
    "label": "Clinical guidelines",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.38,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 5
-  },
-  {
-   "id": "c:Deployment & drift",
-   "label": "Deployment & drift",
-   "kind": "concept",
-   "url": null,
-   "size": 4.61,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 53
+   "deg": 4
   },
   {
    "id": "c:Outlier influence",
@@ -661,14 +661,24 @@
    "deg": 2
   },
   {
+   "id": "c:Neurological disease",
+   "label": "Neurological disease",
+   "kind": "concept",
+   "url": null,
+   "size": 2.52,
+   "fam": "clinical",
+   "sector": "Disease & pathology",
+   "deg": 7
+  },
+  {
    "id": "c:Intended use specification",
    "label": "Intended use specification",
    "kind": "concept",
    "url": null,
-   "size": 2.84,
+   "size": 2.93,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 14
+   "deg": 16
   },
   {
    "id": "c:Selection & verification bias",
@@ -695,20 +705,30 @@
    "label": "Longitudinal follow-up",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.43,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 4
+   "deg": 5
   },
   {
    "id": "c:Predictive values",
    "label": "Predictive values",
    "kind": "concept",
    "url": null,
-   "size": 3.02,
+   "size": 3.06,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 18
+   "deg": 19
+  },
+  {
+   "id": "c:Acute stroke triage",
+   "label": "Acute stroke triage",
+   "kind": "concept",
+   "url": null,
+   "size": 2.38,
+   "fam": "clinical",
+   "sector": "Disease & pathology",
+   "deg": 4
   },
   {
    "id": "c:Screening programs",
@@ -719,16 +739,6 @@
    "fam": "clinical",
    "sector": "Clinical practice",
    "deg": 4
-  },
-  {
-   "id": "c:Neurological disease",
-   "label": "Neurological disease",
-   "kind": "concept",
-   "url": null,
-   "size": 2.47,
-   "fam": "clinical",
-   "sector": "Disease & pathology",
-   "deg": 6
   },
   {
    "id": "c:Transportability",
@@ -839,16 +849,6 @@
    "fam": "computational",
    "sector": "Systems & deployment",
    "deg": 7
-  },
-  {
-   "id": "c:Clinical history & examination",
-   "label": "Clinical history & examination",
-   "kind": "concept",
-   "url": null,
-   "size": 2.34,
-   "fam": "clinical",
-   "sector": "Imaging & acquisition",
-   "deg": 3
   },
   {
    "id": "c:Hypothesis testing",
@@ -1158,7 +1158,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Evaluation & reliability",
-   "deg": 9
+   "deg": 16
   },
   {
    "id": "note:causal-inference-for-medical-ai",
@@ -1228,7 +1228,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Clinical practice",
-   "deg": 3
+   "deg": 10
   },
   {
    "id": "note:clinical-alignment-and-knowledge-as-supervision",
@@ -1338,7 +1338,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 7
+   "deg": 12
   },
   {
    "id": "note:curvature-without-the-hessian",
@@ -1377,7 +1377,7 @@
    "url": "/study/dementia/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
+   "sector": "Systems & deployment",
    "deg": 16
   },
   {
@@ -1397,8 +1397,8 @@
    "url": "/study/dermatologic-disease/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
-   "deg": 10
+   "sector": "Evaluation & reliability",
+   "deg": 14
   },
   {
    "id": "note:diagnostic-markers-as-shortcut-cues",
@@ -1847,7 +1847,7 @@
    "url": "/study/parkinsons-disease/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
+   "sector": "Systems & deployment",
    "deg": 15
   },
   {
@@ -2117,7 +2117,7 @@
    "url": "/study/stroke/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Clinical practice",
+   "sector": "Systems & deployment",
    "deg": 17
   },
   {
@@ -3902,19 +3902,13 @@
   },
   {
    "source": "note:cardiovascular-disease",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:cardiovascular-disease",
    "target": "c:Diagnostic reasoning",
    "kind": "clinical",
    "w": 2
   },
   {
    "source": "note:cardiovascular-disease",
-   "target": "c:Gallbladder disease",
+   "target": "c:Histopathology",
    "kind": "clinical",
    "w": 1
   },
@@ -3926,8 +3920,50 @@
   },
   {
    "source": "note:cardiovascular-disease",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:cardiovascular-disease",
    "target": "c:Cross-sectional imaging",
    "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:cardiovascular-disease",
+   "target": "c:Counterfactual",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:cardiovascular-disease",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:cardiovascular-disease",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:cardiovascular-disease",
+   "target": "c:Bayesian decision analysis",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:cardiovascular-disease",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:cardiovascular-disease",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -3938,15 +3974,21 @@
   },
   {
    "source": "note:cardiovascular-disease",
-   "target": "c:Cardiovascular risk",
-   "kind": "clinical",
-   "w": 2
+   "target": "c:Clinical utility",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "note:cardiovascular-disease",
-   "target": "c:Acute stroke triage",
+   "target": "c:Clinical history & examination",
    "kind": "clinical",
    "w": 1
+  },
+  {
+   "source": "note:cardiovascular-disease",
+   "target": "c:Cardiovascular risk",
+   "kind": "clinical",
+   "w": 2
   },
   {
    "source": "note:cardiovascular-disease",
@@ -4280,20 +4322,62 @@
   },
   {
    "source": "note:circadian-rhythm-disorders",
-   "target": "c:Clinical guidelines",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:circadian-rhythm-disorders",
    "target": "c:Diagnostic reasoning",
    "kind": "clinical",
    "w": 2
   },
   {
    "source": "note:circadian-rhythm-disorders",
-   "target": "c:Faithfulness",
+   "target": "c:Neurological disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Deployment & drift",
    "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Clinical utility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Electrophysiological recording",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:circadian-rhythm-disorders",
+   "target": "c:Electrophysiological features",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -5060,14 +5144,26 @@
   },
   {
    "source": "note:critical-care-medicine",
+   "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:critical-care-medicine",
+   "target": "c:Confounding",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:critical-care-medicine",
    "target": "c:Diagnostic reasoning",
    "kind": "clinical",
    "w": 2
   },
   {
    "source": "note:critical-care-medicine",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
+   "target": "c:Calibration",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -5090,8 +5186,26 @@
   },
   {
    "source": "note:critical-care-medicine",
-   "target": "c:External validation",
+   "target": "c:Reference standard adjudication",
    "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:critical-care-medicine",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:critical-care-medicine",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:critical-care-medicine",
+   "target": "c:Acute stroke triage",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -5408,12 +5522,6 @@
   },
   {
    "source": "note:dermatologic-disease",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:dermatologic-disease",
    "target": "c:Malignancy & staging",
    "kind": "clinical",
    "w": 1
@@ -5422,7 +5530,7 @@
    "source": "note:dermatologic-disease",
    "target": "c:Histopathology",
    "kind": "clinical",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:dermatologic-disease",
@@ -5432,13 +5540,43 @@
   },
   {
    "source": "note:dermatologic-disease",
-   "target": "c:Ultrasound acquisition",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:dermatologic-disease",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:dermatologic-disease",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:dermatologic-disease",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:dermatologic-disease",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:dermatologic-disease",
+   "target": "c:Longitudinal follow-up",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "note:dermatologic-disease",
-   "target": "c:Clinical evidence reliance",
+   "target": "c:Predictive values",
    "kind": "computational",
    "w": 1
   },
@@ -5452,7 +5590,7 @@
    "source": "note:dermatologic-disease",
    "target": "c:Neoplastic invasion",
    "kind": "clinical",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:diagnostic-markers-as-shortcut-cues",
@@ -7058,21 +7196,9 @@
   },
   {
    "source": "note:head-and-neck-cancer",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:head-and-neck-cancer",
    "target": "c:Diagnostic reasoning",
    "kind": "clinical",
    "w": 2
-  },
-  {
-   "source": "note:head-and-neck-cancer",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
   },
   {
    "source": "note:head-and-neck-cancer",
@@ -7084,7 +7210,7 @@
    "source": "note:head-and-neck-cancer",
    "target": "c:Histopathology",
    "kind": "clinical",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:head-and-neck-cancer",
@@ -7100,13 +7226,25 @@
   },
   {
    "source": "note:head-and-neck-cancer",
-   "target": "c:Faithfulness",
+   "target": "c:Segmentation & detection",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:head-and-neck-cancer",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:head-and-neck-cancer",
+   "target": "c:Reference standard adjudication",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:head-and-neck-cancer",
-   "target": "c:Plausibility",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
