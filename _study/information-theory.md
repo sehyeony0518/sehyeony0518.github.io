@@ -2,9 +2,9 @@
 layout: study_note
 title: "Information Theory"
 description: "Entropy, mutual information, and KL divergence as ways to quantify how much a signal carries and how far two distributions have moved."
-tab: "trustworthy-ai"
-tab_title: "Trustworthy AI"
-category: "foundations"
+tab: "ai-foundations"
+tab_title: "AI Foundations"
+category: "math-foundations"
 category_title: "Mathematical & Statistical Foundations"
 order: 5
 source: "Independent study"
