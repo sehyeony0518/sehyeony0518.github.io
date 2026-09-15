@@ -3,7 +3,7 @@ layout: study_note
 title: "Attention: Retrieval as a Differentiable Operation"
 description: "Query, key and value are a soft dictionary lookup, and everything else in a Transformer is bookkeeping around it. Including why the scores are divided by √d, which is not a fudge factor."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 13

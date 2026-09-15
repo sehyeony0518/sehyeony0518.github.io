@@ -3,7 +3,7 @@ layout: study_note
 title: "Choosing an Estimator: MMSE, MAP, and Maximum Likelihood"
 description: "Three answers to the same question, what each one optimises, and which of them needs an integral nobody can evaluate."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
 order: 3

@@ -3,7 +3,7 @@ layout: study_note
 title: "Convolution via the DFT: Circular, Linear, and the Padding You Forgot Was a Choice"
 description: "Why multiplying two DFTs gives the wrong answer, the length condition that fixes it, and why full/same/valid is the same decision a CNN makes at every layer."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
 order: 3

@@ -3,7 +3,7 @@ layout: study_note
 title: "The Exponential Moving Average: One Recursion Behind Momentum, RMSProp and Adam"
 description: "A single line of algebra that replaces a buffer with one number — and once you recognise it, most of the optimiser zoo stops being a zoo."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "algebra-and-optimisation"
 category_title: "Linear Algebra & Optimisation"
 order: 9

@@ -3,7 +3,7 @@ layout: study_note
 title: "Segmentation: Resolution Against Context, and the Things/Stuff Divide"
 description: "Every segmentation architecture is an answer to one conflict — you need to see widely and label precisely, and pooling buys the first with the second. Four answers, and why panoptic needed a new output format."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 12

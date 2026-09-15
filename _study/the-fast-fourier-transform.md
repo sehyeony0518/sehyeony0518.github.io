@@ -3,7 +3,7 @@ layout: study_note
 title: "The FFT: Where a 200× Speedup Comes From"
 description: "Splitting a transform into its even and odd samples, the recursion that turns N² into N log N, and why an algorithm can matter more than the hardware."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
 order: 11

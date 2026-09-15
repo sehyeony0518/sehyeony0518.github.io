@@ -3,7 +3,7 @@
 # judged against, then what both are for.
 tabs:
   - id: "ai-foundations"
-    title: "Theory"
+    title: "AI Theory"
     description: "The machinery: mathematics, signals, systems, learning, and control."
   - id: "clinical-medicine"
     title: "Clinical Medicine"

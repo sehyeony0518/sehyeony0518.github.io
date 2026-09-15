@@ -3,7 +3,7 @@ layout: study_note
 title: "The Central Limit Theorem, via Characteristic Functions"
 description: "Why sums of independent quantities turn Gaussian, shown by the transform that turns convolution into multiplication."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
 order: 5
