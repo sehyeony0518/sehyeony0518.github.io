@@ -117,6 +117,7 @@ concepts:
   Sensitivity analysis: Method
   Out-of-distribution detection: Method
   Hypothesis testing: Method
+  Preprocessing & resampling: Method
   Similarity & graph construction: Method
 
 # id | subject | relation | object | claim | confidence | note | source
@@ -196,3 +197,6 @@ assertions:
   - [E73, Subgroup & fairness, canAudit, Similarity & graph construction, M, medium, "Degree normalisation decides how far the densely connected majority sets the geometry, so the graph construction is itself a legitimate target of subgroup analysis.", null]
   - [E74, Hypothesis testing, assessesProperty, Calibration, M, medium, "A goodness-of-fit test compares predicted frequencies against observed ones, subject to the test's own independence assumptions.", null]
   - [E75, Hypothesis testing, doesNotEstablish, Robustness, D, high, "A p-value is conditional on the null being true and supplies no probability that any hypothesis holds, let alone that performance transports.", "10.1080/00031305.2016.1154108"]
+  - [E76, Preprocessing & resampling, canIntroduce, Spurious correlation, M, high, "Resampling without anti-aliasing stamps a ratio-dependent texture on every image, and the ratio follows the acquiring scanner.", "10.1109/CVPR52688.2022.01112"]
+  - [E77, Preprocessing & resampling, changesObservabilityOf, Sonographic features, M, high, "Interpolation and filtering can suppress fine texture that a reader or model would otherwise assess.", null]
+  - [E78, Auditing, canAudit, Preprocessing & resampling, M, high, "The pipeline that produced the inputs is itself an inspection target, and one that attribution over image content cannot reach.", null]
