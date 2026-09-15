@@ -131,6 +131,8 @@ concepts:
   Label noise: Threat
   Pseudo-labelling: Method
   Implicit representation: Method
+  Stability margin: Property
+  Feedback correction: Method
 
 # id | subject | relation | object | claim | confidence | note | source
 
@@ -241,3 +243,9 @@ assertions:
   - [E104, Label noise, warrantsReassessmentOf, Calibration, D, high, "Probabilities fitted to agree with noisy labels are calibrated to the annotation process, and the agreement is evidence about that process rather than about the condition.", "arXiv:2006.07159"]
   - [E105, Auditing, canAudit, Pseudo-labelling, M, high, "The labelling model is an inspection target in its own right, and one that evaluating the final model against those same labels cannot reach.", null]
   - [E106, Implicit representation, changesObservabilityOf, Sonographic features, M, medium, "A field queried between its training views renders interpolated structure with the same appearance as measured structure, and the output carries no marker separating them.", "10.1007/978-3-030-58452-8_24"]
+  - [E107, Sensitivity analysis, assessesProperty, Stability margin, M, high, "Sweeping a parameter and locating where behaviour changes qualitatively measures how far the current operating point sits from that boundary.", null]
+  - [E108, Evaluation metrics, doesNotEstablish, Stability margin, D, high, "A point estimate on a fixed test set reports current performance; it says nothing about how far inputs or thresholds can move before that performance fails.", null]
+  - [E109, Operating point selection, doesNotEstablish, Stability margin, D, high, "Choosing a threshold fixes an operating point without quantifying how much the score distribution may shift before the choice stops holding.", null]
+  - [E110, Deployment feedback loop, warrantsReassessmentOf, Stability margin, E, medium, "A path from a model's outputs back into its own training data adds loop gain, so a margin measured on the open pipeline no longer bounds the deployed one.", null]
+  - [E111, Feedback correction, probesThreat, Distribution shift, M, high, "Measuring realised outcomes and correcting against them surfaces divergence between deployment and development conditions that an open pipeline never observes.", null]
+  - [E112, Feedback correction, canIntroduce, Deployment feedback loop, D, high, "Correcting on a system's own measured output is by construction a closed loop; whether it converges or diverges depends on the gain around it, not on the intent.", null]

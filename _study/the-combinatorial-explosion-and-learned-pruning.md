@@ -5,8 +5,8 @@ description: "Lighthill's 1973 case against AI was arithmetically correct and is
 tab: "ai-foundations"
 tab_title: "AI Foundations"
 category: "decision-and-control"
-category_title: "Decision, Control & Reinforcement Learning"
-order: 5
+category_title: "Decision Making & Reinforcement Learning"
+order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-15"
