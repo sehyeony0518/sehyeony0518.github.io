@@ -31,6 +31,43 @@ layout: page
   .sn-back:hover { text-decoration: underline; }
 </style>
 
+{%- comment -%}
+  Structured data. The gem owns <head>, so this sits in the body, which Google
+  accepts for JSON-LD. Without it these pages carry no machine-readable statement
+  of what they are, who wrote them, or when they changed.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": {{ page.title | strip_html | jsonify }},
+  "description": {{ page.description | strip_html | jsonify }},
+  "inLanguage": "en",
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ page.url | absolute_url | jsonify }} },
+  "isPartOf": {
+    "@type": "Collection",
+    "name": "Study notes",
+    "url": {{ "/study/" | absolute_url | jsonify }}
+  },
+  {%- if tab %}"articleSection": {{ tab.title | jsonify }},{% endif %}
+  {%- if cat %}"about": {{ cat.title | jsonify }},{% endif %}
+  {%- if page.updated %}"dateModified": {{ page.updated | jsonify }},{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "Se-Hyeon Hwang",
+    "alternateName": "황세현",
+    "affiliation": { "@type": "Organization", "name": "Ajou University" },
+    "url": {{ "/" | absolute_url | jsonify }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Se-Hyeon Hwang",
+    "url": {{ "/" | absolute_url | jsonify }}
+  }
+}
+</script>
+
 <div class="sn-crumb">
   <a href="{{ '/study/' | relative_url }}">Study</a>
   {%- if tab %} / <a href="{{ '/study/' | relative_url }}#{{ tab.id }}">{{ tab.title }}</a>{% endif -%}
