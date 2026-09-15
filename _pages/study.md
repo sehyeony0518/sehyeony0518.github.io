@@ -17,19 +17,27 @@ nav_order: 9
   .sl-intro a { font-weight: 600; }
 
   /* Two top-level tabs */
-  .sl-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.5rem 0 0; }
+  /* Four tabs, one row. `flex: 1 1 0` + `min-width: 0` makes them equal columns that
+     shrink together rather than wrapping to 2x2 at a fixed basis. */
+  .sl-tabs { display: flex; gap: .45rem; flex-wrap: nowrap; margin: 1.5rem 0 0; }
   .sl-tab {
-    flex: 1 1 260px; text-align: left; cursor: pointer;
-    padding: .85rem 1.1rem; border-radius: 12px; background: none;
+    flex: 1 1 0; min-width: 0; text-align: left; cursor: pointer;
+    padding: .6rem .72rem; border-radius: 10px; background: none;
     border: 1px solid var(--global-divider-color); color: inherit;
     transition: border-color .15s ease, background .15s ease;
   }
   .sl-tab:hover { border-color: var(--global-theme-color); }
   .sl-tab.active { border-color: var(--global-theme-color); background: rgba(128,128,128,.06); }
-  .sl-tab .sl-tab-name { display: block; font-size: 1.02rem; font-weight: 700; line-height: 1.3; }
+  .sl-tab .sl-tab-name { display: block; font-size: .875rem; font-weight: 700; line-height: 1.3; }
   .sl-tab.active .sl-tab-name { color: var(--global-theme-color); }
-  .sl-tab .sl-tab-desc { display: block; font-size: .8rem; line-height: 1.5; opacity: .65; margin-top: .2rem; }
-  .sl-tab .sl-tab-cnt { font-size: .72rem; font-weight: 700; opacity: .5; font-variant-numeric: tabular-nums; }
+  .sl-tab .sl-tab-desc { display: block; font-size: .715rem; line-height: 1.45; opacity: .65; margin-top: .16rem; }
+  .sl-tab .sl-tab-cnt { display: block; font-size: .655rem; font-weight: 700; opacity: .5; margin-top: .22rem; font-variant-numeric: tabular-nums; }
+
+  /* Four columns get unreadable on a phone, so fall back to 2x2 there. */
+  @media (max-width: 640px) {
+    .sl-tabs { flex-wrap: wrap; }
+    .sl-tab { flex: 1 1 44%; }
+  }
 
   .sl-cats { display: flex; flex-wrap: wrap; gap: .3rem; margin: .9rem 0 .2rem; padding-bottom: .7rem;
              border-bottom: 2px solid var(--global-theme-color); }
@@ -107,7 +115,7 @@ nav_order: 9
   <button type="button" class="sl-tab" data-tab="ontology">
     <span class="sl-tab-name">Ontology</span>
     <span class="sl-tab-desc">The claims: what each concept is, and what holds between them.</span>
-    <span class="sl-tab-cnt">{{ onto.assertions | size }} assertions over {{ onto.concepts | size }} concepts</span>
+    <span class="sl-tab-cnt">{{ onto.assertions | size }} assertions, {{ onto.concepts | size }} concepts</span>
   </button>
 </div>
 
