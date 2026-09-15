@@ -4,9 +4,9 @@ title: "Why EM Works: Responsibilities, the Q Function, and the Monotonicity Gua
 description: "The latent-variable construction of a mixture, the update equations that fall out of it, and the argument that each iteration cannot make the likelihood worse."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 17
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 11
 source: "Independent study"
 written: true
 updated: "2026-09-15"

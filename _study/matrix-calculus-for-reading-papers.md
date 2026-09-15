@@ -4,9 +4,9 @@ title: "Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gau
 description: "The minimum of matrix differentiation that lets you read a derivation instead of skipping it — and the derivation of the Gaussian mean and covariance estimators that it exists to serve."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 18
+category: "algebra-and-optimisation"
+category_title: "Linear Algebra & Optimisation"
+order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-15"

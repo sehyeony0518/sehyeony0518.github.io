@@ -4,9 +4,9 @@ title: "Convolution via the DFT: Circular, Linear, and the Padding You Forgot Wa
 description: "Why multiplying two DFTs gives the wrong answer, the length condition that fixes it, and why full/same/valid is the same decision a CNN makes at every layer."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
-order: 9
+category: "signals-and-systems"
+category_title: "Signals, Systems & Transforms"
+order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-15"

@@ -4,9 +4,9 @@ title: "FIR Filter Design: When the Optimal Answer Is Optimal for the Wrong Norm
 description: "Why truncating the ideal filter is provably best in the L2 sense and still not what you want, what linear phase costs, and the symmetry constraints that forbid whole filter types outright."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
-order: 10
+category: "signals-and-systems"
+category_title: "Signals, Systems & Transforms"
+order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-15"

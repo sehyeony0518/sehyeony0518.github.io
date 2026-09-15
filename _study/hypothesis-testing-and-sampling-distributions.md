@@ -4,9 +4,9 @@ title: "Hypothesis Testing and Sampling Distributions: What a p-Value Can and Ca
 description: "The conditional form of every test, why 'at least as extreme' is the operative phrase, and the t and chi-squared distributions that make the calculation possible at all."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 22
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 6
 source: "Independent study"
 written: true
 updated: "2026-09-15"

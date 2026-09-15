@@ -4,9 +4,9 @@ title: "Probability and Bayesian Reasoning"
 description: "Conditional probability, expectation, independence, and Bayes as the grammar for reasoning about diagnostic evidence."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 2
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-08"

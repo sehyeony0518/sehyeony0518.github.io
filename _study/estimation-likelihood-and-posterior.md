@@ -4,9 +4,9 @@ title: "Estimation: Likelihood, Posterior, and What Few Observations Permit"
 description: "What maximum likelihood actually claims, what a prior adds, and why five observations and five hundred do not license the same statement."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 7
+category: "probability-and-inference"
+category_title: "Probability & Statistical Inference"
+order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-15"

@@ -4,9 +4,9 @@ title: "Monte Carlo Tree Search: Exploration, Exploitation, and the Cost of Neve
 description: "Why randomness earns a place inside a search algorithm, what the UCT formula is actually balancing, and the sense in which a fixed test suite is a policy that stopped exploring."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
-order: 5
+category: "decision-and-control"
+category_title: "Decision, Control & Reinforcement Learning"
+order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-15"

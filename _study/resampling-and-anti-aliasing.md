@@ -4,9 +4,9 @@ title: "Resampling and Anti-Aliasing: Why Half of a Checkerboard Is Grey"
 description: "What downsampling does to a spectrum, why the filter has to come first, and the resize call that has been quietly changing benchmark results for years."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
-order: 11
+category: "signals-and-systems"
+category_title: "Signals, Systems & Transforms"
+order: 6
 source: "Independent study"
 written: true
 updated: "2026-09-15"

@@ -4,8 +4,8 @@ title: "The Kernel Trick: Similarity Instead of Coordinates"
 description: "Why the SVM dual admits a kernel at all, what a kernel is being asked to encode, and how one-class SVM and SVDD turn the same machinery into novelty detection."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
+category: "neural-networks"
+category_title: "Neural Networks & Representation"
 order: 7
 source: "Independent study"
 written: true

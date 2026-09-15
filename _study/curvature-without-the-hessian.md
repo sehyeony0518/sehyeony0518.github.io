@@ -4,9 +4,9 @@ title: "Curvature Without the Hessian: Power Iteration, Trace Estimation, and Qu
 description: "Second-order information about a network that is too large to form, estimated by matrix-vector products, and what it is used to decide."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Paradigms & Representations"
-order: 2
+category: "algebra-and-optimisation"
+category_title: "Linear Algebra & Optimisation"
+order: 6
 source: "Independent study"
 written: true
 updated: "2026-09-15"

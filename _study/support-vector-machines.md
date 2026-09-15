@@ -4,8 +4,8 @@ title: "Support Vector Machines: Margin as an Inductive Bias, and What Infeasibi
 description: "Deriving the hard-margin problem from a stability argument, watching it become infeasible when the classes overlap, and reading the soft-margin fix as a priced assumption rather than a repair."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "learning-principles"
-category_title: "Learning Principles"
+category: "neural-networks"
+category_title: "Neural Networks & Representation"
 order: 6
 source: "Independent study"
 written: true

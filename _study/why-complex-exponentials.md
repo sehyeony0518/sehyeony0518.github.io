@@ -4,9 +4,9 @@ title: "Why Complex Exponentials: Choosing the Representation Is Most of the Wor
 description: "The convolution integral that takes a page, the eigenfunction that takes one line, and what it costs to throw away the transient."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 25
+category: "signals-and-systems"
+category_title: "Signals, Systems & Transforms"
+order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-15"

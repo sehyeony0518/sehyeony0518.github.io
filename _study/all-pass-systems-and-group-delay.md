@@ -4,9 +4,9 @@ title: "All-Pass Systems and Group Delay: Distortion That Every Magnitude Test P
 description: "A system that leaves every frequency's amplitude untouched and still scrambles the signal, and why the magnitude spectrum is exactly the wrong place to look for it."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "math-foundations"
-category_title: "Mathematical & Statistical Foundations"
-order: 23
+category: "signals-and-systems"
+category_title: "Signals, Systems & Transforms"
+order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-15"
