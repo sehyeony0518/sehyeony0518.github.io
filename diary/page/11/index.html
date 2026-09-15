@@ -3231,6 +3231,11 @@ ninja.data = [{
           description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports.",
           section: "Study",handler: () => {
               window.location.href = "/study/anchor-boxes-and-non-maximum-suppression/";
+            },},{id: "study-attention-retrieval-as-a-differentiable-operation",
+          title: 'Attention: Retrieval as a Differentiable Operation',
+          description: "Query, key and value are a soft dictionary lookup, and everything else in a Transformer is bookkeeping around it. Including why the scores are divided by √d, which is not a fudge factor.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/attention-and-the-transformer/";
             },},{id: "study-attribution-attention-and-counterfactual-explanations",
           title: 'Attribution, Attention, and Counterfactual Explanations',
           description: "The main families of post-hoc explanation for medical images, and what each actually measures.",
@@ -3261,6 +3266,11 @@ ninja.data = [{
           description: "Why the best decision is not always the most probable class, and what a cost matrix does to a threshold.",
           section: "Study",handler: () => {
               window.location.href = "/study/bayesian-decision-theory/";
+            },},{id: "study-marginalisation-not-optimisation-what-deep-ensembles-are-actually-doing",
+          title: 'Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing',
+          description: "The frequentist/Bayesian split is one decision — is the parameter a constant or a random variable — and it propagates all the way to why averaging several trained networks is not a trick.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/bayesian-deep-learning-and-deep-ensembles/";
             },},{id: "study-bayesian-inverse-problems-in-imaging",
           title: 'Bayesian Inverse Problems in Imaging',
           description: "Denoising and restoration written as inference: an acquisition model as the likelihood, an image prior as the assumption, and what a Markov random field assumes to stay computable.",
@@ -3611,6 +3621,11 @@ ninja.data = [{
           description: "Why randomness earns a place inside a search algorithm, what the UCT formula is actually balancing, and the sense in which a fixed test suite is a policy that stopped exploring.",
           section: "Study",handler: () => {
               window.location.href = "/study/monte-carlo-tree-search/";
+            },},{id: "study-neural-radiance-fields-a-scene-stored-as-a-function",
+          title: 'Neural Radiance Fields: A Scene Stored as a Function',
+          description: "NeRF replaces the 3-D data structure with a network you query. 5 MB holds what a voxel grid needs 500 MB for — and the bill arrives at 123 million network calls per frame.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/neural-radiance-fields/";
             },},{id: "study-optimising-the-input-visualisation-style-and-adversarial-examples",
           title: 'Optimising the Input: Visualisation, Style, and Adversarial Examples',
           description: "What happens when the weights are frozen and the image becomes the free variable, and why the same procedure produces both a picture of a concept and a picture that fools the model.",
@@ -3716,6 +3731,11 @@ ninja.data = [{
           description: "The analyse-scale-reconstruct template behind the word spectral, the fact that the Fourier basis is the eigenbasis of a ring graph&#39;s Laplacian, and what that licenses for graphs with no coordinates.",
           section: "Study",handler: () => {
               window.location.href = "/study/spectral-filtering-and-graph-convolution/";
+            },},{id: "study-speech-recognition-learning-without-knowing-where-anything-starts",
+          title: 'Speech Recognition: Learning Without Knowing Where Anything Starts',
+          description: "You can label an utterance; you cannot label a 10-millisecond frame. CTC sums over all 28 trillion ways the label could line up — and that trick is worth more than the speech application.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/speech-recognition-and-alignment-free-training/";
             },},{id: "study-spurious-correlations-in-medical-ai",
           title: 'Spurious Correlations in Medical AI',
           description: "Associations that hold in the training distribution and carry no clinical meaning, and how to tell them apart from real signal.",
@@ -3796,6 +3816,11 @@ ninja.data = [{
           description: "Image-text alignment, report grounding, and the failure modes of models that read images and language together.",
           section: "Study",handler: () => {
               window.location.href = "/study/vision-language-and-multimodal-medical-ai/";
+            },},{id: "study-when-models-outgrow-their-labels",
+          title: 'When Models Outgrow Their Labels',
+          description: "ImageNet&#39;s original labels score about 81% against a careful re-annotation, and several models beat them. Once the ceiling is the annotation rather than the method, the benchmark stops measuring what it reports.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/when-models-outgrow-their-labels/";
             },},{id: "study-why-complex-exponentials-choosing-the-representation-is-most-of-the-work",
           title: 'Why Complex Exponentials: Choosing the Representation Is Most of the Work',
           description: "The convolution integral that takes a page, the eigenfunction that takes one line, and what it costs to throw away the transient.",
