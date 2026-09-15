@@ -333,6 +333,10 @@
     ONTO_PALETTE.dark['Property'] = '#41a0bf';
     ONTO_PALETTE.light['Threat'] = '#278b40';
     ONTO_PALETTE.dark['Threat'] = '#8addaf';
+    ONTO_PALETTE.light['Mechanism'] = '#805b42';
+    ONTO_PALETTE.dark['Mechanism'] = '#bc9270';
+    ONTO_PALETTE.light['Principle'] = '#756520';
+    ONTO_PALETTE.dark['Principle'] = '#b5a34e';
     function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
     var SECTOR_COLOR = PALETTE[isDark() ? 'dark' : 'light'];
     function paint(d) { return SECTOR_COLOR[d.sector] || SECTOR_COLOR._; }
