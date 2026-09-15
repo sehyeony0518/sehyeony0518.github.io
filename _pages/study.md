@@ -84,7 +84,7 @@ nav_order: 9
   .sl-empty { font-size: .87rem; opacity: .6; padding: .6rem 0; }
 </style>
 
-<p class="sl-intro">Three parts, in the order they build on each other: the machinery any model runs on, the clinical knowledge a model's evidence is judged against, and what the two are for.</p>
+<p class="sl-intro">Three parts, in the order they build on each other.</p>
 
 {% assign all_notes = site.study | where_exp: "n", "n.category" %}
 {% assign written_notes = all_notes | where: "written", true %}
