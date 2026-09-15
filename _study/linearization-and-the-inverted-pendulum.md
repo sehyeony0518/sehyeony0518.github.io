@@ -4,9 +4,9 @@ title: "Linearization: An Approximation Whose Licence Is Retrospective"
 description: "Replacing sin θ with θ makes an unsolvable equation solvable, the justification arrives only after checking, and a single sign decides whether the system oscillates forever or runs away."
 tab: "ai-foundations"
 tab_title: "AI Foundations"
-category: "decision-and-control"
-category_title: "Decision, Control & Reinforcement Learning"
-order: 2
+category: "feedback-control"
+category_title: "Feedback Control & Classical Design"
+order: 6
 source: "Independent study"
 written: true
 updated: "2026-09-15"

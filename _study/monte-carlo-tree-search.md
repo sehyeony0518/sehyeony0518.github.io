@@ -5,8 +5,8 @@ description: "Why randomness earns a place inside a search algorithm, what the U
 tab: "ai-foundations"
 tab_title: "AI Foundations"
 category: "decision-and-control"
-category_title: "Decision, Control & Reinforcement Learning"
-order: 3
+category_title: "Decision Making & Reinforcement Learning"
+order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-15"

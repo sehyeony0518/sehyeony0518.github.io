@@ -5,8 +5,8 @@ description: "The five-tuple that defines an environment, why a plan is not a po
 tab: "ai-foundations"
 tab_title: "AI Foundations"
 category: "decision-and-control"
-category_title: "Decision, Control & Reinforcement Learning"
-order: 4
+category_title: "Decision Making & Reinforcement Learning"
+order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-15"
