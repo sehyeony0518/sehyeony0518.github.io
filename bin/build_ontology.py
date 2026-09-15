@@ -11,8 +11,8 @@ import json, sys, yaml, collections, pathlib
 SRC = pathlib.Path("_data/ontology.yml")
 OUT = pathlib.Path("assets/json/ontology.json")
 # Evidence at one end, the things that can undermine it at the other.
-ORDER = ["EvidenceSource", "Finding", "ClinicalTarget", "Standard",
-         "Method", "ModelFamily", "Metric", "Property", "Threat"]
+ORDER = ["Mechanism", "EvidenceSource", "Finding", "ClinicalTarget", "Standard",
+         "Principle", "Method", "ModelFamily", "Metric", "Property", "Threat"]
 
 def main():
     d = yaml.safe_load(SRC.read_text(encoding="utf-8"))
