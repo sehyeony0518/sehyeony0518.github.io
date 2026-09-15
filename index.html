@@ -277,7 +277,7 @@
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
   }
-</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">108</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">109</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box';
     var FULL = false;
@@ -4587,6 +4587,11 @@ ninja.data = [{
           description: "Image-text alignment, report grounding, and the failure modes of models that read images and language together.",
           section: "Study",handler: () => {
               window.location.href = "/study/vision-language-and-multimodal-medical-ai/";
+            },},{id: "study-why-complex-exponentials-choosing-the-representation-is-most-of-the-work",
+          title: 'Why Complex Exponentials: Choosing the Representation Is Most of the Work',
+          description: "The convolution integral that takes a page, the eigenfunction that takes one line, and what it costs to throw away the transient.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/why-complex-exponentials/";
             },},{id: "study-why-em-works-responsibilities-the-q-function-and-the-monotonicity-guarantee",
           title: 'Why EM Works: Responsibilities, the Q Function, and the Monotonicity Guarantee',
           description: "The latent-variable construction of a mixture, the update equations that fall out of it, and the argument that each iteration cannot make the likelihood worse.",
