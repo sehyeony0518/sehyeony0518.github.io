@@ -277,7 +277,7 @@
     position: absolute; right: .75rem; bottom: .6rem; font-size: .66rem; color: var(--kg-dim);
     font-variant-numeric: tabular-nums; pointer-events: none; letter-spacing: .02em;
   }
-</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">78</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
+</style> <div class="kg-wrap"> <div class="kg-stage"> <div class="kg-box" id="kg-box" style="height: 560px;"> <div class="kg-cover">Loading the graph…</div> <div class="kg-title">knowledge graph</div> <div class="kg-hint">click to zoom</div> </div> <div class="kg-bar" id="kg-bar"> <input class="kg-find" type="search" autocomplete="off" spellcheck="false" placeholder="search the graph" aria-label="Search the knowledge graph"> <div class="kg-found" hidden></div> <div class="kg-links"> <a href="/study/">study notes <span class="kl-n">80</span></a> <a href="/papers/">paper reviews <span class="kl-n">57</span></a> <a href="/blog/">insights <span class="kl-n">22</span></a> </div> </div> <div class="kg-tip"></div> </div> <p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="/research/#graph">Open the full graph</a>.</p> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> <script>
   (function () {
     var boxId = 'kg-box';
     var FULL = false;
@@ -4172,6 +4172,11 @@ ninja.data = [{
           description: "Continuous monitoring data, deterioration prediction, and the ethical weight carried by such a model.",
           section: "Study",handler: () => {
               window.location.href = "/study/critical-care-medicine/";
+            },},{id: "study-curvature-without-the-hessian-power-iteration-trace-estimation-and-quantization",
+          title: 'Curvature Without the Hessian: Power Iteration, Trace Estimation, and Quantization',
+          description: "Second-order information about a network that is too large to form, estimated by matrix-vector products, and what it is used to decide.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/curvature-without-the-hessian/";
             },},{id: "study-data-leakage-and-validation-design",
           title: 'Data Leakage and Validation Design',
           description: "How information crosses from test to train in medical data, and what each validation design can claim.",
@@ -4322,6 +4327,11 @@ ninja.data = [{
           description: "Eigenvalues, SVD, projection, and PCA as the working tools for asking what a learned representation contains.",
           section: "Study",handler: () => {
               window.location.href = "/study/linear-algebra-for-representation-analysis/";
+            },},{id: "study-linear-mmse-estimation-and-the-wiener-filter",
+          title: 'Linear MMSE Estimation and the Wiener Filter',
+          description: "The best linear estimate of one quantity from another, and why it needs only means and covariances rather than a distribution.",
+          section: "Study",handler: () => {
+              window.location.href = "/study/linear-mmse-and-the-wiener-filter/";
             },},{id: "study-liver-cancer",
           title: 'Liver Cancer',
           description: "Hepatocellular carcinoma and hepatic metastasis: surveillance, imaging diagnosis, and the reporting systems used.",
