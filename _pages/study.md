@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /study/
-title: study
+title: AI Study
 description: "Notes on trustworthy AI and the clinical knowledge that informs my research."
 nav: true
 nav_order: 9
