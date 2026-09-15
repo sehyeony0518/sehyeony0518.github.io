@@ -3,7 +3,7 @@ layout: study_note
 title: "Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing"
 description: "The frequentist/Bayesian split is one decision — is the parameter a constant or a random variable — and it propagates all the way to why averaging several trained networks is not a trick."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
 order: 13

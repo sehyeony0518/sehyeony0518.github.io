@@ -3,7 +3,7 @@ layout: study_note
 title: "Invariance and Equivariance: Two Jobs One Network Cannot Do at Once"
 description: "Detection asks a network to be blind to translation and to track it, simultaneously. R-FCN's fix and the feature pyramid are both answers to that conflict, and the conflict generalises well past detection."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "neural-networks"
 category_title: "Neural Networks & Representation"
 order: 11

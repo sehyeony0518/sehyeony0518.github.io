@@ -3,7 +3,7 @@ layout: study_note
 title: "The Transfer Function Is a Gain, Not a Spectrum"
 description: "Why H(s) sits in a different category from X(s) and Y(s), what the two numbers in H(jω) actually do to a sine, and why every pole must live in the left half-plane."
 tab: "ai-foundations"
-tab_title: "Theory"
+tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
 order: 13
