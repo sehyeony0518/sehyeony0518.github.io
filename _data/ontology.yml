@@ -118,6 +118,7 @@ concepts:
   Out-of-distribution detection: Method
   Hypothesis testing: Method
   Preprocessing & resampling: Method
+  Deployment feedback loop: Threat
   Similarity & graph construction: Method
 
 # id | subject | relation | object | claim | confidence | note | source
@@ -200,3 +201,7 @@ assertions:
   - [E76, Preprocessing & resampling, canIntroduce, Spurious correlation, M, high, "Resampling without anti-aliasing stamps a ratio-dependent texture on every image, and the ratio follows the acquiring scanner.", "10.1109/CVPR52688.2022.01112"]
   - [E77, Preprocessing & resampling, changesObservabilityOf, Sonographic features, M, high, "Interpolation and filtering can suppress fine texture that a reader or model would otherwise assess.", null]
   - [E78, Auditing, canAudit, Preprocessing & resampling, M, high, "The pipeline that produced the inputs is itself an inspection target, and one that attribution over image content cannot reach.", null]
+  - [E79, Deployment & drift, canIntroduce, Deployment feedback loop, M, high, "A model whose outputs influence the care that generates its next training data appears in its own input distribution.", "arXiv:2002.06673"]
+  - [E80, Deployment feedback loop, warrantsReassessmentOf, Calibration, D, high, "Once the data reflect the model's own influence, agreement between predictions and recorded outcomes stops being evidence of calibration.", null]
+  - [E81, Deployment feedback loop, canIntroduce, Spurious correlation, M, high, "Under-flagging a subgroup yields fewer confirmed cases in it, which trains the next model to under-flag it further.", "arXiv:1706.09847"]
+  - [E82, Sensitivity analysis, probesThreat, Deployment feedback loop, M, medium, "Comparing a prospectively recruited stream against operational data can expose divergence the operational data alone cannot show.", null]
