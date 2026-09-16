@@ -6,6 +6,7 @@ tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"
 category_title: "Medical AI Systems & Deployment"
+subgroup: "Adaptation Across Sites & Time"
 order: 4
 source: "Independent study"
 written: true

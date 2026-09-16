@@ -5,8 +5,9 @@ description: "Seizure and epilepsy definitions, JME and mesial temporal epilepsy
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"
-category_title: "Neurology"
-order: 4
+category_title: "Neurology & Sleep Medicine"
+subgroup: "Acute & Episodic Neurology"
+order: 2
 source: "Lecture: Epilepsy & Seizure, Jun-Young Choi, Ajou University School of Medicine"
 written: true
 updated: "2026-09-08"

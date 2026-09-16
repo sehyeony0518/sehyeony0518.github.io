@@ -5,8 +5,9 @@ description: "Movement disorder assessment, rating scales as noisy ground truth,
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"
-category_title: "Neurology"
-order: 3
+category_title: "Neurology & Sleep Medicine"
+subgroup: "Neurodegeneration"
+order: 4
 source: "Lecture"
 written: true
 updated: "2026-09-08"

@@ -6,6 +6,7 @@ tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "oncology"
 category_title: "Oncology"
+subgroup: "Detection & Screening"
 order: 1
 source: "Lecture"
 written: true

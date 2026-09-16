@@ -6,7 +6,8 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"
 category_title: "Feedback Control & Classical Design"
-order: 3
+subgroup: "Transient Response & Stability"
+order: 4
 source: "Lecture notes, Ajou University"
 written: true
 updated: "2026-09-15"

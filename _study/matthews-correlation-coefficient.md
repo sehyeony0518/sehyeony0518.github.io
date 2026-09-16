@@ -5,8 +5,9 @@ description: "Why accuracy moves with prevalence and F1 ignores a whole cell of 
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalization & Reliability"
-order: 13
+category_title: "Evaluation, Generalisation & Reliability"
+subgroup: "Validation Design & Performance Measures"
+order: 8
 source: "Independent study"
 written: true
 updated: "2026-09-15"

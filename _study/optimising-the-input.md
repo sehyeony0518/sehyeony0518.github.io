@@ -5,7 +5,8 @@ description: "What happens when the weights are frozen and the image becomes the
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
+category_title: "Learning Models & Representation"
+subgroup: "Learning & Representation Foundations"
 order: 3
 source: "Independent study"
 written: true

@@ -5,8 +5,9 @@ description: "Deriving anchor-box geometry, normalized box regression, IoU match
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 10
+category_title: "Learning Models & Representation"
+subgroup: "Spatial Models & Visual Prediction"
+order: 12
 source: "Independent study"
 written: true
 updated: "2026-09-15"

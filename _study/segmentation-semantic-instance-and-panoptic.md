@@ -5,8 +5,9 @@ description: "Semantic, instance, and panoptic segmentation derived through pixe
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 12
+category_title: "Learning Models & Representation"
+subgroup: "Spatial Models & Visual Prediction"
+order: 14
 source: "Independent study"
 written: true
 updated: "2026-09-15"

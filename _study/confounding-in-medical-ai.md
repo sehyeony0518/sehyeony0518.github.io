@@ -6,7 +6,8 @@ tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "causality"
 category_title: "Causality, Bias & Shortcuts"
-order: 1
+subgroup: "Causal Structure & Dataset Selection"
+order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-08"

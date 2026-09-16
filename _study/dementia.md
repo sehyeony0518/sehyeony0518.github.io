@@ -5,8 +5,9 @@ description: "Biomarker-based diagnosis and the difficulty of validating predict
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"
-category_title: "Neurology"
-order: 2
+category_title: "Neurology & Sleep Medicine"
+subgroup: "Neurodegeneration"
+order: 3
 source: "Lecture"
 written: true
 updated: "2026-09-08"

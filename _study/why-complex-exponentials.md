@@ -6,6 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
+subgroup: "Representations & System Response"
 order: 1
 source: "Independent study"
 written: true

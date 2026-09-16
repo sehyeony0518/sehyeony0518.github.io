@@ -6,6 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
+subgroup: "Latent Variables & Approximate Inference"
 order: 10
 source: "Independent study"
 written: true

@@ -5,8 +5,9 @@ description: "Deriving the hard-margin problem from a stability argument, watchi
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 6
+category_title: "Learning Models & Representation"
+subgroup: "Margins, Kernels & Embeddings"
+order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-15"

@@ -5,8 +5,9 @@ description: "ImageNet's original labels score about 81% against a careful re-an
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalization & Reliability"
-order: 15
+category_title: "Evaluation, Generalisation & Reliability"
+subgroup: "Task Definition & Ground Truth"
+order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-15"

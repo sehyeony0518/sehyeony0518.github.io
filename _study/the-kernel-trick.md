@@ -5,8 +5,9 @@ description: "Why the SVM dual admits a kernel at all, what a kernel is being as
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 7
+category_title: "Learning Models & Representation"
+subgroup: "Margins, Kernels & Embeddings"
+order: 6
 source: "Independent study"
 written: true
 updated: "2026-09-15"

@@ -6,7 +6,8 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
-order: 10
+subgroup: "Graph Signals & Spectral Methods"
+order: 12
 source: "Independent study"
 written: true
 updated: "2026-09-15"
