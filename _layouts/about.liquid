@@ -314,7 +314,7 @@ layout: default
       }
     </style>
 
-    <!-- Study notes, above the repositories -->
+    <!-- Study notes, then insights, then the repositories -->
     {%- assign st_written = site.study | where: "written", true -%}
     <div class="sec-wrap">
       <div class="sec-head">
@@ -333,10 +333,7 @@ layout: default
       </div>
     </div>
 
-    <!-- Repositories, under the graph -->
-    {% include github_projects.liquid %}
-
-    <!-- Insights, under the repositories -->
+    <!-- Insights, between the study notes and the repositories -->
     {%- assign posts = site.aiblog | sort: "date" | reverse -%}
     {%- if posts.size > 0 -%}
     <div class="sec-wrap">
@@ -345,7 +342,7 @@ layout: default
         <a class="sec-all" href="{{ '/blog/' | relative_url }}">all {{ posts | size }} insights&nbsp;&rarr;</a>
       </div>
       <div class="sec-grid">
-        {%- for post in posts limit: 6 %}
+        {%- for post in posts limit: 3 %}
         <a class="sec-card" href="{{ post.url | relative_url }}">
           <span class="sec-name">{{ post.title }}</span>
           {%- if post.description %}<span class="sec-desc">{{ post.description | truncate: 128 }}</span>{% endif %}
@@ -358,6 +355,10 @@ layout: default
       </div>
     </div>
     {%- endif -%}
+
+    <!-- Repositories, last -->
+    {% include github_projects.liquid %}
+
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
