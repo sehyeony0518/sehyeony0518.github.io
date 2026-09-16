@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: insight
 title: "Beyond AUROC: What VUNO's DeepCARS Teaches Us About Making Medical AI Work"
 date: 2025-11-14 12:00:00 +0900
 description: Notes from an interview with VUNO founder and CEO Ye Ha Lee on DeepCARS, clinical evidence, reimbursement, and what it takes to move medical AI from a model into routine care.
