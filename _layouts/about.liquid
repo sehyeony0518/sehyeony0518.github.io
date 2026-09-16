@@ -280,42 +280,54 @@ layout: default
       </script>
     {% endif %}
 
-    <!-- Study notes, above the repositories -->
-    <h2>
-      <a href="{{ '/study/' | relative_url }}" style="color: inherit">ai study</a>
-    </h2>
-    {%- assign st_written = site.study | where: "written", true -%}
-    {%- assign st_words = 0 -%}
     <style>
-      .hs-wrap { margin: .3rem 0 1.6rem; }
-      .hs-lead { font-size: .88rem; line-height: 1.7; opacity: .75; max-width: 60ch; margin: 0 0 .9rem; }
-      .hs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
-      @media (max-width: 640px) { .hs-grid { grid-template-columns: 1fr; } }
-      .hs-card {
-        display: block; text-decoration: none; color: inherit;
-        border: 1px solid var(--global-divider-color); border-radius: 10px;
-        padding: .7rem .8rem; transition: border-color .15s ease;
+      /* One section object, used by the study row, the repository row and the
+         insight row, so the three read as the same kind of thing. */
+      .sec-wrap { margin-top: 1.4rem; }
+      .sec-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .7rem; }
+      .sec-title {
+        margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .1em;
+        text-transform: uppercase; color: var(--global-theme-color);
       }
-      .hs-card:hover { border-color: var(--global-theme-color); }
-      .hs-card:hover .hs-name { color: var(--global-theme-color); }
-      .hs-name { display: block; font-size: .875rem; font-weight: 650; line-height: 1.3; }
-      .hs-desc { display: block; font-size: .715rem; line-height: 1.5; opacity: .62; margin-top: .22rem; }
-      .hs-n { display: block; font-size: .655rem; font-weight: 700; opacity: .5;
-              margin-top: .35rem; font-variant-numeric: tabular-nums; }
+      .sec-title a { color: inherit; text-decoration: none; }
+      .sec-title a:hover { text-decoration: underline; }
+      .sec-all { font-size: .74rem; text-decoration: none; color: var(--global-text-color-light); white-space: nowrap; }
+      .sec-all:hover { color: var(--global-theme-color); }
+      /* Three across on a wide screen, two on a tablet, one on a phone. The cards
+         are links end to end rather than a title link inside a box, so the whole
+         card is the target. */
+      .sec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+      @media (max-width: 900px) { .sec-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .sec-grid { grid-template-columns: 1fr; } }
+      .sec-card {
+        display: flex; flex-direction: column; gap: .3rem;
+        padding: .75rem .85rem; border-radius: 10px; text-decoration: none; color: inherit;
+        border: 1px solid var(--global-divider-color); background: var(--global-card-bg-color);
+        transition: border-color .15s ease, transform .15s ease;
+      }
+      .sec-card:hover { border-color: var(--global-theme-color); transform: translateY(-1px); }
+      .sec-name { font-size: .84rem; font-weight: 600; line-height: 1.3; word-break: break-word; }
+      .sec-desc { font-size: .76rem; line-height: 1.5; color: var(--global-text-color-light); }
+      .sec-meta {
+        display: flex; flex-wrap: wrap; gap: .55rem; margin-top: auto; padding-top: .2rem;
+        font-size: .68rem; color: var(--global-text-color-light); font-variant-numeric: tabular-nums;
+      }
     </style>
-    <div class="hs-wrap">
-      <p class="hs-lead">
-        Notes I write to understand something properly, kept in the open.
-        {{ st_written | size }} of them, with an ontology recording what I take to be
-        true between the concepts they use.
-      </p>
-      <div class="hs-grid">
+
+    <!-- Study notes, above the repositories -->
+    {%- assign st_written = site.study | where: "written", true -%}
+    <div class="sec-wrap">
+      <div class="sec-head">
+        <h2 class="sec-title"><a href="{{ '/study/' | relative_url }}">ai study</a></h2>
+        <a class="sec-all" href="{{ '/study/' | relative_url }}">all {{ st_written | size }} notes&nbsp;&rarr;</a>
+      </div>
+      <div class="sec-grid">
         {%- for tab in site.data.study_sections.tabs %}
         {%- assign tn = st_written | where: "tab", tab.id %}
-        <a class="hs-card" href="{{ '/study/' | relative_url }}#{{ tab.id }}">
-          <span class="hs-name">{{ tab.title }}</span>
-          <span class="hs-desc">{{ tab.description }}</span>
-          <span class="hs-n">{{ tn | size }} notes</span>
+        <a class="sec-card" href="{{ '/study/' | relative_url }}#{{ tab.id }}">
+          <span class="sec-name">{{ tab.title }}</span>
+          <span class="sec-desc">{{ tab.description }}</span>
+          <span class="sec-meta"><span>{{ tn | size }} notes</span></span>
         </a>
         {%- endfor %}
       </div>
@@ -323,6 +335,29 @@ layout: default
 
     <!-- Repositories, under the graph -->
     {% include github_projects.liquid %}
+
+    <!-- Insights, under the repositories -->
+    {%- assign posts = site.aiblog | sort: "date" | reverse -%}
+    {%- if posts.size > 0 -%}
+    <div class="sec-wrap">
+      <div class="sec-head">
+        <h2 class="sec-title"><a href="{{ '/blog/' | relative_url }}">insights</a></h2>
+        <a class="sec-all" href="{{ '/blog/' | relative_url }}">all {{ posts | size }} insights&nbsp;&rarr;</a>
+      </div>
+      <div class="sec-grid">
+        {%- for post in posts limit: 6 %}
+        <a class="sec-card" href="{{ post.url | relative_url }}">
+          <span class="sec-name">{{ post.title }}</span>
+          {%- if post.description %}<span class="sec-desc">{{ post.description | truncate: 128 }}</span>{% endif %}
+          <span class="sec-meta">
+            {%- if post.tag %}<span>{{ post.tag }}</span>{% endif %}
+            <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+          </span>
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endif -%}
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
@@ -402,7 +437,7 @@ layout: default
       .affil img { width: 100%; height: auto; object-fit: contain;
         opacity: .82; transition: opacity .15s ease; }
       .affil a:hover img { opacity: 1; }
-      /* Each mark ships twice — the ink is inverted in lightness for the dark
+      /* Each mark ships twice: the ink is inverted in lightness for the dark
          ground, so black type reads white while the blues and reds stay themselves. */
       .affil .lo-d { display: none; }
       html[data-theme="dark"] .affil .lo-l { display: none; }
