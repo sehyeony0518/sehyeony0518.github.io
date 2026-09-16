@@ -10,6 +10,9 @@ order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-03-07-diabetic-retinopathy-preferred-practice"
+  - "2025-12-19-eyepacs-grading-protocol"
 ---
 
 A clinical problem does not uniquely define a prediction task. The translation requires choosing a decision, target, prediction unit, population, input boundary, reference standard, and operating rule. Those choices determine what a successful model can establish.

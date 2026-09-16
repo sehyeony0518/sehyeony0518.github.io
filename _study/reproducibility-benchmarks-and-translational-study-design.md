@@ -10,6 +10,9 @@ order: 12
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-02-09-underspecification-credibility-ml"
+  - "2026-01-08-busbra-breast-ultrasound-dataset"
 ---
 
 ## Core question and definition

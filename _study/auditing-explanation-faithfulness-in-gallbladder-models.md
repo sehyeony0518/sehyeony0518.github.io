@@ -14,6 +14,8 @@ updated: "2026-09-08"
 featured: true
 papers:
   - "2026-08-04-medical-algorithmic-audit"
+  - "2026-03-13-arun-assessing-saliency"
+  - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
 ---
 
 ## Core question and definition

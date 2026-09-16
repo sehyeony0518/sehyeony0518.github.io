@@ -10,6 +10,9 @@ order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-07-15-clear-auditable-foundation-model-radiology"
+  - "2026-08-30-monet-transparent-medical-image-ai"
 ---
 
 A foundation model supplies a reusable starting point for multiple downstream tasks. Its clinical meaning comes from the particular inputs, adaptation procedure, output, and evaluation attached to that starting point.

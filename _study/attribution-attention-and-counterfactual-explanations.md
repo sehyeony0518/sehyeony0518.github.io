@@ -12,6 +12,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2026-01-01-selvaraju-gradcam"
+  - "2026-03-13-arun-assessing-saliency"
+  - "2025-12-06-roentmod-counterfactual-cxr"
 ---
 
 Explanation methods compute different quantities. Their visual similarity does not make those quantities interchangeable. A gradient, an allocated score difference, an attention coefficient, and a prediction-changing edit each require a separate interpretation.

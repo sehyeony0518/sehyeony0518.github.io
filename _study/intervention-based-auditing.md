@@ -10,6 +10,10 @@ order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-12-06-roentmod-counterfactual-cxr"
+  - "2026-06-13-counterfactual-shortcut-utilization"
+  - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
 ---
 
 The difficult part of an intervention audit is knowing what the edit changed. I want each experiment to test a named dependency while measuring the artifacts and information loss introduced by the test itself.

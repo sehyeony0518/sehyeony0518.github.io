@@ -10,6 +10,9 @@ order: 13
 source: "Independent study"
 written: true
 updated: "2026-09-15"
+papers:
+  - "2026-09-05-auditing-pointwise-reliability-after-learning"
+  - "2026-02-09-underspecification-credibility-ml"
 ---
 
 Bayesian prediction averages over a posterior distribution of model parameters. A deep ensemble averages predictions from several fitted models. These operations have the same algebraic shape, but they do not automatically average over the same distribution.

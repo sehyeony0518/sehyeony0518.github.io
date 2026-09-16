@@ -13,6 +13,7 @@ updated: "2026-09-08"
 papers:
   - "2025-11-29-concept-bottleneck-models"
   - "2026-02-03-right-for-the-right-reasons"
+  - "2026-05-11-cdep-penalizing-explanations"
 ---
 
 Clinical knowledge becomes supervision when it changes a model's training objective, admissible architecture, or required behavior. The resulting model still needs to be tested for the intended evidence use. A clinically named loss is a mechanism for training, not a certificate of alignment.

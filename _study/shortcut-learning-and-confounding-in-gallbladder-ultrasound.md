@@ -13,6 +13,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-10-02-zech-variable-generalization"
+  - "2025-10-28-degrave-covid-shortcut"
+  - "2026-05-18-shortcut-learning-data-acquisition-bias"
 ---
 
 ## Core question and definition

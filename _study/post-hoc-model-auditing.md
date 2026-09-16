@@ -13,6 +13,7 @@ updated: "2026-09-08"
 papers:
   - "2026-08-04-medical-algorithmic-audit"
   - "2025-10-02-zech-variable-generalization"
+  - "2026-09-05-auditing-pointwise-reliability-after-learning"
 ---
 
 An audit starts with a system version and a clinical claim that could be wrong. I want its output to identify reproducible failure conditions, their consequences, and the evidence needed to decide what happens next.

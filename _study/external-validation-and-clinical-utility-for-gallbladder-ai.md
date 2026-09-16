@@ -11,6 +11,9 @@ order: 20
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-10-02-zech-variable-generalization"
+  - "2025-10-28-degrave-covid-shortcut"
 ---
 
 ## Core question and definition

@@ -12,6 +12,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-11-29-concept-bottleneck-models"
+  - "2025-10-22-concept-bottleneck-breast-ultrasound"
+  - "2026-07-15-clear-auditable-foundation-model-radiology"
 ---
 
 I want an unexpected prediction to leave enough evidence for someone else to reconstruct it, challenge its intermediate claims, and test a suspected dependency. Auditability begins with deciding which questions the system must remain capable of answering.

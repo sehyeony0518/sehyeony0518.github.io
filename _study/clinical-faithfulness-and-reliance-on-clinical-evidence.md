@@ -14,6 +14,8 @@ pinned: true
 updated: "2026-09-08"
 papers:
   - "2026-03-13-arun-assessing-saliency"
+  - "2026-03-20-covariate-adjusted-spearman-correlation"
+  - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
 ---
 
 I want to know whether a medical image classifier relies on clinically meaningful evidence, and how to make that reliance measurable and auditable. A heatmap that falls inside the gallbladder is a starting observation, not an answer.

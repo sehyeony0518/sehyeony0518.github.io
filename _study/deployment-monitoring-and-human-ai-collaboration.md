@@ -10,6 +10,8 @@ order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-08-04-medical-algorithmic-audit"
 ---
 
 Deployment turns a predictor into part of a clinical process. Monitoring observes that process imperfectly, and clinicians can both correct and introduce errors when using its output.

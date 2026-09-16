@@ -10,6 +10,9 @@ order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-01-08-busbra-breast-ultrasound-dataset"
+  - "2025-11-03-transfer-learning-liver-steatosis"
 ---
 
 A held-out result estimates performance for a particular sampling and information-access scheme. Leakage occurs when development or prediction gains information that would be unavailable under the intended scheme. The central issue is the claim the estimate represents.

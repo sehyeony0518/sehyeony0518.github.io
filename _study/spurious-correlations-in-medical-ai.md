@@ -12,6 +12,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-09-06-geirhos-shortcut-learning"
+  - "2025-10-08-shortcut-testing-fair-medical-ai"
+  - "2026-08-30-monet-transparent-medical-image-ai"
 ---
 
 A cue-label association tells me what a model could exploit; an intervention tells me something about what the fitted model actually uses. I need both kinds of evidence before calling a gallbladder classifier's success clinically misleading.

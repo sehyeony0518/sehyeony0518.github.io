@@ -10,6 +10,9 @@ order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-04-22-quantitative-us-birads-category-3"
+  - "2026-01-08-busbra-breast-ultrasound-dataset"
 ---
 
 The patients missing from a gallbladder dataset can determine what its performance estimate means. I want to reconstruct the decisions between an eligible examination and an analyzed, labelled image.

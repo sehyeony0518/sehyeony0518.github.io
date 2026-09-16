@@ -12,6 +12,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-10-02-zech-variable-generalization"
+  - "2026-03-20-covariate-adjusted-spearman-correlation"
+  - "2026-05-18-shortcut-learning-data-acquisition-bias"
 ---
 
 A scanner-associated pattern can predict a diagnosis without measuring the abnormality I want the classifier to recognize. I need to identify the pathway producing that association before interpreting performance or clinical-feature alignment.
