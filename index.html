@@ -845,52 +845,44 @@
           try { saved = sessionStorage.getItem('homeView'); } catch (e) {}
           if (saved && saved !== 'map') show(saved, false);
         })();
-      </script> <h2> <a href="/study/" style="color: inherit">ai study</a> </h2> <style>
-      .hs-wrap { margin: .3rem 0 1.6rem; }
-      .hs-lead { font-size: .88rem; line-height: 1.7; opacity: .75; max-width: 60ch; margin: 0 0 .9rem; }
-      .hs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
-      @media (max-width: 640px) { .hs-grid { grid-template-columns: 1fr; } }
-      .hs-card {
-        display: block; text-decoration: none; color: inherit;
-        border: 1px solid var(--global-divider-color); border-radius: 10px;
-        padding: .7rem .8rem; transition: border-color .15s ease;
+      </script> <style>
+      /* One section object, used by the study row, the repository row and the
+         insight row, so the three read as the same kind of thing. */
+      .sec-wrap { margin-top: 1.4rem; }
+      .sec-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .7rem; }
+      .sec-title {
+        margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .1em;
+        text-transform: uppercase; color: var(--global-theme-color);
       }
-      .hs-card:hover { border-color: var(--global-theme-color); }
-      .hs-card:hover .hs-name { color: var(--global-theme-color); }
-      .hs-name { display: block; font-size: .875rem; font-weight: 650; line-height: 1.3; }
-      .hs-desc { display: block; font-size: .715rem; line-height: 1.5; opacity: .62; margin-top: .22rem; }
-      .hs-n { display: block; font-size: .655rem; font-weight: 700; opacity: .5;
-              margin-top: .35rem; font-variant-numeric: tabular-nums; }
-    </style> <div class="hs-wrap"> <p class="hs-lead"> Notes I write to understand something properly, kept in the open. 131 of them, with an ontology recording what I take to be true between the concepts they use. </p> <div class="hs-grid"> <a class="hs-card" href="/study/#ai-foundations"> <span class="hs-name">AI Theory</span> <span class="hs-desc">The machinery: mathematics, signals, systems, learning, and control.</span> <span class="hs-n">60 notes</span> </a> <a class="hs-card" href="/study/#clinical-medicine"> <span class="hs-name">Clinical Medicine</span> <span class="hs-desc">The prior: clinical knowledge across fields.</span> <span class="hs-n">27 notes</span> </a> <a class="hs-card" href="/study/#trustworthy-ai"> <span class="hs-name">Trustworthy AI</span> <span class="hs-desc">The purpose: causality, auditing, evaluation, deployment.</span> <span class="hs-n">44 notes</span> </a> </div> </div> <div class="gh-wrap"> <div class="gh-head"> <h2 class="gh-title">github projects</h2> <a class="gh-all" href="https://github.com/sehyeony0518" target="_blank" rel="noopener">all repositories →</a> </div> <div class="gh-grid"> <a class="gh-card" href="https://github.com/sehyeony0518/lunit-hackathon-l2-harness" target="_blank" rel="noopener"> <span class="gh-name">lunit-hackathon-l2-harness</span><span class="gh-desc">Lunit Conquer Health 해커톤 — L2 기반 risk-adaptive 의료 대화 하네스 (OpenAI-compatible multi-turn driver)</span><span class="gh-meta"><span class="gh-lang">Python</span><span class="gh-star">★ 1</span><span class="gh-date">2026-08-26</span> </span> </a><a class="gh-card" href="https://github.com/sehyeony0518/smart-factory-monitoring" target="_blank" rel="noopener"> <span class="gh-name">smart-factory-monitoring</span><span class="gh-desc">Condition-monitoring console for predictive maintenance of industrial robots — five-layer architecture traced to software qua...</span><span class="gh-meta"><span class="gh-lang">JavaScript</span><span class="gh-star">★ 1</span><span class="gh-date">2026-08-26</span> </span> </a><a class="gh-card" href="https://github.com/sehyeony0518/ultrasound-ai-reliability-requirements" target="_blank" rel="noopener"> <span class="gh-name">ultrasound-ai-reliability-requirements</span><span class="gh-desc">Requirements framework for reliable ultrasound diagnostic AI — data/model attribute pairs made executable as a gallbladder pi...</span><span class="gh-meta"><span class="gh-lang"></span><span class="gh-date">2026-08-26</span> </span> </a><a class="gh-card" href="https://github.com/sehyeony0518/scid5-module-j-agent" target="_blank" rel="noopener"> <span class="gh-name">scid5-module-j-agent</span><span class="gh-desc">LLM-administered SCID-5 Module J (adjustment disorder) interview — DSM-5 criteria J1–J5 as a decision tree, with human-in-the...</span><span class="gh-meta"><span class="gh-lang">Python</span><span class="gh-date">2026-08-26</span> </span> </a><a class="gh-card" href="https://github.com/sehyeony0518/stroke-risk-prediction" target="_blank" rel="noopener"> <span class="gh-name">stroke-risk-prediction</span><span class="gh-desc">Imbalanced classification on stroke data (4.87% positive rate): why accuracy misleads, what resampling actually buys, and cho...</span><span class="gh-meta"><span class="gh-lang">Python</span><span class="gh-date">2026-08-26</span> </span> </a><a class="gh-card" href="https://github.com/sehyeony0518/medical-marker-remover" target="_blank" rel="noopener"> <span class="gh-name">medical-marker-remover</span><span class="gh-desc">Client-side tool for removing diagnostic markers from medical images and restoring the background (OpenCV.js + WASM, PSNR/MSE...</span><span class="gh-meta"><span class="gh-lang">JavaScript</span><span class="gh-date">2026-08-26</span> </span> </a> </div> </div> <style>
-    .gh-wrap { margin-top: 1.4rem; }
-    .gh-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: .7rem; }
-    .gh-title {
-      margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--global-theme-color);
-    }
-    .gh-all { font-size: .74rem; text-decoration: none; color: var(--global-text-color-light); }
-    .gh-all:hover { color: var(--global-theme-color); }
-    /* Three across on a wide screen, two on a tablet, one on a phone. The cards
-       are links end to end rather than a title link inside a box, so the whole
-       card is the target. */
-    .gh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
-    @media (max-width: 900px) { .gh-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .gh-grid { grid-template-columns: 1fr; } }
-    .gh-card {
-      display: flex; flex-direction: column; gap: .3rem;
-      padding: .75rem .85rem; border-radius: 10px; text-decoration: none; color: inherit;
-      border: 1px solid var(--global-divider-color); background: var(--global-card-bg-color);
-      transition: border-color .15s ease, transform .15s ease;
-    }
-    .gh-card:hover { border-color: var(--global-theme-color); transform: translateY(-1px); }
-    .gh-name { font-size: .84rem; font-weight: 600; line-height: 1.3; word-break: break-word; }
-    .gh-desc { font-size: .76rem; line-height: 1.5; color: var(--global-text-color-light); }
-    .gh-meta {
-      display: flex; flex-wrap: wrap; gap: .55rem; margin-top: auto; padding-top: .2rem;
-      font-size: .68rem; color: var(--global-text-color-light); font-variant-numeric: tabular-nums;
-    }
-    .gh-star { color: var(--global-theme-color); }
-  </style> <div class="affil"> <a style="--ar: 3.647" href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab"> <img class="lo-l" src="/assets/img/logos/ens.png" alt="Embedded &amp; Software Lab" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ens_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a style="--ar: 3.780" href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University"> <img class="lo-l" src="/assets/img/logos/ajou.png" alt="Ajou University" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajou_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a style="--ar: 2.893" href="https://hosp.ajoumc.or.kr/" target="_blank" rel="noopener" aria-label="Ajou University Medical Center"> <img class="lo-l" src="/assets/img/logos/ajoumc.png" alt="Ajou University Medical Center" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajoumc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a style="--ar: 2.845" href="http://itrc.or.kr/" target="_blank" rel="noopener" aria-label="ITRC"> <img class="lo-l" src="/assets/img/logos/itrc.png" alt="ITRC" loading="lazy"> <img class="lo-d" src="/assets/img/logos/itrc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> </div> <style>
+      .sec-title a { color: inherit; text-decoration: none; }
+      .sec-title a:hover { text-decoration: underline; }
+      .sec-all { font-size: .74rem; text-decoration: none; color: var(--global-text-color-light); white-space: nowrap; }
+      .sec-all:hover { color: var(--global-theme-color); }
+      /* Three across on a wide screen, two on a tablet, one on a phone. The cards
+         are links end to end rather than a title link inside a box, so the whole
+         card is the target. */
+      .sec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+      @media (max-width: 900px) { .sec-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .sec-grid { grid-template-columns: 1fr; } }
+      .sec-card {
+        display: flex; flex-direction: column; gap: .3rem;
+        padding: .75rem .85rem; border-radius: 10px; text-decoration: none; color: inherit;
+        border: 1px solid var(--global-divider-color); background: var(--global-card-bg-color);
+        transition: border-color .15s ease, transform .15s ease;
+      }
+      .sec-card:hover { border-color: var(--global-theme-color); transform: translateY(-1px); }
+      .sec-name { font-size: .84rem; font-weight: 600; line-height: 1.3; word-break: break-word; }
+      .sec-desc { font-size: .76rem; line-height: 1.5; color: var(--global-text-color-light); }
+      .sec-meta {
+        display: flex; flex-wrap: wrap; gap: .55rem; margin-top: auto; padding-top: .2rem;
+        font-size: .68rem; color: var(--global-text-color-light); font-variant-numeric: tabular-nums;
+      }
+    </style> <div class="sec-wrap"> <div class="sec-head"> <h2 class="sec-title"><a href="/study/">ai study</a></h2> <a class="sec-all" href="/study/">all 131 notes →</a> </div> <div class="sec-grid"> <a class="sec-card" href="/study/#ai-foundations"> <span class="sec-name">AI Theory</span> <span class="sec-desc">The machinery: mathematics, signals, systems, learning, and control.</span> <span class="sec-meta"><span>60 notes</span></span> </a> <a class="sec-card" href="/study/#clinical-medicine"> <span class="sec-name">Clinical Medicine</span> <span class="sec-desc">The prior: clinical knowledge across fields.</span> <span class="sec-meta"><span>27 notes</span></span> </a> <a class="sec-card" href="/study/#trustworthy-ai"> <span class="sec-name">Trustworthy AI</span> <span class="sec-desc">The purpose: causality, auditing, evaluation, deployment.</span> <span class="sec-meta"><span>44 notes</span></span> </a> </div> </div> <div class="sec-wrap"> <div class="sec-head"> <h2 class="sec-title">github projects</h2> <a class="sec-all" href="https://github.com/sehyeony0518" target="_blank" rel="noopener">all repositories →</a> </div> <div class="sec-grid"> <a class="sec-card" href="https://github.com/sehyeony0518/lunit-hackathon-l2-harness" target="_blank" rel="noopener"> <span class="sec-name">lunit-hackathon-l2-harness</span><span class="sec-desc">Lunit Conquer Health 해커톤 — L2 기반 risk-adaptive 의료 대화 하네스 (OpenAI-compatible multi-turn driver)</span><span class="sec-meta"><span class="sec-lang">Python</span><span class="sec-star">★ 1</span><span class="sec-date">2026-08-26</span> </span> </a><a class="sec-card" href="https://github.com/sehyeony0518/smart-factory-monitoring" target="_blank" rel="noopener"> <span class="sec-name">smart-factory-monitoring</span><span class="sec-desc">Condition-monitoring console for predictive maintenance of industrial robots — five-layer architecture traced to software qua...</span><span class="sec-meta"><span class="sec-lang">JavaScript</span><span class="sec-star">★ 1</span><span class="sec-date">2026-08-26</span> </span> </a><a class="sec-card" href="https://github.com/sehyeony0518/ultrasound-ai-reliability-requirements" target="_blank" rel="noopener"> <span class="sec-name">ultrasound-ai-reliability-requirements</span><span class="sec-desc">Requirements framework for reliable ultrasound diagnostic AI — data/model attribute pairs made executable as a gallbladder pi...</span><span class="sec-meta"><span class="sec-lang"></span><span class="sec-date">2026-08-26</span> </span> </a><a class="sec-card" href="https://github.com/sehyeony0518/scid5-module-j-agent" target="_blank" rel="noopener"> <span class="sec-name">scid5-module-j-agent</span><span class="sec-desc">LLM-administered SCID-5 Module J (adjustment disorder) interview — DSM-5 criteria J1–J5 as a decision tree, with human-in-the...</span><span class="sec-meta"><span class="sec-lang">Python</span><span class="sec-date">2026-08-26</span> </span> </a><a class="sec-card" href="https://github.com/sehyeony0518/stroke-risk-prediction" target="_blank" rel="noopener"> <span class="sec-name">stroke-risk-prediction</span><span class="sec-desc">Imbalanced classification on stroke data (4.87% positive rate): why accuracy misleads, what resampling actually buys, and cho...</span><span class="sec-meta"><span class="sec-lang">Python</span><span class="sec-date">2026-08-26</span> </span> </a><a class="sec-card" href="https://github.com/sehyeony0518/medical-marker-remover" target="_blank" rel="noopener"> <span class="sec-name">medical-marker-remover</span><span class="sec-desc">Client-side tool for removing diagnostic markers from medical images and restoring the background (OpenCV.js + WASM, PSNR/MSE...</span><span class="sec-meta"><span class="sec-lang">JavaScript</span><span class="sec-date">2026-08-26</span> </span> </a> </div> </div> <style>
+    /* Shared section chrome (.sec-head, .sec-grid, .sec-card and friends) is
+       defined once in _layouts/about.liquid so the study, repository and
+       insight rows are the same object. Only the repository extras are here. */
+    .sec-star { color: var(--global-theme-color); }
+  </style> <div class="sec-wrap"> <div class="sec-head"> <h2 class="sec-title"><a href="/blog/">insights</a></h2> <a class="sec-all" href="/blog/">all 22 insights →</a> </div> <div class="sec-grid"> <a class="sec-card" href="/blog/2026-09-12-priscilla-chan-virtual-cell-rare-disease/"> <span class="sec-name">Priscilla Chan on the Virtual Cell, Open Datasets, and Patients Who Build the Assets</span><span class="sec-desc">Notes on why the constraint in cell modelling moved from compute to data format, how an annotation tool accumulated a corpus ...</span> <span class="sec-meta"><span>Biohub</span> <span>Sep 12, 2026</span> </span> </a> <a class="sec-card" href="/blog/2026-09-11-biohub-virtual-biology-world-models/"> <span class="sec-name">Biohub on Frontier Biology, Emergent Protein Design, and Reading a Model's Representations</span><span class="sec-desc">Notes on why biology's bottleneck is data that does not exist yet, what it means that protein design arrived without antibody...</span> <span class="sec-meta"><span>Biohub</span> <span>Sep 11, 2026</span> </span> </a> <a class="sec-card" href="/blog/2026-09-11-ben-glocker-causality-medical-imaging/"> <span class="sec-name">Ben Glocker on Causal Direction, Scanner Effects, and What Breaks at Deployment</span><span class="sec-desc">Notes on whether the image causes the label or the label causes the image, how that framing bears on data scarcity and datase...</span> <span class="sec-meta"><span>Imperial College London</span> <span>Sep 11, 2026</span> </span> </a> <a class="sec-card" href="/blog/2026-09-10-suin-lee-shap-axioms-clinician-decisions/"> <span class="sec-name">Su-In Lee on SHAP Consistency, Clinician Decisions, and Auditing Image Models</span><span class="sec-desc">Notes on SHAP’s axioms, image ablation, and the Prescience clinician study, with implications for evaluating clinical faithfu...</span> <span class="sec-meta"><span>AIMS Lab</span> <span>Sep 10, 2026</span> </span> </a> <a class="sec-card" href="/blog/2026-09-09-suin-lee-iscb-innovator-lecture/"> <span class="sec-name">AI, Biology, and Clinical Medicine: Su-In Lee’s ISCB Innovator Award Lecture</span><span class="sec-desc">Notes on Prescience, ENABL Age, Alzheimer’s pathway models, COVID shortcuts, and CoAI, with implications for clinical faithfu...</span> <span class="sec-meta"><span>AIMS Lab</span> <span>Sep 9, 2026</span> </span> </a> <a class="sec-card" href="/blog/2026-09-08-suin-lee-explainable-ai-biology-medicine/"> <span class="sec-name">Beyond Feature Attribution: Su-In Lee on Explainable AI for Biology and Medicine</span><span class="sec-desc">Notes from a TWIML conversation on SHAP, biological interpretation, counterfactual clinical audits, and the connection to my ...</span> <span class="sec-meta"><span>AIMS Lab</span> <span>Sep 8, 2026</span> </span> </a> </div> </div> <div class="affil"> <a style="--ar: 3.647" href="https://eslab.ajou.ac.kr/" target="_blank" rel="noopener" aria-label="Embedded and Software Lab"> <img class="lo-l" src="/assets/img/logos/ens.png" alt="Embedded &amp; Software Lab" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ens_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a style="--ar: 3.780" href="https://www.ajou.ac.kr/en/index.do" target="_blank" rel="noopener" aria-label="Ajou University"> <img class="lo-l" src="/assets/img/logos/ajou.png" alt="Ajou University" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajou_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a style="--ar: 2.893" href="https://hosp.ajoumc.or.kr/" target="_blank" rel="noopener" aria-label="Ajou University Medical Center"> <img class="lo-l" src="/assets/img/logos/ajoumc.png" alt="Ajou University Medical Center" loading="lazy"> <img class="lo-d" src="/assets/img/logos/ajoumc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> <a style="--ar: 2.845" href="http://itrc.or.kr/" target="_blank" rel="noopener" aria-label="ITRC"> <img class="lo-l" src="/assets/img/logos/itrc.png" alt="ITRC" loading="lazy"> <img class="lo-d" src="/assets/img/logos/itrc_dark.png" alt="" aria-hidden="true" loading="lazy"> </a> </div> <style>
       /* The row deliberately breaks out past the prose column: these are the
          page's closing marks, and at body width they read as thumbnails. */
       .affil {
@@ -908,7 +900,7 @@
       .affil img { width: 100%; height: auto; object-fit: contain;
         opacity: .82; transition: opacity .15s ease; }
       .affil a:hover img { opacity: 1; }
-      /* Each mark ships twice — the ink is inverted in lightness for the dark
+      /* Each mark ships twice: the ink is inverted in lightness for the dark
          ground, so black type reads white while the blues and reds stay themselves. */
       .affil .lo-d { display: none; }
       html[data-theme="dark"] .affil .lo-l { display: none; }
