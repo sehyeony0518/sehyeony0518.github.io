@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden"
-description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports."
+description: "Deriving anchor-box geometry, normalized box regression, IoU matching, and non-maximum suppression, with worked examples of reference boxes, losses, and overlapping detections."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
@@ -12,81 +12,633 @@ written: true
 updated: "2026-09-15"
 ---
 
-A one-stage detector emits thousands of boxes and keeps a handful. What happens between those two facts is where most of the engineering lives, and almost none of it is learned.
+Anchor boxes specify reference geometry. A network predicts how to modify that geometry, and a post-processing rule selects among the resulting candidates.
 
-## Core question and definition
+Neither operation should be confused with a theorem about objects. Anchors are a parameterization and an inductive bias. Non-maximum suppression is a selection rule applied to predicted boxes. Its behavior depends on coordinates, scores, classes, and thresholds.
 
-Asking a network to output an arbitrary box at an arbitrary location is asking it to regress unbounded coordinates: a target whose scale depends on image size, object size, and position all at once. **Anchor boxes** replace that with a bounded question: here is a reference box of known size and aspect ratio; tell me how this object differs from it.[^fasterrcnn]
+An important correction comes first: ordinary normalized anchor offsets are not bounded. Normalizing a coordinate removes units; it does not impose a finite range.
 
-The reference set is chosen in advance. SSD assigns each feature map a scale and a set of aspect ratios $$r \in \{1, 2, \tfrac12, 3, \tfrac13\}$$, and constructs anchors of width $$s\sqrt{r}$$ and height $$s/\sqrt{r}$$, which preserves area at $$s^2$$ while varying shape, so that ratio and scale are genuinely independent knobs. At $$s=21$$ the $$1{:}1$$ anchor is $$21\times21$$ and the $$2{:}1$$ anchor is $$29.70\times14.85$$, both of area 441. An extra square anchor at $$\sqrt{s_k s_{k+1}}$$, $$\sqrt{21\cdot45} = 30.74$$, fills the gap between consecutive scales, which is why some maps carry 4 anchors and others 6.[^ssd]
+## Fix the coordinate convention before doing arithmetic
 
-The shallower, higher-resolution maps get small anchors and the deeper ones get large anchors. That is the whole of SSD's multi-scale idea: a feature map's receptive field determines what size of object it can see, so match the anchor to the map.
-
-## Key concepts
-
-### The network predicts corrections, not coordinates
-
-Because a fully convolutional head is translation-shared, the same filter runs at every spatial site, so it cannot output an absolute position. It outputs an offset, and the site supplies the origin.
-
-SSD's encoding is:
+Represent an axis-aligned rectangle by
 
 $$
-\hat g^{cx} = \frac{g^{cx} - d^{cx}}{d^{w}}, \qquad
-\hat g^{cy} = \frac{g^{cy} - d^{cy}}{d^{h}}, \qquad
-\hat g^{w} = \log\frac{g^{w}}{d^{w}}, \qquad
-\hat g^{h} = \log\frac{g^{h}}{d^{h}}
+b=(x_1,y_1,x_2,y_2),
+\qquad
+x_2>x_1,\quad y_2>y_1.
 $$
 
-where $$d$$ is the anchor and $$g$$ the ground truth. Centres are expressed as a fraction of anchor size; sizes as a log ratio. Decoding inverts it: $$g^{cx} = d^{cx} + d^{w}\hat g^{cx}$$ and $$g^{w} = d^{w}\exp(\hat g^{w})$$.
+Use continuous coordinates, or equivalently half-open pixel intervals. Its area is
 
-Two things are worth drawing out. The log on width and height makes the target symmetric under doubling and halving: predicting $$+0.69$$ and $$-0.69$$ are equally sized errors, whereas in raw pixels a factor of two is a different magnitude for a small box than a large one. And **the loss function is where the decoding is decided**: writing the regression target as $$\hat g$$ commits you to interpreting the network's output as $$\hat g$$ forever after. The decoder is not a separate design choice; it is the loss read backwards.
+$$
+A(b)=(x_2-x_1)(y_2-y_1).
+$$
 
-The variance scaling factors that appear in reference implementations have, as far as I can find, no justification in the paper beyond empirical tuning.
+There is no added one in this convention. An inclusive integer-pixel convention uses different arithmetic, so mixing implementations can create discrepancies even when the coordinates appear identical.
 
-### Non-maximum suppression deletes most of the output
+The center-size representation is
 
-One object produces many firing anchors: a person is detected by the anchor centred on their torso, the one on their head, and several neighbours. So after thresholding on confidence (which removes the overwhelming majority of the 8732 boxes), overlapping survivors must be merged.
+$$
+c_x=\frac{x_1+x_2}{2},
+\qquad
+c_y=\frac{y_1+y_2}{2},
+$$
 
-NMS is greedy: sort by score, take the highest, delete everything overlapping it beyond an IoU threshold, repeat on what remains.
+$$
+w=x_2-x_1,
+\qquad
+h=y_2-y_1.
+$$
 
-The important detail is that it is applied **per class**. A person holding a dog produces two heavily overlapping boxes that are both correct, so suppression across classes would destroy one. Within a class it is a hard constraint, and the consequence is exact and unavoidable: **two people standing closer than the IoU threshold cannot both be detected.** With a 0.5 threshold, two same-size boxes must be separated by more than a third of a box-width or one of them is deleted, not scored low, deleted, by a rule with no parameters that were learned from data.
+The inverse transformation is
 
-This is a failure mode built into the post-processing rather than the model, and no amount of training data removes it.
+$$
+x_1=c_x-\frac{w}{2},
+\qquad
+x_2=c_x+\frac{w}{2},
+$$
 
-### Learning the anchors instead of choosing them
+with the analogous expressions for the vertical coordinates.
 
-YOLO v2 replaced hand-chosen ratios with **dimension priors**: run $$k$$-means over the ground-truth boxes in the training set and use the cluster centroids as anchors. Five clusters was the chosen trade-off between count and accuracy.[^yolo9000]
+These are representations of the same box, not different localization targets. Losses computed in the two representations can nevertheless behave differently, because a change of coordinates does not generally preserve Euclidean distance.
 
-That is a genuine improvement in honesty, the priors now come from the data rather than from the authors' intuition, and the paper's ablation table is the useful part of it. Anchors alone *reduced* mAP while raising recall; anchors plus dimension priors plus direct location prediction raised both. The lesson I take is that the components were not independent, and reporting any one of them alone would have been misleading.
+## Deriving anchor width and height from scale and ratio
 
-The box budgets tell the trajectory plainly: YOLO v1 predicted $$7\times7\times2 = 98$$ boxes; v2 predicted $$13\times13\times5 = 845$$; v3, across three scales, predicts $$(13^2 + 26^2 + 52^2)\times3 = 10{,}647$$.[^yolov3]
+Let an anchor have area $$s^2$$ and aspect ratio $$r$$:
 
-### Softmax versus sigmoid, which is a claim about the world
+$$
+wh=s^2,
+\qquad
+\frac{w}{h}=r.
+$$
 
-YOLO v3 replaced the class softmax with independent sigmoids. The reason is not numerical.
+Substitute $$w=rh$$ into the area equation:
 
-Softmax asserts that the classes are mutually exclusive: the scores sum to one, so evidence for one class is evidence against every other. That is true for "dog or cat" and false for "woman and person," or "tree and conifer," where an object legitimately carries several labels at once. Sigmoid per class drops the exclusivity assumption and asks each question independently.
+$$
+rh^2=s^2.
+$$
 
-Choosing between them is choosing a claim about the label space, not a layer.
+For positive dimensions,
+
+$$
+h=\frac{s}{\sqrt r},
+\qquad
+w=s\sqrt r.
+$$
+
+The square root is therefore required by the simultaneous area and ratio constraints.
+
+For a constructed scale of 12 and ratio of four,
+
+$$
+w=12\sqrt4=24,
+\qquad
+h=\frac{12}{\sqrt4}=6.
+$$
+
+The area remains
+
+$$
+24\cdot6=144=12^2.
+$$
+
+A square anchor at the same scale has dimensions 12 by 12. Shape changes while area remains fixed.
+
+Suppose neighboring scales are 12 and 48. A scale halfway between them in logarithmic space satisfies
+
+$$
+\log s_{\mathrm{mid}}
+=
+\frac{\log12+\log48}{2}.
+$$
+
+Exponentiating gives
+
+$$
+s_{\mathrm{mid}}=\sqrt{12\cdot48}=24.
+$$
+
+The multiplicative gaps are equal:
+
+$$
+\frac{24}{12}=\frac{48}{24}=2.
+$$
+
+An arithmetic midpoint of 30 would make the additive gaps equal instead. Geometric spacing is appropriate when scale errors are naturally understood as ratios.
+
+The number of anchors also follows directly from construction. A four-by-four map with three anchors per site contributes 48 anchors. A two-by-two map with three contributes 12. Together they supply 60 candidates before any image-dependent prediction.
+
+## Why centers use normalized differences and sizes use logarithms
+
+Let the anchor be
+
+$$
+a=(a_x,a_y,a_w,a_h)
+$$
+
+and its matched target be
+
+$$
+g=(g_x,g_y,g_w,g_h).
+$$
+
+A common encoding is
+
+$$
+t_x=\frac{g_x-a_x}{a_w},
+\qquad
+t_y=\frac{g_y-a_y}{a_h},
+$$
+
+$$
+t_w=\log\frac{g_w}{a_w},
+\qquad
+t_h=\log\frac{g_h}{a_h}.
+$$
+
+The center offsets are dimensionless. A displacement of four pixels relative to an eight-pixel anchor has the same encoded magnitude as a displacement of 40 pixels relative to an 80-pixel anchor.
+
+The size coordinates describe multiplicative changes additively. If width doubles,
+
+$$
+t_w=\log2.
+$$
+
+If width halves,
+
+$$
+t_w=\log\frac12=-\log2.
+$$
+
+Successive rescalings also add:
+
+$$
+\log\frac{w_3}{w_1}
+=
+\log\frac{w_3}{w_2}
++
+\log\frac{w_2}{w_1}.
+$$
+
+This is why logarithms are useful here. They do not imply that a log-coordinate loss equals an overlap loss.
+
+The inverse encoding is obtained by ordinary algebra:
+
+$$
+g_x=a_x+a_wt_x,
+\qquad
+g_y=a_y+a_ht_y,
+$$
+
+$$
+g_w=a_w e^{t_w},
+\qquad
+g_h=a_h e^{t_h}.
+$$
+
+Exponentiation ensures positive predicted dimensions. Both center offsets and log-size offsets can take arbitrarily large positive or negative values.
+
+If all image coordinates are multiplied by a positive factor, these targets remain unchanged. That scale normalization helps reuse a parameterization across image sizes, although resizing can still change the visual information available to the network.
+
+## A complete encoding and decoding example
+
+Choose
+
+$$
+a=(10,10,8,4),
+\qquad
+g=(12,9,16,2).
+$$
+
+The encoded center targets are
+
+$$
+t_x=\frac{12-10}{8}=\frac14,
+\qquad
+t_y=\frac{9-10}{4}=-\frac14.
+$$
+
+The size targets are
+
+$$
+t_w=\log2,
+\qquad
+t_h=-\log2.
+$$
+
+Decode them:
+
+$$
+\hat g_x=10+8\left(\frac14\right)=12,
+$$
+
+$$
+\hat g_y=10+4\left(-\frac14\right)=9,
+$$
+
+$$
+\hat g_w=8e^{\log2}=16,
+\qquad
+\hat g_h=4e^{-\log2}=2.
+$$
+
+The reconstructed target is exact.
+
+Some implementations scale the targets:
+
+$$
+u_j=\frac{t_j}{v_j}.
+$$
+
+With chosen center scales of 0.1 and size scales of 0.2,
+
+$$
+u=
+\left(
+2.5,-2.5,
+\frac{\log2}{0.2},
+-\frac{\log2}{0.2}
+\right),
+$$
+
+so the final two entries are approximately positive and negative 3.4657.
+
+Decoding must first recover
+
+$$
+t_j=v_ju_j.
+$$
+
+Calling these constants “variances” does not automatically give them a probabilistic interpretation. Algebraically, they rescale coordinates and therefore change the relative gradients assigned to errors in those coordinates.
+
+A useful implementation check is a round trip: encode a known box, decode the result, and verify the original coordinates. The test should include non-square boxes and negative center offsets.
+
+## Deriving intersection over union
+
+For boxes $$A$$ and $$B$$, the intersection width is
+
+$$
+w_I=
+\max\left(
+0,
+\min(A_{x_2},B_{x_2})
+-
+\max(A_{x_1},B_{x_1})
+\right).
+$$
+
+The intersection height is defined similarly, giving
+
+$$
+I=w_Ih_I.
+$$
+
+The union follows from inclusion–exclusion:
+
+$$
+U=A(A)+A(B)-I.
+$$
+
+Thus
+
+$$
+\operatorname{IoU}(A,B)=\frac{I}{U}.
+$$
+
+Subtracting the intersection once prevents the shared region from being counted twice.
+
+The anchor from the encoding example has corners
+
+$$
+(6,8,14,12),
+$$
+
+and its target has corners
+
+$$
+(4,8,20,10).
+$$
+
+Both have area 32. Their intersection is eight units wide and two high:
+
+$$
+I=16,
+\qquad
+U=32+32-16=48.
+$$
+
+Therefore
+
+$$
+\operatorname{IoU}(a,g)=\frac13.
+$$
+
+The target is perfectly representable by the decoder even though the initial overlap is modest. Anchor overlap affects assignment and optimization; it is not a hard limit on the set of boxes the regression formula can express.
+
+## Matching determines which predictions receive which targets
+
+Before computing regression loss, training must assign anchors to ground-truth objects.
+
+Consider three anchors:
+
+$$
+A_1=[0,0,10,10],
+$$
+
+$$
+A_2=[2,0,12,10],
+$$
+
+$$
+A_3=[20,0,30,10],
+$$
+
+and two objects:
+
+$$
+G_1=[0,0,10,10],
+\qquad
+G_2=[20,0,30,10].
+$$
+
+Their overlaps are
+
+| Anchor | IoU with first object | IoU with second object |
+|---|---:|---:|
+| First | 1 | 0 |
+| Second | $$2/3$$ | 0 |
+| Third | 0 | 1 |
+
+At a positive threshold of one half, all three anchors can be positive. Two anchors represent the first object.
+
+This is why the number of positive training examples is not necessarily the number of annotated objects. Conversely, a small or unusually shaped object may have no anchor above the chosen threshold.
+
+Assignment schemes may force a best match, reserve an ignored interval between positive and negative thresholds, or resolve competing matches differently. Each choice changes the training problem. A forced best match also needs a collision policy when multiple objects prefer the same anchor.
+
+Training matching and inference suppression answer different questions. Matching connects predictions to supervision. NMS compares predictions with other predictions. Neither should be described simply as “remove overlapping boxes,” because the objects being compared and the purpose of the comparison differ.
+
+## Localization loss and its gradients
+
+A common coordinate penalty is smooth L1. With transition parameter $$\beta>0$$,
+
+$$
+\ell_\beta(e)=
+\begin{cases}
+\dfrac{e^2}{2\beta},& |e|<\beta,\\[6pt]
+|e|-\dfrac{\beta}{2},& |e|\ge\beta.
+\end{cases}
+$$
+
+Its derivative is
+
+$$
+\ell_\beta'(e)=
+\begin{cases}
+e/\beta,& |e|<\beta,\\
+\operatorname{sign}(e),& |e|\ge\beta.
+\end{cases}
+$$
+
+One way to derive the loss is to begin with this desired gradient: linear near zero, capped in magnitude outside the transition region. Integrating the gradient gives the quadratic and linear branches. The constant in the second branch makes the loss continuous at the transition.
+
+With $$\beta=1$$ and coordinate errors
+
+$$
+e=(0.5,-2,0,1),
+$$
+
+the summed loss is
+
+$$
+\frac{0.5^2}{2}
++
+\left(2-\frac12\right)
++
+0
++
+\frac12
+=
+2.125.
+$$
+
+The corresponding gradients are
+
+$$
+(0.5,-1,0,1).
+$$
+
+Regression is normally applied only to matched positive predictions. A negative anchor has no target object's coordinates to regress toward.
+
+A combined objective may normalize the summed losses by the positive count:
+
+$$
+L=
+\frac{
+L_{\mathrm{classification}}
++
+\lambda L_{\mathrm{localization}}
+}{
+\max(1,N_+)
+}.
+$$
+
+This is one convention, not a universal definition. Negative sampling, weighting, and the handling of images without positives must be stated separately.
+
+## Greedy non-maximum suppression, worked through
+
+For one class, hard NMS repeatedly selects the highest-scoring remaining box and removes candidates whose overlap with it exceeds a threshold.
+
+Use four boxes:
+
+| Box | Coordinates | Score |
+|---|---|---:|
+| A | $$[0,0,10,10]$$ | 0.90 |
+| B | $$[2,0,12,10]$$ | 0.80 |
+| C | $$[4,0,14,10]$$ | 0.70 |
+| D | $$[20,0,30,10]$$ | 0.60 |
+
+Their relevant overlaps are
+
+$$
+\operatorname{IoU}(A,B)=\frac{80}{120}=\frac23,
+$$
+
+$$
+\operatorname{IoU}(B,C)=\frac23,
+$$
+
+$$
+\operatorname{IoU}(A,C)=\frac{60}{140}=\frac37.
+$$
+
+Set the threshold to one half, with suppression for strictly greater overlap.
+
+First select A. B is suppressed, while C survives because
+
+$$
+\frac37<\frac12.
+$$
+
+D also survives because it is disjoint.
+
+Next select C, then D. The retained set is
+
+$$
+\{A,C,D\}.
+$$
+
+Notice that B overlapped both A and C strongly, but A and C did not overlap each other strongly. “Overlaps above threshold” is not a transitive relation, so it does not partition candidates into simple duplicate groups.
+
+Greedy selection is also not guaranteed to maximize the sum of retained scores. On the first three boxes, change the scores to
+
+$$
+s_B=0.95,\qquad s_A=0.90,\qquad s_C=0.80.
+$$
+
+NMS selects B and suppresses both neighbors. Yet A and C are mutually compatible and have combined score 1.70. This comparison describes a graph optimization objective; it does not mean that adding confidence scores is always the right detection objective.
+
+## What the overlap threshold implies geometrically
+
+Take equal boxes of width $$w$$ and height $$h$$, shifted horizontally by $$d$$, where
+
+$$
+0\le d\le w.
+$$
+
+Their intersection is
+
+$$
+I=(w-d)h,
+$$
+
+and their union is
+
+$$
+U=2wh-(w-d)h=(w+d)h.
+$$
+
+Therefore
+
+$$
+\operatorname{IoU}=\frac{w-d}{w+d}.
+$$
+
+For suppression threshold $$\tau$$,
+
+$$
+\frac{w-d}{w+d}>\tau
+$$
+
+is equivalent to
+
+$$
+w-d>\tau w+\tau d,
+$$
+
+and hence
+
+$$
+d<w\frac{1-\tau}{1+\tau}.
+$$
+
+At a threshold of one half, suppression occurs when the horizontal displacement is less than one third of the width. Equality is retained under the strict comparison used here.
+
+This is a statement about these predicted boxes. It does not prove that two nearby physical objects can never both be detected: their predicted boxes may have different dimensions or lower mutual overlap. The exact claim is that two candidates with excessive mutual overlap cannot both survive that NMS step.
+
+Class-wise NMS avoids suppressing candidates solely because they belong to different classes. Class-agnostic NMS also exists. The appropriate choice depends on the label ontology and the intended duplicate policy.
+
+## Softer selection and class probabilities
+
+A simple soft-NMS rule reduces a candidate's score instead of immediately deleting it:
+
+$$
+s_j'
+=
+s_j\left(1-\operatorname{IoU}(M,B_j)\right)
+$$
+
+when overlap with the selected box $$M$$ exceeds a chosen threshold.
+
+For two candidates with overlap two thirds and a lower score of 0.8,
+
+$$
+s_j'=0.8\left(1-\frac23\right)=\frac{0.8}{3}\approx0.2667.
+$$
+
+A final score cutoff of 0.25 keeps it; a cutoff of 0.30 removes it. Soft suppression therefore changes the selection behavior without guaranteeing that crowded objects survive. Scores must also be reconsidered after updates.
+
+Classification probabilities encode another modeling choice. A categorical softmax uses
+
+$$
+p_c=\frac{e^{z_c}}{\sum_j e^{z_j}},
+\qquad
+L=-\log p_y,
+$$
+
+for one mutually exclusive label.
+
+Separate Bernoulli labels instead use
+
+$$
+p_c=\frac{1}{1+e^{-z_c}},
+$$
+
+$$
+L=
+-\sum_c
+\left[
+y_c\log p_c+(1-y_c)\log(1-p_c)
+\right].
+$$
+
+This permits multiple labels to be positive. It does not prove that the real labels are statistically independent; it defines the prediction and training factorization.
+
+Similarly, multiplying objectness by a conditional class probability has a probability interpretation only when those quantities represent the corresponding events. A score used for ranking is not automatically calibrated.
+
+## Auditing anchor coverage separately from final detection
+
+For ground-truth boxes $$G_j$$ and anchors $$A_i$$, define pre-regression coverage at threshold $$\tau$$:
+
+$$
+Q_\tau
+=
+\frac{1}{N}
+\sum_{j=1}^{N}
+\mathbf1
+\left[
+\max_i\operatorname{IoU}(A_i,G_j)\ge\tau
+\right].
+$$
+
+This measures how often the reference geometry starts near an object. It is not final recall: regression may improve a weak match, and classification or suppression may discard a strong one.
+
+Coverage should be examined by object size and aspect ratio. A pooled value can hide an entire poorly covered subgroup.
+
+Data-derived anchor clusters can adapt the reference set to training geometry, but they inherit that dataset's distribution. Moreover, if clustering uses an IoU-based distance, an arithmetic centroid is not automatically the exact minimizer of the cluster objective. The update rule and distance must be considered together.
+
+To locate a failure, retain intermediate candidates and compare coverage, post-regression overlap, classification scores, and post-NMS recall. A final metric alone cannot identify which stage removed the useful prediction.
+
+## Revision checklist
+
+| Can I do this without looking? | Check |
+|---|---|
+| Convert between corner and center-size coordinates. | State whether coordinates are continuous or inclusive integers. |
+| Derive anchor dimensions from area and aspect ratio. | Recover both square-root expressions. |
+| Explain geometric scale spacing. | Show equal multiplicative gaps. |
+| Encode and decode a non-square target. | Reproduce the full numerical round trip. |
+| Explain why normalized offsets are unbounded. | Separate units from range constraints. |
+| Compute IoU from corners. | Use inclusion–exclusion for the union. |
+| Distinguish matching from suppression. | Identify what is compared in each stage. |
+| Derive smooth L1 from its gradient. | Check continuity at the transition. |
+| Execute greedy NMS by hand. | Reproduce the retained set and the non-transitive overlap example. |
+| Derive the horizontal suppression condition. | Preserve the strict inequality convention. |
+| Explain what soft-NMS does not guarantee. | Include the final score cutoff. |
+| Separate anchor coverage from detector recall. | Track the prediction through the whole pipeline. |
 
 ## Why it matters for my work
 
-The anchor set is a **prior about object geometry that is fixed before training and invisible afterwards.** SSD's ratios were selected because they worked best among the options tried; nothing in the resulting mAP distinguishes "the model learned this object well" from "the anchor set happened to fit this object's shape."
-
-For medical imaging this is not a small point. Lesion shape distributions are not the VOC distribution, and a detector inheriting COCO-tuned anchors starts with a geometric prior fitted to cars and people. The $$k$$-means approach is the right instinct, but it makes the prior a function of the training set, which means a detector trained at one institution carries that institution's lesion-size distribution as a structural bias, not merely a statistical one. When it underperforms elsewhere, [external validation](/study/robustness-subgroup-performance-and-external-validation/) will show the drop and will not say that the anchors were the cause.
-
-The NMS point is sharper still, because it is the clearest case I know of a **clinically relevant failure that is provably not in the model**. If two adjacent lesions are closer than the IoU threshold, one is deleted after inference, deterministically. Attribution methods will not show it; the model's own confidence for the deleted box was high. Auditing the model cannot find a fault that lives in the post-processing, which argues for treating the inference pipeline, not the network, as the object under audit.
+For lesion detection, I need to inspect the candidates that existed before suppression. Anchor coverage and NMS can produce distinct failure modes, and neither is explained by an attribution map of the network alone.
 
 ## What I have not resolved
 
-Whether soft-NMS or the learned alternatives change this in practice or only soften it, and whether any of them have been evaluated on the adjacent-lesion case specifically rather than on aggregate mAP, where a handful of deleted boxes is invisible.
-
----
-
-[^fasterrcnn]: Ren, S., He, K., Girshick, R., & Sun, J. (2017). Faster R-CNN: Towards real-time object detection with region proposal networks. *IEEE TPAMI*, 39(6), 1137–1149. [10.1109/TPAMI.2016.2577031](https://doi.org/10.1109/TPAMI.2016.2577031)
-
-[^ssd]: Liu, W., et al. (2016). SSD: Single Shot MultiBox Detector. *ECCV*. [10.1007/978-3-319-46448-0_2](https://doi.org/10.1007/978-3-319-46448-0_2)
-
-[^yolo9000]: Redmon, J., & Farhadi, A. (2017). YOLO9000: Better, faster, stronger. *CVPR*. [10.1109/CVPR.2017.690](https://doi.org/10.1109/CVPR.2017.690)
-
-[^yolov3]: Redmon, J., & Farhadi, A. (2018). YOLOv3: An incremental improvement. [arXiv:1804.02767](https://arxiv.org/abs/1804.02767)
+Measure how many annotated adjacent objects lose a valid candidate specifically at the suppression stage, stratified by predicted overlap, object size, and class.

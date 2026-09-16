@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Segmentation: Resolution Against Context, and the Things/Stuff Divide"
-description: "Every segmentation architecture is an answer to one conflict: you need to see widely and label precisely, and pooling buys the first with the second. Four answers, and why panoptic needed a new output format."
+description: "Semantic, instance, and panoptic segmentation derived through pixel losses, receptive fields, encoder-decoder reconstruction, atrous convolution, center offsets, and panoptic quality."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
@@ -12,106 +12,592 @@ written: true
 updated: "2026-09-15"
 ---
 
-Segmentation is structurally simpler than detection, and for a reason worth naming: **the output shape is known in advance.** A detector does not know how many boxes it will emit. A segmenter emits $$H\times W\times C$$, one label per pixel, whatever the image contains. Much of detection's machinery (anchors, suppression, variable-length output) exists to manage that uncertainty and simply has no counterpart here.
+Segmentation requires a decision about what a pixel label means before it requires an architecture.
 
-What replaces it is a different conflict, and it is the organising problem of the whole field.
+A semantic label identifies a category. An instance label additionally identifies which object of that category owns the pixel. A panoptic output combines category labels with instance identities while enforcing a single assignment at each evaluated pixel.
 
-## Core question and definition
+Knowing the image dimensions fixes the number of pixel locations. It does not fix the number of objects, remove the grouping problem, or make instance segmentation automatically simpler than detection.
 
-Three tasks, and the distinction is not pedantic:
+## Three output spaces
 
-- **Semantic segmentation** labels each pixel with a class. Every sheep is "sheep."
-- **Instance segmentation** separates individual objects. Each sheep gets its own identity, but only *things*, the countable objects. Grass and sky have no instances to count.
-- **Panoptic segmentation** does both: instance identities for **things**, class labels for **stuff**, with every pixel assigned exactly once.[^panoptic]
+For semantic segmentation with $$C$$ classes, a model can emit logits
 
-The things/stuff divide is the reason instance segmentation cannot simply replace semantic segmentation. "How many grasses are in this image" has no answer, and an architecture built around counting objects has nothing to say about the pixels that are not objects.
+$$
+z\in\mathbb R^{H\times W\times C}.
+$$
 
-## Key concepts
+A class label at each pixel is obtained from those logits. Two adjacent objects of the same class have identical semantic labels even if a human annotation treats them as distinct objects.
 
-### The conflict: seeing widely versus labelling precisely
+An instance prediction is naturally a collection:
 
-To label a pixel correctly you need context: global context, often. A patch of grey could be road or roof, and only the surrounding scene decides. So the network needs a large receptive field.
+$$
+\mathcal I=\{(M_k,c_k,s_k)\}_{k=1}^{K},
+$$
 
-But you also need the *output at full resolution*, one label per pixel, with boundaries in the right place.
+where each mask $$M_k$$ identifies an object, $$c_k$$ gives its class, and $$s_k$$ is a confidence score. The number of instances can vary.
 
-Pooling gives you the first by destroying the second. At output stride 16, spatial detail is reduced 16× per axis, 256× in area, before any upsampling recovers a thing. And the obvious alternative, simply using larger filters, fails on three counts: parameters grow quadratically, training gets harder, and the *effective* receptive field grows far more slowly than the theoretical one.
+Instance identifiers have no intrinsic order. Exchanging the names “instance one” and “instance two” does not change the segmentation if the associated pixel sets remain the same. Evaluation and training must account for this permutation freedom.
 
-Every architecture below is an answer to this one conflict.
+A panoptic output assigns
 
-### Answer 1: encoder–decoder
+$$
+p\longmapsto(c_p,i_p)
+$$
 
-Downsample to get context, then upsample to recover resolution, and feed the encoder's high-resolution features across to the decoder so the detail is not reconstructed from nothing.
+to each evaluated pixel. For thing classes, the identifier distinguishes instances. For stuff classes, the instance identifier is not used in the same way.
 
-SegNet does the upsampling by remembering **which** position each max-pool value came from and returning it there.[^segnet] It is information-efficient and, in practice, an awkward operation: irregular memory access, poorly suited to the hardware everything else is tuned for.
+The things/stuff distinction belongs to the annotation ontology. An organ can be treated as a countable object when separate organs matter, or as a semantic region when they do not. “Medical anatomy” is not inherently stuff, and “small region” is not inherently a thing.
 
-U-Net instead concatenates encoder feature maps into the decoder and upsamples with learned transposed convolutions.[^unet] It is the design that stuck, and it is worth noting it was built for biomedical segmentation first and generalised outward: the unusual direction of travel.
+A single-layer panoptic partition also cannot directly encode arbitrary overlapping labels. If an organ mask includes a lesion's pixels and the lesion is separately labeled, the task may require a hierarchy or multiple label layers.
 
-### Answer 2: atrous convolution, which is the elegant one
+## Deriving pixelwise cross-entropy
 
-Insert gaps into the filter. A $$3\times3$$ kernel with dilation rate $$r$$ spans $$(2r+1)\times(2r+1)$$ while still holding exactly **9 parameters**:
+For mutually exclusive labels, define a per-pixel categorical distribution:
 
-| rate | effective size | positions spanned | parameters |
-|---|---|---|---|
-| 1 | $$3\times3$$ | 9 | 9 |
-| 2 | $$5\times5$$ | 25 | 9 |
-| 6 | $$13\times13$$ | 169 | 9 |
-| 12 | $$25\times25$$ | 625 | 9 |
-| 18 | $$37\times37$$ | 1369 | 9 |
+$$
+p_{pc}
+=
+\frac{e^{z_{pc}}}{\sum_{j=1}^{C}e^{z_{pj}}}.
+$$
 
-At rate 18 the filter sees 152 times the area per parameter that a dense $$3\times3$$ does. And stacking compounds it: rates 1, 2, 4, 8 in sequence give receptive fields of $$3, 7, 15, 31$$: a $$31\times31$$ view from four layers and 36 parameters, with **no downsampling at all**.[^deeplab]
+If the observed label at pixel $$p$$ is $$y_p$$, its likelihood is
 
-That is the whole trick. Context without resolution loss, at no parameter cost.
+$$
+p_{p,y_p}.
+$$
 
-The implementation is not literal: nobody multiplies by the inserted zeros. It is done by rearranging the tensor (`space_to_batch`, convolve densely, `batch_to_space`), so the zeros never exist.
+Multiplying the per-pixel likelihood factors and taking the negative logarithm gives
 
-### Answer 3: spatial pyramid pooling, and the combination
+$$
+L_{\mathrm{CE}}
+=
+-\sum_p\log p_{p,y_p}.
+$$
 
-Pool the feature map to several different scales, convolve each, upsample, and concatenate.[^spp] A feature pooled to $$1\times1$$ has seen the entire image; one pooled less has seen a neighbourhood. Concatenating gives the classifier evidence at several ranges at once.
+The sum follows from the logarithm of a product. The factorization is a modeling choice; it does not mean nearby pixels are physically independent. Their predicted probabilities may depend on a shared image representation.
 
-**ASPP** is the two combined: parallel atrous convolutions at rates 6, 12, 18, effective fields $$13, 25, 37$$, plus a $$1\times1$$ convolution and global image pooling, all concatenated. DeepLab v3+ wraps ASPP in a light encoder–decoder to sharpen boundaries, which is all four answers in one network.[^deeplabv3p]
+For logits zero and $$\log3$$, the class probabilities are
 
-### The panoptic trick: predict centres, then regress to them
+$$
+\left(\frac14,\frac34\right).
+$$
 
-Mask R-CNN gets instance masks by adding a mask branch to Faster R-CNN: detect the box, then segment inside it.[^mask] Segmenting inside a box is easy: the object fills the crop, the scale is normalised, so a few convolutions suffice. But it inherits detection's output format, so masks can overlap and stuff is not handled.
+If the second class is correct, the pixel loss is
 
-Panoptic-DeepLab's answer avoids detection entirely, and it is the part of this I find most instructive. Output $$C+3$$ channels per pixel:[^pandeeplab]
+$$
+-\log\frac34=\log\frac43.
+$$
 
-- $$C$$ channels: the semantic class, exactly as before.
-- **1 channel: centre prediction**: is this pixel an instance's centre of mass? Non-maximum suppression on this heatmap yields one point per object.
-- **2 channels: centre regression**: a vector from this pixel to its own instance's centre.
+If the first class is correct, it is
 
-Group pixels by which predicted centre their offset vector points at. That yields instances **without knowing their classes**, which are then read off from the semantic branch.
+$$
+-\log\frac14=\log4.
+$$
 
-What makes this worth studying is that it turns instance segmentation into pixel-wise regression. Boxes, anchors, suppression over boxes, all gone, replaced by a vector field. And the same machinery extends: ViP-DeepLab adds a depth channel and regresses centres to the *previous* frame's centres, which makes tracking fall out as a by-product rather than a separate system.[^vip] The offsets across frames are large, which is why its regression branch stacks ASPP four times, the receptive field has to cover the motion.
+The loss therefore distinguishes uncertainty from confident error.
+
+Class weighting changes the objective:
+
+$$
+L=-\sum_p w_{y_p}\log p_{p,y_p}.
+$$
+
+It can increase the influence of rare classes, but the resulting scores should not automatically be interpreted as calibrated probabilities under the unweighted population distribution.
+
+If several labels can legitimately be present at one pixel, separate Bernoulli outputs may be appropriate. A categorical softmax would force a competition that the annotation scheme does not intend.
+
+## IoU, Dice, and why their denominators differ
+
+For a foreground class, let the true-positive, false-positive, and false-negative pixel counts be $$TP$$, $$FP$$, and $$FN$$.
+
+The union contains every correctly predicted foreground pixel, every extra predicted pixel, and every missed foreground pixel:
+
+$$
+J=\operatorname{IoU}
+=
+\frac{TP}{TP+FP+FN}.
+$$
+
+Dice counts the intersection twice and divides by the sum of the two mask sizes:
+
+$$
+D=
+\frac{2TP}{2TP+FP+FN}.
+$$
+
+This is also the binary foreground F1 score. The doubled intersection compensates for the fact that correctly shared pixels appear once in each mask size.
+
+The metrics are related algebraically. Since
+
+$$
+FP+FN=TP\left(\frac1J-1\right),
+$$
+
+substitution gives
+
+$$
+D
+=
+\frac{2TP}{2TP+TP(1/J-1)}
+=
+\frac{2J}{1+J}.
+$$
+
+Conversely,
+
+$$
+J=\frac{D}{2-D}.
+$$
+
+Thus they rank individual binary mask pairs identically when computed from the same counts. Their averages across images or classes need not be related by simply applying this nonlinear conversion to the average.
+
+For a concrete construction, let the true foreground be pixels one through ten. Predict pixels one through six, plus pixels eleven and twelve.
+
+Then
+
+$$
+TP=6,\qquad FP=2,\qquad FN=4.
+$$
+
+Therefore
+
+$$
+J=\frac6{12}=\frac12,
+\qquad
+D=\frac{12}{18}=\frac23.
+$$
+
+No image appearance or benchmark measurement is needed to verify these values.
+
+## Pixel imbalance and soft overlap losses
+
+Consider an image with 100 pixels: 90 background and ten foreground. Predict background everywhere.
+
+Pixel accuracy is
+
+$$
+\frac{90}{100}=0.9.
+$$
+
+Foreground IoU is zero. Background IoU is
+
+$$
+\frac{90}{100}=0.9.
+$$
+
+The two-class mean IoU is therefore 0.45. Each metric answers a different aggregation question.
+
+A differentiable Dice-like loss replaces the hard predicted mask by foreground probabilities:
+
+$$
+L_{\mathrm{Dice}}
+=
+1-
+\frac{
+2\sum_p q_py_p+\epsilon
+}{
+\sum_p q_p+\sum_p y_p+\epsilon
+}.
+$$
+
+Here $$y_p$$ is a binary target and $$q_p$$ a predicted foreground probability.
+
+This expression encourages agreement at the level of total overlap. Unlike pixelwise cross-entropy, its denominator couples the pixels: changing one prediction changes the normalization affecting the whole mask.
+
+The smoothing constant prevents division by zero, but also defines behavior for empty masks. Its role is not merely numerical when the true foreground is absent.
+
+Different implementations may square denominator terms, aggregate across a batch, or compute losses class by class. These variants are not interchangeable. The exact formula should accompany any claim about the loss.
+
+A combined cross-entropy and overlap loss can emphasize both local labeling and regional agreement, but the combination weights determine the objective. There is no universally correct mixture independent of the task.
+
+## Deriving the context–resolution tradeoff
+
+A convolutional feature needs a sufficiently large input neighborhood to distinguish visually similar local patches. Downsampling increases the input spacing between feature sites, allowing later kernels to cover a larger input region.
+
+Let $$r_l$$ be receptive-field width and $$j_l$$ the input spacing between adjacent features. Then
+
+$$
+j_l=s_lj_{l-1},
+$$
+
+$$
+r_l=r_{l-1}+(k_l-1)d_lj_{l-1}.
+$$
+
+The added width comes from the kernel's extra positions, separated by dilation and by the previous layer's spacing.
+
+A stride of 16 means neighboring feature sites are 16 input pixels apart. A feature map has one sixteenth as many sites along each axis, or one two-hundred-and-fifty-sixth as many spatial sites overall, assuming divisible dimensions.
+
+This reduction does not imply that every sub-grid positional distinction has vanished: channels may encode some information. It does mean that producing a dense boundary requires the decoder to infer fine structure from a representation sampled more coarsely.
+
+A theoretical receptive field states which pixels can influence a feature. It does not say that the trained model uses all of them equally. Nor does a large field establish that the representation contains the specific contextual relationship required by the task.
+
+## What an encoder–decoder can recover
+
+A decoder increases spatial resolution. Recovery is possible only from information retained in its inputs or inferred from learned regularities.
+
+Consider max pooling a block:
+
+$$
+X=
+\begin{bmatrix}
+1&4\\
+3&2
+\end{bmatrix}.
+$$
+
+The pooled value is four, and the winning index is the top-right position. Unpooling with that index can produce
+
+$$
+\begin{bmatrix}
+0&4\\
+0&0
+\end{bmatrix}.
+$$
+
+The values one, three, and two cannot be recovered from the maximum and its index. Many different input blocks produce the same stored information.
+
+Skip connections transmit additional encoder features to the decoder. Concatenation retains separate channel groups; addition combines compatible groups directly. Neither operation guarantees accurate boundaries, but both can supply information unavailable in the deepest representation alone.
+
+A transposed convolution is also not generally an inverse convolution. Write a simple convolutional linear map as
+
+$$
+A=
+\begin{bmatrix}
+1&1&0\\
+0&1&1
+\end{bmatrix}.
+$$
+
+For
+
+$$
+x=(1,2,3)^{\mathsf T},
+$$
+
+we obtain
+
+$$
+Ax=(3,5)^{\mathsf T}.
+$$
+
+Applying the transpose gives
+
+$$
+A^{\mathsf T}Ax=(3,8,5)^{\mathsf T},
+$$
+
+which is not the original vector.
+
+The transpose reverses the direction of the linear mapping and redistributes contributions. It does not undo information loss unless additional special conditions hold.
+
+## Atrous convolution expands spacing, not information for free
+
+For a one-dimensional kernel with $$k$$ taps and dilation $$d$$, the first and last taps are separated by
+
+$$
+(k-1)d
+$$
+
+positions. Including both endpoints gives effective width
+
+$$
+k_{\mathrm{eff}}=(k-1)d+1.
+$$
+
+For a three-by-three spatial kernel, the two-dimensional span is
+
+$$
+(2d+1)\times(2d+1).
+$$
+
+At dilation six, that span is thirteen by thirteen, but the kernel still samples only nine spatial positions per input–output channel pair.
+
+The parameter count is
+
+$$
+9C_{\mathrm{in}}C_{\mathrm{out}}
+$$
+
+before biases, not nine parameters for the entire multi-channel layer.
+
+At stride one, stacking three-tap kernels with dilation rates one, two, four, and eight gives receptive-field widths
+
+$$
+3,\quad7,\quad15,\quad31,
+$$
+
+because
+
+$$
+1+2(1+2+4+8)=31.
+$$
+
+The larger span does not guarantee dense or equally strong use of every enclosed location. Repeating dilation two, for example, keeps sampling paths on an even-offset lattice. Some positions are never reached from a given output.
+
+Combining rates can fill such gaps. Rates one and two allow offsets formed as
+
+$$
+a+2b,
+\qquad
+a,b\in\{-1,0,1\},
+$$
+
+which cover every integer from negative three through three.
+
+Atrous convolution preserves the number of feature sites at a given layer. Keeping more sites can increase activation memory and total computation compared with a downsampled alternative. Its advantage is controlled sampling geometry, not costless global context.
+
+## Multi-scale context and center-offset grouping
+
+Parallel branches can gather context at different spatial scales and concatenate the results. Global pooling supplies a summary of the whole feature map; dilated branches supply differently spaced local evidence. A decoder can then combine this contextual representation with finer features.
+
+For instance grouping, a center-offset formulation predicts a semantic label, an instance-center heatmap, and a two-dimensional offset at each pixel.
+
+For an instance mask $$M_k$$, define its centroid by
+
+$$
+c_k=
+\frac{1}{\lvert M_k\rvert}
+\sum_{p\in M_k}p.
+$$
+
+The target offset for one of its pixels is
+
+$$
+o(p)=c_k-p.
+$$
+
+Therefore the ideal voted location is
+
+$$
+p+o(p)=c_k.
+$$
+
+After detecting center locations, assign a foreground pixel to the nearest voted center:
+
+$$
+\hat k(p)
+=
+\arg\min_k
+\left\lVert
+p+\hat o(p)-\hat c_k
+\right\rVert_2.
+$$
+
+The subtraction in the target is essential. It makes all pixels of one instance point to the same coordinate despite beginning at different positions.
+
+Consider a two-by-two object occupying rows zero and one, columns zero and one. Its center is
+
+$$
+c_1=(0.5,0.5).
+$$
+
+A second object at the same rows and columns three and four has center
+
+$$
+c_2=(0.5,3.5).
+$$
+
+For pixel
+
+$$
+p=(1,0),
+$$
+
+the first object's target offset is
+
+$$
+o(p)=(-0.5,0.5).
+$$
+
+For pixel
+
+$$
+q=(0,4),
+$$
+
+the second object's offset is
+
+$$
+o(q)=(0.5,-0.5).
+$$
+
+Adding each offset returns the appropriate center exactly.
+
+## A centroid need not lie inside its object
+
+Take an object consisting of four pixels at
+
+$$
+(0,0),\quad(0,2),\quad(2,0),\quad(2,2).
+$$
+
+Its centroid is
+
+$$
+(1,1),
+$$
+
+which is not one of its pixels.
+
+That does not invalidate offset regression. Every object pixel can still point to that coordinate, and a center heatmap defined over the image can place a peak there. An implementation that only permits centers on foreground pixels would introduce an additional restriction.
+
+The more fundamental ambiguity is that distinct objects can have coincident or nearly coincident centroids. A representation using only center location may then be insufficient to distinguish them.
+
+Grouping also depends on center detection. Missing a center can merge an object's votes into a neighbor; duplicate centers can split one object.
+
+In the two-object example, the centers are three pixels apart. With exact predicted centers, a vote whose error is less than 1.5 pixels in Euclidean norm is guaranteed to remain closer to its own center than the other. This follows from the triangle inequality: its distance to the other center exceeds three minus its own error.
+
+The bound explains a grouping margin. It is not a claim that learned offsets achieve that error.
+
+## Why panoptic matching uses a strict overlap threshold
+
+Panoptic predictions form non-overlapping segments. Ground-truth segments also form a non-overlapping partition, apart from explicitly ignored regions.
+
+Suppose two disjoint predicted segments both matched one ground-truth segment at IoU strictly above one half. Each intersection would have to contain more than half the ground-truth segment, because the union is at least as large as that ground truth.
+
+Their disjoint intersections would then contain more pixels than the ground-truth segment itself. This is impossible.
+
+The same argument with prediction and ground truth exchanged prevents one prediction from matching two ground-truth segments.
+
+The strict inequality matters. Two predictions that each cover exactly one half of one object can each have IoU one half. Excluding equality avoids that ambiguity.
+
+This uniqueness result relies on non-overlapping masks. It cannot be transferred unchanged to arbitrary overlapping instance predictions.
+
+## Deriving and calculating panoptic quality
+
+For one class, let matched pairs be true positives. Let unmatched predictions and ground-truth segments be false positives and false negatives.
+
+Panoptic quality is
+
+$$
+PQ=
+\frac{
+\sum_{(p,g)\in TP}\operatorname{IoU}(p,g)
+}{
+\lvert TP\rvert
++\frac12\lvert FP\rvert
++\frac12\lvert FN\rvert
+}.
+$$
+
+Factor it as
+
+$$
+PQ=SQ\cdot RQ,
+$$
+
+where
+
+$$
+SQ=
+\frac{
+\sum_{(p,g)\in TP}\operatorname{IoU}(p,g)
+}{
+\lvert TP\rvert
+},
+$$
+
+and
+
+$$
+RQ=
+\frac{
+2\lvert TP\rvert
+}{
+2\lvert TP\rvert+\lvert FP\rvert+\lvert FN\rvert
+}.
+$$
+
+The second term is object-level F1. The half-weights in the original denominator are what make this factorization work.
+
+Construct three true instances:
+
+$$
+G_1=\{1,2,3,4\},
+$$
+
+$$
+G_2=\{5,6,7,8\},
+$$
+
+$$
+G_3=\{9,10,11,12\}.
+$$
+
+Predict
+
+$$
+P_1=\{1,2,3,4,13\},
+$$
+
+$$
+P_2=\{5,6,7\},
+$$
+
+$$
+P_3=\{14,15\}.
+$$
+
+The first two match with overlaps
+
+$$
+\frac45,\qquad\frac34.
+$$
+
+The third prediction is unmatched, and the third true instance is missed. Therefore
+
+$$
+\lvert TP\rvert=2,\quad
+\lvert FP\rvert=1,\quad
+\lvert FN\rvert=1.
+$$
+
+The overlap sum is
+
+$$
+\frac45+\frac34=\frac{31}{20}.
+$$
+
+Hence
+
+$$
+SQ=\frac{31}{40},
+\qquad
+RQ=\frac23,
+$$
+
+and
+
+$$
+PQ=\frac{31}{60}\approx0.5167.
+$$
+
+Averaging PQ across classes is not generally equivalent to multiplying separately averaged SQ and RQ.
+
+Two equally sized true objects merged into one exact union provide a useful extreme case: semantic foreground IoU can be one, while each instance overlap is exactly one half and neither matches under the strict rule. Perfect foreground coverage does not imply correct instance recognition.
+
+## Revision checklist
+
+| Can I do this without looking? | Check |
+|---|---|
+| Specify the semantic, instance, and panoptic output spaces. | Explain why instance identifiers can be permuted. |
+| Derive pixelwise cross-entropy from a categorical likelihood. | State the label-exclusivity assumption. |
+| Derive the Dice–IoU relationship. | Explain why averaging breaks the simple conversion. |
+| Compute all-background accuracy and mean IoU. | Obtain 0.9 and 0.45 in the constructed image. |
+| Explain what pooling indices retain. | Identify the values that unpooling cannot recover. |
+| Show that transposed convolution is not an inverse. | Reproduce the matrix example. |
+| Derive dilated-kernel span and stacked receptive field. | Distinguish sampled sites from enclosed area. |
+| Construct center-offset targets. | Add the offsets back to recover both centers. |
+| Explain why an external centroid is valid. | Identify coincident centers as a different problem. |
+| Explain uniqueness of panoptic matching above one half. | Use non-overlap and the strict inequality. |
+| Calculate PQ, SQ, and RQ from explicit masks. | Obtain thirty-one sixtieths for PQ. |
+| Separate semantic coverage from instance correctness. | Explain the merged-object counterexample. |
 
 ## Why it matters for my work
 
-The **things/stuff distinction maps onto medical imaging directly**, and I had not had a name for it. A lesion is a thing, countable, individually identified, and the count is often the clinical finding. Tissue, fat, parenchyma, background are stuff, a region with no instances. A pipeline that segments only things cannot describe the organ; one that segments only stuff cannot count the lesions. The panoptic formulation is the one that matches what a report actually contains, and I suspect it is underused in medical work relative to how well it fits.
-
-The resolution-versus-context tension has a specific clinical edge too. Deciding whether a small finding is pathological requires the finding at full resolution *and* the anatomical context around it, which is exactly the conflict, and exactly what a radiologist does by alternating zoom levels. Atrous convolution is the cleanest answer available, because it does not force the trade: the same 9 parameters see a $$37\times37$$ neighbourhood with no pixels discarded.
-
-The overlap point deserves care in reporting. Instance segmentation permits a pixel to belong to several objects at once (a person and their tie); panoptic forbids it, assigning each pixel exactly once. For a finding that legitimately falls inside two structures, the panoptic constraint forces a choice the image does not support, which is a modelling assumption that will show up as an error rate without ever being described as an assumption.
+The annotation ontology should determine whether a medical task needs semantic masks, separate instances, or overlapping label layers. I should evaluate object counts and boundaries separately when both affect the intended use.
 
 ## What I have not resolved
 
-Whether centre-of-mass is a usable instance representation for lesion shapes. It presumes a centre that lies inside the object and is unambiguous. A crescent-shaped or hollow lesion has a centre of mass outside itself, and a diffuse or irregular one has no stable centre at all. Detection's box has the same weakness in a milder form; I do not know whether anyone has measured how far this degrades on non-convex medical structures, or whether the field has simply worked on objects where it happens to hold.
-
----
-
-[^panoptic]: Kirillov, A., He, K., Girshick, R., Rother, C., & Dollár, P. (2019). Panoptic segmentation. *CVPR*. [10.1109/CVPR.2019.00963](https://doi.org/10.1109/CVPR.2019.00963)
-
-[^segnet]: Badrinarayanan, V., Kendall, A., & Cipolla, R. (2017). SegNet: A deep convolutional encoder-decoder architecture for image segmentation. *IEEE TPAMI*, 39(12), 2481–2495. [10.1109/TPAMI.2016.2644615](https://doi.org/10.1109/TPAMI.2016.2644615)
-
-[^unet]: Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional networks for biomedical image segmentation. *MICCAI*. [10.1007/978-3-319-24574-4_28](https://doi.org/10.1007/978-3-319-24574-4_28)
-
-[^deeplab]: Chen, L.-C., Papandreou, G., Kokkinos, I., Murphy, K., & Yuille, A. L. (2018). DeepLab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected CRFs. *IEEE TPAMI*, 40(4), 834–848. [10.1109/TPAMI.2017.2699184](https://doi.org/10.1109/TPAMI.2017.2699184)
-
-[^spp]: He, K., Zhang, X., Ren, S., & Sun, J. (2015). Spatial pyramid pooling in deep convolutional networks for visual recognition. *IEEE TPAMI*, 37(9), 1904–1916. [10.1109/TPAMI.2015.2389824](https://doi.org/10.1109/TPAMI.2015.2389824)
-
-[^deeplabv3p]: Chen, L.-C., Zhu, Y., Papandreou, G., Schroff, F., & Adam, H. (2018). Encoder-decoder with atrous separable convolution for semantic image segmentation. *ECCV*. [10.1007/978-3-030-01234-2_49](https://doi.org/10.1007/978-3-030-01234-2_49)
-
-[^mask]: He, K., Gkioxari, G., Dollár, P., & Girshick, R. (2017). Mask R-CNN. *ICCV*. [10.1109/ICCV.2017.322](https://doi.org/10.1109/ICCV.2017.322)
-
-[^pandeeplab]: Cheng, B., et al. (2020). Panoptic-DeepLab: A simple, strong, and fast baseline for bottom-up panoptic segmentation. *CVPR*. [10.1109/CVPR42600.2020.01249](https://doi.org/10.1109/CVPR42600.2020.01249)
-
-[^vip]: Qiao, S., Zhu, Y., Adam, H., Yuille, A., & Chen, L.-C. (2021). ViP-DeepLab: Learning visual perception with depth-aware video panoptic segmentation. *CVPR*. [10.1109/CVPR46437.2021.00399](https://doi.org/10.1109/CVPR46437.2021.00399)
+Quantify center collisions, offset errors, and boundary errors for the actual lesion shapes and image spacing in my data, rather than assuming non-convexity alone invalidates center regression.
