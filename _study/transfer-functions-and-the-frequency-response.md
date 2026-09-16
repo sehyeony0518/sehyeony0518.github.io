@@ -6,7 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
-order: 13
+order: 14
 source: "Lecture notes, Ajou University"
 written: true
 updated: "2026-09-15"
