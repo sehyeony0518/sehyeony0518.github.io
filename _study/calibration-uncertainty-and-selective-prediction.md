@@ -12,6 +12,7 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2026-01-27-guo-calibration"
+  - "2026-09-05-auditing-pointwise-reliability-after-learning"
 ---
 
 A probability estimate should have a defensible interpretation, and withholding an automated prediction should have a defined consequence. Calibration, uncertainty estimation, and selective prediction address different parts of these requirements.

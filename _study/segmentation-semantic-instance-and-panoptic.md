@@ -10,6 +10,8 @@ order: 12
 source: "Independent study"
 written: true
 updated: "2026-09-15"
+papers:
+  - "2026-04-08-frequency-domain-medical-segmentation"
 ---
 
 Segmentation requires a decision about what a pixel label means before it requires an architecture.

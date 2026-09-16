@@ -11,6 +11,10 @@ order: 15
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-10-28-degrave-covid-shortcut"
+  - "2026-06-06-silverlining-data-first-shortcuts"
+  - "2026-02-15-posthoc-explanations-spurious-correlation"
 ---
 
 ## Core question and definition

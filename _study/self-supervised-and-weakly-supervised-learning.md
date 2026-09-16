@@ -10,6 +10,9 @@ order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-03-01-canet-cross-disease-attention"
+  - "2026-08-30-monet-transparent-medical-image-ai"
 ---
 
 Self-supervised learning constructs targets from the data. Weakly supervised learning uses external supervision that is incomplete, coarse, or unreliable relative to the intended task.

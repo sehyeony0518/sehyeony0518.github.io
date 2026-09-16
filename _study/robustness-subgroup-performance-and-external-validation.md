@@ -13,6 +13,7 @@ updated: "2026-09-08"
 papers:
   - "2025-12-13-seyyed-kalantari-underdiagnosis"
   - "2025-10-02-zech-variable-generalization"
+  - "2026-08-23-robustness-stress-testing-medical-image-classification"
 ---
 
 Robustness is useful behavior under specified changes. Subgroup evaluation asks for whom that behavior holds. External validation asks whether it carries to a specified setting separated from development.

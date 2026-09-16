@@ -10,6 +10,9 @@ order: 15
 source: "Independent study"
 written: true
 updated: "2026-09-15"
+papers:
+  - "2025-10-15-kellgren-lawrence-classification"
+  - "2025-12-19-eyepacs-grading-protocol"
 ---
 
 ImageNet asks for one label per image. A photograph of a child holding a puppy contains a child and a puppy, and the annotation scheme permits one answer, so a model naming the other one is scored wrong for being right.

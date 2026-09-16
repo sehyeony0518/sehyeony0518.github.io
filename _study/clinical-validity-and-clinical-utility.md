@@ -10,6 +10,9 @@ order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-04-22-quantitative-us-birads-category-3"
+  - "2026-03-07-diabetic-retinopathy-preferred-practice"
 ---
 
 Clinical validity concerns whether an output supports its intended clinical interpretation. Clinical utility concerns whether using that output improves relevant consequences compared with an alternative. The connection between them is a decision pathway, not a metric conversion.

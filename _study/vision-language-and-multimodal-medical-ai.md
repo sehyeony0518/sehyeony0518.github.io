@@ -10,6 +10,9 @@ order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-07-15-clear-auditable-foundation-model-radiology"
+  - "2026-08-30-monet-transparent-medical-image-ai"
 ---
 
 An image-report pair supplies correspondence between two observations produced during a clinical process. It does not automatically supply a complete diagnosis label, a localization for every sentence, or proof that a generated statement is supported by the current image.

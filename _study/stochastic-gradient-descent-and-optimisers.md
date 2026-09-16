@@ -10,6 +10,8 @@ order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-15"
+papers:
+  - "2026-02-09-underspecification-credibility-ml"
 ---
 
 Stochastic gradient descent replaces an exact objective gradient with a random estimate. Its usefulness begins with computation, but its behavior depends on the estimate's bias, variance, and dependence on the sampling procedure. Momentum and adaptive optimisers then modify how a sequence of those estimates becomes parameter movement.

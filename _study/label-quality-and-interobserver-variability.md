@@ -10,6 +10,10 @@ order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-10-15-kellgren-lawrence-classification"
+  - "2025-09-12-oarsi-atlas-radiographic-features"
+  - "2025-12-19-eyepacs-grading-protocol"
 ---
 
 An annotation is a judgment made under a definition, an information set, and a reading procedure. Agreement measures reproducibility under those conditions. It does not establish that the shared judgment is clinically correct.

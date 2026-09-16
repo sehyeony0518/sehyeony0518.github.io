@@ -12,6 +12,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2026-03-13-arun-assessing-saliency"
+  - "2026-02-15-posthoc-explanations-spurious-correlation"
+  - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
 ---
 
 An explanation makes a claim about a model. Clinical plausibility asks whether that claim agrees with a reader's expectations. Faithfulness asks whether it accurately describes the property of the model that it claims to explain. These questions require different evidence.

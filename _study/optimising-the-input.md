@@ -10,6 +10,8 @@ order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-15"
+papers:
+  - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
 ---
 
 Backpropagation can differentiate an objective with respect to the input as well as the weights. Freezing the weights changes which variables may move; it does not change the chain rule.

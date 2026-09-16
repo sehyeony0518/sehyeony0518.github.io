@@ -13,6 +13,7 @@ updated: "2026-09-08"
 papers:
   - "2025-11-29-concept-bottleneck-models"
   - "2025-09-19-tcav-concept-activation-vectors"
+  - "2026-08-10-concept-gradients-nonlinear-interpretation"
 ---
 
 Concept-based interpretability connects model variables to named properties such as lesion attachment, size, or echogenicity. Its central difficulty is establishing what those variables measure and what role they actually play in prediction.

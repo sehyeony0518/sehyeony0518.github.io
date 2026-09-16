@@ -10,6 +10,10 @@ order: 6
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-01-27-guo-calibration"
+  - "2025-12-13-seyyed-kalantari-underdiagnosis"
+  - "2026-08-23-robustness-stress-testing-medical-image-classification"
 ---
 
 AUROC describes how a score orders positive and negative cases. A clinical decision requires additional information: where the threshold will be placed, how common the target condition is, what each resulting action costs, and whether that action benefits patients.

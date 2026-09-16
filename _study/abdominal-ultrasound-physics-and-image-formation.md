@@ -11,6 +11,9 @@ order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-12-25-qiba-liver-fat-attenuation"
+  - "2026-06-19-multi-resolution-tone-mapping-ultrasound"
 ---
 
 Changing an ultrasound setting can reveal a finding, conceal it, or alter an artifact that helps identify it. I interpret a gallbladder image as the output of an acoustic measurement and reconstruction process, rather than a direct map of tissue brightness.
