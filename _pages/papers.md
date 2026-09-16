@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /papers/
-title: paper reviews
+title: Paper Reviews
 description: "Papers I have studied closely: what they claim, how they show it, and what I take from them."
 nav: true
 nav_order: 11
