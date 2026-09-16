@@ -8,7 +8,7 @@ description: "The clinical practice guideline that defines how diabetic retinopa
 related_posts: false
 ---
 
-**Guideline.** *Diabetic Retinopathy Preferred Practice Pattern*, the version approved by the American Academy of Ophthalmology on September 13, 2024.
+**Guideline.** *Diabetic Retinopathy Preferred Practice Pattern*, the version approved by the American Academy of Ophthalmology on September 13, 2024, published in [Ophthalmology 132(4), P75-P162 (2025)](https://doi.org/10.1016/j.ophtha.2024.12.020).
 
 The question I bring to this guideline is what a diabetic-retinopathy prediction is supposed to accomplish in care. A benchmark asks whether a model agrees with a reference category. A clinical pathway must also decide whether the examination is adequate, whether further assessment is needed, how urgently the patient should be seen, and which information remains unavailable. Those decisions give the classification task its meaning.
 
