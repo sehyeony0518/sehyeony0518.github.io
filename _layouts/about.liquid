@@ -334,7 +334,18 @@ layout: default
     </div>
 
     <!-- Insights, between the study notes and the repositories -->
+    {%- comment -%}
+      Same curation the selected-reading pane above uses, so the two lists on
+      this page agree: pinned featured posts first, then the remaining featured
+      by date, then the latest of everything else. The header count is still the
+      whole collection.
+    {%- endcomment -%}
     {%- assign posts = site.aiblog | sort: "date" | reverse -%}
+    {%- assign ab_featured = site.aiblog | where: "featured", true -%}
+    {%- assign ab_pinned = ab_featured | where: "pinned", true | sort: "date" | reverse -%}
+    {%- assign ab_rest = ab_featured | where_exp: "p", "p.pinned != true" | sort: "date" | reverse -%}
+    {%- assign ab_plain = posts | where_exp: "p", "p.featured != true" -%}
+    {%- assign home_posts = ab_pinned | concat: ab_rest | concat: ab_plain -%}
     {%- if posts.size > 0 -%}
     <div class="sec-wrap">
       <div class="sec-head">
@@ -342,7 +353,7 @@ layout: default
         <a class="sec-all" href="{{ '/blog/' | relative_url }}">all {{ posts | size }} insights&nbsp;&rarr;</a>
       </div>
       <div class="sec-grid">
-        {%- for post in posts limit: 3 %}
+        {%- for post in home_posts limit: 3 %}
         <a class="sec-card" href="{{ post.url | relative_url }}">
           <span class="sec-name">{{ post.title }}</span>
           {%- if post.description %}<span class="sec-desc">{{ post.description | truncate: 128 }}</span>{% endif %}
