@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes"
-description: "The loss is where you state what counts as a good answer. Squaring makes one bad point outvote nine good ones, and the arithmetic of how badly is worth seeing."
+description: "Squared error, absolute error and Huber loss: deriving their prediction targets, checking how one bad point affects a fit, and understanding weighted classification losses."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimisation"
@@ -12,72 +12,719 @@ written: true
 updated: "2026-09-15"
 ---
 
-Every supervised learning setup is three decisions, and it is worth being able to point at each one in a training script:
+A loss determines which prediction is optimal for a given distribution of outcomes. Squared error asks for a conditional mean. Absolute error asks for a conditional median. Asymmetric absolute error asks for a conditional quantile. These can be different answers even with unlimited data and perfect optimisation.
+
+Choosing a loss therefore involves more than making gradients convenient. It specifies a target, gives different observations different influence, and determines what a fitted output can mean.
+
+## Separate the prediction target from its fitted approximation
+
+Let an input and outcome have a joint distribution, and let a predictor return an action or estimate. Population risk is
 
 $$
-\hat\theta = \arg\min_\theta \sum_{i=1}^{N} D\big(f_\theta(x_i),\, y_i\big)
+R(f)=\mathbb E[\ell(f(X),Y)].
 $$
 
-$$f$$ is the architecture. $$D$$ is what counts as a good answer. The minimisation is the optimiser. Architecture and optimiser can plausibly be searched automatically: that is what neural architecture search and hyperparameter tuning are. **$$D$$ cannot**, because it encodes what you want, and there is nobody to ask but you.
-
-## Core question and definition
-
-Linear regression fixes $$f_\theta(x) = w^{\mathsf T}x + b$$, which is best written by appending a constant 1 to $$x$$ so the intercept folds into $$w$$ and the model is a plain inner product. That leaves $$D$$ as the only open choice, which is why linear regression is the right place to look at the choice in isolation.
-
-The default is **squared error**, $$D(\hat y, y) = (\hat y - y)^2$$: sum of squared residuals, geometrically the total area of squares erected on the vertical gaps. It has three real advantages: it is convex, so any local minimum is global; it is differentiable everywhere; and it has a closed-form solution $$\hat w = (X^{\mathsf T}X)^{-1}X^{\mathsf T}y$$, so for a small problem no iteration is needed at all.
-
-Then there is the reason nobody mentions, which is that it is what everyone else uses.
-
-## Key concepts
-
-### One bad point is enough
-
-Take ten points on the exact line $$y = 2x+1$$. Least squares recovers slope 2 and intercept 1, as it must. Now move a single point up by 50: a transcription error, a mislabelled case, a sensor glitch:
-
-| | slope | intercept | slope error |
-|---|---|---|---|
-| truth | 2.000 | 1.000 |: |
-| least squares, one outlier | 2.303 | 4.333 | **15.2%** |
-| least absolute deviation, one outlier | 2.000 | 1.000 | **0.0%** |
-
-One point in ten moved the least-squares slope by 15% and the intercept by a factor of four. The $$L_1$$ fit returned the exact clean line.
-
-The mechanism is visible in one derivative. The pull a residual exerts on the fit is $$\partial D/\partial r$$: for squared error that is $$2r$$, so at $$r=50$$ the point pulls with strength **100**; for absolute error it is $$\operatorname{sign}(r)$$, strength **1**, the same as every other point. Squared error lets a residual buy influence in proportion to how wrong it is, which is precisely backwards from what you want when large residuals are the ones most likely to be errors.
-
-Squaring is not a neutral technical convenience. **It is the assertion that a point ten times further away matters a hundred times more**: reasonable if residuals are Gaussian noise, wrong if they are contamination.
-
-### What the robust choice costs
-
-$$\sum_i \lvert y_i - w^{\mathsf T}x_i\rvert$$ is still convex, so the global-optimum guarantee survives. Two things do not.
-
-The closed form is gone: absolute value is not differentiable at zero, so setting the derivative to zero does not yield a linear system, and the problem must be solved iteratively (or as a linear program). Second-order methods are also gone: the second derivative of a piecewise-linear function is zero wherever it exists, so Newton's method has nothing to work with. Gradient descent remains, and the loss surface is a collection of planes meeting at creases rather than a smooth bowl.
-
-Pushing further does not help. Raising the exponent above 2 concentrates influence on outliers even harder; lowering it below 1 breaks convexity and the global guarantee with it. **Squared error and absolute error bracket the usable range**, and Huber's loss, quadratic near zero, linear in the tails, is the deliberate compromise: differentiable everywhere like $$L_2$$, bounded-influence like $$L_1$$.[^huber]
-
-### The sample weights are part of the loss too
-
-The same slot in $$D$$ takes per-sample weights:
+Using conditional expectation,
 
 $$
-\sum_i c_i\, D\big(f_\theta(x_i), y_i\big).
+R(f)
+=
+\mathbb E_X
+\left[
+\mathbb E[\ell(f(X),Y)\mid X]
+\right].
 $$
 
-This is the standard response to class imbalance: upweight the rare class so the optimiser cannot buy a low loss by predicting the majority everywhere. It is also how "this case must not be missed" gets expressed, because there is nowhere else to express it.
+If the predictor can choose its output independently at every input, minimising population risk reduces to the pointwise problem
 
-Worth being clear about what it is, though: **reweighting is an attempt, and whether it worked is an evaluation question, not a training one.** Multiplying the positive class by 100 changes what the optimiser chases; it does not guarantee that precision and recall come out where you need them. That is measured afterward, on held-out data, and the two steps should not be confused.
+$$
+a^\star(x)
+\in
+\arg\min_a
+\mathbb E[\ell(a,Y)\mid X=x].
+$$
+
+This is the prediction target implied by the loss.
+
+Actual learning introduces further restrictions. We choose a parameterised model and minimise an empirical objective such as
+
+$$
+\widehat R(\theta)
+=
+\frac1n\sum_{i=1}^n
+\ell(f_\theta(x_i),y_i)
++
+\lambda\Omega(\theta).
+$$
+
+Finite data, a restricted model family, regularisation, and imperfect optimisation can all prevent the fitted function from reaching the population target.
+
+A loss can be selected through validation or learned within a larger system. That does not remove the need for an external criterion: the selection procedure still needs to know what counts as success. There is no mathematical rule saying that loss functions cannot be searched, but a search cannot supply its own scientific objective.
+
+## Why squared error estimates a mean
+
+Fix an input and write its conditional mean as
+
+$$
+\mu=\mathbb E[Y\mid X=x].
+$$
+
+Assume the conditional second moment is finite. Expand the squared error:
+
+$$
+\begin{aligned}
+\mathbb E[(Y-a)^2\mid X=x]
+&=
+\mathbb E[((Y-\mu)+(\mu-a))^2\mid X=x]\\
+&=
+\mathbb E[(Y-\mu)^2\mid X=x]
++
+2(\mu-a)\mathbb E[Y-\mu\mid X=x]\\
+&\qquad+(\mu-a)^2.
+\end{aligned}
+$$
+
+The middle term vanishes by the definition of the mean. Therefore
+
+$$
+\mathbb E[(Y-a)^2\mid X=x]
+=
+\operatorname{Var}(Y\mid X=x)+(\mu-a)^2.
+$$
+
+Only the second term depends on the prediction, so the unique optimum is
+
+$$
+a^\star(x)=\mu.
+$$
+
+Normality was not used. Squared error targets a mean for any conditional distribution with a finite second moment.
+
+This matters when explaining what a regression model predicts. A mean can lie in a region where few outcomes occur. If an outcome takes only zero and four, a prediction of one need not represent a typical observed outcome. It can still be the optimal squared-error prediction.
+
+## Why absolute error estimates a median
+
+Consider
+
+$$
+R_1(a)=\mathbb E[\lvert Y-a\rvert].
+$$
+
+When the outcome distribution is continuous, differentiating with respect to the prediction gives
+
+$$
+R_1'(a)
+=
+P(Y<a)-P(Y>a)
+=
+2F(a)-1.
+$$
+
+Increasing the prediction increases the error for outcomes below it and decreases the error for outcomes above it. The optimum balances those two probabilities:
+
+$$
+F(a)=\frac12.
+$$
+
+With atoms, ordinary derivatives may not exist. The left and right derivatives give the more general condition
+
+$$
+F(a^-)\le\frac12\le F(a).
+$$
+
+That is exactly the definition of a median. There can be an interval of minimisers, as happens for an even sample whose two middle values differ.
+
+Now use a fully specified distribution:
+
+$$
+P(Y=0)=\frac34,
+\qquad
+P(Y=4)=\frac14.
+$$
+
+Its mean is one and its median is zero.
+
+Under squared error,
+
+$$
+R_2(0)=\frac34(0)^2+\frac14(4)^2=4,
+$$
+
+while
+
+$$
+R_2(1)=\frac34(1)^2+\frac14(3)^2=3.
+$$
+
+Under absolute error,
+
+$$
+R_1(0)=\frac34(0)+\frac14(4)=1,
+$$
+
+while
+
+$$
+R_1(1)=\frac34(1)+\frac14(3)=1.5.
+$$
+
+The losses disagree because they ask different questions. Neither calculation needs contamination, an optimisation failure, or an inaccurate model.
+
+## Deriving linear least squares and its assumptions
+
+For linear predictions, collect the input vectors as rows of a design matrix. Include a constant column if an intercept is required. The objective is
+
+$$
+J(w)=\frac12\lVert Xw-y\rVert^2.
+$$
+
+Set the residual vector to
+
+$$
+r=Xw-y.
+$$
+
+Its differential is
+
+$$
+dr=X\,dw,
+$$
+
+so
+
+$$
+dJ=r^{\mathsf T}dr
+=r^{\mathsf T}X\,dw.
+$$
+
+Reading off the column gradient gives
+
+$$
+\nabla_wJ=X^{\mathsf T}(Xw-y).
+$$
+
+A stationary point therefore satisfies the normal equations:
+
+$$
+X^{\mathsf T}Xw=X^{\mathsf T}y.
+$$
+
+The Hessian is
+
+$$
+\nabla_w^2J=X^{\mathsf T}X.
+$$
+
+For any direction,
+
+$$
+v^{\mathsf T}X^{\mathsf T}Xv
+=
+\lVert Xv\rVert^2\ge 0.
+$$
+
+Thus the objective is convex in the linear coefficients. It is strictly convex, with a unique minimiser, when the columns are linearly independent. Only under that rank condition can we write
+
+$$
+\widehat w=(X^{\mathsf T}X)^{-1}X^{\mathsf T}y.
+$$
+
+If columns are dependent, predictions may still be uniquely determined while coefficients are not.
+
+In computation, solving the least-squares system using a suitable factorisation avoids explicitly constructing this inverse. The formula explains the estimator; it does not prescribe the numerically best implementation.
+
+Also, squared error being convex in its prediction does not make a neural network's objective convex in its parameters. Composition with a non-linear parameterisation changes the optimisation problem.
+
+## One contaminated observation, with the entire dataset specified
+
+Start with ten inputs and an exact line:
+
+$$
+x_i=i,\qquad y_i=2i+1,\qquad i=1,\ldots,10.
+$$
+
+The clean responses are
+
+$$
+3,5,7,9,11,13,15,17,19,21.
+$$
+
+Increase only the response at input six by fifty. The observed responses become
+
+$$
+3,5,7,9,11,63,15,17,19,21.
+$$
+
+For a line with an intercept, the least-squares slope and intercept follow from the normal equations:
+
+$$
+\widehat b
+=
+\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}
+{\sum_i(x_i-\bar x)^2},
+\qquad
+\widehat a=\bar y-\widehat b\bar x.
+$$
+
+Here
+
+$$
+\bar x=\frac{11}{2},
+\qquad
+\bar y=17,
+$$
+
+and
+
+$$
+S_{xx}
+=
+\sum_{i=1}^{10}\left(i-\frac{11}{2}\right)^2
+=
+\frac{165}{2}.
+$$
+
+For the clean line, the cross-product sum is twice this quantity. The contamination changes it by
+
+$$
+50\left(6-\frac{11}{2}\right)=25.
+$$
+
+Therefore
+
+$$
+S_{xy}=165+25=190,
+$$
+
+and
+
+$$
+\widehat b
+=
+\frac{190}{165/2}
+=
+\frac{76}{33}
+\approx 2.30303.
+$$
+
+The intercept is
+
+$$
+\widehat a
+=
+17-\frac{76}{33}\frac{11}{2}
+=
+\frac{13}{3}
+\approx 4.33333.
+$$
+
+The relative change in slope is
+
+$$
+\frac{76/33-2}{2}
+=
+\frac5{33}
+\approx 0.151515.
+$$
+
+Every number follows from the listed observations.
+
+For this particular construction, least absolute deviations recovers the clean line exactly. That claim can also be proved without relying on a solver.
+
+Write a candidate line as the clean line plus an affine perturbation:
+
+$$
+\delta(x)=u+vx.
+$$
+
+Its absolute-error objective minus the clean line's objective is
+
+$$
+\sum_{i\ne 6}\lvert\delta(i)\rvert
++
+\lvert 50-\delta(6)\rvert
+-50.
+$$
+
+The reverse triangle inequality bounds this below by
+
+$$
+\sum_{i\ne 6}\lvert\delta(i)\rvert-\lvert\delta(6)\rvert.
+$$
+
+Because six is the midpoint of five and seven,
+
+$$
+\delta(6)=\frac{\delta(5)+\delta(7)}2,
+$$
+
+so
+
+$$
+\lvert\delta(5)\rvert+\lvert\delta(7)\rvert
+\ge 2\lvert\delta(6)\rvert.
+$$
+
+If the perturbation at six is non-zero, the objective increase is strictly positive. If it is zero but the affine perturbation is not identically zero, at least one clean observation has a non-zero residual, again giving a strictly positive increase.
+
+Thus the clean line is the unique absolute-error optimum here. The proof depends on this construction; it is not a claim that absolute-error regression always ignores one corrupted observation.
+
+## Residual influence is only part of robustness
+
+For a residual defined as prediction minus outcome,
+
+$$
+r_i=w^{\mathsf T}x_i-y_i,
+$$
+
+let
+
+$$
+\psi(r)=\frac{d\ell(r)}{dr}
+$$
+
+where the derivative exists. The contribution to the coefficient gradient is
+
+$$
+\nabla_w\ell(r_i)=\psi(r_i)x_i.
+$$
+
+For squared error,
+
+$$
+\psi(r)=2r.
+$$
+
+For absolute error away from zero,
+
+$$
+\psi(r)=\operatorname{sign}(r).
+$$
+
+The squared-error contribution grows without bound as the residual grows. Absolute error bounds the residual-dependent factor.
+
+But the input vector remains. A large or badly positioned input can have substantial leverage even when the residual score is bounded. Robustness to unusual outcomes and robustness to unusual inputs are different issues.
+
+Nor does a large residual prove that a record is wrong. It can represent a valid rare outcome, model misspecification, or an omitted subgroup. Reducing its influence changes what the fitted model prioritises. That change should be justified by the target and data-generating assumptions, not by declaring inconvenient observations uninteresting.
+
+## Huber loss and an exact compromise example
+
+Huber loss combines a quadratic centre with linear tails:
+
+$$
+\ell_\delta(r)
+=
+\begin{cases}
+\frac12r^2,&\lvert r\rvert\le\delta,\\
+\delta\lvert r\rvert-\frac12\delta^2,&\lvert r\rvert>\delta.
+\end{cases}
+$$
+
+The subtraction in the tail is chosen for continuity. At the positive threshold, both pieces equal half the squared threshold. Their derivatives also agree:
+
+$$
+\psi_\delta(r)
+=
+\begin{cases}
+r,&\lvert r\rvert\le\delta,\\
+\delta\operatorname{sign}(r),&\lvert r\rvert>\delta.
+\end{cases}
+$$
+
+Thus the function is differentiable, although its second derivative changes abruptly at the thresholds. Its derivative is non-decreasing, which establishes convexity.
+
+Take an intercept-only dataset consisting of nine zeros and one observation of fifty.
+
+Squared error selects the mean:
+
+$$
+a_{\mathrm{square}}=5.
+$$
+
+Absolute error selects the median:
+
+$$
+a_{\mathrm{absolute}}=0.
+$$
+
+For Huber loss with threshold one, suppose the optimum lies between zero and one. The nine clean residuals then use the quadratic branch, while the large observation contributes a clipped derivative of negative one. Stationarity gives
+
+$$
+9a-1=0,
+$$
+
+so
+
+$$
+a_{\mathrm{Huber}}=\frac19.
+$$
+
+This lies in the assumed interval, and the contaminated residual remains in the linear tail. Since the objective is convex, the stationary point is globally optimal.
+
+The threshold has units of the response. Multiplying all outcomes by a constant while leaving the threshold unchanged alters which residuals are treated as central and which are treated as tail observations. A threshold should therefore be interpreted relative to a meaningful residual scale.
+
+Non-smooth objectives are not beyond optimisation. Absolute-error regression can be written as a linear program using auxiliary variables:
+
+$$
+\min_{w,t}\sum_i t_i
+$$
+
+subject to
+
+$$
+-t_i\le x_i^{\mathsf T}w-y_i\le t_i.
+$$
+
+This formulation also forces non-negative auxiliary variables. Subgradient methods, proximal methods, and suitable constrained solvers provide other approaches. Ordinary differentiable gradient descent is not the complete description.
+
+## Likelihood explains familiar losses, but does not define their only use
+
+Assume independent Gaussian residuals with a common fixed variance:
+
+$$
+p(y_i\mid x_i,w)
+=
+\frac1{\sqrt{2\pi}\sigma}
+\exp\left(
+-\frac{(y_i-x_i^{\mathsf T}w)^2}{2\sigma^2}
+\right).
+$$
+
+The negative log-likelihood is
+
+$$
+-\log p(y\mid X,w)
+=
+n\log(\sqrt{2\pi}\sigma)
++
+\frac1{2\sigma^2}\sum_i r_i^2.
+$$
+
+For a fixed scale, minimising it is equivalent to least squares.
+
+For independent Laplace residuals with fixed scale,
+
+$$
+p(r_i)=\frac1{2b}\exp\left(-\frac{\lvert r_i\rvert}{b}\right),
+$$
+
+the negative log-likelihood is
+
+$$
+n\log(2b)+\frac1b\sum_i\lvert r_i\rvert.
+$$
+
+Its minimiser is the absolute-error fit.
+
+If Gaussian variances differ across observations and are known, the same calculation gives
+
+$$
+\sum_i\frac{r_i^2}{2\sigma_i^2}
+$$
+
+plus terms independent of the regression coefficients. Inverse-variance weighting follows from a particular probabilistic model.
+
+These connections explain why the losses arise. They do not mean that using squared error asserts Gaussianity in every application. The conditional-mean derivation required no Gaussian distribution.
+
+There is also no universal rule that usable residual powers lie between one and two. For powers greater than one, the second derivative away from zero is
+
+$$
+\frac{d^2}{dr^2}\lvert r\rvert^p
+=
+p(p-1)\lvert r\rvert^{p-2}\ge 0.
+$$
+
+Powers above two are convex and deliberately penalise large deviations more strongly. Powers below one are non-convex. Neither fact alone determines whether the scientific objective is appropriate.
+
+## Asymmetric error costs lead to quantiles
+
+Suppose underprediction and overprediction have different costs. Define the residual as outcome minus prediction and use the pinball loss:
+
+$$
+\rho_\tau(r)
+=
+\begin{cases}
+\tau r,&r\ge 0,\\
+(\tau-1)r,&r<0,
+\end{cases}
+\qquad
+0<\tau<1.
+$$
+
+Underprediction receives slope proportional to the chosen quantile level; overprediction receives slope proportional to its complement.
+
+For a continuous outcome distribution, differentiating expected loss with respect to the prediction gives
+
+$$
+\frac{d}{da}\mathbb E[\rho_\tau(Y-a)]
+=
+-\tau P(Y>a)+(1-\tau)P(Y<a).
+$$
+
+Therefore
+
+$$
+R'(a)=F(a)-\tau,
+$$
+
+and the optimum satisfies
+
+$$
+F(a)=\tau.
+$$
+
+With atoms, the condition is
+
+$$
+F(a^-)\le\tau\le F(a).
+$$
+
+The median is the special case with equal costs. The loss does not estimate the mean and then attach a different interpretation to it; it changes the population target from the start.
+
+## Classification loss, probabilities, and class weighting
+
+Let the true conditional probability of the positive class be
+
+$$
+p=P(Y=1\mid X=x),
+$$
+
+and let the model report a probability in the open unit interval. Binary log loss has conditional risk
+
+$$
+R(q)=-p\log q-(1-p)\log(1-q).
+$$
+
+Its derivative is
+
+$$
+R'(q)
+=
+-\frac pq+\frac{1-p}{1-q}
+=
+\frac{q-p}{q(1-q)}.
+$$
+
+The derivative changes sign at the true probability, so the unique optimum is
+
+$$
+q^\star=p
+$$
+
+when the true probability is interior. Boundary probabilities are obtained as limits.
+
+For a logit,
+
+$$
+q=\frac1{1+e^{-z}},
+$$
+
+substitution gives the loss
+
+$$
+\ell(z,y)=\log(1+e^z)-yz.
+$$
+
+Differentiating gives
+
+$$
+\frac{\partial\ell}{\partial z}=q-y.
+$$
+
+This explains why the output error appears directly in logistic-regression gradients.
+
+Now give positive examples weight one constant and negative examples another:
+
+$$
+R(q)
+=
+-a p\log q-b(1-p)\log(1-q).
+$$
+
+Stationarity gives
+
+$$
+q^\star
+=
+\frac{ap}{ap+b(1-p)}.
+$$
+
+Weighted log loss generally targets a transformed probability. For the constructed values
+
+$$
+p=0.1,\qquad a=9,\qquad b=1,
+$$
+
+the optimum is
+
+$$
+q^\star=\frac{0.9}{0.9+0.9}=\frac12.
+$$
+
+A raw output of one half therefore does not represent the original positive-class probability in this ideal weighted problem.
+
+If weights and the ideal relationship are known, the inverse transformation is
+
+$$
+p
+=
+\frac{bq}{a(1-q)+bq}.
+$$
+
+Finite model capacity and imperfect optimisation mean this algebra alone does not establish calibration in a fitted model.
+
+A separate decision threshold can encode misclassification costs. If a false positive costs one specified amount and a false negative another, the expected costs of the two actions are
+
+$$
+\operatorname{Cost}(+)=c_{\mathrm{FP}}(1-p),
+\qquad
+\operatorname{Cost}(-)=c_{\mathrm{FN}}p.
+$$
+
+Choose the positive action when
+
+$$
+p>
+\frac{c_{\mathrm{FP}}}{c_{\mathrm{FP}}+c_{\mathrm{FN}}}.
+$$
+
+Probability estimation and action selection can therefore be separate stages. Class imbalance does not by itself dictate a particular training weight.
+
+Finally, loss normalisation affects regularisation. The objectives
+
+$$
+\sum_i\ell_i+\lambda\Omega
+$$
+
+and
+
+$$
+\frac1n\sum_i\ell_i+\lambda\Omega
+$$
+
+do not express the same tradeoff at the same numerical regularisation coefficient. Multiplying the second objective by the sample count makes the difference explicit.
+
+## Revision checklist
+
+| Can I do this without looking? | Check |
+|---|---|
+| Derive the squared-error target | Decompose risk into variance and squared bias |
+| Derive the absolute-error target | Balance probability on either side of a median |
+| Obtain the normal equations | State the rank condition for an inverse |
+| Reproduce the contaminated-line coefficients | Use the explicitly listed observations |
+| Prove the absolute-error result for that construction | Use the midpoint inequality |
+| Distinguish residual robustness from leverage | Keep the input factor in the gradient |
+| Derive the Huber estimate for nine zeros and one large value | Solve the clipped-score equation |
+| Connect losses to likelihoods | Identify fixed scales and independence assumptions |
+| Derive a quantile target | Differentiate asymmetric absolute risk |
+| Interpret weighted log loss | Derive its transformed probability |
+| Separate estimation from decisions | Derive a cost-based threshold |
+| Compare regularised objectives | Check sum versus mean normalisation |
 
 ## Why it matters for my work
 
-Medical datasets have outliers, and almost none of them are interesting. Mistyped measurements, mislabelled studies, a scan from the wrong patient, a segmentation where the annotator's cursor slipped. Squared error hands each of these influence proportional to how wrong it is, which means **the single worst record in a dataset has more say in the fit than dozens of good ones**. On a dataset of a few hundred cases, normal in clinical work, a handful of bad records is not a rounding error.
-
-The asymmetry is what makes this actionable: a robust loss costs a closed form and some optimisation convenience, while a non-robust loss costs correctness in a way that does not announce itself. A fit skewed by contamination looks like a fit. It has a residual, an $$R^2$$, a plot. Nothing in the output says a tenth of the data did most of the work.
-
-This connects to [label quality](/study/label-quality-and-interobserver-variability/) more directly than I had appreciated. Interobserver variability is not merely noise to be averaged away: under a squared loss, the most discordant annotations are the most influential ones. A model trained with $$L_2$$ on labels with high interobserver variability is disproportionately fitting the outlier readers. Robust losses are one of the few places where a modelling choice, rather than a data-collection change, does something about that.
+Loss choice should follow the quantity I want to estimate and the errors I want to penalise. A discrepancy between robust and squared-error fits is a reason to inspect labels, leverage, and model assumptions, not proof that the robust fit is correct.
 
 ## What I have not resolved
 
-Where the crossover actually sits. Robust losses trade efficiency for resistance, and if residuals really are Gaussian, least squares is optimal and $$L_1$$ wastes data, which matters when you have 200 cases, not 200,000. I do not have a principled way to decide, for a given clinical dataset, whether the contamination rate justifies the efficiency loss, and I suspect the honest answer is to fit both and treat a large discrepancy as a finding about the data rather than as a model-selection problem.
-
----
-
-[^huber]: Huber, P. J. (1964). Robust estimation of a location parameter. *The Annals of Mathematical Statistics*, 35(1), 73–101. [10.1214/aoms/1177703732](https://doi.org/10.1214/aoms/1177703732)
+I need to determine which extreme residuals in my datasets are recording errors and which represent valid cases that the model must handle. A loss function alone cannot make that distinction.

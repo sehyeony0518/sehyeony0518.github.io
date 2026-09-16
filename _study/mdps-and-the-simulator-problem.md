@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "MDPs and the Simulator Problem: Every RL Paper Starts After the Hard Part"
-description: "The five-tuple that defines an environment, why a plan is not a policy, and the reason reinforcement learning works on games and struggles everywhere the simulator has to be built."
+description: "The Markov decision process five-tuple, Bellman equations, plans versus policies, and how simulator error and off-policy coverage affect reinforcement learning."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "decision-and-control"
@@ -12,66 +12,609 @@ written: true
 updated: "2026-09-15"
 ---
 
-Reinforcement learning formalises the environment as a **Markov decision process**: the five-tuple $$(\mathcal{S}, \mathcal{A}, R, P, \gamma)$$: states, actions, a reward function, transition probabilities $$P(s'\mid s,a)$$, and a discount factor.
+An MDP specifies a sequential decision problem. It does not imply that the learner knows the transition probabilities, possesses a simulator, or must estimate a complete transition model before learning.
 
-Every textbook and every paper begins by assuming you have one. That assumption is doing an enormous amount of work, and this note is mostly about it.
+That distinction corrects an overstatement suggested by this note's title. Reinforcement learning can use direct interaction with a physical system, a simulator, or previously collected trajectories. Each interface supplies different information and permits different experiments. A simulator is especially useful because it can make repeated, counterfactual interaction affordable. Its availability and fidelity are assumptions to examine, rather than requirements built into the definition of RL.
 
-## Core question and definition
+The mathematical task is to connect four objects: a state representation, a policy, its expected return, and the evidence available for estimating that return.
 
-Three axes locate a learning problem, and they make clear what RL is up against.
+## What the five-tuple specifies
 
-**Sequential or one-shot.** Classifying a photograph is one-shot: what you answered three images ago has no bearing on this one. Navigating a maze is sequential: the move three steps back constrains everything available now.
+For a finite discounted problem, write
 
-**Evaluative or instructive feedback.** Supervised learning is instructive: it tells you the correct answer. RL is evaluative: it hands you a *score* and no indication of what you should have done. Getting 3 out of 10 does not tell you which answer was wrong, and whether 3 is good depends on what everyone else scored, which you also do not see.
+$$
+\mathcal M=(\mathcal S,\mathcal A,P,R,\gamma),
+\qquad 0\leq\gamma<1.
+$$
 
-**Sampled or exhaustive.** If you could enumerate every state and every action you would not need to generalise. You cannot, so you generalise from a sample.
+The state and action spaces describe what the decision-maker can distinguish and choose. The transition kernel specifies
 
-Supervised image classification sits at the easy end of all three; RL on a game sits at the hard end of all three. That is the whole reason RL is a separate subject, and the reason deep networks were necessary before deep RL was possible: the sampling problem had to be solved first.
+$$
+P(s'\mid s,a)
+=
+\Pr(S_{t+1}=s'\mid S_t=s,A_t=a).
+$$
 
-## Key concepts
+Here the reward function denotes an expected immediate reward:
 
-### A plan is not a policy
+$$
+R(s,a)
+=
+\mathbb E[R_{t+1}\mid S_t=s,A_t=a].
+$$
 
-For a robot crossing an icy grid toward a goal, "right, right, down" is a **plan**. It is not a policy, and the difference is the whole game: it says nothing about what to do after slipping. One unexpected transition and there is no next instruction.
+A more complete specification gives the joint distribution of next state and reward,
 
-A **policy** $$\pi(a\mid s)$$ specifies an action for *every* state, including states you never intended to visit. That is a much stronger object, and it is why the robust choice on ice can be the one that moves away from the goal: if a slip near a hole has a one-in-three chance of falling in, the action that cannot possibly reach the hole beats the action that heads straight for the target.
+$$
+p(s',r\mid s,a),
+$$
 
-Which raises the question that organises everything downstream: *which policy is better?* You cannot search for a good policy without a way to score one, and the score is the **value function**: the expected return from following $$\pi$$ onward. Value and policy are mutually defined, and the four families of RL method are four choices about which to attack: **value-based**, **policy-based**, **model-based** (learn $$P$$ and $$R$$, then derive a policy), and **actor–critic** (maintain both).
+from which both quantities follow by marginalization. This matters when reward and next state are correlated. Replacing the reward distribution with its mean preserves expected-return calculations, but it does not preserve the full distribution of returns or every risk-sensitive objective.
 
-### AlphaGo as an assembly of these parts
+An initial-state distribution is also needed to define an overall performance number. For a policy with state values, the evaluation target is
 
-Go's search tree is far too large to enumerate, so Monte Carlo tree search explores it selectively, and two learned networks make that selection affordable.
+$$
+J(\pi)
+=
+\mathbb E_{S_0\sim\rho_0}[V^\pi(S_0)].
+$$
 
-The **policy network** narrows *breadth*: of ~250 legal moves, most are not worth a thought, and a CNN trained on 30 million human positions to predict the expert's move (57% top-1 accuracy over 361 classes) prunes them. The **value network** reduces *depth*: given a board, estimate the eventual result, so the search need not play to the end. A third, deliberately tiny **rollout network** plays games out fast: far weaker, but callable millions of times, and AlphaGo averages its verdict with the value network's.[^ago]
+Two evaluations can use the same MDP and policy but report different performance because they start from different states.
 
-One detail is worth more than the architecture. The policy network used inside the tree search is the **supervised** one, not the stronger RL-refined version: even though the RL version beats it head-to-head. Search does not want the single best move; it wants a well-spread distribution over plausible moves, because its job is to decide *where to look*. A sharper policy explores worse. That is the [exploration–exploitation](/study/monte-carlo-tree-search/) trade-off appearing as a concrete engineering choice, and it would be easy to get backwards by reasoning about strength alone.
+The Markov assumption is a statement about information:
 
-### The part the textbooks skip
+$$
+\Pr(S_{t+1},R_{t+1}\mid H_t,A_t)
+=
+\Pr(S_{t+1},R_{t+1}\mid S_t,A_t),
+$$
 
-Now the assumption. Given an MDP, RL has a large toolkit. **But who gives you the MDP?**
+where the history contains all previous observations, actions, and rewards. The chosen state must retain everything from that history that affects the next-step distribution under an action.
 
-For the cart-pole, the standard toy problem, writing the simulator means deriving the coupled nonlinear equations of motion: force balances in two directions, a torque balance, projection onto a rotating frame, elimination of internal reaction forces. Pages of work, several sign errors, and the result is not analytically solvable, so it is [linearised](/study/linearization-and-the-inverted-pendulum/) with the attendant validity limits. And that is the *easy* environment, the one in every tutorial.
+Calling a vector a state does not establish this property. A cart's position alone is insufficient if velocity affects its next position. Two carts at the same position but moving in opposite directions have different next-state distributions under the same force.
 
-So the honest summary of the field's situation: **RL flourishes where simulation is cheap and faithful.** Board games and video games have exact, free, unlimited simulators: the rules *are* the transition function. Everywhere else, someone has to build the simulator, and building a faithful one is typically harder than the RL that follows.
+Finite-horizon problems introduce another subtlety. The best action with one decision remaining can differ from the best action with many decisions remaining. Either index the policy by time or include remaining time in the state. A stationary policy over an incomplete state description can otherwise hide a time dependence.
 
-That is a selection effect, not evidence about where RL is useful. Reading the literature as though the impressive game results indicate readiness elsewhere is reading past the assumption in the first line of every paper.
+## Observations, hidden states, and beliefs
+
+An observation need not be a Markov state. Suppose a machine displays the same temperature when its internal component is healthy or damaged. Under heavy use, a healthy component survives and a damaged component fails. Temperature alone cannot determine the next-state distribution.
+
+One remedy is to maintain a probability distribution over hidden states. Let
+
+$$
+b_t(s)=\Pr(S_t=s\mid H_t).
+$$
+
+After choosing an action, first predict the next hidden state:
+
+$$
+\widetilde b_{t+1}(s')
+=
+\sum_s P(s'\mid s,a_t)b_t(s).
+$$
+
+Then incorporate the new observation using its likelihood:
+
+$$
+b_{t+1}(s')
+=
+\frac{
+O(o_{t+1}\mid s',a_t)\widetilde b_{t+1}(s')
+}{
+\sum_z O(o_{t+1}\mid z,a_t)\widetilde b_{t+1}(z)
+}.
+$$
+
+The first step is the law of total probability. The second is Bayes' rule. The denominator makes the probabilities sum to one.
+
+Under a correctly specified partially observed model, this belief is a sufficient summary of the history for future decisions. That does not make the problem cheap. A distribution over hidden states can be much larger than the original observation, and updating it requires a model.
+
+The practical question is therefore not simply whether an algorithm accepts a state vector. It is whether the available representation preserves the distinctions on which useful decisions depend.
+
+## Plans, policies, and objectives
+
+An open-loop plan is a sequence of actions chosen before the intervening outcomes are observed. A Markov policy specifies an action distribution conditional on the current state:
+
+$$
+\pi(a\mid s).
+$$
+
+A contingent plan can itself represent a policy over a finite horizon. The useful distinction is between committing to actions regardless of observations and conditioning later decisions on what actually happens.
+
+A policy being defined at every state also does not make it reliable at every state. A neural policy may return an action for an unfamiliar input while having no evidence that the action is useful.
+
+To compare policies, define the return
+
+$$
+G_t
+=
+\sum_{k=0}^{\infty}\gamma^k R_{t+k+1}.
+$$
+
+If rewards satisfy
+
+$$
+\lvert R_{t+1}\rvert\leq R_{\max},
+$$
+
+then
+
+$$
+\lvert G_t\rvert
+\leq
+R_{\max}\sum_{k=0}^{\infty}\gamma^k
+=
+\frac{R_{\max}}{1-\gamma}.
+$$
+
+Discounting therefore ensures a finite bound even when interaction continues indefinitely.
+
+There is also a probabilistic interpretation. Imagine that continuation after each reward occurs independently with probability equal to the discount factor. The probability of reaching the reward at offset equal to an integer is the corresponding power of that factor. Expected undiscounted reward before this random termination equals discounted return. This explains the geometric weights, but it does not establish that a particular application's true objective should use them.
+
+Expected return also encodes a risk preference. Construct a one-step decision with two actions. A safe action gives a reward of four. A risky action gives ten with probability three-fifths and negative ten otherwise:
+
+$$
+\mathbb E[R\mid\text{risky}]
+=
+\frac35(10)+\frac25(-10)
+=
+2.
+$$
+
+Expected-return maximization chooses the safe action. If the success probability changes to four-fifths, the risky action's expectation becomes six and the ranking reverses. Whether that choice is acceptable depends on the objective, not on the MDP formalism alone.
+
+## Deriving the Bellman expectation equation
+
+Define the state value as
+
+$$
+V^\pi(s)
+=
+\mathbb E_\pi[G_t\mid S_t=s].
+$$
+
+Split the first reward from the return:
+
+$$
+\begin{aligned}
+G_t
+&=
+R_{t+1}
++
+\sum_{k=1}^{\infty}\gamma^k R_{t+k+1}\\
+&=
+R_{t+1}
++
+\gamma
+\sum_{j=0}^{\infty}\gamma^j R_{t+j+2}\\
+&=
+R_{t+1}+\gamma G_{t+1}.
+\end{aligned}
+$$
+
+The reindexing in the second line is the step that makes a whole future expressible through one next-state value.
+
+Condition first on the selected action and then on the next state:
+
+$$
+V^\pi(s)
+=
+\sum_a\pi(a\mid s)
+\left[
+R(s,a)
++
+\gamma\sum_{s'}P(s'\mid s,a)V^\pi(s')
+\right].
+$$
+
+The Markov property and stationary policy let the conditional expectation of the remaining return become the same value function evaluated at the next state.
+
+Similarly, define the value of committing to an action once and following the policy afterward:
+
+$$
+Q^\pi(s,a)
+=
+R(s,a)
++
+\gamma\sum_{s'}P(s'\mid s,a)V^\pi(s').
+$$
+
+Consequently,
+
+$$
+V^\pi(s)=\sum_a\pi(a\mid s)Q^\pi(s,a).
+$$
+
+These are expectation identities. They do not require that the learner know the quantities on their right-hand sides.
+
+For a finite state space, collect policy-averaged rewards and transitions into a vector and matrix:
+
+$$
+r_\pi(s)=\sum_a\pi(a\mid s)R(s,a),
+$$
+
+$$
+P_\pi(s,s')
+=
+\sum_a\pi(a\mid s)P(s'\mid s,a).
+$$
+
+Then policy evaluation becomes
+
+$$
+V^\pi=r_\pi+\gamma P_\pi V^\pi,
+$$
+
+and hence
+
+$$
+V^\pi=(I-\gamma P_\pi)^{-1}r_\pi.
+$$
+
+The inverse has a useful expansion:
+
+$$
+(I-\gamma P_\pi)^{-1}
+=
+\sum_{k=0}^{\infty}\gamma^kP_\pi^k.
+$$
+
+To check it, multiply a finite partial sum by the matrix on the left. Every intermediate term cancels, leaving
+
+$$
+I-\gamma^{n+1}P_\pi^{n+1}.
+$$
+
+The final term vanishes as the number of terms grows because a stochastic matrix does not increase the maximum absolute component and the discount powers approach zero.
+
+The inverse therefore sums expected rewards after zero, one, two, and all subsequent transitions. It is an algebraic representation of the original return.
+
+## A two-state MDP solved completely
+
+Construct a machine with two states: free and congested. All probabilities and rewards below are definitions of this example.
+
+| State | Action | Immediate reward | Next state |
+|---|---|---|---|
+| Free | Serve | $$2$$ | Free with probability $$1/2$$, congested otherwise |
+| Free | Idle | $$0$$ | Free |
+| Congested | Repair | $$-1$$ | Free |
+| Congested | Wait | $$0$$ | Congested |
+
+Set
+
+$$
+\gamma=\frac9{10}.
+$$
+
+Consider the policy that serves when free and repairs when congested. Abbreviate its two values by subscripts indicating the state:
+
+$$
+V_F
+=
+2+\frac9{20}V_F+\frac9{20}V_C,
+$$
+
+$$
+V_C=-1+\frac9{10}V_F.
+$$
+
+Substitution gives
+
+$$
+\begin{aligned}
+V_F
+&=
+2+\frac9{20}V_F
++\frac9{20}\left(-1+\frac9{10}V_F\right)\\
+&=
+\frac{31}{20}+\frac{171}{200}V_F.
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+V_F
+=
+\frac{310}{29}
+\approx10.6897,
+\qquad
+V_C
+=
+\frac{250}{29}
+\approx8.6207.
+$$
+
+To check whether the policy is optimal, evaluate the alternative action in each state while following the candidate policy afterward:
+
+$$
+Q^\pi(F,\text{idle})
+=
+\frac9{10}\frac{310}{29}
+=
+\frac{279}{29}
+<
+\frac{310}{29},
+$$
+
+$$
+Q^\pi(C,\text{wait})
+=
+\frac9{10}\frac{250}{29}
+=
+\frac{225}{29}
+<
+\frac{250}{29}.
+$$
+
+Neither one-step deviation improves the value.
+
+The initially unattractive repair action is essential. A policy that maximizes immediate reward waits forever when congested, giving that state value zero. Its free-state value satisfies
+
+$$
+V_F=2+\frac9{20}V_F,
+$$
+
+so
+
+$$
+V_F=\frac{40}{11}\approx3.6364.
+$$
+
+The cost of repairing is visible immediately. Its benefit appears through future opportunities to serve. The Bellman equation makes that trade explicit.
+
+## Why value iteration converges
+
+Define the optimality operator
+
+$$
+(TV)(s)
+=
+\max_a
+\left[
+R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)V(s')
+\right].
+$$
+
+For any two collections of numbers,
+
+$$
+\left\lvert\max_a x_a-\max_a y_a\right\rvert
+\leq
+\max_a\lvert x_a-y_a\rvert.
+$$
+
+To see why, take an action maximizing the first collection. Its advantage over the maximum of the second collection cannot exceed its advantage over the second collection's value at that same action. Reverse the collections to obtain the absolute-value bound.
+
+Applying this fact gives
+
+$$
+\begin{aligned}
+\lVert TV-TW\rVert_\infty
+&\leq
+\gamma
+\max_{s,a}
+\sum_{s'}P(s'\mid s,a)
+\lvert V(s')-W(s')\rvert\\
+&\leq
+\gamma\lVert V-W\rVert_\infty.
+\end{aligned}
+$$
+
+Thus each update shrinks the maximum discrepancy by at least the discount factor. Iterating from any bounded initial vector converges to a unique fixed point.
+
+In the constructed machine, starting from zero gives
+
+$$
+(V_F^{(1)},V_C^{(1)})=(2,0),
+$$
+
+$$
+(V_F^{(2)},V_C^{(2)})=(2.9,0.8),
+$$
+
+$$
+(V_F^{(3)},V_C^{(3)})=(3.665,1.61).
+$$
+
+The repair action becomes attractive only after value has propagated backward from the free state.
+
+A computable stopping certificate follows from the same inequality:
+
+$$
+\begin{aligned}
+\lVert V-V^*\rVert_\infty
+&\leq
+\lVert V-TV\rVert_\infty
++
+\lVert TV-TV^*\rVert_\infty\\
+&\leq
+\lVert V-TV\rVert_\infty
++
+\gamma\lVert V-V^*\rVert_\infty.
+\end{aligned}
+$$
+
+Rearranging,
+
+$$
+\lVert V-V^*\rVert_\infty
+\leq
+\frac{\lVert V-TV\rVert_\infty}{1-\gamma}.
+$$
+
+A small change in an algorithm's parameters is not this certificate. The relevant residual measures violation of the Bellman equation.
+
+## What access to an environment actually means
+
+An explicit model allows summation over possible successors. A generative simulator instead returns a sampled reward and next state for a requested state-action pair. A physical interaction stream usually reveals only the successor of the current state. A logged dataset permits no new queries.
+
+These distinctions explain why two algorithms described as model-free may have very different data requirements. Model-free means that the algorithm need not explicitly estimate transition dynamics. It does not mean that its training data appeared without an environment.
+
+Likewise, numerical simulation does not require linearizing a nonlinear physical model. One can integrate the nonlinear equations directly. Linearization is useful for local analysis and controller design, with its own approximation error, as derived in the [pendulum note](/study/linearization-and-the-inverted-pendulum/).
+
+A faithful simulator also need not be computationally free. Search quality depends on how many useful queries fit within the available time, and on whether the simulator can be reset to the states the search requests.
+
+## How transition error becomes value error
+
+Compare a true model with an approximate model under the same policy. Assume uniform bounds
+
+$$
+\lvert R(s,a)-\widehat R(s,a)\rvert\leq\varepsilon_r,
+$$
+
+$$
+\sum_{s'}
+\lvert P(s'\mid s,a)-\widehat P(s'\mid s,a)\rvert
+\leq\varepsilon_p.
+$$
+
+The transition bound uses the full sum of absolute differences, rather than half that sum.
+
+Let the maximum absolute value discrepancy be
+
+$$
+\Delta=\lVert V^\pi-\widehat V^\pi\rVert_\infty.
+$$
+
+Subtract the Bellman equations and insert an intermediate term using the true transition matrix and approximate value:
+
+$$
+V^\pi-\widehat V^\pi
+=
+r_\pi-\widehat r_\pi
++
+\gamma P_\pi(V^\pi-\widehat V^\pi)
++
+\gamma(P_\pi-\widehat P_\pi)\widehat V^\pi.
+$$
+
+If both models have rewards bounded in magnitude by the same reward limit, then
+
+$$
+\Delta
+\leq
+\varepsilon_r
++
+\gamma\Delta
++
+\gamma\varepsilon_p\frac{R_{\max}}{1-\gamma}.
+$$
+
+Therefore,
+
+$$
+\Delta
+\leq
+\frac{\varepsilon_r}{1-\gamma}
++
+\frac{\gamma\varepsilon_pR_{\max}}{(1-\gamma)^2}.
+$$
+
+One factor accounts for the amount of future reward exposed to a wrong transition. Another accounts for repeatedly encountering transition errors over time.
+
+For a constructed bound with exact rewards,
+
+$$
+\gamma=0.9,\qquad
+R_{\max}=2,\qquad
+\varepsilon_p=0.01,
+$$
+
+the value-error bound is
+
+$$
+\Delta\leq\frac{0.9(0.01)(2)}{0.1^2}=1.8.
+$$
+
+This is a worst-case guarantee under uniform assumptions, not a prediction that the actual error will equal that number.
+
+Suppose the same bound holds for every policy, and a policy is optimized in the approximate model. Its loss in the true model is at most twice the uniform value-error bound. Insert approximate-model values between the true optimal and selected-policy values. The approximate optimizer's comparison contributes a nonpositive term, leaving at most one model-error term for each policy.
+
+Accurate simulation is therefore a decision-relevant requirement. Small average prediction error on frequently observed transitions does not automatically establish the uniform conditions used above.
+
+## Logged data, coverage, and importance weights
+
+For a finite trajectory, the probability under a policy factors into an initial-state probability, action probabilities, and environment transition-reward probabilities.
+
+When target and behavior policies interact with the same environment, the environment factors cancel in their trajectory probability ratio:
+
+$$
+W(\tau)
+=
+\frac{p_\pi(\tau)}{p_\mu(\tau)}
+=
+\prod_{t=0}^{H-1}
+\frac{\pi(a_t\mid s_t)}{\mu(a_t\mid s_t)}.
+$$
+
+Multiplying a behavior-policy expectation by this ratio gives
+
+$$
+\mathbb E_\mu[W(\tau)G(\tau)]
+=
+\sum_\tau p_\pi(\tau)G(\tau)
+=
+\mathbb E_\pi[G(\tau)].
+$$
+
+This requires coverage: every trajectory with positive target probability must have positive behavior probability.
+
+A constructed four-step example shows the variance problem. The target always chooses a particular action. The behavior policy chooses that action with probability one-tenth at each step. Reward is a terminal success indicator, equal to one only if all four selected actions match the target.
+
+The all-target trajectory has behavior probability
+
+$$
+(0.1)^4=10^{-4}
+$$
+
+and importance weight
+
+$$
+10^4.
+$$
+
+The weighted return is therefore ten thousand with probability one ten-thousandth and zero otherwise:
+
+$$
+\mathbb E_\mu[WG]=1,
+$$
+
+$$
+\operatorname{Var}_\mu(WG)
+=
+10^{-4}(10^4)^2-1
+=
+9999.
+$$
+
+The estimator is unbiased and still extremely noisy. More sophisticated estimators can change this trade-off, but no estimator can recover unsupported action outcomes without additional assumptions.
+
+Finally, observational action assignment may depend on hidden variables. The transition distribution conditional on a recorded action can then differ from the distribution caused by intervening to select that action. An MDP notation alone does not resolve that identification problem. Nor does every off-policy estimator require an explicit transition model.
+
+## Revision checklist
+
+| Check | What I should be able to reconstruct |
+|---|---|
+| State sufficiency | Explain why identical observations can conceal different next-state distributions. |
+| Belief update | Perform prediction by total probability, then normalization by Bayes' rule. |
+| Return recursion | Reindex the discounted sum to obtain the one-step Bellman equation. |
+| Policy evaluation | Derive the matrix inverse and its geometric-series interpretation. |
+| Worked MDP | Recover the values $$310/29$$ and $$250/29$$ and check both alternative actions. |
+| Optimality | Derive the contraction inequality and Bellman-residual certificate. |
+| Environment access | Distinguish a transition table, a generative simulator, interaction, and logs. |
+| Simulator error | Recover both factors of the effective horizon in the transition-error bound. |
+| Off-policy evaluation | Derive trajectory weights and the constructed variance of $$9999$$. |
+| Causal interpretation | State the coverage and identification assumptions needed before comparing interventions. |
 
 ## Why it matters for my work
 
-The simulator problem is exactly why RL for treatment decisions is hard in a way that the published successes can obscure.
+For decision support, the first question is what evidence makes alternative actions comparable. State sufficiency, action coverage, outcome definition, and observation timing come before selecting an RL algorithm.
 
-An MDP for clinical decision-making requires $$P(s' \mid s, a)$$: **the probability that a patient in this state moves to that state given this treatment.** That is not a modelling convenience: it is a complete causal model of treatment response, which is the thing medicine does not have and spends enormous effort trying to estimate one narrow slice at a time.
+I also want to separate a policy's mathematical definition from evidence about its behavior. Returning an action on every input is easy. Establishing useful behavior outside the observed states is a different task.
 
-The workaround is off-policy learning from retrospective records, and its failure modes are documented rather than hypothetical. Coverage: the data contain only actions clinicians actually chose, so the value of an unchosen action is an extrapolation with nothing to anchor it. Confounding: treatment assignment responded to patient state, including state not recorded, so apparent treatment effects absorb indication bias. Evaluation: off-policy estimators have variance that grows with how far the learned policy departs from the observed one, and a policy that *agrees* with clinicians is not worth deploying, so the regime of interest is exactly the regime where the estimate is least trustworthy.[^guide]
+## What I have not resolved
 
-None of this makes the work illegitimate; the sepsis work and its successors are serious.[^sepsis] What it makes illegitimate is treating a reported improvement in estimated value as comparable evidence to a trial result. The number is conditional on a transition model nobody validated, and "we assumed an MDP" is not a caveat in the discussion section: it is the load-bearing assumption in the first equation.
+For a concrete application, I have not established which history variables are needed for state sufficiency or which actions have adequate observational support.
 
-The smaller lesson I want to keep is the plan-versus-policy one, because it applies to deployment generally. A validated model is a plan: it specifies behaviour on the distribution it was tested against. A policy specifies behaviour **everywhere**, including states nobody intended to reach: the unusual presentation, the corrupted study, the patient outside the inclusion criteria. Most deployed systems have a plan and are asked to function as a policy, and the states where that gap matters are precisely the ones the validation set did not contain.
-
----
-
-[^ago]: Silver, D., et al. (2016). Mastering the game of Go with deep neural networks and tree search. *Nature*, 529, 484–489. [10.1038/nature16961](https://doi.org/10.1038/nature16961)
-
-[^guide]: Gottesman, O., et al. (2019). Guidelines for reinforcement learning in healthcare. *Nature Medicine*, 25, 16–18. [10.1038/s41591-018-0310-5](https://doi.org/10.1038/s41591-018-0310-5)
-
-[^sepsis]: Komorowski, M., Celi, L. A., Badawi, O., Gordon, A. C., & Faisal, A. A. (2018). The Artificial Intelligence Clinician learns optimal treatment strategies for sepsis in intensive care. *Nature Medicine*, 24, 1716–1720. [10.1038/s41591-018-0213-5](https://doi.org/10.1038/s41591-018-0213-5)
+Specify the proposed state, decision interval, reward horizon, behavior-policy coverage, and assumptions identifying action effects.
