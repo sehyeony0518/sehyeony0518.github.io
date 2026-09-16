@@ -29,12 +29,12 @@ categories:
       - "Bayesian Imaging & Model Uncertainty"
 
   # After probability orders 1-4: linear algebra and derivatives, then losses, gradient methods, curvature and duality.
-  - id: "algebra-and-optimisation"
+  - id: "algebra-and-optimization"
     tab: "ai-foundations"
-    title: "Linear Algebra & Optimisation"
+    title: "Linear Algebra & Optimization"
     subgroups:
       - "Linear Algebra & Geometry"
-      - "Losses & Gradient Optimisation"
+      - "Losses & Gradient Optimization"
       - "Constraints & Duality"
 
   # After algebra: exponentials and transfer functions, then DFT/FFT, phase and filters, resampling and estimation, graph spectra.
@@ -113,11 +113,11 @@ categories:
   # After probability, learning models and clinical foundations: task and labels, validation and metrics, calibration and shift, failures, utility and reproducibility.
   - id: "evaluation"
     tab: "trustworthy-ai"
-    title: "Evaluation, Generalisation & Reliability"
+    title: "Evaluation, Generalization & Reliability"
     subgroups:
       - "Task Definition & Ground Truth"
       - "Validation Design & Performance Measures"
-      - "Calibration & Generalisation"
+      - "Calibration & Generalization"
       - "Failure Analysis & Clinical Translation"
 
   # After probability and evaluation: causal graphs, confounding and selection, then spurious associations and learned shortcuts.

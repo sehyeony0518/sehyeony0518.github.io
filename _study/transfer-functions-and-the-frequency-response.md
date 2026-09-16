@@ -21,7 +21,7 @@ $$
 
 Changing the input changes $$X$$ and $$Y$$; it does not change $$H$$.
 
-There is one qualification to the title: $$H(s)$$ is itself the Laplace transform of the system's impulse response. It therefore has a time-domain counterpart. What distinguishes it from $$X(s)$$ is its role: it characterises the system rather than the particular signal being processed. Also, a Laplace transform is not automatically an energy spectrum; even the persistent sinusoids used below have infinite total energy.
+There is one qualification to the title: $$H(s)$$ is itself the Laplace transform of the system's impulse response. It therefore has a time-domain counterpart. What distinguishes it from $$X(s)$$ is its role: it characterizes the system rather than the particular signal being processed. Also, a Laplace transform is not automatically an energy spectrum; even the persistent sinusoids used below have infinite total energy.
 
 ## Core question and definition
 
@@ -541,13 +541,13 @@ because the linear term in time eventually dominates the logarithm.
 
 A pole on the imaginary axis is not asymptotically stable: its mode does not return to zero. Repetition can make matters worse by introducing a growing polynomial factor.
 
-The strict condition for decay of every mode in a minimal finite-dimensional realisation is consequently
+The strict condition for decay of every mode in a minimal finite-dimensional realization is consequently
 
 $$
 \boxed{\operatorname{Re}(p_i)<0\quad\text{for every pole}}.
 $$
 
-Here **minimal** means that the realisation contains no internal modes hidden from its input–output transfer function.
+Here **minimal** means that the realization contains no internal modes hidden from its input–output transfer function.
 
 ### Bounded input is a separate stability question
 
@@ -641,7 +641,7 @@ The unstable mode does require some excitation. That excitation can be an initia
 
 The LHP test on a reduced transfer function concerns its input–output behaviour. Internal stability requires checking all internal modes.
 
-Consider the realisation
+Consider the realization
 
 $$
 \dot q=q,\qquad
@@ -667,7 +667,7 @@ $$
 q(t)=q_0e^t.
 $$
 
-The transfer function did not show this mode because the chosen input cannot excite it from zero state. The realisation is not minimal.
+The transfer function did not show this mode because the chosen input cannot excite it from zero state. The realization is not minimal.
 
 This is also why an algebraic pole–zero cancellation is insufficient evidence of internal stability: removing a factor from an input–output formula does not, by itself, show that the corresponding internal motion has disappeared.
 
@@ -675,14 +675,14 @@ This is also why an algebraic pole–zero cancellation is insufficient evidence 
 
 A Bode plot separates two questions: amplitude scaling and phase shift.
 
-Take the normalised first-order form
+Take the normalized first-order form
 
 $$
 H(s)=\frac{K}{1+s\tau},
 \qquad K>0,\quad \tau>0.
 $$
 
-Rationalising its frequency response gives
+Rationalizing its frequency response gives
 
 $$
 H(j\omega)
@@ -704,7 +704,7 @@ $$
 M_{\mathrm{dB}}=20\log_{10}\lvert H(j\omega)\rvert.
 $$
 
-Why the factor 20? When power is proportional to amplitude squared under the same impedance or normalisation,
+Why the factor 20? When power is proportional to amplitude squared under the same impedance or normalization,
 
 $$
 10\log_{10}\frac{P_{\mathrm{out}}}{P_{\mathrm{in}}}
@@ -896,7 +896,7 @@ $$
 
 The logarithmic frequency axis then turns power-law asymptotes into straight lines.
 
-For example, a normalised real LHP zero contributes
+For example, a normalized real LHP zero contributes
 
 $$
 \lvert1+j\omega\tau\rvert
@@ -958,7 +958,7 @@ y(t)=\int_0^t\sin(\omega\lambda)\,d\lambda
 =\frac{1-\cos(\omega t)}{\omega}.
 $$
 
-The oscillating component has magnitude $$1/\omega$$ and phase $$-\pi/2$$, exactly as $$1/(j\omega)$$ predicts, but an additional constant persists. There is no decaying mode to remove it. Integral action's ability to eliminate certain tracking errors must therefore be analysed inside a stable closed loop.
+The oscillating component has magnitude $$1/\omega$$ and phase $$-\pi/2$$, exactly as $$1/(j\omega)$$ predicts, but an additional constant persists. There is no decaying mode to remove it. Integral action's ability to eliminate certain tracking errors must therefore be analyzed inside a stable closed loop.
 
 The differentiator has the opposite weighting:
 
@@ -992,7 +992,7 @@ whose input is bounded while its derivative is unbounded.
 |---|---|---|
 | What is the transfer function? | Transform the differential equation and form $$B/A$$ | Zero initial conditions |
 | What remains under sinusoidal forcing? | Compute $$H(j\omega)$$ and multiply amplitude/add phase | Natural modes must decay for a unique attracting steady state |
-| What sets the transient rates? | Factor the denominator and inspect multiplicities | Hidden internal modes may require the full realisation |
+| What sets the transient rates? | Factor the denominator and inspect multiplicities | Hidden internal modes may require the full realization |
 | Is the zero-state map BIBO stable? | Check every uncancelled pole is strictly LHP | Causal, proper, rational transfer function |
 | Does a zero remove a sinusoid? | Evaluate $$H(j\omega)$$ | The zero must be at that imaginary-axis frequency |
 | Is the Bode line exact? | Compare the exact factor with its low/high-frequency limits | Straight segments are asymptotes |
@@ -1006,7 +1006,7 @@ For learned or nonlinear systems, these calculations require a justified LTI mod
 
 ## What I have not resolved
 
-I want to work through two extensions: how local linearisation limits the amplitude range over which frequency-response measurements remain meaningful, and how exact sampling versus numerical integration changes the continuous-time stability picture.
+I want to work through two extensions: how local linearization limits the amplitude range over which frequency-response measurements remain meaningful, and how exact sampling versus numerical integration changes the continuous-time stability picture.
 
 ---
 

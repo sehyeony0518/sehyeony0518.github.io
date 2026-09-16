@@ -19,9 +19,9 @@ A sensor produces observations; something underneath produced them. Estimation i
 
 Three situations differ, and confusing them is the usual source of trouble.
 
-The parameter is unknown and the random variable is observed. The realisations $$x_1,\dots,x_N$$ are in hand and $$\theta$$ is wanted: **maximum likelihood**.
+The parameter is unknown and the random variable is observed. The realizations $$x_1,\dots,x_N$$ are in hand and $$\theta$$ is wanted: **maximum likelihood**.
 
-The parameter is known and the realisation is not. A quantity was generated but never observed directly: **estimation of the latent value**.
+The parameter is known and the realization is not. A quantity was generated but never observed directly: **estimation of the latent value**.
 
 Neither is known. Both the parameter and the variable it generated are hidden: the case the [next note](/study/latent-variables-em-and-variational-inference/) takes up.
 
@@ -35,7 +35,7 @@ $$
 \hat\theta_{\mathrm{ML}} = \arg\max_\theta \; p(D \mid \theta),
 $$
 
-and when the observations are assumed independent the product factorises, so the log is maximised instead:
+and when the observations are assumed independent the product factorizes, so the log is maximized instead:
 
 $$
 \log p(D\mid\theta) = \sum_{i=1}^{N} \log p(x_i \mid \theta).

@@ -4,9 +4,9 @@ title: "Optimization for Machine Learning"
 description: "Gradients, regularization, and constrained optimization as the assumptions a training procedure quietly imposes."
 tab: "ai-foundations"
 tab_title: "AI Theory"
-category: "algebra-and-optimisation"
-category_title: "Linear Algebra & Optimisation"
-subgroup: "Losses & Gradient Optimisation"
+category: "algebra-and-optimization"
+category_title: "Linear Algebra & Optimization"
+subgroup: "Losses & Gradient Optimization"
 order: 5
 source: "Independent study"
 written: true

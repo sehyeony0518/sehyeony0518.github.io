@@ -8,7 +8,7 @@ nav_order: 7
 ---
 <a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a>
 
-I study the reliability of medical image classifiers: whether a model's accuracy rests on evidence a clinician would recognise as relevant, and how that question can be examined rather than assumed.
+I study the reliability of medical image classifiers: whether a model's accuracy rests on evidence a clinician would recognize as relevant, and how that question can be examined rather than assumed.
 
 The work runs in two directions. **Reliable medical AI models** asks what a diagnostic model is actually responding to and when that response can be trusted. **Clinical translation** is the medical study that gives the first question something to check against. My M.S. research at Ajou University, advised by Prof. Jung-Won Lee in the Embedded & Software Lab, sits where the two meet, in ultrasound diagnosis.
 
@@ -18,7 +18,7 @@ A classifier can reach good diagnostic accuracy using features whose relationshi
 
 My interest is in the gap between a model's stated evidence and its actual reliance. An explanation that looks anatomically reasonable is not thereby faithful to the computation, and a readout that correlates with a clinical factor has not thereby been shown to drive the prediction. I work on how those distinctions can be made measurable, and on what has to hold before a result counts as evidence rather than a plausible picture.
 
-The same question extends to generalisation. Performance that holds on internal data can fail across hospitals, devices, and patient populations, and stable aggregate accuracy can hide a change in what the model is responding to.
+The same question extends to generalization. Performance that holds on internal data can fail across hospitals, devices, and patient populations, and stable aggregate accuracy can hide a change in what the model is responding to.
 
 ## Clinical Translation
 

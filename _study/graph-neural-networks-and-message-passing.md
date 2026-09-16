@@ -54,7 +54,7 @@ $$
 p_{v,c}=\frac{\exp(a_{v,c})}{\sum_j\exp(a_{v,j})}.
 $$
 
-This makes probabilities positive and sum to one. Maximising the product of correct-label probabilities is equivalent, after taking a negative logarithm, to minimising
+This makes probabilities positive and sum to one. Maximizing the product of correct-label probabilities is equivalent, after taking a negative logarithm, to minimizing
 
 $$
 \mathcal L_{\mathrm{class}}
@@ -138,7 +138,7 @@ Thus positive pairs favour larger dot products, while negative pairs favour smal
 
 Now introduce a node absent during training. Its indicator has no corresponding table row. Appending a random row makes lookup possible, but does not make the row learned. The original training loss never involved that row, so every possible value gives the same original loss.
 
-**The missing ingredient is a rule that maps the new node's observations to its vector.** Optimising an appended row using new edges is additional fitting, not inference through the trained table. This is the precise transductive limitation, also discussed in the [embedding-table and cold-start note](/study/recommender-systems-and-sparse-features/).
+**The missing ingredient is a rule that maps the new node's observations to its vector.** Optimizing an appended row using new edges is additional fitting, not inference through the trained table. This is the precise transductive limitation, also discussed in the [embedding-table and cold-start note](/study/recommender-systems-and-sparse-features/).
 
 A transductive experiment may include an unlabelled test node in the training graph. That node is already known structurally. It is different from a node whose features and connections arrive only after training.
 
@@ -330,7 +330,7 @@ The descriptor now contains a path for information from $$c$$ through $$b$$. Cha
 
 All nodes must read the previous layer's states. Updating nodes in place and letting later nodes read already-updated values would make one "layer" depend on traversal order.
 
-## Degree normalisation is a modelling choice
+## Degree normalization is a modelling choice
 
 Suppose every neighbour supplies the same vector $$q$$. Then
 
@@ -342,7 +342,7 @@ $$
 
 Summation makes magnitude depend on degree even when neighbour content is unchanged. Mean aggregation removes that dependence for identical messages. Sum models accumulated evidence; mean models neighbourhood composition. If the number of observations matters, discarding degree can remove useful information.
 
-Symmetric normalisation uses both endpoint degrees:
+Symmetric normalization uses both endpoint degrees:
 
 $$
 m_v^{\mathrm{sym}}
@@ -365,7 +365,7 @@ D^{1/2}RD^{-1/2}g
 D^{-1/2}AD^{-1/2}g.
 $$
 
-Thus symmetric normalisation is mean propagation in degree-rescaled coordinates. On an undirected graph, its edge coefficient is the same in either direction. Applying it directly to raw descriptors chooses that rescaled geometry. It is not simply another formula for an ordinary mean.
+Thus symmetric normalization is mean propagation in degree-rescaled coordinates. On an undirected graph, its edge coefficient is the same in either direction. Applying it directly to raw descriptors chooses that rescaled geometry. It is not simply another formula for an ordinary mean.
 
 A star makes the difference visible. Give its centre three leaves and assign scalar feature $$2$$ to every node:
 
@@ -375,11 +375,11 @@ A star makes the difference visible. Give its centre three leaves and assign sca
 | Mean | $$6/3=2$$ | $$2/1=2$$ |
 | Symmetric | $$6/\sqrt3=2\sqrt3$$ | $$2/\sqrt3$$ |
 
-The symmetric weights do not generally sum to one. Mean divides by the receiver's degree; symmetric normalisation also discounts messages from high-degree senders. Neither choice guarantees that high-degree nodes cease to matter.
+The symmetric weights do not generally sum to one. Mean divides by the receiver's degree; symmetric normalization also discounts messages from high-degree senders. Neither choice guarantees that high-degree nodes cease to matter.
 
-The formulas above assume nonzero degrees. A self-loop construction makes every normalising degree positive and gives isolated nodes a well-defined update.
+The formulas above assume nonzero degrees. A self-loop construction makes every normalizing degree positive and gives isolated nodes a well-defined update.
 
-## GCN and GraphSAGE organise the self term differently
+## GCN and GraphSAGE organize the self term differently
 
 ### GCN: self as another message
 
@@ -455,9 +455,9 @@ $$
 
 with coordinatewise max. Every neighbour receives the same detector, so reordering still preserves the result. A channel can record whether any neighbour strongly activates a learned pattern.
 
-An LSTM aggregator processes a sequence, so swapping neighbours can change its recurrent state and output. Random neighbour permutations are used to discourage dependence on an arbitrary ordering. **Randomisation does not make each forward pass permutation-invariant.**
+An LSTM aggregator processes a sequence, so swapping neighbours can change its recurrent state and output. Random neighbour permutations are used to discourage dependence on an arbitrary ordering. **Randomization does not make each forward pass permutation-invariant.**
 
-A genuinely invariant symmetrisation would average over every ordering:
+A genuinely invariant symmetrization would average over every ordering:
 
 $$
 f_{\mathrm{sym}}(x_1,\ldots,x_m)
@@ -534,7 +534,7 @@ $$
 
 The states become $$(1/2,3/2)$$, then $$(3/4,5/4)$$, and approach the same value. This is an explicit oversmoothing mechanism: repeated mixing preserves shared content while contracting differences.
 
-This calculation proves a property of this averaging operator, not every nonlinear GNN. On irregular graphs, symmetric normalisation need not converge to literally equal raw descriptors. Small depths such as two or three layers are a practical starting point because they limit neighbourhood expansion and repeated mixing, not a universal optimal depth or a guarantee against oversmoothing.
+This calculation proves a property of this averaging operator, not every nonlinear GNN. On irregular graphs, symmetric normalization need not converge to literally equal raw descriptors. Small depths such as two or three layers are a practical starting point because they limit neighbourhood expansion and repeated mixing, not a universal optimal depth or a guarantee against oversmoothing.
 
 ## Why the shared encoder is inductive
 
@@ -570,13 +570,13 @@ W_{\mathrm{neigh}}
 \begin{pmatrix}3\\3\end{pmatrix}.
 $$
 
-No new weights were fitted. For later layers, recompute affected neighbour states because adding the edge changes their neighbourhoods and possibly their degree normalisation.
+No new weights were fitted. For later layers, recompute affected neighbour states because adding the edge changes their neighbourhoods and possibly their degree normalization.
 
 This requires features with the same meaning and width at training and inference. If the initial state is itself a learned node-ID lookup, or an identity vector whose width grows with the graph, the missing-row problem has merely moved to the input.
 
 Nor can the encoder manufacture distinguishing information. With identical initial features and mean aggregation, every non-isolated node receives the same mean; by induction their states remain identical unless additional information breaks the symmetry.
 
-Finally, parameter independence does not mean memory independence. Materialising one descriptor with $$d$$ coordinates for every node still requires $$O(|V|d)$$ values, plus graph storage. Inductive means the computation is defined for new nodes, not that it is guaranteed to generalise well to a different data distribution.
+Finally, parameter independence does not mean memory independence. Materializing one descriptor with $$d$$ coordinates for every node still requires $$O(|V|d)$$ values, plus graph storage. Inductive means the computation is defined for new nodes, not that it is guaranteed to generalize well to a different data distribution.
 
 ## Minibatching when the whole graph does not fit
 
@@ -641,7 +641,7 @@ $$
 
 To estimate a full sum, multiply a uniform sample mean by the full degree. To estimate a symmetrically weighted sum, sample the weighted messages and apply that same expansion factor. Recomputing degrees solely on the sampled subgraph generally changes the intended operator.
 
-The realised receptive field now follows sampled paths through part of the full neighbourhood. Some nodes within the nominal hop radius contribute nothing on that pass. Sampling therefore changes both numerical precision and which information is available. A permutation test must use corresponding sampled neighbourhoods, or compare output distributions; independent random draws can differ despite an invariant aggregation rule.
+The realized receptive field now follows sampled paths through part of the full neighbourhood. Some nodes within the nominal hop radius contribute nothing on that pass. Sampling therefore changes both numerical precision and which information is available. A permutation test must use corresponding sampled neighbourhoods, or compare output distributions; independent random draws can differ despite an invariant aggregation rule.
 
 ## Recommendation and biomedical link prediction
 
@@ -655,7 +655,7 @@ $$
 s^+\ge s^-+\gamma.
 $$
 
-Moving terms to one side gives violation $$\gamma-s^++s^-$$. Penalising only positive violations produces the margin objective
+Moving terms to one side gives violation $$\gamma-s^++s^-$$. Penalizing only positive violations produces the margin objective
 
 $$
 \mathcal L_{\mathrm{rank}}
@@ -696,7 +696,7 @@ Their norms are one since, for example, $$16/25+9/25=1$$. Use dot-product scores
 
 The harder negative is already below the positive but is too close to satisfy the margin. Mining high-scoring eligible negatives targets such active constraints.
 
-Random negatives are not inherently useless. They stop contributing to this hinge loss once their constraints are satisfied. If random sampling mostly finds those negatives, mining becomes useful. Normalising descriptors or otherwise constraining their scale also prevents satisfying an already-correct ranking merely by inflating vector norms.
+Random negatives are not inherently useless. They stop contributing to this hinge loss once their constraints are satisfied. If random sampling mostly finds those negatives, mining becomes useful. Normalizing descriptors or otherwise constraining their scale also prevents satisfying an already-correct ranking merely by inflating vector norms.
 
 A biomedical graph can similarly use two drug descriptors to score a proposed interaction edge. Different relation types may require different message transforms or decoders. An absent recorded edge is not automatically a confirmed negative, especially when mining plausible candidates.
 
@@ -712,7 +712,7 @@ For link evaluation, held-out target edges must not be supplied as message-passi
 | Layer construction | Derive the separate self and neighbour transforms, with consistent dimensions. |
 | Aggregator choice | Calculate sum, mean and max, and exhibit information each can discard. |
 | Numerical propagation | Recover the path example's first-layer states and $$h_a^{(2)}=(6,1)^{\mathsf T}$$. |
-| Normalisation | Derive mean and symmetric weights and reproduce the star calculation. |
+| Normalization | Derive mean and symmetric weights and reproduce the star calculation. |
 | Architecture | Explain self-loop GCN, separate-slot GraphSAGE, pooling, and the LSTM ordering exception. |
 | Receptive field | Prove the hop-radius recursion and distinguish potential reach from actual influence. |
 | Oversmoothing | Derive the contraction of the two-node difference under repeated averaging. |
@@ -723,7 +723,7 @@ For link evaluation, held-out target edges must not be supplied as message-passi
 
 ## Why it matters for my work
 
-For a patient or biomedical graph, constructing an edge decides which observations may influence each other. I need to inspect that decision alongside feature availability, degree normalisation and the evaluation split. A compact shared encoder can still propagate an inappropriate relationship efficiently.
+For a patient or biomedical graph, constructing an edge decides which observations may influence each other. I need to inspect that decision alongside feature availability, degree normalization and the evaluation split. A compact shared encoder can still propagate an inappropriate relationship efficiently.
 
 ## What I have not resolved
 

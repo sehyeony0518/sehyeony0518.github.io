@@ -1,11 +1,11 @@
 ---
 layout: study_note
 title: "The Proxy Objective: Training on One Thing, Being Judged on Another"
-description: "Cross-entropy is not what anyone wants. The metric that matters is usually non-differentiable, unaffordable, or lives in a person's head, so we optimise a stand-in and hope. The gap is structural, not sloppiness."
+description: "Cross-entropy is not what anyone wants. The metric that matters is usually non-differentiable, unaffordable, or lives in a person's head, so we optimize a stand-in and hope. The gap is structural, not sloppiness."
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Task Definition & Ground Truth"
 order: 2
 source: "Independent study"
@@ -17,7 +17,7 @@ papers:
   - "2026-02-09-underspecification-credibility-ml"
 ---
 
-In the ideal case the quantity you optimise and the quantity you are judged by are the same function, and everyone is happy. Linear regression evaluated by mean squared error is that case. Almost nothing else is.
+In the ideal case the quantity you optimize and the quantity you are judged by are the same function, and everyone is happy. Linear regression evaluated by mean squared error is that case. Almost nothing else is.
 
 ## Core question and definition
 
@@ -26,11 +26,11 @@ Four reasons the evaluation metric usually cannot be the training loss:
 1. **It is not differentiable.** Precision, recall, AP, IoU above a threshold, word error rate: all involve counting, thresholding, or ranking. Gradient descent has nothing to work with.
 2. **It is unaffordable.** Some metrics require running a procedure per example. An occlusion-based faithfulness measure deletes regions one at a time and re-runs the model; embedding that in a training loop multiplies cost by the number of regions.
 3. **It requires a person.** Speech naturalness, image quality, whether a generated report reads correctly: these are measured by mean opinion score, a panel of humans, and nobody has found a way around it for the cases that matter.
-4. **There are many right answers.** In translation or report generation, one reference is one valid output among many, and penalising distance from it penalises correct alternatives.
+4. **There are many right answers.** In translation or report generation, one reference is one valid output among many, and penalizing distance from it penalizes correct alternatives.
 
-So the loss is a **proxy**: a stand-in chosen because it is differentiable, cheap, and correlated with what is wanted. Training then optimises the proxy and reports the metric, and the entire enterprise rests on a correlation nobody measures.
+So the loss is a **proxy**: a stand-in chosen because it is differentiable, cheap, and correlated with what is wanted. Training then optimizes the proxy and reports the metric, and the entire enterprise rests on a correlation nobody measures.
 
-The clearest instance: a defect detector is judged on precision and recall, and trained on cross-entropy. Cross-entropy is minimised very effectively by predicting "normal" everywhere when 99% of cases are normal. **The proxy's optimum and the metric's optimum are in different places, and the optimiser goes where the proxy points.** Class weighting is the standard patch, but weighting is an attempt, and whether it worked is answered by the metric afterward, not by the loss.
+The clearest instance: a defect detector is judged on precision and recall, and trained on cross-entropy. Cross-entropy is minimized very effectively by predicting "normal" everywhere when 99% of cases are normal. **The proxy's optimum and the metric's optimum are in different places, and the optimizer goes where the proxy points.** Class weighting is the standard patch, but weighting is an attempt, and whether it worked is answered by the metric afterward, not by the loss.
 
 ## Key concepts
 
@@ -67,9 +67,9 @@ Three real detectors at the same 1% prevalence make the trade-offs concrete:
 
 The detector with the **best accuracy finds 40% of the sick.** The high-recall detector finds 95% and is wrong about nine of every ten it flags, which is correct behaviour for a triage filter feeding human review and wrong for an autonomous decision.
 
-F1's harmonic mean is a guard against exactly the cheap win. With precision 1.0 and recall 0.01, the arithmetic mean is 0.505 and F1 is **0.0198**. The arithmetic mean rewards maximising one at the other's expense; the harmonic mean refuses to.
+F1's harmonic mean is a guard against exactly the cheap win. With precision 1.0 and recall 0.01, the arithmetic mean is 0.505 and F1 is **0.0198**. The arithmetic mean rewards maximizing one at the other's expense; the harmonic mean refuses to.
 
-And note the two vocabularies for the same numbers. Information retrieval says precision and recall; medicine says sensitivity and specificity. Recall and sensitivity are identical, but precision is not specificity, and quoting either one alone is a signal that something is being hidden. They come in pairs because one of each pair is trivially maximised alone.
+And note the two vocabularies for the same numbers. Information retrieval says precision and recall; medicine says sensitivity and specificity. Recall and sensitivity are identical, but precision is not specificity, and quoting either one alone is a signal that something is being hidden. They come in pairs because one of each pair is trivially maximized alone.
 
 ### The curve, the summary, and what AP actually is
 
@@ -77,7 +77,7 @@ Every threshold produces a different confusion matrix, so a classifier is a *fam
 
 Once that is clear, **mAP stops being detection jargon**: AP is the area under the precision-recall curve, averaged over pre-set recall levels, and the "m" averages across object classes. It stands to the PR curve exactly as AUROC stands to the ROC curve.[^davis] Under heavy class imbalance the PR curve is the more informative of the two, because specificity's denominator is dominated by the abundant negatives and large changes in false-positive count barely move it.[^saito]
 
-Summarising a curve is useful for ranking systems and useless for deploying one. **No system runs on a curve**: deployment picks a point, and the point is chosen from the cost of each error, not from the plot.
+Summarizing a curve is useful for ranking systems and useless for deploying one. **No system runs on a curve**: deployment picks a point, and the point is chosen from the cost of each error, not from the plot.
 
 ### What "better than doctors" did and did not show
 
@@ -91,7 +91,7 @@ The clinicians' own use case points the same way: the value is in screening volu
 
 This is the frame for most of what I do. If a model's reliance on valid evidence is the thing worth measuring, it is a textbook proxy problem: **every faithfulness measure I would want is non-differentiable, expensive, or requires an expert**, hitting three of the four reasons at once. Occlusion-based measures re-run the model per region; expert agreement needs experts; anything defined on a thresholded attribution map has no gradient.
 
-So the honest description of the work is not "optimise faithfulness." It is: choose a proxy, then measure the gap between the proxy and the thing, and treat that gap as a quantity to report rather than an embarrassment to omit. A [shortcut](/study/shortcut-learning-in-medical-imaging/) is exactly a solution that scores well on the proxy and badly on the thing, which means shortcut learning is not a separate pathology. It is what proxy optimisation does when the correlation between proxy and target breaks, and the correlation is most likely to break off the training distribution, which is where deployment is.
+So the honest description of the work is not "optimize faithfulness." It is: choose a proxy, then measure the gap between the proxy and the thing, and treat that gap as a quantity to report rather than an embarrassment to omit. A [shortcut](/study/shortcut-learning-in-medical-imaging/) is exactly a solution that scores well on the proxy and badly on the thing, which means shortcut learning is not a separate pathology. It is what proxy optimization does when the correlation between proxy and target breaks, and the correlation is most likely to break off the training distribution, which is where deployment is.
 
 The second thing I take from this is about who sets thresholds. A developer who picks the operating point has made a clinical decision without clinical authority, and the [decision-curve framing](/study/evaluation-beyond-auroc/) is the tool for handing it back: state the cost ratio at which each choice becomes preferable, and let the people who bear the costs choose. Reporting AUROC alone is not neutrality. It is declining to state the question.
 

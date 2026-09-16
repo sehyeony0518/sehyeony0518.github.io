@@ -5,7 +5,7 @@ description: "Reading the cases a model gets wrong as evidence about what it lea
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Failure Analysis & Clinical Translation"
 order: 13
 source: "Independent study"

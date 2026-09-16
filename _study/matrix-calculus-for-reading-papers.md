@@ -4,8 +4,8 @@ title: "Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gau
 description: "Matrix differentiation through determinants, cofactors, log determinants and inverses, followed by a complete derivation of Gaussian mean and covariance maximum-likelihood estimators."
 tab: "ai-foundations"
 tab_title: "AI Theory"
-category: "algebra-and-optimisation"
-category_title: "Linear Algebra & Optimisation"
+category: "algebra-and-optimization"
+category_title: "Linear Algebra & Optimization"
 subgroup: "Linear Algebra & Geometry"
 order: 2
 source: "Independent study"
@@ -67,9 +67,9 @@ $$
 df=(\nabla_x f)^{\mathsf T}dx.
 $$
 
-A gradient descent update subtracts this gradient. A plus sign represents ascent under this convention; changing a transpose convention does not reverse the direction of optimisation.
+A gradient descent update subtracts this gradient. A plus sign represents ascent under this convention; changing a transpose convention does not reverse the direction of optimization.
 
-The differential is a linear map applied to a perturbation. The gradient represents that map under the chosen inner product. Keeping those ideas separate helps when a paper uses a different matrix layout or a non-Euclidean parameterisation.
+The differential is a linear map applied to a perturbation. The gradient represents that map under the chosen inner product. Keeping those ideas separate helps when a paper uses a different matrix layout or a non-Euclidean parameterization.
 
 ## Trace identities are bookkeeping, not commutativity
 
@@ -631,7 +631,7 @@ p(x\mid\mu,\Sigma)
 \right].
 $$
 
-The inverse measures distance after accounting for covariance. The determinant accounts for the volume expansion of the transformation. Both terms are necessary: reducing covariance raises the density normalisation but also increases penalties for deviations.
+The inverse measures distance after accounting for covariance. The determinant accounts for the volume expansion of the transformation. Both terms are necessary: reducing covariance raises the density normalization but also increases penalties for deviations.
 
 For independent observations, the joint density is a product. Taking logarithms and dropping the constant independent of the parameters gives
 
@@ -716,7 +716,7 @@ $$
 \widehat\Sigma=\frac SN.
 $$
 
-Obtaining a stationary formula is not the end. We must check that it is positive definite and that it maximises the likelihood.
+Obtaining a stationary formula is not the end. We must check that it is positive definite and that it maximizes the likelihood.
 
 ## Proving maximality and identifying when the MLE does not exist
 
@@ -783,7 +783,7 @@ $$
 \qquad\text{as }\varepsilon\downarrow 0.
 $$
 
-There is then no finite maximiser over positive-definite covariance matrices. The singular sample covariance is not an admissible interior MLE for that model.
+There is then no finite maximizer over positive-definite covariance matrices. The singular sample covariance is not an admissible interior MLE for that model.
 
 Adding a ridge, using a prior, or imposing covariance structure creates a different estimation problem. Such changes can be sensible, but they should be named.
 
@@ -868,9 +868,9 @@ $$
 \frac{N-1}{N}\Sigma.
 $$
 
-Dividing scatter by one less than the sample count removes this expectation bias. It does not maximise the same likelihood. Maximum likelihood and unbiasedness are different criteria.
+Dividing scatter by one less than the sample count removes this expectation bias. It does not maximize the same likelihood. Maximum likelihood and unbiasedness are different criteria.
 
-## Differentiating a solve instead of materialising a Jacobian
+## Differentiating a solve instead of materializing a Jacobian
 
 Suppose a vector is defined implicitly by
 
@@ -944,14 +944,14 @@ Choose perturbations that respect the domain. For a covariance, use symmetric di
 | Handle symmetric parameters | Distinguish matrix gradients from distinct-entry coordinates |
 | Derive Gaussian MLEs | Include the Jacobian, mean, and covariance steps |
 | Prove the covariance candidate is maximal | Use concavity in the precision matrix |
-| Recognise a nonexistent positive-definite MLE | Check the scatter rank |
+| Recognize a nonexistent positive-definite MLE | Check the scatter rank |
 | Explain the covariance denominator | Derive the expected scatter |
 | Differentiate through a solve | Use an adjoint linear system |
 
 ## Why it matters for my work
 
-These identities let me inspect Gaussian objectives, covariance regularisation, and differentiable linear algebra without treating them as black boxes. The most useful checks are often domain checks: whether an inverse exists and whether a claimed covariance estimate is admissible.
+These identities let me inspect Gaussian objectives, covariance regularization, and differentiable linear algebra without treating them as black boxes. The most useful checks are often domain checks: whether an inverse exists and whether a claimed covariance estimate is admissible.
 
 ## What I have not resolved
 
-I need to compare covariance restrictions and regularisation choices for the representation dimensions and sample sizes in my experiments. The unconstrained MLE derivation identifies the failure mode but does not choose its replacement.
+I need to compare covariance restrictions and regularization choices for the representation dimensions and sample sizes in my experiments. The unconstrained MLE derivation identifies the failure mode but does not choose its replacement.

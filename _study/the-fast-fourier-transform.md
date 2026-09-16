@@ -13,7 +13,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-The fast Fourier transform is an algorithm for computing the discrete Fourier transform. It changes how the calculation is organised, while preserving the mathematical transform.
+The fast Fourier transform is an algorithm for computing the discrete Fourier transform. It changes how the calculation is organized, while preserving the mathematical transform.
 
 The number in this note's title needs a qualification: approximately two hundred is a ratio of multiplication counts for a particular transform length and counting convention. It is not a measured runtime speedup. Actual runtime also depends on memory access, implementation, arithmetic, and hardware.
 
@@ -461,7 +461,7 @@ Under this deliberately simple multiplication convention:
 | $$64$$ | $$4096$$ | $$192$$ | $$64/3\approx21.33$$ |
 | $$1024$$ | $$1{,}048{,}576$$ | $$5120$$ | $$204.8$$ |
 
-An optimised implementation skips multiplication by one and handles factors such as $$-j$$ through sign changes and component exchanges. Its count of general complex multiplications is smaller. The table is therefore meaningful only together with its counting convention.
+An optimized implementation skips multiplication by one and handles factors such as $$-j$$ through sign changes and component exchanges. Its count of general complex multiplications is smaller. The table is therefore meaningful only together with its counting convention.
 
 Nor does the table predict elapsed time. It leaves out data movement, allocation, instruction scheduling, and computation or loading of twiddles. The derivation establishes the growth rate and a transparent arithmetic comparison.
 
@@ -499,7 +499,7 @@ This distinction matters when debugging: bit-reversed output can look numericall
 
 ## The inverse transform and checks that expose mistakes
 
-The inverse DFT uses the opposite exponential sign and a normalising factor:
+The inverse DFT uses the opposite exponential sign and a normalizing factor:
 
 $$
 x[n]
@@ -534,7 +534,7 @@ $$
 \frac{1-q^N}{1-q}=0.
 $$
 
-Only the desired sample survives. This also explains why forgetting the inverse normalisation multiplies the recovered signal by the transform length.
+Only the desired sample survives. This also explains why forgetting the inverse normalization multiplies the recovered signal by the transform length.
 
 The same orthogonality gives the energy identity
 
@@ -665,7 +665,7 @@ A single very large transform is not inherently invalid. Block processing is use
 
 ## Why it matters for my work
 
-FFT-based filtering and spectral features are only as reliable as their indexing, normalisation, and boundary assumptions. I want to be able to reconstruct the butterfly and explain the padding rule before treating a library call as an understood operation.
+FFT-based filtering and spectral features are only as reliable as their indexing, normalization, and boundary assumptions. I want to be able to reconstruct the butterfly and explain the padding rule before treating a library call as an understood operation.
 
 ## What I have not resolved
 

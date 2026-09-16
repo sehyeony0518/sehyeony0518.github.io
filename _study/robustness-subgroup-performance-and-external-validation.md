@@ -5,8 +5,8 @@ description: "Robustness to acquisition variability, subgroup analysis, and mult
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
-subgroup: "Calibration & Generalisation"
+category_title: "Evaluation, Generalization & Reliability"
+subgroup: "Calibration & Generalization"
 order: 12
 source: "Independent study"
 written: true

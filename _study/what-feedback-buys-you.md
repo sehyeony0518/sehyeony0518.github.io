@@ -353,7 +353,7 @@ S_G^F
 \frac{G}{F}\frac{dF}{dG}.
 $$
 
-Here the controller and the evaluation point $$s$$ are fixed. The normalised expression requires nonzero nominal $$G$$ and $$F$$.
+Here the controller and the evaluation point $$s$$ are fixed. The normalized expression requires nonzero nominal $$G$$ and $$F$$.
 
 #### Open-loop structure
 
@@ -548,7 +548,7 @@ $$
 
 exactly, including for finite changes. A 10% plant change gives a 10% open-loop transfer change under this fixed-controller comparison.
 
-The original statement that loop gain $$100$$ turns a $$10\%$$ plant error into approximately $$0.1\%$$ is a rounded, first-order estimate. Its linearised fractional change is
+The original statement that loop gain $$100$$ turns a $$10\%$$ plant error into approximately $$0.1\%$$ is a rounded, first-order estimate. Its linearized fractional change is
 
 $$
 \mathcal{S}\delta
@@ -828,13 +828,13 @@ R_k(s)=\frac1{s^{k+1}}
 }.
 $$
 
-The factorial normalisation removes an unnecessary coefficient:
+The factorial normalization removes an unnecessary coefficient:
 
 | Reference | Time function | Transform |
 |---|---|---|
 | Unit step | $$1$$ | $$1/s$$ |
 | Unit ramp | $$t$$ | $$1/s^2$$ |
-| Normalised parabola | $$t^2/2$$ | $$1/s^3$$ |
+| Normalized parabola | $$t^2/2$$ | $$1/s^3$$ |
 
 ### Deriving the error constants
 

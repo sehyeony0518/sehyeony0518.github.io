@@ -71,7 +71,7 @@ The lecture’s characteristic sequence is an aura, impaired awareness with moti
 
 Objective features include staring and arrest, lip smacking, chewing, tooth grinding, fumbling, and picking. Vocalization, spitting, and piloerection are also illustrated. The sequence can stop before bilateral convulsion; the early subjective component remains diagnostically relevant.
 
-The lecture gives specific lateralising clues. Forced head and eye version and unilateral tonic or dystonic posturing point contralaterally; unilateral automatisms point ipsilaterally. Ictal aphasia or speech arrest suggests the language-dominant hemisphere, usually the left. Preserved ictal speech, or automatisms with preserved awareness, suggests the nondominant hemisphere. Ipsilateral unilateral blinking is discussed with a caution: it more often implicates occipital or temporoparieto-occipital regions than mesial temporal onset. I would interpret these clues together with their timing and EEG.
+The lecture gives specific lateralizing clues. Forced head and eye version and unilateral tonic or dystonic posturing point contralaterally; unilateral automatisms point ipsilaterally. Ictal aphasia or speech arrest suggests the language-dominant hemisphere, usually the left. Preserved ictal speech, or automatisms with preserved awareness, suggests the nondominant hemisphere. Ipsilateral unilateral blinking is discussed with a caution: it more often implicates occipital or temporoparieto-occipital regions than mesial temporal onset. I would interpret these clues together with their timing and EEG.
 
 ### Combine EEG and imaging
 
@@ -101,7 +101,7 @@ I read the 2014 single-seizure criterion as embedding a risk model within the di
 
 I would also preserve the classification version and original wording. Labels assigned before and after 2017 are not automatically equivalent. Mapping “complex partial” into a newer ontology requires supporting information, and missing onset evidence should remain visible.
 
-For video semiology, I would audit whether lateralisation predictions follow head version, dystonia, and automatisms or instead exploit camera position, bed orientation, electrode equipment, and site conventions. Patient and site separation, expert-timed signs, and comparisons that alter background while preserving the sign would make this a specific extension of my shortcut-learning research.
+For video semiology, I would audit whether lateralization predictions follow head version, dystonia, and automatisms or instead exploit camera position, bed orientation, electrode equipment, and site conventions. Patient and site separation, expert-timed signs, and comparisons that alter background while preserving the sign would make this a specific extension of my shortcut-learning research.
 
 ## References
 

@@ -5,7 +5,7 @@ description: "The difference between a model that measures something real and a 
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Failure Analysis & Clinical Translation"
 order: 14
 source: "Independent study"

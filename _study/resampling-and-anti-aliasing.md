@@ -212,7 +212,7 @@ T_s\int_{-F_s/2}^{F_s/2}e^{j2\pi ft}\,df\\
 \end{aligned}
 $$
 
-where the normalised sinc is defined by
+where the normalized sinc is defined by
 
 $$
 \operatorname{sinc}(u)=\frac{\sin(\pi u)}{\pi u},
@@ -494,7 +494,7 @@ U(\Omega)
 \end{aligned}
 $$
 
-The original spectrum is compressed along the new normalised frequency axis. Since the original DTFT is periodic, repeated images appear inside the new frequency interval.
+The original spectrum is compressed along the new normalized frequency axis. Since the original DTFT is periodic, repeated images appear inside the new frequency interval.
 
 The central image occupies
 
@@ -579,7 +579,7 @@ $$
 }.
 $$
 
-Both cutoffs are expressed in radians per intermediate sample. Comparing cutoffs normalised to different sampling rates would be meaningless.
+Both cutoffs are expressed in radians per intermediate sample. Comparing cutoffs normalized to different sampling rates would be meaningless.
 
 In physical frequency,
 
@@ -615,7 +615,7 @@ If one instead first decimated the input to $$6\,\mathrm{kHz}$$, anti-aliasing a
 
 This explains the standard conceptual ordering. Special rearrangements can be valid when bandwidth restrictions are already satisfied or when multirate identities are applied carefully; the example does not establish a universal prohibition on every reordered implementation.
 
-Efficient software need not materialise the inserted zeros. Combining filtering and output selection gives
+Efficient software need not materialize the inserted zeros. Combining filtering and output selection gives
 
 $$
 y[m]

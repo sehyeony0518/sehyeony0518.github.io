@@ -4,18 +4,18 @@ title: "The Exponential Moving Average: One Recursion Behind Momentum, RMSProp a
 description: "Deriving the exponential moving average behind momentum, RMSProp and Adam, including bias correction, memory timescales, effective sample size and numerical updates."
 tab: "ai-foundations"
 tab_title: "AI Theory"
-category: "algebra-and-optimisation"
-category_title: "Linear Algebra & Optimisation"
-subgroup: "Losses & Gradient Optimisation"
+category: "algebra-and-optimization"
+category_title: "Linear Algebra & Optimization"
+subgroup: "Losses & Gradient Optimization"
 order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-15"
 ---
 
-An exponential moving average stores a weighted history in a single state variable. In optimisation, averaging gradients changes the update direction; averaging squared gradients changes the coordinatewise scale.
+An exponential moving average stores a weighted history in a single state variable. In optimization, averaging gradients changes the update direction; averaging squared gradients changes the coordinatewise scale.
 
-The recursion is simple, but several interpretations commonly attached to it are not equivalent. A decay timescale is not a literal window length. A squared-gradient average is not a variance. Bias correction normalises startup weights; it does not make a changing gradient distribution stationary.
+The recursion is simple, but several interpretations commonly attached to it are not equivalent. A decay timescale is not a literal window length. A squared-gradient average is not a variance. Bias correction normalizes startup weights; it does not make a changing gradient distribution stationary.
 
 ## Unrolling the finite recursion
 
@@ -49,7 +49,7 @@ m_t
 (1-\beta)\sum_{j=1}^t\beta^{t-j}x_j.
 $$
 
-The contribution from the initial state is part of the result. With zero initialisation, the data weights sum to
+The contribution from the initial state is part of the result. With zero initialization, the data weights sum to
 
 $$
 (1-\beta)\sum_{k=0}^{t-1}\beta^k
@@ -65,11 +65,11 @@ $$
 m_t=(1-\beta)\sum_{k=0}^{\infty}\beta^k x_{t-k},
 $$
 
-describes an indefinitely running filter under suitable boundedness or convergence conditions. It cannot simply replace the finite expression when analysing the first few optimiser steps.
+describes an indefinitely running filter under suitable boundedness or convergence conditions. It cannot simply replace the finite expression when analyzing the first few optimizer steps.
 
 For vector inputs, the same recursion applies to every coordinate. One state value is required per coordinate rather than one scalar for the whole model. Adam maintains two such state arrays.
 
-## Bias correction is finite-weight normalisation
+## Bias correction is finite-weight normalization
 
 Suppose the input has the same expectation at every time:
 
@@ -77,7 +77,7 @@ $$
 \mathbb E[x_t]=\mu,
 $$
 
-and initialise the state at zero. Taking expectations gives
+and initialize the state at zero. Taking expectations gives
 
 $$
 \mathbb E[m_t]
@@ -111,7 +111,7 @@ m_t=c(1-\beta^t)
 \widehat m_t=c.
 $$
 
-For non-zero initialisation, the data-only normalisation would instead be
+For non-zero initialization, the data-only normalization would instead be
 
 $$
 \widehat m_t
@@ -168,7 +168,7 @@ The corrected values are:
 | $$2$$ | $$4$$ | $$5/2$$ | $$3/4$$ | $$10/3$$ |
 | $$3$$ | $$-2$$ | $$1/4$$ | $$7/8$$ | $$2/7$$ |
 
-At the third step, the normalised weights on the observations are
+At the third step, the normalized weights on the observations are
 
 $$
 \left(\frac17,\frac27,\frac47\right).
@@ -267,7 +267,7 @@ $$
 h_e=-\frac1{\log\beta}.
 $$
 
-The mean age of the normalised infinite-history weights is
+The mean age of the normalized infinite-history weights is
 
 $$
 \begin{aligned}
@@ -301,7 +301,7 @@ $$
 \sigma^2.
 $$
 
-For a normalised weighted average,
+For a normalized weighted average,
 
 $$
 \operatorname{Var}\left(\sum_k w_kx_k\right)
@@ -429,7 +429,7 @@ The lag in value is the trend slope times the mean age of the weights.
 
 This is why increasing the decay is not an unqualified improvement. It reduces variance under stable conditions while increasing lag when the underlying signal moves. A useful decay depends on the timescale of changes as well as the amount of noise.
 
-## Momentum and its competing normalisation conventions
+## Momentum and its competing normalization conventions
 
 One momentum convention averages gradients:
 
@@ -441,7 +441,7 @@ $$
 \theta_t=\theta_{t-1}-\eta_{\mathrm{EMA}}m_t.
 $$
 
-Another accumulates them without the new-gradient normalisation:
+Another accumulates them without the new-gradient normalization:
 
 $$
 v_t=\beta v_{t-1}+g_t,
@@ -451,7 +451,7 @@ $$
 \theta_t=\theta_{t-1}-\eta_{\mathrm{sum}}v_t.
 $$
 
-With compatible zero initialisation,
+With compatible zero initialization,
 
 $$
 m_t=(1-\beta)v_t.
@@ -493,7 +493,7 @@ $$
 
 The constant component passes unchanged, while the alternating component is attenuated. This is the algebra behind the familiar explanation that momentum smooths oscillation.
 
-It is not, by itself, a convergence proof. In optimisation the gradients depend on the parameter trajectory, so the input sequence changes when the optimiser changes.
+It is not, by itself, a convergence proof. In optimization the gradients depend on the parameter trajectory, so the input sequence changes when the optimizer changes.
 
 A common Nesterov-style velocity formulation evaluates the gradient after a momentum look-ahead:
 
@@ -511,7 +511,7 @@ $$
 \theta_t=\theta_{t-1}-\eta v_t.
 $$
 
-The look-ahead location and learning-rate convention must be read together. Simply inserting a look-ahead expression from an unnormalised velocity into a normalised EMA implementation changes its scale.
+The look-ahead location and learning-rate convention must be read together. Simply inserting a look-ahead expression from an unnormalized velocity into a normalized EMA implementation changes its scale.
 
 ## A quadratic exposes momentum's stability limits
 
@@ -522,7 +522,7 @@ f(\theta)=\frac12a\theta^2,
 \qquad a>0,
 $$
 
-with the normalised momentum convention. The gradient is
+with the normalized momentum convention. The gradient is
 
 $$
 g_t=a\theta_{t-1}.
@@ -600,7 +600,7 @@ $$
 s_t=s_{t-1}+g_t^2.
 $$
 
-A corresponding update divides the gradient by a square root of this accumulator, usually with a stabilising constant.
+A corresponding update divides the gradient by a square root of this accumulator, usually with a stabilizing constant.
 
 For a constant non-zero gradient, the accumulator grows linearly with time, so the effective scale decreases like
 
@@ -638,7 +638,7 @@ $$
 
 This follows by expanding the definition of variance. A large accumulator can therefore reflect a persistent non-zero gradient, fluctuating gradients, or both. It is not a direct curvature estimate either.
 
-Placing the stabiliser inside the square root,
+Placing the stabilizer inside the square root,
 
 $$
 \sqrt{s_t+\epsilon},
@@ -646,7 +646,7 @@ $$
 
 is a different convention from adding it outside. The constants have different units and different behaviour near zero. They should not be exchanged silently.
 
-## Adam combines direction, scale, and startup normalisation
+## Adam combines direction, scale, and startup normalization
 
 Adam maintains two recursions:
 
@@ -700,7 +700,7 @@ $$
 \frac{0.1}{\sqrt{0.001}}=\sqrt{10}.
 $$
 
-With both corrections and a zero stabiliser for this algebraic calculation, the ratio is exactly the gradient's sign.
+With both corrections and a zero stabilizer for this algebraic calculation, the ratio is exactly the gradient's sign.
 
 A two-step example shows the interaction after a sign change. Choose
 
@@ -714,7 +714,7 @@ $$
 \theta_0=0.
 $$
 
-Use a zero stabiliser only because both denominators in this constructed example are strictly positive.
+Use a zero stabilizer only because both denominators in this constructed example are strictly positive.
 
 | Step | $$m_t$$ | $$s_t$$ | $$\widehat m_t$$ | $$\widehat s_t$$ | Update ratio |
 |---|---|---|---|---|---|
@@ -748,7 +748,7 @@ $$
 {\sqrt{\mathbb E[\widehat s_t]}}
 $$
 
-in general. Normalising an update is a non-linear operation.
+in general. Normalizing an update is a non-linear operation.
 
 ## The same recurrence as a filter and a parameter average
 
@@ -781,7 +781,7 @@ $$
 
 matching the direct alternating-sequence calculation.
 
-The same recursion can average model parameters or target-network parameters. That shares the weighting mathematics, not necessarily the optimiser interpretation. In a non-linear model,
+The same recursion can average model parameters or target-network parameters. That shares the weighting mathematics, not necessarily the optimizer interpretation. In a non-linear model,
 
 $$
 f_{\mathbb E[\theta]}(x)
@@ -791,7 +791,7 @@ $$
 
 in general, so averaging parameters is not identical to averaging predictions.
 
-Finally, adaptive scaling makes coupled quadratic regularisation different from decoupled weight decay. With a fixed diagonal preconditioner for illustration, adding a regularisation gradient gives
+Finally, adaptive scaling makes coupled quadratic regularization different from decoupled weight decay. With a fixed diagonal preconditioner for illustration, adding a regularization gradient gives
 
 $$
 \theta_{\mathrm{new}}
@@ -807,7 +807,7 @@ $$
 (1-\eta\lambda)\theta-\eta Dg.
 $$
 
-The shrinkage differs by the preconditioner. In Adam, putting regularisation into the gradient also changes the histories used to compute that preconditioner.
+The shrinkage differs by the preconditioner. In Adam, putting regularization into the gradient also changes the histories used to compute that preconditioner.
 
 ## Revision checklist
 
@@ -816,14 +816,14 @@ The shrinkage differs by the preconditioner. In Adam, putting regularisation int
 | Unroll a finite EMA | Retain the initial-state term |
 | Derive bias correction | Sum the finite geometric weights |
 | Explain what correction does not fix | Separate startup bias from tracking lag |
-| Reproduce the three-step example | Obtain the normalised weights explicitly |
+| Reproduce the three-step example | Obtain the normalized weights explicitly |
 | Distinguish memory definitions | Compute half-life, mean age, and e-folding age |
 | Derive effective sample size | State the independent-input assumption |
 | Translate momentum conventions | Rescale the learning rate consistently |
 | Derive the quadratic recurrence | Check the roots for stability |
 | Interpret a squared-gradient average | Separate variance from raw second moment |
 | Carry out two Adam updates | Correct both moments before taking the ratio |
-| Identify implementation differences | Check stabiliser placement and weight decay |
+| Identify implementation differences | Check stabilizer placement and weight decay |
 
 ## Why it matters for my work
 

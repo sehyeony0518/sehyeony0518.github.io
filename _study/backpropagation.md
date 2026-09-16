@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Backpropagation, in Scalars and in Matrices"
-description: "How backpropagation organises the chain rule to compute derivatives for training, with scalar and matrix derivations for a dense layer and a convolution."
+description: "How backpropagation organizes the chain rule to compute derivatives for training, with scalar and matrix derivations for a dense layer and a convolution."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
@@ -15,7 +15,7 @@ updated: "2026-09-15"
 
 A loss measures an error at the output of a network. Backpropagation computes how that scalar error changes when each intermediate value, input, or parameter changes. Its central idea is to reuse derivatives of shared intermediate computations.
 
-One correction is necessary at the outset: **backpropagation computes gradients; an optimiser uses those gradients to update parameters.** Differentiation alone does not specify a learning rate, a training objective, or a stopping rule. Understanding that separation makes it easier to distinguish an incorrect derivative from an unsuccessful optimisation process.
+One correction is necessary at the outset: **backpropagation computes gradients; an optimizer uses those gradients to update parameters.** Differentiation alone does not specify a learning rate, a training objective, or a stopping rule. Understanding that separation makes it easier to distinguish an incorrect derivative from an unsuccessful optimization process.
 
 The examples below are constructed so that every result can be checked directly.
 
@@ -268,7 +268,7 @@ Thus a scalar gradient costs one reverse sweep with **the same order of work as 
 
 A dense layer illustrates the constant factor. Its forward pass requires a matrix multiplication. Computing both input and weight gradients requires two related matrix multiplications. Memory traffic and implementation details affect the actual runtime.
 
-For a vector-valued function, the distinction generalises:
+For a vector-valued function, the distinction generalizes:
 
 $$
 F:\mathbb R^P\longrightarrow\mathbb R^Q.
@@ -709,7 +709,7 @@ In general, very large steps introduce approximation error, while very small ste
 
 | Question | What I should be able to reconstruct |
 | --- | --- |
-| What does backpropagation compute? | Derivatives of a specified scalar objective; an optimiser supplies the update rule. |
+| What does backpropagation compute? | Derivatives of a specified scalar objective; an optimizer supplies the update rule. |
 | Why do branches require addition? | The loss differential contains one contribution from every outgoing path. |
 | Why seed the loss with one? | Its derivative with respect to itself is one. |
 | Why is reverse mode efficient here? | One scalar output seeds one reverse traversal that reaches all inputs. |

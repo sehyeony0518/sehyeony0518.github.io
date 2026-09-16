@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Clustering and Mixture Models: k-means, GMM, and the Log of a Sum"
-description: "Hard assignment by alternating minimisation, soft assignment by a density, and the structural reason the mixture likelihood cannot be solved by differentiating."
+description: "Hard assignment by alternating minimization, soft assignment by a density, and the structural reason the mixture likelihood cannot be solved by differentiating."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"
@@ -53,7 +53,7 @@ p(x_n\mid\theta)
 =\sum_k\pi_k\mathcal N(x_n\mid\mu_k,\Sigma_k).
 $$
 
-This is a normalised density because integrating each Gaussian gives one and the weights sum to one. To generate a new observation, sample a component index and then sample from its Gaussian.
+This is a normalized density because integrating each Gaussian gives one and the weights sum to one. To generate a new observation, sample a component index and then sample from its Gaussian.
 
 A component is a term in this construction. It is not automatically a biological subgroup, a separate peak, or a useful cluster. Two overlapping components can describe one broad peak. Permuting their indices changes neither the density nor the likelihood. Component numbers therefore have no intrinsic meaning.
 
@@ -97,11 +97,11 @@ $$
 \mu_k=\frac{\sum_n r_{nk}x_n}{N_k}.
 $$
 
-Its Hessian is $$2N_kI$$, which is positive definite when $$N_k>0$$, so this conditional minimiser is unique. If the cluster is empty, the objective does not depend on its centre. The fraction is undefined; an implementation needs an explicit empty-cluster policy.
+Its Hessian is $$2N_kI$$, which is positive definite when $$N_k>0$$, so this conditional minimizer is unique. If the cluster is empty, the objective does not depend on its centre. The fraction is undefined; an implementation needs an explicit empty-cluster policy.
 
 Alternating these updates cannot increase the objective: each solves one block of variables while holding the other fixed. Since squared distances are nonnegative, the objective values have a finite limit. That reasoning does not prove that the joint solution is globally optimal. The assignment choices make the full problem nonconvex, and different initial centres can lead to different final partitions.
 
-The metric is part of the model. Rescaling a feature changes its squared-distance contribution. If one coordinate is multiplied by ten, its contribution is multiplied by one hundred. Standardising features therefore changes the clustering question; it is not merely a computational convenience.
+The metric is part of the model. Rescaling a feature changes its squared-distance contribution. If one coordinate is multiplied by ten, its contribution is multiplied by one hundred. Standardizing features therefore changes the clustering question; it is not merely a computational convenience.
 
 ## A k-means iteration that can be checked by hand
 
@@ -143,7 +143,7 @@ J_{\mathrm{new}}
 =4\left(\frac12\right)^2=1.
 $$
 
-Reassigning with these centres leaves the same partition. This verifies a fixed point of the alternating procedure for this construction. It does not establish a general theorem that any initialisation finds the best partition.
+Reassigning with these centres leaves the same partition. This verifies a fixed point of the alternating procedure for this construction. It does not establish a general theorem that any initialization finds the best partition.
 
 Notice also that k-means has produced no covariance, mixing probability, or probability for a new observation. Those require additional modelling choices.
 
@@ -160,7 +160,7 @@ $$
 \right].
 $$
 
-The inverse covariance measures distance relative to spread. The determinant compensates for the volume occupied by the distribution. Broadening a component makes its density lower near its centre; the exponential term alone would miss this normalisation effect.
+The inverse covariance measures distance relative to spread. The determinant compensates for the volume occupied by the distribution. Broadening a component makes its density lower near its centre; the exponential term alone would miss this normalization effect.
 
 For independent observations, the log-likelihood is
 
@@ -308,7 +308,7 @@ $$
 
 This resembles an explicit weighted mean, but the weights contain the unknown means, covariances, and mixing proportions. The parameter being solved for still appears on the right-hand side. The equation is a self-consistency condition.
 
-In a single Gaussian, every observation has weight one and the coupling disappears. In a general mixture, the logarithm encloses a sum, so it cannot be distributed across components to remove that coupling. Numerical iteration is generally needed. EM is a particularly useful iterative scheme, but direct likelihood optimisation is also possible. The presence of a sum does not make EM the only legitimate algorithm.
+In a single Gaussian, every observation has weight one and the coupling disappears. In a general mixture, the logarithm encloses a sum, so it cannot be distributed across components to remove that coupling. Numerical iteration is generally needed. EM is a particularly useful iterative scheme, but direct likelihood optimization is also possible. The presence of a sum does not make EM the only legitimate algorithm.
 
 ## Responsibilities follow from Bayes' rule
 
@@ -346,7 +346,7 @@ $$
 \frac{(x_n-\mu_2)^2-(x_n-\mu_1)^2}{2\sigma^2}.
 $$
 
-This follows by dividing the two Bayes fractions: their denominators cancel, and the common Gaussian normalisers cancel. It separates the prior preference from the distance evidence.
+This follows by dividing the two Bayes fractions: their denominators cancel, and the common Gaussian normalizers cancel. It separates the prior preference from the distance evidence.
 
 For a constructed example, take equal weights, means zero and two, variance one, and observation one half. The squared distances are one quarter and nine quarters, so
 
@@ -356,7 +356,7 @@ $$
 \frac{9/4-1/4}{2}=1.
 $$
 
-Normalising the odds gives
+Normalizing the odds gives
 
 $$
 \gamma_1=\frac{e}{1+e}\approx0.731059,
@@ -412,7 +412,7 @@ $$
 N_k\mu_k-\sum_n\gamma_{nk}^{\mathrm{old}}x_n=0.
 $$
 
-For the weights, a Lagrange multiplier enforcing normalisation gives
+For the weights, a Lagrange multiplier enforcing normalization gives
 
 $$
 \frac{N_k}{\pi_k}-\lambda=0,
@@ -500,7 +500,7 @@ $$
 
 These numbers follow directly from the displayed exponential. No fitting experiment is involved.
 
-The objective has the same limit. Remove the Gaussian normalisation term, which is independent of the centres for fixed variance, and multiply the negative log-likelihood by $$2\varepsilon$$:
+The objective has the same limit. Remove the Gaussian normalization term, which is independent of the centres for fixed variance, and multiply the negative log-likelihood by $$2\varepsilon$$:
 
 $$
 F_\varepsilon(\mu)
@@ -543,11 +543,11 @@ F_\varepsilon(\mu)
 \sum_n\min_k\lVert x_n-\mu_k\rVert^2.
 $$
 
-This is exactly k-means after minimising over hard assignments. The rescaling matters: it is the reduced objective that approaches squared distortion, not the unmodified log-likelihood.
+This is exactly k-means after minimizing over hard assignments. The rescaling matters: it is the reduced objective that approaches squared distortion, not the unmodified log-likelihood.
 
 There are three qualifications. Tied nearest centres retain shared probability; the limit does not choose a unique label. Fixed positive unequal weights disappear from the leading distance term, but can resolve ties and matter at finite variance. A common shrinking anisotropic covariance produces distance weighted by its inverse shape matrix, not ordinary Euclidean k-means.
 
-Finally, this limiting relationship does not imply that running EM with a very small variance finds a global k-means solution. The optimisation still depends on initialisation.
+Finally, this limiting relationship does not imply that running EM with a very small variance finds a global k-means solution. The optimization still depends on initialization.
 
 ## Reading a fitted mixture critically
 
@@ -557,13 +557,13 @@ Likewise, a covariance measures spread within a fitted component; it does not qu
 
 Unconstrained Gaussian-mixture likelihoods also have a degeneracy: a component can concentrate around a single observation with vanishing variance. Its density there grows without bound. A large training likelihood is consequently not, by itself, evidence of a useful clustering. Covariance restrictions, an explicitly stated penalty or prior, and evaluation beyond the fitted observations address different parts of this problem.
 
-When comparing fits, first align component labels or compare label-invariant objects such as the fitted density and pairwise co-membership. Then ask whether the grouping survives reasonable choices of feature scaling, initialisation, component count, and covariance structure. Stability is evidence about the procedure; semantic meaning still needs information beyond the clustering objective.
+When comparing fits, first align component labels or compare label-invariant objects such as the fitted density and pairwise co-membership. Then ask whether the grouping survives reasonable choices of feature scaling, initialization, component count, and covariance structure. Stability is evidence about the procedure; semantic meaning still needs information beyond the clustering objective.
 
 ## Revision checklist
 
 | Can I reconstruct this without looking? | Check |
 |---|---|
-| Why must every hard-assignment row sum to one? | Otherwise all-zero assignments minimise the distance objective. |
+| Why must every hard-assignment row sum to one? | Otherwise all-zero assignments minimize the distance objective. |
 | Why is the centre an arithmetic mean? | Differentiate the assigned squared distances. |
 | What happens to an empty cluster? | Its mean update is undefined and its centre is unconstrained by the current objective. |
 | Why does Gaussian maximum likelihood use the sample count? | Differentiate the precision objective; unbiasedness is a separate criterion. |

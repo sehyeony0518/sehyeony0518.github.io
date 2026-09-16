@@ -15,7 +15,7 @@ updated: "2026-09-15"
 
 An inverse problem begins with a model of how an unknown object produces observations. In imaging, the unknown might be pixel intensities, attenuation coefficients, or another representation of the object. The data may be blurred, subsampled, transformed, or noisy measurements of that object.
 
-Writing the reconstruction as Bayesian inference makes three choices explicit: the acquisition model, the noise distribution, and the image prior. Under a linear forward model, independent additive Gaussian noise, and a Gaussian prior, the posterior is Gaussian and the reconstruction follows from a linear system. Tikhonov regularisation and the Wiener estimator are closely related forms of this result, with assumptions that should be stated rather than hidden.
+Writing the reconstruction as Bayesian inference makes three choices explicit: the acquisition model, the noise distribution, and the image prior. Under a linear forward model, independent additive Gaussian noise, and a Gaussian prior, the posterior is Gaussian and the reconstruction follows from a linear system. Tikhonov regularization and the Wiener estimator are closely related forms of this result, with assumptions that should be stated rather than hidden.
 
 ## The forward model determines the likelihood
 
@@ -62,7 +62,7 @@ $$
 +\frac m2\log(2\pi).
 $$
 
-If the noise covariance is itself being estimated, its log-determinant term is not constant and must be retained. Dropping it would change the problem: a larger assumed variance could reduce the weighted residual without paying the required density-normalisation cost.
+If the noise covariance is itself being estimated, its log-determinant term is not constant and must be retained. Dropping it would change the problem: a larger assumed variance could reduce the weighted residual without paying the required density-normalization cost.
 
 The squared residual is a consequence of the Gaussian noise assumption. It is not the definition of a general imaging likelihood.
 
@@ -94,7 +94,7 @@ $$
 
 This is whitening: transform residuals so that the assumed noise covariance becomes the identity.
 
-Without a prior, Gaussian maximum likelihood minimises this residual. It does not generally return the observed image. Returning the observation is the special unconstrained denoising case where the forward operator is the identity. In deblurring or subsampling, the observation may not even lie in the same space as the unknown.
+Without a prior, Gaussian maximum likelihood minimizes this residual. It does not generally return the observed image. Returning the observation is the special unconstrained denoising case where the forward operator is the identity. In deblurring or subsampling, the observation may not even lie in the same space as the unknown.
 
 For white noise and a full-column-rank forward matrix, differentiating the residual gives
 
@@ -128,7 +128,7 @@ $$
 \right].
 $$
 
-The evidence can be dropped for this optimisation whether or not it is easy to compute. In the Gaussian case below, it is analytically available; an intractable normalising constant is not a prerequisite for using MAP.
+The evidence can be dropped for this optimization whether or not it is easy to compute. In the Gaussian case below, it is analytically available; an intractable normalizing constant is not a prerequisite for using MAP.
 
 Suppose the prior is
 
@@ -167,7 +167,7 @@ $$
 +\lVert\mu-a\rVert^2.
 $$
 
-The cross term vanishes because the centred posterior has mean zero. Therefore the posterior mean minimises expected squared error. Mean and mode coincide for the Gaussian posterior derived next, but need not coincide in other models.
+The cross term vanishes because the centred posterior has mean zero. Therefore the posterior mean minimizes expected squared error. Mean and mode coincide for the Gaussian posterior derived next, but need not coincide in other models.
 
 ## Complete the square to obtain the entire posterior
 
@@ -203,7 +203,7 @@ $$
 \nabla_xJ=Hx-b.
 $$
 
-Setting it to zero gives the unique minimiser
+Setting it to zero gives the unique minimizer
 
 $$
 \mu=H^{-1}b.
@@ -244,7 +244,7 @@ The posterior covariance is independent of the observed values when the operator
 
 The formulas also assume the unknown ranges over the full real vector space. Enforcing nonnegativity, bounded intensities, or another image constraint generally changes the mode and removes the simple unconstrained formula.
 
-## Recover Tikhonov regularisation and its assumptions
+## Recover Tikhonov regularization and its assumptions
 
 For white noise, specify a quadratic prior precision through an operator $$L$$:
 
@@ -254,7 +254,7 @@ R=\sigma^2I,
 C_0^{-1}=\tau^{-2}L^\top L.
 $$
 
-If the operator has full column rank, this defines a proper Gaussian prior. Multiplying the MAP objective by the positive constant $$2\sigma^2$$ leaves its minimiser unchanged:
+If the operator has full column rank, this defines a proper Gaussian prior. Multiplying the MAP objective by the positive constant $$2\sigma^2$$ leaves its minimizer unchanged:
 
 $$
 \widehat x
@@ -268,7 +268,7 @@ $$
 \lambda=\frac{\sigma^2}{\tau^2}.
 $$
 
-Here the regularisation parameter is the coefficient of the squared penalty. Some conventions call that coefficient the square of the regularisation parameter; the distinction must be checked before comparing formulas.
+Here the regularization parameter is the coefficient of the squared penalty. Some conventions call that coefficient the square of the regularization parameter; the distinction must be checked before comparing formulas.
 
 Differentiating gives
 
@@ -295,7 +295,7 @@ $$
 (A^\top A+\lambda I)^{-1}A^\top y.
 $$
 
-The identity penalty shrinks image energy. A finite-difference operator instead penalises spatial variation. These express different prior beliefs.
+The identity penalty shrinks image energy. A finite-difference operator instead penalizes spatial variation. These express different prior beliefs.
 
 There is an important qualification for derivative penalties. If $$L$$ annihilates constant images, then
 
@@ -303,9 +303,9 @@ $$
 \exp\left[-\frac1{2\tau^2}\lVert L(x-x_0)\rVert^2\right]
 $$
 
-does not integrate to a finite value over all real images: shifting along an unpenalised direction does not change its value. It is an improper prior unless that direction is anchored or otherwise constrained.
+does not integrate to a finite value over all real images: shifting along an unpenalized direction does not change its value. It is an improper prior unless that direction is anchored or otherwise constrained.
 
-A proper posterior can still result. For positive regularisation weight,
+A proper posterior can still result. For positive regularization weight,
 
 $$
 v^\top(A^\top A+\lambda L^\top L)v
@@ -319,7 +319,7 @@ $$
 \ker(A)\cap\ker(L)=\{0\}.
 $$
 
-Thus the observations must identify every direction left unpenalised by the prior. This is the precise uniqueness condition for the quadratic reconstruction with a possibly rank-deficient penalty.
+Thus the observations must identify every direction left unpenalized by the prior. This is the precise uniqueness condition for the quadratic reconstruction with a possibly rank-deficient penalty.
 
 ## The Wiener form is the same Gaussian solution
 
@@ -393,7 +393,7 @@ This yields the same Wiener matrix. Gaussianity is unnecessary for optimality am
 
 ## Derive the frequency-domain filter
 
-A diagonal frequency-domain formula requires more structure than a general linear acquisition model. Assume periodic convolution and noise and prior covariances diagonalised by the same unitary discrete Fourier transform. With transform matrix $$U$$,
+A diagonal frequency-domain formula requires more structure than a general linear acquisition model. Assume periodic convolution and noise and prior covariances diagonalized by the same unitary discrete Fourier transform. With transform matrix $$U$$,
 
 $$
 \begin{aligned}
@@ -403,7 +403,7 @@ R&=U^*\operatorname{diag}(S_\epsilon(\omega))U.
 \end{aligned}
 $$
 
-The star denotes conjugate transpose. The spectra are variances of the corresponding centred Fourier coefficients under this normalisation.
+The star denotes conjugate transpose. The spectra are variances of the corresponding centred Fourier coefficients under this normalization.
 
 Substitution into the Wiener matrix makes every frequency independent in the matrix calculation:
 
@@ -468,7 +468,7 @@ $$
 
 A derivative penalty with a zero response needs the null-space treatment described earlier rather than an ordinary finite prior variance at that frequency.
 
-For finite images, stationarity alone does not guarantee exact diagonalisation by the discrete Fourier transform. Periodic boundary assumptions produce circulant structure; other boundaries generally produce different matrices. An FFT implementation therefore encodes a boundary model as well as a filtering formula.
+For finite images, stationarity alone does not guarantee exact diagonalization by the discrete Fourier transform. Periodic boundary assumptions produce circulant structure; other boundaries generally produce different matrices. An FFT implementation therefore encodes a boundary model as well as a filtering formula.
 
 ## A two-mode reconstruction with every number specified
 
@@ -489,7 +489,7 @@ C_0=I,
 R=0.01I.
 $$
 
-Choose a true vector and one noise realisation:
+Choose a true vector and one noise realization:
 
 $$
 x_{\mathrm{true}}=
@@ -507,7 +507,7 @@ y=Ax_{\mathrm{true}}+\epsilon
 \begin{pmatrix}1\\0.2\end{pmatrix}.
 $$
 
-Unregularised inversion gives
+Unregularized inversion gives
 
 $$
 \widehat x_{\mathrm{ML}}
@@ -517,7 +517,7 @@ $$
 
 The noise in the second observation has been multiplied by ten.
 
-The prior and noise scales give regularisation weight $$\lambda=0.01$$. The Tikhonov equations are
+The prior and noise scales give regularization weight $$\lambda=0.01$$. The Tikhonov equations are
 
 $$
 \begin{pmatrix}
@@ -571,7 +571,7 @@ $$
 
 The second reconstructed value happens to equal the constructed truth. That coincidence is not an accuracy estimate. The posterior variance still shows substantially less information about that mode.
 
-The penalised objective can also be checked. Under unregularised inversion, the residual is zero, but the penalty is
+The penalized objective can also be checked. Under unregularized inversion, the residual is zero, but the penalty is
 
 $$
 0.01(1^2+2^2)=0.05.
@@ -595,7 +595,7 @@ $$
 \approx0.019802960.
 $$
 
-The total is approximately $$0.029900990$$, below the unregularised solution's penalised objective. The reconstruction accepts a residual because exact measurement fit would amplify a direction that the model regards as uncertain.
+The total is approximately $$0.029900990$$, below the unregularized solution's penalized objective. The reconstruction accepts a residual because exact measurement fit would amplify a direction that the model regards as uncertain.
 
 ## Markov priors express local dependence through precision
 
@@ -639,7 +639,7 @@ $$
 
 Zero off-diagonal precision entries remove the corresponding coordinates from this conditional distribution. Sparse precision therefore expresses local conditional dependence. Covariance can still connect distant pixels.
 
-A local Markov assumption does not, by itself, make all inference or normalisation easy. Pairwise potentials are a modelling choice, and nonquadratic potentials generally lose the Gaussian linear-system solution.
+A local Markov assumption does not, by itself, make all inference or normalization easy. Pairwise potentials are a modelling choice, and nonquadratic potentials generally lose the Gaussian linear-system solution.
 
 The smoothing effect can be checked with two pixels. Take identity acquisition, observation $$y=(0,2)$$, and objective
 
@@ -673,7 +673,7 @@ a=1,
 d=\frac2{1+2\lambda}.
 $$
 
-For regularisation weight one, the reconstructed pixels are
+For regularization weight one, the reconstructed pixels are
 
 $$
 (x_1,x_2)=\left(\frac23,\frac43\right).
@@ -683,7 +683,7 @@ The average is preserved, but the contrast shrinks from two to two thirds. A qua
 
 ## Unknown acquisition parameters connect back to EM
 
-The closed forms above assume the operator and uncertainty scales are known. If they are estimated from the same data, the inference problem changes. A learned reconstruction also need not correspond to an explicit normalised image prior merely because it produces plausible images.
+The closed forms above assume the operator and uncertainty scales are known. If they are estimated from the same data, the inference problem changes. A learned reconstruction also need not correspond to an explicit normalized image prior merely because it produces plausible images.
 
 For a concrete EM connection, suppose the forward operator and image prior are fixed but white-noise variance is unknown. The image is latent. Under the old variance, let its posterior mean and covariance be $$\mu$$ and $$C$$.
 
@@ -728,13 +728,13 @@ Replacing the latent image by its posterior mean alone would omit the nonnegativ
 | How does a noise model produce a likelihood? | Evaluate its density at the forward-model residual. |
 | When is the data term ordinary squared error? | Independent equal-variance additive Gaussian noise. |
 | Does maximum likelihood generally return the observation? | Only in special cases such as unconstrained identity acquisition. |
-| Why does a Gaussian prior give regularisation? | Its negative log density is a quadratic penalty. |
+| Why does a Gaussian prior give regularization? | Its negative log density is a quadratic penalty. |
 | What is the posterior precision? | Acquisition information plus prior precision. |
 | When do MAP and posterior mean coincide here? | Under the unconstrained linear Gaussian model. |
 | What is the Tikhonov weight in this convention? | Noise variance divided by prior scale variance. |
 | When is a derivative-penalty reconstruction unique? | Acquisition and penalty operators have no shared nonzero null direction. |
 | Does the Wiener estimator require Gaussianity? | Its best-affine property does not; its identification with Gaussian MAP does. |
-| What permits independent Fourier filtering? | Simultaneous Fourier diagonalisation, including compatible boundary assumptions. |
+| What permits independent Fourier filtering? | Simultaneous Fourier diagonalization, including compatible boundary assumptions. |
 | What does sparse Gaussian precision encode? | Conditional dependence on a limited set of coordinates. |
 | What does the EM noise update add beyond a fitted residual? | The posterior uncertainty trace term. |
 

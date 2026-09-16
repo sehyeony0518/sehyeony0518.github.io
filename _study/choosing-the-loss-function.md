@@ -4,16 +4,16 @@ title: "Choosing the Loss: Squared Error, Absolute Error, and What Each One Beli
 description: "Squared error, absolute error and Huber loss: deriving their prediction targets, checking how one bad point affects a fit, and understanding weighted classification losses."
 tab: "ai-foundations"
 tab_title: "AI Theory"
-category: "algebra-and-optimisation"
-category_title: "Linear Algebra & Optimisation"
-subgroup: "Losses & Gradient Optimisation"
+category: "algebra-and-optimization"
+category_title: "Linear Algebra & Optimization"
+subgroup: "Losses & Gradient Optimization"
 order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-15"
 ---
 
-A loss determines which prediction is optimal for a given distribution of outcomes. Squared error asks for a conditional mean. Absolute error asks for a conditional median. Asymmetric absolute error asks for a conditional quantile. These can be different answers even with unlimited data and perfect optimisation.
+A loss determines which prediction is optimal for a given distribution of outcomes. Squared error asks for a conditional mean. Absolute error asks for a conditional median. Asymmetric absolute error asks for a conditional quantile. These can be different answers even with unlimited data and perfect optimization.
 
 Choosing a loss therefore involves more than making gradients convenient. It specifies a target, gives different observations different influence, and determines what a fitted output can mean.
 
@@ -36,7 +36,7 @@ R(f)
 \right].
 $$
 
-If the predictor can choose its output independently at every input, minimising population risk reduces to the pointwise problem
+If the predictor can choose its output independently at every input, minimizing population risk reduces to the pointwise problem
 
 $$
 a^\star(x)
@@ -47,7 +47,7 @@ $$
 
 This is the prediction target implied by the loss.
 
-Actual learning introduces further restrictions. We choose a parameterised model and minimise an empirical objective such as
+Actual learning introduces further restrictions. We choose a parameterized model and minimize an empirical objective such as
 
 $$
 \widehat R(\theta)
@@ -58,7 +58,7 @@ $$
 \lambda\Omega(\theta).
 $$
 
-Finite data, a restricted model family, regularisation, and imperfect optimisation can all prevent the fitted function from reaching the population target.
+Finite data, a restricted model family, regularization, and imperfect optimization can all prevent the fitted function from reaching the population target.
 
 A loss can be selected through validation or learned within a larger system. That does not remove the need for an external criterion: the selection procedure still needs to know what counts as success. There is no mathematical rule saying that loss functions cannot be searched, but a search cannot supply its own scientific objective.
 
@@ -133,7 +133,7 @@ $$
 F(a^-)\le\frac12\le F(a).
 $$
 
-That is exactly the definition of a median. There can be an interval of minimisers, as happens for an even sample whose two middle values differ.
+That is exactly the definition of a median. There can be an interval of minimizers, as happens for an even sample whose two middle values differ.
 
 Now use a fully specified distribution:
 
@@ -169,7 +169,7 @@ $$
 R_1(1)=\frac34(1)+\frac14(3)=1.5.
 $$
 
-The losses disagree because they ask different questions. Neither calculation needs contamination, an optimisation failure, or an inaccurate model.
+The losses disagree because they ask different questions. Neither calculation needs contamination, an optimization failure, or an inaccurate model.
 
 ## Deriving linear least squares and its assumptions
 
@@ -224,7 +224,7 @@ v^{\mathsf T}X^{\mathsf T}Xv
 \lVert Xv\rVert^2\ge 0.
 $$
 
-Thus the objective is convex in the linear coefficients. It is strictly convex, with a unique minimiser, when the columns are linearly independent. Only under that rank condition can we write
+Thus the objective is convex in the linear coefficients. It is strictly convex, with a unique minimizer, when the columns are linearly independent. Only under that rank condition can we write
 
 $$
 \widehat w=(X^{\mathsf T}X)^{-1}X^{\mathsf T}y.
@@ -232,9 +232,9 @@ $$
 
 If columns are dependent, predictions may still be uniquely determined while coefficients are not.
 
-In computation, solving the least-squares system using a suitable factorisation avoids explicitly constructing this inverse. The formula explains the estimator; it does not prescribe the numerically best implementation.
+In computation, solving the least-squares system using a suitable factorization avoids explicitly constructing this inverse. The formula explains the estimator; it does not prescribe the numerically best implementation.
 
-Also, squared error being convex in its prediction does not make a neural network's objective convex in its parameters. Composition with a non-linear parameterisation changes the optimisation problem.
+Also, squared error being convex in its prediction does not make a neural network's objective convex in its parameters. Composition with a non-linear parameterization changes the optimization problem.
 
 ## One contaminated observation, with the entire dataset specified
 
@@ -406,7 +406,7 @@ The squared-error contribution grows without bound as the residual grows. Absolu
 
 But the input vector remains. A large or badly positioned input can have substantial leverage even when the residual score is bounded. Robustness to unusual outcomes and robustness to unusual inputs are different issues.
 
-Nor does a large residual prove that a record is wrong. It can represent a valid rare outcome, model misspecification, or an omitted subgroup. Reducing its influence changes what the fitted model prioritises. That change should be justified by the target and data-generating assumptions, not by declaring inconvenient observations uninteresting.
+Nor does a large residual prove that a record is wrong. It can represent a valid rare outcome, model misspecification, or an omitted subgroup. Reducing its influence changes what the fitted model prioritizes. That change should be justified by the target and data-generating assumptions, not by declaring inconvenient observations uninteresting.
 
 ## Huber loss and an exact compromise example
 
@@ -464,7 +464,7 @@ This lies in the assumed interval, and the contaminated residual remains in the 
 
 The threshold has units of the response. Multiplying all outcomes by a constant while leaving the threshold unchanged alters which residuals are treated as central and which are treated as tail observations. A threshold should therefore be interpreted relative to a meaningful residual scale.
 
-Non-smooth objectives are not beyond optimisation. Absolute-error regression can be written as a linear program using auxiliary variables:
+Non-smooth objectives are not beyond optimization. Absolute-error regression can be written as a linear program using auxiliary variables:
 
 $$
 \min_{w,t}\sum_i t_i
@@ -501,7 +501,7 @@ n\log(\sqrt{2\pi}\sigma)
 \frac1{2\sigma^2}\sum_i r_i^2.
 $$
 
-For a fixed scale, minimising it is equivalent to least squares.
+For a fixed scale, minimizing it is equivalent to least squares.
 
 For independent Laplace residuals with fixed scale,
 
@@ -515,7 +515,7 @@ $$
 n\log(2b)+\frac1b\sum_i\lvert r_i\rvert.
 $$
 
-Its minimiser is the absolute-error fit.
+Its minimizer is the absolute-error fit.
 
 If Gaussian variances differ across observations and are known, the same calculation gives
 
@@ -535,7 +535,7 @@ $$
 p(p-1)\lvert r\rvert^{p-2}\ge 0.
 $$
 
-Powers above two are convex and deliberately penalise large deviations more strongly. Powers below one are non-convex. Neither fact alone determines whether the scientific objective is appropriate.
+Powers above two are convex and deliberately penalize large deviations more strongly. Powers below one are non-convex. Neither fact alone determines whether the scientific objective is appropriate.
 
 ## Asymmetric error costs lead to quantiles
 
@@ -672,7 +672,7 @@ p
 \frac{bq}{a(1-q)+bq}.
 $$
 
-Finite model capacity and imperfect optimisation mean this algebra alone does not establish calibration in a fitted model.
+Finite model capacity and imperfect optimization mean this algebra alone does not establish calibration in a fitted model.
 
 A separate decision threshold can encode misclassification costs. If a false positive costs one specified amount and a false negative another, the expected costs of the two actions are
 
@@ -691,7 +691,7 @@ $$
 
 Probability estimation and action selection can therefore be separate stages. Class imbalance does not by itself dictate a particular training weight.
 
-Finally, loss normalisation affects regularisation. The objectives
+Finally, loss normalization affects regularization. The objectives
 
 $$
 \sum_i\ell_i+\lambda\Omega
@@ -703,7 +703,7 @@ $$
 \frac1n\sum_i\ell_i+\lambda\Omega
 $$
 
-do not express the same tradeoff at the same numerical regularisation coefficient. Multiplying the second objective by the sample count makes the difference explicit.
+do not express the same tradeoff at the same numerical regularization coefficient. Multiplying the second objective by the sample count makes the difference explicit.
 
 ## Revision checklist
 
@@ -720,11 +720,11 @@ do not express the same tradeoff at the same numerical regularisation coefficien
 | Derive a quantile target | Differentiate asymmetric absolute risk |
 | Interpret weighted log loss | Derive its transformed probability |
 | Separate estimation from decisions | Derive a cost-based threshold |
-| Compare regularised objectives | Check sum versus mean normalisation |
+| Compare regularized objectives | Check sum versus mean normalization |
 
 ## Why it matters for my work
 
-Loss choice should follow the quantity I want to estimate and the errors I want to penalise. A discrepancy between robust and squared-error fits is a reason to inspect labels, leverage, and model assumptions, not proof that the robust fit is correct.
+Loss choice should follow the quantity I want to estimate and the errors I want to penalize. A discrepancy between robust and squared-error fits is a reason to inspect labels, leverage, and model assumptions, not proof that the robust fit is correct.
 
 ## What I have not resolved
 

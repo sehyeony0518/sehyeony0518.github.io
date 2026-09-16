@@ -290,7 +290,7 @@ $$
 H(P)\le\log_2K,
 $$
 
-with equality exactly for the uniform distribution. This derives the claim that entropy is maximised by a uniform distribution over a fixed finite alphabet.
+with equality exactly for the uniform distribution. This derives the claim that entropy is maximized by a uniform distribution over a fixed finite alphabet.
 
 KL divergence is not symmetric. For example, take
 
@@ -312,7 +312,7 @@ $$
 D_{\mathrm{KL}}(Q\Vert P)=\infty.
 $$
 
-The reverse direction penalises the zero that the first distribution assigns to an outcome occurring under the second. KL divergence consequently is not a distance metric.
+The reverse direction penalizes the zero that the first distribution assigns to an outcome occurring under the second. KL divergence consequently is not a distance metric.
 
 ## Why cross-entropy loss is maximum likelihood
 
@@ -322,7 +322,7 @@ $$
 q_\theta(y\mid x).
 $$
 
-Under the usual conditional independence factorisation for observed training examples, the likelihood is
+Under the usual conditional independence factorization for observed training examples, the likelihood is
 
 $$
 \mathcal L(\theta)
@@ -330,7 +330,7 @@ $$
 \prod_{i=1}^{N}q_\theta(y_i\mid x_i).
 $$
 
-The logarithm is strictly increasing, so maximising the likelihood is equivalent to maximising its logarithm:
+The logarithm is strictly increasing, so maximizing the likelihood is equivalent to maximizing its logarithm:
 
 $$
 \log\mathcal L(\theta)
@@ -349,9 +349,9 @@ $$
 }.
 $$
 
-This is the empirical categorical cross-entropy loss for one-hot labels. The equivalence is exact: the same parameter values maximise likelihood and minimise this loss.
+This is the empirical categorical cross-entropy loss for one-hot labels. The equivalence is exact: the same parameter values maximize likelihood and minimize this loss.
 
-It does not depend on a metaphor about information. It follows from multiplying observation probabilities, taking a logarithm, and changing the sign. Using base-two rather than natural logarithms multiplies the objective by a positive constant and leaves its minimiser unchanged.
+It does not depend on a metaphor about information. It follows from multiplying observation probabilities, taking a logarithm, and changing the sign. Using base-two rather than natural logarithms multiplies the objective by a positive constant and leaves its minimizer unchanged.
 
 For a numerical example, suppose a Bernoulli model predicts the same positive probability for four independent observations, of which three are positive:
 
@@ -479,9 +479,9 @@ D_{\mathrm{KL}}
 \bigl(P(Y\mid X)\Vert Q_\theta(Y\mid X)\bigr).
 $$
 
-The first term does not depend on the model. Minimising expected cross-entropy therefore minimises the expected conditional mismatch within the chosen model family.
+The first term does not depend on the model. Minimizing expected cross-entropy therefore minimizes the expected conditional mismatch within the chosen model family.
 
-Regularisation, class weighting, and altered target distributions change the overall estimation problem. They should not be silently described as ordinary unpenalised maximum likelihood for the original observed labels.
+Regularization, class weighting, and altered target distributions change the overall estimation problem. They should not be silently described as ordinary unpenalized maximum likelihood for the original observed labels.
 
 ## Joint entropy, conditional entropy, and mutual information
 
@@ -499,7 +499,7 @@ $$
 p(x,y)=p(x)p(y\mid x).
 $$
 
-Substituting this factorisation into the logarithm yields
+Substituting this factorization into the logarithm yields
 
 $$
 H(X,Y)
@@ -811,7 +811,7 @@ $$
 I(Y;Z\mid\Theta)\le I(Y;X\mid\Theta),
 $$
 
-provided the conditional Markov assumption holds. Memorisation or side information does not violate data processing; it changes the variables entering the computation.
+provided the conditional Markov assumption holds. Memorization or side information does not violate data processing; it changes the variables entering the computation.
 
 ## Continuous variables and finite-sample estimates need care
 
@@ -863,7 +863,7 @@ Finally, the data processing inequality concerns true information quantities und
 | What assumption supports data processing? | The representation receives no target information beyond the observation. |
 | When does processing preserve all target information? | The original observation adds no target information conditional on the representation. |
 | Can decoding improve without information increasing? | Yes; a representation can expose existing information to a restricted readout. |
-| Why distrust an unqualified empirical information value? | Finite-sample fitting, discretisation, and dimensionality can create misleading estimates. |
+| Why distrust an unqualified empirical information value? | Finite-sample fitting, discretization, and dimensionality can create misleading estimates. |
 
 ## Why it matters for my work
 

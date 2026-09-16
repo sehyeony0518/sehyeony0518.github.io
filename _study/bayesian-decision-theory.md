@@ -23,7 +23,7 @@ $$
 R(\alpha_i \mid \mathbf{x}) = \sum_j \lambda(\alpha_i \mid \omega_j)\, P(\omega_j \mid \mathbf{x}),
 $$
 
-where $$\lambda$$ is the loss incurred by choosing $$\alpha_i$$ when the truth is $$\omega_j$$. The optimal rule takes whichever action minimises this, and the risk of that rule is the Bayes risk: the floor no decision procedure beats given this information.
+where $$\lambda$$ is the loss incurred by choosing $$\alpha_i$$ when the truth is $$\omega_j$$. The optimal rule takes whichever action minimizes this, and the risk of that rule is the Bayes risk: the floor no decision procedure beats given this information.
 
 The separation worth holding onto is between a **class** and an **action**. Deciding what is present and deciding what to do are different, and they come apart whenever mistakes cost differently.
 
@@ -49,7 +49,7 @@ Everything about priors and costs lives on the right-hand side, as a single numb
 
 ### Zero-one loss is the special case everyone assumes
 
-If every error costs one and every correct answer costs nothing, minimising risk reduces to maximising the posterior, and the threshold collapses to the prior ratio. This is the rule people have in mind when they say "pick the most likely class."
+If every error costs one and every correct answer costs nothing, minimizing risk reduces to maximizing the posterior, and the threshold collapses to the prior ratio. This is the rule people have in mind when they say "pick the most likely class."
 
 It is a special case, and an unusual one in medicine. Calling a healthy patient sick and sending a sick patient home do not cost the same, and once they do not, a posterior above one half is no longer sufficient reason to act. The lecture's example is exact: with an asymmetric penalty you may be unwilling to answer with the more probable class, because being wrong in that direction costs too much.
 

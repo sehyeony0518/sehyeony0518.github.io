@@ -49,7 +49,7 @@ For noninteger delay, the expression on the right would refer to an undefined ar
 
 Assume the complete sample sequence represents a bandlimited signal, with no problematic spectral line exactly at the Nyquist boundary. For finite-energy signals, reconstruction can be understood in the mean-square sense. A finite observed record additionally requires a rule for the unavailable samples outside its boundaries.
 
-Define the normalised sinc by
+Define the normalized sinc by
 
 $$
 \operatorname{sinc}(u)=
@@ -190,7 +190,7 @@ h_d[n]
 \end{aligned}
 $$
 
-At zero argument, the integral is simply the interval length divided by its normalisation, giving one. Therefore,
+At zero argument, the integral is simply the interval length divided by its normalization, giving one. Therefore,
 
 $$
 \boxed{
@@ -204,7 +204,7 @@ $$
 \operatorname{sinc}(n-D)=\delta[n-D].
 $$
 
-The ideal filter collapses to a single delayed impulse. This checks both the sign and the normalisation.
+The ideal filter collapses to a single delayed impulse. This checks both the sign and the normalization.
 
 For noninteger delay, none of the integer sample positions reaches a sinc zero. The response extends indefinitely in both directions.
 
@@ -501,7 +501,7 @@ Multiplication by a window mixes neighbouring frequencies through periodic convo
 
 This changes the ideal response. A finite design can have amplitude ripple, phase error, and error concentrated near the periodic boundary. Choosing a taper changes those errors; it does not simply remove an unwanted tail without other consequences.
 
-Normalising the finite coefficients to sum to one enforces correct gain at zero frequency:
+Normalizing the finite coefficients to sum to one enforces correct gain at zero frequency:
 
 $$
 \widetilde h_w[n]
@@ -557,7 +557,7 @@ $$
 \frac{32}{9\pi}.
 $$
 
-Normalising by that sum gives
+Normalizing by that sum gives
 
 $$
 q=
@@ -679,7 +679,7 @@ A useful specification therefore states the occupied band and an error bound wit
 
 Finite records introduce another source of error. The ideal sum requests samples outside the observed array. Zero padding assumes the signal vanishes there; reflection assumes a mirrored continuation; wrapping assumes periodic continuation. Each changes values near a boundary.
 
-A tone test should therefore either use a periodic construction or separate boundary effects from interior filter behaviour. An impulse test checks coefficient placement and latency. A constant-input test checks normalisation. None alone replaces a frequency-response check over the band of interest.
+A tone test should therefore either use a periodic construction or separate boundary effects from interior filter behaviour. An impulse test checks coefficient placement and latency. A constant-input test checks normalization. None alone replaces a frequency-response check over the band of interest.
 
 For spatial interpolation, the same reasoning applies along each axis. When the operation also reduces resolution, fractional positioning and anti-aliasing are separate requirements: computing a shifted value does not by itself impose the lower bandwidth required by the new grid.
 
@@ -695,7 +695,7 @@ For spatial interpolation, the same reasoning applies along each axis. When the 
 | How much half-sample impulse energy lies outside the central pair? | Subtract the pair's energy from one to obtain approximately eighteen point nine four percent. |
 | What does linear interpolation change? | Its frequency-dependent magnitude, and generally its phase approximation. |
 | What does windowing cost? | Frequency-response error, finite support, and a latency choice. |
-| What does DC normalisation guarantee? | Correct gain at zero frequency only. |
+| What does DC normalization guarantee? | Correct gain at zero frequency only. |
 | How should accuracy be tested? | Align latency, inspect the occupied band, and state boundary assumptions. |
 
 ## Why it matters for my work

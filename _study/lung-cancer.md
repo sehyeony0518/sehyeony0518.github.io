@@ -28,14 +28,14 @@ Several tasks can occur within either pathway:
 | Task | What success establishes |
 | --- | --- |
 | Nodule detection | A specified image finding was located |
-| Nodule characterisation | Features such as attenuation, contour and change were assessed |
+| Nodule characterization | Features such as attenuation, contour and change were assessed |
 | Malignancy estimation | The finding’s probability of being malignant was estimated in a defined population |
 | Histological or molecular prediction | An imaging association with a tissue-defined target was estimated |
 | Staging support | Evidence about local, nodal or distant extent was assessed |
 | Screening evaluation | The programme’s benefits and harms were evaluated |
 | Clinical utility assessment | Using the system improved a relevant decision or outcome |
 
-These claims are not interchangeable. A true cancer can be overdiagnosed in a screening context. A correctly detected nodule can still lead to unnecessary investigation. A model can recognise advanced disease without demonstrating early detection.
+These claims are not interchangeable. A true cancer can be overdiagnosed in a screening context. A correctly detected nodule can still lead to unnecessary investigation. A model can recognize advanced disease without demonstrating early detection.
 
 ## Key concepts
 
@@ -107,7 +107,7 @@ Likewise, symptoms are not specific. Haemoptysis, weight loss or a persistent co
 
 Smoking history is an important risk factor, but lung cancer also occurs in people who have never smoked. A dataset restricted to a familiar risk profile should not silently become a universal disease detector.
 
-For a model, risk-related context can be legitimate when estimating patient-level risk. It is less adequate as an explanation that the model characterised a particular lesion’s malignant morphology.
+For a model, risk-related context can be legitimate when estimating patient-level risk. It is less adequate as an explanation that the model characterized a particular lesion’s malignant morphology.
 
 The intended claim determines whether a contextual association is useful prior information or a substitute for the evidence the model claims to inspect.
 
@@ -282,7 +282,7 @@ Finally, a prospective workflow comparison is needed to establish what clinician
 
 | Question | What I should be able to explain |
 | --- | --- |
-| What makes a nodule visible on CT? | A change in the local mixture or organisation of air and tissue |
+| What makes a nodule visible on CT? | A change in the local mixture or organization of air and tissue |
 | What is ground-glass opacity? | Increased attenuation with retained visibility of underlying structures |
 | Why can lepidic growth appear ground-glass? | Growth along alveolar walls may preserve some air-containing architecture |
 | Why is spiculation not a diagnosis? | Tumour and benign fibrotic processes can both distort margins |

@@ -44,11 +44,11 @@ The study problem is to keep these levels separate while understanding how they 
 
 Cognition depends on interacting systems supporting attention, memory, language, visuospatial processing, executive control and behaviour.
 
-The hippocampus and adjacent medial temporal structures are important for forming new episodic memories. Frontal systems contribute to planning, inhibition, initiation and flexible organisation. Parietal and other association networks contribute to spatial processing and integration of information.
+The hippocampus and adjacent medial temporal structures are important for forming new episodic memories. Frontal systems contribute to planning, inhibition, initiation and flexible organization. Parietal and other association networks contribute to spatial processing and integration of information.
 
-Damage to different networks therefore produces different patterns of difficulty. A patient may repeatedly forget recent conversations, lose word meaning, become unable to organise a familiar task or misinterpret the spatial arrangement of objects.
+Damage to different networks therefore produces different patterns of difficulty. A patient may repeatedly forget recent conversations, lose word meaning, become unable to organize a familiar task or misinterpret the spatial arrangement of objects.
 
-These patterns help localise dysfunction, but they do not create a one-to-one map between symptom and pathology. A distributed task can fail when several different parts of its supporting network are disrupted.
+These patterns help localize dysfunction, but they do not create a one-to-one map between symptom and pathology. A distributed task can fail when several different parts of its supporting network are disrupted.
 
 For example, poor recall can reflect impaired storage, ineffective retrieval, poor attention during learning, language difficulty or misunderstanding of the task. The clinician considers how the person learned the information, whether cues help and what other domains are affected.
 
@@ -60,7 +60,7 @@ An image model predicting that total should therefore not be described as having
 
 Alzheimer’s disease is associated with amyloid plaques, abnormal tau accumulation, synaptic dysfunction and neuronal loss.
 
-Amyloid and tau are biological features of the disease process. They are not directly visible as ordinary structures on routine MRI. Structural imaging principally shows consequences at the scale of tissue organisation, such as regional volume loss.
+Amyloid and tau are biological features of the disease process. They are not directly visible as ordinary structures on routine MRI. Structural imaging principally shows consequences at the scale of tissue organization, such as regional volume loss.
 
 In a common clinical pattern, dysfunction of medial temporal memory systems contributes to difficulty retaining new information. As additional networks are affected, language, spatial processing, executive function and everyday independence may also deteriorate.
 
@@ -207,7 +207,7 @@ That distinction remains necessary even when prediction is useful.
 | Cognitive test | Performance on specified tasks at an assessment | Language, education, sensory factors and state |
 | Functional assessment | Ability and assistance needs in defined activities | Informant knowledge, household roles and noncognitive limitations |
 | Molecular biomarker | Evidence about a specified biological process | Assay interpretation, timing and incomplete explanation of symptoms |
-| Longitudinal diagnosis | A later clinically recognised outcome | Follow-up intensity, visit timing and diagnostic practice |
+| Longitudinal diagnosis | A later clinically recognized outcome | Follow-up intensity, visit timing and diagnostic practice |
 | Registry code | A recorded designation | Coding conventions, delayed recording and uncertain diagnostic basis |
 | Neuropathology | Tissue-level disease findings | Selection of donors, copathology and the interval from earlier imaging |
 
@@ -223,7 +223,7 @@ The strongest label is the one matched to the claim, with its provenance visible
 
 A prognosis study needs an index time, information available at that time, an outcome definition and a prediction horizon.
 
-“Eventually diagnosed with dementia” is insufficient. A person followed briefly and a person followed extensively have different opportunities for an event to be recognised.
+“Eventually diagnosed with dementia” is insufficient. A person followed briefly and a person followed extensively have different opportunities for an event to be recognized.
 
 The date of a diagnosis code may also differ from the onset of impairment. More frequent visits can produce earlier recorded recognition without changing the biological course.
 
@@ -241,13 +241,13 @@ Separating patients prevents direct reuse of the same individual across developm
 
 Patients with established dementia may be recruited through specialist clinics, while controls come from healthy volunteer programmes. The groups can differ in age, comorbidity, scanner protocol, movement during imaging and intensity of assessment.
 
-A model might consequently recognise recruitment pathways as well as disease-related structure.
+A model might consequently recognize recruitment pathways as well as disease-related structure.
 
 Restricting all images to a common preprocessing pipeline helps define the input, but does not guarantee that the remaining signal is clinically appropriate.
 
 Useful evaluation examines clinically relevant comparison groups, including people with cognitive complaints who do not meet the target diagnosis. It also records failed scans and incomplete assessments rather than discarding them without explanation.
 
-External validation should specify what changed: institution, recruitment, language, reference procedure, scanner or care pathway. A new site is evidence about a particular transport problem, not a universal test of generalisation.
+External validation should specify what changed: institution, recruitment, language, reference procedure, scanner or care pathway. A new site is evidence about a particular transport problem, not a universal test of generalization.
 
 ### Consequences of false positive and false negative claims
 
