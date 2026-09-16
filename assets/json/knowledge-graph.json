@@ -8,7 +8,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 128
+   "deg": 129
   },
   {
    "id": "c:Diagnostic reasoning",
@@ -148,7 +148,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 66
+   "deg": 67
   },
   {
    "id": "c:Malignancy & staging",
@@ -211,6 +211,16 @@
    "deg": 17
   },
   {
+   "id": "c:Deployment & drift",
+   "label": "Deployment & drift",
+   "kind": "concept",
+   "url": null,
+   "size": 4.93,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 60
+  },
+  {
    "id": "c:Preprocessing & resampling",
    "label": "Preprocessing & resampling",
    "kind": "concept",
@@ -218,7 +228,27 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 109
+   "deg": 110
+  },
+  {
+   "id": "c:Deployment feedback loop",
+   "label": "Deployment feedback loop",
+   "kind": "concept",
+   "url": null,
+   "size": 2.52,
+   "fam": "computational",
+   "sector": "Auditing & causality",
+   "deg": 7
+  },
+  {
+   "id": "c:Internal validation",
+   "label": "Internal validation",
+   "kind": "concept",
+   "url": null,
+   "size": 3.7,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 33
   },
   {
    "id": "c:Operating point selection",
@@ -501,16 +531,6 @@
    "deg": 5
   },
   {
-   "id": "c:Internal validation",
-   "label": "Internal validation",
-   "kind": "concept",
-   "url": null,
-   "size": 3.65,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 32
-  },
-  {
    "id": "c:Biliary tract",
    "label": "Biliary tract",
    "kind": "concept",
@@ -549,16 +569,6 @@
    "fam": "computational",
    "sector": "Evaluation & reliability",
    "deg": 29
-  },
-  {
-   "id": "c:Deployment & drift",
-   "label": "Deployment & drift",
-   "kind": "concept",
-   "url": null,
-   "size": 4.88,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 59
   },
   {
    "id": "c:Clinical history & examination",
@@ -801,16 +811,6 @@
    "deg": 8
   },
   {
-   "id": "c:Deployment feedback loop",
-   "label": "Deployment feedback loop",
-   "kind": "concept",
-   "url": null,
-   "size": 2.47,
-   "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 6
-  },
-  {
    "id": "c:Pseudo-labelling",
    "label": "Pseudo-labelling",
    "kind": "concept",
@@ -1029,6 +1029,16 @@
    "fam": "bridge",
    "sector": "Disease & pathology",
    "deg": 18
+  },
+  {
+   "id": "note:ai-acceleration-and-choosing-what-to-optimize",
+   "label": "AI Acceleration: Reducing Work and Choosing What to Optimize",
+   "kind": "note",
+   "url": "/study/ai-acceleration-and-choosing-what-to-optimize/",
+   "size": 1.8,
+   "fam": "computational",
+   "sector": "Auditing & causality",
+   "deg": 6
   },
   {
    "id": "note:all-pass-systems-and-group-delay",
@@ -3303,6 +3313,42 @@
    "target": "c:Intramural cystic spaces",
    "kind": "clinical",
    "w": 2
+  },
+  {
+   "source": "note:ai-acceleration-and-choosing-what-to-optimize",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:ai-acceleration-and-choosing-what-to-optimize",
+   "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:ai-acceleration-and-choosing-what-to-optimize",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:ai-acceleration-and-choosing-what-to-optimize",
+   "target": "c:Preprocessing & resampling",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:ai-acceleration-and-choosing-what-to-optimize",
+   "target": "c:Deployment feedback loop",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:ai-acceleration-and-choosing-what-to-optimize",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "note:all-pass-systems-and-group-delay",

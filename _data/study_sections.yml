@@ -74,6 +74,16 @@ categories:
       - "Environments & Policies"
       - "Tree Search & Learned Pruning"
 
+  # Seeded by the mobile computing / AI acceleration lecture course, so it starts with one
+  # subgroup and gains the others (memory and data movement, quantization and sparsity,
+  # deployment targets) as the course continues. Reads after signals and learning models:
+  # the algorithmic speedups here are transform tricks applied to convolution.
+  - id: "efficient-computation"
+    tab: "ai-foundations"
+    title: "Efficient Computation & Acceleration"
+    subgroups:
+      - "Algorithmic Speedups"
+
   # Translation supplies the evidence framework; vascular disease leads to organ failure; immune testing leads to systemic and skin diagnosis.
   - id: "clinical-foundations"
     tab: "clinical-medicine"
