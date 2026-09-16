@@ -51,9 +51,10 @@ layout: page
   }
   .sn-body > h2:first-child, .sn-body > h3:first-child { margin-top: 1.2rem; }
 
-  /* Measure and rhythm. 68 characters is the comfortable line for continuous
-     prose; tables, maths and figures are exempt so they keep the full column. */
-  .sn-body p, .sn-body ul, .sn-body ol, .sn-body blockquote { max-width: 68ch; }
+  /* No narrower measure than the title and the rule above it. A 68ch limit reads
+     well in isolation but leaves the body visibly inset from the heading and the
+     divider, which span the column, and the page looks misaligned. Line height
+     carries the readability instead. */
   .sn-body p { line-height: 1.75; margin: 0 0 1.05rem; }
   .sn-body li { line-height: 1.7; margin-bottom: .3rem; }
 
