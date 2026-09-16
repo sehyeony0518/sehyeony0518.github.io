@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: insight
 title: "Beyond Feature Attribution: Su-In Lee on Explainable AI for Biology and Medicine"
 date: 2026-09-08 12:00:00 +0900
 description: "Notes from a TWIML conversation on SHAP, biological interpretation, counterfactual clinical audits, and the connection to my research on clinical faithfulness in gallbladder ultrasound AI."

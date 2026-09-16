@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: insight
 title: "Who Does Medical AI Work For?: Why Average Accuracy Is Not Enough"
 date: 2025-08-15 12:00:00 +0900
 description: "High average accuracy does not mean medical AI works equally well for every patient. A look at hidden bias, data representation, subgroup performance, and why trustworthy AI must ask who benefits, and who bears the errors."

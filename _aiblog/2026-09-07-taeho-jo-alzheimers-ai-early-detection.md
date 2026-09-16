@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: insight
 title: "Before Symptoms Appear: Taeho Jo on Using AI to Find Earlier Signals of Alzheimer's Disease"
 date: 2026-09-07 12:00:00 +0900
 tag: "Indiana University"
