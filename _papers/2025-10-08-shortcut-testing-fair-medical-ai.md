@@ -2,13 +2,13 @@
 layout: post
 title: "Detecting Shortcut Learning for Fair Medical AI Using Shortcut Testing"
 date: 2025-10-08 12:00:00 +0900
-venue: "arXiv preprint"
+venue: "Nature Communications"
 authors: "Alexander Brown, Nenad Tomasev, Jan Freyberg, Yuan Liu, Alan Karthikesalingam, Jessica Schrouff (2023)"
 description: "A method (ShorT) for directly testing whether a clinical model is using shortcut correlations, with the uncomfortable finding that shortcuts are not always the reason a model is unfair."
 related_posts: false
 ---
 
-**Paper.** *Detecting Shortcut Learning for Fair Medical AI Using Shortcut Testing*. This review uses the [published Nature Communications article](https://www.nature.com/articles/s41467-023-39902-7); the retained front matter labels the entry as a preprint.
+**Paper.** *Detecting Shortcut Learning for Fair Medical AI Using Shortcut Testing*. [Nature Communications 14, 4314 (2023)](https://doi.org/10.1038/s41467-023-39902-7).
 
 A model can encode a sensitive attribute and have unequal performance across groups without the first observation explaining the second. This is the problem ShorT addresses. An attribute may be recoverable because it relates to anatomy, acquisition, disease, or other recorded variables. A representation probe establishes that some information is accessible to a readout. It does not establish that the diagnostic output relies on that information in a way that produces the measured disparity.
 
