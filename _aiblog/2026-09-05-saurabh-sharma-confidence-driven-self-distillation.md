@@ -33,7 +33,7 @@ Teacher and student share the same architecture, and at inference the teacher an
 
 ## Part 3. Why medical images make ordinary distillation difficult
 
-Three dataset properties motivate the design. **High intra-class variance**: two fundus images with the same diabetic-retinopathy grade can differ greatly in illumination, lesion distribution, and field of view. **High inter-class similarity**: adjacent severity grades or skin-lesion categories may differ by only subtle local patterns. **Class imbalance**: HAM10000's largest class dominates while several minority classes have only hundreds of examples: and in supervised contrastive learning, the majority class also supplies far more positive pairs, so the learned geometry tilts toward classes that already dominate.
+Three dataset properties motivate the design. **High intra-class variance**: two fundus images with the same diabetic-retinopathy grade can differ greatly in illumination, lesion distribution, and field of view. **High inter-class similarity**: adjacent severity grades or skin-lesion categories may differ by only subtle local patterns. **Class imbalance**: HAM10000's largest class dominates while several minority classes have only hundreds of examples, and in supervised contrastive learning, the majority class also supplies far more positive pairs, so the learned geometry tilts toward classes that already dominate.
 
 ## Part 4. Relation matrices transfer structure, gated by entropy
 

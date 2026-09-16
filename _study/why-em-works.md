@@ -23,7 +23,7 @@ p(\mathbf{z}) = \prod_k \pi_k^{z_k}, \qquad
 p(\mathbf{x}\mid\mathbf{z}) = \prod_k \mathcal{N}(\mathbf{x}\mid\mu_k,\Sigma_k)^{z_k},
 $$
 
-which look elaborate but are just compact ways of writing "if $$z_k=1$$ then this component, otherwise nothing". Summing the joint over every value of $$\mathbf{z}$$ returns the mixture, so nothing has been changed about the model — only about how it is described.
+which look elaborate but are just compact ways of writing "if $$z_k=1$$ then this component, otherwise nothing". Summing the joint over every value of $$\mathbf{z}$$ returns the mixture, so nothing has been changed about the model: only about how it is described.
 
 The point of the description is that the **complete-data** log-likelihood, where $$\mathbf{z}$$ is known, has the logarithm meeting the exponentials directly, with no sum in between. It would be easy. The trouble is that $$\mathbf{z}$$ is not observed.
 
@@ -37,7 +37,7 @@ $$
 \gamma(z_{nk}) = \frac{\pi_k\,\mathcal{N}(x_n\mid\mu_k,\Sigma_k)}{\sum_j \pi_j\,\mathcal{N}(x_n\mid\mu_j,\Sigma_j)}.
 $$
 
-This is the **responsibility** component $$k$$ takes for point $$n$$ — a soft membership. If these were known, the problem would be over: each component's mean and covariance would be the weighted mean and covariance of the points it is responsible for.
+This is the **responsibility** component $$k$$ takes for point $$n$$: a soft membership. If these were known, the problem would be over: each component's mean and covariance would be the weighted mean and covariance of the points it is responsible for.
 
 ### The update equations, derived by ignoring a dependence
 
@@ -51,7 +51,7 @@ $$
 
 and the covariance follows the same weighted form. The mixing weights need a Lagrange multiplier to enforce $$\sum_k \pi_k = 1$$, and give $$\pi_k = N_k/N$$.
 
-All three read naturally: $$N_k$$ is the effective number of points component $$k$$ is responsible for, and each parameter is that component's weighted statistic. The lecture is candid that the derivation is not valid as reasoning — it is a way of arriving at the right answer, which a separate argument then justifies.
+All three read naturally: $$N_k$$ is the effective number of points component $$k$$ is responsible for, and each parameter is that component's weighted statistic. The lecture is candid that the derivation is not valid as reasoning: it is a way of arriving at the right answer, which a separate argument then justifies.
 
 ### The Q function states what is actually being maximised
 
@@ -65,7 +65,7 @@ The **E-step** computes this expectation; the **M-step** maximises it over $$\th
 
 ### The guarantee, and the size of it
 
-The answer is that improving $$Q$$ cannot worsen the actual log-likelihood. The argument rests on one inequality — that for distributions $$p$$ and $$q$$,
+The answer is that improving $$Q$$ cannot worsen the actual log-likelihood. The argument rests on one inequality: that for distributions $$p$$ and $$q$$,
 
 $$
 \sum p \log p \;\ge\; \sum p \log q,
@@ -85,11 +85,11 @@ So the intractability is not a matter of cleverness. Any workable method has to 
 
 The local-optimum result is the part that matters to me. A mixture fitted to a clinical cohort depends on its initialisation, so the components it recovers are one of many possible answers and not a discovered structure. Reporting them as though they were subpopulations found in the data overstates what the procedure can deliver.
 
-The responsibilities are the more useful object. A soft membership says how ambiguous a point is between components, and a point split near-evenly is one the model cannot place. If those components corresponded to something real — acquisition setting, say — that ambiguity would be worth examining directly, and it is a quantity the fitting procedure produces for free.
+The responsibilities are the more useful object. A soft membership says how ambiguous a point is between components, and a point split near-evenly is one the model cannot place. If those components corresponded to something real, acquisition setting, say, that ambiguity would be worth examining directly, and it is a quantity the fitting procedure produces for free.
 
 ## What I have not resolved
 
-Whether the sensitivity to initialisation can be characterised well enough to report — running many restarts and describing the spread of solutions — or whether the spread would simply be too large for any of it to mean anything.
+Whether the sensitivity to initialisation can be characterised well enough to report, running many restarts and describing the spread of solutions, or whether the spread would simply be too large for any of it to mean anything.
 
 ## References
 

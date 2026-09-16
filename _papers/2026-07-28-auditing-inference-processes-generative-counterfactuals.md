@@ -12,7 +12,7 @@ related_posts: false
 
 ## Why I read it
 
-This is the paper my own question keeps converging on: not whether a classifier is accurate, but what evidence it uses, stated in terms a clinician can actually judge. It comes from the group behind the COVID shortcut study I reviewed earlier, and it generalizes that one-off finding into a reusable auditing framework.
+This is the paper my own question keeps converging on, not whether a classifier is accurate, but what evidence it uses, stated in terms a clinician can actually judge. It comes from the group behind the COVID shortcut study I reviewed earlier, and it generalizes that one-off finding into a reusable auditing framework.
 
 ## What the paper claims
 

@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Second-Order Systems: Four Numbers You Can Ask For, and Where They Put the Poles"
-description: "Rise time, overshoot, peak time and settling time are not four independent wishes — each one carves a region out of the complex plane, and the design is whatever survives the intersection."
+description: "Rise time, overshoot, peak time and settling time are not four independent wishes: each one carves a region out of the complex plane, and the design is whatever survives the intersection."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"
@@ -962,7 +962,6 @@ $$
 $$
 
 For overshoot, use $$m=1/10$$, so $$\ell=\ln10$$:
-
 $$
 \zeta_{\min}
 =
@@ -1169,7 +1168,7 @@ $$
 t_{10}=0.1103,\qquad t_{90}=0.7283,\qquad t_{90}-t_{10}=0.6180 .
 $$
 
-**The candidate fails.** The requirement was $$t_r\le0.6$$ and the true rise time is $$0.6180$$ — over by 3%. The fit $$1.8/\omega_n$$ returned exactly $$0.600$$ and so reported the candidate as sitting precisely on the limit, when in fact it sits outside it.
+**The candidate fails.** The requirement was $$t_r\le0.6$$ and the true rise time is $$0.6180$$: over by 3%. The fit $$1.8/\omega_n$$ returned exactly $$0.600$$ and so reported the candidate as sitting precisely on the limit, when in fact it sits outside it.
 
 This is the note's own distinction biting in the only place it could do real damage. $$M_p$$ and $$t_p$$ are exact, so a design checked against them is safe; $$t_r\approx1.8/\omega_n$$ is a fitted coefficient, and here it is optimistic by about 3%. Measuring the true scaling at $$\zeta=0.6$$ gives
 

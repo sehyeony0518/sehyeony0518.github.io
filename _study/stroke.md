@@ -100,7 +100,7 @@ Imaging may reveal clues to cause, but a hemorrhage detector does not independen
 
 For a learning task, acute hematoma, chronic blood products, hemorrhagic transformation of an infarct and other intracranial bleeding patterns should not be silently merged. Their appearance, reference and consequences can differ.
 
-Even the phrase “hemorrhage negative” needs a scope: which types of hemorrhage, on which acquisition, at what time?
+Even the phrase “hemorrhage negative” needs a scope, which types of hemorrhage, on which acquisition, at what time?
 
 ### Clinical reasoning starts before image interpretation
 

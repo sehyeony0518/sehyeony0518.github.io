@@ -12,13 +12,13 @@ written: true
 updated: "2026-09-15"
 ---
 
-Everything up to here handles linearly separable patterns, possibly with some slack. Real data is often not linearly separable in any sense that slack can rescue — two concentric rings, say. The standard fix is to map the data into a space where it *is* separable, and the kernel trick is the observation that you may never need to build that space.
+Everything up to here handles linearly separable patterns, possibly with some slack. Real data is often not linearly separable in any sense that slack can rescue: two concentric rings, say. The standard fix is to map the data into a space where it *is* separable, and the kernel trick is the observation that you may never need to build that space.
 
 ## Core question and definition
 
 Map $$x \mapsto \varphi(x)$$ into some higher-dimensional space and run a linear classifier there. A decision boundary that is linear in $$\varphi$$-space pulls back to a curved boundary in the original space. Concentric rings become separable the moment you add a radius coordinate.
 
-This is structurally what a deep network does — layers of feature transformation with a linear classifier on top. The difference is entirely in how $$\varphi$$ is arrived at: learned by gradient descent there, chosen by the practitioner here.
+This is structurally what a deep network does: layers of feature transformation with a linear classifier on top. The difference is entirely in how $$\varphi$$ is arrived at: learned by gradient descent there, chosen by the practitioner here.
 
 The obstacle is obvious. If $$\varphi$$ maps into a thousand dimensions, the [primal SVM](/study/support-vector-machines/) has a thousand parameters, and if it maps into infinitely many the primal has no finite solution at all.
 
@@ -34,7 +34,7 @@ $$
 f(x) = \sum_i \alpha_i y_i \langle x_i, x\rangle + b .
 $$
 
-The samples appear **only inside inner products**. Substituting $$\varphi$$ changes $$\langle x_i,x_j\rangle$$ into $$\langle \varphi(x_i),\varphi(x_j)\rangle$$ and changes nothing else — the number of variables is still $$n$$, one per training sample, regardless of how large the feature space is. Whether $$\varphi$$ lands in three dimensions or a million, the problem you solve is the same size.
+The samples appear **only inside inner products**. Substituting $$\varphi$$ changes $$\langle x_i,x_j\rangle$$ into $$\langle \varphi(x_i),\varphi(x_j)\rangle$$ and changes nothing else: the number of variables is still $$n$$, one per training sample, regardless of how large the feature space is. Whether $$\varphi$$ lands in three dimensions or a million, the problem you solve is the same size.
 
 So the only thing standing in the way is computing $$\langle\varphi(x_i),\varphi(x_j)\rangle$$. And that is a single number.
 
@@ -55,13 +55,13 @@ $$
 = \big\langle (x_1^2,\ \sqrt2\,x_1x_2,\ x_2^2),\ (y_1^2,\ \sqrt2\,y_1y_2,\ y_2^2)\big\rangle .
 $$
 
-So this kernel *is* the inner product after the map $$\varphi(x) = (x_1^2, \sqrt2 x_1x_2, x_2^2)$$ into three dimensions — but computing $$K$$ costs one dot product and one squaring, and the three-dimensional vector is never formed. With a Gaussian kernel the corresponding $$\varphi$$ is infinite-dimensional and could not be formed.
+So this kernel *is* the inner product after the map $$\varphi(x) = (x_1^2, \sqrt2 x_1x_2, x_2^2)$$ into three dimensions, but computing $$K$$ costs one dot product and one squaring, and the three-dimensional vector is never formed. With a Gaussian kernel the corresponding $$\varphi$$ is infinite-dimensional and could not be formed.
 
-Not every two-argument function qualifies. $$K$$ must be symmetric and positive semidefinite — the Gram matrix $$K_{ij} = K(x_i,x_j)$$ must be PSD for every finite sample. Mercer's condition is what guarantees that some $$\varphi$$ exists to be implicit about.[^mercer]
+Not every two-argument function qualifies. $$K$$ must be symmetric and positive semidefinite: the Gram matrix $$K_{ij} = K(x_i,x_j)$$ must be PSD for every finite sample. Mercer's condition is what guarantees that some $$\varphi$$ exists to be implicit about.[^mercer]
 
 ### A kernel is a similarity measure, and that is how to design one
 
-The useful way to think about designing a kernel is not "what feature map do I want" but **"what does it mean for two of these objects to be similar?"** An inner product is one of the most common similarity measures there is, and a kernel generalises it. If you have a defensible notion of similarity between two proteins, two strings, or two graphs — objects with no natural vector representation at all — and it satisfies the PSD condition, you can run a linear classifier in a high-dimensional space you never describe.
+The useful way to think about designing a kernel is not "what feature map do I want" but **"what does it mean for two of these objects to be similar?"** An inner product is one of the most common similarity measures there is, and a kernel generalises it. If you have a defensible notion of similarity between two proteins, two strings, or two graphs, objects with no natural vector representation at all, and it satisfies the PSD condition, you can run a linear classifier in a high-dimensional space you never describe.
 
 In practice two choices cover most usage. The **linear** kernel, which is no kernel at all, and the **Gaussian/RBF** kernel
 
@@ -69,7 +69,7 @@ $$
 K(x,y) = \exp\!\left(-\frac{\lVert x-y\rVert^2}{2\sigma^2}\right).
 $$
 
-Here $$\sigma$$ controls locality, and it is a complexity knob. Small $$\sigma$$ makes the kernel peaked: only very nearby samples influence the decision at a point, and the boundary becomes intricate and wraps tightly around individual training points — overfitting, in the shape of the boundary itself. Large $$\sigma$$ smooths it out. It interacts with $$C$$, so the two are tuned together and neither alone is the regularisation story.
+Here $$\sigma$$ controls locality, and it is a complexity knob. Small $$\sigma$$ makes the kernel peaked: only very nearby samples influence the decision at a point, and the boundary becomes intricate and wraps tightly around individual training points: overfitting, in the shape of the boundary itself. Large $$\sigma$$ smooths it out. It interacts with $$C$$, so the two are tuned together and neither alone is the regularisation story.
 
 The honest practical note: for patterns intricate enough to genuinely need a small $$\sigma$$, a neural network is usually the better tool now, and the reason to reach for an SVM is the small-data regime. Try the linear kernel first.
 
@@ -79,7 +79,7 @@ The trick is also not specific to SVMs. Kernel PCA is the same substitution appl
 
 Written as $$f(x) = \sum_i \alpha_i y_i K(x_i, x) + b$$, the classifier is comparing a new sample against stored training samples by similarity and voting. That is $$k$$-NN's structure.
 
-The difference is that most $$\alpha_i$$ are zero. $$k$$-NN's standing objection is that it must retain the entire training set; the SVM retains only the support vectors. The [KKT conditions](/study/kkt-conditions-and-shadow-prices/) are what deliver that sparsity — it is not an approximation someone added afterwards, it falls out of the optimality conditions.
+The difference is that most $$\alpha_i$$ are zero. $$k$$-NN's standing objection is that it must retain the entire training set; the SVM retains only the support vectors. The [KKT conditions](/study/kkt-conditions-and-shadow-prices/) are what deliver that sparsity: it is not an approximation someone added afterwards, it falls out of the optimality conditions.
 
 ### One class, and the smallest enclosing sphere
 
@@ -91,7 +91,7 @@ These are the classical novelty- and [out-of-distribution](/study/distribution-s
 
 One-class methods are the cleanest available statement of a question a deployed model should be asking: *is this input like the things I was trained on?* An answer to that is what makes [abstention](/study/calibration-uncertainty-and-selective-prediction/) principled rather than a threshold on a softmax.
 
-But the caveat is sharp enough to be the whole point. A one-class model defines "normal" as **resembling the training set under the chosen kernel**. If the training data carries a site signature — one scanner, one protocol, one preprocessing pipeline — then that signature is part of what the detector has learned to call normal. The consequence is a specific and bad failure mode: the detector flags a *different scanner* as anomalous while passing a genuinely novel pathology acquired on the familiar one. It is doing what it was asked; it was asked the wrong question. The same [shortcut](/study/shortcut-learning-in-medical-imaging/) that corrupts a classifier corrupts the detector meant to catch the classifier's blind spots, and it corrupts both in the same direction, so the two failures do not cancel — they agree.
+But the caveat is sharp enough to be the whole point. A one-class model defines "normal" as **resembling the training set under the chosen kernel**. If the training data carries a site signature, one scanner, one protocol, one preprocessing pipeline, then that signature is part of what the detector has learned to call normal. The consequence is a specific and bad failure mode: the detector flags a *different scanner* as anomalous while passing a genuinely novel pathology acquired on the familiar one. It is doing what it was asked; it was asked the wrong question. The same [shortcut](/study/shortcut-learning-in-medical-imaging/) that corrupts a classifier corrupts the detector meant to catch the classifier's blind spots, and it corrupts both in the same direction, so the two failures do not cancel: they agree.
 
 The second point is about where a modelling choice goes when it stops being visible. Choosing a kernel is choosing a similarity measure, with the same epistemic standing as choosing features: a claim about what makes two patients comparable, made by a person, open to being argued with. End-to-end learning did not remove that claim. It moved it into the training data and the architecture, where it is no longer written down anywhere and no longer has an author. Representation-learning audits exist because someone has to go and recover it.
 

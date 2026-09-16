@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Fully Convolutional Networks, and Why Detection Needed Its Own Metric"
-description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists — the same argument against accuracy that class imbalance forces on classification, arriving by a different road."
+description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists: the same argument against accuracy that class imbalance forces on classification, arriving by a different road."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
@@ -28,9 +28,9 @@ This is the building block. Everything in one-stage detection is a fully convolu
 
 Classification has an unambiguous notion of a correct answer. Detection does not: a predicted box is never exactly the ground-truth box, so "correct" has to be defined by a threshold on overlap.
 
-**Intersection over union** is that definition — the area of the intersection divided by the area of the union. It is scale-free, which is what makes it usable across object sizes, and it punishes both misses and overreach with one number.
+**Intersection over union** is that definition: the area of the intersection divided by the area of the union. It is scale-free, which is what makes it usable across object sizes, and it punishes both misses and overreach with one number.
 
-It is also far stricter than intuition suggests. For a $$10\times10$$ box, sliding it 2 pixels sideways already drops IoU to $$0.667$$; sliding it 5 pixels — still half-overlapping, still visually "on" the object — gives $$0.333$$, below the conventional $$0.5$$ threshold. A box nested inside another at half the linear size scores $$0.25$$. In one dimension, the shift that lands exactly on $$\text{IoU}=0.5$$ for a box of side $$w$$ is $$w/3$$.
+It is also far stricter than intuition suggests. For a $$10\times10$$ box, sliding it 2 pixels sideways already drops IoU to $$0.667$$; sliding it 5 pixels, still half-overlapping, still visually "on" the object, gives $$0.333$$, below the conventional $$0.5$$ threshold. A box nested inside another at half the linear size scores $$0.25$$. In one dimension, the shift that lands exactly on $$\text{IoU}=0.5$$ for a box of side $$w$$ is $$w/3$$.
 
 I find that last figure clarifying. "IoU > 0.5" sounds permissive and is not: it permits roughly a third of a box-width of error and nothing more.
 
@@ -48,11 +48,11 @@ Count the predictions a detector makes. SSD at $$300\times300$$ emits **8732** b
 | $$1\times1$$ | 4 | 4 |
 | | | **8732** |
 
-An image contains perhaps three objects. A detector that predicts "no object" at all 8732 sites is correct 99.97% of the time and useless — which is the same collapse that makes accuracy uninformative under class imbalance, met again in a setting where the imbalance is a structural consequence of the output format rather than a property of the disease.
+An image contains perhaps three objects. A detector that predicts "no object" at all 8732 sites is correct 99.97% of the time and useless, which is the same collapse that makes accuracy uninformative under class imbalance, met again in a setting where the imbalance is a structural consequence of the output format rather than a property of the disease.
 
-The lecturer's version of this is a test that calls all 1000 patients healthy, scores 99% accuracy, and finds none of the 10 who are sick. The [MCC note](/study/matthews-correlation-coefficient/) works through why that number is not salvageable by any single-threshold summary. Detection's answer is **average precision**: sweep the confidence threshold, record precision at a series of recall levels, and average. **mAP** is that averaged once more over object classes — the "m" is the outer average, which is the easier half to remember and the less interesting one.[^voc]
+The lecturer's version of this is a test that calls all 1000 patients healthy, scores 99% accuracy, and finds none of the 10 who are sick. The [MCC note](/study/matthews-correlation-coefficient/) works through why that number is not salvageable by any single-threshold summary. Detection's answer is **average precision**: sweep the confidence threshold, record precision at a series of recall levels, and average. **mAP** is that averaged once more over object classes: the "m" is the outer average, which is the easier half to remember and the less interesting one.[^voc]
 
-AP is doing the same job for precision-recall that AUROC does for the ROC curve: collapsing an operating *curve* into one number so that two systems can be ranked without first agreeing on a threshold. The cost is identical too — the number describes the curve, and no deployment ever runs on a curve.
+AP is doing the same job for precision-recall that AUROC does for the ROC curve: collapsing an operating *curve* into one number so that two systems can be ranked without first agreeing on a threshold. The cost is identical too: the number describes the curve, and no deployment ever runs on a curve.
 
 ### Two stages versus one
 
@@ -60,17 +60,17 @@ AP is doing the same job for precision-recall that AUROC does for the ROC curve:
 
 The structure is a loop: a per-region subnetwork runs hundreds of times per image. That loop is the speed ceiling, and it cannot be lifted by making the shared trunk heavier, because the trunk runs once and the head runs hundreds of times.
 
-**One-stage** detectors delete the loop. One forward pass emits every box, which is why the box count is large and fixed rather than data-dependent. SSD reads predictions from several feature maps at different depths; YOLO v1 used a fully-connected head over a $$7\times7$$ grid with 2 boxes per cell — **98** boxes, and a $$7\times7\times30$$ output tensor where $$30 = 2\times5 + 20$$.[^ssd][^yolo]
+**One-stage** detectors delete the loop. One forward pass emits every box, which is why the box count is large and fixed rather than data-dependent. SSD reads predictions from several feature maps at different depths; YOLO v1 used a fully-connected head over a $$7\times7$$ grid with 2 boxes per cell: **98** boxes, and a $$7\times7\times30$$ output tensor where $$30 = 2\times5 + 20$$.[^ssd][^yolo]
 
-The trade was accuracy for speed, and the gap narrowed from both directions until a controlled comparison — same backbones, same data, varying only the meta-architecture — was needed to say anything at all.[^huang] That paper's finding is the honest summary: Faster R-CNN leads on accuracy, SSD leads in the fast regime, and much of what earlier tables attributed to architecture was backbone and training data.
+The trade was accuracy for speed, and the gap narrowed from both directions until a controlled comparison, same backbones, same data, varying only the meta-architecture, was needed to say anything at all.[^huang] That paper's finding is the honest summary: Faster R-CNN leads on accuracy, SSD leads in the fast regime, and much of what earlier tables attributed to architecture was backbone and training data.
 
 ## Why it matters for my work
 
-The structural point is that **mAP was invented because the metric a task needs is not deducible from the model — it is deducible from what the output means.** Detection needed a new metric not because detection is harder but because its output format made the negative class overwhelming and positional error graded rather than binary.
+The structural point is that **mAP was invented because the metric a task needs is not deducible from the model: it is deducible from what the output means.** Detection needed a new metric not because detection is harder but because its output format made the negative class overwhelming and positional error graded rather than binary.
 
 That generalises directly to medical imaging, where the equivalent question is asked too late or not at all. A lesion-detection model inherits detection's imbalance structure; a segmentation model inherits the graded-correctness problem in a form where the IoU threshold is doing enormous unexamined work. If a third of a box-width of error is the difference between a hit and a miss at IoU 0.5, then reporting a single mAP for a lesion detector is reporting one point on a sensitivity curve whose shape was chosen by convention rather than by clinical consequence.
 
-The second point is about what the box count means for auditing. 8732 candidate boxes per image means that whatever a detector has learned about *where* objects tend to be is distributed across a fixed spatial grid that is identical for every image. A dataset in which lesions sit in a characteristic part of the frame — a scanner's standard view, an acquisition protocol's framing — hands the detector a positional prior that is indistinguishable, at the level of mAP, from having learned the lesion. This is [shortcut learning](/study/shortcut-learning-in-medical-imaging/) with a spatial index, and the metric cannot see it.
+The second point is about what the box count means for auditing. 8732 candidate boxes per image means that whatever a detector has learned about *where* objects tend to be is distributed across a fixed spatial grid that is identical for every image. A dataset in which lesions sit in a characteristic part of the frame, a scanner's standard view, an acquisition protocol's framing, hands the detector a positional prior that is indistinguishable, at the level of mAP, from having learned the lesion. This is [shortcut learning](/study/shortcut-learning-in-medical-imaging/) with a spatial index, and the metric cannot see it.
 
 ## What I have not resolved
 

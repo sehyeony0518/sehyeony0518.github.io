@@ -15,7 +15,7 @@ This post summarizes my notes from a public interview in which **Director Jung-h
 
 The name follows the government's broader **"AI-Basic Society"** philosophy: just as roads, electricity, and water are provided as universal social infrastructure, AI-based healthcare should become infrastructure that reaches every citizen's life.
 
-The catch, as Director Park noted, is that healthcare is not something a government can deliver directly. Between the state and the patient stand physicians, hospitals, device makers, pharmaceutical companies, and distributors: and all of them must share the vision for AI to actually reach patients. The strategy therefore positions the government as a *primer* (마중물): a vision-level roadmap that sets national direction, with the concrete mechanisms (reimbursement, R&D programs, data guidelines) to be worked out item by item from here.
+The catch, as Director Park noted, is that healthcare is not something a government can deliver directly. Between the state and the patient stand physicians, hospitals, device makers, pharmaceutical companies, and distributors, and all of them must share the vision for AI to actually reach patients. The strategy therefore positions the government as a *primer* (마중물): a vision-level roadmap that sets national direction, with the concrete mechanisms (reimbursement, R&D programs, data guidelines) to be worked out item by item from here.
 
 ## Part 2. The boldest part: outcome-based, hospital-decided reimbursement
 

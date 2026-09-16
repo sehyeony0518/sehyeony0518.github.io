@@ -12,7 +12,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-Given everything — the priors, the class-conditional densities, the cost of each mistake — there is a best decision rule, and it can be written down. Nothing in practice has all of that, but knowing the optimum tells you what the gap consists of.
+Given everything, the priors, the class-conditional densities, the cost of each mistake, there is a best decision rule, and it can be written down. Nothing in practice has all of that, but knowing the optimum tells you what the gap consists of.
 
 ## Core question and definition
 
@@ -22,7 +22,7 @@ $$
 R(\alpha_i \mid \mathbf{x}) = \sum_j \lambda(\alpha_i \mid \omega_j)\, P(\omega_j \mid \mathbf{x}),
 $$
 
-where $$\lambda$$ is the loss incurred by choosing $$\alpha_i$$ when the truth is $$\omega_j$$. The optimal rule takes whichever action minimises this, and the risk of that rule is the Bayes risk — the floor no decision procedure beats given this information.
+where $$\lambda$$ is the loss incurred by choosing $$\alpha_i$$ when the truth is $$\omega_j$$. The optimal rule takes whichever action minimises this, and the risk of that rule is the Bayes risk: the floor no decision procedure beats given this information.
 
 The separation worth holding onto is between a **class** and an **action**. Deciding what is present and deciding what to do are different, and they come apart whenever mistakes cost differently.
 
@@ -32,7 +32,7 @@ The separation worth holding onto is between a **class** and an **action**. Deci
 
 Before any measurement, the best available rule is to pick the commoner class, and the error rate is $$\min_j P(\omega_j)$$. With a measurement, the rule becomes: choose the class with the larger posterior.
 
-Writing out the error of the posterior rule and applying the law of total probability shows it is bounded by the prior-only error. Measurement cannot hurt — at worst the observation carries nothing about the class and the two rules coincide. The gain comes entirely from how much the likelihoods differ.
+Writing out the error of the posterior rule and applying the law of total probability shows it is bounded by the prior-only error. Measurement cannot hurt: at worst the observation carries nothing about the class and the two rules coincide. The gain comes entirely from how much the likelihoods differ.
 
 ### The rule reduces to a likelihood ratio against a threshold
 
@@ -44,7 +44,7 @@ $$
 \frac{(\lambda_{12}-\lambda_{22})\,P(\omega_2)}{(\lambda_{21}-\lambda_{11})\,P(\omega_1)}.
 $$
 
-Everything about priors and costs lives on the right-hand side, as a single number. The data enters only on the left. So changing the prevalence or the cost of a miss does not change what the measurement says — it moves the threshold the measurement is compared against. [Neyman and Pearson](https://doi.org/10.1098/rsta.1933.0009) (1933) established the optimality of ratio tests in the closely related hypothesis-testing setting.
+Everything about priors and costs lives on the right-hand side, as a single number. The data enters only on the left. So changing the prevalence or the cost of a miss does not change what the measurement says: it moves the threshold the measurement is compared against. [Neyman and Pearson](https://doi.org/10.1098/rsta.1933.0009) (1933) established the optimality of ratio tests in the closely related hypothesis-testing setting.
 
 ### Zero-one loss is the special case everyone assumes
 
@@ -54,15 +54,15 @@ It is a special case, and an unusual one in medicine. Calling a healthy patient 
 
 ### Discriminant functions, and why boundaries take the shapes they do
 
-Any monotonically increasing transformation of the decision quantity leaves the ordering — and therefore the decision — unchanged. That freedom is why taking logs is standard and why a discriminant can be implemented by anything at all, including a network, so long as it preserves the ordering.
+Any monotonically increasing transformation of the decision quantity leaves the ordering, and therefore the decision, unchanged. That freedom is why taking logs is standard and why a discriminant can be implemented by anything at all, including a network, so long as it preserves the ordering.
 
-For Gaussian class-conditionals the log makes the geometry visible. With equal covariances the quadratic terms cancel and the boundary is **linear** — which is the condition under which a linear classifier is exactly optimal rather than merely convenient, and under equal priors it reduces to nearest-mean. With unequal covariances the quadratic terms survive and the boundary becomes a conic: an ellipse, a hyperbola, sometimes two disjoint regions.
+For Gaussian class-conditionals the log makes the geometry visible. With equal covariances the quadratic terms cancel and the boundary is **linear**, which is the condition under which a linear classifier is exactly optimal rather than merely convenient, and under equal priors it reduces to nearest-mean. With unequal covariances the quadratic terms survive and the boundary becomes a conic: an ellipse, a hyperbola, sometimes two disjoint regions.
 
 Two Gaussians can therefore produce a decision region that is not connected. Real class-conditionals are messier than Gaussians, so the honest expectation is that optimal boundaries are more complicated still.
 
 ## Where this touches my work
 
-The threshold result is the one I keep returning to. A model's output is evidence; where the threshold sits is a separate decision encoding prevalence and cost. A model moved to a screening population needs a new threshold even if nothing about its learned evidence changed — and a model reported at a fixed operating point has had that decision made for it, usually by whoever chose the validation set.
+The threshold result is the one I keep returning to. A model's output is evidence; where the threshold sits is a separate decision encoding prevalence and cost. A model moved to a screening population needs a new threshold even if nothing about its learned evidence changed, and a model reported at a fixed operating point has had that decision made for it, usually by whoever chose the validation set.
 
 The cost matrix is also the piece routinely missing. Accuracy, and AUROC over all thresholds, both implicitly assume symmetric costs. Neither is the quantity a clinician needs, and asking what $$\lambda$$ actually is turns out to be a conversation about the clinical pathway rather than about the model.
 

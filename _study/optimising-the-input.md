@@ -12,7 +12,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-Training computes the gradient of a loss with respect to the weights and leaves the input alone. Nothing in backpropagation requires that arrangement. Freeze the weights, treat the image as the variable, and the same machinery runs — which is where a surprising amount of what is known about trained networks comes from.
+Training computes the gradient of a loss with respect to the weights and leaves the input alone. Nothing in backpropagation requires that arrangement. Freeze the weights, treat the image as the variable, and the same machinery runs, which is where a surprising amount of what is known about trained networks comes from.
 
 ## Core question and definition
 
@@ -38,13 +38,13 @@ What separates the applications below is only the choice of objective and of sta
 
 Start from noise, maximise the score of one class, and the result should be the network's picture of that concept. What actually appears first is high-frequency structure that no person would recognise.
 
-Adding a penalty on the image — commonly the squared norm — changes the result into something interpretable. The lecture's observation about this is the one worth keeping: the same $$\lVert\cdot\rVert^2$$ term appears in ordinary training as weight decay, and in both places it means *do not use extreme values*. Only the variable it applies to has changed. A regulariser is not a fixed technique but a statement about which solutions are admissible, and here it is what makes the output legible to a person at all.
+Adding a penalty on the image, commonly the squared norm, changes the result into something interpretable. The lecture's observation about this is the one worth keeping: the same $$\lVert\cdot\rVert^2$$ term appears in ordinary training as weight decay, and in both places it means *do not use extreme values*. Only the variable it applies to has changed. A regulariser is not a fixed technique but a statement about which solutions are admissible, and here it is what makes the output legible to a person at all.
 
 The honest caveat is that legibility to a person is not evidence about the network. A recognisable dumbbell image is consistent with the model having learned dumbbells; it is also consistent with a great deal else.
 
 ### Style transfer separates two losses over the same image
 
-Content and style are made into two objectives and summed. Content similarity is the squared difference of activations at a middle layer — not raw pixels, which would forbid any restyling, and not the top layer, which retains too little of the arrangement. Style is the difference of **Gram matrices**: the correlations between feature channels at a layer, which discard where things are and keep what co-occurs.
+Content and style are made into two objectives and summed. Content similarity is the squared difference of activations at a middle layer, not raw pixels, which would forbid any restyling, and not the top layer, which retains too little of the arrangement. Style is the difference of **Gram matrices**: the correlations between feature channels at a layer, which discard where things are and keep what co-occurs.
 
 [Gatys, Ecker and Bethge](https://doi.org/10.1109/CVPR.2016.265) (CVPR 2016) set this out. The part worth carrying is the pattern: a property that resists direct description was captured by choosing a statistic that is invariant to what it should ignore. Texture has been studied for decades precisely because it does not survive a pointwise comparison.
 

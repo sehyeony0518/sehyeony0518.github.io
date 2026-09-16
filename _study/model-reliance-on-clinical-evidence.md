@@ -15,7 +15,7 @@ papers:
   - "2025-10-28-degrave-covid-shortcut"
 ---
 
-A dependence claim needs a comparison: which information changes, which model stays fixed, and which output is measured. I would reserve “the model relies on this clinical evidence” for results that specify all three.
+A dependence claim needs a comparison, which information changes, which model stays fixed, and which output is measured. I would reserve “the model relies on this clinical evidence” for results that specify all three.
 
 ## Core question and definition
 

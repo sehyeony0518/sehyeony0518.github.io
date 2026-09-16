@@ -16,7 +16,7 @@ Given points and no labels, the task is to say which belong together. The answer
 
 ## Core question and definition
 
-**Hard clustering** gives each point one label. **Soft clustering** gives each point a distribution over labels — 0.8 to one cluster, 0.2 to another — which is strictly more information and reduces to the hard version by taking the maximum.
+**Hard clustering** gives each point one label. **Soft clustering** gives each point a distribution over labels, 0.8 to one cluster, 0.2 to another, which is strictly more information and reduces to the hard version by taking the maximum.
 
 k-means produces the first. A Gaussian mixture produces the second, and produces something else besides: a density, from which new points can be drawn.
 
@@ -30,7 +30,7 @@ $$
 J = \sum_n \sum_k r_{nk}\,\lVert x_n - \mu_k\rVert^2 .
 $$
 
-Two unknowns, and neither is solvable with the other free — the same structure as any latent-variable problem. So fix one and solve for the other, alternately.
+Two unknowns, and neither is solvable with the other free: the same structure as any latent-variable problem. So fix one and solve for the other, alternately.
 
 Holding the centres fixed, $$J$$ is linear in the indicators, so each point independently takes its nearest centre. Holding the assignments fixed, differentiating and setting to zero gives
 
@@ -38,7 +38,7 @@ $$
 \mu_k = \frac{\sum_n r_{nk}x_n}{\sum_n r_{nk}},
 $$
 
-the mean of the points assigned to $$k$$ — which is where the name comes from. [Lloyd](https://doi.org/10.1109/TIT.1982.1056489) (1982) gave the standard form.
+the mean of the points assigned to $$k$$, which is where the name comes from. [Lloyd](https://doi.org/10.1109/TIT.1982.1056489) (1982) gave the standard form.
 
 Each step cannot increase $$J$$, so the procedure converges. It converges to a local optimum, which is why it is run from several initialisations, and it is only as good as squared distance is as a notion of similarity.
 
@@ -46,7 +46,7 @@ Each step cannot increase $$J$$, so the procedure converges. It converges to a l
 
 Before mixtures, the single-component case. With $$x_1,\dots,x_N$$ assumed drawn independently from $$\mathcal{N}(\mu,\Sigma)$$, the log-likelihood is a sum, and differentiating with respect to $$\mu$$ gives the sample mean immediately.
 
-The covariance takes more work — it needs the derivatives of $$\log\det$$ and of a quadratic form, and is easier in terms of $$\Sigma^{-1}$$ — but it comes out as
+The covariance takes more work, it needs the derivatives of $$\log\det$$ and of a quadratic form, and is easier in terms of $$\Sigma^{-1}$$, but it comes out as
 
 $$
 \hat\Sigma = \frac{1}{N}\sum_n (x_n - \hat\mu)(x_n - \hat\mu)^\top .
@@ -75,15 +75,15 @@ This is the structural reason [EM](/study/latent-variables-em-and-variational-in
 
 ### What a mixture buys beyond clusters
 
-Any distribution a single Gaussian cannot describe — two peaks, a long tail, a mixed population — can be approximated by enough components. The framing worth keeping is not that data *is* a mixture of Gaussians but that a mixture is a flexible approximation to a density that is something else.
+Any distribution a single Gaussian cannot describe, two peaks, a long tail, a mixed population, can be approximated by enough components. The framing worth keeping is not that data *is* a mixture of Gaussians but that a mixture is a flexible approximation to a density that is something else.
 
 Because it is a density, it also generates: sample a component by its weight, then sample from that component. Clustering is one use of the fitted model rather than its definition.
 
 ## Where this touches my work
 
-The unmodelled-mixture idea is the one I keep coming back to. A clinical cohort is rarely one population — scanner, operator, referral route, disease severity all partition it, and none of those are recorded as labels. A model fitted to the pooled data fits the mixture, and a subgroup that behaves differently is a component nobody named.
+The unmodelled-mixture idea is the one I keep coming back to. A clinical cohort is rarely one population: scanner, operator, referral route, disease severity all partition it, and none of those are recorded as labels. A model fitted to the pooled data fits the mixture, and a subgroup that behaves differently is a component nobody named.
 
-The biased-covariance result is a smaller but sharper caution. Maximum likelihood answers the question posed and not a neighbouring one, and a reported spread estimated this way is systematically too small on a small subgroup — which is exactly where subgroup analyses are thinnest.
+The biased-covariance result is a smaller but sharper caution. Maximum likelihood answers the question posed and not a neighbouring one, and a reported spread estimated this way is systematically too small on a small subgroup, which is exactly where subgroup analyses are thinnest.
 
 ## What I have not resolved
 

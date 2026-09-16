@@ -30,7 +30,7 @@ Three tempting fixes each move the problem rather than solving it.
 
 **Self-consistency**, asking the model the same question several times and checking agreement, provides a useful uncertainty signal, but ten generations can confidently repeat the same misconception. It measures agreement with oneself, not with reality, and every extra generation has a serving cost.
 
-**Retrieval-augmented generation** anchors answers to external evidence, which is valuable for patient-specific questions: but it moves trust upstream: was the right document retrieved, fully, interpreted correctly, and actually applicable to this patient? Grounding helps only if the grounding process is itself evaluated.
+**Retrieval-augmented generation** anchors answers to external evidence, which is valuable for patient-specific questions, but it moves trust upstream: was the right document retrieved, fully, interpreted correctly, and actually applicable to this patient? Grounding helps only if the grounding process is itself evaluated.
 
 ## Part 3. The hardest problem is deciding what to measure
 
@@ -44,11 +44,11 @@ The licensing-exam results deserve the same caution. A human physician's compete
 
 Should ChatGPT be a medical device because someone can ask it a medical question? Yoo was skeptical: regulating every possible misuse of a general model is conceptually incoherent. The situation changes when a system is deliberately built for a clinical function: optimized on healthcare data, embedded in a defined workflow, aimed at specific users. Then there is a concrete configuration to evaluate. A general model becomes clinically testable only after its role becomes less general.
 
-The same logic argues against using the largest model everywhere. A hospital-documentation model does not need every capability of a consumer assistant. Specialized descendants of a foundation model are cheaper, faster: and, because their output space is narrower, **easier to validate**. The process that reduces cost also improves auditability.
+The same logic argues against using the largest model everywhere. A hospital-documentation model does not need every capability of a consumer assistant. Specialized descendants of a foundation model are cheaper, faster, and, because their output space is narrower, **easier to validate**. The process that reduces cost also improves auditability.
 
 ## Part 5. NAVER started from workflow, not diagnosis
 
-NAVER's healthcare projects were consistently placed where information is lost or attention is overloaded, rather than where a diagnosis could be automated: pre-visit questionnaires (Smart Survey), automatic documentation from consultations (Voice EMR: which could not simply translate an American product, given Korean documentation style and workflow), longitudinal coaching, conversational check-ins for older adults living alone (CareCall), and screening-result summaries for clinicians.
+NAVER's healthcare projects were consistently placed where information is lost or attention is overloaded, rather than where a diagnosis could be automated: pre-visit questionnaires (Smart Survey), automatic documentation from consultations (Voice EMR, which could not simply translate an American product, given Korean documentation style and workflow), longitudinal coaching, conversational check-ins for older adults living alone (CareCall), and screening-result summaries for clinicians.
 
 Revisiting the interview, that philosophy visibly became a product line. By 2025–2026, NAVER Cloud was operating **CLOVA Voice EMR** and a **CLOVA Nursing Agent**, and presenting a HyperCLOVA X-based medical foundation model alongside CLOVA Smart Care. ([CLOVA][3], [KRnet][2]) Not "an LLM for healthcare": an LLM for documenting a consultation, supporting a screening visit, organizing ward requests. **The technology became useful as the use cases became narrower.**
 
