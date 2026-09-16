@@ -6,7 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
-order: 12
+order: 13
 source: "Independent study"
 written: true
 updated: "2026-09-15"
