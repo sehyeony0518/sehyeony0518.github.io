@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /blog/
-title: insights
+title: Insights
 description: Insights related to my research, the trustworthiness of medical AI models.
 nav: true
 nav_order: 10
@@ -16,11 +16,26 @@ nav_order: 10
   {%- assign t = post.tag | default: "Other" | strip -%}
   {%- unless tags contains t -%}{%- assign one = t | split: "," -%}{%- assign tags = tags | concat: one -%}{%- endunless -%}
 {%- endfor -%}
-{%- assign tags = tags | sort -%}
+
+{%- comment -%}
+  Sixteen tags, most of them holding a single post, read as noise in
+  alphabetical order. Sorting by count puts the substantive ones first. Liquid
+  sorts strings, so the key is a zero-padded inverted count followed by the tag:
+  ascending order then gives count descending, alphabetical within a count.
+{%- endcomment -%}
+{%- assign keyed = "" | split: "," -%}
+{%- for t in tags -%}
+  {%- assign n = posts_sorted | where: "tag", t | size -%}
+  {%- assign inv = 999 | minus: n | prepend: "000" | slice: -3, 3 -%}
+  {%- assign one = inv | append: "|" | append: t | split: "," -%}
+  {%- assign keyed = keyed | concat: one -%}
+{%- endfor -%}
+{%- assign keyed = keyed | sort -%}
 
 <div class="el-cats" id="ab-filter">
   <button type="button" class="el-cat active" data-k="all">All <span class="el-cnt">{{ posts_sorted | size }}</span></button>
-  {%- for t in tags %}
+  {%- for k in keyed %}
+  {%- assign t = k | split: "|" | last %}
   {%- assign n = posts_sorted | where: "tag", t | size %}
   <button type="button" class="el-cat" data-k="{{ t | slugify }}">{{ t }} <span class="el-cnt">{{ n }}</span></button>
   {%- endfor %}
