@@ -4,7 +4,7 @@ title: "Can You Trust This Prediction? Auditing Pointwise Reliability After Lear
 date: 2026-09-05 12:00:00 +0900
 venue: "AISTATS 2019"
 authors: "Peter Schulam, Suchi Saria (2019)"
-description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods: not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data."
+description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods, not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data."
 related_posts: false
 ---
 

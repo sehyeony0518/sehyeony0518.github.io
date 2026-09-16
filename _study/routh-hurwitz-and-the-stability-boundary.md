@@ -14,7 +14,7 @@ updated: "2026-09-15"
 
 Stability asks whether every root of a characteristic polynomial lies strictly in the left half-plane. Numerical root-finding can answer that question for a particular set of coefficients. Design often asks a different question: **for which values of a controller parameter does the property hold?**
 
-Routh–Hurwitz converts that question into inequalities on coefficients. The useful distinction is not that numerical roots are unavailable—there are effective numerical methods—but that an array can describe an entire parameter interval symbolically.
+Routh–Hurwitz converts that question into inequalities on coefficients. The useful distinction is not that numerical roots are unavailable, there are effective numerical methods, but that an array can describe an entire parameter interval symbolically.
 
 The table is a record of polynomial elimination. Understanding that construction explains both the alternating coefficients and the exceptional cases.
 

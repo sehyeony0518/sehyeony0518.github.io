@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Root Locus and Stability Margins: Two Pictures of the Same Boundary"
-description: "Watching the closed-loop poles move as a gain sweeps, and reading how much gain and phase you have left off a plot of the open loop — two methods that meet exactly at the edge of stability."
+description: "Watching the closed-loop poles move as a gain sweeps, and reading how much gain and phase you have left off a plot of the open loop: two methods that meet exactly at the edge of stability."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"
@@ -776,9 +776,7 @@ Both formulas above assume simple poles or zeros. For a repeated factor, its mul
 
 ### Preserved departure-angle validation
 
-The original validation used poles at $$-1$$ and $$-2\pm2j$$, with a zero at $$-3$$:
-
-```text
+The original validation used poles at $$-1$$ and $$-2\pm2j$$, with a zero at $$-3$$, ```text
  poles -1, -2+/-2j; zero at -3
    pole  (-1+0j): formula -180.00  traced -180.00   OK
    pole  (-2+2j): formula  +36.87  traced  +36.87   OK
@@ -1188,7 +1186,6 @@ e^{-j\delta_\phi}\mathcal{L}_K(j\omega_c).
 $$
 
 Its magnitude remains one. To reach the critical point $$-1$$, its phase must become $$-\pi$$:
-
 $$
 \phi_c-\delta_\phi=-\pi.
 $$

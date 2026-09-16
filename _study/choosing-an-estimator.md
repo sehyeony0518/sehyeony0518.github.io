@@ -12,7 +12,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-Something is observed and something else is wanted. Several estimators answer that, they do not agree, and the disagreement is not a technicality — it is a disagreement about what question was being asked.
+Something is observed and something else is wanted. Several estimators answer that, they do not agree, and the disagreement is not a technicality: it is a disagreement about what question was being asked.
 
 ## Core question and definition
 
@@ -26,7 +26,7 @@ $$
 \hat{x}_{\mathrm{ML}} = \arg\max_x p(y \mid x).
 $$
 
-The first minimises expected squared error over all estimators, without restricting their form — the restriction to affine estimators is what produces [the Wiener filter](/study/linear-mmse-and-the-wiener-filter/) instead. The second takes the most probable value of the unknown given what was seen. The third takes the value under which the observation was most probable, which is not the same thing.
+The first minimises expected squared error over all estimators, without restricting their form: the restriction to affine estimators is what produces [the Wiener filter](/study/linear-mmse-and-the-wiener-filter/) instead. The second takes the most probable value of the unknown given what was seen. The third takes the value under which the observation was most probable, which is not the same thing.
 
 ## Key concepts
 
@@ -60,7 +60,7 @@ $$
 
 and the denominator does not involve $$x$$. Maximising the posterior therefore only needs $$p(y\mid x)p(x)$$, and the evidence term can be dropped entirely.
 
-MMSE has no such luck. A conditional mean is an integral against the posterior, and the posterior needs its normalising constant. This is the practical reason MAP appears far more often than MMSE: not that it answers a better question, but that it avoids the integral.
+MMSE has no such luck. A conditional mean is an integral against the posterior, and the posterior needs its normalising constant. This is the practical reason MAP appears far more often than MMSE, not that it answers a better question, but that it avoids the integral.
 
 ### In the Gaussian case they all coincide, and the answer is shrinkage
 
@@ -72,7 +72,7 @@ $$
 
 MMSE, MAP and the Wiener filter all return this. Maximum likelihood does not: with no prior it returns $$\hat{x} = y$$, keeping the noise.
 
-The coefficient is the signal's share of the total variance, so the estimate is pulled toward the prior mean by exactly how noisy the observation is. That this simplest possible case is already this much work is itself the lesson — estimation is rarely a one-line calculation, and closed forms are the exception.
+The coefficient is the signal's share of the total variance, so the estimate is pulled toward the prior mean by exactly how noisy the observation is. That this simplest possible case is already this much work is itself the lesson: estimation is rarely a one-line calculation, and closed forms are the exception.
 
 ## Where this touches my work
 
@@ -82,7 +82,7 @@ The second transfer concerns what a reported probability is. If it came from a M
 
 ## What I have not resolved
 
-Whether the prior a deployment site needs can be supplied post hoc — rescaling outputs by a known prevalence ratio — or whether a model trained on the wrong base rate has learned features that no reweighting fixes.
+Whether the prior a deployment site needs can be supplied post hoc, rescaling outputs by a known prevalence ratio, or whether a model trained on the wrong base rate has learned features that no reweighting fixes.
 
 ## References
 

@@ -24,7 +24,7 @@ $$
 
 choosing $$A$$ and $$b$$ to minimise the expected squared error $$\mathbb{E}\!\left[\lVert x - (Ay+b) \rVert^2\right]$$.
 
-Two restrictions are being accepted at once. The estimator must be affine — a richer function of $$y$$ might do better. And the criterion is squared error, which weights a large mistake far more than several small ones, a choice that is conventional rather than inevitable.
+Two restrictions are being accepted at once. The estimator must be affine: a richer function of $$y$$ might do better. And the criterion is squared error, which weights a large mistake far more than several small ones, a choice that is conventional rather than inevitable.
 
 What is bought in return is stated below, and it is the reason this remains practical.
 
@@ -48,7 +48,7 @@ $$
 
 with $$C_{xy} = \mathbb{E}[xy^\top]$$ the cross-covariance and $$C_y$$ the covariance of the observation. When $$C_y$$ is singular a pseudo-inverse stands in.
 
-In one dimension this collapses to something familiar, $$a = \sigma_{xy}/\sigma_y^2$$ — the regression slope. The matrix result is that statement generalised, not a different idea.
+In one dimension this collapses to something familiar, $$a = \sigma_{xy}/\sigma_y^2$$: the regression slope. The matrix result is that statement generalised, not a different idea.
 
 ### Only second-order statistics are required
 
@@ -70,13 +70,13 @@ $$
 A = C_x (C_x + C_w)^{-1}.
 $$
 
-This is the Wiener filter, and it reads as a ratio. Where the signal dominates, $$A$$ approaches the identity and the observation passes through. Where noise dominates, $$A$$ shrinks toward zero and the estimate falls back on the mean. The filter is doing nothing more clever than weighting each component by how much of it is signal — which is also why it cannot recover what the noise buried.
+This is the Wiener filter, and it reads as a ratio. Where the signal dominates, $$A$$ approaches the identity and the observation passes through. Where noise dominates, $$A$$ shrinks toward zero and the estimate falls back on the mean. The filter is doing nothing more clever than weighting each component by how much of it is signal, which is also why it cannot recover what the noise buried.
 
 ## Where this touches my work
 
 Shrinkage toward the mean is the behaviour I would want to notice in a preprocessing step. Any denoising or enhancement applied before a diagnostic model is an estimator with a prior in it, and this one's prior is a covariance structure. A small, low-contrast finding is exactly the component such a filter attenuates, because attenuating low-power components is what it was derived to do.
 
-The second-order-statistics point cuts the other way and is more encouraging. When I want to describe how two measurements co-vary — a finding and an acquisition setting, say — covariance is estimable from the data I actually have, whereas their joint distribution is not. Knowing what a covariance can and cannot support is part of knowing when a claim is within reach.
+The second-order-statistics point cuts the other way and is more encouraging. When I want to describe how two measurements co-vary, a finding and an acquisition setting, say, covariance is estimable from the data I actually have, whereas their joint distribution is not. Knowing what a covariance can and cannot support is part of knowing when a claim is within reach.
 
 ## What I have not resolved
 

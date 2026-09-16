@@ -96,7 +96,7 @@ What it buys is that the missing-arm problem does not arise for the computation.
 
 What it does not buy is a claim about the patient. Establishing that a model responds to some property of an image says nothing about whether that property causes disease, whether every instance of it behaves alike, or what clinical process put it there. Those remain separate questions, and the ease of the computational comparison is a standing temptation to answer them as though they were one.
 
-Comparability also has to be argued rather than assumed. Two versions of an image differ in the intended way only if tissue content, dimensions, compression behaviour and preprocessing are otherwise identical — and when the property of interest is burned into the pixels rather than stored separately, removing it necessarily introduces whatever replaces it, so the comparison acquires a second mechanism that was not part of the question.
+Comparability also has to be argued rather than assumed. Two versions of an image differ in the intended way only if tissue content, dimensions, compression behaviour and preprocessing are otherwise identical, and when the property of interest is burned into the pixels rather than stored separately, removing it necessarily introduces whatever replaces it, so the comparison acquires a second mechanism that was not part of the question.
 
 ### Adjusting away the effect of improved visibility
 

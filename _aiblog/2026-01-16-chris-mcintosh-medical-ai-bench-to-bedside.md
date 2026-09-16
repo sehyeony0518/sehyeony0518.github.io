@@ -97,7 +97,7 @@ Traditional care is often based on snapshots. A clinician sees a chest X-ray, ec
 
 Wearables offer a longitudinal view. They can provide information about activity, sleep, functional capacity, recovery, and how a patient's condition changes from day to day outside the hospital.
 
-The problem is that continuous monitoring produces far more data than clinicians could review manually. This is where AI becomes essential: not simply to collect more information, but to compress it into a clinically meaningful signal.
+The problem is that continuous monitoring produces far more data than clinicians could review manually. This is where AI becomes essential, not simply to collect more information, but to compress it into a clinically meaningful signal.
 
 McIntosh described a collaboration involving Apple Watch data and patients with heart failure. The goal was to estimate peak oxygen uptake, ordinarily measured through a resource-intensive cardiopulmonary exercise test, from everyday biometric data. At the time of the interview, enrollment had been completed and analysis was underway.
 

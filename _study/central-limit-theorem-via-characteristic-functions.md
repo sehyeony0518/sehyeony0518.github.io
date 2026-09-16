@@ -46,7 +46,7 @@ $$
 \varphi_Z(\omega) = \varphi_X(\omega)\,\varphi_Y(\omega).
 $$
 
-For $$n$$ independent and identically distributed variables the characteristic function is simply raised to the $$n$$-th power. An operation that was an $$n$$-fold integral becomes an exponent — which is the whole reason for working in this domain.
+For $$n$$ independent and identically distributed variables the characteristic function is simply raised to the $$n$$-th power. An operation that was an $$n$$-fold integral becomes an exponent, which is the whole reason for working in this domain.
 
 ### A second-order expansion is enough
 
@@ -72,11 +72,11 @@ $$
 
 The limit on the right is a Gaussian's characteristic function, and therefore $$Z_n$$ is asymptotically Gaussian. [Lindeberg](https://doi.org/10.1007/BF01494395) (1922) gave the derivation in a form close to this.
 
-Two features are worth naming. Nothing beyond the mean and variance of $$X$$ survived the limit — every higher moment sat in the $$o(\omega^2)$$ term and was scaled away. And the argument needed only two derivatives at the origin, which is why the theorem holds for such a wide class of distributions.
+Two features are worth naming. Nothing beyond the mean and variance of $$X$$ survived the limit: every higher moment sat in the $$o(\omega^2)$$ term and was scaled away. And the argument needed only two derivatives at the origin, which is why the theorem holds for such a wide class of distributions.
 
 ### What the theorem does not license
 
-It is a statement about a scaled sum in the limit. It says nothing about how quickly the approximation becomes usable, and convergence is slowest exactly where it usually matters — in the tails. A distribution can be visually Gaussian in its body while its extreme quantiles are badly wrong, and extreme quantiles are what a decision threshold sits on.
+It is a statement about a scaled sum in the limit. It says nothing about how quickly the approximation becomes usable, and convergence is slowest exactly where it usually matters: in the tails. A distribution can be visually Gaussian in its body while its extreme quantiles are badly wrong, and extreme quantiles are what a decision threshold sits on.
 
 It also requires finite variance, and independence. Correlated summands can converge to something else or not converge at all.
 
@@ -86,7 +86,7 @@ This is the licence behind the Gaussian noise assumptions that appear throughout
 
 The caution I take is about the failure cases rather than the theorem. Ultrasound speckle is not the sum of many independent small effects but interference from scatterers, which is why it is not Gaussian and why filters derived on Gaussian assumptions behave oddly on it. Knowing which conditions produce the theorem is the same as knowing when to distrust it.
 
-The forgetting property has a second use. Since only the first two moments survive, two very different underlying processes can produce the same limit — so an observed Gaussian says little about what generated it. That cuts against reasoning backwards from a distribution's shape to a mechanism.
+The forgetting property has a second use. Since only the first two moments survive, two very different underlying processes can produce the same limit, so an observed Gaussian says little about what generated it. That cuts against reasoning backwards from a distribution's shape to a mechanism.
 
 ## What I have not resolved
 

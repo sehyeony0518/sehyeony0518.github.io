@@ -44,13 +44,13 @@ $$
 
 and zero-padding both to length $$L$$ leaves room for the tail and nothing wraps. Circular convolution then equals linear convolution exactly.
 
-This is worth confirming rather than believing. With $$M = 9$$ and $$K = 5$$, the requirement is $$L \ge 13$$; sweeping $$L$$ and comparing against `np.convolve` gives disagreement at $$L = 9, 11, 12$$ and exact agreement at $$L = 13$$. The boundary is sharp, and there is no gradual degradation to warn you — $$L = 12$$ is simply wrong, by an amount concentrated entirely in the first few samples.
+This is worth confirming rather than believing. With $$M = 9$$ and $$K = 5$$, the requirement is $$L \ge 13$$; sweeping $$L$$ and comparing against `np.convolve` gives disagreement at $$L = 9, 11, 12$$ and exact agreement at $$L = 13$$. The boundary is sharp, and there is no gradual degradation to warn you: $$L = 12$$ is simply wrong, by an amount concentrated entirely in the first few samples.
 
 Combined with the FFT, which computes a length-$$L$$ DFT in $$O(L\log L)$$ rather than $$O(L^2)$$,[^ct] this beats direct convolution comfortably for any filter that is not very short. Whether a filter *is* short is the only question worth asking before choosing.
 
 ### Non-causal filters wrap to the far end
 
-A filter with taps at negative indices — a centred smoothing kernel, say — has no natural home in a buffer indexed from zero. Under the periodic interpretation the answer is forced: the negative-index taps belong at the **end** of the array, because index $$-1$$ and index $$L-1$$ are the same place. The output comes back with the same convention, and the piece that belongs before time zero must be read off the end and moved back.
+A filter with taps at negative indices, a centred smoothing kernel, say, has no natural home in a buffer indexed from zero. Under the periodic interpretation the answer is forced: the negative-index taps belong at the **end** of the array, because index $$-1$$ and index $$L-1$$ are the same place. The output comes back with the same convention, and the piece that belongs before time zero must be read off the end and moved back.
 
 This is the sort of thing that produces a result which is right in the middle and mangled at both edges, which is exactly the failure that survives a casual look at a plot.
 
@@ -68,9 +68,9 @@ These are not conveniences. They are three different claims about what exists ou
 
 Every convolutional layer makes this choice, and `padding='same'` is the near-universal default because nobody wants feature maps shrinking. What gets padded in is zeros, and that is a claim: **the world outside this image is zero.**
 
-It is false for a medical image, and worse, it is *informative*. Zero padding makes the border of a feature map systematically different from its interior, and that difference is a signal. A network can read absolute spatial position out of it — this is demonstrated, not speculated — which quietly breaks the translation invariance convolution is assumed to provide.[^kayhan][^islam] It also creates a border region where the effective receptive field is degraded, producing blind spots along the edges.[^pad]
+It is false for a medical image, and worse, it is *informative*. Zero padding makes the border of a feature map systematically different from its interior, and that difference is a signal. A network can read absolute spatial position out of it, this is demonstrated, not speculated, which quietly breaks the translation invariance convolution is assumed to provide.[^kayhan][^islam] It also creates a border region where the effective receptive field is degraded, producing blind spots along the edges.[^pad]
 
-The consequence for auditing is specific. If lesion position correlates with anything in a dataset — and it often does, because acquisition protocols centre the anatomy of interest — then a network can learn to use position, and the padding it was given is part of how it gets there. That is a [shortcut](/study/shortcut-learning-in-medical-imaging/) whose origin is a default argument rather than anything in the data, and no attribution map over image content will point at it, because the culprit is not in the image.
+The consequence for auditing is specific. If lesion position correlates with anything in a dataset, and it often does, because acquisition protocols centre the anatomy of interest, then a network can learn to use position, and the padding it was given is part of how it gets there. That is a [shortcut](/study/shortcut-learning-in-medical-imaging/) whose origin is a default argument rather than anything in the data, and no attribution map over image content will point at it, because the culprit is not in the image.
 
 The $$L = 12$$ versus $$L = 13$$ result is the general lesson in miniature. A pipeline can be off by one in a boundary condition and produce output that is correct almost everywhere, wrong at the edges, and entirely plausible on inspection. Boundary handling is where signal processing keeps its silent errors, and the only reliable defence is the one used above: compute the same quantity two ways and compare.
 
@@ -82,4 +82,4 @@ The $$L = 12$$ versus $$L = 13$$ result is the general lesson in miniature. A pi
 
 [^islam]: Islam, M. A., Jia, S., & Bruce, N. D. B. (2020). How much position information do convolutional neural networks encode? *ICLR 2020*. [arXiv:2001.08248](https://arxiv.org/abs/2001.08248)
 
-[^pad]: Alsallakh, B., Kokhlikyan, N., Miglani, V., Yuan, J., & Reblitz-Richardson, O. (2021). Mind the Pad — CNNs can develop blind spots. *ICLR 2021*. [arXiv:2010.02178](https://arxiv.org/abs/2010.02178)
+[^pad]: Alsallakh, B., Kokhlikyan, N., Miglani, V., Yuan, J., & Reblitz-Richardson, O. (2021). Mind the Pad: CNNs can develop blind spots. *ICLR 2021*. [arXiv:2010.02178](https://arxiv.org/abs/2010.02178)

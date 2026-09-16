@@ -22,13 +22,13 @@ The move is to assume the claim and see how strange the data becomes:
 
 > *If* the coin were fair, what is the probability of an outcome **at least as extreme** as the one observed?
 
-For 15 fair tosses, $$P(\text{exactly }10) = 0.0916$$ — but that is not the quantity wanted. Had 11 or 12 heads come up you would have been at least as suspicious, so the tail belongs in the count; and 5 heads would have been equally suspicious in the other direction, so the far tail belongs too. The two-sided figure is
+For 15 fair tosses, $$P(\text{exactly }10) = 0.0916$$, but that is not the quantity wanted. Had 11 or 12 heads come up you would have been at least as suspicious, so the tail belongs in the count; and 5 heads would have been equally suspicious in the other direction, so the far tail belongs too. The two-sided figure is
 
 $$
 P(X \ge 10) + P(X \le 5) = 0.3018 .
 $$
 
-Thirty percent. A fair coin produces something this lopsided or worse in roughly one experiment in three, so 10 of 15 is no evidence of anything. Push to 12 heads and the same calculation gives $$0.0352$$ — now the observation is awkward for the fair-coin hypothesis, though where to draw the line is a human decision, not a fact the data supplies.
+Thirty percent. A fair coin produces something this lopsided or worse in roughly one experiment in three, so 10 of 15 is no evidence of anything. Push to 12 heads and the same calculation gives $$0.0352$$: now the observation is awkward for the fair-coin hypothesis, though where to draw the line is a human decision, not a fact the data supplies.
 
 Note what was and was not concluded. Not "the coin is biased." Only: *under the assumption of fairness, what happened had probability 0.035*. Every p-value has that conditional shape, and essentially every misreading of one comes from dropping the condition.[^asa]
 
@@ -38,7 +38,7 @@ Note what was and was not concluded. Not "the coin is biased." Only: *under the 
 
 The calculation above worked only because the count of heads under a fair coin is known to be binomial. That is the binding constraint on the whole enterprise: **you must know what distribution your statistic follows when the null hypothesis is true.** Without it there is no "how extreme," and the argument cannot start.
 
-Consider testing whether a Gaussian has mean $$\mu_0$$ when the variance is unknown. One sample is useless — it cannot say whether a deviation is large, because "large" has no scale yet. Draw $$n$$ samples, estimate the spread, and form
+Consider testing whether a Gaussian has mean $$\mu_0$$ when the variance is unknown. One sample is useless: it cannot say whether a deviation is large, because "large" has no scale yet. Draw $$n$$ samples, estimate the spread, and form
 
 $$
 t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}},
@@ -47,11 +47,11 @@ $$
 
 and this quantity follows Student's $$t$$ with $$n-1$$ degrees of freedom, regardless of the true $$\sigma$$.[^student] That independence from $$\sigma$$ is the entire point: an unknown nuisance parameter has been eliminated, and a computable test remains.
 
-Simulation confirms it directly — draw 200,000 sets of 5 samples from $$\mathcal{N}(3, 7^2)$$, compute $$t$$ each time, and the histogram matches $$t_4$$ to a KS statistic of 0.0014.
+Simulation confirms it directly: draw 200,000 sets of 5 samples from $$\mathcal{N}(3, 7^2)$$, compute $$t$$ each time, and the histogram matches $$t_4$$ to a KS statistic of 0.0014.
 
-**A trap worth naming.** NumPy's `std` defaults to `ddof=0`, the population formula dividing by $$n$$; the $$t$$ statistic needs `ddof=1`. Using the default in the same simulation moves the KS statistic from 0.0014 to 0.0244 — a seventeen-fold degradation, and one that produces a plot which still looks roughly bell-shaped. With $$n=5$$ the two differ by a factor of $$\sqrt{5/4}$$, which is enough to shift a p-value but not enough to look obviously wrong.
+**A trap worth naming.** NumPy's `std` defaults to `ddof=0`, the population formula dividing by $$n$$; the $$t$$ statistic needs `ddof=1`. Using the default in the same simulation moves the KS statistic from 0.0014 to 0.0244: a seventeen-fold degradation, and one that produces a plot which still looks roughly bell-shaped. With $$n=5$$ the two differ by a factor of $$\sqrt{5/4}$$, which is enough to shift a p-value but not enough to look obviously wrong.
 
-Student's $$t$$ is heavy-tailed at low degrees of freedom — with few samples the estimated spread is itself unreliable, and the distribution widens to absorb that — and converges to the normal as the count grows.
+Student's $$t$$ is heavy-tailed at low degrees of freedom, with few samples the estimated spread is itself unreliable, and the distribution widens to absorb that, and converges to the normal as the count grows.
 
 ### Chi-squared, and the goodness-of-fit test
 
@@ -77,19 +77,19 @@ The honest caveat, which the derivation does not supply: the connection between 
 
 ### Plotting a histogram against a density
 
-A smaller point, but one that silently breaks plots. Draw $$N$$ samples and histogram them with bin width $$\Delta$$. The count in a bin centred at $$x$$ is approximately $$N \cdot f(x)\cdot\Delta$$, so to overlay the density you must divide the counts by $$N\Delta$$ — not by $$N$$ alone. Get it wrong and the curve and the bars miss each other by a constant factor, which looks like a modelling error and is arithmetic.
+A smaller point, but one that silently breaks plots. Draw $$N$$ samples and histogram them with bin width $$\Delta$$. The count in a bin centred at $$x$$ is approximately $$N \cdot f(x)\cdot\Delta$$, so to overlay the density you must divide the counts by $$N\Delta$$, not by $$N$$ alone. Get it wrong and the curve and the bars miss each other by a constant factor, which looks like a modelling error and is arithmetic.
 
 ## Why it matters for my work
 
 Almost every claim of improvement in a paper is a hypothesis test, whether or not one is reported, and the conditional form is what gets lost.
 
-The most consequential loss is the direction of the inference. A p-value says *P(data this extreme | null true)*. What a reader wants is *P(null true | data)*, and these are not the same quantity — converting between them requires a prior, which the test does not have and does not use. A large p-value is not evidence of no effect; it is failure to accumulate evidence against no effect, and in a small [validation cohort](/study/statistical-inference-for-diagnostic-studies/) those are very different situations with identical outputs.
+The most consequential loss is the direction of the inference. A p-value says *P(data this extreme | null true)*. What a reader wants is *P(null true | data)*, and these are not the same quantity: converting between them requires a prior, which the test does not have and does not use. A large p-value is not evidence of no effect; it is failure to accumulate evidence against no effect, and in a small [validation cohort](/study/statistical-inference-for-diagnostic-studies/) those are very different situations with identical outputs.
 
-Second, the requirement that you know the null distribution is where most applied testing quietly breaks. The standard tests assume independent samples. Medical imaging data routinely is not: multiple slices per study, multiple studies per patient, multiple patients per site. Treating slices as independent samples inflates $$n$$, shrinks the standard error, and manufactures significance out of nothing but repeated measurement of the same person. The test will not complain — it has no way to know — which is why [study design](/study/dataset-design-ground-truth-and-reference-standards/) has to settle the unit of analysis before any test is run.
+Second, the requirement that you know the null distribution is where most applied testing quietly breaks. The standard tests assume independent samples. Medical imaging data routinely is not: multiple slices per study, multiple studies per patient, multiple patients per site. Treating slices as independent samples inflates $$n$$, shrinks the standard error, and manufactures significance out of nothing but repeated measurement of the same person. The test will not complain, it has no way to know, which is why [study design](/study/dataset-design-ground-truth-and-reference-standards/) has to settle the unit of analysis before any test is run.
 
 The `ddof` detail is the small lesson standing in for a large one: a statistical result can be wrong by a factor that leaves the output looking entirely reasonable. Verifying a sampling distribution by simulation before trusting a p-value built on it costs a few lines and is one of the few checks that actually catches this class of error.
 
-This machinery is also what justifies a specific evaluation metric — see [MCC](/study/matthews-correlation-coefficient/), which is a chi-squared test of independence on a confusion matrix, rescaled.
+This machinery is also what justifies a specific evaluation metric: see [MCC](/study/matthews-correlation-coefficient/), which is a chi-squared test of independence on a confusion matrix, rescaled.
 
 ---
 

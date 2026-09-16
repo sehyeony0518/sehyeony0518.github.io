@@ -292,7 +292,6 @@ $$
 Now move the first coordinate before the second.
 
 During the first segment, $$x_2=0$$, so changing $$x_1$$ does not change the product. During the second segment, $$x_1=1$$, so the entire increase is assigned to $$x_2$$:
-
 $$
 (A_1,A_2)=(0,1).
 $$

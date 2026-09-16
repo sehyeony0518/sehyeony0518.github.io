@@ -503,7 +503,6 @@ A small empirical gradient penalty at isolated examples does not establish that 
 ### An independent explanation head can improve without changing reliance
 
 Suppose a diagnostic model has parameters $$\theta$$, while a separate explainer has parameters $$\psi$$:
-
 $$
 F_\theta(x),
 \qquad
