@@ -137,7 +137,7 @@ The distinction between the exact value and its rounded decimal will matter when
 | $$\omega_n$$ | Distance from the origin | Sets the time scale at fixed damping |
 | $$\sigma=\zeta\omega_n$$ | Distance left of the imaginary axis | Exponential decay rate |
 | $$\omega_d$$ | Distance above or below the real axis | Oscillation frequency |
-| $$\zeta=\cos\theta$$ | Cosine of angle from the negative real axis | Determines the response shape after normalising time |
+| $$\zeta=\cos\theta$$ | Cosine of angle from the negative real axis | Determines the response shape after normalizing time |
 
 ## Key concepts
 
@@ -775,7 +775,7 @@ The original simulation table is reproduced unchanged:
 0.707      0.04325      0.04325       4.4422        4.4422      1.8000        2.1477
 ```
 
-These are the normalised-frequency checks with $$\omega_n=1$$. Peak time and overshoot agree to the displayed precision because their formulas are exact for the assumed model.
+These are the normalized-frequency checks with $$\omega_n=1$$. Peak time and overshoot agree to the displayed precision because their formulas are exact for the assumed model.
 
 The rise-time estimate is larger than the measured value in the first row and smaller in the second. The original description, “roughly $$\pm20\%$$,” is a rough summary of these discrepancies, not a guaranteed tolerance for the rule.
 

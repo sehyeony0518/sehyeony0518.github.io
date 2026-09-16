@@ -5,7 +5,7 @@ description: "How information crosses from test to train in medical data, and wh
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Validation Design & Performance Measures"
 order: 6
 source: "Independent study"

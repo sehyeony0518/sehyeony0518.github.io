@@ -4,8 +4,8 @@ title: "KKT Conditions and Shadow Prices: What a Lagrange Multiplier Is Actually
 description: "Complementary slackness, the multiplier as the sensitivity of the optimum to its constraint, and reading the SVM's alphas as a statement about which samples matter."
 tab: "ai-foundations"
 tab_title: "AI Theory"
-category: "algebra-and-optimisation"
-category_title: "Linear Algebra & Optimisation"
+category: "algebra-and-optimization"
+category_title: "Linear Algebra & Optimization"
 subgroup: "Constraints & Duality"
 order: 10
 source: "Independent study"
@@ -13,7 +13,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-A constrained optimum contains more information than the location of its minimiser. Its multipliers describe which restrictions support the solution and how the optimal objective responds when those restrictions change.
+A constrained optimum contains more information than the location of its minimizer. Its multipliers describe which restrictions support the solution and how the optimal objective responds when those restrictions change.
 
 That interpretation requires care. An active constraint can have a zero multiplier. A multiplier is a derivative only when the optimal-value function is differentiable. Comparing multiplier magnitudes without checking constraint units is meaningless. The purpose of this note is to derive the conditions and their interpretation together.
 
@@ -110,7 +110,7 @@ $$
 
 The endpoints agree, so both inequalities must be equalities.
 
-The first equality says that the primal optimum minimises the Lagrangian with the optimal multipliers fixed. For an unconstrained differentiable inner minimisation, this gives stationarity:
+The first equality says that the primal optimum minimizes the Lagrangian with the optimal multipliers fixed. For an unconstrained differentiable inner minimization, this gives stationarity:
 
 $$
 \nabla f(x^\star)
@@ -156,9 +156,9 @@ g_i(x^\star)\le 0,\quad h_j(x^\star)=0,
 \end{array}
 $$
 
-They are not four unrelated equations to memorise. Feasibility establishes the lower-bound chain; stationarity and complementary slackness make its two inequalities exact.
+They are not four unrelated equations to memorize. Feasibility establishes the lower-bound chain; stationarity and complementary slackness make its two inequalities exact.
 
-For a convex problem, where the objective and inequality functions are convex and equality constraints are affine, these conditions are sufficient for global optimality. Stationarity then makes the candidate a global minimiser of the convex Lagrangian. For every feasible comparison point,
+For a convex problem, where the objective and inequality functions are convex and equality constraints are affine, these conditions are sufficient for global optimality. Stationarity then makes the candidate a global minimizer of the convex Lagrangian. For every feasible comparison point,
 
 $$
 f(x)
@@ -288,7 +288,7 @@ $$
 0<b<4,
 $$
 
-the upper bound on the first variable will be inactive. To see the minimiser directly, write
+the upper bound on the first variable will be inactive. To see the minimizer directly, write
 
 $$
 x^2+y^2
@@ -605,7 +605,7 @@ $$
 w=\sum_i\alpha_i y_i x_i.
 $$
 
-A zero coefficient contributes nothing to this representation. With the summed-loss convention and a fixed penalty, deleting such a sample preserves the existing optimal solution through the same primal–dual certificate. It need not preserve uniqueness, and changing the normalisation or penalty changes the comparison.
+A zero coefficient contributes nothing to this representation. With the summed-loss convention and a fixed penalty, deleting such a sample preserves the existing optimal solution through the same primal–dual certificate. It need not preserve uniqueness, and changing the normalization or penalty changes the comparison.
 
 For an interior multiplier, the margin equality determines the intercept:
 
@@ -722,7 +722,7 @@ That gap bounds objective suboptimality. Whether it is an acceptable tolerance d
 | Explain why inequality multipliers are non-negative | Recover the lower-bound chain |
 | Derive complementary slackness | Use equality of primal and dual values |
 | Separate necessity from sufficiency | State regularity and convexity assumptions |
-| Give an active constraint with zero multiplier | Minimise a square over the non-negative half-line |
+| Give an active constraint with zero multiplier | Minimize a square over the non-negative half-line |
 | Reproduce the quadratic perturbation example | Obtain $$0.021=0.020+0.001$$ |
 | Explain the sign of a shadow price | Distinguish relaxation from tightening |
 | Handle a non-differentiable value function | Interpret multipliers as supporting slopes |
@@ -732,7 +732,7 @@ That gap bounds objective suboptimality. Whether it is an acceptable tolerance d
 
 ## Why it matters for my work
 
-Multipliers give interpretable sensitivity only for a specified optimisation problem. I should use them when analysing explicit resource or error constraints. An AUROC, an ablation, or a change in cohort composition is not automatically a primal value or a shadow price.
+Multipliers give interpretable sensitivity only for a specified optimization problem. I should use them when analyzing explicit resource or error constraints. An AUROC, an ablation, or a change in cohort composition is not automatically a primal value or a shadow price.
 
 ## What I have not resolved
 

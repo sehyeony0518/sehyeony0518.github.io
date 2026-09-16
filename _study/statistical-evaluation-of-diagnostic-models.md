@@ -5,7 +5,7 @@ description: "Confidence intervals, bootstrapping, power, and the pitfalls that 
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Validation Design & Performance Measures"
 order: 9
 source: "Independent study"

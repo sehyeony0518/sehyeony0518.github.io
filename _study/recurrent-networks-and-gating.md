@@ -367,7 +367,7 @@ $$
 
 If every factor is bounded above by the same value below one, long products vanish. This is a sufficient condition. Having some factors with norm above one is not sufficient to prove explosion: the propagated direction might enter contracting subspaces.
 
-The transition matrices also depend on the trajectory through the activation derivatives. Looking only at the recurrent weight matrix misses those factors. [Pascanu, Mikolov, and Bengio analyse this gradient-product difficulty](https://proceedings.mlr.press/v28/pascanu13.pdf).
+The transition matrices also depend on the trajectory through the activation derivatives. Looking only at the recurrent weight matrix misses those factors. [Pascanu, Mikolov, and Bengio analyze this gradient-product difficulty](https://proceedings.mlr.press/v28/pascanu13.pdf).
 
 Even eigenvalues of a fixed matrix can miss finite-time amplification. For example,
 
@@ -740,7 +740,7 @@ with the zero gradient left unchanged. This keeps its norm at or below the chose
 
 Clipping addresses excessively large computed gradients. It cannot restore an earlier contribution that has already contracted almost to zero. Truncation addresses memory and computation by removing long backward paths, so it changes which dependencies receive credit.
 
-A general nonlinear recurrence has a dependency from each state to the next. Input projections and computations within a step can still be parallelised, as can different sequences in a batch. Special recurrence structures can permit additional parallel algorithms. “Recurrent” does not mean that every operation must execute serially, but the state dependency is a real constraint.
+A general nonlinear recurrence has a dependency from each state to the next. Input projections and computations within a step can still be parallelized, as can different sequences in a batch. Special recurrence structures can permit additional parallel algorithms. “Recurrent” does not mean that every operation must execute serially, but the state dependency is a real constraint.
 
 Finally, vanishing gradients describe a learning difficulty, not proof that a trained model uses no distant information. A model can retain an earlier value while a particular loss supplies little gradient through that history. State retention, gradient transport, and demonstrated predictive use require separate checks.
 

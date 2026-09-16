@@ -34,7 +34,7 @@ For medical AI, the distinction immediately separates several targets:
 | Severity assessment | A specified aspect of impairment or daily burden has a particular level |
 | Prognosis | A defined future outcome is likely under specified conditions |
 
-A model can succeed at one target without establishing the others. Measuring slow finger movement does not identify its cause. Recognising parkinsonism does not distinguish every degenerative syndrome. Predicting a clinical rating does not mean that every component of that rating was observed.
+A model can succeed at one target without establishing the others. Measuring slow finger movement does not identify its cause. Recognizing parkinsonism does not distinguish every degenerative syndrome. Predicting a clinical rating does not mean that every component of that rating was observed.
 
 The central study question is therefore: **what is the chain from neural dysfunction to observable movement, and where does additional clinical information enter?**
 
@@ -44,13 +44,13 @@ The central study question is therefore: **what is the chain from neural dysfunc
 
 The substantia nigra contains neurons that supply dopamine to the striatum. The striatum participates in circuits linking cortex, basal ganglia, thalamus and brainstem systems involved in movement.
 
-These circuits help select, scale and organise actions. They do not simply send a command directly to a muscle. A person can retain substantial muscle strength while having difficulty initiating an action, producing an adequate movement amplitude or maintaining a repetitive sequence.
+These circuits help select, scale and organize actions. They do not simply send a command directly to a muscle. A person can retain substantial muscle strength while having difficulty initiating an action, producing an adequate movement amplitude or maintaining a repetitive sequence.
 
 A useful first approximation is that basal ganglia output regulates inhibition of downstream motor pathways. Dopamine modulates the balance of activity through parallel pathways. Loss of normal dopaminergic input disrupts that regulation, making the selection and scaling of voluntary movement less effective.
 
 This helps explain why Parkinsonian slowness differs from weakness. A weak muscle may fail to generate force. A person with bradykinesia may generate force yet perform a sequence slowly, with progressively smaller excursions or interruptions.
 
-The circuit account is an organising model, not a complete derivation of every symptom. Tremor, postural control and nonmotor dysfunction involve additional network properties. A single scalar measure of “dopamine loss” cannot explain the entire clinical examination.
+The circuit account is an organizing model, not a complete derivation of every symptom. Tremor, postural control and nonmotor dysfunction involve additional network properties. A single scalar measure of “dopamine loss” cannot explain the entire clinical examination.
 
 For imaging research, this also explains an important mismatch of scales. Neural dysfunction can substantially alter movement without creating an obvious abnormality on routine structural MRI. Functional disturbance and macroscopic tissue appearance are different observations.
 
@@ -87,7 +87,7 @@ Tremor also does not uniquely identify Parkinson’s disease. Essential tremor, 
 
 The clinical question is consequently richer than “is there oscillation?” It includes when the movement occurs, which body parts are involved, whether other motor signs coexist and how the pattern has evolved.
 
-Video and wearable sensors can characterise oscillation, but recording conditions still matter. A poorly supported hand, camera movement or an unstable sensor attachment can change the observed signal.
+Video and wearable sensors can characterize oscillation, but recording conditions still matter. A poorly supported hand, camera movement or an unstable sensor attachment can change the observed signal.
 
 ### Gait, automatic movement and the limits of a short examination
 
@@ -177,7 +177,7 @@ For AI, the important test population contains these alternatives. Distinguishin
 
 | Observation source | What it can support | What remains outside the observation |
 | --- | --- | --- |
-| Standardised video | Visible movement amplitude, rhythm, posture, gait and some examination signs | Passive resistance, complete nonmotor burden and the cause of every observed abnormality |
+| Standardized video | Visible movement amplitude, rhythm, posture, gait and some examination signs | Passive resistance, complete nonmotor burden and the cause of every observed abnormality |
 | Wearable motion sensors | Movement trajectories and fluctuations during recorded activities | Clinical interpretation without task context; unrecorded symptoms and events |
 | Structural MRI | Vascular lesions, masses, structural alternatives and some patterns relevant to the differential | Independent confirmation of routine Parkinson’s disease |
 | Dopamine-transporter SPECT | Evidence concerning presynaptic striatal dopaminergic function | Unique distinction of Parkinson’s disease from all degenerative Parkinsonian syndromes |
@@ -190,7 +190,7 @@ Dopamine-transporter imaging answers a narrower biological question. Reduced upt
 
 A model trained to reproduce an abnormal scan classification has therefore learned a different target from a model trained to distinguish Parkinson’s disease from those alternatives.
 
-### A rating scale is an organised observation, not a disease assay
+### A rating scale is an organized observation, not a disease assay
 
 The MDS-UPDRS includes distinct domains:
 
@@ -229,7 +229,7 @@ If the intended target is current clinical diagnosis, a carefully documented spe
 
 A label obtained later can help adjudicate an earlier uncertain diagnosis. However, the dataset must distinguish a retrospective disease classification from what was observable at the earlier visit.
 
-Otherwise, a model may be penalised for failing to recover information that had not yet emerged.
+Otherwise, a model may be penalized for failing to recover information that had not yet emerged.
 
 ### Consequences of error determine the operating point
 
@@ -268,7 +268,7 @@ A study specification should state:
 - Whether evaluation concerns new patients, new visits or change within a patient.
 - The action, if any, triggered by the output.
 
-Patient separation is essential when recordings repeat. Otherwise, recognition of identity, voice, clothing or environment can masquerade as generalisation to new people.
+Patient separation is essential when recordings repeat. Otherwise, recognition of identity, voice, clothing or environment can masquerade as generalization to new people.
 
 Temporal evaluation also needs care. A model trained on later visits must not indirectly reveal the future when evaluated on an earlier visit from the same patient.
 
@@ -308,7 +308,7 @@ This note makes the difference between predicting a label and measuring its supp
 ## What I have not resolved
 
 - How should disagreement between video ratings and in-person examination be represented without treating either as infallible?
-- Which longitudinal changes remain interpretable when treatment state and recording conditions cannot be standardised?
+- Which longitudinal changes remain interpretable when treatment state and recording conditions cannot be standardized?
 - How can an audit distinguish useful indirect prediction from an unjustified claim of direct clinical measurement?
 
 ---

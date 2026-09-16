@@ -5,7 +5,7 @@ description: "ImageNet's original labels score about 81% against a careful re-an
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Task Definition & Ground Truth"
 order: 5
 source: "Independent study"
@@ -45,9 +45,9 @@ The noise is what makes it work rather than a detail. Without it the student can
 
 The failure mode is equally plain: the teacher's errors become the student's training targets, so a systematic mistake is *amplified* rather than averaged away. Random error cancels; bias compounds.
 
-**Meta Pseudo Labels** closes the loop.[^mpl] Rather than fixing the teacher, it updates the teacher based on how the student performs *on real labelled data after learning from the teacher's pseudo-labels*. The teacher's objective becomes "produce labels that make the student generalise," not "produce labels that look right."
+**Meta Pseudo Labels** closes the loop.[^mpl] Rather than fixing the teacher, it updates the teacher based on how the student performs *on real labelled data after learning from the teacher's pseudo-labels*. The teacher's objective becomes "produce labels that make the student generalize," not "produce labels that look right."
 
-That is a bilevel optimisation, the teacher's gradient must flow through the student's update, and it is expensive, but the framing is the interesting part. **It is a proxy problem solved honestly**: instead of assuming pseudo-label accuracy transfers to student performance, it optimises the thing it wants and measures it directly, which is exactly what the [proxy objective](/study/the-proxy-objective-problem/) note argues is usually skipped.
+That is a bilevel optimization, the teacher's gradient must flow through the student's update, and it is expensive, but the framing is the interesting part. **It is a proxy problem solved honestly**: instead of assuming pseudo-label accuracy transfers to student performance, it optimizes the thing it wants and measures it directly, which is exactly what the [proxy objective](/study/the-proxy-objective-problem/) note argues is usually skipped.
 
 ### What the vocabulary is hiding
 

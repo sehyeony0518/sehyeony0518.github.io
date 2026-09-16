@@ -5,7 +5,7 @@ description: "The translation step where most medical AI projects are decided, l
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Task Definition & Ground Truth"
 order: 1
 source: "Independent study"

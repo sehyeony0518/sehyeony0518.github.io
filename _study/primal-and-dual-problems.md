@@ -4,8 +4,8 @@ title: "Primal and Dual Problems: The Max-Min Inequality and What the Gap Certif
 description: "The one inequality the whole of Lagrangian duality rests on, why swapping to the dual changes the size of the problem, and why a duality gap is useful information rather than a failure."
 tab: "ai-foundations"
 tab_title: "AI Theory"
-category: "algebra-and-optimisation"
-category_title: "Linear Algebra & Optimisation"
+category: "algebra-and-optimization"
+category_title: "Linear Algebra & Optimization"
 subgroup: "Constraints & Duality"
 order: 9
 source: "Independent study"
@@ -15,7 +15,7 @@ updated: "2026-09-15"
 
 The primal problem searches for a feasible solution with a small objective. The dual searches for a large lower bound on every feasible objective. When the two values meet, neither search can improve.
 
-This interpretation separates three questions that are often compressed into “solve the dual”: how the lower bound is constructed, when it can become exact, and whether optimising that bound is computationally useful.
+This interpretation separates three questions that are often compressed into “solve the dual”: how the lower bound is constructed, when it can become exact, and whether optimizing that bound is computationally useful.
 
 ## The max–min inequality, with the order exposed
 
@@ -55,9 +55,9 @@ $$
 \inf_{x\in\mathbb R}e^x=0,
 $$
 
-but there is no minimiser. A sequence can approach the optimal value without any finite point attaining it. This distinction later explains why a zero duality gap need not provide finite optimal multipliers.
+but there is no minimizer. A sequence can approach the optimal value without any finite point attaining it. This distinction later explains why a zero duality gap need not provide finite optimal multipliers.
 
-A finite example also shows that swapping the order can change the answer. Let the first player minimise over rows and the second maximise over columns:
+A finite example also shows that swapping the order can change the answer. Let the first player minimize over rows and the second maximize over columns:
 
 $$
 F=
@@ -83,7 +83,7 @@ The inequality is strict even though every extremum is attained. Equality requir
 
 ## Encoding a constraint by an infinite penalty
 
-Consider the minimisation problem
+Consider the minimization problem
 
 $$
 p^\star
@@ -214,9 +214,9 @@ $$
 
 The inequality holds because each Lagrangian value is at least its own infimum.
 
-Maximising this concave function over a convex multiplier domain is a convex optimisation problem. That does not mean it exactly solves a non-convex primal. The dual may optimise a lower bound whose best possible value remains strictly below the primal optimum.
+Maximizing this concave function over a convex multiplier domain is a convex optimization problem. That does not mean it exactly solves a non-convex primal. The dual may optimize a lower bound whose best possible value remains strictly below the primal optimum.
 
-Nor does concavity make evaluation cheap. The inner infimum can itself be a difficult global optimisation problem. A compact outer representation does not remove the cost hidden inside the function being optimised.
+Nor does concavity make evaluation cheap. The inner infimum can itself be a difficult global optimization problem. A compact outer representation does not remove the cost hidden inside the function being optimized.
 
 ## A complete quadratic example and an early stopping certificate
 
@@ -331,13 +331,13 @@ $$
 
 above the true optimum. Its actual error is two hundredths, but that fact was not needed to establish the certificate.
 
-Notice that the inner minimiser corresponding to the chosen multiplier is
+Notice that the inner minimizer corresponding to the chosen multiplier is
 
 $$
 (x,y)=(0.4,0.4),
 $$
 
-which violates the primal equality. Minimising a Lagrangian at arbitrary multipliers does not automatically recover a feasible primal solution.
+which violates the primal equality. Minimizing a Lagrangian at arbitrary multipliers does not automatically recover a feasible primal solution.
 
 ## What a primal–dual gap measures
 
@@ -356,10 +356,10 @@ f(x)-q(\lambda,\nu)
 =
 \underbrace{f(x)-L(x,\lambda,\nu)}_{\text{constraint contribution}}
 +
-\underbrace{L(x,\lambda,\nu)-q(\lambda,\nu)}_{\text{inner minimisation error}}.
+\underbrace{L(x,\lambda,\nu)-q(\lambda,\nu)}_{\text{inner minimization error}}.
 $$
 
-Both terms are non-negative for a feasible primal point. The first vanishes through complementary slackness. The second vanishes when the primal point minimises the Lagrangian.
+Both terms are non-negative for a feasible primal point. The first vanishes through complementary slackness. The second vanishes when the primal point minimizes the Lagrangian.
 
 This connects duality directly to the [KKT conditions](/study/kkt-conditions-and-shadow-prices/).
 
@@ -375,7 +375,7 @@ $$
 \text{optimal gap}=p^\star-d^\star.
 $$
 
-An algorithmic gap may shrink through better optimisation. A positive optimal gap cannot be eliminated by solving the same primal and dual formulations more accurately.
+An algorithmic gap may shrink through better optimization. A positive optimal gap cannot be eliminated by solving the same primal and dual formulations more accurately.
 
 ## Strong duality needs more than the word convex
 
@@ -457,7 +457,7 @@ $$
 
 Strict feasibility is impossible because the constraint function is never negative.
 
-Failure of Slater's condition does not always produce a gap. For instance, minimising the identity function subject to its argument's square being non-positive has equal primal and dual optimal values, but the dual optimum is approached only as the multiplier grows without bound. Regularity, equality of values, and attainment are related but distinct properties.
+Failure of Slater's condition does not always produce a gap. For instance, minimizing the identity function subject to its argument's square being non-positive has equal primal and dual optimal values, but the dual optimum is approached only as the multiplier grows without bound. Regularity, equality of values, and attainment are related but distinct properties.
 
 ## Convex conjugates from their definition
 
@@ -570,7 +570,7 @@ $$
 \right].
 $$
 
-The signs come from the chosen equality, not from a formula that should be memorised independently. Equality of primal and dual values still requires appropriate regularity.
+The signs come from the chosen equality, not from a formula that should be memorized independently. Equality of primal and dual values still requires appropriate regularity.
 
 ## Minimum norm: a smaller dual with a numerical check
 
@@ -628,7 +628,7 @@ $$
 x^\star=A^{\mathsf T}(AA^{\mathsf T})^{-1}b.
 $$
 
-The rank assumption is essential. Without it, one must solve the consistent linear system or use an appropriate generalised inverse; writing an ordinary inverse does not make it exist.
+The rank assumption is essential. Without it, one must solve the consistent linear system or use an appropriate generalized inverse; writing an ordinary inverse does not make it exist.
 
 Take
 
@@ -698,7 +698,7 @@ Feasibility and matching values certify the result.
 
 ## An unconstrained problem can still have a useful dual
 
-The claim that an unconstrained least-squares problem has “nothing to dualise” is misleading. Introduce its residual explicitly:
+The claim that an unconstrained least-squares problem has “nothing to dualize” is misleading. Introduce its residual explicitly:
 
 $$
 \min_x\frac12\lVert Ax-b\rVert^2
@@ -774,14 +774,14 @@ Dual variables often encode a familiar residual or balance condition once the al
 | Certify an approximate primal solution | Check feasibility before computing a gap |
 | Separate strong duality from attainment | Give a case where only a limiting multiplier works |
 | Explain why convexity alone is insufficient | Reproduce the positive-gap example |
-| Derive a conjugate | Complete a square or analyse unbounded directions |
+| Derive a conjugate | Complete a square or analyze unbounded directions |
 | Recover the minimum-norm solution | State the row-rank condition |
-| Dualise least squares | Identify the dual variable as an orthogonal residual |
+| Dualize least squares | Identify the dual variable as an orthogonal residual |
 
 ## Why it matters for my work
 
-A primal–dual gap is useful because it is a proved bound on a specified optimisation objective. I should preserve that meaning. Benchmark scores and stress tests can complement one another, but they do not automatically bracket deployment performance.
+A primal–dual gap is useful because it is a proved bound on a specified optimization objective. I should preserve that meaning. Benchmark scores and stress tests can complement one another, but they do not automatically bracket deployment performance.
 
 ## What I have not resolved
 
-For objectives used in my experiments, I need to identify which tractable relaxations provide informative lower bounds and which produce gaps dominated by the relaxation rather than incomplete optimisation.
+For objectives used in my experiments, I need to identify which tractable relaxations provide informative lower bounds and which produce gaps dominated by the relaxation rather than incomplete optimization.

@@ -115,7 +115,7 @@ a^\ast(v)=\mathbb E[T\mid V=v]
 }.
 $$
 
-Squared-error reconstruction therefore rewards the conditional mean of the missing content. It does not necessarily reward one plausible complete realisation.
+Squared-error reconstruction therefore rewards the conditional mean of the missing content. It does not necessarily reward one plausible complete realization.
 
 For a constructed example, suppose the visible input gives no information about a masked bit, which is equally likely to be zero or one. Predicting one half gives risk
 
@@ -157,13 +157,13 @@ h_i=f_\theta(v_i),
 z_i=g_\phi(h_i).
 $$
 
-A normalised embedding is
+A normalized embedding is
 
 $$
 u_i=\frac{z_i}{\lVert z_i\rVert_2},
 $$
 
-assuming the vector is nonzero. Dot products between these unit vectors are cosine similarities. Normalisation removes the possibility of increasing a dot product solely by increasing both vector magnitudes.
+assuming the vector is nonzero. Dot products between these unit vectors are cosine similarities. Normalization removes the possibility of increasing a dot product solely by increasing both vector magnitudes.
 
 In the two-view batch construction used by [SimCLR](https://proceedings.mlr.press/v119/chen20j.html), each anchor's other view is its positive. Views of other source observations serve as negatives. The anchor itself is excluded from its candidate set.
 
@@ -199,7 +199,7 @@ a_j=\frac{s_j}{\tau},
 \tau>0.
 $$
 
-We need a probability distribution over the candidate index. Exponentiation gives positive weights, and division by their sum normalises them:
+We need a probability distribution over the candidate index. Exponentiation gives positive weights, and division by their sum normalizes them:
 
 $$
 \pi_j
@@ -240,7 +240,7 @@ $$
 \log\sum_{r=1}^{N}\exp(s_r/\tau).
 $$
 
-The positive belongs in the denominator because it is one possible outcome of the classification problem. Omitting it would no longer produce the negative logarithm of this normalised candidate probability.
+The positive belongs in the denominator because it is one possible outcome of the classification problem. Omitting it would no longer produce the negative logarithm of this normalized candidate probability.
 
 Differentiate with respect to a logit:
 
@@ -264,7 +264,7 @@ $$
 
 The positive receives a negative score derivative, so gradient descent tends to increase its compatibility. Negatives receive positive score derivatives, so their compatibility tends to decrease. A negative already assigned negligible probability receives little pressure.
 
-These are derivatives with respect to scores. The embedding and encoder gradients also include the derivatives of the similarity function and normalisation. Scores cannot necessarily move independently when constrained embeddings share parameters.
+These are derivatives with respect to scores. The embedding and encoder gradients also include the derivatives of the similarity function and normalization. Scores cannot necessarily move independently when constrained embeddings share parameters.
 
 ## Why the negative distribution changes the learned distinction
 
@@ -414,7 +414,7 @@ $$
 
 The gradient is zero regardless of the embedding. Within this objective, no discrimination can be learned without alternatives.
 
-Pure pairwise agreement has another trivial solution. If the loss only penalises differences between positive embeddings, assigning the same constant vector to every observation makes all such differences zero.
+Pure pairwise agreement has another trivial solution. If the loss only penalizes differences between positive embeddings, assigning the same constant vector to every observation makes all such differences zero.
 
 With multiple candidates, a fully collapsed representation gives equal scores and hence
 
@@ -426,7 +426,7 @@ $$
 
 When the data and model permit the positive to be distinguished, lower loss is possible. Negatives create an incentive for discrimination.
 
-This does not prove that optimisation cannot stall at a collapsed or otherwise poor representation. Parameter sharing and normalisation can produce stationary configurations even when the score-space derivatives suggest improvement. Nor does discrimination guarantee that the learned distinctions are the desired clinical ones.
+This does not prove that optimization cannot stall at a collapsed or otherwise poor representation. Parameter sharing and normalization can produce stationary configurations even when the score-space derivatives suggest improvement. Nor does discrimination guarantee that the learned distinctions are the desired clinical ones.
 
 A false negative is a candidate treated as unrelated by the training construction despite sharing a factor that should be preserved downstream. Instance discrimination can push two observations apart even if their diagnostic content is similar.
 
@@ -639,7 +639,7 @@ Self-supervised evaluation should separate at least three questions: whether the
 
 A frozen-encoder probe tests what a specified readout can extract without changing the representation. Fine-tuning tests what supervised adaptation can achieve from that starting point. Neither alone establishes why a prediction succeeds.
 
-Weak-supervision evaluation also needs information that the training labels do not supply. An independently reviewed subset can examine recorded-label errors, selected-frame coverage, and instance-level behaviour. Reusing the same weak labels to train and validate a localisation claim leaves the original ambiguity intact.
+Weak-supervision evaluation also needs information that the training labels do not supply. An independently reviewed subset can examine recorded-label errors, selected-frame coverage, and instance-level behaviour. Reusing the same weak labels to train and validate a localization claim leaves the original ambiguity intact.
 
 Missing labels introduce a further selection issue. If label availability depends on both the input and true outcome, the labelled subset represents
 
@@ -660,7 +660,7 @@ Patient separation must also be considered during pretraining. Using unlabeled e
 | What supervises a pretext task? | A target explicitly constructed from observations and sampling decisions. |
 | What does squared-error reconstruction estimate? | The conditional mean of the hidden target. |
 | What is the contrastive class label? | The index of the designated positive candidate. |
-| Why is the positive included in the denominator? | The denominator normalises probabilities over all candidate classes. |
+| Why is the positive included in the denominator? | The denominator normalizes probabilities over all candidate classes. |
 | What is the InfoNCE score derivative? | Predicted candidate probability minus its indicator, divided by temperature. |
 | Why does negative sampling matter? | It defines the reference distribution and therefore the discrimination problem. |
 | What does collapse cost? | Equal candidate probabilities give a loss of the logarithm of candidate count. |

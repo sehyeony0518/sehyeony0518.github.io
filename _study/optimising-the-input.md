@@ -1,6 +1,6 @@
 ---
 layout: study_note
-title: "Optimising the Input: Visualisation, Style, and Adversarial Examples"
+title: "Optimizing the Input: Visualization, Style, and Adversarial Examples"
 description: "What happens when the weights are frozen and the image becomes the free variable, and why the same procedure produces both a picture of a concept and a picture that fools the model."
 tab: "ai-foundations"
 tab_title: "AI Theory"
@@ -17,20 +17,20 @@ papers:
 
 Backpropagation can differentiate an objective with respect to the input as well as the weights. Freezing the weights changes which variables may move; it does not change the chain rule.
 
-This produces several different experiments. Feature visualisation searches for inputs that strongly activate a chosen feature. Style transfer searches for an input whose feature statistics match selected references. An adversarial search looks for a nearby input that changes a decision or increases a loss.
+This produces several different experiments. Feature visualization searches for inputs that strongly activate a chosen feature. Style transfer searches for an input whose feature statistics match selected references. An adversarial search looks for a nearby input that changes a decision or increases a loss.
 
-The objective defines the desired behaviour. The feasible set or prior defines which changes are allowed. Both are necessary to understand what an optimised image establishes.
+The objective defines the desired behaviour. The feasible set or prior defines which changes are allowed. Both are necessary to understand what an optimized image establishes.
 
 ## Changing the variable while keeping the network fixed
 
-Ordinary training solves an optimisation problem over parameters:
+Ordinary training solves an optimization problem over parameters:
 
 $$
 \min_\theta
 L\bigl(f_\theta(x),y\bigr).
 $$
 
-Input optimisation instead solves
+Input optimization instead solves
 
 $$
 \min_x
@@ -69,7 +69,7 @@ $$
 \mathrm dx.
 $$
 
-The network weights still appear in this calculation. “Frozen” means that the optimisation does not update them. It does not mean that operations containing weights should be removed from the differentiation graph.
+The network weights still appear in this calculation. “Frozen” means that the optimization does not update them. It does not mean that operations containing weights should be removed from the differentiation graph.
 
 For a one-unit example, let
 
@@ -103,9 +103,9 @@ $$
 f_w(1.2)=1.4.
 $$
 
-The derivative machinery is shared with training, but the two partial derivatives are different quantities and can have different shapes. Input optimisation asks how a fixed model responds to changes in an observation.
+The derivative machinery is shared with training, but the two partial derivatives are different quantities and can have different shapes. Input optimization asks how a fixed model responds to changes in an observation.
 
-## Feature visualisation begins with a precisely chosen score
+## Feature visualization begins with a precisely chosen score
 
 Let a scalar activation or class score be
 
@@ -113,7 +113,7 @@ $$
 s_c(x).
 $$
 
-A basic feature visualisation solves
+A basic feature visualization solves
 
 $$
 \max_{x\in\mathcal X}s_c(x).
@@ -121,7 +121,7 @@ $$
 
 The score might be one spatial unit, a channel average, or a class logit. These are different questions. A channel average rewards activity across positions; a single unit rewards activity at one position.
 
-Even “maximise a class” needs clarification. If class probabilities come from logits,
+Even “maximize a class” needs clarification. If class probabilities come from logits,
 
 $$
 p_c(x)
@@ -148,7 +148,7 @@ $$
 \sum_jp_j\nabla_xz_j.
 $$
 
-Increasing a class probability can therefore involve decreasing competing logits. Maximising one logit asks a different question from maximising its probability. The distinction between objectives and image priors is discussed in [Feature Visualization](https://distill.pub/2017/feature-visualization/).
+Increasing a class probability can therefore involve decreasing competing logits. Maximizing one logit asks a different question from maximizing its probability. The distinction between objectives and image priors is discussed in [Feature Visualization](https://distill.pub/2017/feature-visualization/).
 
 Without restrictions, some objectives have no finite optimum. For an affine score,
 
@@ -272,7 +272,7 @@ $$
 \frac{2}{2}(1.5^2+2^2)=6.25.
 $$
 
-The penalised objective is consequently
+The penalized objective is consequently
 
 $$
 12.5-6.25=6.25.
@@ -284,13 +284,13 @@ $$
 \lambda=\frac{\lVert a\rVert_2}{r}.
 $$
 
-That correspondence should not be assumed for arbitrary nonconvex objectives. Different penalties or initialisations can select different local optima.
+That correspondence should not be assumed for arbitrary nonconvex objectives. Different penalties or initializations can select different local optima.
 
 ## Why a norm alone does not define a natural image
 
-The brief needs one qualification: the feasible set or prior does essential work, but a norm constraint is neither necessary for every visualisation method nor sufficient for a meaningful image.
+The brief needs one qualification: the feasible set or prior does essential work, but a norm constraint is neither necessary for every visualization method nor sufficient for a meaningful image.
 
-A squared pixel norm penalises magnitude, not spatial arrangement. Consider two two-pixel signals:
+A squared pixel norm penalizes magnitude, not spatial arrangement. Consider two two-pixel signals:
 
 $$
 x=(a,a)^\top,
@@ -340,13 +340,13 @@ $$
 
 For the two-pixel example, this penalty is zero for the constant signal and twice the squared amplitude for the alternating signal. It encodes a spatial preference that the ordinary pixel norm lacks.
 
-Other restrictions can come from a parameterisation. If an image must satisfy
+Other restrictions can come from a parameterization. If an image must satisfy
 
 $$
 x=G(z),
 $$
 
-then optimisation occurs through
+then optimization occurs through
 
 $$
 \nabla_zJ
@@ -354,9 +354,9 @@ $$
 J_G(z)^\top\nabla_xJ.
 $$
 
-Only images reachable through the generator are available. A recognisable result can consequently reflect both the interrogated model and the generator's prior.
+Only images reachable through the generator are available. A recognizable result can consequently reflect both the interrogated model and the generator's prior.
 
-An optimised image demonstrates that a particular input scores highly under a specified procedure. Establishing what a feature represents also requires examining multiple optima, real examples, and controlled changes to the hypothesised content.
+An optimized image demonstrates that a particular input scores highly under a specified procedure. Establishing what a feature represents also requires examining multiple optima, real examples, and controlled changes to the hypothesized content.
 
 ## Style transfer as matching feature statistics
 
@@ -390,7 +390,7 @@ $$
 
 This objective retains spatial correspondence in feature space. It need not retain every pixel detail, because different images can produce similar features.
 
-For style, define a normalised Gram matrix:
+For style, define a normalized Gram matrix:
 
 $$
 G(F)=\frac{1}{M}FF^\top.
@@ -405,7 +405,7 @@ G_{ab}
 \sum_{j=1}^{M}F_{aj}F_{bj}.
 $$
 
-These are uncentred second moments of channel responses. They are not automatically covariances or correlation coefficients: the channel means have not been subtracted, and the variances have not been normalised.
+These are uncentred second moments of channel responses. They are not automatically covariances or correlation coefficients: the channel means have not been subtracted, and the variances have not been normalized.
 
 Why use this statistic? Let a permutation matrix reorder spatial positions. Then
 
@@ -519,9 +519,9 @@ $$
 \end{bmatrix}.
 $$
 
-A complete input objective combines content, style, and any image regularisation. Backpropagation sends the resulting feature gradients through the frozen network to the pixels. Matching the selected statistics establishes success on that objective; it does not establish preservation of every semantic or clinical feature.
+A complete input objective combines content, style, and any image regularization. Backpropagation sends the resulting feature gradients through the frozen network to the pixels. Matching the selected statistics establishes success on that objective; it does not establish preservation of every semantic or clinical feature.
 
-## Adversarial perturbation as constrained optimisation
+## Adversarial perturbation as constrained optimization
 
 Start from an observed input and its label:
 
@@ -546,7 +546,7 @@ $$
 
 The first constraint limits change from the original observation. The second enforces valid input values. The label must also remain valid under the allowed changes if the result is to demonstrate an adversarial error rather than a changed task.
 
-A targeted search instead attempts to produce a specified alternative label, for example by minimising its cross-entropy:
+A targeted search instead attempts to produce a specified alternative label, for example by minimizing its cross-entropy:
 
 $$
 \min_\delta
@@ -557,7 +557,7 @@ under the same constraints. Increasing the true-label loss and decreasing a chos
 
 A high loss is also not identical to a changed prediction. The final decision must be checked directly.
 
-## Deriving the gradient-sign and normalised-gradient steps
+## Deriving the gradient-sign and normalized-gradient steps
 
 Let the input loss gradient at the original observation be
 
@@ -579,7 +579,7 @@ $$
 -\varepsilon\le\delta_j\le\varepsilon.
 $$
 
-Each term in the linearised objective is maximised by selecting the endpoint with the same sign as its gradient component. Therefore,
+Each term in the linearized objective is maximized by selecting the endpoint with the same sign as its gradient component. Therefore,
 
 $$
 \boxed{
@@ -589,7 +589,7 @@ $$
 }
 $$
 
-and the maximum linearised increase is
+and the maximum linearized increase is
 
 $$
 g^\top\delta^\ast
@@ -633,7 +633,7 @@ $$
 
 Putting the entire budget on a largest-magnitude gradient coordinate attains the bound. These examples explain dual norms operationally: the perturbation norm determines which measure of gradient size controls the worst local change.
 
-All three results solve the linearised problem. Nonlinear networks can change their gradients as the input moves, so one step need not solve the original constrained problem.
+All three results solve the linearized problem. Nonlinear networks can change their gradients as the input moves, so one step need not solve the original constrained problem.
 
 ## A classifier perturbed across a known boundary
 
@@ -796,9 +796,9 @@ $$
 \frac{\partial\ell}{\partial u_j}.
 $$
 
-A uniform budget in normalised coordinates generally becomes a nonuniform budget in original intensity units. A robustness statement must identify the input space, preprocessing, norm, radius, and allowed value range.
+A uniform budget in normalized coordinates generally becomes a nonuniform budget in original intensity units. A robustness statement must identify the input space, preprocessing, norm, radius, and allowed value range.
 
-A failed optimisation does not prove that no admissible adversarial input exists. The search may encounter poor starting points, saturated gradients, discontinuous preprocessing, or an inadequate objective. Conversely, a successful search proves failure for the specific constructed input and constraint set, not a population-wide failure rate.
+A failed optimization does not prove that no admissible adversarial input exists. The search may encounter poor starting points, saturated gradients, discontinuous preprocessing, or an inadequate objective. Conversely, a successful search proves failure for the specific constructed input and constraint set, not a population-wide failure rate.
 
 Pixel distance does not by itself establish perceptual or clinical equivalence. Feature validity and local robustness are also different properties: a constant classifier can be insensitive to perturbations while using no input-specific evidence. A classifier using a relevant feature can still place its threshold incorrectly.
 
@@ -806,20 +806,20 @@ Pixel distance does not by itself establish perceptual or clinical equivalence. 
 
 | Question | What I should be able to reconstruct |
 | --- | --- |
-| What changes when the input is optimised? | The free variable changes; the chain rule remains the same. |
-| What score is being maximised? | A specified unit, channel statistic, logit, or probability. |
-| Why can unconstrained visualisation fail to have an optimum? | An affine score grows without bound along its coefficient vector. |
+| What changes when the input is optimized? | The free variable changes; the chain rule remains the same. |
+| What score is being maximized? | A specified unit, channel statistic, logit, or probability. |
+| Why can unconstrained visualization fail to have an optimum? | An affine score grows without bound along its coefficient vector. |
 | What does a norm specify? | The geometry of allowed magnitude or displacement. |
 | Does a pixel norm enforce smoothness? | No; constant and alternating signals can have identical norms. |
 | What does a Gram matrix retain? | Uncentred channel second moments, invariant to common spatial permutations. |
-| Where does the sign attack come from? | Maximising each coordinate of a linearised loss under an interval constraint. |
-| Why use a normalised gradient for a Euclidean budget? | Cauchy–Schwarz identifies the optimal linearised direction. |
+| Where does the sign attack come from? | Maximizing each coordinate of a linearized loss under an interval constraint. |
+| Why use a normalized gradient for a Euclidean budget? | Cauchy–Schwarz identifies the optimal linearized direction. |
 | What must an adversarial example preserve? | The task label under the specified allowed changes. |
-| What does failed attack optimisation establish? | Failure of that search, without a general robustness guarantee. |
+| What does failed attack optimization establish? | Failure of that search, without a general robustness guarantee. |
 
 ## Why it matters for my work
 
-For ultrasound auditing, I need to specify which changes preserve the evidence under examination before interpreting an optimised input. A synthetic image, a style-matched image, and a nearby decision-changing image each answer a different question about the same frozen model.
+For ultrasound auditing, I need to specify which changes preserve the evidence under examination before interpreting an optimized input. A synthetic image, a style-matched image, and a nearby decision-changing image each answer a different question about the same frozen model.
 
 ## What I have not resolved
 

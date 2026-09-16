@@ -265,7 +265,7 @@ $$
 
 Every coefficient in either type of factor is strictly positive. Multiplying such factors produces coefficients that are sums of positive products. No power between the leading term and constant term is missing.
 
-With the positive leading-coefficient normalisation,
+With the positive leading-coefficient normalization,
 
 $$
 \boxed{
@@ -275,7 +275,7 @@ a_k>0\text{ for every }k.
 }
 $$
 
-Before normalisation, this says all coefficients must be nonzero and have the same sign.
+Before normalization, this says all coefficients must be nonzero and have the same sign.
 
 A zero or a coefficient of the opposite sign therefore rules out strict LHP stability. It does not necessarily prove an RHP root: a polynomial can instead have roots on the imaginary axis.
 
@@ -449,7 +449,7 @@ c_\varepsilon
 \end{aligned}
 $$
 
-The completed regularised array is
+The completed regularized array is
 
 | Row | First entry | Second entry | Third entry |
 |---|---|---|---|
@@ -486,7 +486,7 @@ $$
 
 There are two sign changes, hence two RHP roots.
 
-The divergent entry $$b_\varepsilon\to-\infty$$ is not a pole moving to infinity. It is an intermediate coefficient in a regularised calculation. The division obstruction is removable by the limiting procedure even though every intermediate entry need not have a finite limit.
+The divergent entry $$b_\varepsilon\to-\infty$$ is not a pole moving to infinity. It is an intermediate coefficient in a regularized calculation. The division obstruction is removable by the limiting procedure even though every intermediate entry need not have a finite limit.
 
 Nor does a zero pivot by itself imply an imaginary-axis root. For this example,
 
@@ -783,7 +783,7 @@ $$
 +,\ +,\ -,
 $$
 
-so it has one RHP root. Direct factorisation confirms
+so it has one RHP root. Direct factorization confirms
 
 $$
 P(s)=(s-a)(s+a).
@@ -985,7 +985,7 @@ The original gain sweep is retained unchanged:
 
 Here “marginal” describes the nondecaying, simple imaginary-axis modes. It does not mean strict LHP or BIBO stability.
 
-### Gain example 2: stabilising an unstable plant within a window
+### Gain example 2: stabilizing an unstable plant within a window
 
 Now take
 
@@ -1124,7 +1124,7 @@ The original numerical sweep is reproduced unchanged:
  K=11.0: max Re(pole) = +0.028635  UNSTABLE   (too much gain)
 ```
 
-Too little gain leaves an unstable mode; too much gain produces a different instability. Feedback changes the characteristic polynomial, but increasing gain is not monotonically stabilising.
+Too little gain leaves an unstable mode; too much gain produces a different instability. Feedback changes the characteristic polynomial, but increasing gain is not monotonically stabilizing.
 
 ### Why unstable-pole cancellation does not establish internal stability
 
@@ -1271,7 +1271,7 @@ This requires applying the criterion to the shifted polynomial; the original sig
 | Why use the derivative? | Expand $$A(s+\delta)$$ and separate its parity parts | The derivative is a limiting repair, not a replacement characteristic polynomial |
 | Does a zero row imply imaginary roots? | Factor or solve the auxiliary polynomial | Real opposite-sign pairs and complex quartets are also possible |
 | How is a gain interval found? | Require all regular first-column entries positive | Examine equality cases separately |
-| Can more gain destabilise? | Compare the first-column signs on both sides of each boundary | A stabilising interval can have both lower and upper limits |
+| Can more gain destabilize? | Compare the first-column signs on both sides of each boundary | A stabilizing interval can have both lower and upper limits |
 | Does the table give a decay margin? | Apply Routh to $$P(z-\alpha)$$ for a specified margin | Raw entry magnitudes are not pole distances |
 | Is pole–zero cancellation enough? | Check internal modes and other input–output paths | Nominal cancellation can hide an unstable mode |
 
@@ -1287,4 +1287,4 @@ I want to work through a multi-parameter example with coefficient uncertainty an
 
 ---
 
-Sources: Ajou University lecture notes and the standard classical-control treatment in Franklin, Powell, and Emami-Naeini, Feedback Control of Dynamic Systems. The even/odd polynomial construction, Routh–Hurwitz root-count theorem, zero-pivot and auxiliary-polynomial procedures, and internal-stability distinction are standard linear-systems results. The original numerical records are retained: six validation polynomials checked using exact-rational Routh arrays and numerical roots, and both gain-window sweeps checked pole-by-pole. The added arrays, factorisations, boundary calculations, and cancellation example are derived symbolically; no new numerical root or simulation results are claimed.
+Sources: Ajou University lecture notes and the standard classical-control treatment in Franklin, Powell, and Emami-Naeini, Feedback Control of Dynamic Systems. The even/odd polynomial construction, Routh–Hurwitz root-count theorem, zero-pivot and auxiliary-polynomial procedures, and internal-stability distinction are standard linear-systems results. The original numerical records are retained: six validation polynomials checked using exact-rational Routh arrays and numerical roots, and both gain-window sweeps checked pole-by-pole. The added arrays, factorizations, boundary calculations, and cancellation example are derived symbolically; no new numerical root or simulation results are claimed.

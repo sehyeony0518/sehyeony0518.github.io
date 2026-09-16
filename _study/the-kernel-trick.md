@@ -15,7 +15,7 @@ updated: "2026-09-15"
 
 A kernel evaluates an inner product between feature representations without requiring their coordinates to be constructed explicitly. The feature space can be finite-dimensional or infinite-dimensional.
 
-An infinite-dimensional feature space does not make the primal optimisation problem meaningless. A norm-regularised optimum can often be represented by finitely many training features. The kernel trick concerns representation and computation, not the nonexistence of a primal solution.
+An infinite-dimensional feature space does not make the primal optimization problem meaningless. A norm-regularized optimum can often be represented by finitely many training features. The kernel trick concerns representation and computation, not the nonexistence of a primal solution.
 
 ## A non-linear boundary from a linear feature-space rule
 
@@ -366,13 +366,13 @@ $$
 
 The Gram matrix approaches a rank-one matrix. The representation increasingly treats different inputs as similar.
 
-These limits explain why bandwidth changes model behaviour, but they do not prove that one setting overfits or another generalises. The regularisation strength, sample distribution, and target function also matter.
+These limits explain why bandwidth changes model behaviour, but they do not prove that one setting overfits or another generalizes. The regularization strength, sample distribution, and target function also matter.
 
 Input scaling changes the squared distances inside the kernel. A coordinate measured in larger numerical units can dominate unless its scale is intentionally accounted for. Fitting a scaling transformation using held-out observations also changes the information available to training, so preprocessing belongs inside the training procedure.
 
 ## Why a finite representation exists even for the primal
 
-Consider the norm-regularised feature-space problem
+Consider the norm-regularized feature-space problem
 
 $$
 \min_{w,b}
@@ -460,9 +460,9 @@ $$
 (K+\lambda I)c=y.
 $$
 
-The matrix is positive definite for positive regularisation, even when the original Gram matrix is singular.
+The matrix is positive definite for positive regularization, even when the original Gram matrix is singular.
 
-Take the linear kernel in one dimension, inputs one and two, responses one and two, and regularisation one:
+Take the linear kernel in one dimension, inputs one and two, responses one and two, and regularization one:
 
 $$
 K=
@@ -517,7 +517,7 @@ $$
 
 so the optimum is five sixths.
 
-This example also warns against cancelling a singular Gram matrix from a coefficient stationarity equation. The regularised linear system above follows from the feature-space first-order condition and remains valid without that cancellation.
+This example also warns against cancelling a singular Gram matrix from a coefficient stationarity equation. The regularized linear system above follows from the feature-space first-order condition and remains valid without that cancellation.
 
 ## A complete non-linear SVM example
 
@@ -602,7 +602,7 @@ $$
 \frac14.
 $$
 
-Feasibility and matching objectives prove optimality. The non-linear boundary is obtained without a numerical optimisation claim or a plotted boundary that merely looks plausible.
+Feasibility and matching objectives prove optimality. The non-linear boundary is obtained without a numerical optimization claim or a plotted boundary that merely looks plausible.
 
 ## Centring a Gram matrix
 
@@ -795,7 +795,7 @@ $$
 K(x,x)=\kappa,
 $$
 
-then the first dual term is constant because the coefficients sum to one. With the same coefficient ceiling, the sphere and one-class hyperplane duals have the same minimisers.
+then the first dual term is constant because the coefficients sum to one. With the same coefficient ceiling, the sphere and one-class hyperplane duals have the same minimizers.
 
 At an interior support observation,
 
@@ -827,9 +827,9 @@ $$
 f(x)=\sum_i\alpha_i y_iK(x_i,x)+b
 $$
 
-resembles a similarity-weighted vote, but it is not a nearest-neighbour rule. Its coefficients are learned jointly through an optimisation problem, need not be normalised as voting probabilities, and can reflect global constraints.
+resembles a similarity-weighted vote, but it is not a nearest-neighbour rule. Its coefficients are learned jointly through an optimization problem, need not be normalized as voting probabilities, and can reflect global constraints.
 
-Finally, “similar under the kernel” is the actual mathematical criterion. A kernel sensitive to acquisition protocol can regard a familiar protocol as normal even when the clinically relevant content differs. The optimisation does not correct a mismatch between the chosen geometry and the intended meaning of similarity.
+Finally, “similar under the kernel” is the actual mathematical criterion. A kernel sensitive to acquisition protocol can regard a familiar protocol as normal even when the clinically relevant content differs. The optimization does not correct a mismatch between the chosen geometry and the intended meaning of similarity.
 
 ## Revision checklist
 
@@ -838,10 +838,10 @@ Finally, “similar under the kernel” is the actual mathematical criterion. A 
 | Expand a polynomial kernel | Recover the square-root feature factors |
 | Prove a Gram matrix must be PSD | Express its quadratic form as a squared norm |
 | Reject an invalid similarity | Construct a negative quadratic form |
-| Explain feature-map existence | Use a Gram factorisation or the formal feature-space construction |
+| Explain feature-map existence | Use a Gram factorization or the formal feature-space construction |
 | Derive a Gaussian feature expansion | Expand the exponential after separating squared norms |
 | Prove the finite-span property | Remove the orthogonal weight component |
-| Solve kernel ridge regression | Obtain the regularised Gram system |
+| Solve kernel ridge regression | Obtain the regularized Gram system |
 | Verify the non-linear SVM example | Match primal and dual objectives |
 | Centre features through kernels | Derive the two means and grand-mean correction |
 | Derive the one-class dual | Obtain the unit-sum constraint and coefficient ceiling |
