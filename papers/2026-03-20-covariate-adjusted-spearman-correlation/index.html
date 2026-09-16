@@ -4,7 +4,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Montserrat:500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=212541f2e476e0138812c28312f0f6f8"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/papers/2026-03-20-covariate-adjusted-spearman-correlation/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Covariate-Adjusted Spearman's Rank Correlation with Probability-Scale Residuals</h1> <p class="post-meta"> Created on March 20, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Covariate-Adjusted Spearman’s Rank Correlation with Probability-Scale Residuals</em>. <a href="https://doi.org/10.1111/biom.12812" rel="external nofollow noopener" target="_blank">Biometrics (2018)</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>Clinical alignment is often measured by correlating a model score with an ordinal biomarker or severity grade. That correlation can be inflated, attenuated, or reversed by age, label, site, or other covariates. I read this paper for a principled rank-based adjustment rather than an ad hoc residualization step.</p> <h2 id="what-the-paper-claims">What the paper claims</h2> <p>The authors define population parameters for partial and conditional Spearman correlation through concordance–discordance probabilities. The practical estimator is the correlation between probability-scale residuals from models of each variable conditional on the covariates. This preserves a rank interpretation and accommodates continuous, ordinal, and other orderable outcomes.</p> <h2 id="what-convinced-me">What convinced me</h2> <p>The applications show that adjustment can change the scientific conclusion. The unadjusted correlation between IL-6 and sCD14 was 0.03, but the adjusted estimate was 0.19 with a 95% confidence interval of 0.04–0.33. The leptin–sCD14 association changed sign, from –0.20 unadjusted to +0.13 after adjustment. Simulations also showed better type-I-error behavior than several traditional partial-rank alternatives in the examined settings.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>The method is not automatically causal. Its validity depends on choosing the relevant covariates and adequately modeling each conditional distribution. Conditioning on a collider or adjusting away part of the clinical construct can create a different bias. The resulting coefficient also needs uncertainty estimates and sensitivity analysis.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>For evidence-alignment metrics, I would report the raw rank correlation, the covariate-adjusted estimate, its confidence interval, and the exact adjustment set. A label-controlled correlation can isolate within-class ordering, but only if the conditioning choice is clinically and causally defensible.</p> </div> </article> </div> </div> <style>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Covariate-Adjusted Spearman's Rank Correlation with Probability-Scale Residuals</h1> <p class="post-meta"> Created on March 20, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Covariate-Adjusted Spearman’s Rank Correlation with Probability-Scale Residuals</em>. <a href="https://doi.org/10.1111/biom.12812" rel="external nofollow noopener" target="_blank">Biometrics (2018)</a></p> <h2 id="the-question-behind-the-method">The question behind the method</h2> <p>If a model score correlates with a clinical severity grade, what has been established? Possibly that the model tracks severity. Possibly that both variables differ between hospitals, age groups, or diagnostic classes. A pooled correlation cannot distinguish these explanations.</p> <p>This matters for my work because an evidence-alignment metric can look convincing while measuring population composition. Suppose more suspicious lesions receive magnified ultrasound views. A model readout sensitive to magnification might correlate with reader-assessed irregularity without measuring irregularity reliably within comparable acquisitions. Adjusting for acquisition asks a more specific question, provided the adjustment itself is appropriate.</p> <p>The statistical problem is that the familiar partial-correlation formula does not automatically become a principled rank-based estimand when Pearson correlations are replaced with Spearman correlations. The paper supplies a population definition and an estimator that fit together.</p> <h2 id="what-probability-scale-residuals-do">What probability-scale residuals do</h2> <p>The authors model the conditional distributions of two orderable variables, X and Y, given covariates Z. Each observation becomes a probability-scale residual, and the partial Spearman estimate is the correlation between the two residual sets. They also define conditional correlations, which can vary with covariate values, and study semiparametric cumulative probability models that preserve the outcomes’ ordering. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5949238/" rel="external nofollow noopener" target="_blank">Full paper</a></p> <p>For intuition, a probability-scale residual compares how much fitted probability lies below an observation with how much lies above it:</p> \[r_X = P(X^* &lt; X \mid Z) - P(X^* &gt; X \mid Z).\] <p>Equivalently, it uses the fitted cumulative probabilities immediately below and at the observation. That distinction handles ties and ordinal categories. A positive residual means that the observation is relatively high compared with its fitted conditional distribution. It is not a residual measured in the original biomarker’s units.</p> <p>The correlation therefore asks whether people who rank relatively high on one variable, given their covariates, also rank relatively high on the other. The authors’ later <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11451338/" rel="external nofollow noopener" target="_blank">PResiduals paper</a> provides an implementation-oriented explanation of this construction.</p> <p>Partial and conditional correlation answer different questions. A single adjusted coefficient summarizes an association across the sampled population. A conditional analysis asks whether that association changes, for example, with age. One pooled adjusted number can still conceal clinically important heterogeneity.</p> <h2 id="what-the-empirical-examples-establish">What the empirical examples establish</h2> <p>In the HIV biomarker application, adjustment includes demographic and clinical covariates and study cohort. The IL-6–sCD14 correlation changes from 0.03 to 0.19, with an adjusted 95% confidence interval of 0.04 to 0.33. The leptin–sCD14 estimate changes from −0.20 to +0.13, but the latter interval is −0.01 to 0.27. That sign reversal should therefore not be described as decisive evidence of a positive adjusted association. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5949238/" rel="external nofollow noopener" target="_blank">Application results</a></p> <p>These examples make a useful point: adjustment can reveal an association as well as attenuate one. It would be a mistake to approach covariate adjustment solely as a device for reducing an inflated score. The scientific question determines the adjustment; the desired direction of the answer does not.</p> <p>The simulations support the estimator under the settings examined. They cannot establish that a particular adjustment set or conditional model is adequate for a new imaging study.</p> <h2 id="what-the-result-licenses">What the result licenses</h2> <p>An adjusted correlation supports a statement about residual ordering under the specified models and adjustment variables. It does not establish that the model uses the correlated clinical finding. Two readouts can remain associated because of an unmeasured common influence, or because both are downstream consequences of diagnosis.</p> <p>It also does not measure agreement. A model measurement can rank patients correctly while consistently overestimating the quantity. If the intended output is joint-space width or lesion size, correlation alone cannot establish acceptable measurement error.</p> <p>Likewise, zero adjusted correlation is a limited negative result. A non-monotonic relationship, a subgroup effect, measurement noise, or restricted variation could produce a small coefficient. The absence of a rank association does not establish that the two variables are unrelated in every useful sense.</p> <p>For ordinal clinical labels, the ordering is meaningful, but category transitions may not represent equal biological changes. Probability-scale residuals respect that distinction. They do not solve uncertainty about whether the label measures the intended clinical construct.</p> <h2 id="the-weakness-i-would-press">The weakness I would press</h2> <p>The main vulnerability is the conditional-distribution modeling step. Calling the result rank-based can make it sound almost assumption-free. Once covariates enter, estimates depend on how their relationships with both outcomes are represented. Missed nonlinearities or interactions can leave structure in the residuals.</p> <p>The adjustment set is an even earlier decision. Conditioning on diagnosis changes an overall alignment question into a within-diagnosis question. If a finding helps determine diagnosis, that adjustment may remove part of the relationship I wanted to study. Conditioning on selection into surgery could introduce another association rather than remove one.</p> <p>I would therefore specify the estimand before fitting anything: overall association, within-class association, or association among comparable acquisition conditions. These are complementary analyses, not progressively more correct versions of the same number.</p> <p>Limited overlap also matters. If one scanner contributes only severe cases, a regression model may manufacture an adjusted comparison through extrapolation. A tidy confidence interval does not demonstrate that the underlying clinical comparison was observed.</p> <h2 id="connections-to-the-study-notes">Connections to the study notes</h2> <p><a href="/study/confounding-in-medical-ai/">Confounding in Medical AI</a> argues that hospital identity should be unpacked into mechanisms and that the adjustment rationale depends on the question. This paper supplies a useful estimator for those observational comparisons. It does not supply their causal justification.</p> <p><a href="/study/statistical-inference-for-diagnostic-studies/">Statistical Inference for Diagnostic Studies</a> emphasizes the estimand and sampling unit. In an ultrasound audit, I would preserve patient clustering and refit the conditional models during a bootstrap intended to include uncertainty from adjustment. Resampling already-computed residuals would omit that fitting variation.</p> <p><a href="/study/representation-level-auditing/">Representation-Level Auditing</a> separates information accessibility from diagnostic use. A significant adjusted correlation between an internal readout and a clinical annotation remains evidence about association. A controlled intervention on the original predictor addresses the additional reliance question.</p> <h2 id="how-i-would-use-it">How I would use it</h2> <p>I would report the raw coefficient, adjusted coefficient, confidence interval, covariate definitions, model specifications, and subgroup composition together. I would inspect conditional-model diagnostics and sensitivity to defensible alternative specifications.</p> <p>The practical benefit is a more precise claim: this readout tracks this annotation after this adjustment in this population. That statement is narrower than clinical faithfulness, but it is testable, reproducible, and useful for deciding which behavioral experiment should follow.</p> </div> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
   :root {
     --global-bg-color: #f9f9f9;
@@ -3169,7 +3169,7 @@ ninja.data = [{
               window.location.href = "/papers/2026-08-30-monet-transparent-medical-image-ai/";
             },},{id: "papers-can-you-trust-this-prediction-auditing-pointwise-reliability-after-learning",
           title: 'Can You Trust This Prediction? Auditing Pointwise Reliability After Learning',
-          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods, not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
+          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods: not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-05-auditing-pointwise-reliability-after-learning/";
             },},{id: "prayer-2026년-7월호-부르심의-시작",
@@ -3199,12 +3199,12 @@ ninja.data = [{
               window.location.href = "/study/allergy-and-clinical-immunology/";
             },},{id: "study-anchor-boxes-and-non-maximum-suppression-where-the-priors-are-hidden",
           title: 'Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden',
-          description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports.",
+          description: "Deriving anchor-box geometry, normalized box regression, IoU matching, and non-maximum suppression, with worked examples of reference boxes, losses, and overlapping detections.",
           section: "Study",handler: () => {
               window.location.href = "/study/anchor-boxes-and-non-maximum-suppression/";
             },},{id: "study-attention-retrieval-as-a-differentiable-operation",
           title: 'Attention: Retrieval as a Differentiable Operation',
-          description: "Query, key and value are a soft dictionary lookup, and everything else in a Transformer is bookkeeping around it. Including why the scores are divided by √d, which is not a fudge factor.",
+          description: "Deriving query-key-value attention, softmax, square-root dimension scaling, multi-head computation, positional encoding, causal masks, and Transformer costs through explicit examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/attention-and-the-transformer/";
             },},{id: "study-attribution-attention-and-counterfactual-explanations",
@@ -3229,7 +3229,7 @@ ninja.data = [{
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
             },},{id: "study-backpropagation-in-scalars-and-in-matrices",
           title: 'Backpropagation, in Scalars and in Matrices',
-          description: "Why a procedure for computing derivatives is the whole of a training algorithm, and what the backward pass turns out to be for a dense layer and for a convolution.",
+          description: "How backpropagation organises the chain rule to compute derivatives for training, with scalar and matrix derivations for a dense layer and a convolution.",
           section: "Study",handler: () => {
               window.location.href = "/study/backpropagation/";
             },},{id: "study-bayesian-decision-theory-risk-loss-and-where-the-boundary-goes",
@@ -3239,7 +3239,7 @@ ninja.data = [{
               window.location.href = "/study/bayesian-decision-theory/";
             },},{id: "study-marginalisation-not-optimisation-what-deep-ensembles-are-actually-doing",
           title: 'Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing',
-          description: "The frequentist/Bayesian split is one decision, is the parameter a constant or a random variable, and it propagates all the way to why averaging several trained networks is not a trick.",
+          description: "The frequentist/Bayesian distinction, posterior marginalisation, and deep ensembles: deriving predictive uncertainty while separating model averaging from posterior sampling.",
           section: "Study",handler: () => {
               window.location.href = "/study/bayesian-deep-learning-and-deep-ensembles/";
             },},{id: "study-bayesian-inverse-problems-in-imaging",
@@ -3289,7 +3289,7 @@ ninja.data = [{
               window.location.href = "/study/choosing-an-estimator/";
             },},{id: "study-choosing-the-loss-squared-error-absolute-error-and-what-each-one-believes",
           title: 'Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes',
-          description: "The loss is where you state what counts as a good answer. Squaring makes one bad point outvote nine good ones, and the arithmetic of how badly is worth seeing.",
+          description: "Squared error, absolute error and Huber loss: deriving their prediction targets, checking how one bad point affects a fit, and understanding weighted classification losses.",
           section: "Study",handler: () => {
               window.location.href = "/study/choosing-the-loss-function/";
             },},{id: "study-circadian-rhythm-disorders",
@@ -3424,7 +3424,7 @@ ninja.data = [{
               window.location.href = "/study/explanation-faithfulness-versus-plausibility/";
             },},{id: "study-the-exponential-moving-average-one-recursion-behind-momentum-rmsprop-and-adam",
           title: 'The Exponential Moving Average: One Recursion Behind Momentum, RMSProp and Adam',
-          description: "A single line of algebra that replaces a buffer with one number, and once you recognise it, most of the optimiser zoo stops being a zoo.",
+          description: "Deriving the exponential moving average behind momentum, RMSProp and Adam, including bias correction, memory timescales, effective sample size and numerical updates.",
           section: "Study",handler: () => {
               window.location.href = "/study/exponential-moving-averages-in-optimisers/";
             },},{id: "study-external-validation-and-clinical-utility-for-gallbladder-ai",
@@ -3464,7 +3464,7 @@ ninja.data = [{
               window.location.href = "/study/from-clinical-problem-to-machine-learning-task/";
             },},{id: "study-fully-convolutional-networks-and-why-detection-needed-its-own-metric",
           title: 'Fully Convolutional Networks, and Why Detection Needed Its Own Metric',
-          description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists: the same argument against accuracy that class imbalance forces on classification, arriving by a different road.",
+          description: "Deriving fully convolutional networks from fully-connected layers, then computing IoU, detection matching, precision-recall, AP, and mAP under explicit evaluation conventions.",
           section: "Study",handler: () => {
               window.location.href = "/study/fully-convolutional-networks-and-detection-metrics/";
             },},{id: "study-gallbladder-cancer",
@@ -3549,7 +3549,7 @@ ninja.data = [{
               window.location.href = "/study/linear-mmse-and-the-wiener-filter/";
             },},{id: "study-linearization-an-approximation-whose-licence-is-retrospective",
           title: 'Linearization: An Approximation Whose Licence Is Retrospective',
-          description: "Replacing sin θ with θ makes an unsolvable equation solvable, the justification arrives only after checking, and a single sign decides whether the system oscillates forever or runs away.",
+          description: "Pendulum linearization, small-angle sine approximations, Taylor error bounds, phase drift, and the poles that distinguish hanging, inverted, and cart-pole dynamics.",
           section: "Study",handler: () => {
               window.location.href = "/study/linearization-and-the-inverted-pendulum/";
             },},{id: "study-liver-cancer",
@@ -3564,7 +3564,7 @@ ninja.data = [{
               window.location.href = "/study/lung-cancer/";
             },},{id: "study-matrix-calculus-for-reading-papers-determinants-cofactors-and-the-gaussian-mle",
           title: 'Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gaussian MLE',
-          description: "The minimum of matrix differentiation that lets you read a derivation instead of skipping it, and the derivation of the Gaussian mean and covariance estimators that it exists to serve.",
+          description: "Matrix differentiation through determinants, cofactors, log determinants and inverses, followed by a complete derivation of Gaussian mean and covariance maximum-likelihood estimators.",
           section: "Study",handler: () => {
               window.location.href = "/study/matrix-calculus-for-reading-papers/";
             },},{id: "study-matthews-correlation-coefficient-a-metric-that-fails-loudly",
@@ -3574,7 +3574,7 @@ ninja.data = [{
               window.location.href = "/study/matthews-correlation-coefficient/";
             },},{id: "study-mdps-and-the-simulator-problem-every-rl-paper-starts-after-the-hard-part",
           title: 'MDPs and the Simulator Problem: Every RL Paper Starts After the Hard Part...',
-          description: "The five-tuple that defines an environment, why a plan is not a policy, and the reason reinforcement learning works on games and struggles everywhere the simulator has to be built.",
+          description: "The Markov decision process five-tuple, Bellman equations, plans versus policies, and how simulator error and off-policy coverage affect reinforcement learning.",
           section: "Study",handler: () => {
               window.location.href = "/study/mdps-and-the-simulator-problem/";
             },},{id: "study-medical-ai-agents-and-tool-using-clinical-systems",
@@ -3594,7 +3594,7 @@ ninja.data = [{
               window.location.href = "/study/monte-carlo-tree-search/";
             },},{id: "study-neural-radiance-fields-a-scene-stored-as-a-function",
           title: 'Neural Radiance Fields: A Scene Stored as a Function',
-          description: "NeRF replaces the 3-D data structure with a network you query. 5 MB holds what a voxel grid needs 500 MB for, and the bill arrives at 123 million network calls per frame.",
+          description: "Deriving NeRF camera rays, volume density, transmittance, alpha compositing, rendering gradients, positional encoding, and the storage-computation tradeoff against voxel grids.",
           section: "Study",handler: () => {
               window.location.href = "/study/neural-radiance-fields/";
             },},{id: "study-optimising-the-input-visualisation-style-and-adversarial-examples",
@@ -3614,7 +3614,7 @@ ninja.data = [{
               window.location.href = "/study/parkinsons-disease/";
             },},{id: "study-perception-as-inference-illusions-are-not-failures-and-the-easy-problems-were-the-hard-ones",
           title: 'Perception as Inference: Illusions Are Not Failures, and the Easy Problems Were the...',
-          description: "Why the retinal image cannot determine what you see, why walking took a billion years and calculus took a hundred thousand, and where the functional definition of AI runs out.",
+          description: "Perception as Bayesian inference: retinal-image ambiguity, illumination and reflectance, Gaussian cue integration, decision costs, active sensing, and Moravec&#39;s paradox.",
           section: "Study",handler: () => {
               window.location.href = "/study/perception-as-inference-and-moravecs-paradox/";
             },},{id: "study-poles-and-zeros-what-comes-out-uninvited-and-what-goes-in-and-vanishes",
@@ -3639,7 +3639,7 @@ ninja.data = [{
               window.location.href = "/study/probability-and-bayesian-reasoning/";
             },},{id: "study-recommender-systems-embeddings-interactions-and-a-field-that-audited-itself",
           title: 'Recommender Systems: Embeddings, Interactions, and a Field That Audited Itself',
-          description: "Why recommendation is a ranking problem over extremely sparse categorical features, how embeddings and feature interactions address that, and the reproducibility study that found most of the progress was not there.",
+          description: "Deriving recommendation from sparse categorical features through embeddings, matrix factorization, feature interactions, ranking losses, retrieval metrics, and reproducible evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/recommender-systems-and-sparse-features/";
             },},{id: "study-recurrent-networks-and-gating",
@@ -3659,7 +3659,7 @@ ninja.data = [{
               window.location.href = "/study/reproducibility-benchmarks-and-translational-study-design/";
             },},{id: "study-resampling-and-anti-aliasing-why-half-of-a-checkerboard-is-grey",
           title: 'Resampling and Anti-Aliasing: Why Half of a Checkerboard Is Grey',
-          description: "What downsampling does to a spectrum, why the filter has to come first, and the resize call that has been quietly changing benchmark results for years.",
+          description: "How downsampling folds the spectrum, why anti-aliasing must come first, and how interpolation, rational resampling, and checkerboard resizing set the filter cutoff.",
           section: "Study",handler: () => {
               window.location.href = "/study/resampling-and-anti-aliasing/";
             },},{id: "study-rheumatic-disease",
@@ -3689,7 +3689,7 @@ ninja.data = [{
               window.location.href = "/study/second-order-systems-and-transient-response/";
             },},{id: "study-segmentation-resolution-against-context-and-the-things-stuff-divide",
           title: 'Segmentation: Resolution Against Context, and the Things/Stuff Divide',
-          description: "Every segmentation architecture is an answer to one conflict: you need to see widely and label precisely, and pooling buys the first with the second. Four answers, and why panoptic needed a new output format.",
+          description: "Semantic, instance, and panoptic segmentation derived through pixel losses, receptive fields, encoder-decoder reconstruction, atrous convolution, center offsets, and panoptic quality.",
           section: "Study",handler: () => {
               window.location.href = "/study/segmentation-semantic-instance-and-panoptic/";
             },},{id: "study-selection-bias-and-dataset-bias",
@@ -3719,7 +3719,7 @@ ninja.data = [{
               window.location.href = "/study/spectral-filtering-and-graph-convolution/";
             },},{id: "study-speech-recognition-learning-without-knowing-where-anything-starts",
           title: 'Speech Recognition: Learning Without Knowing Where Anything Starts',
-          description: "You can label an utterance; you cannot label a 10-millisecond frame. CTC sums over all 28 trillion ways the label could line up, and that trick is worth more than the speech application.",
+          description: "MFCC features, CTC alignment marginalisation and forward–backward gradients, with exact frame-to-label path counts, repeated-label constraints and worked decoding examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/speech-recognition-and-alignment-free-training/";
             },},{id: "study-spurious-correlations-in-medical-ai",
@@ -3739,7 +3739,7 @@ ninja.data = [{
               window.location.href = "/study/statistical-inference-for-diagnostic-studies/";
             },},{id: "study-stochastic-gradient-descent-and-the-optimisers-built-on-it",
           title: 'Stochastic Gradient Descent and the Optimisers Built On It',
-          description: "Why the gradient is estimated from a handful of examples, what momentum and per-parameter rates each fix, and why saddle points replaced local minima as the suspected obstacle.",
+          description: "Mini-batch gradient estimates, variance, momentum, per-parameter rates in AdaGrad, RMSProp and Adam, and what saddle points and local minima do not explain.",
           section: "Study",handler: () => {
               window.location.href = "/study/stochastic-gradient-descent-and-optimisers/";
             },},{id: "study-stroke",
@@ -3754,7 +3754,7 @@ ninja.data = [{
               window.location.href = "/study/support-vector-machines/";
             },},{id: "study-the-combinatorial-explosion-and-why-pruning-alone-is-not-enough",
           title: 'The Combinatorial Explosion, and Why Pruning Alone Is Not Enough',
-          description: "Lighthill&#39;s 1973 case against AI was arithmetically correct and is still correct. What changed is that nobody searches the tree any more, and working the numbers shows that pruning the branches only solves half of it.",
+          description: "Exponential search trees, learned pruning, policy proposals, and value functions: deriving computation costs and the decision errors caused by omitted actions and approximate leaf evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/the-combinatorial-explosion-and-learned-pruning/";
             },},{id: "study-the-fft-where-a-200-speedup-comes-from",
@@ -3784,7 +3784,7 @@ ninja.data = [{
               window.location.href = "/study/transfer-functions-and-the-frequency-response/";
             },},{id: "study-invariance-and-equivariance-two-jobs-one-network-cannot-do-at-once",
           title: 'Invariance and Equivariance: Two Jobs One Network Cannot Do at Once',
-          description: "Detection asks a network to be blind to translation and to track it, simultaneously. R-FCN&#39;s fix and the feature pyramid are both answers to that conflict, and the conflict generalises well past detection.",
+          description: "Deriving translation invariance and equivariance, including convolution, pooling, stride, boundaries, R-FCN position-sensitive pooling, and feature pyramids for detection.",
           section: "Study",handler: () => {
               window.location.href = "/study/translation-invariance-and-equivariance/";
             },},{id: "study-translational-science-in-medicine",

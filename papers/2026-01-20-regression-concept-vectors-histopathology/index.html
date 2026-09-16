@@ -4,7 +4,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Montserrat:500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=212541f2e476e0138812c28312f0f6f8"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/papers/2026-01-20-regression-concept-vectors-histopathology/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Regression Concept Vectors for Bidirectional Explanations in Histopathology</h1> <p class="post-meta"> Created on January 20, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Regression Concept Vectors for Bidirectional Explanations in Histopathology</em>. <a href="https://arxiv.org/abs/1904.04520" rel="external nofollow noopener" target="_blank">MICCAI 2018 Interpretability Workshop</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>Many clinical concepts are continuous: lesion irregularity, tissue density, fibrosis burden, or steatosis severity. I read this paper because it extends concept-vector explanations beyond binary “present versus absent” concepts to measured quantities that can vary along a clinically meaningful scale.</p> <h2 id="what-the-paper-claims">What the paper claims</h2> <p>Regression Concept Vectors fit a direction in a layer’s activation space that predicts a continuous concept measurement. The directional derivative of the class score along that vector estimates sensitivity to increasing values of the concept, and a relevance measure links the concept value and its influence. The method is applied to breast-cancer histopathology using nuclear texture measurements.</p> <h2 id="what-convinced-me">What convinced me</h2> <p>The analysis uses 300 image patches derived from a larger set of annotated nuclei and identifies contrast and correlation texture measures as relevant to tumor-tissue detection. For nuclear contrast, the raw output–concept association was around Spearman ρ = 0.41, and the proposed sensitivity analysis adds information about direction and magnitude that a binary TCAV score would discard. The paper also evaluates robustness across resampling and layers rather than presenting a single concept direction.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>The study is a small proof of concept. The regression direction is linear, the concept measurements themselves may be noisy, and directional sensitivity is still a local derivative rather than a causal intervention. Correlated concepts can share a direction, making the clinical interpretation ambiguous.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>Continuous concept tests are a natural fit for clinical severity and quantitative imaging. I would pair them with covariate-adjusted association, out-of-sample concept prediction, and interventions that move the concept while preserving other factors. A continuous score deserves a continuous faithfulness test.</p> </div> </article> </div> </div> <style>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Regression Concept Vectors for Bidirectional Explanations in Histopathology</h1> <p class="post-meta"> Created on January 20, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Regression Concept Vectors for Bidirectional Explanations in Histopathology.</em></p> <p>The paper asks how to explain a network using a concept that has a measurable degree, rather than a binary presence label. This is a natural question in medicine. Nuclear area, texture, lesion irregularity, and tissue density are quantities for which “more” and “less” may be more informative than “present” and “absent.” A binary concept classifier can discard that structure.</p> <p>The setup extends the idea behind concept activation vectors. A concept direction connects a named property to a direction in an internal representation. The open issue is how to obtain that direction from continuous measurements and preserve the sign and consistency of the network’s response. The paper proposes Regression Concept Vectors, or RCVs, together with a bidirectional relevance summary.</p> <p>The experiment should be described precisely. Although histological grading motivates the concepts, the evaluated network classifies patches as tumor or non-tumor. It is not a demonstrated system for predicting an ordinal tumor grade. The authors train a ResNet101 using Camelyon16 and Camelyon17 patches. A separate nuclei-annotation dataset supplies 300 breast-tissue patches for concept measurements, and sensitivity analysis uses 300 Camelyon17 patches. These sets serve different roles and should not be collapsed into a single training cohort.</p> <p>For a frozen network, a linear regression predicts a concept measurement from activations at a chosen layer. Its coefficient vector supplies the RCV. The directional derivative of the diagnostic output along that vector measures local sensitivity. The proposed relevance score combines regression fit with the mean sensitivity relative to its variability. Thus, a concept direction is assessed both for how well it represents the measured concept and for how consistently movement along it relates to the output.</p> <p>The reported analysis identifies nuclear texture contrast and correlation as relevant measurements. The output association reported for contrast is approximately 0.41 using Pearson correlation, not Spearman correlation. The sensitivity analysis also distinguishes directions associated with increasing tumor output from those associated with decreasing output. Repeated analyses and comparisons across layers are more informative than presenting one concept vector as a fixed property of the entire network.</p> <p>The key contribution is the separation of three questions that are easy to conflate. First, does the measured concept associate with the diagnostic output across images? Second, can a linear probe recover the concept from an internal representation? Third, is the downstream output locally sensitive along the estimated concept direction? These questions concern different objects. A positive answer to one is not a substitute for the others.</p> <p>For example, a representation can contain information about nuclear area even if the final classifier ignores it. Conversely, a concept and prediction can be associated because both track another property of the tissue. Neither observation alone establishes diagnostic reliance. The directional derivative adds a model-conditioned quantity, but its interpretation still depends on whether the fitted direction actually corresponds to the intended concept.</p> <p>That is the main weakness I would raise. A regression coefficient points in a direction that predicts a measurement under the observed data. Moving activations along that direction need not correspond to a realizable image in which only that measurement changes. Texture, stain, morphology, tissue composition, and acquisition effects can be correlated. The direction may combine them, even when its clinical name refers to only one.</p> <p>The word “bidirectional” also needs a bounded interpretation. Positive and negative sensitivity describe the direction of local output change along the estimated vector. They do not establish two-way clinical causation, nor do they show that editing nuclei in a real slide would produce the predicted change. The method is an analysis of a learned representation and its downstream computation.</p> <p>The summary score introduces further choices. A high value can reflect strong concept recoverability, a consistent sensitivity sign, or both. A low average can conceal different patient or tissue subsets with opposing responses. I would therefore inspect the distribution of sensitivities and regression performance separately before interpreting their combination. Reporting only a normalized relevance ranking could make concepts look more directly comparable than the underlying measurements justify.</p> <p>The small concept dataset is another reason to treat this as a methodological demonstration. Patches from the same slide or patient share information, so patch counts alone do not determine independent evidence. A future implementation should separate concept fitting, model selection, and evaluation at the appropriate patient or slide level. It should also evaluate concept prediction outside the fitted samples; a flexible representation can make in-sample linear recovery look reassuring.</p> <p>This paper directly extends <a href="/study/clinical-concepts-and-concept-based-interpretability/">Clinical Concepts and Concept-Based Interpretability</a>. The note distinguishes recoverable information, computational sensitivity, and actual use of the intended clinical concept. RCVs enrich the available measurements without collapsing those distinctions. They support continuous concept analysis while complicating the assumption that a clinically named direction has a uniquely clinical meaning.</p> <p>It is also a practical example for <a href="/study/representation-level-auditing/">Representation-Level Auditing</a>. The layer and probe define what information is accessible, while the fixed diagnostic head determines whether a perturbation reaches the output. <a href="/study/explanation-faithfulness-versus-plausibility/">Explanation Faithfulness versus Plausibility</a> explains why agreement with familiar pathology concepts is encouraging but insufficient to establish the stronger reliance claim.</p> <p>For ultrasound, I would consider continuous measurements only after defining how they are observed and how reliably they can be annotated. A wall-thickness or irregularity concept would need a specified view, spatial scale, and assessability rule. I would evaluate probe generalization, compare correlated candidate concepts, inspect subgroup sensitivity distributions, and seek controlled image-level tests that preserve other evidence.</p> <p>The useful lesson is that concept explanations can become more quantitative without becoming automatically causal. RCVs provide a way to ask whether a frozen model responds along directions associated with measured clinical properties. Their strongest role in my work would be to generate and refine specific hypotheses about representation and reliance, followed by independent tests of what those directions mean.</p> </div> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
   :root {
     --global-bg-color: #f9f9f9;
@@ -3169,7 +3169,7 @@ ninja.data = [{
               window.location.href = "/papers/2026-08-30-monet-transparent-medical-image-ai/";
             },},{id: "papers-can-you-trust-this-prediction-auditing-pointwise-reliability-after-learning",
           title: 'Can You Trust This Prediction? Auditing Pointwise Reliability After Learning',
-          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods, not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
+          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods: not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-05-auditing-pointwise-reliability-after-learning/";
             },},{id: "prayer-2026년-7월호-부르심의-시작",
@@ -3199,12 +3199,12 @@ ninja.data = [{
               window.location.href = "/study/allergy-and-clinical-immunology/";
             },},{id: "study-anchor-boxes-and-non-maximum-suppression-where-the-priors-are-hidden",
           title: 'Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden',
-          description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports.",
+          description: "Deriving anchor-box geometry, normalized box regression, IoU matching, and non-maximum suppression, with worked examples of reference boxes, losses, and overlapping detections.",
           section: "Study",handler: () => {
               window.location.href = "/study/anchor-boxes-and-non-maximum-suppression/";
             },},{id: "study-attention-retrieval-as-a-differentiable-operation",
           title: 'Attention: Retrieval as a Differentiable Operation',
-          description: "Query, key and value are a soft dictionary lookup, and everything else in a Transformer is bookkeeping around it. Including why the scores are divided by √d, which is not a fudge factor.",
+          description: "Deriving query-key-value attention, softmax, square-root dimension scaling, multi-head computation, positional encoding, causal masks, and Transformer costs through explicit examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/attention-and-the-transformer/";
             },},{id: "study-attribution-attention-and-counterfactual-explanations",
@@ -3229,7 +3229,7 @@ ninja.data = [{
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
             },},{id: "study-backpropagation-in-scalars-and-in-matrices",
           title: 'Backpropagation, in Scalars and in Matrices',
-          description: "Why a procedure for computing derivatives is the whole of a training algorithm, and what the backward pass turns out to be for a dense layer and for a convolution.",
+          description: "How backpropagation organises the chain rule to compute derivatives for training, with scalar and matrix derivations for a dense layer and a convolution.",
           section: "Study",handler: () => {
               window.location.href = "/study/backpropagation/";
             },},{id: "study-bayesian-decision-theory-risk-loss-and-where-the-boundary-goes",
@@ -3239,7 +3239,7 @@ ninja.data = [{
               window.location.href = "/study/bayesian-decision-theory/";
             },},{id: "study-marginalisation-not-optimisation-what-deep-ensembles-are-actually-doing",
           title: 'Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing',
-          description: "The frequentist/Bayesian split is one decision, is the parameter a constant or a random variable, and it propagates all the way to why averaging several trained networks is not a trick.",
+          description: "The frequentist/Bayesian distinction, posterior marginalisation, and deep ensembles: deriving predictive uncertainty while separating model averaging from posterior sampling.",
           section: "Study",handler: () => {
               window.location.href = "/study/bayesian-deep-learning-and-deep-ensembles/";
             },},{id: "study-bayesian-inverse-problems-in-imaging",
@@ -3289,7 +3289,7 @@ ninja.data = [{
               window.location.href = "/study/choosing-an-estimator/";
             },},{id: "study-choosing-the-loss-squared-error-absolute-error-and-what-each-one-believes",
           title: 'Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes',
-          description: "The loss is where you state what counts as a good answer. Squaring makes one bad point outvote nine good ones, and the arithmetic of how badly is worth seeing.",
+          description: "Squared error, absolute error and Huber loss: deriving their prediction targets, checking how one bad point affects a fit, and understanding weighted classification losses.",
           section: "Study",handler: () => {
               window.location.href = "/study/choosing-the-loss-function/";
             },},{id: "study-circadian-rhythm-disorders",
@@ -3424,7 +3424,7 @@ ninja.data = [{
               window.location.href = "/study/explanation-faithfulness-versus-plausibility/";
             },},{id: "study-the-exponential-moving-average-one-recursion-behind-momentum-rmsprop-and-adam",
           title: 'The Exponential Moving Average: One Recursion Behind Momentum, RMSProp and Adam',
-          description: "A single line of algebra that replaces a buffer with one number, and once you recognise it, most of the optimiser zoo stops being a zoo.",
+          description: "Deriving the exponential moving average behind momentum, RMSProp and Adam, including bias correction, memory timescales, effective sample size and numerical updates.",
           section: "Study",handler: () => {
               window.location.href = "/study/exponential-moving-averages-in-optimisers/";
             },},{id: "study-external-validation-and-clinical-utility-for-gallbladder-ai",
@@ -3464,7 +3464,7 @@ ninja.data = [{
               window.location.href = "/study/from-clinical-problem-to-machine-learning-task/";
             },},{id: "study-fully-convolutional-networks-and-why-detection-needed-its-own-metric",
           title: 'Fully Convolutional Networks, and Why Detection Needed Its Own Metric',
-          description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists: the same argument against accuracy that class imbalance forces on classification, arriving by a different road.",
+          description: "Deriving fully convolutional networks from fully-connected layers, then computing IoU, detection matching, precision-recall, AP, and mAP under explicit evaluation conventions.",
           section: "Study",handler: () => {
               window.location.href = "/study/fully-convolutional-networks-and-detection-metrics/";
             },},{id: "study-gallbladder-cancer",
@@ -3549,7 +3549,7 @@ ninja.data = [{
               window.location.href = "/study/linear-mmse-and-the-wiener-filter/";
             },},{id: "study-linearization-an-approximation-whose-licence-is-retrospective",
           title: 'Linearization: An Approximation Whose Licence Is Retrospective',
-          description: "Replacing sin θ with θ makes an unsolvable equation solvable, the justification arrives only after checking, and a single sign decides whether the system oscillates forever or runs away.",
+          description: "Pendulum linearization, small-angle sine approximations, Taylor error bounds, phase drift, and the poles that distinguish hanging, inverted, and cart-pole dynamics.",
           section: "Study",handler: () => {
               window.location.href = "/study/linearization-and-the-inverted-pendulum/";
             },},{id: "study-liver-cancer",
@@ -3564,7 +3564,7 @@ ninja.data = [{
               window.location.href = "/study/lung-cancer/";
             },},{id: "study-matrix-calculus-for-reading-papers-determinants-cofactors-and-the-gaussian-mle",
           title: 'Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gaussian MLE',
-          description: "The minimum of matrix differentiation that lets you read a derivation instead of skipping it, and the derivation of the Gaussian mean and covariance estimators that it exists to serve.",
+          description: "Matrix differentiation through determinants, cofactors, log determinants and inverses, followed by a complete derivation of Gaussian mean and covariance maximum-likelihood estimators.",
           section: "Study",handler: () => {
               window.location.href = "/study/matrix-calculus-for-reading-papers/";
             },},{id: "study-matthews-correlation-coefficient-a-metric-that-fails-loudly",
@@ -3574,7 +3574,7 @@ ninja.data = [{
               window.location.href = "/study/matthews-correlation-coefficient/";
             },},{id: "study-mdps-and-the-simulator-problem-every-rl-paper-starts-after-the-hard-part",
           title: 'MDPs and the Simulator Problem: Every RL Paper Starts After the Hard Part...',
-          description: "The five-tuple that defines an environment, why a plan is not a policy, and the reason reinforcement learning works on games and struggles everywhere the simulator has to be built.",
+          description: "The Markov decision process five-tuple, Bellman equations, plans versus policies, and how simulator error and off-policy coverage affect reinforcement learning.",
           section: "Study",handler: () => {
               window.location.href = "/study/mdps-and-the-simulator-problem/";
             },},{id: "study-medical-ai-agents-and-tool-using-clinical-systems",
@@ -3594,7 +3594,7 @@ ninja.data = [{
               window.location.href = "/study/monte-carlo-tree-search/";
             },},{id: "study-neural-radiance-fields-a-scene-stored-as-a-function",
           title: 'Neural Radiance Fields: A Scene Stored as a Function',
-          description: "NeRF replaces the 3-D data structure with a network you query. 5 MB holds what a voxel grid needs 500 MB for, and the bill arrives at 123 million network calls per frame.",
+          description: "Deriving NeRF camera rays, volume density, transmittance, alpha compositing, rendering gradients, positional encoding, and the storage-computation tradeoff against voxel grids.",
           section: "Study",handler: () => {
               window.location.href = "/study/neural-radiance-fields/";
             },},{id: "study-optimising-the-input-visualisation-style-and-adversarial-examples",
@@ -3614,7 +3614,7 @@ ninja.data = [{
               window.location.href = "/study/parkinsons-disease/";
             },},{id: "study-perception-as-inference-illusions-are-not-failures-and-the-easy-problems-were-the-hard-ones",
           title: 'Perception as Inference: Illusions Are Not Failures, and the Easy Problems Were the...',
-          description: "Why the retinal image cannot determine what you see, why walking took a billion years and calculus took a hundred thousand, and where the functional definition of AI runs out.",
+          description: "Perception as Bayesian inference: retinal-image ambiguity, illumination and reflectance, Gaussian cue integration, decision costs, active sensing, and Moravec&#39;s paradox.",
           section: "Study",handler: () => {
               window.location.href = "/study/perception-as-inference-and-moravecs-paradox/";
             },},{id: "study-poles-and-zeros-what-comes-out-uninvited-and-what-goes-in-and-vanishes",
@@ -3639,7 +3639,7 @@ ninja.data = [{
               window.location.href = "/study/probability-and-bayesian-reasoning/";
             },},{id: "study-recommender-systems-embeddings-interactions-and-a-field-that-audited-itself",
           title: 'Recommender Systems: Embeddings, Interactions, and a Field That Audited Itself',
-          description: "Why recommendation is a ranking problem over extremely sparse categorical features, how embeddings and feature interactions address that, and the reproducibility study that found most of the progress was not there.",
+          description: "Deriving recommendation from sparse categorical features through embeddings, matrix factorization, feature interactions, ranking losses, retrieval metrics, and reproducible evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/recommender-systems-and-sparse-features/";
             },},{id: "study-recurrent-networks-and-gating",
@@ -3659,7 +3659,7 @@ ninja.data = [{
               window.location.href = "/study/reproducibility-benchmarks-and-translational-study-design/";
             },},{id: "study-resampling-and-anti-aliasing-why-half-of-a-checkerboard-is-grey",
           title: 'Resampling and Anti-Aliasing: Why Half of a Checkerboard Is Grey',
-          description: "What downsampling does to a spectrum, why the filter has to come first, and the resize call that has been quietly changing benchmark results for years.",
+          description: "How downsampling folds the spectrum, why anti-aliasing must come first, and how interpolation, rational resampling, and checkerboard resizing set the filter cutoff.",
           section: "Study",handler: () => {
               window.location.href = "/study/resampling-and-anti-aliasing/";
             },},{id: "study-rheumatic-disease",
@@ -3689,7 +3689,7 @@ ninja.data = [{
               window.location.href = "/study/second-order-systems-and-transient-response/";
             },},{id: "study-segmentation-resolution-against-context-and-the-things-stuff-divide",
           title: 'Segmentation: Resolution Against Context, and the Things/Stuff Divide',
-          description: "Every segmentation architecture is an answer to one conflict: you need to see widely and label precisely, and pooling buys the first with the second. Four answers, and why panoptic needed a new output format.",
+          description: "Semantic, instance, and panoptic segmentation derived through pixel losses, receptive fields, encoder-decoder reconstruction, atrous convolution, center offsets, and panoptic quality.",
           section: "Study",handler: () => {
               window.location.href = "/study/segmentation-semantic-instance-and-panoptic/";
             },},{id: "study-selection-bias-and-dataset-bias",
@@ -3719,7 +3719,7 @@ ninja.data = [{
               window.location.href = "/study/spectral-filtering-and-graph-convolution/";
             },},{id: "study-speech-recognition-learning-without-knowing-where-anything-starts",
           title: 'Speech Recognition: Learning Without Knowing Where Anything Starts',
-          description: "You can label an utterance; you cannot label a 10-millisecond frame. CTC sums over all 28 trillion ways the label could line up, and that trick is worth more than the speech application.",
+          description: "MFCC features, CTC alignment marginalisation and forward–backward gradients, with exact frame-to-label path counts, repeated-label constraints and worked decoding examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/speech-recognition-and-alignment-free-training/";
             },},{id: "study-spurious-correlations-in-medical-ai",
@@ -3739,7 +3739,7 @@ ninja.data = [{
               window.location.href = "/study/statistical-inference-for-diagnostic-studies/";
             },},{id: "study-stochastic-gradient-descent-and-the-optimisers-built-on-it",
           title: 'Stochastic Gradient Descent and the Optimisers Built On It',
-          description: "Why the gradient is estimated from a handful of examples, what momentum and per-parameter rates each fix, and why saddle points replaced local minima as the suspected obstacle.",
+          description: "Mini-batch gradient estimates, variance, momentum, per-parameter rates in AdaGrad, RMSProp and Adam, and what saddle points and local minima do not explain.",
           section: "Study",handler: () => {
               window.location.href = "/study/stochastic-gradient-descent-and-optimisers/";
             },},{id: "study-stroke",
@@ -3754,7 +3754,7 @@ ninja.data = [{
               window.location.href = "/study/support-vector-machines/";
             },},{id: "study-the-combinatorial-explosion-and-why-pruning-alone-is-not-enough",
           title: 'The Combinatorial Explosion, and Why Pruning Alone Is Not Enough',
-          description: "Lighthill&#39;s 1973 case against AI was arithmetically correct and is still correct. What changed is that nobody searches the tree any more, and working the numbers shows that pruning the branches only solves half of it.",
+          description: "Exponential search trees, learned pruning, policy proposals, and value functions: deriving computation costs and the decision errors caused by omitted actions and approximate leaf evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/the-combinatorial-explosion-and-learned-pruning/";
             },},{id: "study-the-fft-where-a-200-speedup-comes-from",
@@ -3784,7 +3784,7 @@ ninja.data = [{
               window.location.href = "/study/transfer-functions-and-the-frequency-response/";
             },},{id: "study-invariance-and-equivariance-two-jobs-one-network-cannot-do-at-once",
           title: 'Invariance and Equivariance: Two Jobs One Network Cannot Do at Once',
-          description: "Detection asks a network to be blind to translation and to track it, simultaneously. R-FCN&#39;s fix and the feature pyramid are both answers to that conflict, and the conflict generalises well past detection.",
+          description: "Deriving translation invariance and equivariance, including convolution, pooling, stride, boundaries, R-FCN position-sensitive pooling, and feature pyramids for detection.",
           section: "Study",handler: () => {
               window.location.href = "/study/translation-invariance-and-equivariance/";
             },},{id: "study-translational-science-in-medicine",

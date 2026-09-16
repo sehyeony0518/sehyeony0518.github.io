@@ -4,7 +4,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Montserrat:500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=212541f2e476e0138812c28312f0f6f8"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/papers/2026-02-09-underspecification-credibility-ml/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Underspecification Presents Challenges for Credibility in Modern Machine Learning</h1> <p class="post-meta"> Created on February 09, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Underspecification Presents Challenges for Credibility in Modern Machine Learning</em>. <a href="https://arxiv.org/abs/2011.03395" rel="external nofollow noopener" target="_blank">arXiv (2020)</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>Two models can have indistinguishable held-out performance and still behave very differently after deployment. I read this paper because it explains why that is not an unusual edge case but a structural consequence of how modern pipelines select models.</p> <h2 id="what-the-paper-claims">What the paper claims</h2> <p>A learning problem is underspecified when the available training and validation criteria admit many predictors that satisfy the stated requirements but differ on deployment-relevant behavior. The paper demonstrates this across computer vision, medical imaging, natural language processing, clinical risk prediction, and genomics. Standard in-distribution test performance does not determine which solution a training run will find.</p> <h2 id="what-convinced-me">What convinced me</h2> <p>The cross-domain evidence is the paper’s strength. Repeated training runs and architectures can occupy a narrow band of benchmark accuracy while varying substantially on stress tests, subgroup behavior, robustness, or clinically relevant associations. This makes random seed and model-selection criterion scientific variables, not implementation details. The paper also distinguishes underspecification from distribution shift: the ambiguity exists before deployment because the development objective never ruled out the competing solutions.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>The diagnosis does not provide a universal model-selection rule. Stress tests must be designed from domain knowledge, and a finite panel can still miss the behavior that matters later. The original work circulated in 2020, but the final JMLR publication is 2022; the portfolio metadata should make that distinction clear.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>A single checkpoint cannot represent the credibility of a pipeline. I would report seed variation, define deployment-relevant stress tests before model selection, and prefer models whose evidence use is stable across near-optimal solutions. Accuracy ties should trigger deeper auditing rather than arbitrary selection.</p> </div> </article> </div> </div> <style>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Underspecification Presents Challenges for Credibility in Modern Machine Learning</h1> <p class="post-meta"> Created on February 09, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Underspecification Presents Challenges for Credibility in Modern Machine Learning.</em> The work circulated as a preprint in 2020; the final JMLR publication is from 2022.</p> <p>The paper asks why a development pipeline can repeatedly produce models with similarly strong test performance but different behavior on properties that matter after deployment. The issue is not simply that a model encounters unfamiliar data. It is that the training and validation requirements may never have selected a unique, deployment-appropriate behavior among the solutions they admit.</p> <p>This remained an important gap in ordinary evaluation practice. A held-out set from the development distribution can estimate performance under that distribution, yet it may barely distinguish two models that use different predictive relationships. Choosing the checkpoint with the slightly better aggregate score can then feel scientifically decisive when the difference says little about the intended deployment requirement.</p> <p>The authors call a pipeline underspecified when it can return distinct predictors with equivalently strong performance under its stated evaluation criteria. Their evidence spans several application areas. The medical imaging examples are particularly relevant here because they make the omitted requirements concrete: performance across retinal camera types and across skin-type strata.</p> <p>In the retinal experiment, the authors examine ten models differing in random initialization at fine-tuning. They evaluate diabetic-retinopathy prediction on a camera type absent from training and validation. Variation on that camera is larger than suggested by ordinary test performance, and models with similar calibration on familiar cameras can differ on the held-out camera. A dermatology experiment similarly examines ten predictors and subgroup accuracy, with exploratory analysis of how much variability could reflect sample size.</p> <p>These examples are stronger than merely showing that one model performs poorly externally. They expose variation among outputs of an otherwise shared development procedure. Random initialization is useful here as a way to sample different solutions. It is not itself a clinical cause of failure. The important observation is that the accepted development criteria leave room for consequential differences.</p> <p>The result also does not require exactly identical training accuracy or identical predictions. “Equivalently strong” means that the ordinary evaluation treats predictors as comparable for the purpose at hand. They can still disagree on particular cases. The paper’s argument concerns whether the pipeline’s selection criteria adequately specify the behavior being claimed, rather than whether two numerical scores match to every decimal place.</p> <p>Underspecification and distribution shift are related but distinct. Shift changes the distribution on which a predictor is evaluated. Underspecification concerns the set of predictors the development process can accept. A shift can expose differences within that set, but subgroup tests within an existing dataset may expose them too. This distinction changes the remedy: collecting a larger ordinary test set may improve precision without adding the missing behavioral requirement.</p> <p>The medical examples also show why calibration cannot be treated as a property established once for a model family. Two runs may look similar on familiar data while assigning probabilities differently after a camera change. The Guo calibration review provides a tool for correcting probabilities under a specified distribution. This paper adds a pipeline-level question: how much does the need for that correction vary among apparently interchangeable development runs?</p> <p>A careful reader should question how broadly the case studies establish the prevalence of the problem. They demonstrate consequential examples across domains, but they are not a representative survey estimating how often every modern pipeline fails. Likewise, stress-test variation is not automatically clinically important. Its significance depends on the endpoint, operating rule, affected patients, and uncertainty. A small subgroup with few outcomes may support only a limited conclusion.</p> <p>The dermatology analysis is useful precisely because it considers sampling variability rather than treating every visible difference between runs as a substantive effect. I would preserve that caution when borrowing the paper’s message. Repeating training does not eliminate uncertainty in the test population, and subgroup comparisons remain sensitive to the number and composition of available patients.</p> <p>The larger limitation is that underspecification is easier to diagnose than to eliminate. A finite stress-test panel can constrain the accepted solutions along selected axes, but it cannot cover every future environment. Domain knowledge is needed to decide which requirements matter. Once stress tests are used to select a model, they also become part of development and need independent confirmation.</p> <p>This paper deepens <a href="/study/reproducibility-benchmarks-and-translational-study-design/">Reproducibility, Benchmarks, and Translational Study Design</a>. Reproducing a benchmark number is useful, but a credible pipeline should also reproduce the behavior supporting its clinical claim. Seed variation is therefore a scientific quantity to investigate when it changes that behavior, rather than an implementation detail to hide behind one selected checkpoint.</p> <p>It also complements <a href="/study/distribution-shift-and-out-of-distribution-generalization/">Distribution Shift and Out-of-Distribution Generalization</a> and <a href="/study/robustness-subgroup-performance-and-external-validation/">Robustness, Subgroup Performance, and External Validation</a>. Those notes ask which relationships and populations support a transfer claim. Underspecification adds that different models trained under the same nominal procedure may answer those questions differently.</p> <p>For my ultrasound work, I would begin by defining requirements before comparing seeds: acceptable behavior across devices, stable performance in difficult presentations, and appropriate responses to changes in clinical evidence. I would then examine the joint distribution of ordinary performance and these additional outcomes across several runs. Selecting only the best ordinary score and auditing that checkpoint afterward would miss information about the reliability of the procedure.</p> <p>Ensembling could be evaluated as one response, but it should not be assumed to solve the problem. An ensemble can average variable predictions while preserving a shortcut shared by its members. Similarly, adding a clinical loss may narrow the solution set while leaving other behaviors unspecified. Each proposed repair needs evaluation against the requirement it is meant to address.</p> <p>The practical contribution is a change in the object being assessed. A checkpoint is one output of a development process. Credibility concerns whether that process reliably produces systems satisfying the intended requirements, and whether the available evaluation could distinguish an acceptable solution from a problematic one.</p> </div> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
   :root {
     --global-bg-color: #f9f9f9;
@@ -3169,7 +3169,7 @@ ninja.data = [{
               window.location.href = "/papers/2026-08-30-monet-transparent-medical-image-ai/";
             },},{id: "papers-can-you-trust-this-prediction-auditing-pointwise-reliability-after-learning",
           title: 'Can You Trust This Prediction? Auditing Pointwise Reliability After Learning',
-          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods, not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
+          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods: not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-05-auditing-pointwise-reliability-after-learning/";
             },},{id: "prayer-2026년-7월호-부르심의-시작",
@@ -3199,12 +3199,12 @@ ninja.data = [{
               window.location.href = "/study/allergy-and-clinical-immunology/";
             },},{id: "study-anchor-boxes-and-non-maximum-suppression-where-the-priors-are-hidden",
           title: 'Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden',
-          description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports.",
+          description: "Deriving anchor-box geometry, normalized box regression, IoU matching, and non-maximum suppression, with worked examples of reference boxes, losses, and overlapping detections.",
           section: "Study",handler: () => {
               window.location.href = "/study/anchor-boxes-and-non-maximum-suppression/";
             },},{id: "study-attention-retrieval-as-a-differentiable-operation",
           title: 'Attention: Retrieval as a Differentiable Operation',
-          description: "Query, key and value are a soft dictionary lookup, and everything else in a Transformer is bookkeeping around it. Including why the scores are divided by √d, which is not a fudge factor.",
+          description: "Deriving query-key-value attention, softmax, square-root dimension scaling, multi-head computation, positional encoding, causal masks, and Transformer costs through explicit examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/attention-and-the-transformer/";
             },},{id: "study-attribution-attention-and-counterfactual-explanations",
@@ -3229,7 +3229,7 @@ ninja.data = [{
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
             },},{id: "study-backpropagation-in-scalars-and-in-matrices",
           title: 'Backpropagation, in Scalars and in Matrices',
-          description: "Why a procedure for computing derivatives is the whole of a training algorithm, and what the backward pass turns out to be for a dense layer and for a convolution.",
+          description: "How backpropagation organises the chain rule to compute derivatives for training, with scalar and matrix derivations for a dense layer and a convolution.",
           section: "Study",handler: () => {
               window.location.href = "/study/backpropagation/";
             },},{id: "study-bayesian-decision-theory-risk-loss-and-where-the-boundary-goes",
@@ -3239,7 +3239,7 @@ ninja.data = [{
               window.location.href = "/study/bayesian-decision-theory/";
             },},{id: "study-marginalisation-not-optimisation-what-deep-ensembles-are-actually-doing",
           title: 'Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing',
-          description: "The frequentist/Bayesian split is one decision, is the parameter a constant or a random variable, and it propagates all the way to why averaging several trained networks is not a trick.",
+          description: "The frequentist/Bayesian distinction, posterior marginalisation, and deep ensembles: deriving predictive uncertainty while separating model averaging from posterior sampling.",
           section: "Study",handler: () => {
               window.location.href = "/study/bayesian-deep-learning-and-deep-ensembles/";
             },},{id: "study-bayesian-inverse-problems-in-imaging",
@@ -3289,7 +3289,7 @@ ninja.data = [{
               window.location.href = "/study/choosing-an-estimator/";
             },},{id: "study-choosing-the-loss-squared-error-absolute-error-and-what-each-one-believes",
           title: 'Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes',
-          description: "The loss is where you state what counts as a good answer. Squaring makes one bad point outvote nine good ones, and the arithmetic of how badly is worth seeing.",
+          description: "Squared error, absolute error and Huber loss: deriving their prediction targets, checking how one bad point affects a fit, and understanding weighted classification losses.",
           section: "Study",handler: () => {
               window.location.href = "/study/choosing-the-loss-function/";
             },},{id: "study-circadian-rhythm-disorders",
@@ -3424,7 +3424,7 @@ ninja.data = [{
               window.location.href = "/study/explanation-faithfulness-versus-plausibility/";
             },},{id: "study-the-exponential-moving-average-one-recursion-behind-momentum-rmsprop-and-adam",
           title: 'The Exponential Moving Average: One Recursion Behind Momentum, RMSProp and Adam',
-          description: "A single line of algebra that replaces a buffer with one number, and once you recognise it, most of the optimiser zoo stops being a zoo.",
+          description: "Deriving the exponential moving average behind momentum, RMSProp and Adam, including bias correction, memory timescales, effective sample size and numerical updates.",
           section: "Study",handler: () => {
               window.location.href = "/study/exponential-moving-averages-in-optimisers/";
             },},{id: "study-external-validation-and-clinical-utility-for-gallbladder-ai",
@@ -3464,7 +3464,7 @@ ninja.data = [{
               window.location.href = "/study/from-clinical-problem-to-machine-learning-task/";
             },},{id: "study-fully-convolutional-networks-and-why-detection-needed-its-own-metric",
           title: 'Fully Convolutional Networks, and Why Detection Needed Its Own Metric',
-          description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists: the same argument against accuracy that class imbalance forces on classification, arriving by a different road.",
+          description: "Deriving fully convolutional networks from fully-connected layers, then computing IoU, detection matching, precision-recall, AP, and mAP under explicit evaluation conventions.",
           section: "Study",handler: () => {
               window.location.href = "/study/fully-convolutional-networks-and-detection-metrics/";
             },},{id: "study-gallbladder-cancer",
@@ -3549,7 +3549,7 @@ ninja.data = [{
               window.location.href = "/study/linear-mmse-and-the-wiener-filter/";
             },},{id: "study-linearization-an-approximation-whose-licence-is-retrospective",
           title: 'Linearization: An Approximation Whose Licence Is Retrospective',
-          description: "Replacing sin θ with θ makes an unsolvable equation solvable, the justification arrives only after checking, and a single sign decides whether the system oscillates forever or runs away.",
+          description: "Pendulum linearization, small-angle sine approximations, Taylor error bounds, phase drift, and the poles that distinguish hanging, inverted, and cart-pole dynamics.",
           section: "Study",handler: () => {
               window.location.href = "/study/linearization-and-the-inverted-pendulum/";
             },},{id: "study-liver-cancer",
@@ -3564,7 +3564,7 @@ ninja.data = [{
               window.location.href = "/study/lung-cancer/";
             },},{id: "study-matrix-calculus-for-reading-papers-determinants-cofactors-and-the-gaussian-mle",
           title: 'Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gaussian MLE',
-          description: "The minimum of matrix differentiation that lets you read a derivation instead of skipping it, and the derivation of the Gaussian mean and covariance estimators that it exists to serve.",
+          description: "Matrix differentiation through determinants, cofactors, log determinants and inverses, followed by a complete derivation of Gaussian mean and covariance maximum-likelihood estimators.",
           section: "Study",handler: () => {
               window.location.href = "/study/matrix-calculus-for-reading-papers/";
             },},{id: "study-matthews-correlation-coefficient-a-metric-that-fails-loudly",
@@ -3574,7 +3574,7 @@ ninja.data = [{
               window.location.href = "/study/matthews-correlation-coefficient/";
             },},{id: "study-mdps-and-the-simulator-problem-every-rl-paper-starts-after-the-hard-part",
           title: 'MDPs and the Simulator Problem: Every RL Paper Starts After the Hard Part...',
-          description: "The five-tuple that defines an environment, why a plan is not a policy, and the reason reinforcement learning works on games and struggles everywhere the simulator has to be built.",
+          description: "The Markov decision process five-tuple, Bellman equations, plans versus policies, and how simulator error and off-policy coverage affect reinforcement learning.",
           section: "Study",handler: () => {
               window.location.href = "/study/mdps-and-the-simulator-problem/";
             },},{id: "study-medical-ai-agents-and-tool-using-clinical-systems",
@@ -3594,7 +3594,7 @@ ninja.data = [{
               window.location.href = "/study/monte-carlo-tree-search/";
             },},{id: "study-neural-radiance-fields-a-scene-stored-as-a-function",
           title: 'Neural Radiance Fields: A Scene Stored as a Function',
-          description: "NeRF replaces the 3-D data structure with a network you query. 5 MB holds what a voxel grid needs 500 MB for, and the bill arrives at 123 million network calls per frame.",
+          description: "Deriving NeRF camera rays, volume density, transmittance, alpha compositing, rendering gradients, positional encoding, and the storage-computation tradeoff against voxel grids.",
           section: "Study",handler: () => {
               window.location.href = "/study/neural-radiance-fields/";
             },},{id: "study-optimising-the-input-visualisation-style-and-adversarial-examples",
@@ -3614,7 +3614,7 @@ ninja.data = [{
               window.location.href = "/study/parkinsons-disease/";
             },},{id: "study-perception-as-inference-illusions-are-not-failures-and-the-easy-problems-were-the-hard-ones",
           title: 'Perception as Inference: Illusions Are Not Failures, and the Easy Problems Were the...',
-          description: "Why the retinal image cannot determine what you see, why walking took a billion years and calculus took a hundred thousand, and where the functional definition of AI runs out.",
+          description: "Perception as Bayesian inference: retinal-image ambiguity, illumination and reflectance, Gaussian cue integration, decision costs, active sensing, and Moravec&#39;s paradox.",
           section: "Study",handler: () => {
               window.location.href = "/study/perception-as-inference-and-moravecs-paradox/";
             },},{id: "study-poles-and-zeros-what-comes-out-uninvited-and-what-goes-in-and-vanishes",
@@ -3639,7 +3639,7 @@ ninja.data = [{
               window.location.href = "/study/probability-and-bayesian-reasoning/";
             },},{id: "study-recommender-systems-embeddings-interactions-and-a-field-that-audited-itself",
           title: 'Recommender Systems: Embeddings, Interactions, and a Field That Audited Itself',
-          description: "Why recommendation is a ranking problem over extremely sparse categorical features, how embeddings and feature interactions address that, and the reproducibility study that found most of the progress was not there.",
+          description: "Deriving recommendation from sparse categorical features through embeddings, matrix factorization, feature interactions, ranking losses, retrieval metrics, and reproducible evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/recommender-systems-and-sparse-features/";
             },},{id: "study-recurrent-networks-and-gating",
@@ -3659,7 +3659,7 @@ ninja.data = [{
               window.location.href = "/study/reproducibility-benchmarks-and-translational-study-design/";
             },},{id: "study-resampling-and-anti-aliasing-why-half-of-a-checkerboard-is-grey",
           title: 'Resampling and Anti-Aliasing: Why Half of a Checkerboard Is Grey',
-          description: "What downsampling does to a spectrum, why the filter has to come first, and the resize call that has been quietly changing benchmark results for years.",
+          description: "How downsampling folds the spectrum, why anti-aliasing must come first, and how interpolation, rational resampling, and checkerboard resizing set the filter cutoff.",
           section: "Study",handler: () => {
               window.location.href = "/study/resampling-and-anti-aliasing/";
             },},{id: "study-rheumatic-disease",
@@ -3689,7 +3689,7 @@ ninja.data = [{
               window.location.href = "/study/second-order-systems-and-transient-response/";
             },},{id: "study-segmentation-resolution-against-context-and-the-things-stuff-divide",
           title: 'Segmentation: Resolution Against Context, and the Things/Stuff Divide',
-          description: "Every segmentation architecture is an answer to one conflict: you need to see widely and label precisely, and pooling buys the first with the second. Four answers, and why panoptic needed a new output format.",
+          description: "Semantic, instance, and panoptic segmentation derived through pixel losses, receptive fields, encoder-decoder reconstruction, atrous convolution, center offsets, and panoptic quality.",
           section: "Study",handler: () => {
               window.location.href = "/study/segmentation-semantic-instance-and-panoptic/";
             },},{id: "study-selection-bias-and-dataset-bias",
@@ -3719,7 +3719,7 @@ ninja.data = [{
               window.location.href = "/study/spectral-filtering-and-graph-convolution/";
             },},{id: "study-speech-recognition-learning-without-knowing-where-anything-starts",
           title: 'Speech Recognition: Learning Without Knowing Where Anything Starts',
-          description: "You can label an utterance; you cannot label a 10-millisecond frame. CTC sums over all 28 trillion ways the label could line up, and that trick is worth more than the speech application.",
+          description: "MFCC features, CTC alignment marginalisation and forward–backward gradients, with exact frame-to-label path counts, repeated-label constraints and worked decoding examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/speech-recognition-and-alignment-free-training/";
             },},{id: "study-spurious-correlations-in-medical-ai",
@@ -3739,7 +3739,7 @@ ninja.data = [{
               window.location.href = "/study/statistical-inference-for-diagnostic-studies/";
             },},{id: "study-stochastic-gradient-descent-and-the-optimisers-built-on-it",
           title: 'Stochastic Gradient Descent and the Optimisers Built On It',
-          description: "Why the gradient is estimated from a handful of examples, what momentum and per-parameter rates each fix, and why saddle points replaced local minima as the suspected obstacle.",
+          description: "Mini-batch gradient estimates, variance, momentum, per-parameter rates in AdaGrad, RMSProp and Adam, and what saddle points and local minima do not explain.",
           section: "Study",handler: () => {
               window.location.href = "/study/stochastic-gradient-descent-and-optimisers/";
             },},{id: "study-stroke",
@@ -3754,7 +3754,7 @@ ninja.data = [{
               window.location.href = "/study/support-vector-machines/";
             },},{id: "study-the-combinatorial-explosion-and-why-pruning-alone-is-not-enough",
           title: 'The Combinatorial Explosion, and Why Pruning Alone Is Not Enough',
-          description: "Lighthill&#39;s 1973 case against AI was arithmetically correct and is still correct. What changed is that nobody searches the tree any more, and working the numbers shows that pruning the branches only solves half of it.",
+          description: "Exponential search trees, learned pruning, policy proposals, and value functions: deriving computation costs and the decision errors caused by omitted actions and approximate leaf evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/the-combinatorial-explosion-and-learned-pruning/";
             },},{id: "study-the-fft-where-a-200-speedup-comes-from",
@@ -3784,7 +3784,7 @@ ninja.data = [{
               window.location.href = "/study/transfer-functions-and-the-frequency-response/";
             },},{id: "study-invariance-and-equivariance-two-jobs-one-network-cannot-do-at-once",
           title: 'Invariance and Equivariance: Two Jobs One Network Cannot Do at Once',
-          description: "Detection asks a network to be blind to translation and to track it, simultaneously. R-FCN&#39;s fix and the feature pyramid are both answers to that conflict, and the conflict generalises well past detection.",
+          description: "Deriving translation invariance and equivariance, including convolution, pooling, stride, boundaries, R-FCN position-sensitive pooling, and feature pyramids for detection.",
           section: "Study",handler: () => {
               window.location.href = "/study/translation-invariance-and-equivariance/";
             },},{id: "study-translational-science-in-medicine",

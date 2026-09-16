@@ -4,7 +4,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Montserrat:500,600,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=212541f2e476e0138812c28312f0f6f8"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://sehyeony0518.github.io/papers/2026-02-22-wavelet-channel-energy-breast-us/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ</h1> <p class="post-meta"> Created on February 22, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ</em>. <a href="https://doi.org/10.1109/JSTSP.2008.2011160" rel="external nofollow noopener" target="_blank">IEEE Journal of Selected Topics in Signal Processing (2009)</a></p> <h2 id="why-i-read-it">Why I read it</h2> <p>This paper is relevant to my ultrasound work because it turns a recognizable BI-RADS idea, the infiltrative or irregular contour of a malignant lesion, into an explicit multiscale signal feature. The evidence path is simple enough to inspect from contour to score.</p> <h2 id="what-the-paper-claims">What the paper claims</h2> <p>A lesion boundary is converted into a one-dimensional signal, and high-octave wavelet channel energies quantify local contour variation. The authors argue that malignant infiltration produces irregular, localized changes that are captured efficiently by low-frequency-adjacent wavelet bands. They evaluate both physician-drawn contours and contours generated with ImageJ.</p> <h2 id="what-convinced-me">What convinced me</h2> <p>With expert contours, the feature achieved AUC 0.991, accuracy 0.951, sensitivity 0.985, and specificity 0.933. Performance fell when automated ImageJ contours were used, with AUC around 0.934 and accuracy 0.844. That drop is scientifically useful: it shows that the classifier’s apparent strength is conditional on the quality of the upstream lesion boundary.</p> <h2 id="what-it-leaves-open">What it leaves open</h2> <p>The study uses a relatively small curated dataset and does not establish patient-level, multi-site, or multi-scanner generalization. Contour delineation is itself operator- and algorithm-dependent, and high performance with manual boundaries can hide the difficulty of automatic lesion extraction. The feature is clinically legible, but it captures only one aspect of BI-RADS reasoning.</p> <h2 id="what-i-take-from-it">What I take from it</h2> <p>An interpretable pipeline should report error propagation between stages. Here, contour uncertainty is part of the diagnostic uncertainty. Modern models can learn richer features, but this paper remains a useful control for whether they truly improve on a clinically motivated contour descriptor.</p> </div> </article> </div> </div> <style>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Se-Hyeon Hwang (황세현) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/mission/">mission2035 </a> </li> <li class="nav-item "> <a class="nav-link" href="/team/">team </a> </li> <li class="nav-item "> <a class="nav-link" href="/ministry/">ministry </a> </li> <li class="nav-item "> <a class="nav-link" href="/prayer/">prayer </a> </li> <li class="nav-item "> <a class="nav-link" href="/photos/">photos </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/study/">AI Study </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">insights </a> </li> <li class="nav-item active"> <a class="nav-link" href="/papers/">paper reviews <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/gallery/">gallery </a> </li> <li class="nav-item "> <a class="nav-link" href="/diary/index.html">reflections </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ</h1> <p class="post-meta"> Created on February 22, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p><strong>Paper.</strong> <em>Breast Tumor Classification of Ultrasound Images Using Wavelet-Based Channel Energy and ImageJ.</em></p> <p>The paper asks whether an explicit multiscale description of a lesion contour can help distinguish benign and malignant breast tumors in ultrasound images. Its motivation is clinically recognizable: the shape and local irregularity of a boundary may contain diagnostic information. The engineering question is how to turn that qualitative observation into a reproducible feature rather than leaving it as an unspecified impression.</p> <p>This is useful to read alongside deep learning because it exposes the assumptions between image and prediction. A contour must first be obtained. It must then be represented as a signal, transformed, and summarized. Each step makes choices about which variation is retained. The final classifier may be simple, but its input is already the product of a substantial measurement process.</p> <p>The method represents a lesion boundary as a one-dimensional signal and analyzes it using a discrete periodized wavelet transform. The proposed channel-energy features summarize contour variation at selected scales. The authors describe informative high-octave energies as channels close to low-frequency bands. That terminology should not be casually rewritten as “high-frequency texture”: the signal being analyzed is a contour representation, not the complete ultrasound image.</p> <p>The reported performance differs between manual and ImageJ-generated contour settings. For the manual setting, AUC is 0.991, accuracy 0.951, sensitivity 0.985, and specificity 0.933. For the ImageJ setting, AUC is 0.934 and accuracy 0.844. These values support the usefulness of the descriptor under the evaluated conditions and highlight the importance of how the contour enters the pipeline.</p> <p>The existing review does not document the exact sample size, patient grouping, split procedure, or whether every reported contour comparison used precisely matched cases and evaluation choices. I would verify those details before treating the numbers as a fully controlled estimate of the effect of replacing manual segmentation. The observed performance gap is informative, but assigning its entire magnitude to contour quality requires that the other relevant conditions be comparable.</p> <p>The strongest aspect of the approach is its inspectable intermediate representation. If a case receives a high score, a reader can examine the boundary, the resulting signal, and the scales contributing energy. That makes it possible to ask a specific question about failure. Did the segmentation miss part of the lesion, did a sampling choice exaggerate a small irregularity, or did the descriptor fail to distinguish two clinically different shapes?</p> <p>Nevertheless, inspectability does not automatically establish clinical faithfulness. Wavelet energy measures variation under a chosen signal representation. Calling that energy an infiltration measure requires evidence that it corresponds to the intended pathological or imaging property. A contour can be irregular for several reasons, including delineation choices and image quality. The method’s clinical motivation is a hypothesis about the feature, not a guarantee that every large value has the same biological meaning.</p> <p>Manual contours also contain human input that should remain visible in the performance claim. A reader may use subtle image evidence when deciding where the lesion ends. The downstream classifier then receives a boundary informed by that judgment. High classification performance conditional on such a boundary does not establish equivalent performance when a routine system must first locate and delineate the lesion automatically.</p> <p>This is the main weakness I would raise: the diagnostic score is conditional on the upstream measurement, and that measurement can carry both error and expert information. Reporting only the best contour-conditioned result risks attributing the whole pipeline’s performance to the final feature. The ImageJ comparison makes the issue visible, but it does not remove the need to characterize segmentation failures and their consequences.</p> <p>A modern replication should examine contour uncertainty directly. I would compare multiple plausible reader contours and controlled boundary variations, then measure how much the diagnostic score changes. The perturbations would need to reflect plausible delineation differences. Arbitrarily jagged boundaries could make any contour descriptor appear fragile without representing actual annotation uncertainty.</p> <p>Spatial scale is another important consideration. A one-dimensional sampled contour depends on how points are spaced and how the shape is normalized. Resampling can alter which variations occupy particular wavelet bands. Before transferring a trained decision rule, I would preserve and report those choices. A transparent feature definition still needs a stable measurement convention.</p> <p>The method also captures only part of the information available in breast ultrasound. A useful contour descriptor does not establish that other findings are redundant. Conversely, a neural model that improves over it might gain from additional image information rather than a superior representation of the same contour. A fair comparison should state whether the competing methods have access to equivalent inputs.</p> <p>This paper connects directly to <a href="/study/representation-level-auditing/">Representation-Level Auditing</a>, especially its argument that frequency needs spatial meaning. Here, frequency refers to variation along a constructed boundary signal. It cannot be interpreted interchangeably with image-frequency content or a network’s internal spectral behavior. Naming the signal is necessary before assigning meaning to its bands.</p> <p><a href="/study/clinical-concepts-and-concept-based-interpretability/">Clinical Concepts and Concept-Based Interpretability</a> provides another useful caution. A measurable proxy for a named concept is valuable, but the proxy and concept are not identical by definition. <a href="/study/ultrasound-acquisition-variability-and-image-quality/">Ultrasound Acquisition Variability and Image Quality</a> explains why the boundary itself depends on whether the relevant interface remains assessable.</p> <p>BUS-BRA offers a natural resource for investigating these questions with explicit patient partitions and reference masks. I would compare contour-based classification using reference and predicted masks, report the performance of the complete automatic pipeline, and retain cases where a contour cannot be obtained reliably. I would also compare against simple geometric descriptors before concluding that the wavelet representation adds useful information.</p> <p>The lasting value of the paper is its explicit evidence path. It provides a baseline against which a more complex model can be asked to justify its benefit. That benefit should be measured under comparable inputs and realistic upstream uncertainty. A legible final score becomes useful when the measurement feeding it is equally well characterized.</p> </div> </article> </div> </div> <style>
   /* ── Ground tone: off-white page, near-black text, elevated cards ────── */
   :root {
     --global-bg-color: #f9f9f9;
@@ -3169,7 +3169,7 @@ ninja.data = [{
               window.location.href = "/papers/2026-08-30-monet-transparent-medical-image-ai/";
             },},{id: "papers-can-you-trust-this-prediction-auditing-pointwise-reliability-after-learning",
           title: 'Can You Trust This Prediction? Auditing Pointwise Reliability After Learning',
-          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods, not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
+          description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods: not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data.",
           section: "Papers",handler: () => {
               window.location.href = "/papers/2026-09-05-auditing-pointwise-reliability-after-learning/";
             },},{id: "prayer-2026년-7월호-부르심의-시작",
@@ -3199,12 +3199,12 @@ ninja.data = [{
               window.location.href = "/study/allergy-and-clinical-immunology/";
             },},{id: "study-anchor-boxes-and-non-maximum-suppression-where-the-priors-are-hidden",
           title: 'Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden',
-          description: "A detector predicts corrections to reference boxes it was handed, and then deletes most of its own output. Both steps are hand-chosen priors that no accuracy number reports.",
+          description: "Deriving anchor-box geometry, normalized box regression, IoU matching, and non-maximum suppression, with worked examples of reference boxes, losses, and overlapping detections.",
           section: "Study",handler: () => {
               window.location.href = "/study/anchor-boxes-and-non-maximum-suppression/";
             },},{id: "study-attention-retrieval-as-a-differentiable-operation",
           title: 'Attention: Retrieval as a Differentiable Operation',
-          description: "Query, key and value are a soft dictionary lookup, and everything else in a Transformer is bookkeeping around it. Including why the scores are divided by √d, which is not a fudge factor.",
+          description: "Deriving query-key-value attention, softmax, square-root dimension scaling, multi-head computation, positional encoding, causal masks, and Transformer costs through explicit examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/attention-and-the-transformer/";
             },},{id: "study-attribution-attention-and-counterfactual-explanations",
@@ -3229,7 +3229,7 @@ ninja.data = [{
               window.location.href = "/study/auditing-explanation-faithfulness-in-gallbladder-models/";
             },},{id: "study-backpropagation-in-scalars-and-in-matrices",
           title: 'Backpropagation, in Scalars and in Matrices',
-          description: "Why a procedure for computing derivatives is the whole of a training algorithm, and what the backward pass turns out to be for a dense layer and for a convolution.",
+          description: "How backpropagation organises the chain rule to compute derivatives for training, with scalar and matrix derivations for a dense layer and a convolution.",
           section: "Study",handler: () => {
               window.location.href = "/study/backpropagation/";
             },},{id: "study-bayesian-decision-theory-risk-loss-and-where-the-boundary-goes",
@@ -3239,7 +3239,7 @@ ninja.data = [{
               window.location.href = "/study/bayesian-decision-theory/";
             },},{id: "study-marginalisation-not-optimisation-what-deep-ensembles-are-actually-doing",
           title: 'Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing',
-          description: "The frequentist/Bayesian split is one decision, is the parameter a constant or a random variable, and it propagates all the way to why averaging several trained networks is not a trick.",
+          description: "The frequentist/Bayesian distinction, posterior marginalisation, and deep ensembles: deriving predictive uncertainty while separating model averaging from posterior sampling.",
           section: "Study",handler: () => {
               window.location.href = "/study/bayesian-deep-learning-and-deep-ensembles/";
             },},{id: "study-bayesian-inverse-problems-in-imaging",
@@ -3289,7 +3289,7 @@ ninja.data = [{
               window.location.href = "/study/choosing-an-estimator/";
             },},{id: "study-choosing-the-loss-squared-error-absolute-error-and-what-each-one-believes",
           title: 'Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes',
-          description: "The loss is where you state what counts as a good answer. Squaring makes one bad point outvote nine good ones, and the arithmetic of how badly is worth seeing.",
+          description: "Squared error, absolute error and Huber loss: deriving their prediction targets, checking how one bad point affects a fit, and understanding weighted classification losses.",
           section: "Study",handler: () => {
               window.location.href = "/study/choosing-the-loss-function/";
             },},{id: "study-circadian-rhythm-disorders",
@@ -3424,7 +3424,7 @@ ninja.data = [{
               window.location.href = "/study/explanation-faithfulness-versus-plausibility/";
             },},{id: "study-the-exponential-moving-average-one-recursion-behind-momentum-rmsprop-and-adam",
           title: 'The Exponential Moving Average: One Recursion Behind Momentum, RMSProp and Adam',
-          description: "A single line of algebra that replaces a buffer with one number, and once you recognise it, most of the optimiser zoo stops being a zoo.",
+          description: "Deriving the exponential moving average behind momentum, RMSProp and Adam, including bias correction, memory timescales, effective sample size and numerical updates.",
           section: "Study",handler: () => {
               window.location.href = "/study/exponential-moving-averages-in-optimisers/";
             },},{id: "study-external-validation-and-clinical-utility-for-gallbladder-ai",
@@ -3464,7 +3464,7 @@ ninja.data = [{
               window.location.href = "/study/from-clinical-problem-to-machine-learning-task/";
             },},{id: "study-fully-convolutional-networks-and-why-detection-needed-its-own-metric",
           title: 'Fully Convolutional Networks, and Why Detection Needed Its Own Metric',
-          description: "How dropping the fully-connected head decouples a network from input size, and why mAP exists: the same argument against accuracy that class imbalance forces on classification, arriving by a different road.",
+          description: "Deriving fully convolutional networks from fully-connected layers, then computing IoU, detection matching, precision-recall, AP, and mAP under explicit evaluation conventions.",
           section: "Study",handler: () => {
               window.location.href = "/study/fully-convolutional-networks-and-detection-metrics/";
             },},{id: "study-gallbladder-cancer",
@@ -3549,7 +3549,7 @@ ninja.data = [{
               window.location.href = "/study/linear-mmse-and-the-wiener-filter/";
             },},{id: "study-linearization-an-approximation-whose-licence-is-retrospective",
           title: 'Linearization: An Approximation Whose Licence Is Retrospective',
-          description: "Replacing sin θ with θ makes an unsolvable equation solvable, the justification arrives only after checking, and a single sign decides whether the system oscillates forever or runs away.",
+          description: "Pendulum linearization, small-angle sine approximations, Taylor error bounds, phase drift, and the poles that distinguish hanging, inverted, and cart-pole dynamics.",
           section: "Study",handler: () => {
               window.location.href = "/study/linearization-and-the-inverted-pendulum/";
             },},{id: "study-liver-cancer",
@@ -3564,7 +3564,7 @@ ninja.data = [{
               window.location.href = "/study/lung-cancer/";
             },},{id: "study-matrix-calculus-for-reading-papers-determinants-cofactors-and-the-gaussian-mle",
           title: 'Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gaussian MLE',
-          description: "The minimum of matrix differentiation that lets you read a derivation instead of skipping it, and the derivation of the Gaussian mean and covariance estimators that it exists to serve.",
+          description: "Matrix differentiation through determinants, cofactors, log determinants and inverses, followed by a complete derivation of Gaussian mean and covariance maximum-likelihood estimators.",
           section: "Study",handler: () => {
               window.location.href = "/study/matrix-calculus-for-reading-papers/";
             },},{id: "study-matthews-correlation-coefficient-a-metric-that-fails-loudly",
@@ -3574,7 +3574,7 @@ ninja.data = [{
               window.location.href = "/study/matthews-correlation-coefficient/";
             },},{id: "study-mdps-and-the-simulator-problem-every-rl-paper-starts-after-the-hard-part",
           title: 'MDPs and the Simulator Problem: Every RL Paper Starts After the Hard Part...',
-          description: "The five-tuple that defines an environment, why a plan is not a policy, and the reason reinforcement learning works on games and struggles everywhere the simulator has to be built.",
+          description: "The Markov decision process five-tuple, Bellman equations, plans versus policies, and how simulator error and off-policy coverage affect reinforcement learning.",
           section: "Study",handler: () => {
               window.location.href = "/study/mdps-and-the-simulator-problem/";
             },},{id: "study-medical-ai-agents-and-tool-using-clinical-systems",
@@ -3594,7 +3594,7 @@ ninja.data = [{
               window.location.href = "/study/monte-carlo-tree-search/";
             },},{id: "study-neural-radiance-fields-a-scene-stored-as-a-function",
           title: 'Neural Radiance Fields: A Scene Stored as a Function',
-          description: "NeRF replaces the 3-D data structure with a network you query. 5 MB holds what a voxel grid needs 500 MB for, and the bill arrives at 123 million network calls per frame.",
+          description: "Deriving NeRF camera rays, volume density, transmittance, alpha compositing, rendering gradients, positional encoding, and the storage-computation tradeoff against voxel grids.",
           section: "Study",handler: () => {
               window.location.href = "/study/neural-radiance-fields/";
             },},{id: "study-optimising-the-input-visualisation-style-and-adversarial-examples",
@@ -3614,7 +3614,7 @@ ninja.data = [{
               window.location.href = "/study/parkinsons-disease/";
             },},{id: "study-perception-as-inference-illusions-are-not-failures-and-the-easy-problems-were-the-hard-ones",
           title: 'Perception as Inference: Illusions Are Not Failures, and the Easy Problems Were the...',
-          description: "Why the retinal image cannot determine what you see, why walking took a billion years and calculus took a hundred thousand, and where the functional definition of AI runs out.",
+          description: "Perception as Bayesian inference: retinal-image ambiguity, illumination and reflectance, Gaussian cue integration, decision costs, active sensing, and Moravec&#39;s paradox.",
           section: "Study",handler: () => {
               window.location.href = "/study/perception-as-inference-and-moravecs-paradox/";
             },},{id: "study-poles-and-zeros-what-comes-out-uninvited-and-what-goes-in-and-vanishes",
@@ -3639,7 +3639,7 @@ ninja.data = [{
               window.location.href = "/study/probability-and-bayesian-reasoning/";
             },},{id: "study-recommender-systems-embeddings-interactions-and-a-field-that-audited-itself",
           title: 'Recommender Systems: Embeddings, Interactions, and a Field That Audited Itself',
-          description: "Why recommendation is a ranking problem over extremely sparse categorical features, how embeddings and feature interactions address that, and the reproducibility study that found most of the progress was not there.",
+          description: "Deriving recommendation from sparse categorical features through embeddings, matrix factorization, feature interactions, ranking losses, retrieval metrics, and reproducible evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/recommender-systems-and-sparse-features/";
             },},{id: "study-recurrent-networks-and-gating",
@@ -3659,7 +3659,7 @@ ninja.data = [{
               window.location.href = "/study/reproducibility-benchmarks-and-translational-study-design/";
             },},{id: "study-resampling-and-anti-aliasing-why-half-of-a-checkerboard-is-grey",
           title: 'Resampling and Anti-Aliasing: Why Half of a Checkerboard Is Grey',
-          description: "What downsampling does to a spectrum, why the filter has to come first, and the resize call that has been quietly changing benchmark results for years.",
+          description: "How downsampling folds the spectrum, why anti-aliasing must come first, and how interpolation, rational resampling, and checkerboard resizing set the filter cutoff.",
           section: "Study",handler: () => {
               window.location.href = "/study/resampling-and-anti-aliasing/";
             },},{id: "study-rheumatic-disease",
@@ -3689,7 +3689,7 @@ ninja.data = [{
               window.location.href = "/study/second-order-systems-and-transient-response/";
             },},{id: "study-segmentation-resolution-against-context-and-the-things-stuff-divide",
           title: 'Segmentation: Resolution Against Context, and the Things/Stuff Divide',
-          description: "Every segmentation architecture is an answer to one conflict: you need to see widely and label precisely, and pooling buys the first with the second. Four answers, and why panoptic needed a new output format.",
+          description: "Semantic, instance, and panoptic segmentation derived through pixel losses, receptive fields, encoder-decoder reconstruction, atrous convolution, center offsets, and panoptic quality.",
           section: "Study",handler: () => {
               window.location.href = "/study/segmentation-semantic-instance-and-panoptic/";
             },},{id: "study-selection-bias-and-dataset-bias",
@@ -3719,7 +3719,7 @@ ninja.data = [{
               window.location.href = "/study/spectral-filtering-and-graph-convolution/";
             },},{id: "study-speech-recognition-learning-without-knowing-where-anything-starts",
           title: 'Speech Recognition: Learning Without Knowing Where Anything Starts',
-          description: "You can label an utterance; you cannot label a 10-millisecond frame. CTC sums over all 28 trillion ways the label could line up, and that trick is worth more than the speech application.",
+          description: "MFCC features, CTC alignment marginalisation and forward–backward gradients, with exact frame-to-label path counts, repeated-label constraints and worked decoding examples.",
           section: "Study",handler: () => {
               window.location.href = "/study/speech-recognition-and-alignment-free-training/";
             },},{id: "study-spurious-correlations-in-medical-ai",
@@ -3739,7 +3739,7 @@ ninja.data = [{
               window.location.href = "/study/statistical-inference-for-diagnostic-studies/";
             },},{id: "study-stochastic-gradient-descent-and-the-optimisers-built-on-it",
           title: 'Stochastic Gradient Descent and the Optimisers Built On It',
-          description: "Why the gradient is estimated from a handful of examples, what momentum and per-parameter rates each fix, and why saddle points replaced local minima as the suspected obstacle.",
+          description: "Mini-batch gradient estimates, variance, momentum, per-parameter rates in AdaGrad, RMSProp and Adam, and what saddle points and local minima do not explain.",
           section: "Study",handler: () => {
               window.location.href = "/study/stochastic-gradient-descent-and-optimisers/";
             },},{id: "study-stroke",
@@ -3754,7 +3754,7 @@ ninja.data = [{
               window.location.href = "/study/support-vector-machines/";
             },},{id: "study-the-combinatorial-explosion-and-why-pruning-alone-is-not-enough",
           title: 'The Combinatorial Explosion, and Why Pruning Alone Is Not Enough',
-          description: "Lighthill&#39;s 1973 case against AI was arithmetically correct and is still correct. What changed is that nobody searches the tree any more, and working the numbers shows that pruning the branches only solves half of it.",
+          description: "Exponential search trees, learned pruning, policy proposals, and value functions: deriving computation costs and the decision errors caused by omitted actions and approximate leaf evaluation.",
           section: "Study",handler: () => {
               window.location.href = "/study/the-combinatorial-explosion-and-learned-pruning/";
             },},{id: "study-the-fft-where-a-200-speedup-comes-from",
@@ -3784,7 +3784,7 @@ ninja.data = [{
               window.location.href = "/study/transfer-functions-and-the-frequency-response/";
             },},{id: "study-invariance-and-equivariance-two-jobs-one-network-cannot-do-at-once",
           title: 'Invariance and Equivariance: Two Jobs One Network Cannot Do at Once',
-          description: "Detection asks a network to be blind to translation and to track it, simultaneously. R-FCN&#39;s fix and the feature pyramid are both answers to that conflict, and the conflict generalises well past detection.",
+          description: "Deriving translation invariance and equivariance, including convolution, pooling, stride, boundaries, R-FCN position-sensitive pooling, and feature pyramids for detection.",
           section: "Study",handler: () => {
               window.location.href = "/study/translation-invariance-and-equivariance/";
             },},{id: "study-translational-science-in-medicine",
