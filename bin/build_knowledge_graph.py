@@ -70,10 +70,15 @@ def main():
             f = f.strip()
             if not f:
                 continue
-            # Anchor the front always. Anchor the end too unless the alias is a
-            # deliberate stem ("identifiab", "annotat"), which must match its
-            # inflections.
-            tail = "" if f.isalpha() and f.islower() and not f.endswith(("s", "e", "y")) and len(f) > 6 else r"\b"
+            # Anchor the front always. A trailing "*" in the alias file marks a
+            # deliberate stem ("identifiab*", "annotat*") that must match its
+            # inflections; everything else is anchored, allowing a plural.
+            # The previous suffix heuristic misread "normalis" and "preprocess"
+            # as whole words, and anchored aliases missed ordinary plurals.
+            if f.endswith("*"):
+                f, tail = f[:-1], ""
+            else:
+                tail = r"(?:s|es)?\b"
             pats.append(r"\b" + re.escape(f) + tail)
         matchers[label] = re.compile("|".join(pats), re.I)
 
