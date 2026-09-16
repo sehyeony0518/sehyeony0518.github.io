@@ -2,13 +2,13 @@
 layout: post
 title: "Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data"
 date: 2026-04-28 12:00:00 +0900
-venue: "arXiv preprint"
+venue: "Machine Learning"
 authors: "Frederik Pahde, Thomas Wiegand, Sebastian Lapuschkin, Wojciech Samek (2025)"
 description: "A framework connecting interpretability directly to correction: find the spurious behavior with concept-level explanation methods, then fix both the model and the data it came from."
 related_posts: false
 ---
 
-**Paper.** *Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data*. [Manuscript](https://arxiv.org/abs/2501.13818)
+**Paper.** *Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data*. [Machine Learning 114, 206 (2025)](https://doi.org/10.1007/s10994-025-06834-w); [preprint](https://arxiv.org/abs/2501.13818).
 
 ## The question is what happens after discovery
 
