@@ -40,7 +40,7 @@ Stroke is especially useful for studying these distinctions because the patient,
 
 ### Vascular anatomy explains why location matters more than lesion size alone
 
-Brain function is organised through networks supplied by particular arterial territories. Interruption of flow therefore produces deficits related to which structures are affected.
+Brain function is organized through networks supplied by particular arterial territories. Interruption of flow therefore produces deficits related to which structures are affected.
 
 A cortical lesion can disturb language, spatial attention or vision. Injury to a compact motor pathway can produce substantial weakness despite a relatively small lesion. Brainstem and cerebellar injury can affect coordination, eye movements, balance, swallowing or consciousness.
 
@@ -48,7 +48,7 @@ This is why lesion volume is not a complete measure of clinical severity. A smal
 
 Symptoms also help test whether an imaging finding is relevant. An old infarct may be conspicuous on CT yet fail to explain the new deficit. A subtle lesion matching the current neurological pattern may be more important.
 
-For AI, segmentation quality should therefore be evaluated alongside localisation and clinical context. An overlap metric that rewards large lesions can conceal missed small lesions in consequential locations.
+For AI, segmentation quality should therefore be evaluated alongside localization and clinical context. An overlap metric that rewards large lesions can conceal missed small lesions in consequential locations.
 
 The disease label belongs to the patient and episode. The image finding belongs to a particular structure and acquisition time. They need to be linked explicitly.
 
@@ -93,7 +93,7 @@ A ruptured vessel releases blood into tissue. The hematoma can directly disrupt 
 
 Blood and its breakdown products also contribute to secondary injury and surrounding edema. If blood enters the ventricular system or obstructs cerebrospinal-fluid pathways, hydrocephalus may occur.
 
-The resulting clinical state depends on location, extent, mass effect and evolution. It cannot be summarised by the presence of any bright region on CT.
+The resulting clinical state depends on location, extent, mass effect and evolution. It cannot be summarized by the presence of any bright region on CT.
 
 Underlying causes also differ. Hypertensive small-vessel disease, vascular malformations, anticoagulant-associated bleeding and other conditions can enter the assessment.
 
@@ -175,7 +175,7 @@ Anatomical sequences help assess location, pre-existing lesions, structural alte
 
 The combination matters because a single bright or dark region is rarely self-interpreting. The reader asks which physical contrast produced it and whether the other sequences support the same explanation.
 
-For a dataset, “MRI-positive stroke” should identify how positivity was established. A report-based label may summarise several sequences and clinical information. An individual slice may contain only part of that evidence.
+For a dataset, “MRI-positive stroke” should identify how positivity was established. A report-based label may summarize several sequences and clinical information. An individual slice may contain only part of that evidence.
 
 Sequence availability can also encode the care pathway. Patients selected for an extensive MRI investigation may differ from patients assessed only with emergency CT. A model can exploit that selection unless the intended population is clearly defined.
 
@@ -218,7 +218,7 @@ Seizure can produce focal neurological deficits and imaging changes. Migraine ca
 
 Old stroke deficits may also become more apparent during systemic stress. The presence of an old lesion does not automatically explain a newly reported event in the same way as a new infarct.
 
-The study lesson is that imaging findings must be matched to the current episode. A model that recognises any prior infarction may achieve apparent “stroke” accuracy while missing the task of identifying an acute event.
+The study lesson is that imaging findings must be matched to the current episode. A model that recognizes any prior infarction may achieve apparent “stroke” accuracy while missing the task of identifying an acute event.
 
 Reference construction should distinguish acute injury, chronic injury, uncertain findings and nonvascular alternatives.
 
@@ -234,7 +234,7 @@ Reference construction should distinguish acute injury, chronic injury, uncertai
 | Treatment eligibility | A defined clinical decision framework using all required information | An image alone may omit essential variables |
 | Functional outcome | Follow-up assessment of specified function | Baseline disability, care and missing follow-up matter |
 
-A report extracted from the record may be a practical reference, but its information content must be understood. It may describe a preliminary interpretation, incorporate later information or summarise several modalities.
+A report extracted from the record may be a practical reference, but its information content must be understood. It may describe a preliminary interpretation, incorporate later information or summarize several modalities.
 
 Consensus review improves reproducibility without making uncertainty disappear. Borderline findings, incomplete studies and disagreement should remain visible in the data.
 
@@ -258,7 +258,7 @@ These distinctions should be made before choosing a model architecture.
 
 Missing hemorrhage can delay the appropriate pathway and may contribute to unsafe interpretation of an ischemic treatment question. Falsely labelling hemorrhage can also delay or divert care.
 
-Missing an arterial occlusion can delay specialist review or transfer. A false alert can consume attention, trigger unnecessary escalation and interfere with prioritisation.
+Missing an arterial occlusion can delay specialist review or transfer. A false alert can consume attention, trigger unnecessary escalation and interfere with prioritization.
 
 Overestimating severely injured tissue can support an overly pessimistic interpretation. Underestimating it can also distort risk assessment. Neither error is captured fully by a generic image-level accuracy score.
 
@@ -288,7 +288,7 @@ Evaluation should therefore distinguish:
 
 - Time until a usable result exists.
 - Time until an appropriate clinician reviews it.
-- Whether the result changes prioritisation or action.
+- Whether the result changes prioritization or action.
 - Missed cases and false alerts.
 - Transfer or treatment delays.
 - Safety and functional outcomes.
@@ -303,7 +303,7 @@ The model should be evaluated on the acquisitions available at its intended deci
 
 | Question | What I should be able to explain |
 | --- | --- |
-| Why do location and volume differ in importance? | Compact or specialised networks can be damaged by small lesions |
+| Why do location and volume differ in importance? | Compact or specialized networks can be damaged by small lesions |
 | Why can symptoms precede CT changes? | Dysfunction can occur before conspicuous structural alteration |
 | Why does ischemia alter diffusion? | Energy failure changes cellular ion and water regulation |
 | Why inspect ADC with diffusion-weighted signal? | Bright signal can have contributions other than restriction |

@@ -103,7 +103,7 @@ Conversely, if the angle is not an odd multiple of $$\pi$$, multiplying by a pos
 Thus:
 
 - The angle condition determines the locus geometry.
-- The magnitude condition parameterises that geometry by gain.
+- The magnitude condition parameterizes that geometry by gain.
 - Poles and zeros are limiting endpoints, where this finite-point calculation must be interpreted through limits.
 
 ## Key concepts
@@ -592,7 +592,7 @@ $$
 \sqrt{K^2-4}<K.
 $$
 
-The root approaching the finite zero can be rationalised:
+The root approaching the finite zero can be rationalized:
 
 $$
 \begin{aligned}
@@ -794,7 +794,7 @@ C_\ell
 \frac{1+2j}{-8-4j}.
 $$
 
-Rationalising,
+Rationalizing,
 
 $$
 \begin{aligned}

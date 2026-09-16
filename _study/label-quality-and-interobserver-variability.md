@@ -5,7 +5,7 @@ description: "Evaluating against labels that expert readers themselves disagree 
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Task Definition & Ground Truth"
 order: 4
 source: "Independent study"

@@ -122,11 +122,11 @@ The margin is an exact robustness radius for arbitrary Euclidean perturbations o
 
 The choice of geometry matters. Rescaling one feature changes Euclidean distances and the norm penalty. A large margin in features encoding a scanner marker does not establish robustness to a change that removes or reverses that marker.
 
-The maximum-margin criterion is therefore an inductive bias: among separating rules, prefer one robust to perturbations measured in a specified geometry. The calculation establishes that geometric property. It does not, by itself, establish a generalisation guarantee for an unspecified deployment distribution.
+The maximum-margin criterion is therefore an inductive bias: among separating rules, prefer one robust to perturbations measured in a specified geometry. The calculation establishes that geometric property. It does not, by itself, establish a generalization guarantee for an unspecified deployment distribution.
 
 ## Deriving the hard-margin problem
 
-Suppose the finite training set is linearly separable. The objective is to maximise the smallest signed geometric margin:
+Suppose the finite training set is linearly separable. The objective is to maximize the smallest signed geometric margin:
 
 $$
 \max_{w,b}
@@ -136,7 +136,7 @@ $$
 
 A separating rule has a positive minimum functional margin. Divide the weight and intercept by that minimum. The rescaled rule has minimum functional margin one and describes the same boundary.
 
-Under this normalisation, maximise the reciprocal of the weight norm subject to all signed scores being at least one. Equivalently,
+Under this normalization, maximize the reciprocal of the weight norm subject to all signed scores being at least one. Equivalently,
 
 $$
 \begin{aligned}
@@ -148,7 +148,7 @@ $$
 \end{aligned}
 $$
 
-The factor of one half simplifies the derivative. It does not change the minimiser.
+The factor of one half simplifies the derivative. It does not change the minimizer.
 
 The distance from the decision boundary to either supporting margin hyperplane is
 
@@ -241,11 +241,11 @@ $$
 D=1-\frac12=\frac12.
 $$
 
-Primal feasibility, dual feasibility, and matching objectives certify optimality. No graph or numerical optimiser is needed.
+Primal feasibility, dual feasibility, and matching objectives certify optimality. No graph or numerical optimizer is needed.
 
 The inner points have positive coefficients and support the solution. The outer points have strict margin slack and zero coefficients.
 
-## Writing the quadratic program and recognising infeasibility
+## Writing the quadratic program and recognizing infeasibility
 
 Stack the parameters as
 
@@ -286,7 +286,7 @@ x_i^{\mathsf T}&1
 h_i=-1.
 $$
 
-The final zero on the objective diagonal means the intercept is unpenalised. Adding a positive entry there to satisfy a preferred solver interface changes the optimisation problem.
+The final zero on the objective diagonal means the intercept is unpenalized. Adding a positive entry there to satisfy a preferred solver interface changes the optimization problem.
 
 For the four-point example,
 
@@ -602,7 +602,7 @@ $$
 -\frac12\le b\le\frac12.
 $$
 
-This example shows that the weight can be unique while the unpenalised intercept is not.
+This example shows that the weight can be unique while the unpenalized intercept is not.
 
 ## KKT identifies support vectors and bounds the intercept
 
@@ -674,7 +674,7 @@ For the two-point example at penalty one quarter, the negative observation at th
 
 Selecting the coefficient “closest to the interior” is not required by the theory.
 
-## Kernelisation and the actual number of variables
+## Kernelization and the actual number of variables
 
 The dual and prediction rule use inputs through inner products:
 
@@ -708,11 +708,11 @@ c^{\mathsf T}Qc
 (Yc)^{\mathsf T}K(Yc)\ge 0,
 $$
 
-where the diagonal label matrix multiplies each coordinate by its label. Thus the maximised dual objective remains concave.
+where the diagonal label matrix multiplies each coordinate by its label. Thus the maximized dual objective remains concave.
 
 The explicit hard-margin primal has the feature coefficients and an intercept. The slack formulation adds one slack per observation; eliminating slacks gives a non-smooth objective in the weight and intercept. Counting only coefficients without noting which formulation is being used can be misleading.
 
-An infinite-dimensional feature space still admits a primal formulation. The [finite-span argument](/study/the-kernel-trick/) shows why a norm-regularised optimum can be represented using training features. The dual is a convenient route to this representation, not proof that the primal cannot exist.
+An infinite-dimensional feature space still admits a primal formulation. The [finite-span argument](/study/the-kernel-trick/) shows why a norm-regularized optimum can be represented using training features. The dual is a convenient route to this representation, not proof that the primal cannot exist.
 
 Nor is sparsity guaranteed. Some problems give non-zero coefficients to many or all observations. For a linear kernel, prediction can use the reconstructed weight directly, avoiding a sum over stored support inputs.
 
@@ -740,7 +740,7 @@ $$
 
 If the positive class is more probable, this decreases toward the right endpoint. If the negative class is more probable, it decreases toward the left endpoint.
 
-For an interior probability unequal to one half, the conditional minimiser is therefore
+For an interior probability unequal to one half, the conditional minimizer is therefore
 
 $$
 z^\star=
@@ -750,7 +750,7 @@ z^\star=
 \end{cases}
 $$
 
-At equal probabilities, every score in the interval minimises risk.
+At equal probabilities, every score in the interval minimizes risk.
 
 Different probabilities on the same side of one half can therefore have the same optimal hinge score. The score's sign can be appropriate for classification without encoding the underlying probability.
 
@@ -788,13 +788,13 @@ $$
 \frac1{2Cn}\lVert w\rVert^2+\frac1n\sum_i\ell_i.
 $$
 
-Thus it corresponds to mean loss with regularisation coefficient
+Thus it corresponds to mean loss with regularization coefficient
 
 $$
 \lambda=\frac1{Cn}.
 $$
 
-Keeping the same summed-loss penalty while changing the sample count changes the regularisation strength relative to average loss.
+Keeping the same summed-loss penalty while changing the sample count changes the regularization strength relative to average loss.
 
 Observation-specific penalties likewise produce observation-specific dual ceilings:
 
@@ -822,9 +822,9 @@ $$
 D\le p^\star\le P.
 $$
 
-The difference bounds optimisation error for this training objective. It does not bound classification error on new data.
+The difference bounds optimization error for this training objective. It does not bound classification error on new data.
 
-Deleting an observation with a zero coefficient preserves an existing optimum when the summed-loss penalty is fixed and the same certificate applies. It can change the set of optimal intercepts, and rescaling the objective after deletion can change the problem. “The point has no coefficient” is a precise optimisation statement, not a general causal claim about the observation's importance.
+Deleting an observation with a zero coefficient preserves an existing optimum when the summed-loss penalty is fixed and the same certificate applies. It can change the set of optimal intercepts, and rescaling the objective after deletion can change the problem. “The point has no coefficient” is a precise optimization statement, not a general causal claim about the observation's importance.
 
 ## Revision checklist
 
@@ -832,22 +832,22 @@ Deleting an observation with a zero coefficient preserves an existing optimum wh
 |---|---|
 | Derive distance to a hyperplane | Construct the minimum-length perturbation |
 | Distinguish functional and geometric margins | Check positive rescaling |
-| Derive hard-margin normalisation | Fix the smallest functional margin at one |
+| Derive hard-margin normalization | Fix the smallest functional margin at one |
 | Certify the four-point example | Match its primal and dual objectives |
-| Encode the quadratic program | Leave the intercept unpenalised |
+| Encode the quadratic program | Leave the intercept unpenalized |
 | Prove a simple infeasibility claim | Exhibit contradictory constraints |
 | Eliminate slack variables | Obtain hinge loss exactly |
 | Derive the dual | Identify which linear coefficients must vanish |
 | Solve the two-point soft-margin problem | Recover the penalty-dependent coefficient |
 | Interpret KKT endpoint cases | Avoid reversing implications |
 | Recover the intercept without interior coefficients | Intersect the bounds |
-| Explain why scores are not probabilities | Minimise conditional hinge risk |
-| Translate penalty conventions | Relate summed loss to mean-loss regularisation |
-| Interpret a small duality gap | Separate optimisation from generalisation |
+| Explain why scores are not probabilities | Minimize conditional hinge risk |
+| Translate penalty conventions | Relate summed loss to mean-loss regularization |
+| Interpret a small duality gap | Separate optimization from generalization |
 
 ## Why it matters for my work
 
-The SVM makes the representation, margin geometry, and training tradeoff explicit. I can use that transparency to audit a baseline, while keeping optimisation certificates separate from claims about calibration or robustness across data sources.
+The SVM makes the representation, margin geometry, and training tradeoff explicit. I can use that transparency to audit a baseline, while keeping optimization certificates separate from claims about calibration or robustness across data sources.
 
 ## What I have not resolved
 

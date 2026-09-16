@@ -13,7 +13,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-EM maximises an auxiliary function built from an unobserved part of the data. Why should that improve the likelihood of the observations we actually have? The answer is an exact identity: the likelihood improvement equals the auxiliary-function improvement plus a nonnegative divergence between two latent posteriors.
+EM maximizes an auxiliary function built from an unobserved part of the data. Why should that improve the likelihood of the observations we actually have? The answer is an exact identity: the likelihood improvement equals the auxiliary-function improvement plus a nonnegative divergence between two latent posteriors.
 
 The guarantee needs careful boundaries. Exact EM cannot decrease the observed likelihood when its E step is exact and its M step improves the stated auxiliary objective. If the likelihood is also bounded above, its values converge. Neither statement establishes convergence of the parameters, convergence to a local maximum, or global optimality. Unconstrained Gaussian mixtures need particular care because their likelihood can be unbounded.
 
@@ -50,7 +50,7 @@ $$
 \right].
 $$
 
-Marginalising the indicators recovers the original mixture likelihood. The latent construction has changed the representation, not the observed probability model.
+Marginalizing the indicators recovers the original mixture likelihood. The latent construction has changed the representation, not the observed probability model.
 
 At iteration $$t$$, define
 
@@ -116,7 +116,7 @@ $$
 
 The posterior weights appear after differentiating the likelihood. Setting this gradient to zero gives self-consistency equations because those weights still depend on the unknown parameters. Rearranging those equations is valid; interpreting them as an explicit solution is not.
 
-EM chooses an iterative update by evaluating the posterior at the old parameters and maximising the resulting expected complete-data log-likelihood. The separate monotonicity proof justifies this choice. It does not justify every possible fixed-point iteration built from the likelihood equations.
+EM chooses an iterative update by evaluating the posterior at the old parameters and maximizing the resulting expected complete-data log-likelihood. The separate monotonicity proof justifies this choice. It does not justify every possible fixed-point iteration built from the likelihood equations.
 
 ## The bound touches the likelihood at the old parameters
 
@@ -195,7 +195,7 @@ $$
 
 The derivative is negative below one and positive above one, so the minimum is at one, where the difference is zero.
 
-For normalised distributions with common positive support,
+For normalized distributions with common positive support,
 
 $$
 \begin{aligned}
@@ -244,7 +244,7 @@ $$
 
 Both terms on the right are nonnegative under the stated update. The direction of the divergence is old posterior to new posterior.
 
-Likelihood equality requires both no improvement in the auxiliary objective and no change in the posterior. Conversely, strictly increasing the auxiliary objective guarantees a strict likelihood increase. Full maximisation is sufficient but unnecessary: any step that increases the same auxiliary objective has the monotonicity property. This is the basis of generalised EM.
+Likelihood equality requires both no improvement in the auxiliary objective and no change in the posterior. Conversely, strictly increasing the auxiliary objective guarantees a strict likelihood increase. Full maximization is sufficient but unnecessary: any step that increases the same auxiliary objective has the monotonicity property. This is the basis of generalized EM.
 
 ## Derive the Gaussian-mixture M step
 
@@ -365,7 +365,7 @@ All numbers below are calculated from this construction. Decimal displays are ro
 
 ### E step
 
-The common normalisation and mixing weights cancel in the posterior odds:
+The common normalization and mixing weights cancel in the posterior odds:
 
 $$
 \begin{aligned}
@@ -576,7 +576,7 @@ A zero gradient identifies a stationary point, not its type. Boundary points req
 
 ### An exact EM fixed point that is not a good solution
 
-Take observations at $$-3$$ and $$3$$. Fix both component variances to one and both mixing weights to one half. Initialise both means at zero.
+Take observations at $$-3$$ and $$3$$. Fix both component variances to one and both mixing weights to one half. Initialize both means at zero.
 
 The components are identical, so every responsibility is one half. Each weighted mean update returns zero. Exact EM stays there.
 
@@ -628,7 +628,7 @@ $$
 \ell''(0)=-2+18=16>0.
 $$
 
-So the fixed point is locally uphill in the splitting direction. It is not a local maximum. Symmetric initialisation can keep exact EM at such a point without violating monotonicity.
+So the fixed point is locally uphill in the splitting direction. It is not a local maximum. Symmetric initialization can keep exact EM at such a point without violating monotonicity.
 
 ## Why unrestricted mixtures may have no finite likelihood limit
 
@@ -644,15 +644,15 @@ Give this component a fixed positive weight and let its variance approach zero. 
 
 The total log-likelihood can then approach positive infinity. Monotonicity alone cannot promise a finite objective limit for this unconstrained model.
 
-A positive covariance lower bound removes this particular collapse. A prior or penalty can change the optimisation problem so that concentrating on a single point is unattractive. These choices must be reflected in the M step and the monitored objective. Adding arbitrary covariance jitter after an unconstrained update is not automatically an exact maximisation of the original auxiliary function.
+A positive covariance lower bound removes this particular collapse. A prior or penalty can change the optimization problem so that concentrating on a single point is unattractive. These choices must be reflected in the M step and the monitored objective. Adding arbitrary covariance jitter after an unconstrained update is not automatically an exact maximization of the original auxiliary function.
 
 ## Which algorithm changes preserve the proof?
 
-Generalised EM preserves the proof if it uses the exact old posterior and increases the same auxiliary objective. A numerical optimiser does not need to reach the global M-step maximum to achieve this.
+Generalized EM preserves the proof if it uses the exact old posterior and increases the same auxiliary objective. A numerical optimizer does not need to reach the global M-step maximum to achieve this.
 
 A variational E step may leave a positive gap at the old parameters. Raising that loose bound need not raise the observed likelihood. A hard assignment generally has the same problem. Monte Carlo estimates can introduce sampling error into the expected objective, so an estimated improvement is not automatically a true one.
 
-MAP EM adds a parameter-prior term to the M-step objective. The analogous proof then concerns the observed log posterior, including that prior. It need not make the unpenalised likelihood monotone.
+MAP EM adds a parameter-prior term to the M-step objective. The analogous proof then concerns the observed log posterior, including that prior. It need not make the unpenalized likelihood monotone.
 
 For implementation, compute densities in log space. If component log scores are $$a_k$$ and their maximum is $$a_*$$, then
 
@@ -662,11 +662,11 @@ $$
 a_*+\log\sum_ke^{a_k-a_*}.
 $$
 
-This is an exact algebraic rearrangement that avoids exponentiating large positive scores. Responsibilities use the normalised exponentials. Monitor the observed log-likelihood with the same model and constraints after each iteration; do not confuse it with the auxiliary objective, whose posterior weights change between iterations.
+This is an exact algebraic rearrangement that avoids exponentiating large positive scores. Responsibilities use the normalized exponentials. Monitor the observed log-likelihood with the same model and constraints after each iteration; do not confuse it with the auxiliary objective, whose posterior weights change between iterations.
 
-A small likelihood increment is a stopping criterion, not a bound on distance to an optimum. The objective can change little along a weakly identified direction while parameters or responsibilities still move. Record the stopping rule and inspect effective counts and covariance behaviour alongside the objective. If a likelihood decrease appears, first distinguish floating-point error from an update that no longer maximises the stated auxiliary function.
+A small likelihood increment is a stopping criterion, not a bound on distance to an optimum. The objective can change little along a weakly identified direction while parameters or responsibilities still move. Record the stopping rule and inspect effective counts and covariance behaviour alongside the objective. If a likelihood decrease appears, first distinguish floating-point error from an update that no longer maximizes the stated auxiliary function.
 
-Multiple initialisations can reveal different solutions. They provide a comparison among the runs performed, not a certificate that the global optimum has been found.
+Multiple initializations can reveal different solutions. They provide a comparison among the runs performed, not a certificate that the global optimum has been found.
 
 ## Revision checklist
 
@@ -676,7 +676,7 @@ Multiple initialisations can reveal different solutions. They provide a comparis
 | Why is holding responsibilities fixed valid? | They define the expectation in the auxiliary objective. |
 | Where does the bound meet the likelihood? | At the old parameters after an exact E step. |
 | What is the exact likelihood-improvement identity? | Auxiliary improvement plus KL from old to new posterior. |
-| Is full M-step maximisation necessary? | No; increasing the same auxiliary objective suffices. |
+| Is full M-step maximization necessary? | No; increasing the same auxiliary objective suffices. |
 | Which mean belongs in the covariance update? | The newly updated weighted mean. |
 | Does every observation become more likely? | No; the constructed middle observation became less likely. |
 | When do monotone objective values have a finite limit? | When they are bounded above. |
@@ -686,7 +686,7 @@ Multiple initialisations can reveal different solutions. They provide a comparis
 
 ## Why it matters for my work
 
-A monotone fitting trace verifies an optimisation property under stated assumptions. It does not validate recovered subpopulations. I should report sensitivity to initialisation and covariance constraints alongside any interpretation of mixture components.
+A monotone fitting trace verifies an optimization property under stated assumptions. It does not validate recovered subpopulations. I should report sensitivity to initialization and covariance constraints alongside any interpretation of mixture components.
 
 ## What I have not resolved
 

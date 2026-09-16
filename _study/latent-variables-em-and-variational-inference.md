@@ -15,7 +15,7 @@ updated: "2026-09-15"
 
 A latent-variable model describes observations through quantities that were not observed. In a mixture, the missing quantity is a component label. In an image model, it might be a clean image or a lower-dimensional representation. The task has two parts: infer those hidden quantities under a model, and estimate whatever model parameters are unknown.
 
-EM and variational inference organise these tasks around the same function: the evidence lower bound, or ELBO. The central distinction is whether the required posterior can be represented and computed exactly. It is not a distinction between fixed and random parameters. Variational inference can approximate latent-variable posteriors while keeping model parameters as point estimates.
+EM and variational inference organize these tasks around the same function: the evidence lower bound, or ELBO. The central distinction is whether the required posterior can be represented and computed exactly. It is not a distinction between fixed and random parameters. Variational inference can approximate latent-variable posteriors while keeping model parameters as point estimates.
 
 ## Separate the model, posterior inference, and parameter estimation
 
@@ -55,16 +55,16 @@ Both models can require approximate inference. Conversely, some Bayesian posteri
 
 | Procedure | Treatment of model parameters | Distribution over latent variables |
 |---|---|---|
-| Ordinary maximum-likelihood EM | Optimised as a point | Exact conditional posterior in the E step |
-| Variational EM | Usually optimised as a point | Optimised within a chosen family |
+| Ordinary maximum-likelihood EM | Optimized as a point | Exact conditional posterior in the E step |
+| Variational EM | Usually optimized as a point | Optimized within a chosen family |
 | Bayesian variational inference | Included among uncertain quantities | Approximation to a joint posterior |
-| MAP EM | Optimised with a parameter-prior term | Exact conditional posterior in an ordinary E step |
+| MAP EM | Optimized with a parameter-prior term | Exact conditional posterior in an ordinary E step |
 
 EM itself does not produce a posterior distribution over the fitted parameters. That does not prevent a separate frequentist uncertainty analysis. Likewise, using a distribution over latent variables does not by itself make parameter estimation Bayesian.
 
 ## A latent sum is not automatically intractable
 
-For an ordinary independent-observation mixture, the joint distribution factorises:
+For an ordinary independent-observation mixture, the joint distribution factorizes:
 
 $$
 p_\theta(X,Z)
@@ -81,9 +81,9 @@ $$
 \prod_n\sum_{z_n}p_\theta(x_n,z_n).
 $$
 
-There may be $$K^N$$ label configurations, but this calculation needs only $$NK$$ component terms, apart from the cost of evaluating their densities. The posterior over labels also factorises at fixed parameters.
+There may be $$K^N$$ label configurations, but this calculation needs only $$NK$$ component terms, apart from the cost of evaluating their densities. The posterior over labels also factorizes at fixed parameters.
 
-The mixture's difficulty is therefore usually optimisation of the log of a sum, not evaluation of an exponential-size sum.
+The mixture's difficulty is therefore usually optimization of the log of a sum, not evaluation of an exponential-size sum.
 
 Other models have coupled latent variables or continuous integrals without a useful analytic form. Even then, counting configurations is not a proof of computational difficulty: a chain can admit efficient dynamic programming. What matters is whether the model's dependence structure allows the relevant sums, integrals, or expectations to be simplified.
 
@@ -91,7 +91,7 @@ EM is useful when complete-data expectations and parameter updates are manageabl
 
 ## First derivation: introduce a distribution and apply Jensen
 
-Fix the observation and parameters. Choose a normalised auxiliary distribution $$q(z)$$. Initially assume it is positive wherever the joint density is positive, and that the expectations below are finite. Insert the cancelling factor:
+Fix the observation and parameters. Choose a normalized auxiliary distribution $$q(z)$$. Initially assume it is positive wherever the joint density is positive, and that the expectations below are finite. Insert the cancelling factor:
 
 $$
 p_\theta(x)
@@ -160,7 +160,7 @@ $$
 H(q)=-\sum_zq(z)\log q(z).
 $$
 
-Thus the ELBO is expected complete-data log probability plus entropy. The entropy term is not an optional regulariser attached after the derivation. It appears because inserting the auxiliary distribution requires dividing by it inside the logarithm.
+Thus the ELBO is expected complete-data log probability plus entropy. The entropy term is not an optional regularizer attached after the derivation. It appears because inserting the auxiliary distribution requires dividing by it inside the logarithm.
 
 Why does equality matter? Jensen is tight when the ratio inside the expectation is constant:
 
@@ -168,7 +168,7 @@ $$
 \frac{p_\theta(x,z)}{q(z)}=c.
 $$
 
-Normalisation determines the constant:
+Normalization determines the constant:
 
 $$
 1=\sum_zq(z)
@@ -256,7 +256,7 @@ For continuous variables, these statements use integrals and require the corresp
 
 The Jensen and KL routes have produced exactly the same object: expected log joint density minus expected log auxiliary density. Jensen explains the lower bound and its equality condition. The KL decomposition identifies the exact gap.
 
-At fixed parameters, the log evidence is constant with respect to the auxiliary distribution. Maximising the ELBO therefore minimises this divergence. The evidence is not constant when updating model parameters; dropping it from a parameter optimisation would be a different and invalid step.
+At fixed parameters, the log evidence is constant with respect to the auxiliary distribution. Maximizing the ELBO therefore minimizes this divergence. The evidence is not constant when updating model parameters; dropping it from a parameter optimization would be a different and invalid step.
 
 ## A complete numerical check of the two derivations
 
@@ -365,7 +365,7 @@ $$
 \in\arg\max_\theta\mathcal L(q_t,\theta).
 $$
 
-Its entropy no longer depends on the candidate parameters, so the same update maximises
+Its entropy no longer depends on the candidate parameters, so the same update maximizes
 
 $$
 Q(\theta\mid\theta_t)
@@ -403,9 +403,9 @@ $$
 \operatorname{KL}(q\Vert p_\theta(z\mid x)).
 $$
 
-It is zero only if the posterior can be matched, or approached sufficiently closely, within the family. Optimisation can introduce an additional gap if it stops at a worse member. Representation limits and optimisation failure are different problems.
+It is zero only if the posterior can be matched, or approached sufficiently closely, within the family. Optimization can introduce an additional gap if it stops at a worse member. Representation limits and optimization failure are different problems.
 
-A common choice is mean-field factorisation:
+A common choice is mean-field factorization:
 
 $$
 q(z)=\prod_{j=1}^M q_j(z_j).
@@ -431,7 +431,7 @@ $$
 +\text{constant}.
 $$
 
-Introduce a multiplier for the factor's normalisation and differentiate with respect to its value at each latent state:
+Introduce a multiplier for the factor's normalization and differentiate with respect to its value at each latent state:
 
 $$
 a_j(z_j)-\log q_j(z_j)-1+\lambda=0.
@@ -446,9 +446,9 @@ q_j^*(z_j)
 {\int\exp[a_j(u)]\,du},
 $$
 
-provided the denominator is finite. The expected log joint determines the shape; normalisation determines the remaining constant. This is why the update contains an exponential of an expectation of a logarithm, rather than an expectation of the joint density.
+provided the denominator is finite. The expected log joint determines the shape; normalization determines the remaining constant. This is why the update contains an exponential of an expectation of a logarithm, rather than an expectation of the joint density.
 
-## A Gaussian example of information excluded by factorisation
+## A Gaussian example of information excluded by factorization
 
 Suppose a target posterior is a centred bivariate Gaussian with covariance
 
@@ -543,7 +543,7 @@ $$
 
 where the scale entries are positive and the product is coordinatewise. Since the noise has zero mean and identity covariance, the resulting latent variable has the encoder's mean and diagonal variance. This separates random sampling from the parameter-dependent transformation, allowing suitable expectations to be differentiated through that transformation.
 
-Sharing one encoder across observations is amortised inference: computation learned across the dataset replaces a separate unrestricted posterior optimisation for each case. The shared map can introduce an additional restriction.
+Sharing one encoder across observations is amortized inference: computation learned across the dataset replaces a separate unrestricted posterior optimization for each case. The shared map can introduce an additional restriction.
 
 Variational EM and autoencoder training can improve an ELBO without increasing the exact observed likelihood at every update. The KL gap can change with the parameters. The exact EM guarantee requires the bound to touch the old likelihood, not merely to lie somewhere below it.
 
@@ -552,14 +552,14 @@ Variational EM and autoencoder training can improve an ELBO without increasing t
 | Can I reconstruct this without looking? | Check |
 |---|---|
 | Does variational inference require random model parameters? | No; it can approximate a latent posterior at fixed parameters. |
-| Why insert an auxiliary distribution? | It rewrites marginalisation as an expectation to which Jensen applies. |
+| Why insert an auxiliary distribution? | It rewrites marginalization as an expectation to which Jensen applies. |
 | Which way does Jensen point for a logarithm? | Expected log is at most log expectation. |
 | Where does the entropy term come from? | The auxiliary distribution appears in the denominator inside the log. |
 | What distribution makes the bound tight? | The exact conditional posterior. |
 | What does the posterior KL measure? | The exact gap between log evidence and ELBO. |
 | What changes in an E step? | The auxiliary distribution, with model parameters held fixed. |
 | Why is posterior-mean substitution generally wrong? | Expectation does not commute with nonlinear functions. |
-| How is a mean-field coordinate updated? | Exponentiate the expected log joint and normalise. |
+| How is a mean-field coordinate updated? | Exponentiate the expected log joint and normalize. |
 | What did the correlated Gaussian example lose? | Cross-covariance and part of the marginal variance. |
 | Why is an improving ELBO insufficient for exact likelihood monotonicity? | The posterior KL gap can also change. |
 

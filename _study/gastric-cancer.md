@@ -27,12 +27,12 @@ The diagnostic process therefore crosses several observation scales:
 | --- | --- |
 | Examination quality | Whether relevant mucosa was adequately exposed and recorded |
 | Lesion detection | Whether an abnormal area was brought to attention |
-| Optical characterisation | Whether visible morphology supports a particular interpretation |
+| Optical characterization | Whether visible morphology supports a particular interpretation |
 | Tissue diagnosis | What the sampled cells and tissue establish |
 | Depth and extent assessment | How far disease may extend through the wall or beyond it |
 | Treatment planning | Whether a particular intervention is appropriate in the full clinical context |
 
-A model operating on a selected still image begins after someone has already exposed, recognised and often centred the lesion. It has not demonstrated the ability to find that lesion during an uninterrupted examination.
+A model operating on a selected still image begins after someone has already exposed, recognized and often centred the lesion. It has not demonstrated the ability to find that lesion during an uninterrupted examination.
 
 Similarly, a model estimating histology from surface appearance has not directly observed every microscopic feature that determines treatment.
 
@@ -62,28 +62,28 @@ Chronic Helicobacter pylori infection is an established contributor to gastric c
 
 Persistent inflammation can be associated with loss of normal glands, atrophic change and intestinal metaplasia. Intestinal metaplasia means replacement by an epithelial phenotype resembling intestinal tissue; it is not itself the same diagnosis as invasive cancer.
 
-Dysplasia describes neoplastic epithelial abnormality with disturbed cellular and architectural organisation. Progression to invasive disease introduces a further distinction: tumour cells extend beyond their original epithelial compartment into surrounding tissue.
+Dysplasia describes neoplastic epithelial abnormality with disturbed cellular and architectural organization. Progression to invasive disease introduces a further distinction: tumour cells extend beyond their original epithelial compartment into surrounding tissue.
 
-This sequence is an important organising pathway, but not every infected person develops cancer and not every gastric cancer follows an identical route.
+This sequence is an important organizing pathway, but not every infected person develops cancer and not every gastric cancer follows an identical route.
 
 Other biological and inherited factors also contribute. The clinical history therefore informs risk without replacing examination of a particular lesion.
 
 For imaging research, background atrophy or metaplasia can be legitimate information about patient risk. It does not establish that a specific focal abnormality is malignant.
 
-A model that recognises a high-risk mucosal background may be useful for risk stratification while still failing at the separate task of local cancer detection.
+A model that recognizes a high-risk mucosal background may be useful for risk stratification while still failing at the separate task of local cancer detection.
 
-### Why epithelial disorganisation changes the visible surface
+### Why epithelial disorganization changes the visible surface
 
-Normal mucosa has an organised surface architecture supplied by a corresponding vascular network.
+Normal mucosa has an organized surface architecture supplied by a corresponding vascular network.
 
-Neoplastic growth can disturb gland arrangement, surface relief and microvascular organisation. These changes can produce a focal alteration in colour, an irregular surface, an elevation or depression, or a boundary between the lesion and surrounding mucosa.
+Neoplastic growth can disturb gland arrangement, surface relief and microvascular organization. These changes can produce a focal alteration in colour, an irregular surface, an elevation or depression, or a boundary between the lesion and surrounding mucosa.
 
 Ulceration removes or disrupts the surface. Bleeding, exudate and tissue repair can then obscure the underlying architecture.
 
 The causal chain is useful but not specific:
 
-- Neoplasia can disrupt surface organisation.
-- Inflammation and repair can also disrupt surface organisation.
+- Neoplasia can disrupt surface organization.
+- Inflammation and repair can also disrupt surface organization.
 - Both can alter vascular prominence and colour.
 - The acquisition may enhance, obscure or distort the difference.
 
@@ -134,14 +134,14 @@ Several distinct failures are possible:
 | Failure | What went wrong |
 | --- | --- |
 | Unseen lesion | The relevant mucosa was not adequately exposed or recorded |
-| Unrecognised lesion | The abnormality was visible but did not attract attention |
-| Mischaracterised lesion | The area was recognised but interpreted incorrectly |
+| Unrecognized lesion | The abnormality was visible but did not attract attention |
+| Mischaracterized lesion | The area was recognized but interpreted incorrectly |
 | Inadequately sampled lesion | Tissue acquisition did not represent the relevant abnormality |
 | Incorrectly mapped reference | The tissue result was assigned to the wrong location or image |
 
 An AI system can help with some failures without solving all of them.
 
-A detector cannot establish visual evidence from an unrecorded surface. It may prompt additional inspection from indirect cues, but that is a different capability from recognising the hidden lesion itself.
+A detector cannot establish visual evidence from an unrecorded surface. It may prompt additional inspection from indirect cues, but that is a different capability from recognizing the hidden lesion itself.
 
 ### White-light endoscopy: what colour and shape can support
 
@@ -159,15 +159,15 @@ A well-designed dataset should distinguish stable lesion characteristics from tr
 
 ### Enhanced imaging changes the information available at the surface
 
-Narrow-band imaging alters illumination to emphasise aspects of superficial vascular and mucosal structure. Magnification can make fine patterns more assessable when focus and viewing conditions are adequate.
+Narrow-band imaging alters illumination to emphasize aspects of superficial vascular and mucosal structure. Magnification can make fine patterns more assessable when focus and viewing conditions are adequate.
 
 The resulting image does not directly become histology. It remains an optical observation whose appearance depends on tissue and acquisition.
 
 Structured approaches such as MESDA-G examine the boundary of a suspicious area and irregularity in its microvascular or microsurface pattern.
 
-The diagnostic logic is that a neoplastic region may have an organised difference from surrounding mucosa together with abnormal internal architecture. Neither a boundary alone nor arbitrary irregularity is an unrestricted cancer rule.
+The diagnostic logic is that a neoplastic region may have an organized difference from surrounding mucosa together with abnormal internal architecture. Neither a boundary alone nor arbitrary irregularity is an unrestricted cancer rule.
 
-The method also addresses a lesion already brought into view. Performance in optical characterisation does not establish complete detection throughout the stomach.
+The method also addresses a lesion already brought into view. Performance in optical characterization does not establish complete detection throughout the stomach.
 
 A non-assessable fine pattern must not be recorded as a normal fine pattern. Poor focus, insufficient magnification or obscuring material can prevent the relevant observation.
 
@@ -254,7 +254,7 @@ These labels should not be collapsed into a generic “gastric cancer image” c
 
 The distinction is especially important for video. A frame may belong to a patient with cancer while displaying no lesion. Another may show only a partial boundary. Another may be diagnostically useful only when compared with preceding views.
 
-Temporal annotation should identify when the lesion becomes visible and when it becomes adequately characterisable.
+Temporal annotation should identify when the lesion becomes visible and when it becomes adequately characterizable.
 
 ### Selected still images and real-time detection are different experiments
 
@@ -276,13 +276,13 @@ False prompts should be evaluated as events and interruptions, not only as a fra
 
 Biopsy forceps, marking devices, bleeding after sampling and annotations may be associated with a suspicious lesion.
 
-A model can exploit those cues while failing to recognise the lesion before the endoscopist did.
+A model can exploit those cues while failing to recognize the lesion before the endoscopist did.
 
 This is a temporal leakage problem. A system intended to assist initial detection should be evaluated on images available before lesion-directed actions.
 
-The same issue occurs with image selection. Cancer cases may have more close-up enhanced images because the endoscopist was already concerned. Recognising the imaging mode or examination style may partly reproduce that prior decision.
+The same issue occurs with image selection. Cancer cases may have more close-up enhanced images because the endoscopist was already concerned. Recognizing the imaging mode or examination style may partly reproduce that prior decision.
 
-These cues are not universally illegitimate. A model summarising an already completed examination may appropriately use a broader record. The problem arises when the input contains information unavailable at the claimed decision point.
+These cues are not universally illegitimate. A model summarizing an already completed examination may appropriately use a broader record. The problem arises when the input contains information unavailable at the claimed decision point.
 
 The task specification must define that boundary explicitly.
 
@@ -292,11 +292,11 @@ Missing a clinically important early lesion can delay diagnosis and reduce the o
 
 A false detection prompt can interrupt inspection and increase unnecessary sampling or repeat assessment. Its harm depends on how the clinician responds and how often the system distracts from the examination.
 
-Mischaracterising a recognised lesion can produce inappropriate reassurance or excessive concern. Misjudging depth or suitability for local treatment can have more consequential effects than a transient false prompt.
+Mischaracterizing a recognized lesion can produce inappropriate reassurance or excessive concern. Misjudging depth or suitability for local treatment can have more consequential effects than a transient false prompt.
 
 These errors should not share an unexplained universal operating point.
 
-For a detector, sensitivity during adequately visible intervals and the burden of false prompts are central. For a characterisation model, discrimination among plausible lesions and calibrated uncertainty matter. For treatment-support claims, the full reference and consequences of the decision are required.
+For a detector, sensitivity during adequately visible intervals and the burden of false prompts are central. For a characterization model, discrimination among plausible lesions and calibrated uncertainty matter. For treatment-support claims, the full reference and consequences of the decision are required.
 
 A system that declines to classify an obscured surface may be behaving appropriately. However, its coverage must be reported: excluding the hardest examinations from evaluation can make clinical performance appear stronger than it is.
 
@@ -318,7 +318,7 @@ A defensible study should specify:
 
 - Screening, symptomatic investigation or surveillance setting.
 - White-light, enhanced or combined imaging inputs.
-- Whether the task is detection, characterisation, depth estimation or decision support.
+- Whether the task is detection, characterization, depth estimation or decision support.
 - Lesion and patient correspondence with pathology.
 - The interval during which a lesion is visible and assessable.
 - Whether images precede biopsy, marking or other lesion-directed actions.
@@ -344,7 +344,7 @@ A technically accurate frame classifier becomes clinically useful only through t
 | Why is surface irregularity nonspecific? | Neoplasia, inflammation and repair can overlap |
 | Why can infiltrative disease be underestimated? | Important disease may extend beneath a relatively unimpressive surface |
 | What does enhanced imaging add? | Assessability of specified superficial patterns |
-| Why is optical characterisation not complete detection? | The lesion must first be exposed and brought into view |
+| Why is optical characterization not complete detection? | The lesion must first be exposed and brought into view |
 | What limits a biopsy label? | Site, depth, adequacy and lesion correspondence |
 | Why does resection sometimes revise the diagnosis? | It supplies more complete tissue information |
 | Why are adjacent frames not independent examples? | They share the same lesion, patient and acquisition episode |
@@ -352,7 +352,7 @@ A technically accurate frame classifier becomes clinically useful only through t
 
 ### Connecting the clinical reasoning to the ontology
 
-Neoplastic growth can manifest as surface disorganisation, ulceration or wall changes, but competing mechanisms can produce similar findings.
+Neoplastic growth can manifest as surface disorganization, ulceration or wall changes, but competing mechanisms can produce similar findings.
 
 `Malignancy & staging` `setsRequirementsFor` `Reference standard adjudication`: a tissue result must be linked to the correct lesion, depth question and examination time.
 
@@ -366,7 +366,7 @@ Gastric endoscopy makes acquisition an active component of diagnosis. In my own 
 
 ## What I have not resolved
 
-- How should a dataset represent the interval between first visibility and sufficient visibility for characterisation?
+- How should a dataset represent the interval between first visibility and sufficient visibility for characterization?
 - What is the best reference for lesions with persistent suspicion but incomplete tissue confirmation?
 - How can a prospective audit measure useful prompts while detecting distraction and unnecessary sampling?
 

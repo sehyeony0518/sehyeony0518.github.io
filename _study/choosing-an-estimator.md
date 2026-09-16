@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Choosing an Estimator: MMSE, MAP, and Maximum Likelihood"
-description: "Three answers to the same question, what each one optimises, and which of them needs an integral nobody can evaluate."
+description: "Three answers to the same question, what each one optimizes, and which of them needs an integral nobody can evaluate."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"
@@ -27,13 +27,13 @@ $$
 \hat{x}_{\mathrm{ML}} = \arg\max_x p(y \mid x).
 $$
 
-The first minimises expected squared error over all estimators, without restricting their form: the restriction to affine estimators is what produces [the Wiener filter](/study/linear-mmse-and-the-wiener-filter/) instead. The second takes the most probable value of the unknown given what was seen. The third takes the value under which the observation was most probable, which is not the same thing.
+The first minimizes expected squared error over all estimators, without restricting their form: the restriction to affine estimators is what produces [the Wiener filter](/study/linear-mmse-and-the-wiener-filter/) instead. The second takes the most probable value of the unknown given what was seen. The third takes the value under which the observation was most probable, which is not the same thing.
 
 ## Key concepts
 
 ### The MMSE estimator is the conditional mean
 
-Conditioning on $$y$$ and minimising pointwise gives a clean answer:
+Conditioning on $$y$$ and minimizing pointwise gives a clean answer:
 
 $$
 \hat{x}_{\mathrm{MMSE}}(y) = \mathbb{E}[x \mid y].
@@ -59,9 +59,9 @@ $$
 p(x \mid y) = \frac{p(y \mid x)\,p(x)}{p(y)},
 $$
 
-and the denominator does not involve $$x$$. Maximising the posterior therefore only needs $$p(y\mid x)p(x)$$, and the evidence term can be dropped entirely.
+and the denominator does not involve $$x$$. Maximizing the posterior therefore only needs $$p(y\mid x)p(x)$$, and the evidence term can be dropped entirely.
 
-MMSE has no such luck. A conditional mean is an integral against the posterior, and the posterior needs its normalising constant. This is the practical reason MAP appears far more often than MMSE, not that it answers a better question, but that it avoids the integral.
+MMSE has no such luck. A conditional mean is an integral against the posterior, and the posterior needs its normalizing constant. This is the practical reason MAP appears far more often than MMSE, not that it answers a better question, but that it avoids the integral.
 
 ### In the Gaussian case they all coincide, and the answer is shrinkage
 

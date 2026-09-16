@@ -1,12 +1,12 @@
 ---
 layout: study_note
-title: "Stochastic Gradient Descent and the Optimisers Built On It"
+title: "Stochastic Gradient Descent and the Optimizers Built On It"
 description: "Mini-batch gradient estimates, variance, momentum, per-parameter rates in AdaGrad, RMSProp and Adam, and what saddle points and local minima do not explain."
 tab: "ai-foundations"
 tab_title: "AI Theory"
-category: "algebra-and-optimisation"
-category_title: "Linear Algebra & Optimisation"
-subgroup: "Losses & Gradient Optimisation"
+category: "algebra-and-optimization"
+category_title: "Linear Algebra & Optimization"
+subgroup: "Losses & Gradient Optimization"
 order: 6
 source: "Independent study"
 written: true
@@ -15,7 +15,7 @@ papers:
   - "2026-02-09-underspecification-credibility-ml"
 ---
 
-Stochastic gradient descent replaces an exact objective gradient with a random estimate. Its usefulness begins with computation, but its behavior depends on the estimate's bias, variance, and dependence on the sampling procedure. Momentum and adaptive optimisers then modify how a sequence of those estimates becomes parameter movement.
+Stochastic gradient descent replaces an exact objective gradient with a random estimate. Its usefulness begins with computation, but its behavior depends on the estimate's bias, variance, and dependence on the sampling procedure. Momentum and adaptive optimizers then modify how a sequence of those estimates becomes parameter movement.
 
 Two corrections are essential. Full-batch gradient descent does not require the entire dataset in memory simultaneously. Also, a decaying learning rate is not universally necessary for every form of stochastic optimization. Its role becomes clear when persistent gradient noise, fixed batch size, and convergence of the unaveraged iterates are considered together.
 
@@ -429,7 +429,7 @@ These are sufficient conditions for the stated setting, not a universal command 
 
 ## Momentum modifies the direction over time
 
-For the optimiser recurrences below, initialize state at step zero and evaluate each new gradient at the previous parameter vector.
+For the optimizer recurrences below, initialize state at step zero and evaluate each new gradient at the previous parameter vector.
 
 One momentum convention uses an exponential moving average:
 
@@ -796,7 +796,7 @@ $$
 f(x,y)=x^2-y^2
 $$
 
-does have a descending direction at its stationary point. But exact gradient descent initialized there stays there, and momentum initialized with zero velocity does too. Noise can help leave it only if the perturbation reaches a useful direction. None of these observations proves that a particular optimiser will find a clinically preferable solution.
+does have a descending direction at its stationary point. But exact gradient descent initialized there stays there, and momentum initialized with zero velocity does too. Noise can help leave it only if the perturbation reaches a useful direction. None of these observations proves that a particular optimizer will find a clinically preferable solution.
 
 ## Revision checklist
 
@@ -814,11 +814,11 @@ does have a descending direction at its stationary point. But exact gradient des
 | How do AdaGrad and RMSProp differ? | Compare accumulated and discounted squared gradients. |
 | Why does Adam divide by geometric factors? | Sum the missing startup weights. |
 | What does bias correction not fix? | Separate initialization, temporal lag, and the nonlinear update ratio. |
-| What must an optimiser comparison report? | Include sampler, schedule, state conventions, and decay implementation. |
+| What must an optimizer comparison report? | Include sampler, schedule, state conventions, and decay implementation. |
 
 ## Why it matters for my work
 
-The sampler and optimiser jointly determine which model a training run produces. For shortcut auditing, I need to distinguish instability caused by gradient noise from systematic effects of patient weighting, objective design, and checkpoint selection.
+The sampler and optimizer jointly determine which model a training run produces. For shortcut auditing, I need to distinguish instability caused by gradient noise from systematic effects of patient weighting, objective design, and checkpoint selection.
 
 ## What I have not resolved
 

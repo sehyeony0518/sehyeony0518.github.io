@@ -1,7 +1,7 @@
 ---
 layout: study_note
-title: "Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing"
-description: "The frequentist/Bayesian distinction, posterior marginalisation, and deep ensembles: deriving predictive uncertainty while separating model averaging from posterior sampling."
+title: "Marginalization, Not Optimization: What Deep Ensembles Are Actually Doing"
+description: "The frequentist/Bayesian distinction, posterior marginalization, and deep ensembles: deriving predictive uncertainty while separating model averaging from posterior sampling."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"

@@ -57,7 +57,7 @@ $$
 
 The expectation is over the joint distribution of target and observation. The estimator is chosen before seeing a particular observation, and its performance is averaged over that distribution.
 
-Squared error makes large residuals contribute disproportionately, but it also creates a quadratic optimisation problem. Once a candidate's residual is orthogonal to every permitted adjustment, the remaining change in loss is nonnegative.
+Squared error makes large residuals contribute disproportionately, but it also creates a quadratic optimization problem. Once a candidate's residual is orthogonal to every permitted adjustment, the remaining change in loss is nonnegative.
 
 The affine restriction is separate from the loss choice. A nonlinear function of the same observation may have lower squared error. The derivation establishes optimality only within the stated class.
 
@@ -508,7 +508,7 @@ $$
 \end{aligned}
 $$
 
-The second term is minimised by choosing the conditional mean itself.
+The second term is minimized by choosing the conditional mean itself.
 
 LMMSE projects onto the smaller space of affine functions. Unrestricted MMSE projects onto all suitable functions of the observation. The four-outcome example shows that those two spaces can give different answers even when the LMMSE derivation is completely correct.
 
@@ -561,7 +561,7 @@ $$
 C_w=\sigma_w^2I
 $$
 
-and diagonalise the signal covariance:
+and diagonalize the signal covariance:
 
 $$
 C_x=U\Lambda U^\top,
@@ -919,7 +919,7 @@ Stationarity also does not by itself guarantee that averages along one observed 
 
 Where the observation spectrum is zero, division is not defined. Valid joint statistics imply that the corresponding cross-spectrum is also zero there; the observations contain no energy in that component. Its filter value cannot be identified from a ratio and does not affect the estimate on that unsupported component.
 
-Regularisation addresses a different issue. Adding a penalty
+Regularization addresses a different issue. Adding a penalty
 
 $$
 \lambda\|A\|_F^2
@@ -931,7 +931,7 @@ $$
 A(C_y+\lambda I)=C_{xy}.
 $$
 
-This follows by expanding the quadratic penalty under the same coefficient perturbations. The resulting estimator can be more stable with estimated statistics, but it solves a modified objective. It is not automatically the unregularised population optimum.
+This follows by expanding the quadratic penalty under the same coefficient perturbations. The resulting estimator can be more stable with estimated statistics, but it solves a modified objective. It is not automatically the unregularized population optimum.
 
 Finally, truncating a noncausal Wiener impulse response or simply deleting its future taps does not generally produce the optimal causal filter. The retained observations are correlated, so changing the available tap set changes all the normal equations.
 

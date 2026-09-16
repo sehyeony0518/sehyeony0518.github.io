@@ -160,7 +160,7 @@ $$
 
 The pole and zero have the same angle and reciprocal radii. A pole inside the unit circle is paired with a zero outside it.
 
-The normalising coefficient must not be lost when writing the factor in terms of its roots:
+The normalizing coefficient must not be lost when writing the factor in terms of its roots:
 
 $$
 H(z)
@@ -169,7 +169,7 @@ H(z)
 \frac{z-1/a^*}{z-a}.
 $$
 
-The unscaled ratio of pole and zero distances does not itself have unit magnitude. The leading factor supplies the required normalisation.
+The unscaled ratio of pole and zero distances does not itself have unit magnitude. The leading factor supplies the required normalization.
 
 For a causal stable section, require
 
@@ -738,7 +738,7 @@ $$
 
 Real-valued filtering requires real coefficients. Complex poles can be combined with their conjugates to produce real second-order sections.
 
-The positive numerator and denominator in the derived first-order group-delay formula also show that each stable causal section contributes positive delay. Phase equalisation with these sections adds delay where needed; it does not provide unrestricted causal time advancement.
+The positive numerator and denominator in the derived first-order group-delay formula also show that each stable causal section contributes positive delay. Phase equalization with these sections adds delay where needed; it does not provide unrestricted causal time advancement.
 
 An ideal all-pass response has inverse
 

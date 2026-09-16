@@ -5,7 +5,7 @@ description: "Designing studies whose results survive contact with another site 
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalisation & Reliability"
+category_title: "Evaluation, Generalization & Reliability"
 subgroup: "Failure Analysis & Clinical Translation"
 order: 15
 source: "Independent study"
