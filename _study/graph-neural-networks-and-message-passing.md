@@ -6,7 +6,8 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
-order: 11
+subgroup: "Graph Signals & Spectral Methods"
+order: 13
 source: "Lecture notes, Ajou University"
 written: true
 updated: "2026-09-16"

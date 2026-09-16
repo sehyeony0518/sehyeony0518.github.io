@@ -6,7 +6,8 @@ tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "oncology"
 category_title: "Oncology"
-order: 2
+subgroup: "Staging & Treatment Planning"
+order: 3
 source: "Lecture"
 written: true
 updated: "2026-09-08"

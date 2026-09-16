@@ -2,12 +2,12 @@
 layout: study_note
 title: "Clinical Knowledge-Guided Representation Learning"
 description: "Using echogenicity, texture, margin, wall features, and anatomical context as domain priors."
-tab: "clinical-medicine"
-tab_title: "Clinical Medicine"
-category: "hepatobiliary"
-category_title: "Hepatobiliary Medicine & Imaging"
-subgroup: "Clinical-to-AI Connections"
-order: 17
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "gallbladder-ai"
+category_title: "Gallbladder AI: Applied Research"
+subgroup: "Task Definition & Clinical Supervision"
+order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"

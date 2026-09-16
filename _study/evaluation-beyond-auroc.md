@@ -5,8 +5,9 @@ description: "Sensitivity and specificity at the operating point that matters, d
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalization & Reliability"
-order: 6
+category_title: "Evaluation, Generalisation & Reliability"
+subgroup: "Validation Design & Performance Measures"
+order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-08"

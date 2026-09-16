@@ -6,7 +6,8 @@ tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "auditing"
 category_title: "Evidence Auditing"
-order: 1
+subgroup: "Audit Scope & Model Reliance"
+order: 2
 source: "Independent study"
 written: true
 featured: true

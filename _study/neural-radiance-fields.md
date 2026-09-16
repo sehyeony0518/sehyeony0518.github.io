@@ -5,8 +5,9 @@ description: "Deriving NeRF camera rays, volume density, transmittance, alpha co
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 14
+category_title: "Learning Models & Representation"
+subgroup: "Spatial Models & Visual Prediction"
+order: 15
 source: "Independent study"
 written: true
 updated: "2026-09-15"

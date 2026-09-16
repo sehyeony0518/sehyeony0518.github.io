@@ -4,8 +4,9 @@ title: "Translational Science in Medicine"
 description: "What the bench-to-bedside pipeline consists of, and where most candidate technologies die in it."
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
-category: "translational"
-category_title: "Translational Medicine"
+category: "clinical-foundations"
+category_title: "Clinical Foundations & Systemic Disease"
+subgroup: "Mechanisms, Evidence & Translation"
 order: 1
 source: "Lecture"
 written: true

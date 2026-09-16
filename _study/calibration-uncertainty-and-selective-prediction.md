@@ -5,8 +5,9 @@ description: "Whether a stated probability means what it says, and when a model 
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalization & Reliability"
-order: 8
+category_title: "Evaluation, Generalisation & Reliability"
+subgroup: "Calibration & Generalisation"
+order: 10
 source: "Independent study"
 written: true
 updated: "2026-09-08"

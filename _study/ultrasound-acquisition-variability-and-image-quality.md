@@ -6,8 +6,8 @@ tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"
 category_title: "Hepatobiliary Medicine & Imaging"
-subgroup: "Clinical-to-AI Connections"
-order: 14
+subgroup: "Anatomy & Imaging Foundations"
+order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-08"

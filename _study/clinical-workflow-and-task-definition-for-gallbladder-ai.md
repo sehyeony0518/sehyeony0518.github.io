@@ -2,12 +2,12 @@
 layout: study_note
 title: "Clinical Workflow and Task Definition for Gallbladder AI"
 description: "Deciding which decision a model supports, and letting that decide the label, the metric, and the design."
-tab: "clinical-medicine"
-tab_title: "Clinical Medicine"
-category: "hepatobiliary"
-category_title: "Hepatobiliary Medicine & Imaging"
-subgroup: "Clinical-to-AI Connections"
-order: 13
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "gallbladder-ai"
+category_title: "Gallbladder AI: Applied Research"
+subgroup: "Task Definition & Clinical Supervision"
+order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-08"

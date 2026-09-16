@@ -6,7 +6,8 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimisation"
 category_title: "Linear Algebra & Optimisation"
-order: 4
+subgroup: "Losses & Gradient Optimisation"
+order: 5
 source: "Independent study"
 written: true
 updated: "2026-09-08"
