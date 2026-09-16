@@ -1,7 +1,7 @@
 ---
 layout: study_note
 title: "Marginalisation, Not Optimisation: What Deep Ensembles Are Actually Doing"
-description: "The frequentist/Bayesian split is one decision, is the parameter a constant or a random variable, and it propagates all the way to why averaging several trained networks is not a trick."
+description: "The frequentist/Bayesian distinction, posterior marginalisation, and deep ensembles: deriving predictive uncertainty while separating model averaging from posterior sampling."
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"
@@ -12,113 +12,797 @@ written: true
 updated: "2026-09-15"
 ---
 
-A coin with a fair bias is flipped, caught, and covered. What is the probability it shows heads?
+Bayesian prediction averages over a posterior distribution of model parameters. A deep ensemble averages predictions from several fitted models. These operations have the same algebraic shape, but they do not automatically average over the same distribution.
 
-The answer depends entirely on one prior decision, and the decision is not a matter of evidence.
+The essential correction is that random initialization followed by optimization does not generally produce posterior samples. The frequency with which an optimizer reaches a solution depends on initialization, optimization dynamics, regularization, and stopping. Bayesian posterior mass depends on the likelihood and prior.
 
-## Core question and definition
+An ensemble can still be useful. Its predictive mixture, disagreement, and variance can all be analyzed directly without claiming that it performs exact Bayesian inference.
 
-**Frequentist**: the coin has landed. Its state is a fixed constant that I happen not to know. Probability describes the sampling procedure, not my ignorance, so "the probability it is heads" is not a well-formed question about *this* coin.
+The mathematical task is to identify the distribution being averaged, derive what uncertainty the mixture contains, and distinguish uncertainty in a prediction from numerical uncertainty in an estimated average.
 
-**Bayesian**: from where I sit nothing has changed. The state is a random variable, and 50% is the right answer.
+## The frequentist/Bayesian distinction
 
-Neither is wrong. They are different choices about what may be assigned a distribution, and the choice determines which quantity can sit on the left of the conditioning bar:
+In a conventional frequentist parameter model, the parameter is fixed and unknown. Probability describes the data-generating experiment and the sampling distribution of estimators.
 
-$$
-\underbrace{P(\text{data} \mid \theta)}_{\text{frequentist: } \theta \text{ is a constant}}
-\qquad\text{versus}\qquad
-\underbrace{P(\theta \mid \text{data})}_{\text{Bayesian: } \theta \text{ is a random variable}}
-$$
+In a Bayesian model, a probability distribution represents uncertainty about that parameter before and after observing data.
 
-That swap is small to write and enormous in consequence, because $$P(A\mid B)$$ and $$P(B\mid A)$$ are different numbers answering different questions.
+This does not mean that frequentists cannot assign a probability to an unobserved coin outcome. A coin outcome is a random observation under either framework. The distinction concerns inference about an unknown parameter, such as the coin's probability of heads, rather than whether an already generated but hidden observation may still be treated probabilistically.
 
-It also clears up a common misreading. A 95% confidence interval does **not** say the parameter lies inside it with probability 0.95: under the frequentist commitment the parameter is a constant, so it is either in or out. It says that the *procedure*, repeated, produces intervals containing the parameter 95% of the time. The interpretation people actually want is the Bayesian credible interval, and they routinely report the first while meaning the second.
+Both approaches require a likelihood model. Bayesian inference additionally requires a prior distribution. A likelihood, a prior, an architecture, and a training procedure can each encode assumptions.
 
-The claim that Bayesian methods are subjective because they require a prior is weaker than it looks: **writing a likelihood is already a modelling commitment.** Choosing a dice model with six equal faces, or a squared-error loss, encodes assumptions as surely as a prior does. The difference is which assumption is written down where, not whether one was made.
-
-## Key concepts
-
-### The marginalisation, and why it is the whole point
-
-Standard training finds one parameter vector and predicts with it:
+For a confidence procedure, the coverage statement concerns repetitions of the data:
 
 $$
-p(y \mid x, \hat\theta), \qquad \hat\theta = \arg\max_\theta \ p(\mathcal D \mid \theta)\,p(\theta)
+\Pr_\theta\{\theta\in C(\mathcal D)\}=0.95
 $$
 
-The Bayesian predictive distribution instead **integrates over every parameter setting**, weighted by how well each explains the data:
+for an exact ninety-five-percent procedure, or an appropriate inequality for conservative coverage.
+
+A Bayesian credible region instead satisfies a posterior probability statement after conditioning on the observed data:
 
 $$
-p(y \mid x, \mathcal D) = \int p(y \mid x, \theta)\, p(\theta \mid \mathcal D)\, d\theta
+\Pr\{\theta\in C(\mathcal D)\mid\mathcal D\}=0.95.
 $$
 
-Wilson and Izmailov's argument is that this integral, not the prior, is what Bayesian inference *is*, and that the field mostly discards it.[^wilson] Regularised training with a MAP estimate looks Bayesian (the regulariser is a log prior) and is not, because it collapses the integral to its single tallest point.
+These statements place randomness in different objects. Neither interpretation can be substituted for the other merely because the numerical endpoints look similar.
 
-That collapse is harmless when the posterior has one sharp mode: the peak and the mean coincide. A deep network's loss surface has enormous numbers of distinct good solutions, so the peak and the integral are not remotely the same object. **Picking the tallest point of a multimodal distribution and calling it the answer discards most of the distribution.**
+## Bayes' rule and the predictive integral
 
-### Deep ensembles are that integral, approximated
-
-Train the same architecture from several random initialisations and average the predictions. This is normally filed as an engineering trick and compared *against* Bayesian methods.
-
-The reframing is that it is a **Monte Carlo approximation to the marginalisation**:
+The joint model factors as
 
 $$
-\int p(y\mid x,\theta)\,p(\theta\mid\mathcal D)\,d\theta \;\approx\; \frac{1}{M}\sum_{m=1}^{M} p(y \mid x, \theta_m)
+p(\theta,\mathcal D)
+=
+p(\mathcal D\mid\theta)p(\theta).
 $$
 
-Different random seeds converge to different modes, so the ensemble members *are* samples from distinct regions of the posterior, which is precisely what an integral over a multimodal posterior needs and what a single Gaussian fitted around one mode cannot provide. Variational inference, the standard "proper" Bayesian method, approximates the posterior with one tractable distribution centred on one mode; the ensemble covers several. **On the criterion that matters, approximating the integral: the ensemble is the more Bayesian method**, which inverts the usual ranking.
+Integrating over the parameter gives the marginal likelihood:
 
-Averaging $$M$$ independent estimates cuts variance to $$\sigma^2/M$$: 5 models to a fifth, 10 to a tenth. That is the ordinary statistical gain. The marginalisation reading says something stronger: the ensemble is not reducing noise around a correct answer, it is computing a different and better-posed quantity.
+$$
+p(\mathcal D)
+=
+\int p(\mathcal D\mid\theta)p(\theta)\,d\theta.
+$$
 
-SWAG sits between: run SGD past convergence, fit a Gaussian to the weights it visits, and sample.[^swag] That characterises one basin well and still misses the others, which is why MultiSWAG, several basins, a Gaussian in each, outperforms both.
+Dividing the joint density by this normalizing constant yields
 
-### The observations this explains
+$$
+p(\theta\mid\mathcal D)
+=
+\frac{p(\mathcal D\mid\theta)p(\theta)}
+{p(\mathcal D)}.
+$$
 
-Three results that the bias–variance story cannot accommodate:
+For supervised learning, one common assumption is conditional independence of labels given inputs and parameters:
 
-**Random labels.** A network with 60 million parameters trained on 1 million images can fit *randomly assigned* labels to zero training error.[^zhang] Its capacity is not the constraint. Yet given real labels the same network generalises well. Capacity alone therefore does not explain generalisation: the question is which of the many fitting solutions the training procedure prefers, and why.
+$$
+p(\mathcal D\mid\theta)
+=
+\prod_{i=1}^{n}p(y_i\mid x_i,\theta).
+$$
 
-**Double descent.** Test error falls, rises to a peak at the interpolation threshold, and then **falls again** as the model grows past it.[^belkin] The classical U-curve says this is impossible. The Bayesian reading is that a larger model has broader *support*, it can express more functions, while its inductive bias still concentrates mass on the plausible ones, so growth need not cost generalisation.
+This is a modeling assumption. Correlated observations may require a different factorization.
 
-**Overconfidence.** LeNet-era networks had softmax outputs roughly matching empirical accuracy; modern networks are badly overconfident, and temperature scaling, dividing logits by a fitted constant, largely fixes it on in-distribution data.[^guo] It fixes nothing out of distribution, because the model never saw that region and a single $$\hat\theta$$ has no mechanism for representing that fact.
+For a new input, the joint posterior distribution of its output and the parameter is
 
-### Inductive bias is two-dimensional
+$$
+p(y,\theta\mid x,\mathcal D)
+=
+p(y\mid x,\theta)p(\theta\mid\mathcal D),
+$$
 
-The thing these share is that **model complexity is not one number.** Wilson's framing separates:
+assuming that the parameter makes the new output conditionally independent of the training data.
 
-- **support**: the range of datasets the model *can* express, and
-- **inductive bias**: how its prior mass is distributed across that range.
+Marginalizing the parameter gives
 
-An MLP has broad support and flat bias: it can fit anything, prefers nothing. A CNN has narrower support and sharply peaked bias: translating an image should not change its label, and the architecture builds that in. A linear model has support so narrow it cannot express the data at all.
+$$
+p(y\mid x,\mathcal D)
+=
+\int
+p(y\mid x,\theta)
+p(\theta\mid\mathcal D)\,d\theta.
+$$
 
-What you want is **broad support with well-placed bias**: able to represent the truth, and preferring it. That is a two-dimensional criterion, and "number of parameters" projects it onto one axis and loses the part that matters.
+Why this definition? The output can occur under many possible parameter settings. The law of total probability requires weighting each conditional output distribution by the current probability of that parameter setting.
 
-The Deep Image Prior makes it vivid: an *untrained* convolutional network, fitted to a single noisy image, reconstructs the image before it reconstructs the noise.[^dip] No training data at all. The architecture alone prefers natural images: the inductive bias is in the wiring.
+A point estimate replaces the parameter distribution by a point mass. It retains one conditional predictor and discards variation among the others.
+
+## MLE, MAP, and regularized training
+
+Maximum likelihood chooses
+
+$$
+\widehat\theta_{\mathrm{MLE}}
+=
+\arg\max_\theta p(\mathcal D\mid\theta).
+$$
+
+Maximum a posteriori estimation chooses
+
+$$
+\widehat\theta_{\mathrm{MAP}}
+=
+\arg\max_\theta
+p(\mathcal D\mid\theta)p(\theta).
+$$
+
+The marginal likelihood does not appear in the optimization because it is constant with respect to the parameter.
+
+Taking negative logarithms transforms products into sums:
+
+$$
+\widehat\theta_{\mathrm{MAP}}
+=
+\arg\min_\theta
+\left[
+-\sum_{i=1}^{n}\log p(y_i\mid x_i,\theta)
+-\log p(\theta)
+\right].
+$$
+
+For an isotropic Gaussian prior,
+
+$$
+p(\theta)\propto
+\exp\left(-\frac{\lVert\theta\rVert^2}{2s^2}\right),
+$$
+
+the prior contribution is
+
+$$
+-\log p(\theta)
+=
+\frac{\lVert\theta\rVert^2}{2s^2}
++\text{constant}.
+$$
+
+This derives quadratic regularization as a MAP objective under a particular prior.
+
+The scale depends on whether the data loss is summed or averaged. Dividing the entire objective by the number of observations gives
+
+$$
+\frac1n\sum_i-\log p(y_i\mid x_i,\theta)
++
+\frac{\lVert\theta\rVert^2}{2ns^2}.
+$$
+
+Keeping the same numerical regularization coefficient while changing between summed and averaged losses changes the implied prior scale.
+
+MAP is a Bayesian point estimator. Calling it “not Bayesian” is too strong. What it does not provide is posterior marginalization.
+
+A sharp unimodal posterior also does not make a plug-in prediction exactly equal to the integral. That approximation is good only when the predictive function varies little across the posterior, or when suitable linearity and concentration conditions make the difference negligible.
+
+## A complete conjugate example
+
+Let the unknown probability of heads be
+
+$$
+\theta\in[0,1],
+$$
+
+and choose a uniform prior. Observe three heads and one tail in an ordered sequence.
+
+The likelihood is proportional to
+
+$$
+\theta^3(1-\theta).
+$$
+
+The normalizing integral is
+
+$$
+\begin{aligned}
+\int_0^1\theta^3(1-\theta)\,d\theta
+&=
+\int_0^1(\theta^3-\theta^4)\,d\theta\\
+&=
+\frac14-\frac15\\
+&=
+\frac1{20}.
+\end{aligned}
+$$
+
+Thus the posterior density is
+
+$$
+p(\theta\mid\mathcal D)
+=
+20\theta^3(1-\theta).
+$$
+
+This is a beta distribution with parameters four and two, but the following calculations do not require memorizing beta-distribution formulas.
+
+The posterior mean is
+
+$$
+\begin{aligned}
+\mathbb E[\theta\mid\mathcal D]
+&=
+20\int_0^1(\theta^4-\theta^5)\,d\theta\\
+&=
+20\left(\frac15-\frac16\right)\\
+&=
+\frac23.
+\end{aligned}
+$$
+
+The posterior mode maximizes the log density. Differentiating gives
+
+$$
+\frac3\theta-\frac1{1-\theta}=0.
+$$
+
+Multiplying through by the positive denominator gives
+
+$$
+3(1-\theta)-\theta=0,
+$$
+
+so
+
+$$
+\theta_{\mathrm{MAP}}=\frac34.
+$$
+
+The posterior mean and mode already differ in this small unimodal example.
+
+The posterior predictive probability of another head is
+
+$$
+p(H_{\mathrm{next}}\mid\mathcal D)
+=
+\int_0^1\theta\,p(\theta\mid\mathcal D)\,d\theta
+=
+\frac23.
+$$
+
+A MAP plug-in prediction instead gives three-quarters.
+
+The second posterior moment is
+
+$$
+\begin{aligned}
+\mathbb E[\theta^2\mid\mathcal D]
+&=
+20\int_0^1(\theta^5-\theta^6)\,d\theta\\
+&=
+20\left(\frac16-\frac17\right)\\
+&=
+\frac{10}{21}.
+\end{aligned}
+$$
+
+Hence,
+
+$$
+\operatorname{Var}(\theta\mid\mathcal D)
+=
+\frac{10}{21}-\frac49
+=
+\frac2{63}.
+$$
+
+All of these numbers follow from elementary integration of the specified posterior.
+
+## Why future observations become dependent
+
+Given the parameter, two future coin flips are independent. After marginalizing the shared unknown parameter, they are generally dependent.
+
+The probability of two future heads is
+
+$$
+p(H_1,H_2\mid\mathcal D)
+=
+\mathbb E[\theta^2\mid\mathcal D]
+=
+\frac{10}{21}.
+$$
+
+Multiplying the individual predictive probabilities would instead give
+
+$$
+p(H_1\mid\mathcal D)p(H_2\mid\mathcal D)
+=
+\left(\frac23\right)^2
+=
+\frac49.
+$$
+
+Their difference is
+
+$$
+\frac{10}{21}-\frac49
+=
+\frac2{63},
+$$
+
+exactly the posterior variance of the parameter.
+
+The dependence has a simple interpretation. If the first future flip is a head, it provides evidence favoring larger head probabilities, which raises the probability of another head.
+
+This is a reason to distinguish a collection of marginal predictions from a joint predictive distribution. Parameter uncertainty couples predictions that share the same model parameters.
+
+In deep learning, independently drawing a new parameter sample for every element of a jointly predicted object can erase this shared uncertainty structure. The intended predictive joint distribution determines how samples should be reused.
+
+## When an ensemble is Monte Carlo integration
+
+If parameter vectors are independent draws from the posterior,
+
+$$
+\theta_m\sim p(\theta\mid\mathcal D),
+$$
+
+then
+
+$$
+\widehat p_M(y\mid x)
+=
+\frac1M\sum_{m=1}^{M}p(y\mid x,\theta_m)
+$$
+
+is an unbiased Monte Carlo estimate of the posterior predictive probability.
+
+Let the conditional predictive quantity being averaged be
+
+$$
+f(\theta)=p(y\mid x,\theta).
+$$
+
+Independence gives
+
+$$
+\operatorname{Var}(\widehat p_M)
+=
+\frac{\operatorname{Var}_{p(\theta\mid\mathcal D)}[f(\theta)]}{M}.
+$$
+
+Now suppose training produces samples from an optimizer-induced distribution,
+
+$$
+q(\theta\mid\mathcal D),
+$$
+
+instead. The same average estimates
+
+$$
+\mathbb E_q[f(\theta)],
+$$
+
+not necessarily the posterior expectation.
+
+Its mean squared error relative to the desired posterior prediction decomposes as
+
+$$
+\mathbb E[(\widehat p_M-p_*)^2]
+=
+\frac{\operatorname{Var}_q[f(\theta)]}{M}
++
+\left(\mathbb E_q[f(\theta)]-p_*\right)^2.
+$$
+
+To derive this, add and subtract the estimator's expectation, square, and observe that the centered random term has mean zero. The cross term vanishes.
+
+More members reduce the Monte Carlo term. They do not remove the distribution-mismatch term.
+
+## A two-region counterexample to posterior sampling
+
+Construct a posterior with two relevant regions. Region A has posterior mass nine-tenths and predicts class-one probability two-tenths. Region B has posterior mass one-tenth and predicts nine-tenths.
+
+The Bayesian predictive probability is
+
+$$
+0.9(0.2)+0.1(0.9)=0.27.
+$$
+
+Now construct a training procedure that converges to each region with equal probability. An increasingly large ordinary ensemble converges to
+
+$$
+0.5(0.2)+0.5(0.9)=0.55.
+$$
+
+The ensemble average is a perfectly valid mixture prediction. It is simply a different mixture.
+
+If both the posterior masses and proposal probabilities were known, importance weighting could correct the mismatch. The region weights would be
+
+$$
+w_A=\frac{0.9}{0.5}=1.8,
+\qquad
+w_B=\frac{0.1}{0.5}=0.2.
+$$
+
+Then
+
+$$
+0.5(1.8)(0.2)+0.5(0.2)(0.9)=0.27.
+$$
+
+In a neural network, the optimizer-induced distribution and posterior region masses are usually not available in this simple form. Random seeds do not supply those weights automatically.
+
+Posterior density height also differs from posterior mass. A narrow region with a tall peak can contain less probability than a broad region with a lower peak. Selecting several good optima does not determine how an integral should weight their neighborhoods.
+
+## Variational inference and function diversity
+
+A variational approximation chooses a distribution from a tractable family. It need not be a single Gaussian or be restricted to one mode.
+
+Start with the divergence from an approximation to the posterior:
+
+$$
+\operatorname{KL}(q\Vert p(\theta\mid\mathcal D))
+=
+\mathbb E_q
+\left[
+\log q(\theta)-\log p(\theta\mid\mathcal D)
+\right].
+$$
+
+Substitute Bayes' rule:
+
+$$
+\operatorname{KL}(q\Vert p(\theta\mid\mathcal D))
+=
+\mathbb E_q[\log q(\theta)-\log p(\mathcal D,\theta)]
++
+\log p(\mathcal D).
+$$
+
+Rearranging gives
+
+$$
+\log p(\mathcal D)
+=
+\underbrace{
+\mathbb E_q[\log p(\mathcal D,\theta)-\log q(\theta)]
+}_{\mathrm{ELBO}}
++
+\operatorname{KL}(q\Vert p(\theta\mid\mathcal D)).
+$$
+
+Because the divergence is nonnegative, the first term is a lower bound on the log marginal likelihood. Maximizing it is equivalent to minimizing this divergence within the chosen family.
+
+Nonnegativity follows from Jensen's inequality applied to the logarithm:
+
+$$
+\mathbb E_q\left[\log\frac{p}{q}\right]
+\leq
+\log\mathbb E_q\left[\frac pq\right]
+\leq0.
+$$
+
+Negating gives the divergence inequality, with the usual support qualifications.
+
+A restrictive family can miss important posterior structure. An ensemble can cover functionally different solutions that a particular local approximation misses. Neither observation establishes a universal ranking between all ensembles and all variational methods.
+
+Weight diversity also differs from predictive diversity. In a one-hidden-layer network,
+
+$$
+f(x)=\sum_{j=1}^{J}v_j\,\sigma(w_j^\top x+b_j),
+$$
+
+permuting hidden units leaves the sum unchanged. Different parameter vectors can therefore represent exactly the same function.
+
+The uncertainty relevant to prediction concerns differences in outputs on relevant inputs, not simply distances between weight vectors or the number of apparently distinct minima.
+
+## Deriving regression predictive variance
+
+Suppose each model predicts a conditional mean and variance:
+
+$$
+\mu_\theta(x)=\mathbb E[Y\mid x,\theta],
+$$
+
+$$
+\sigma_\theta^2(x)=\operatorname{Var}(Y\mid x,\theta).
+$$
+
+Let the averaged predictive mean be
+
+$$
+\overline\mu=\mathbb E_\theta[\mu_\theta].
+$$
+
+Decompose the centered output:
+
+$$
+Y-\overline\mu
+=
+(Y-\mu_\theta)+(\mu_\theta-\overline\mu).
+$$
+
+After squaring and averaging, the cross term vanishes because
+
+$$
+\mathbb E[Y-\mu_\theta\mid\theta]=0.
+$$
+
+Therefore,
+
+$$
+\operatorname{Var}(Y\mid x,\mathcal D)
+=
+\mathbb E_\theta[\sigma_\theta^2(x)]
++
+\operatorname{Var}_\theta[\mu_\theta(x)].
+$$
+
+The first term is within-model output variation. The second is variation in model means under the averaging distribution.
+
+For an equally weighted finite ensemble,
+
+$$
+\overline\mu=\frac1M\sum_m\mu_m,
+$$
+
+and
+
+$$
+\operatorname{Var}_{\mathrm{mixture}}(Y)
+=
+\frac1M\sum_m
+\left[
+\sigma_m^2+(\mu_m-\overline\mu)^2
+\right].
+$$
+
+Construct three members with means
+
+$$
+1,\quad2,\quad3
+$$
+
+and variances
+
+$$
+1,\quad4,\quad1.
+$$
+
+Their mixture mean is two. The average within-model variance is
+
+$$
+\frac{1+4+1}{3}=2.
+$$
+
+The between-model variance is
+
+$$
+\frac{(1-2)^2+(2-2)^2+(3-2)^2}{3}
+=
+\frac23.
+$$
+
+Thus total mixture variance is
+
+$$
+2+\frac23=\frac83.
+$$
+
+The denominator is the number of mixture components because this is the exact variance of the specified discrete mixture. The alternative sample-variance denominator serves a different purpose: unbiased estimation of a population variance from independent samples.
+
+A Gaussian mixture is generally not Gaussian. Matching its mean and variance with one Gaussian preserves those moments, not its full shape or tail probabilities.
+
+## Classification uncertainty and disagreement
+
+For categorical predictions, define ensemble probabilities by averaging member probabilities:
+
+$$
+\overline p_c=\frac1M\sum_m p_{m,c}.
+$$
+
+The entropy of the mixture is
+
+$$
+H(\overline p)
+=
+-\sum_c\overline p_c\log\overline p_c.
+$$
+
+To isolate disagreement, introduce a random member index chosen uniformly. The mutual information between that index and the output is
+
+$$
+I(Y;M)
+=
+\frac1M\sum_m\sum_c
+p_{m,c}
+\log\frac{p_{m,c}}{\overline p_c}.
+$$
+
+Expanding the logarithm and collecting terms gives
+
+$$
+I(Y;M)
+=
+H(\overline p)
+-
+\frac1M\sum_mH(p_m).
+$$
+
+It is an average divergence from member predictions to their mixture, so it is nonnegative.
+
+Two binary examples distinguish predictive uncertainty from disagreement.
+
+In the first, both members predict one-half. The predictive entropy and each member entropy are
+
+$$
+\log2\approx0.6931
+$$
+
+nats, and mutual information is zero.
+
+In the second, the members predict one-tenth and nine-tenths. Their average remains one-half, so predictive entropy is unchanged. Each member entropy is
+
+$$
+-0.1\log0.1-0.9\log0.9
+\approx0.3251.
+$$
+
+Consequently,
+
+$$
+I(Y;M)
+\approx0.6931-0.3251
+=
+0.3681\ \text{nats}.
+$$
+
+The first ensemble has members that are individually uncertain. The second has confident members that disagree.
+
+Under exact posterior averaging, this decomposition has a Bayesian information interpretation about parameters and outcomes. Under an ordinary ensemble, it describes disagreement among the selected predictors. Treating that disagreement as a complete measure of epistemic uncertainty requires additional justification.
+
+## Why averaging probabilities matters
+
+A predictive mixture averages probabilities, not logits.
+
+Construct two binary classifiers with probabilities
+
+$$
+0.9,\qquad0.6.
+$$
+
+Their probability mixture is
+
+$$
+\frac{0.9+0.6}{2}=0.75.
+$$
+
+Their logits are
+
+$$
+\log9,
+\qquad
+\log1.5.
+$$
+
+Averaging logits and then applying the logistic function gives
+
+$$
+\frac{\sqrt{13.5}}{1+\sqrt{13.5}}
+\approx0.7861.
+$$
+
+This is a different predictor because the logistic function is nonlinear.
+
+For a realized class, convexity of negative logarithm gives
+
+$$
+-\log\left(\frac1M\sum_mp_m(y)\right)
+\leq
+\frac1M\sum_m[-\log p_m(y)].
+$$
+
+In the example, if the observed class is one, the mixture's negative log likelihood is
+
+$$
+-\log0.75\approx0.2877,
+$$
+
+while the average member loss is
+
+$$
+-\frac{\log0.9+\log0.6}{2}
+\approx0.3081.
+$$
+
+The mixture improves on the average member loss for this observation. It does not beat the best member automatically.
+
+The reason log loss targets the correct probability distribution can also be derived. If the true categorical probabilities are represented by another distribution, expected log loss equals its entropy plus its divergence from the prediction:
+
+$$
+-\sum_c q_c\log p_c
+=
+-\sum_cq_c\log q_c
++
+\sum_cq_c\log\frac{q_c}{p_c}.
+$$
+
+The entropy term is fixed, and the divergence is minimized when prediction matches the true distribution. This is a population property of the scoring rule, not a guarantee of finite-sample calibration or performance under distribution shift.
+
+## Correlation limits variance reduction
+
+Suppose model errors have common variance and common pairwise correlation. The variance of their average is
+
+$$
+\begin{aligned}
+\operatorname{Var}\left(\frac1M\sum_m e_m\right)
+&=
+\frac1{M^2}
+\left[
+M\sigma^2+M(M-1)\rho\sigma^2
+\right]\\
+&=
+\sigma^2
+\left[
+\rho+\frac{1-\rho}{M}
+\right].
+\end{aligned}
+$$
+
+The independent-error result appears when the correlation is zero.
+
+For a constructed correlation of six-tenths and five members,
+
+$$
+\operatorname{Var}(\overline e)
+=
+\sigma^2\left(0.6+\frac{0.4}{5}\right)
+=
+0.68\sigma^2.
+$$
+
+It is not one-fifth of the individual variance. With increasing ensemble size, the correlated component remains.
+
+Independent random seeds do not imply independent prediction errors across cases. Members share data, labels, architecture choices, and possibly the same shortcut.
+
+Also distinguish variance reduction in estimating a predictive average from the predictive uncertainty itself. More posterior samples make the numerical approximation to the integral more precise. They do not make the posterior distribution collapse. The between-model component of predictive variance can approach a nonzero value as the number of members grows.
+
+Finally, the bias–variance identity does not require a U-shaped test-error curve. With a regression target decomposed into a conditional mean and independent zero-mean noise, expanding squared error gives
+
+$$
+\mathbb E[(Y-\widehat f)^2]
+=
+\operatorname{Var}(\text{noise})
++
+\bigl(f^*-\mathbb E[\widehat f]\bigr)^2
++
+\operatorname{Var}(\widehat f).
+$$
+
+The cross terms vanish by centering. Nothing in this identity says that estimator variance must increase monotonically with parameter count. A nonmonotonic learning curve does not invalidate the decomposition.
+
+## What uncertainty cannot certify
+
+An ensemble can agree confidently because all its members learned the same wrong dependence. Low disagreement therefore does not establish that the input is familiar, that the model is correctly specified, or that the prediction is correct.
+
+Conversely, a single fitted model is not categorically incapable of supporting an out-of-distribution detection method. A separate density model, representation-based score, explicit rejection mechanism, or other construction can supply information beyond a softmax maximum. Such methods still require evaluation against their intended target.
+
+Neither Bayesian averaging nor ensembling guarantees reliable extrapolation under an incorrect model family. Posterior concentration can occur around the best explanation available within a misspecified family.
+
+The useful operational questions are more specific: which uncertainty score is computed, what event it should predict, how a threshold is chosen, and which distribution supports the evaluation. Agreement and disagreement are measurements whose interpretation must be tested.
+
+## Revision checklist
+
+| Check | What I should be able to reconstruct |
+|---|---|
+| Interpretation | Distinguish random observations from uncertainty about a parameter. |
+| Bayesian prediction | Derive posterior normalization and the predictive integral from joint probabilities. |
+| Point estimation | Explain MLE, MAP, and the prior scale implied by quadratic regularization. |
+| Conjugacy | Recover the normalized density $$20\theta^3(1-\theta)$$ by integration. |
+| Predictive calculation | Derive the mean $$2/3$$, mode $$3/4$$, and variance $$2/63$$. |
+| Joint prediction | Explain why two future heads have probability $$10/21$$ rather than $$4/9$$. |
+| Ensemble interpretation | Identify the optimizer-induced distribution and its possible mismatch with the posterior. |
+| Approximate inference | Derive the ELBO identity and distinguish parameter diversity from function diversity. |
+| Regression uncertainty | Recover the within-model and between-model variance decomposition. |
+| Classification uncertainty | Derive entropy minus average entropy as member-output mutual information. |
+| Averaging | Explain why probability averaging and logit averaging produce different predictors. |
+| Correlation | Derive the residual variance floor and distinguish it from Monte Carlo integration error. |
+| Reliability | Explain why shared bias can produce confident agreement. |
 
 ## Why it matters for my work
 
-The honest reason to care is **out-of-distribution behaviour**, which is the central reliability problem in medical AI and which no single-$$\hat\theta$$ model can address in principle.
+For medical-image models, an ensemble gives a concrete way to measure variation among fitted predictors. I should describe that variation as ensemble disagreement unless a posterior-sampling interpretation is established.
 
-Feed a chest radiograph to a model trained on MRI and it answers confidently. Not because it is badly calibrated, temperature scaling fixes in-distribution calibration and does nothing here, but because a point estimate has **no representation of the distinction between "I have seen this and I am sure" and "I have never seen this."** Both come out as a softmax vector. Recovering that distinction requires disagreement between plausible parameter settings, and disagreement requires more than one parameter setting.
-
-Which makes the practical conclusion unusually cheap for how much it buys: **train five models with different seeds and look at the spread.** No new theory, no variational machinery, roughly linear cost. Where they agree, the training data constrained the answer. Where they disagree, they are reporting that several very different functions explain the data equally well, which is exactly the [epistemic uncertainty](/study/calibration-uncertainty-and-selective-prediction/) that should trigger abstention.
-
-There is a reporting consequence too, and I think it is underweighted. A paper reporting one trained model reports one sample from a distribution it did not characterise, and I now read single-run results as an estimate with an unreported variance rather than as a measurement. That belongs with the [reproducibility](/study/reproducibility-benchmarks-and-translational-study-design/) concerns rather than beneath notice.
+The practical target is whether the score helps identify a specified error or supports a useful abstention decision. Its name does not establish that connection.
 
 ## What I have not resolved
 
-Whether ensemble disagreement is a usable OOD signal in clinical practice or only in benchmarks. Members share an architecture, a training set and a preprocessing pipeline, so they share every bias those impose, and a [shortcut](/study/shortcut-learning-in-medical-imaging/) present in the training data is available to all five. They would agree, confidently, and be wrong together. Ensemble disagreement detects the uncertainty that comes from having insufficient data to pin down the function; it cannot detect the uncertainty that comes from every member having learned the same wrong thing.
+I have not established which sources of variation are represented by changing seeds alone, or whether the resulting disagreement identifies failures under the intended acquisition and population shifts.
 
----
-
-[^wilson]: Wilson, A. G., & Izmailov, P. (2020). Bayesian deep learning and a probabilistic perspective of generalization. *NeurIPS*. [arXiv:2002.08791](https://arxiv.org/abs/2002.08791)
-
-[^swag]: Maddox, W. J., Garipov, T., Izmailov, P., Vetrov, D., & Wilson, A. G. (2019). A simple baseline for Bayesian uncertainty in deep learning. *NeurIPS*. [arXiv:1902.02476](https://arxiv.org/abs/1902.02476)
-
-[^zhang]: Zhang, C., Bengio, S., Hardt, M., Recht, B., & Vinyals, O. (2021). Understanding deep learning (still) requires rethinking generalization. *Communications of the ACM*, 64(3), 107–115. [10.1145/3446776](https://doi.org/10.1145/3446776)
-
-[^belkin]: Belkin, M., Hsu, D., Ma, S., & Mandal, S. (2019). Reconciling modern machine-learning practice and the classical bias–variance trade-off. *PNAS*, 116(32), 15849–15854. [10.1073/pnas.1903070116](https://doi.org/10.1073/pnas.1903070116)
-
-[^guo]: Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). On calibration of modern neural networks. *ICML*. [arXiv:1706.04599](https://arxiv.org/abs/1706.04599)
-
-[^dip]: Ulyanov, D., Vedaldi, A., & Lempitsky, V. (2018). Deep image prior. *CVPR*. [10.1109/CVPR.2018.00984](https://doi.org/10.1109/CVPR.2018.00984)
+Evaluate ensemble log loss, calibration, disagreement, and selective-prediction performance on prespecified held-out conditions, including cases where members share the same error.

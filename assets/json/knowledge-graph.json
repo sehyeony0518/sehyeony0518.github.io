@@ -8,17 +8,17 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 114
+   "deg": 124
   },
   {
    "id": "c:Diagnostic reasoning",
    "label": "Diagnostic reasoning",
    "kind": "concept",
    "url": null,
-   "size": 3.65,
+   "size": 3.61,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 32
+   "deg": 31
   },
   {
    "id": "c:Gallbladder disease",
@@ -28,17 +28,17 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 61
+   "deg": 75
   },
   {
    "id": "c:Liver & hepatobiliary",
    "label": "Liver & hepatobiliary",
    "kind": "concept",
    "url": null,
-   "size": 3.47,
+   "size": 3.43,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 28
+   "deg": 27
   },
   {
    "id": "c:Ultrasound acquisition",
@@ -48,57 +48,57 @@
    "size": 4.93,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 75
+   "deg": 100
   },
   {
    "id": "c:Cross-sectional imaging",
    "label": "Cross-sectional imaging",
    "kind": "concept",
    "url": null,
-   "size": 3.61,
+   "size": 3.52,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 31
+   "deg": 29
   },
   {
    "id": "c:Sonographic features",
    "label": "Sonographic features",
    "kind": "concept",
    "url": null,
-   "size": 3.29,
+   "size": 3.38,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 24
+   "deg": 26
   },
   {
    "id": "c:Faithfulness",
    "label": "Faithfulness",
    "kind": "concept",
    "url": null,
-   "size": 4.06,
+   "size": 3.97,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 41
+   "deg": 39
   },
   {
    "id": "c:Inverse reconstruction",
    "label": "Inverse reconstruction",
    "kind": "concept",
    "url": null,
-   "size": 3.11,
+   "size": 3.52,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 20
+   "deg": 29
   },
   {
    "id": "c:Clinical assessability",
    "label": "Clinical assessability",
    "kind": "concept",
    "url": null,
-   "size": 4.65,
+   "size": 4.93,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 54
+   "deg": 75
   },
   {
    "id": "c:Neoplastic invasion",
@@ -135,10 +135,10 @@
    "label": "Posterior acoustic effects",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.56,
    "fam": "clinical",
    "sector": "Imaging & acquisition",
-   "deg": 7
+   "deg": 8
   },
   {
    "id": "c:Shortcut learning",
@@ -148,37 +148,37 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 87
+   "deg": 66
   },
   {
    "id": "c:Malignancy & staging",
    "label": "Malignancy & staging",
    "kind": "concept",
    "url": null,
-   "size": 3.88,
+   "size": 3.93,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 37
+   "deg": 38
   },
   {
    "id": "c:Histopathology",
    "label": "Histopathology",
    "kind": "concept",
    "url": null,
-   "size": 3.56,
+   "size": 3.61,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 30
+   "deg": 31
   },
   {
    "id": "c:Attribution & saliency",
    "label": "Attribution & saliency",
    "kind": "concept",
    "url": null,
-   "size": 3.2,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 22
+   "deg": 20
   },
   {
    "id": "c:Inflammatory change",
@@ -211,78 +211,8 @@
    "deg": 17
   },
   {
-   "id": "c:Subgroup & fairness",
-   "label": "Subgroup & fairness",
-   "kind": "concept",
-   "url": null,
-   "size": 4.61,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 53
-  },
-  {
-   "id": "c:Robustness",
-   "label": "Robustness",
-   "kind": "concept",
-   "url": null,
-   "size": 3.61,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 31
-  },
-  {
-   "id": "c:Internal validation",
-   "label": "Internal validation",
-   "kind": "concept",
-   "url": null,
-   "size": 3.2,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 22
-  },
-  {
-   "id": "c:Electrophysiological recording",
-   "label": "Electrophysiological recording",
-   "kind": "concept",
-   "url": null,
-   "size": 2.38,
-   "fam": "clinical",
-   "sector": "Imaging & acquisition",
-   "deg": 4
-  },
-  {
-   "id": "c:Electrophysiological features",
-   "label": "Electrophysiological features",
-   "kind": "concept",
-   "url": null,
-   "size": 2.38,
-   "fam": "clinical",
-   "sector": "Imaging & acquisition",
-   "deg": 4
-  },
-  {
    "id": "c:Operating point selection",
    "label": "Operating point selection",
-   "kind": "concept",
-   "url": null,
-   "size": 3.47,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 28
-  },
-  {
-   "id": "c:Reference standard adjudication",
-   "label": "Reference standard adjudication",
-   "kind": "concept",
-   "url": null,
-   "size": 4.29,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 46
-  },
-  {
-   "id": "c:Segmentation & detection",
-   "label": "Segmentation & detection",
    "kind": "concept",
    "url": null,
    "size": 3.75,
@@ -291,64 +221,84 @@
    "deg": 34
   },
   {
+   "id": "c:Reference standard adjudication",
+   "label": "Reference standard adjudication",
+   "kind": "concept",
+   "url": null,
+   "size": 4.61,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 53
+  },
+  {
+   "id": "c:Subgroup & fairness",
+   "label": "Subgroup & fairness",
+   "kind": "concept",
+   "url": null,
+   "size": 4.84,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 58
+  },
+  {
+   "id": "c:Calibration",
+   "label": "Calibration",
+   "kind": "concept",
+   "url": null,
+   "size": 4.93,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 70
+  },
+  {
+   "id": "c:Segmentation & detection",
+   "label": "Segmentation & detection",
+   "kind": "concept",
+   "url": null,
+   "size": 3.52,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 29
+  },
+  {
    "id": "c:Post-processing",
    "label": "Post-processing",
    "kind": "concept",
    "url": null,
-   "size": 2.29,
+   "size": 2.34,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 2
+   "deg": 3
   },
   {
-   "id": "c:Objective design",
-   "label": "Objective design",
+   "id": "c:Preprocessing & resampling",
+   "label": "Preprocessing & resampling",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 6
-  },
-  {
-   "id": "c:External validation",
-   "label": "External validation",
-   "kind": "concept",
-   "url": null,
-   "size": 3.15,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 21
-  },
-  {
-   "id": "c:Plausibility",
-   "label": "Plausibility",
-   "kind": "concept",
-   "url": null,
-   "size": 3.06,
-   "fam": "computational",
-   "sector": "Interpretability",
-   "deg": 19
+   "deg": 20
   },
   {
    "id": "c:Translation invariance",
    "label": "Translation invariance",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 4
+   "deg": 6
   },
   {
    "id": "c:Attention mechanism",
    "label": "Attention mechanism",
    "kind": "concept",
    "url": null,
-   "size": 2.65,
+   "size": 2.52,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 10
+   "deg": 7
   },
   {
    "id": "c:Counterfactual",
@@ -365,20 +315,20 @@
    "label": "Clinical validity",
    "kind": "concept",
    "url": null,
-   "size": 2.93,
+   "size": 3.2,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 16
+   "deg": 22
   },
   {
    "id": "c:Clinical evidence reliance",
    "label": "Clinical evidence reliance",
    "kind": "concept",
    "url": null,
-   "size": 4.29,
+   "size": 4.7,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 46
+   "deg": 55
   },
   {
    "id": "c:Reporting standards",
@@ -391,73 +341,63 @@
    "deg": 7
   },
   {
-   "id": "c:Calibration",
-   "label": "Calibration",
-   "kind": "concept",
-   "url": null,
-   "size": 4.61,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 53
-  },
-  {
    "id": "c:Evaluation metrics",
    "label": "Evaluation metrics",
    "kind": "concept",
    "url": null,
-   "size": 4.2,
+   "size": 4.52,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 44
+   "deg": 51
   },
   {
    "id": "c:Concept-based methods",
    "label": "Concept-based methods",
    "kind": "concept",
    "url": null,
-   "size": 2.88,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 15
-  },
-  {
-   "id": "c:Preprocessing & resampling",
-   "label": "Preprocessing & resampling",
-   "kind": "concept",
-   "url": null,
-   "size": 2.97,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 17
+   "deg": 20
   },
   {
    "id": "c:Comparative workflow evaluation",
    "label": "Comparative workflow evaluation",
    "kind": "concept",
    "url": null,
-   "size": 2.47,
+   "size": 2.56,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 6
+   "deg": 8
   },
   {
    "id": "c:Pretest probability",
    "label": "Pretest probability",
    "kind": "concept",
    "url": null,
-   "size": 4.29,
+   "size": 4.34,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 46
+   "deg": 47
   },
   {
    "id": "c:Clinical utility",
    "label": "Clinical utility",
    "kind": "concept",
    "url": null,
-   "size": 3.25,
+   "size": 3.38,
    "fam": "computational",
    "sector": "Evaluation & reliability",
+   "deg": 26
+  },
+  {
+   "id": "c:Plausibility",
+   "label": "Plausibility",
+   "kind": "concept",
+   "url": null,
+   "size": 3.25,
+   "fam": "computational",
+   "sector": "Interpretability",
    "deg": 23
   },
   {
@@ -465,10 +405,10 @@
    "label": "Clinical feature annotation",
    "kind": "concept",
    "url": null,
-   "size": 2.61,
+   "size": 3.02,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 9
+   "deg": 18
   },
   {
    "id": "c:Bayesian decision analysis",
@@ -485,30 +425,50 @@
    "label": "Uncertainty & abstention",
    "kind": "concept",
    "url": null,
-   "size": 2.88,
+   "size": 3.06,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 15
+   "deg": 19
+  },
+  {
+   "id": "c:Distribution shift",
+   "label": "Distribution shift",
+   "kind": "concept",
+   "url": null,
+   "size": 2.93,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 16
   },
   {
    "id": "c:Out-of-distribution detection",
    "label": "Out-of-distribution detection",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.61,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 4
+   "deg": 9
   },
   {
    "id": "c:Ensembling",
    "label": "Ensembling",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.56,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 5
+   "deg": 8
+  },
+  {
+   "id": "c:Data processing inequality",
+   "label": "Data processing inequality",
+   "kind": "concept",
+   "url": null,
+   "size": 2.29,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 2
   },
   {
    "id": "c:Bias-variance decomposition",
@@ -525,10 +485,20 @@
    "label": "Bayesian inference",
    "kind": "concept",
    "url": null,
-   "size": 2.25,
+   "size": 2.34,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 1
+   "deg": 3
+  },
+  {
+   "id": "c:Internal validation",
+   "label": "Internal validation",
+   "kind": "concept",
+   "url": null,
+   "size": 3.61,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 31
   },
   {
    "id": "c:Biliary tract",
@@ -561,14 +531,24 @@
    "deg": 4
   },
   {
+   "id": "c:Robustness",
+   "label": "Robustness",
+   "kind": "concept",
+   "url": null,
+   "size": 3.52,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 29
+  },
+  {
    "id": "c:Deployment & drift",
    "label": "Deployment & drift",
    "kind": "concept",
    "url": null,
-   "size": 4.7,
+   "size": 4.88,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 55
+   "deg": 59
   },
   {
    "id": "c:Clinical history & examination",
@@ -595,10 +575,10 @@
    "label": "Causal inference",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.56,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 4
+   "deg": 8
   },
   {
    "id": "c:Confounding",
@@ -615,60 +595,60 @@
    "label": "Identifiability criterion",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.84,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 7
+   "deg": 14
   },
   {
    "id": "c:Identifiability analysis",
    "label": "Identifiability analysis",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.84,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 7
+   "deg": 14
   },
   {
    "id": "c:Causal identifiability",
    "label": "Causal identifiability",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.84,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 7
+   "deg": 14
   },
   {
    "id": "c:Measurement identifiability",
    "label": "Measurement identifiability",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.84,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 7
+   "deg": 14
   },
   {
    "id": "c:Clinical guidelines",
    "label": "Clinical guidelines",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.43,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 4
+   "deg": 5
   },
   {
-   "id": "c:Outlier influence",
-   "label": "Outlier influence",
+   "id": "c:Objective design",
+   "label": "Objective design",
    "kind": "concept",
    "url": null,
-   "size": 2.29,
+   "size": 2.47,
    "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 2
+   "sector": "Systems & deployment",
+   "deg": 6
   },
   {
    "id": "c:Neurological disease",
@@ -685,30 +665,50 @@
    "label": "Intended use specification",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.25,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 19
+   "deg": 23
+  },
+  {
+   "id": "c:Electrophysiological recording",
+   "label": "Electrophysiological recording",
+   "kind": "concept",
+   "url": null,
+   "size": 2.29,
+   "fam": "clinical",
+   "sector": "Imaging & acquisition",
+   "deg": 2
+  },
+  {
+   "id": "c:Electrophysiological features",
+   "label": "Electrophysiological features",
+   "kind": "concept",
+   "url": null,
+   "size": 2.29,
+   "fam": "clinical",
+   "sector": "Imaging & acquisition",
+   "deg": 2
   },
   {
    "id": "c:Selection & verification bias",
    "label": "Selection & verification bias",
    "kind": "concept",
    "url": null,
-   "size": 2.56,
+   "size": 2.61,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 8
+   "deg": 9
   },
   {
    "id": "c:Representation learning",
    "label": "Representation learning",
    "kind": "concept",
    "url": null,
-   "size": 2.52,
+   "size": 2.7,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 7
+   "deg": 11
   },
   {
    "id": "c:Longitudinal follow-up",
@@ -725,10 +725,20 @@
    "label": "Predictive values",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 19
+   "deg": 20
+  },
+  {
+   "id": "c:Sampling theorem",
+   "label": "Sampling theorem",
+   "kind": "concept",
+   "url": null,
+   "size": 2.47,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 6
   },
   {
    "id": "c:Acute stroke triage",
@@ -751,6 +761,16 @@
    "deg": 4
   },
   {
+   "id": "c:External validation",
+   "label": "External validation",
+   "kind": "concept",
+   "url": null,
+   "size": 3.38,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 26
+  },
+  {
    "id": "c:Transportability",
    "label": "Transportability",
    "kind": "concept",
@@ -765,20 +785,10 @@
    "label": "Deployment feedback loop",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.47,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 5
-  },
-  {
-   "id": "c:Distribution shift",
-   "label": "Distribution shift",
-   "kind": "concept",
-   "url": null,
-   "size": 2.7,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 11
+   "deg": 6
   },
   {
    "id": "c:Pseudo-labelling",
@@ -805,10 +815,10 @@
    "label": "Sensitivity analysis",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.34,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 4
+   "deg": 3
   },
   {
    "id": "c:Intervention & ablation",
@@ -821,14 +831,24 @@
    "deg": 2
   },
   {
-   "id": "c:Sampling theorem",
-   "label": "Sampling theorem",
+   "id": "c:Feedback correction",
+   "label": "Feedback correction",
    "kind": "concept",
    "url": null,
    "size": 2.47,
    "fam": "computational",
-   "sector": "Evaluation & reliability",
+   "sector": "Systems & deployment",
    "deg": 6
+  },
+  {
+   "id": "c:Feedback sensitivity identity",
+   "label": "Feedback sensitivity identity",
+   "kind": "concept",
+   "url": null,
+   "size": 2.29,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 2
   },
   {
    "id": "c:Foundation models",
@@ -861,16 +881,6 @@
    "deg": 3
   },
   {
-   "id": "c:Data processing inequality",
-   "label": "Data processing inequality",
-   "kind": "concept",
-   "url": null,
-   "size": 2.25,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 1
-  },
-  {
    "id": "c:Exploration & stress testing",
    "label": "Exploration & stress testing",
    "kind": "concept",
@@ -885,20 +895,30 @@
    "label": "Constrained optimisation",
    "kind": "concept",
    "url": null,
-   "size": 2.34,
+   "size": 2.38,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 4
   },
   {
    "id": "c:Singular value analysis",
    "label": "Singular value analysis",
    "kind": "concept",
    "url": null,
-   "size": 2.29,
+   "size": 2.34,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 2
+   "deg": 3
+  },
+  {
+   "id": "c:Simulation-based policy evaluation",
+   "label": "Simulation-based policy evaluation",
+   "kind": "concept",
+   "url": null,
+   "size": 2.34,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 3
   },
   {
    "id": "c:Label noise",
@@ -908,16 +928,6 @@
    "size": 2.25,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 1
-  },
-  {
-   "id": "c:Simulation-based policy evaluation",
-   "label": "Simulation-based policy evaluation",
-   "kind": "concept",
-   "url": null,
-   "size": 2.25,
-   "fam": "computational",
-   "sector": "Systems & deployment",
    "deg": 1
   },
   {
@@ -931,8 +941,8 @@
    "deg": 1
   },
   {
-   "id": "c:Stability margin",
-   "label": "Stability margin",
+   "id": "c:Inverse-problem conditioning",
+   "label": "Inverse-problem conditioning",
    "kind": "concept",
    "url": null,
    "size": 2.25,
@@ -941,14 +951,14 @@
    "deg": 1
   },
   {
-   "id": "c:Feedback correction",
-   "label": "Feedback correction",
+   "id": "c:Stability margin",
+   "label": "Stability margin",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.25,
    "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 5
+   "sector": "Evaluation & reliability",
+   "deg": 1
   },
   {
    "id": "c:Control stability analysis",
@@ -961,33 +971,23 @@
    "deg": 3
   },
   {
-   "id": "c:Similarity & graph construction",
-   "label": "Similarity & graph construction",
-   "kind": "concept",
-   "url": null,
-   "size": 2.29,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 2
-  },
-  {
    "id": "c:Spurious correlation",
    "label": "Spurious correlation",
    "kind": "concept",
    "url": null,
-   "size": 2.43,
+   "size": 2.29,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 5
+   "deg": 2
   },
   {
-   "id": "c:Feedback sensitivity identity",
-   "label": "Feedback sensitivity identity",
+   "id": "c:Similarity & graph construction",
+   "label": "Similarity & graph construction",
    "kind": "concept",
    "url": null,
    "size": 2.25,
    "fam": "computational",
-   "sector": "Evaluation & reliability",
+   "sector": "Systems & deployment",
    "deg": 1
   },
   {
@@ -1017,7 +1017,7 @@
    "url": "/study/adenomyomatosis-and-gallbladder-wall-thickening/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Auditing & causality",
+   "sector": "Disease & pathology",
    "deg": 18
   },
   {
@@ -1026,9 +1026,9 @@
    "kind": "note",
    "url": "/study/all-pass-systems-and-group-delay/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Systems & deployment",
-   "deg": 5
+   "fam": "computational",
+   "sector": "Auditing & causality",
+   "deg": 1
   },
   {
    "id": "note:allergy-and-clinical-immunology",
@@ -1048,7 +1048,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 8
+   "deg": 6
   },
   {
    "id": "note:attention-and-the-transformer",
@@ -1058,7 +1058,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 5
+   "deg": 3
   },
   {
    "id": "note:attribution-attention-and-counterfactual-explanations",
@@ -1101,6 +1101,16 @@
    "deg": 21
   },
   {
+   "id": "note:backpropagation",
+   "label": "Backpropagation, in Scalars and in Matrices",
+   "kind": "note",
+   "url": "/study/backpropagation/",
+   "size": 1.8,
+   "fam": "bridge",
+   "sector": "Auditing & causality",
+   "deg": 2
+  },
+  {
    "id": "note:bayesian-decision-theory",
    "label": "Bayesian Decision Theory: Risk, Loss, and Where the Boundary Goes",
    "kind": "note",
@@ -1116,9 +1126,9 @@
    "kind": "note",
    "url": "/study/bayesian-deep-learning-and-deep-ensembles/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 8
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 10
   },
   {
    "id": "note:bayesian-inverse-problems-in-imaging",
@@ -1127,8 +1137,8 @@
    "url": "/study/bayesian-inverse-problems-in-imaging/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 2
+   "sector": "Systems & deployment",
+   "deg": 5
   },
   {
    "id": "note:biliary-obstruction",
@@ -1147,7 +1157,7 @@
    "url": "/study/calibration-uncertainty-and-selective-prediction/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Systems & deployment",
+   "sector": "Evaluation & reliability",
    "deg": 12
   },
   {
@@ -1217,8 +1227,8 @@
    "url": "/study/choosing-the-loss-function/",
    "size": 1.8,
    "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 3
+   "sector": "Evaluation & reliability",
+   "deg": 5
   },
   {
    "id": "note:circadian-rhythm-disorders",
@@ -1326,9 +1336,9 @@
    "kind": "note",
    "url": "/study/convolution-via-the-dft/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 5
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 3
   },
   {
    "id": "note:critical-care-medicine",
@@ -1346,9 +1356,9 @@
    "kind": "note",
    "url": "/study/curvature-without-the-hessian/",
    "size": 1.8,
-   "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 3
+   "fam": "bridge",
+   "sector": "Imaging & acquisition",
+   "deg": 4
   },
   {
    "id": "note:data-leakage-and-validation-design",
@@ -1486,8 +1496,8 @@
    "kind": "note",
    "url": "/study/exponential-moving-averages-in-optimisers/",
    "size": 1.8,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
+   "fam": "clinical",
+   "sector": "Imaging & acquisition",
    "deg": 1
   },
   {
@@ -1518,7 +1528,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 4
+   "deg": 5
   },
   {
    "id": "note:fir-filter-design",
@@ -1527,8 +1537,8 @@
    "url": "/study/fir-filter-design/",
    "size": 1.8,
    "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 2
+   "sector": "Evaluation & reliability",
+   "deg": 1
   },
   {
    "id": "note:foundation-models-for-medical-imaging",
@@ -1546,9 +1556,9 @@
    "kind": "note",
    "url": "/study/fractional-delay-and-sinc-interpolation/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Imaging & acquisition",
-   "deg": 4
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 3
   },
   {
    "id": "note:from-clinical-problem-to-machine-learning-task",
@@ -1567,7 +1577,7 @@
    "url": "/study/fully-convolutional-networks-and-detection-metrics/",
    "size": 1.8,
    "fam": "computational",
-   "sector": "Auditing & causality",
+   "sector": "Systems & deployment",
    "deg": 5
   },
   {
@@ -1617,7 +1627,7 @@
    "url": "/study/gastric-cancer/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Auditing & causality",
+   "sector": "Imaging & acquisition",
    "deg": 20
   },
   {
@@ -1628,7 +1638,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 5
+   "deg": 6
   },
   {
    "id": "note:head-and-neck-cancer",
@@ -1648,7 +1658,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 2
   },
   {
    "id": "note:imaging-across-modalities-and-radiology-pathology-correlation",
@@ -1668,7 +1678,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Evaluation & reliability",
-   "deg": 11
+   "deg": 4
   },
   {
    "id": "note:intervention-based-auditing",
@@ -1688,7 +1698,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 6
+   "deg": 7
   },
   {
    "id": "note:label-quality-and-interobserver-variability",
@@ -1708,7 +1718,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 2
+   "deg": 3
   },
   {
    "id": "note:linear-algebra-for-representation-analysis",
@@ -1717,8 +1727,18 @@
    "url": "/study/linear-algebra-for-representation-analysis/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Interpretability",
-   "deg": 10
+   "sector": "Systems & deployment",
+   "deg": 11
+  },
+  {
+   "id": "note:linear-mmse-and-the-wiener-filter",
+   "label": "Linear MMSE Estimation and the Wiener Filter",
+   "kind": "note",
+   "url": "/study/linear-mmse-and-the-wiener-filter/",
+   "size": 1.8,
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 2
   },
   {
    "id": "note:linearization-and-the-inverted-pendulum",
@@ -1728,7 +1748,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 1
+   "deg": 3
   },
   {
    "id": "note:liver-cancer",
@@ -1751,16 +1771,6 @@
    "deg": 21
   },
   {
-   "id": "note:matrix-calculus-for-reading-papers",
-   "label": "Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gaussian MLE",
-   "kind": "note",
-   "url": "/study/matrix-calculus-for-reading-papers/",
-   "size": 1.8,
-   "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 1
-  },
-  {
    "id": "note:matthews-correlation-coefficient",
    "label": "Matthews Correlation Coefficient: A Metric That Fails Loudly",
    "kind": "note",
@@ -1778,7 +1788,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 2
   },
   {
    "id": "note:medical-ai-agents-and-tool-using-clinical-systems",
@@ -1808,7 +1818,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 7
+   "deg": 2
   },
   {
    "id": "note:neural-radiance-fields",
@@ -1816,7 +1826,7 @@
    "kind": "note",
    "url": "/study/neural-radiance-fields/",
    "size": 1.8,
-   "fam": "bridge",
+   "fam": "computational",
    "sector": "Systems & deployment",
    "deg": 7
   },
@@ -1826,8 +1836,8 @@
    "kind": "note",
    "url": "/study/optimising-the-input/",
    "size": 1.8,
-   "fam": "computational",
-   "sector": "Auditing & causality",
+   "fam": "bridge",
+   "sector": "Systems & deployment",
    "deg": 4
   },
   {
@@ -1836,9 +1846,9 @@
    "kind": "note",
    "url": "/study/optimization-for-machine-learning/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 8
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 6
   },
   {
    "id": "note:parkinsons-disease",
@@ -1856,19 +1866,9 @@
    "kind": "note",
    "url": "/study/perception-as-inference-and-moravecs-paradox/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 8
-  },
-  {
-   "id": "note:poles-zeros-and-the-z-transform",
-   "label": "Poles and Zeros: What Comes Out Uninvited, and What Goes In and Vanishes",
-   "kind": "note",
-   "url": "/study/poles-zeros-and-the-z-transform/",
-   "size": 1.8,
    "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 3
+   "sector": "Systems & deployment",
+   "deg": 10
   },
   {
    "id": "note:post-hoc-model-auditing",
@@ -1887,8 +1887,8 @@
    "url": "/study/primal-and-dual-problems/",
    "size": 1.8,
    "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 7
+   "sector": "Systems & deployment",
+   "deg": 2
   },
   {
    "id": "note:probability-and-bayesian-reasoning",
@@ -1908,7 +1908,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 2
+   "deg": 5
   },
   {
    "id": "note:recurrent-networks-and-gating",
@@ -1918,7 +1918,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 2
   },
   {
    "id": "note:representation-level-auditing",
@@ -1948,7 +1948,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 8
+   "deg": 3
   },
   {
    "id": "note:rheumatic-disease",
@@ -2008,7 +2008,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 1
+   "deg": 6
   },
   {
    "id": "note:selection-bias-and-dataset-bias",
@@ -2028,7 +2028,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 8
+   "deg": 3
   },
   {
    "id": "note:shortcut-learning-and-confounding-in-gallbladder-ultrasound",
@@ -2037,7 +2037,7 @@
    "url": "/study/shortcut-learning-and-confounding-in-gallbladder-ultrasound/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Auditing & causality",
+   "sector": "Imaging & acquisition",
    "deg": 18
   },
   {
@@ -2047,7 +2047,7 @@
    "url": "/study/shortcut-learning-in-medical-imaging/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Auditing & causality",
+   "sector": "Disease & pathology",
    "deg": 18
   },
   {
@@ -2057,7 +2057,7 @@
    "url": "/study/spectral-filtering-and-graph-convolution/",
    "size": 1.8,
    "fam": "computational",
-   "sector": "Auditing & causality",
+   "sector": "Evaluation & reliability",
    "deg": 2
   },
   {
@@ -2126,9 +2126,9 @@
    "kind": "note",
    "url": "/study/support-vector-machines/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 6
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 5
   },
   {
    "id": "note:the-combinatorial-explosion-and-learned-pruning",
@@ -2136,9 +2136,9 @@
    "kind": "note",
    "url": "/study/the-combinatorial-explosion-and-learned-pruning/",
    "size": 1.8,
-   "fam": "bridge",
-   "sector": "Auditing & causality",
-   "deg": 4
+   "fam": "computational",
+   "sector": "Systems & deployment",
+   "deg": 2
   },
   {
    "id": "note:the-fast-fourier-transform",
@@ -2158,7 +2158,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 5
+   "deg": 1
   },
   {
    "id": "note:the-kernel-trick",
@@ -2167,8 +2167,8 @@
    "url": "/study/the-kernel-trick/",
    "size": 1.8,
    "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 6
+   "sector": "Auditing & causality",
+   "deg": 4
   },
   {
    "id": "note:the-proxy-objective-problem",
@@ -2177,7 +2177,7 @@
    "url": "/study/the-proxy-objective-problem/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Auditing & causality",
+   "sector": "Evaluation & reliability",
    "deg": 14
   },
   {
@@ -2198,7 +2198,7 @@
    "size": 1.8,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 5
+   "deg": 3
   },
   {
    "id": "note:translational-science-in-medicine",
@@ -2217,7 +2217,7 @@
    "url": "/study/ultrasound-acquisition-variability-and-image-quality/",
    "size": 1.8,
    "fam": "bridge",
-   "sector": "Auditing & causality",
+   "sector": "Imaging & acquisition",
    "deg": 11
   },
   {
@@ -2261,14 +2261,24 @@
    "deg": 7
   },
   {
+   "id": "note:why-complex-exponentials",
+   "label": "Why Complex Exponentials: Choosing the Representation Is Most of the Work",
+   "kind": "note",
+   "url": "/study/why-complex-exponentials/",
+   "size": 1.8,
+   "fam": "computational",
+   "sector": "Auditing & causality",
+   "deg": 1
+  },
+  {
    "id": "review:2025-09-06-geirhos-shortcut-learning",
    "label": "Shortcut Learning in Deep Neural Networks",
    "kind": "review",
    "url": "/papers/2025-09-06-geirhos-shortcut-learning/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 11
   },
   {
    "id": "review:2025-09-12-oarsi-atlas-radiographic-features",
@@ -2276,9 +2286,9 @@
    "kind": "review",
    "url": "/papers/2025-09-12-oarsi-atlas-radiographic-features/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 1
+   "deg": 5
   },
   {
    "id": "review:2025-09-19-tcav-concept-activation-vectors",
@@ -2288,7 +2298,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 5
   },
   {
    "id": "review:2025-09-26-us-fli-fatty-liver-score",
@@ -2298,7 +2308,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 8
+   "deg": 11
   },
   {
    "id": "review:2025-10-02-zech-variable-generalization",
@@ -2306,9 +2316,9 @@
    "kind": "review",
    "url": "/papers/2025-10-02-zech-variable-generalization/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Evaluation & reliability",
-   "deg": 5
+   "deg": 9
   },
   {
    "id": "review:2025-10-08-shortcut-testing-fair-medical-ai",
@@ -2316,9 +2326,19 @@
    "kind": "review",
    "url": "/papers/2025-10-08-shortcut-testing-fair-medical-ai/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 9
+  },
+  {
+   "id": "review:2025-10-15-kellgren-lawrence-classification",
+   "label": "Classifications in Brief: Kellgren-Lawrence Classification of Osteoarthritis",
+   "kind": "review",
+   "url": "/papers/2025-10-15-kellgren-lawrence-classification/",
+   "size": 1.3,
+   "fam": "computational",
+   "sector": "Evaluation & reliability",
+   "deg": 5
   },
   {
    "id": "review:2025-10-22-concept-bottleneck-breast-ultrasound",
@@ -2328,7 +2348,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 8
+   "deg": 7
   },
   {
    "id": "review:2025-10-28-degrave-covid-shortcut",
@@ -2336,9 +2356,9 @@
    "kind": "review",
    "url": "/papers/2025-10-28-degrave-covid-shortcut/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 4
+   "deg": 11
   },
   {
    "id": "review:2025-11-03-transfer-learning-liver-steatosis",
@@ -2348,7 +2368,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 4
+   "deg": 6
   },
   {
    "id": "review:2025-11-10-oakden-rayner-hidden-stratification",
@@ -2356,9 +2376,9 @@
    "kind": "review",
    "url": "/papers/2025-11-10-oakden-rayner-hidden-stratification/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 5
+   "deg": 8
   },
   {
    "id": "review:2025-11-17-birads-sonography-predictive-values",
@@ -2368,7 +2388,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 7
+   "deg": 10
   },
   {
    "id": "review:2025-11-23-multi-joint-space-width-knee-oa",
@@ -2378,7 +2398,7 @@
    "size": 1.3,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 1
+   "deg": 3
   },
   {
    "id": "review:2025-11-29-concept-bottleneck-models",
@@ -2386,9 +2406,9 @@
    "kind": "review",
    "url": "/papers/2025-11-29-concept-bottleneck-models/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 7
   },
   {
    "id": "review:2025-12-06-roentmod-counterfactual-cxr",
@@ -2406,9 +2426,9 @@
    "kind": "review",
    "url": "/papers/2025-12-13-seyyed-kalantari-underdiagnosis/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 2
+   "fam": "bridge",
+   "sector": "Imaging & acquisition",
+   "deg": 7
   },
   {
    "id": "review:2025-12-19-eyepacs-grading-protocol",
@@ -2417,8 +2437,8 @@
    "url": "/papers/2025-12-19-eyepacs-grading-protocol/",
    "size": 1.3,
    "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 2
+   "sector": "Auditing & causality",
+   "deg": 5
   },
   {
    "id": "review:2025-12-25-qiba-liver-fat-attenuation",
@@ -2428,7 +2448,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 7
+   "deg": 10
   },
   {
    "id": "review:2026-01-01-selvaraju-gradcam",
@@ -2438,7 +2458,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 4
+   "deg": 10
   },
   {
    "id": "review:2026-01-08-busbra-breast-ultrasound-dataset",
@@ -2448,7 +2468,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 5
+   "deg": 6
   },
   {
    "id": "review:2026-01-14-hepatorenal-index-attenuation-index",
@@ -2468,7 +2488,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Disease & pathology",
-   "deg": 7
+   "deg": 10
   },
   {
    "id": "review:2026-01-27-guo-calibration",
@@ -2478,7 +2498,7 @@
    "size": 1.3,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 8
+   "deg": 13
   },
   {
    "id": "review:2026-02-03-right-for-the-right-reasons",
@@ -2486,9 +2506,9 @@
    "kind": "review",
    "url": "/papers/2026-02-03-right-for-the-right-reasons/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 3
+   "fam": "bridge",
+   "sector": "Auditing & causality",
+   "deg": 6
   },
   {
    "id": "review:2026-02-09-underspecification-credibility-ml",
@@ -2496,9 +2516,9 @@
    "kind": "review",
    "url": "/papers/2026-02-09-underspecification-credibility-ml/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 6
+   "deg": 14
   },
   {
    "id": "review:2026-02-15-posthoc-explanations-spurious-correlation",
@@ -2508,7 +2528,7 @@
    "size": 1.3,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 6
+   "deg": 8
   },
   {
    "id": "review:2026-02-22-wavelet-channel-energy-breast-us",
@@ -2518,7 +2538,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 2
+   "deg": 7
   },
   {
    "id": "review:2026-03-01-canet-cross-disease-attention",
@@ -2526,9 +2546,9 @@
    "kind": "review",
    "url": "/papers/2026-03-01-canet-cross-disease-attention/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 2
+   "fam": "bridge",
+   "sector": "Imaging & acquisition",
+   "deg": 7
   },
   {
    "id": "review:2026-03-07-diabetic-retinopathy-preferred-practice",
@@ -2536,9 +2556,9 @@
    "kind": "review",
    "url": "/papers/2026-03-07-diabetic-retinopathy-preferred-practice/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 3
+   "fam": "bridge",
+   "sector": "Clinical practice",
+   "deg": 7
   },
   {
    "id": "review:2026-03-13-arun-assessing-saliency",
@@ -2546,9 +2566,9 @@
    "kind": "review",
    "url": "/papers/2026-03-13-arun-assessing-saliency/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 7
+   "deg": 10
   },
   {
    "id": "review:2026-03-20-covariate-adjusted-spearman-correlation",
@@ -2556,9 +2576,9 @@
    "kind": "review",
    "url": "/papers/2026-03-20-covariate-adjusted-spearman-correlation/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 1
+   "fam": "bridge",
+   "sector": "Auditing & causality",
+   "deg": 7
   },
   {
    "id": "review:2026-03-27-boland-shortcuts-radiology",
@@ -2568,7 +2588,7 @@
    "size": 1.3,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 2
+   "deg": 5
   },
   {
    "id": "review:2026-04-02-causal-alignment-disease-diagnosis",
@@ -2576,9 +2596,9 @@
    "kind": "review",
    "url": "/papers/2026-04-02-causal-alignment-disease-diagnosis/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 9
   },
   {
    "id": "review:2026-04-08-frequency-domain-medical-segmentation",
@@ -2586,9 +2606,9 @@
    "kind": "review",
    "url": "/papers/2026-04-08-frequency-domain-medical-segmentation/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 6
+   "deg": 8
   },
   {
    "id": "review:2026-04-15-knee-images-digital-analysis-kida",
@@ -2597,8 +2617,8 @@
    "url": "/papers/2026-04-15-knee-images-digital-analysis-kida/",
    "size": 1.3,
    "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 1
+   "sector": "Evaluation & reliability",
+   "deg": 6
   },
   {
    "id": "review:2026-04-22-quantitative-us-birads-category-3",
@@ -2608,7 +2628,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 5
+   "deg": 15
   },
   {
    "id": "review:2026-04-28-reveal-to-revise-spurious-behavior",
@@ -2616,9 +2636,9 @@
    "kind": "review",
    "url": "/papers/2026-04-28-reveal-to-revise-spurious-behavior/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 4
+   "deg": 8
   },
   {
    "id": "review:2026-05-04-wavelet-lesion-detection-retina",
@@ -2627,8 +2647,8 @@
    "url": "/papers/2026-05-04-wavelet-lesion-detection-retina/",
    "size": 1.3,
    "fam": "computational",
-   "sector": "Systems & deployment",
-   "deg": 1
+   "sector": "Auditing & causality",
+   "deg": 7
   },
   {
    "id": "review:2026-05-11-cdep-penalizing-explanations",
@@ -2636,9 +2656,9 @@
    "kind": "review",
    "url": "/papers/2026-05-11-cdep-penalizing-explanations/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 2
+   "deg": 7
   },
   {
    "id": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
@@ -2648,7 +2668,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 5
+   "deg": 13
   },
   {
    "id": "review:2026-05-24-existence-of-simpler-models",
@@ -2657,8 +2677,8 @@
    "url": "/papers/2026-05-24-existence-of-simpler-models/",
    "size": 1.3,
    "fam": "computational",
-   "sector": "Auditing & causality",
-   "deg": 4
+   "sector": "Evaluation & reliability",
+   "deg": 7
   },
   {
    "id": "review:2026-05-30-automatic-grading-knee-oa-features",
@@ -2666,9 +2686,9 @@
    "kind": "review",
    "url": "/papers/2026-05-30-automatic-grading-knee-oa-features/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 4
+   "fam": "bridge",
+   "sector": "Systems & deployment",
+   "deg": 10
   },
   {
    "id": "review:2026-06-06-silverlining-data-first-shortcuts",
@@ -2676,9 +2696,9 @@
    "kind": "review",
    "url": "/papers/2026-06-06-silverlining-data-first-shortcuts/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 4
+   "deg": 9
   },
   {
    "id": "review:2026-06-13-counterfactual-shortcut-utilization",
@@ -2688,7 +2708,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 5
+   "deg": 10
   },
   {
    "id": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
@@ -2698,7 +2718,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 2
+   "deg": 8
   },
   {
    "id": "review:2026-06-25-international-clinical-dr-severity-scale",
@@ -2706,9 +2726,9 @@
    "kind": "review",
    "url": "/papers/2026-06-25-international-clinical-dr-severity-scale/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 1
+   "fam": "bridge",
+   "sector": "Disease & pathology",
+   "deg": 6
   },
   {
    "id": "review:2026-07-02-weight-space-correlation-analysis",
@@ -2718,7 +2738,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 6
   },
   {
    "id": "review:2026-07-09-birads-net-explainable-breast-us",
@@ -2728,7 +2748,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Imaging & acquisition",
-   "deg": 3
+   "deg": 12
   },
   {
    "id": "review:2026-07-15-clear-auditable-foundation-model-radiology",
@@ -2736,9 +2756,9 @@
    "kind": "review",
    "url": "/papers/2026-07-15-clear-auditable-foundation-model-radiology/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 10
   },
   {
    "id": "review:2026-07-21-knee-xrai-explainable-kl-grading",
@@ -2746,9 +2766,9 @@
    "kind": "review",
    "url": "/papers/2026-07-21-knee-xrai-explainable-kl-grading/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 3
+   "deg": 5
   },
   {
    "id": "review:2026-07-28-auditing-inference-processes-generative-counterfactuals",
@@ -2758,7 +2778,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 6
+   "deg": 8
   },
   {
    "id": "review:2026-08-04-medical-algorithmic-audit",
@@ -2766,9 +2786,9 @@
    "kind": "review",
    "url": "/papers/2026-08-04-medical-algorithmic-audit/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 4
+   "deg": 6
   },
   {
    "id": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
@@ -2776,9 +2796,9 @@
    "kind": "review",
    "url": "/papers/2026-08-10-concept-gradients-nonlinear-interpretation/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Systems & deployment",
-   "deg": 3
+   "deg": 13
   },
   {
    "id": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
@@ -2786,9 +2806,9 @@
    "kind": "review",
    "url": "/papers/2026-08-16-stress-testing-clinic-readiness-dermatology/",
    "size": 1.3,
-   "fam": "computational",
-   "sector": "Evaluation & reliability",
-   "deg": 6
+   "fam": "bridge",
+   "sector": "Auditing & causality",
+   "deg": 12
   },
   {
    "id": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
@@ -2796,9 +2816,9 @@
    "kind": "review",
    "url": "/papers/2026-08-23-robustness-stress-testing-medical-image-classification/",
    "size": 1.3,
-   "fam": "computational",
+   "fam": "bridge",
    "sector": "Evaluation & reliability",
-   "deg": 7
+   "deg": 12
   },
   {
    "id": "review:2026-08-30-monet-transparent-medical-image-ai",
@@ -2808,7 +2828,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 9
+   "deg": 11
   },
   {
    "id": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
@@ -2818,7 +2838,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 12
+   "deg": 10
   },
   {
    "id": "insight:2025-08-15-medical-ai-fairness-who-benefits-from-accuracy",
@@ -3236,32 +3256,8 @@
   },
   {
    "source": "note:all-pass-systems-and-group-delay",
-   "target": "c:Subgroup & fairness",
+   "target": "c:Auditing",
    "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:all-pass-systems-and-group-delay",
-   "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:all-pass-systems-and-group-delay",
-   "target": "c:Internal validation",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:all-pass-systems-and-group-delay",
-   "target": "c:Electrophysiological recording",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:all-pass-systems-and-group-delay",
-   "target": "c:Electrophysiological features",
-   "kind": "clinical",
    "w": 1
   },
   {
@@ -3286,11 +3282,23 @@
    "source": "note:anchor-boxes-and-non-maximum-suppression",
    "target": "c:Auditing",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:anchor-boxes-and-non-maximum-suppression",
    "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:anchor-boxes-and-non-maximum-suppression",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:anchor-boxes-and-non-maximum-suppression",
+   "target": "c:Attribution & saliency",
    "kind": "computational",
    "w": 1
   },
@@ -3302,49 +3310,13 @@
   },
   {
    "source": "note:anchor-boxes-and-non-maximum-suppression",
-   "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:anchor-boxes-and-non-maximum-suppression",
    "target": "c:Post-processing",
    "kind": "computational",
    "w": 1
   },
   {
-   "source": "note:anchor-boxes-and-non-maximum-suppression",
-   "target": "c:Objective design",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:anchor-boxes-and-non-maximum-suppression",
-   "target": "c:Reference standard adjudication",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:anchor-boxes-and-non-maximum-suppression",
-   "target": "c:External validation",
-   "kind": "computational",
-   "w": 1
-  },
-  {
    "source": "note:attention-and-the-transformer",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:attention-and-the-transformer",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:attention-and-the-transformer",
-   "target": "c:Plausibility",
+   "target": "c:Preprocessing & resampling",
    "kind": "computational",
    "w": 1
   },
@@ -3352,7 +3324,7 @@
    "source": "note:attention-and-the-transformer",
    "target": "c:Translation invariance",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:attention-and-the-transformer",
@@ -3691,6 +3663,18 @@
    "w": 1
   },
   {
+   "source": "note:backpropagation",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:backpropagation",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
    "source": "note:bayesian-decision-theory",
    "target": "c:Malignancy & staging",
    "kind": "clinical",
@@ -3740,8 +3724,8 @@
   },
   {
    "source": "note:bayesian-deep-learning-and-deep-ensembles",
-   "target": "c:Cross-sectional imaging",
-   "kind": "clinical",
+   "target": "c:Distribution shift",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -3753,6 +3737,12 @@
   {
    "source": "note:bayesian-deep-learning-and-deep-ensembles",
    "target": "c:Ensembling",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:bayesian-deep-learning-and-deep-ensembles",
+   "target": "c:Data processing inequality",
    "kind": "computational",
    "w": 1
   },
@@ -3769,8 +3759,14 @@
    "w": 1
   },
   {
+   "source": "note:bayesian-deep-learning-and-deep-ensembles",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "note:bayesian-inverse-problems-in-imaging",
-   "target": "c:Auditing",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
@@ -3779,6 +3775,24 @@
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 1
+  },
+  {
+   "source": "note:bayesian-inverse-problems-in-imaging",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:bayesian-inverse-problems-in-imaging",
+   "target": "c:Bayesian inference",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:bayesian-inverse-problems-in-imaging",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 2
   },
   {
    "source": "note:biliary-obstruction",
@@ -4340,19 +4354,31 @@
   },
   {
    "source": "note:choosing-the-loss-function",
-   "target": "c:Segmentation & detection",
+   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:choosing-the-loss-function",
-   "target": "c:Outlier influence",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:choosing-the-loss-function",
-   "target": "c:Internal validation",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:choosing-the-loss-function",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:choosing-the-loss-function",
+   "target": "c:Objective design",
    "kind": "computational",
    "w": 1
   },
@@ -5156,31 +5182,19 @@
   },
   {
    "source": "note:convolution-via-the-dft",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:convolution-via-the-dft",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:convolution-via-the-dft",
-   "target": "c:Cross-sectional imaging",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:convolution-via-the-dft",
-   "target": "c:Attribution & saliency",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:convolution-via-the-dft",
    "target": "c:Translation invariance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:convolution-via-the-dft",
+   "target": "c:Sampling theorem",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:convolution-via-the-dft",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
@@ -5258,19 +5272,25 @@
   },
   {
    "source": "note:curvature-without-the-hessian",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:curvature-without-the-hessian",
    "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:curvature-without-the-hessian",
-   "target": "c:Deployment & drift",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:curvature-without-the-hessian",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:curvature-without-the-hessian",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
@@ -6344,8 +6364,8 @@
   },
   {
    "source": "note:exponential-moving-averages-in-optimisers",
-   "target": "c:Distribution shift",
-   "kind": "computational",
+   "target": "c:Cross-sectional imaging",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -6560,19 +6580,7 @@
   },
   {
    "source": "note:feedback-control-and-deployment-loops",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:feedback-control-and-deployment-loops",
-   "target": "c:Calibration",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:feedback-control-and-deployment-loops",
-   "target": "c:Distribution shift",
+   "target": "c:Counterfactual",
    "kind": "computational",
    "w": 1
   },
@@ -6583,8 +6591,20 @@
    "w": 2
   },
   {
-   "source": "note:fir-filter-design",
-   "target": "c:Objective design",
+   "source": "note:feedback-control-and-deployment-loops",
+   "target": "c:Deployment feedback loop",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:feedback-control-and-deployment-loops",
+   "target": "c:Feedback correction",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:feedback-control-and-deployment-loops",
+   "target": "c:Feedback sensitivity identity",
    "kind": "computational",
    "w": 1
   },
@@ -6676,12 +6696,6 @@
    "source": "note:foundation-models-for-medical-imaging",
    "target": "c:Clinical utility",
    "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:fractional-delay-and-sinc-interpolation",
-   "target": "c:Cross-sectional imaging",
-   "kind": "clinical",
    "w": 1
   },
   {
@@ -6800,31 +6814,31 @@
   },
   {
    "source": "note:fully-convolutional-networks-and-detection-metrics",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:fully-convolutional-networks-and-detection-metrics",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:fully-convolutional-networks-and-detection-metrics",
-   "target": "c:Evaluation metrics",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:fully-convolutional-networks-and-detection-metrics",
-   "target": "c:Segmentation & detection",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:fully-convolutional-networks-and-detection-metrics",
    "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:fully-convolutional-networks-and-detection-metrics",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:fully-convolutional-networks-and-detection-metrics",
+   "target": "c:Post-processing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:fully-convolutional-networks-and-detection-metrics",
+   "target": "c:Reference standard adjudication",
    "kind": "computational",
    "w": 1
   },
@@ -7328,25 +7342,31 @@
   },
   {
    "source": "note:geometry-of-representation-spaces",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:geometry-of-representation-spaces",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:geometry-of-representation-spaces",
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "note:geometry-of-representation-spaces",
-   "target": "c:Faithfulness",
+   "target": "c:Representation learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:geometry-of-representation-spaces",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:geometry-of-representation-spaces",
+   "target": "c:Translation invariance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:geometry-of-representation-spaces",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -7425,12 +7445,6 @@
   {
    "source": "note:hypothesis-testing-and-sampling-distributions",
    "target": "c:Subgroup & fairness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:hypothesis-testing-and-sampling-distributions",
-   "target": "c:Evaluation metrics",
    "kind": "computational",
    "w": 1
   },
@@ -7544,25 +7558,7 @@
   },
   {
    "source": "note:information-theory",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:information-theory",
    "target": "c:Confounding",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:information-theory",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:information-theory",
-   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
@@ -7574,33 +7570,9 @@
   },
   {
    "source": "note:information-theory",
-   "target": "c:Representation learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:information-theory",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:information-theory",
    "target": "c:Data processing inequality",
    "kind": "computational",
    "w": 2
-  },
-  {
-   "source": "note:information-theory",
-   "target": "c:Intended use specification",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:information-theory",
-   "target": "c:Clinical evidence reliance",
-   "kind": "computational",
-   "w": 1
   },
   {
    "source": "note:intervention-based-auditing",
@@ -7682,25 +7654,19 @@
   },
   {
    "source": "note:kkt-conditions-and-shadow-prices",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:kkt-conditions-and-shadow-prices",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:kkt-conditions-and-shadow-prices",
    "target": "c:Evaluation metrics",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:kkt-conditions-and-shadow-prices",
-   "target": "c:Robustness",
+   "target": "c:Identifiability criterion",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:kkt-conditions-and-shadow-prices",
+   "target": "c:Identifiability analysis",
    "kind": "computational",
    "w": 1
   },
@@ -7709,6 +7675,18 @@
    "target": "c:Constrained optimisation",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "note:kkt-conditions-and-shadow-prices",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:kkt-conditions-and-shadow-prices",
+   "target": "c:Measurement identifiability",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "note:label-quality-and-interobserver-variability",
@@ -7772,19 +7750,19 @@
   },
   {
    "source": "note:latent-variables-em-and-variational-inference",
-   "target": "c:Confounding",
+   "target": "c:Bayesian inference",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:latent-variables-em-and-variational-inference",
+   "target": "c:Inverse reconstruction",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:linear-algebra-for-representation-analysis",
    "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:linear-algebra-for-representation-analysis",
-   "target": "c:Shortcut learning",
    "kind": "computational",
    "w": 1
   },
@@ -7808,13 +7786,13 @@
   },
   {
    "source": "note:linear-algebra-for-representation-analysis",
-   "target": "c:Representation learning",
+   "target": "c:Identifiability criterion",
    "kind": "computational",
-   "w": 2
+   "w": 1
   },
   {
    "source": "note:linear-algebra-for-representation-analysis",
-   "target": "c:Faithfulness",
+   "target": "c:Identifiability analysis",
    "kind": "computational",
    "w": 1
   },
@@ -7828,7 +7806,7 @@
    "source": "note:linear-algebra-for-representation-analysis",
    "target": "c:Inverse reconstruction",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:linear-algebra-for-representation-analysis",
@@ -7837,8 +7815,44 @@
    "w": 1
   },
   {
+   "source": "note:linear-algebra-for-representation-analysis",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:linear-algebra-for-representation-analysis",
+   "target": "c:Measurement identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:linear-mmse-and-the-wiener-filter",
+   "target": "c:Ensembling",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:linear-mmse-and-the-wiener-filter",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "note:linearization-and-the-inverted-pendulum",
    "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:linearization-and-the-inverted-pendulum",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:linearization-and-the-inverted-pendulum",
+   "target": "c:Simulation-based policy evaluation",
    "kind": "computational",
    "w": 1
   },
@@ -8035,12 +8049,6 @@
    "w": 1
   },
   {
-   "source": "note:matrix-calculus-for-reading-papers",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
    "source": "note:matthews-correlation-coefficient",
    "target": "c:Evaluation metrics",
    "kind": "computational",
@@ -8072,13 +8080,7 @@
   },
   {
    "source": "note:mdps-and-the-simulator-problem",
-   "target": "c:Confounding",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:mdps-and-the-simulator-problem",
-   "target": "c:Deployment & drift",
+   "target": "c:Counterfactual",
    "kind": "computational",
    "w": 1
   },
@@ -8174,67 +8176,13 @@
   },
   {
    "source": "note:monte-carlo-tree-search",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:monte-carlo-tree-search",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:monte-carlo-tree-search",
-   "target": "c:Counterfactual",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:monte-carlo-tree-search",
-   "target": "c:Deployment & drift",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:monte-carlo-tree-search",
-   "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:monte-carlo-tree-search",
-   "target": "c:External validation",
+   "target": "c:Pretest probability",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:neural-radiance-fields",
-   "target": "c:Cross-sectional imaging",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:neural-radiance-fields",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:neural-radiance-fields",
-   "target": "c:Plausibility",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:neural-radiance-fields",
-   "target": "c:Attention mechanism",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:neural-radiance-fields",
-   "target": "c:Ensembling",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
@@ -8246,7 +8194,31 @@
   },
   {
    "source": "note:neural-radiance-fields",
+   "target": "c:Identifiability criterion",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:neural-radiance-fields",
+   "target": "c:Identifiability analysis",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:neural-radiance-fields",
    "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:neural-radiance-fields",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:neural-radiance-fields",
+   "target": "c:Measurement identifiability",
    "kind": "computational",
    "w": 1
   },
@@ -8258,14 +8230,8 @@
   },
   {
    "source": "note:optimising-the-input",
-   "target": "c:Plausibility",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:optimising-the-input",
-   "target": "c:Counterfactual",
-   "kind": "computational",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -8275,6 +8241,12 @@
    "w": 1
   },
   {
+   "source": "note:optimising-the-input",
+   "target": "c:Constrained optimisation",
+   "kind": "computational",
+   "w": 2
+  },
+  {
    "source": "note:optimization-for-machine-learning",
    "target": "c:Auditing",
    "kind": "computational",
@@ -8282,43 +8254,31 @@
   },
   {
    "source": "note:optimization-for-machine-learning",
-   "target": "c:Shortcut learning",
+   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:optimization-for-machine-learning",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:optimization-for-machine-learning",
-   "target": "c:Calibration",
+   "target": "c:Singular value analysis",
    "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:optimization-for-machine-learning",
-   "target": "c:Ultrasound acquisition",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:optimization-for-machine-learning",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:optimization-for-machine-learning",
-   "target": "c:Objective design",
-   "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:optimization-for-machine-learning",
    "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:optimization-for-machine-learning",
+   "target": "c:Inverse-problem conditioning",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:optimization-for-machine-learning",
+   "target": "c:Clinical validity",
    "kind": "computational",
    "w": 1
   },
@@ -8414,13 +8374,7 @@
   },
   {
    "source": "note:perception-as-inference-and-moravecs-paradox",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:perception-as-inference-and-moravecs-paradox",
-   "target": "c:Shortcut learning",
+   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
@@ -8432,19 +8386,31 @@
   },
   {
    "source": "note:perception-as-inference-and-moravecs-paradox",
-   "target": "c:Ultrasound acquisition",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:perception-as-inference-and-moravecs-paradox",
-   "target": "c:Faithfulness",
+   "target": "c:Distribution shift",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:perception-as-inference-and-moravecs-paradox",
-   "target": "c:Plausibility",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:perception-as-inference-and-moravecs-paradox",
+   "target": "c:Objective design",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:perception-as-inference-and-moravecs-paradox",
+   "target": "c:Identifiability criterion",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:perception-as-inference-and-moravecs-paradox",
+   "target": "c:Identifiability analysis",
    "kind": "computational",
    "w": 1
   },
@@ -8452,29 +8418,17 @@
    "source": "note:perception-as-inference-and-moravecs-paradox",
    "target": "c:Inverse reconstruction",
    "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:perception-as-inference-and-moravecs-paradox",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
    "w": 1
   },
   {
    "source": "note:perception-as-inference-and-moravecs-paradox",
-   "target": "c:Reference standard adjudication",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:poles-zeros-and-the-z-transform",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:poles-zeros-and-the-z-transform",
-   "target": "c:Deployment & drift",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:poles-zeros-and-the-z-transform",
-   "target": "c:Sampling theorem",
+   "target": "c:Measurement identifiability",
    "kind": "computational",
    "w": 1
   },
@@ -8558,43 +8512,13 @@
   },
   {
    "source": "note:primal-and-dual-problems",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:primal-and-dual-problems",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:primal-and-dual-problems",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:primal-and-dual-problems",
    "target": "c:Deployment & drift",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:primal-and-dual-problems",
-   "target": "c:Exploration & stress testing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:primal-and-dual-problems",
-   "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:primal-and-dual-problems",
-   "target": "c:Internal validation",
+   "target": "c:Constrained optimisation",
    "kind": "computational",
    "w": 1
   },
@@ -8644,23 +8568,35 @@
    "source": "note:recommender-systems-and-sparse-features",
    "target": "c:Auditing",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:recommender-systems-and-sparse-features",
-   "target": "c:Evaluation metrics",
+   "target": "c:Identifiability criterion",
    "kind": "computational",
-   "w": 1
+   "w": 2
+  },
+  {
+   "source": "note:recommender-systems-and-sparse-features",
+   "target": "c:Identifiability analysis",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:recommender-systems-and-sparse-features",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:recommender-systems-and-sparse-features",
+   "target": "c:Measurement identifiability",
+   "kind": "computational",
+   "w": 2
   },
   {
    "source": "note:recurrent-networks-and-gating",
    "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:recurrent-networks-and-gating",
-   "target": "c:Shortcut learning",
    "kind": "computational",
    "w": 1
   },
@@ -8786,30 +8722,6 @@
   },
   {
    "source": "note:resampling-and-anti-aliasing",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:resampling-and-anti-aliasing",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:resampling-and-anti-aliasing",
-   "target": "c:Attribution & saliency",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:resampling-and-anti-aliasing",
-   "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:resampling-and-anti-aliasing",
    "target": "c:Preprocessing & resampling",
    "kind": "computational",
    "w": 2
@@ -8822,15 +8734,9 @@
   },
   {
    "source": "note:resampling-and-anti-aliasing",
-   "target": "c:External validation",
+   "target": "c:Inverse reconstruction",
    "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:resampling-and-anti-aliasing",
-   "target": "c:Pretest probability",
-   "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "note:rheumatic-disease",
@@ -9074,9 +8980,39 @@
   },
   {
    "source": "note:segmentation-semantic-instance-and-panoptic",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:segmentation-semantic-instance-and-panoptic",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:segmentation-semantic-instance-and-panoptic",
    "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "note:segmentation-semantic-instance-and-panoptic",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:segmentation-semantic-instance-and-panoptic",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:segmentation-semantic-instance-and-panoptic",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "note:selection-bias-and-dataset-bias",
@@ -9164,19 +9100,7 @@
   },
   {
    "source": "note:self-supervised-and-weakly-supervised-learning",
-   "target": "c:Auditing",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:self-supervised-and-weakly-supervised-learning",
    "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:self-supervised-and-weakly-supervised-learning",
-   "target": "c:Malignancy & staging",
    "kind": "clinical",
    "w": 1
   },
@@ -9184,24 +9108,6 @@
    "source": "note:self-supervised-and-weakly-supervised-learning",
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:self-supervised-and-weakly-supervised-learning",
-   "target": "c:Representation learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:self-supervised-and-weakly-supervised-learning",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:self-supervised-and-weakly-supervised-learning",
-   "target": "c:Robustness",
-   "kind": "computational",
    "w": 1
   },
   {
@@ -9428,13 +9334,19 @@
   },
   {
    "source": "note:spectral-filtering-and-graph-convolution",
-   "target": "c:Auditing",
+   "target": "c:Translation invariance",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "note:spectral-filtering-and-graph-convolution",
+   "target": "c:Inverse reconstruction",
    "kind": "computational",
    "w": 1
   },
   {
-   "source": "note:spectral-filtering-and-graph-convolution",
-   "target": "c:Similarity & graph construction",
+   "source": "note:speech-recognition-and-alignment-free-training",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
@@ -9452,14 +9364,8 @@
   },
   {
    "source": "note:speech-recognition-and-alignment-free-training",
-   "target": "c:Electrophysiological recording",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:speech-recognition-and-alignment-free-training",
-   "target": "c:Electrophysiological features",
-   "kind": "clinical",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -9680,7 +9586,7 @@
   },
   {
    "source": "note:stochastic-gradient-descent-and-optimisers",
-   "target": "c:Clinical evidence reliance",
+   "target": "c:Objective design",
    "kind": "computational",
    "w": 1
   },
@@ -9794,25 +9700,7 @@
   },
   {
    "source": "note:support-vector-machines",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:support-vector-machines",
-   "target": "c:Gallbladder disease",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:support-vector-machines",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:support-vector-machines",
-   "target": "c:Counterfactual",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
@@ -9823,32 +9711,26 @@
    "w": 1
   },
   {
+   "source": "note:support-vector-machines",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:support-vector-machines",
+   "target": "c:Constrained optimisation",
+   "kind": "computational",
+   "w": 2
+  },
+  {
    "source": "note:the-combinatorial-explosion-and-learned-pruning",
-   "target": "c:Auditing",
+   "target": "c:Simulation-based policy evaluation",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:the-combinatorial-explosion-and-learned-pruning",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "note:the-combinatorial-explosion-and-learned-pruning",
-   "target": "c:Evaluation metrics",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:the-combinatorial-explosion-and-learned-pruning",
-   "target": "c:Attention mechanism",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:the-fast-fourier-transform",
-   "target": "c:Preprocessing & resampling",
+   "target": "c:Internal validation",
    "kind": "computational",
    "w": 1
   },
@@ -9859,20 +9741,8 @@
    "w": 1
   },
   {
-   "source": "note:the-graph-laplacian",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:the-graph-laplacian",
-   "target": "c:Segmentation & detection",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:the-graph-laplacian",
-   "target": "c:Robustness",
+   "source": "note:the-fast-fourier-transform",
+   "target": "c:Inverse reconstruction",
    "kind": "computational",
    "w": 1
   },
@@ -9883,20 +9753,8 @@
    "w": 1
   },
   {
-   "source": "note:the-graph-laplacian",
-   "target": "c:Constrained optimisation",
-   "kind": "computational",
-   "w": 1
-  },
-  {
    "source": "note:the-kernel-trick",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:the-kernel-trick",
-   "target": "c:Uncertainty & abstention",
+   "target": "c:Auditing",
    "kind": "computational",
    "w": 1
   },
@@ -9908,19 +9766,13 @@
   },
   {
    "source": "note:the-kernel-trick",
-   "target": "c:Out-of-distribution detection",
-   "kind": "computational",
-   "w": 2
-  },
-  {
-   "source": "note:the-kernel-trick",
-   "target": "c:Outlier influence",
+   "target": "c:Representation learning",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "note:the-kernel-trick",
-   "target": "c:Constrained optimisation",
+   "target": "c:Internal validation",
    "kind": "computational",
    "w": 1
   },
@@ -10023,18 +9875,6 @@
   {
    "source": "note:translation-invariance-and-equivariance",
    "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:translation-invariance-and-equivariance",
-   "target": "c:Plausibility",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:translation-invariance-and-equivariance",
-   "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 1
   },
@@ -10405,10 +10245,40 @@
    "w": 1
   },
   {
+   "source": "note:why-complex-exponentials",
+   "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2025-09-06-geirhos-shortcut-learning",
    "target": "c:Shortcut learning",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Malignancy & staging",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
   },
   {
    "source": "review:2025-09-06-geirhos-shortcut-learning",
@@ -10423,21 +10293,81 @@
    "w": 1
   },
   {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-06-geirhos-shortcut-learning",
+   "target": "c:Clinical validity",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-12-oarsi-atlas-radiographic-features",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-12-oarsi-atlas-radiographic-features",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
    "source": "review:2025-09-12-oarsi-atlas-radiographic-features",
    "target": "c:Reference standard adjudication",
    "kind": "computational",
    "w": 2
   },
   {
-   "source": "review:2025-09-19-tcav-concept-activation-vectors",
-   "target": "c:Diagnostic reasoning",
-   "kind": "clinical",
+   "source": "review:2025-09-12-oarsi-atlas-radiographic-features",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-12-oarsi-atlas-radiographic-features",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2025-09-19-tcav-concept-activation-vectors",
-   "target": "c:Attribution & saliency",
+   "target": "c:Auditing",
    "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-19-tcav-concept-activation-vectors",
+   "target": "c:Confounding",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-19-tcav-concept-activation-vectors",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-19-tcav-concept-activation-vectors",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -10466,6 +10396,12 @@
   },
   {
    "source": "review:2025-09-26-us-fli-fatty-liver-score",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-26-us-fli-fatty-liver-score",
    "target": "c:Evaluation metrics",
    "kind": "computational",
    "w": 1
@@ -10478,7 +10414,19 @@
   },
   {
    "source": "review:2025-09-26-us-fli-fatty-liver-score",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-26-us-fli-fatty-liver-score",
    "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-09-26-us-fli-fatty-liver-score",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -10496,15 +10444,27 @@
   },
   {
    "source": "review:2025-10-02-zech-variable-generalization",
-   "target": "c:Shortcut learning",
+   "target": "c:Confounding",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "review:2025-10-02-zech-variable-generalization",
+   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2025-10-02-zech-variable-generalization",
-   "target": "c:Confounding",
+   "target": "c:Calibration",
    "kind": "computational",
-   "w": 2
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-02-zech-variable-generalization",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
   },
   {
    "source": "review:2025-10-02-zech-variable-generalization",
@@ -10520,9 +10480,21 @@
   },
   {
    "source": "review:2025-10-02-zech-variable-generalization",
+   "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-02-zech-variable-generalization",
    "target": "c:Pretest probability",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "review:2025-10-02-zech-variable-generalization",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2025-10-08-shortcut-testing-fair-medical-ai",
@@ -10543,21 +10515,75 @@
    "w": 1
   },
   {
-   "source": "review:2025-10-22-concept-bottleneck-breast-ultrasound",
-   "target": "c:Malignancy & staging",
+   "source": "review:2025-10-08-shortcut-testing-fair-medical-ai",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-08-shortcut-testing-fair-medical-ai",
+   "target": "c:Ultrasound acquisition",
    "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-08-shortcut-testing-fair-medical-ai",
+   "target": "c:Representation learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-08-shortcut-testing-fair-medical-ai",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-08-shortcut-testing-fair-medical-ai",
+   "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-08-shortcut-testing-fair-medical-ai",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-15-kellgren-lawrence-classification",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-15-kellgren-lawrence-classification",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-15-kellgren-lawrence-classification",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-15-kellgren-lawrence-classification",
+   "target": "c:Clinical validity",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-15-kellgren-lawrence-classification",
+   "target": "c:Clinical utility",
+   "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2025-10-22-concept-bottleneck-breast-ultrasound",
    "target": "c:Histopathology",
    "kind": "clinical",
-   "w": 1
-  },
-  {
-   "source": "review:2025-10-22-concept-bottleneck-breast-ultrasound",
-   "target": "c:Subgroup & fairness",
-   "kind": "computational",
    "w": 1
   },
   {
@@ -10580,15 +10606,27 @@
   },
   {
    "source": "review:2025-10-22-concept-bottleneck-breast-ultrasound",
-   "target": "c:Plausibility",
+   "target": "c:Segmentation & detection",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "review:2025-10-22-concept-bottleneck-breast-ultrasound",
+   "target": "c:Deployment & drift",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2025-10-22-concept-bottleneck-breast-ultrasound",
-   "target": "c:Segmentation & detection",
+   "target": "c:Clinical assessability",
    "kind": "computational",
-   "w": 2
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-28-degrave-covid-shortcut",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2025-10-28-degrave-covid-shortcut",
@@ -10604,7 +10642,43 @@
   },
   {
    "source": "review:2025-10-28-degrave-covid-shortcut",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-28-degrave-covid-shortcut",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-28-degrave-covid-shortcut",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-28-degrave-covid-shortcut",
    "target": "c:Attribution & saliency",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-28-degrave-covid-shortcut",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-28-degrave-covid-shortcut",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-10-28-degrave-covid-shortcut",
+   "target": "c:Internal validation",
    "kind": "computational",
    "w": 1
   },
@@ -10639,6 +10713,18 @@
    "w": 2
   },
   {
+   "source": "review:2025-11-03-transfer-learning-liver-steatosis",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-03-transfer-learning-liver-steatosis",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2025-11-10-oakden-rayner-hidden-stratification",
    "target": "c:Auditing",
    "kind": "computational",
@@ -10652,13 +10738,31 @@
   },
   {
    "source": "review:2025-11-10-oakden-rayner-hidden-stratification",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-10-oakden-rayner-hidden-stratification",
    "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2025-11-10-oakden-rayner-hidden-stratification",
-   "target": "c:Evaluation metrics",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-10-oakden-rayner-hidden-stratification",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-10-oakden-rayner-hidden-stratification",
+   "target": "c:External validation",
    "kind": "computational",
    "w": 1
   },
@@ -10682,6 +10786,12 @@
   },
   {
    "source": "review:2025-11-17-birads-sonography-predictive-values",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-17-birads-sonography-predictive-values",
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 2
@@ -10697,6 +10807,18 @@
    "target": "c:Concept-based methods",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "review:2025-11-17-birads-sonography-predictive-values",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-17-birads-sonography-predictive-values",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2025-11-17-birads-sonography-predictive-values",
@@ -10712,9 +10834,39 @@
   },
   {
    "source": "review:2025-11-23-multi-joint-space-width-knee-oa",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-23-multi-joint-space-width-knee-oa",
    "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "review:2025-11-23-multi-joint-space-width-knee-oa",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-29-concept-bottleneck-models",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-29-concept-bottleneck-models",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-11-29-concept-bottleneck-models",
+   "target": "c:Uncertainty & abstention",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2025-11-29-concept-bottleneck-models",
@@ -10724,7 +10876,7 @@
   },
   {
    "source": "review:2025-11-29-concept-bottleneck-models",
-   "target": "c:Faithfulness",
+   "target": "c:Distribution shift",
    "kind": "computational",
    "w": 1
   },
@@ -10733,6 +10885,12 @@
    "target": "c:Concept-based methods",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "review:2025-11-29-concept-bottleneck-models",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2025-12-06-roentmod-counterfactual-cxr",
@@ -10748,7 +10906,7 @@
   },
   {
    "source": "review:2025-12-06-roentmod-counterfactual-cxr",
-   "target": "c:Plausibility",
+   "target": "c:Faithfulness",
    "kind": "computational",
    "w": 1
   },
@@ -10760,13 +10918,7 @@
   },
   {
    "source": "review:2025-12-06-roentmod-counterfactual-cxr",
-   "target": "c:Pretest probability",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2025-12-13-seyyed-kalantari-underdiagnosis",
-   "target": "c:Shortcut learning",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
@@ -10777,14 +10929,68 @@
    "w": 1
   },
   {
-   "source": "review:2025-12-19-eyepacs-grading-protocol",
+   "source": "review:2025-12-13-seyyed-kalantari-underdiagnosis",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-13-seyyed-kalantari-underdiagnosis",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-13-seyyed-kalantari-underdiagnosis",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-13-seyyed-kalantari-underdiagnosis",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-13-seyyed-kalantari-underdiagnosis",
+   "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-13-seyyed-kalantari-underdiagnosis",
    "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2025-12-19-eyepacs-grading-protocol",
-   "target": "c:Clinical evidence reliance",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-19-eyepacs-grading-protocol",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-19-eyepacs-grading-protocol",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-19-eyepacs-grading-protocol",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-19-eyepacs-grading-protocol",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -10804,6 +11010,12 @@
    "source": "review:2025-12-25-qiba-liver-fat-attenuation",
    "target": "c:Histopathology",
    "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-25-qiba-liver-fat-attenuation",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -10826,13 +11038,43 @@
   },
   {
    "source": "review:2025-12-25-qiba-liver-fat-attenuation",
-   "target": "c:Reference standard adjudication",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-25-qiba-liver-fat-attenuation",
+   "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2025-12-25-qiba-liver-fat-attenuation",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-01-01-selvaraju-gradcam",
-   "target": "c:Diagnostic reasoning",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-01-selvaraju-gradcam",
+   "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-01-selvaraju-gradcam",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-01-selvaraju-gradcam",
+   "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 1
   },
@@ -10850,13 +11092,25 @@
   },
   {
    "source": "review:2026-01-01-selvaraju-gradcam",
-   "target": "c:Segmentation & detection",
+   "target": "c:Plausibility",
    "kind": "computational",
    "w": 1
   },
   {
-   "source": "review:2026-01-08-busbra-breast-ultrasound-dataset",
-   "target": "c:Shortcut learning",
+   "source": "review:2026-01-01-selvaraju-gradcam",
+   "target": "c:Counterfactual",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-01-selvaraju-gradcam",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-01-selvaraju-gradcam",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
@@ -10874,19 +11128,25 @@
   },
   {
    "source": "review:2026-01-08-busbra-breast-ultrasound-dataset",
-   "target": "c:Concept-based methods",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-01-08-busbra-breast-ultrasound-dataset",
    "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 1
   },
   {
-   "source": "review:2026-01-14-hepatorenal-index-attenuation-index",
-   "target": "c:Auditing",
+   "source": "review:2026-01-08-busbra-breast-ultrasound-dataset",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-08-busbra-breast-ultrasound-dataset",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-08-busbra-breast-ultrasound-dataset",
+   "target": "c:Selection & verification bias",
    "kind": "computational",
    "w": 1
   },
@@ -10901,6 +11161,12 @@
    "target": "c:Histopathology",
    "kind": "clinical",
    "w": 2
+  },
+  {
+   "source": "review:2026-01-14-hepatorenal-index-attenuation-index",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2026-01-14-hepatorenal-index-attenuation-index",
@@ -10916,13 +11182,7 @@
   },
   {
    "source": "review:2026-01-14-hepatorenal-index-attenuation-index",
-   "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-01-14-hepatorenal-index-attenuation-index",
-   "target": "c:Reference standard adjudication",
+   "target": "c:Intended use specification",
    "kind": "computational",
    "w": 1
   },
@@ -10933,9 +11193,15 @@
    "w": 1
   },
   {
+   "source": "review:2026-01-14-hepatorenal-index-attenuation-index",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2026-01-20-regression-concept-vectors-histopathology",
-   "target": "c:Liver & hepatobiliary",
-   "kind": "clinical",
+   "target": "c:Auditing",
+   "kind": "computational",
    "w": 1
   },
   {
@@ -10943,6 +11209,24 @@
    "target": "c:Histopathology",
    "kind": "clinical",
    "w": 2
+  },
+  {
+   "source": "review:2026-01-20-regression-concept-vectors-histopathology",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-20-regression-concept-vectors-histopathology",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-20-regression-concept-vectors-histopathology",
+   "target": "c:Representation learning",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2026-01-20-regression-concept-vectors-histopathology",
@@ -10958,7 +11242,7 @@
   },
   {
    "source": "review:2026-01-20-regression-concept-vectors-histopathology",
-   "target": "c:Robustness",
+   "target": "c:Plausibility",
    "kind": "computational",
    "w": 1
   },
@@ -10970,7 +11254,7 @@
   },
   {
    "source": "review:2026-01-20-regression-concept-vectors-histopathology",
-   "target": "c:Preprocessing & resampling",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -10983,6 +11267,12 @@
   {
    "source": "review:2026-01-27-guo-calibration",
    "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-27-guo-calibration",
+   "target": "c:Uncertainty & abstention",
    "kind": "computational",
    "w": 1
   },
@@ -11006,7 +11296,25 @@
   },
   {
    "source": "review:2026-01-27-guo-calibration",
+   "target": "c:Distribution shift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-27-guo-calibration",
+   "target": "c:Representation learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-27-guo-calibration",
    "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-27-guo-calibration",
+   "target": "c:Out-of-distribution detection",
    "kind": "computational",
    "w": 1
   },
@@ -11019,6 +11327,18 @@
   {
    "source": "review:2026-01-27-guo-calibration",
    "target": "c:Pretest probability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-01-27-guo-calibration",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-03-right-for-the-right-reasons",
+   "target": "c:Auditing",
    "kind": "computational",
    "w": 1
   },
@@ -11030,13 +11350,25 @@
   },
   {
    "source": "review:2026-02-03-right-for-the-right-reasons",
-   "target": "c:Spurious correlation",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-03-right-for-the-right-reasons",
+   "target": "c:Faithfulness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-02-03-right-for-the-right-reasons",
-   "target": "c:Subgroup & fairness",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-03-right-for-the-right-reasons",
+   "target": "c:Comparative workflow evaluation",
    "kind": "computational",
    "w": 1
   },
@@ -11048,7 +11380,19 @@
   },
   {
    "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:Shortcut learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
    "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
@@ -11060,7 +11404,19 @@
   },
   {
    "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
    "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:Exploration & stress testing",
    "kind": "computational",
    "w": 1
   },
@@ -11072,7 +11428,31 @@
   },
   {
    "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:Out-of-distribution detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:Ensembling",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
    "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-09-underspecification-credibility-ml",
+   "target": "c:Pretest probability",
    "kind": "computational",
    "w": 1
   },
@@ -11102,13 +11482,31 @@
   },
   {
    "source": "review:2026-02-15-posthoc-explanations-spurious-correlation",
+   "target": "c:Attribution & saliency",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-15-posthoc-explanations-spurious-correlation",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-15-posthoc-explanations-spurious-correlation",
    "target": "c:Concept-based methods",
    "kind": "computational",
    "w": 2
   },
   {
    "source": "review:2026-02-15-posthoc-explanations-spurious-correlation",
-   "target": "c:Counterfactual",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-22-wavelet-channel-energy-breast-us",
+   "target": "c:Auditing",
    "kind": "computational",
    "w": 1
   },
@@ -11120,19 +11518,85 @@
   },
   {
    "source": "review:2026-02-22-wavelet-channel-energy-breast-us",
-   "target": "c:External validation",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-22-wavelet-channel-energy-breast-us",
+   "target": "c:Concept-based methods",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-22-wavelet-channel-energy-breast-us",
+   "target": "c:Segmentation & detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-22-wavelet-channel-energy-breast-us",
+   "target": "c:Preprocessing & resampling",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-02-22-wavelet-channel-energy-breast-us",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-03-01-canet-cross-disease-attention",
-   "target": "c:Shortcut learning",
+   "target": "c:Distribution shift",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-03-01-canet-cross-disease-attention",
-   "target": "c:Pretest probability",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-01-canet-cross-disease-attention",
+   "target": "c:Counterfactual",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-01-canet-cross-disease-attention",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-01-canet-cross-disease-attention",
+   "target": "c:Out-of-distribution detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-01-canet-cross-disease-attention",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-01-canet-cross-disease-attention",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-07-diabetic-retinopathy-preferred-practice",
+   "target": "c:Clinical guidelines",
+   "kind": "clinical",
+   "w": 2
+  },
+  {
+   "source": "review:2026-03-07-diabetic-retinopathy-preferred-practice",
+   "target": "c:Uncertainty & abstention",
    "kind": "computational",
    "w": 1
   },
@@ -11144,13 +11608,25 @@
   },
   {
    "source": "review:2026-03-07-diabetic-retinopathy-preferred-practice",
-   "target": "c:Deployment & drift",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-07-diabetic-retinopathy-preferred-practice",
+   "target": "c:Objective design",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-03-07-diabetic-retinopathy-preferred-practice",
-   "target": "c:Clinical assessability",
+   "target": "c:Clinical validity",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-07-diabetic-retinopathy-preferred-practice",
+   "target": "c:Clinical utility",
    "kind": "computational",
    "w": 1
   },
@@ -11164,6 +11640,12 @@
    "source": "review:2026-03-13-arun-assessing-saliency",
    "target": "c:Evaluation metrics",
    "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-13-arun-assessing-saliency",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -11186,19 +11668,67 @@
   },
   {
    "source": "review:2026-03-13-arun-assessing-saliency",
+   "target": "c:Counterfactual",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-13-arun-assessing-saliency",
    "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-03-13-arun-assessing-saliency",
-   "target": "c:Reference standard adjudication",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-13-arun-assessing-saliency",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-03-20-covariate-adjusted-spearman-correlation",
-   "target": "c:Sensitivity analysis",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-20-covariate-adjusted-spearman-correlation",
+   "target": "c:Confounding",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "review:2026-03-20-covariate-adjusted-spearman-correlation",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-20-covariate-adjusted-spearman-correlation",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-20-covariate-adjusted-spearman-correlation",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-20-covariate-adjusted-spearman-correlation",
+   "target": "c:Preprocessing & resampling",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-20-covariate-adjusted-spearman-correlation",
+   "target": "c:Clinical feature annotation",
    "kind": "computational",
    "w": 1
   },
@@ -11215,10 +11745,34 @@
    "w": 2
   },
   {
+   "source": "review:2026-03-27-boland-shortcuts-radiology",
+   "target": "c:Confounding",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-27-boland-shortcuts-radiology",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-03-27-boland-shortcuts-radiology",
+   "target": "c:Attribution & saliency",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
    "target": "c:Shortcut learning",
    "kind": "computational",
    "w": 2
+  },
+  {
+   "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
+   "target": "c:Causal inference",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
@@ -11228,7 +11782,37 @@
   },
   {
    "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
+   "target": "c:Malignancy & staging",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
+   "target": "c:Concept-based methods",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
    "target": "c:Counterfactual",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-02-causal-alignment-disease-diagnosis",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -11240,15 +11824,27 @@
   },
   {
    "source": "review:2026-04-08-frequency-domain-medical-segmentation",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-08-frequency-domain-medical-segmentation",
+   "target": "c:Cross-sectional imaging",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-08-frequency-domain-medical-segmentation",
    "target": "c:Segmentation & detection",
    "kind": "computational",
    "w": 2
   },
   {
    "source": "review:2026-04-08-frequency-domain-medical-segmentation",
-   "target": "c:Attention mechanism",
+   "target": "c:Preprocessing & resampling",
    "kind": "computational",
-   "w": 2
+   "w": 1
   },
   {
    "source": "review:2026-04-08-frequency-domain-medical-segmentation",
@@ -11264,13 +11860,73 @@
   },
   {
    "source": "review:2026-04-08-frequency-domain-medical-segmentation",
-   "target": "c:Clinical evidence reliance",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-04-15-knee-images-digital-analysis-kida",
-   "target": "c:Segmentation & detection",
+   "target": "c:Identifiability criterion",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-15-knee-images-digital-analysis-kida",
+   "target": "c:Identifiability analysis",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-15-knee-images-digital-analysis-kida",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-15-knee-images-digital-analysis-kida",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-15-knee-images-digital-analysis-kida",
+   "target": "c:Measurement identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-15-knee-images-digital-analysis-kida",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Malignancy & staging",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Histopathology",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
@@ -11282,13 +11938,43 @@
   },
   {
    "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 2
   },
   {
    "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Segmentation & detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
    "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-22-quantitative-us-birads-category-3",
+   "target": "c:Internal validation",
    "kind": "computational",
    "w": 1
   },
@@ -11318,8 +12004,20 @@
   },
   {
    "source": "review:2026-04-28-reveal-to-revise-spurious-behavior",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-28-reveal-to-revise-spurious-behavior",
    "target": "c:Subgroup & fairness",
    "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-28-reveal-to-revise-spurious-behavior",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -11329,8 +12027,62 @@
    "w": 1
   },
   {
+   "source": "review:2026-04-28-reveal-to-revise-spurious-behavior",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-04-28-reveal-to-revise-spurious-behavior",
+   "target": "c:Exploration & stress testing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-04-wavelet-lesion-detection-retina",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-04-wavelet-lesion-detection-retina",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-04-wavelet-lesion-detection-retina",
+   "target": "c:Representation learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2026-05-04-wavelet-lesion-detection-retina",
    "target": "c:Segmentation & detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-04-wavelet-lesion-detection-retina",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-04-wavelet-lesion-detection-retina",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-04-wavelet-lesion-detection-retina",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-11-cdep-penalizing-explanations",
+   "target": "c:Auditing",
    "kind": "computational",
    "w": 1
   },
@@ -11342,7 +12094,37 @@
   },
   {
    "source": "review:2026-05-11-cdep-penalizing-explanations",
-   "target": "c:Attribution & saliency",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-11-cdep-penalizing-explanations",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-11-cdep-penalizing-explanations",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-11-cdep-penalizing-explanations",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-11-cdep-penalizing-explanations",
+   "target": "c:Posterior acoustic effects",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:Auditing",
    "kind": "computational",
    "w": 1
   },
@@ -11360,25 +12142,61 @@
   },
   {
    "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:Distribution shift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
    "target": "c:Cross-sectional imaging",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
-   "target": "c:Faithfulness",
+   "target": "c:Out-of-distribution detection",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
-   "target": "c:Deployment & drift",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:External validation",
    "kind": "computational",
    "w": 1
   },
   {
-   "source": "review:2026-05-24-existence-of-simpler-models",
-   "target": "c:Shortcut learning",
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-18-shortcut-learning-data-acquisition-bias",
+   "target": "c:Predictive values",
    "kind": "computational",
    "w": 1
   },
@@ -11401,20 +12219,80 @@
    "w": 1
   },
   {
-   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
-   "target": "c:Calibration",
+   "source": "review:2026-05-24-existence-of-simpler-models",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-24-existence-of-simpler-models",
+   "target": "c:Preprocessing & resampling",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-24-existence-of-simpler-models",
+   "target": "c:Clinical validity",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-24-existence-of-simpler-models",
+   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-05-30-automatic-grading-knee-oa-features",
-   "target": "c:Faithfulness",
+   "target": "c:Diagnostic reasoning",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
+   "target": "c:Concept-based methods",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
+   "target": "c:Ensembling",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
+   "target": "c:Internal validation",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-05-30-automatic-grading-knee-oa-features",
    "target": "c:External validation",
+   "kind": "computational",
+   "w": 2
+  },
+  {
+   "source": "review:2026-05-30-automatic-grading-knee-oa-features",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -11428,7 +12306,7 @@
    "source": "review:2026-06-06-silverlining-data-first-shortcuts",
    "target": "c:Auditing",
    "kind": "computational",
-   "w": 1
+   "w": 2
   },
   {
    "source": "review:2026-06-06-silverlining-data-first-shortcuts",
@@ -11444,7 +12322,43 @@
   },
   {
    "source": "review:2026-06-06-silverlining-data-first-shortcuts",
-   "target": "c:Spurious correlation",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-06-silverlining-data-first-shortcuts",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-06-silverlining-data-first-shortcuts",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-06-silverlining-data-first-shortcuts",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-06-silverlining-data-first-shortcuts",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-06-silverlining-data-first-shortcuts",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-13-counterfactual-shortcut-utilization",
+   "target": "c:Auditing",
    "kind": "computational",
    "w": 1
   },
@@ -11456,14 +12370,32 @@
   },
   {
    "source": "review:2026-06-13-counterfactual-shortcut-utilization",
+   "target": "c:Causal inference",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-13-counterfactual-shortcut-utilization",
    "target": "c:Neurological disease",
    "kind": "clinical",
    "w": 1
   },
   {
    "source": "review:2026-06-13-counterfactual-shortcut-utilization",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-13-counterfactual-shortcut-utilization",
    "target": "c:Evaluation metrics",
    "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-13-counterfactual-shortcut-utilization",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -11479,8 +12411,14 @@
    "w": 2
   },
   {
+   "source": "review:2026-06-13-counterfactual-shortcut-utilization",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
-   "target": "c:Calibration",
+   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
@@ -11489,6 +12427,72 @@
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 2
+  },
+  {
+   "source": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
+   "target": "c:Comparative workflow evaluation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
+   "target": "c:Clinical validity",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-19-multi-resolution-tone-mapping-ultrasound",
+   "target": "c:Clinical utility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-25-international-clinical-dr-severity-scale",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-25-international-clinical-dr-severity-scale",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-25-international-clinical-dr-severity-scale",
+   "target": "c:Intended use specification",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-25-international-clinical-dr-severity-scale",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-06-25-international-clinical-dr-severity-scale",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2026-06-25-international-clinical-dr-severity-scale",
@@ -11510,7 +12514,43 @@
   },
   {
    "source": "review:2026-07-02-weight-space-correlation-analysis",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-02-weight-space-correlation-analysis",
    "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-02-weight-space-correlation-analysis",
+   "target": "c:Counterfactual",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-02-weight-space-correlation-analysis",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Causal inference",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Gallbladder disease",
    "kind": "clinical",
    "w": 1
   },
@@ -11533,6 +12573,60 @@
    "w": 2
   },
   {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Concept-based methods",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Clinical feature annotation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-09-birads-net-explainable-breast-us",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
+   "target": "c:Diagnostic reasoning",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
    "target": "c:Evaluation metrics",
    "kind": "computational",
@@ -11540,7 +12634,31 @@
   },
   {
    "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
+   "target": "c:Representation learning",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
    "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
+   "target": "c:Concept-based methods",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-15-clear-auditable-foundation-model-radiology",
+   "target": "c:Deployment & drift",
    "kind": "computational",
    "w": 1
   },
@@ -11558,13 +12676,25 @@
   },
   {
    "source": "review:2026-07-21-knee-xrai-explainable-kl-grading",
-   "target": "c:Plausibility",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-21-knee-xrai-explainable-kl-grading",
+   "target": "c:Calibration",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-07-21-knee-xrai-explainable-kl-grading",
-   "target": "c:Deployment & drift",
+   "target": "c:Internal validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-21-knee-xrai-explainable-kl-grading",
+   "target": "c:External validation",
    "kind": "computational",
    "w": 1
   },
@@ -11576,8 +12706,8 @@
   },
   {
    "source": "review:2026-07-28-auditing-inference-processes-generative-counterfactuals",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -11585,6 +12715,24 @@
    "target": "c:Ultrasound acquisition",
    "kind": "clinical",
    "w": 2
+  },
+  {
+   "source": "review:2026-07-28-auditing-inference-processes-generative-counterfactuals",
+   "target": "c:Sonographic features",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-28-auditing-inference-processes-generative-counterfactuals",
+   "target": "c:Faithfulness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-07-28-auditing-inference-processes-generative-counterfactuals",
+   "target": "c:Plausibility",
+   "kind": "computational",
+   "w": 1
   },
   {
    "source": "review:2026-07-28-auditing-inference-processes-generative-counterfactuals",
@@ -11599,12 +12747,6 @@
    "w": 1
   },
   {
-   "source": "review:2026-07-28-auditing-inference-processes-generative-counterfactuals",
-   "target": "c:Clinical evidence reliance",
-   "kind": "computational",
-   "w": 1
-  },
-  {
    "source": "review:2026-08-04-medical-algorithmic-audit",
    "target": "c:Auditing",
    "kind": "computational",
@@ -11612,9 +12754,9 @@
   },
   {
    "source": "review:2026-08-04-medical-algorithmic-audit",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 2
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
   },
   {
    "source": "review:2026-08-04-medical-algorithmic-audit",
@@ -11629,8 +12771,44 @@
    "w": 1
   },
   {
+   "source": "review:2026-08-04-medical-algorithmic-audit",
+   "target": "c:Robustness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-04-medical-algorithmic-audit",
+   "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
    "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Causal inference",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Confounding",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Faithfulness",
    "kind": "computational",
    "w": 1
   },
@@ -11647,6 +12825,54 @@
    "w": 1
   },
   {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Identifiability criterion",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Identifiability analysis",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Causal identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Measurement identifiability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-10-concept-gradients-nonlinear-interpretation",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
+   "target": "c:Uncertainty & abstention",
+   "kind": "computational",
+   "w": 1
+  },
+  {
    "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
    "target": "c:Calibration",
    "kind": "computational",
@@ -11660,7 +12886,19 @@
   },
   {
    "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
-   "target": "c:Exploration & stress testing",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
+   "target": "c:Sonographic features",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
+   "target": "c:Deployment & drift",
    "kind": "computational",
    "w": 1
   },
@@ -11672,7 +12910,13 @@
   },
   {
    "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
-   "target": "c:Internal validation",
+   "target": "c:Operating point selection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
+   "target": "c:Ensembling",
    "kind": "computational",
    "w": 1
   },
@@ -11683,8 +12927,8 @@
    "w": 1
   },
   {
-   "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
-   "target": "c:Shortcut learning",
+   "source": "review:2026-08-16-stress-testing-clinic-readiness-dermatology",
+   "target": "c:Clinical assessability",
    "kind": "computational",
    "w": 1
   },
@@ -11696,7 +12940,25 @@
   },
   {
    "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
-   "target": "c:Segmentation & detection",
+   "target": "c:Evaluation metrics",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
+   "target": "c:Distribution shift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
+   "target": "c:Plausibility",
    "kind": "computational",
    "w": 1
   },
@@ -11708,7 +12970,7 @@
   },
   {
    "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
-   "target": "c:Operating point selection",
+   "target": "c:Out-of-distribution detection",
    "kind": "computational",
    "w": 1
   },
@@ -11720,7 +12982,25 @@
   },
   {
    "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
    "target": "c:External validation",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
+   "target": "c:Clinical assessability",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-23-robustness-stress-testing-medical-image-classification",
+   "target": "c:Pretest probability",
    "kind": "computational",
    "w": 1
   },
@@ -11732,20 +13012,8 @@
   },
   {
    "source": "review:2026-08-30-monet-transparent-medical-image-ai",
-   "target": "c:Shortcut learning",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-08-30-monet-transparent-medical-image-ai",
-   "target": "c:Confounding",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-08-30-monet-transparent-medical-image-ai",
-   "target": "c:Spurious correlation",
-   "kind": "computational",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
    "w": 1
   },
   {
@@ -11756,13 +13024,31 @@
   },
   {
    "source": "review:2026-08-30-monet-transparent-medical-image-ai",
-   "target": "c:Attribution & saliency",
+   "target": "c:Subgroup & fairness",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-08-30-monet-transparent-medical-image-ai",
-   "target": "c:Counterfactual",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-30-monet-transparent-medical-image-ai",
+   "target": "c:Distribution shift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-30-monet-transparent-medical-image-ai",
+   "target": "c:Ultrasound acquisition",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-30-monet-transparent-medical-image-ai",
+   "target": "c:Concept-based methods",
    "kind": "computational",
    "w": 1
   },
@@ -11774,7 +13060,13 @@
   },
   {
    "source": "review:2026-08-30-monet-transparent-medical-image-ai",
-   "target": "c:Clinical evidence reliance",
+   "target": "c:Out-of-distribution detection",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-08-30-monet-transparent-medical-image-ai",
+   "target": "c:Reference standard adjudication",
    "kind": "computational",
    "w": 1
   },
@@ -11792,13 +13084,31 @@
   },
   {
    "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
-   "target": "c:Confounding",
+   "target": "c:Gallbladder disease",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
+   "target": "c:Uncertainty & abstention",
    "kind": "computational",
    "w": 1
   },
   {
    "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
-   "target": "c:Distribution shift",
+   "target": "c:Subgroup & fairness",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
+   "target": "c:Calibration",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
+   "target": "c:Evaluation metrics",
    "kind": "computational",
    "w": 1
   },
@@ -11810,43 +13120,13 @@
   },
   {
    "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
-   "target": "c:Faithfulness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
-   "target": "c:Counterfactual",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
    "target": "c:Preprocessing & resampling",
    "kind": "computational",
    "w": 2
   },
   {
    "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
-   "target": "c:Objective design",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
    "target": "c:Ensembling",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
-   "target": "c:Internal validation",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2026-09-05-auditing-pointwise-reliability-after-learning",
-   "target": "c:Clinical evidence reliance",
    "kind": "computational",
    "w": 1
   },
