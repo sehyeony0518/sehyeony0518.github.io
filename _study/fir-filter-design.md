@@ -6,7 +6,8 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
-order: 4
+subgroup: "Fourier Computation & Filter Design"
+order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-15"

@@ -6,6 +6,7 @@ tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "auditing"
 category_title: "Evidence Auditing"
+subgroup: "Intervention, Representation & Auditability"
 order: 5
 source: "Independent study"
 written: true

@@ -5,7 +5,8 @@ description: "Time-critical diagnosis and imaging triage, and why decision laten
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"
-category_title: "Neurology"
+category_title: "Neurology & Sleep Medicine"
+subgroup: "Acute & Episodic Neurology"
 order: 1
 source: "Lecture"
 written: true

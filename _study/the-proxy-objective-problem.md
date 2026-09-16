@@ -5,8 +5,9 @@ description: "Cross-entropy is not what anyone wants. The metric that matters is
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalization & Reliability"
-order: 14
+category_title: "Evaluation, Generalisation & Reliability"
+subgroup: "Task Definition & Ground Truth"
+order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-15"

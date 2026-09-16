@@ -6,6 +6,7 @@ tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "alignment"
 category_title: "Clinical Alignment & Interpretability"
+subgroup: "Clinical Supervision & Concepts"
 order: 1
 source: "Independent study"
 written: true

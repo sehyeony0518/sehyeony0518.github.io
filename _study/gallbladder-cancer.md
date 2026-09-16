@@ -7,7 +7,7 @@ tab_title: "Clinical Medicine"
 category: "hepatobiliary"
 category_title: "Hepatobiliary Medicine & Imaging"
 subgroup: "Gallbladder Disease"
-order: 7
+order: 8
 source: "Independent study"
 written: true
 updated: "2026-09-08"

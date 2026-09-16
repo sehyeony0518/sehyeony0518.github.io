@@ -2,12 +2,12 @@
 layout: study_note
 title: "Shortcut Learning and Confounding in Gallbladder Ultrasound"
 description: "The confounders specific to this problem, and telling a sonographic finding from an acquisition correlate."
-tab: "clinical-medicine"
-tab_title: "Clinical Medicine"
-category: "hepatobiliary"
-category_title: "Hepatobiliary Medicine & Imaging"
-subgroup: "Clinical-to-AI Connections"
-order: 18
+tab: "trustworthy-ai"
+tab_title: "Trustworthy AI"
+category: "gallbladder-ai"
+category_title: "Gallbladder AI: Applied Research"
+subgroup: "Shortcuts & Confounding"
+order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-08"

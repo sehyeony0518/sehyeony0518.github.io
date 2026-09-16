@@ -5,8 +5,9 @@ description: "Learning from medical data whose labels are scarce, noisy, or only
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 5
+category_title: "Learning Models & Representation"
+subgroup: "Learning & Representation Foundations"
+order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-08"

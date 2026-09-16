@@ -6,6 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "decision-and-control"
 category_title: "Decision Making & Reinforcement Learning"
+subgroup: "Tree Search & Learned Pruning"
 order: 3
 source: "Independent study"
 written: true

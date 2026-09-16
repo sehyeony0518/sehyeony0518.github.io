@@ -6,6 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimisation"
 category_title: "Linear Algebra & Optimisation"
+subgroup: "Linear Algebra & Geometry"
 order: 2
 source: "Independent study"
 written: true

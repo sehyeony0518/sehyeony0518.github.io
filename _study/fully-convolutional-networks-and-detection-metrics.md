@@ -5,8 +5,9 @@ description: "Deriving fully convolutional networks from fully-connected layers,
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 9
+category_title: "Learning Models & Representation"
+subgroup: "Spatial Models & Visual Prediction"
+order: 11
 source: "Independent study"
 written: true
 updated: "2026-09-15"

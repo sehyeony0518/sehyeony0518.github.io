@@ -5,7 +5,8 @@ description: "Perception as Bayesian inference: retinal-image ambiguity, illumin
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
+category_title: "Learning Models & Representation"
+subgroup: "Learning & Representation Foundations"
 order: 1
 source: "Independent study"
 written: true

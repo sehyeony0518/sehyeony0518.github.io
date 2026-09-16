@@ -4,9 +4,10 @@ title: "Critical Care Medicine"
 description: "Continuous monitoring data, deterioration prediction, and the ethical weight carried by such a model."
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
-category: "critical-care"
-category_title: "Critical Care Medicine"
-order: 1
+category: "clinical-foundations"
+category_title: "Clinical Foundations & Systemic Disease"
+subgroup: "Cardiovascular Disease & Organ Failure"
+order: 3
 source: "Lecture"
 written: true
 updated: "2026-09-08"

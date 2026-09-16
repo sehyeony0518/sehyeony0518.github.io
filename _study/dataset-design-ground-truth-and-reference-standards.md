@@ -5,8 +5,9 @@ description: "What counts as truth in a medical dataset, and how that choice bou
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalization & Reliability"
-order: 2
+category_title: "Evaluation, Generalisation & Reliability"
+subgroup: "Task Definition & Ground Truth"
+order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"

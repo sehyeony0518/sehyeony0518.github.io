@@ -6,6 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"
 category_title: "Probability & Statistical Inference"
+subgroup: "Bayesian Imaging & Model Uncertainty"
 order: 12
 source: "Independent study"
 written: true

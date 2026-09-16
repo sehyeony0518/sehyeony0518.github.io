@@ -5,8 +5,9 @@ description: "Deriving query-key-value attention, softmax, square-root dimension
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 13
+category_title: "Learning Models & Representation"
+subgroup: "Sequence Models & Attention"
+order: 9
 source: "Independent study"
 written: true
 updated: "2026-09-15"

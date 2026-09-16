@@ -4,9 +4,10 @@ title: "Circadian Rhythm Disorders"
 description: "Wearable and continuous data, and what changes when the signal is a long time series."
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
-category: "sleep-circadian"
-category_title: "Sleep & Circadian Medicine"
-order: 1
+category: "neurology"
+category_title: "Neurology & Sleep Medicine"
+subgroup: "Sleep & Circadian Regulation"
+order: 5
 source: "Lecture"
 written: true
 updated: "2026-09-08"

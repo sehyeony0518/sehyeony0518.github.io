@@ -6,7 +6,8 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"
 category_title: "Signals, Systems & Transforms"
-order: 6
+subgroup: "Sampling, Interpolation & Estimation"
+order: 8
 source: "Independent study"
 written: true
 updated: "2026-09-15"

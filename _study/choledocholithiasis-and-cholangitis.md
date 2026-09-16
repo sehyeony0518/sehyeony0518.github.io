@@ -7,7 +7,7 @@ tab_title: "Clinical Medicine"
 category: "hepatobiliary"
 category_title: "Hepatobiliary Medicine & Imaging"
 subgroup: "Biliary Disease"
-order: 9
+order: 10
 source: "Independent study"
 written: true
 updated: "2026-09-08"

@@ -6,8 +6,8 @@ tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"
 category_title: "Hepatobiliary Medicine & Imaging"
-subgroup: "Biliary Disease"
-order: 12
+subgroup: "Liver Lesions & Multimodal Correlation"
+order: 13
 source: "Independent study"
 written: true
 updated: "2026-09-08"

@@ -5,8 +5,9 @@ description: "Deriving translation invariance and equivariance, including convol
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 11
+category_title: "Learning Models & Representation"
+subgroup: "Spatial Models & Visual Prediction"
+order: 13
 source: "Independent study"
 written: true
 updated: "2026-09-15"

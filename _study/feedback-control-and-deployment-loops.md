@@ -6,6 +6,7 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"
 category_title: "Feedback Control & Classical Design"
+subgroup: "Feedback & Local System Models"
 order: 1
 source: "Independent study"
 written: true

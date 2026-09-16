@@ -4,9 +4,10 @@ title: "Allergy and Clinical Immunology"
 description: "Diagnostic testing with imperfect specificity, and the role of clinical history in interpreting a result."
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
-category: "rheum-immunology"
-category_title: "Rheumatology & Clinical Immunology"
-order: 2
+category: "clinical-foundations"
+category_title: "Clinical Foundations & Systemic Disease"
+subgroup: "Immune & Skin Disease"
+order: 4
 source: "Lecture"
 written: true
 updated: "2026-09-08"

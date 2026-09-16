@@ -12,63 +12,152 @@ tabs:
     title: "Trustworthy AI"
     description: "The purpose: causality, auditing, evaluation, deployment."
 categories:
+  # AI entry route: probability orders 1-4, algebra, signals, probability orders 5-12,
+  # learning models, probability order 13, feedback control, then decision making.
+  # Clinical entry: clinical-foundations, then the organ-specific modules in listed order.
+  # Clinical branches are parallel applications, not dependencies between diseases.
+  # Trustworthy AI follows the listed category order; gallbladder-ai is the capstone.
+
+  # Conditioning to estimators and decisions; sampling to tests; information and mixtures to EM; Bayesian applications.
   - id: "probability-and-inference"
     tab: "ai-foundations"
     title: "Probability & Statistical Inference"
+    subgroups:
+      - "Conditioning, Estimation & Decisions"
+      - "Sampling & Statistical Evidence"
+      - "Latent Variables & Approximate Inference"
+      - "Bayesian Imaging & Model Uncertainty"
+
+  # After probability orders 1-4: linear algebra and derivatives, then losses, gradient methods, curvature and duality.
   - id: "algebra-and-optimisation"
     tab: "ai-foundations"
     title: "Linear Algebra & Optimisation"
+    subgroups:
+      - "Linear Algebra & Geometry"
+      - "Losses & Gradient Optimisation"
+      - "Constraints & Duality"
+
+  # After algebra: exponentials and transfer functions, then DFT/FFT, phase and filters, resampling and estimation, graph spectra.
   - id: "signals-and-systems"
     tab: "ai-foundations"
     title: "Signals, Systems & Transforms"
+    subgroups:
+      - "Representations & System Response"
+      - "Fourier Computation & Filter Design"
+      - "Sampling, Interpolation & Estimation"
+      - "Graph Signals & Spectral Methods"
+
+  # After algebra, signals and probability orders 1-12: learning basics, margins and embeddings, sequence models, spatial prediction.
   - id: "neural-networks"
     tab: "ai-foundations"
-    title: "Neural Networks & Representation"
+    title: "Learning Models & Representation"
+    subgroups:
+      - "Learning & Representation Foundations"
+      - "Margins, Kernels & Embeddings"
+      - "Sequence Models & Attention"
+      - "Spatial Models & Visual Prediction"
+
+  # After signals: feedback and linearization, then transient response and stability, sensitivity and controller design.
   - id: "feedback-control"
     tab: "ai-foundations"
     title: "Feedback Control & Classical Design"
+    subgroups:
+      - "Feedback & Local System Models"
+      - "Transient Response & Stability"
+      - "Performance Limits & Controller Design"
+
+  # After probability, learning models and feedback: environments and policies, MCTS, then learned limits on search width and depth.
   - id: "decision-and-control"
     tab: "ai-foundations"
     title: "Decision Making & Reinforcement Learning"
+    subgroups:
+      - "Environments & Policies"
+      - "Tree Search & Learned Pruning"
+
+  # Translation supplies the evidence framework; vascular disease leads to organ failure; immune testing leads to systemic and skin diagnosis.
+  - id: "clinical-foundations"
+    tab: "clinical-medicine"
+    title: "Clinical Foundations & Systemic Disease"
+    subgroups:
+      - "Mechanisms, Evidence & Translation"
+      - "Cardiovascular Disease & Organ Failure"
+      - "Immune & Skin Disease"
+
+  # Anatomy and physics to normal examination and acquisition quality; common disease and benign mimics to malignancy; ducts to liver and multimodal synthesis.
   - id: "hepatobiliary"
     tab: "clinical-medicine"
     title: "Hepatobiliary Medicine & Imaging"
+    subgroups:
+      - "Anatomy & Imaging Foundations"
+      - "Gallbladder Disease"
+      - "Biliary Disease"
+      - "Liver Lesions & Multimodal Correlation"
+
+  # Acute imaging and episodic events, then cognitive and movement degeneration, then longitudinal sleep-wake assessment.
   - id: "neurology"
     tab: "clinical-medicine"
-    title: "Neurology"
+    title: "Neurology & Sleep Medicine"
+    subgroups:
+      - "Acute & Episodic Neurology"
+      - "Neurodegeneration"
+      - "Sleep & Circadian Regulation"
+
+  # Screening and detection in lung and stomach, then multimodal staging and treatment planning in head and neck cancer.
   - id: "oncology"
     tab: "clinical-medicine"
     title: "Oncology"
-  - id: "cardiovascular"
-    tab: "clinical-medicine"
-    title: "Cardiovascular Medicine"
-  - id: "rheum-immunology"
-    tab: "clinical-medicine"
-    title: "Rheumatology & Clinical Immunology"
-  - id: "dermatology"
-    tab: "clinical-medicine"
-    title: "Dermatology"
-  - id: "sleep-circadian"
-    tab: "clinical-medicine"
-    title: "Sleep & Circadian Medicine"
-  - id: "critical-care"
-    tab: "clinical-medicine"
-    title: "Critical Care Medicine"
-  - id: "translational"
-    tab: "clinical-medicine"
-    title: "Translational Medicine"
+    subgroups:
+      - "Detection & Screening"
+      - "Staging & Treatment Planning"
+
+  # After probability, learning models and clinical foundations: task and labels, validation and metrics, calibration and shift, failures, utility and reproducibility.
+  - id: "evaluation"
+    tab: "trustworthy-ai"
+    title: "Evaluation, Generalisation & Reliability"
+    subgroups:
+      - "Task Definition & Ground Truth"
+      - "Validation Design & Performance Measures"
+      - "Calibration & Generalisation"
+      - "Failure Analysis & Clinical Translation"
+
+  # After probability and evaluation: causal graphs, confounding and selection, then spurious associations and learned shortcuts.
   - id: "causality"
     tab: "trustworthy-ai"
     title: "Causality, Bias & Shortcuts"
+    subgroups:
+      - "Causal Structure & Dataset Selection"
+      - "Spurious Associations & Shortcut Learning"
+
+  # After learning models and causality: clinical supervision and concepts, explanation methods, then faithfulness criteria.
   - id: "alignment"
     tab: "trustworthy-ai"
     title: "Clinical Alignment & Interpretability"
+    subgroups:
+      - "Clinical Supervision & Concepts"
+      - "Explanations & Clinical Faithfulness"
+
+  # After evaluation and alignment: define audit scope and reliance, test interventions and representations, then design for auditability.
   - id: "auditing"
     tab: "trustworthy-ai"
     title: "Evidence Auditing"
-  - id: "evaluation"
-    tab: "trustworthy-ai"
-    title: "Evaluation, Generalization & Reliability"
+    subgroups:
+      - "Audit Scope & Model Reliance"
+      - "Intervention, Representation & Auditability"
+
+  # After evaluation and auditing: pretrained and multimodal models, adaptation across sites and time, generative evaluation, agents and monitoring.
   - id: "systems"
     tab: "trustworthy-ai"
     title: "Medical AI Systems & Deployment"
+    subgroups:
+      - "Foundation & Multimodal Models"
+      - "Adaptation Across Sites & Time"
+      - "Generative Systems, Agents & Deployment"
+
+  # After hepatobiliary, evaluation, causality, alignment and auditing: task, annotations and representations, shortcuts, faithfulness and external validation.
+  - id: "gallbladder-ai"
+    tab: "trustworthy-ai"
+    title: "Gallbladder AI: Applied Research"
+    subgroups:
+      - "Task Definition & Clinical Supervision"
+      - "Shortcuts & Confounding"
+      - "Faithfulness & External Validation"

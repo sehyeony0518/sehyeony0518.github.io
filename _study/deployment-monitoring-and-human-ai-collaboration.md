@@ -6,6 +6,7 @@ tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"
 category_title: "Medical AI Systems & Deployment"
+subgroup: "Generative Systems, Agents & Deployment"
 order: 7
 source: "Independent study"
 written: true

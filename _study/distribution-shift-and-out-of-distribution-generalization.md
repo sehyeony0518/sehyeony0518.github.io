@@ -5,8 +5,9 @@ description: "What breaks when the hospital, scanner, operator, or population ch
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"
-category_title: "Evaluation, Generalization & Reliability"
-order: 9
+category_title: "Evaluation, Generalisation & Reliability"
+subgroup: "Calibration & Generalisation"
+order: 11
 source: "Independent study"
 written: true
 updated: "2026-09-08"

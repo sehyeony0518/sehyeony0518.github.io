@@ -5,8 +5,9 @@ description: "Deriving recommendation from sparse categorical features through e
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 8
+category_title: "Learning Models & Representation"
+subgroup: "Margins, Kernels & Embeddings"
+order: 7
 source: "Independent study"
 written: true
 updated: "2026-09-15"

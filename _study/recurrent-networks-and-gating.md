@@ -5,8 +5,9 @@ description: "State carried across time, why gradients through it vanish or expl
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"
-category_title: "Neural Networks & Representation"
-order: 4
+category_title: "Learning Models & Representation"
+subgroup: "Sequence Models & Attention"
+order: 8
 source: "Independent study"
 written: true
 updated: "2026-09-15"

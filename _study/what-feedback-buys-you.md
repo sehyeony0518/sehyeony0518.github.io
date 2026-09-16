@@ -6,7 +6,8 @@ tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"
 category_title: "Feedback Control & Classical Design"
-order: 4
+subgroup: "Performance Limits & Controller Design"
+order: 5
 source: "Lecture notes, Ajou University"
 written: true
 updated: "2026-09-15"
