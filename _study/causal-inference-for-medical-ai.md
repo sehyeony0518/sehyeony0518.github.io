@@ -10,6 +10,9 @@ order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-06-13-counterfactual-shortcut-utilization"
+  - "2026-04-02-causal-alignment-disease-diagnosis"
 ---
 
 Removing a caliper can change a classifier without changing the patient's disease. I use causal inference to keep that computational effect separate from claims about acquisition, diagnosis, and biological mechanisms.

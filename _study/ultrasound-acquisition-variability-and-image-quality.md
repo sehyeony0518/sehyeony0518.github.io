@@ -11,6 +11,10 @@ order: 14
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-12-25-qiba-liver-fat-attenuation"
+  - "2026-06-19-multi-resolution-tone-mapping-ultrasound"
+  - "2026-05-18-shortcut-learning-data-acquisition-bias"
 ---
 
 A gallbladder image is the result of tissue, an acoustic path, operator choices, and machine processing. I judge its quality by whether the finding needed for a particular decision remains assessable, rather than by how smooth or bright the image looks.

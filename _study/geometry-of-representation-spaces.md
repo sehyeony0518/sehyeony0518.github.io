@@ -10,6 +10,10 @@ order: 3
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-09-19-tcav-concept-activation-vectors"
+  - "2026-08-10-concept-gradients-nonlinear-interpretation"
+  - "2026-07-02-weight-space-correlation-analysis"
 ---
 
 A representation does not come with a uniquely correct meaning of “near.” Euclidean distance, cosine similarity, and covariance-adjusted distance preserve different relationships. Before interpreting a neighborhood, I need to identify which changes its geometry treats as important and which changes it deliberately ignores.

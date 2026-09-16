@@ -13,6 +13,8 @@ featured: true
 updated: "2026-09-08"
 papers:
   - "2025-10-28-degrave-covid-shortcut"
+  - "2026-06-13-counterfactual-shortcut-utilization"
+  - "2025-12-06-roentmod-counterfactual-cxr"
 ---
 
 A dependence claim needs a comparison, which information changes, which model stays fixed, and which output is measured. I would reserve “the model relies on this clinical evidence” for results that specify all three.

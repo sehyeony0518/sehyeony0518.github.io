@@ -10,6 +10,10 @@ order: 14
 source: "Independent study"
 written: true
 updated: "2026-09-15"
+papers:
+  - "2026-02-03-right-for-the-right-reasons"
+  - "2026-05-11-cdep-penalizing-explanations"
+  - "2026-02-09-underspecification-credibility-ml"
 ---
 
 In the ideal case the quantity you optimise and the quantity you are judged by are the same function, and everyone is happy. Linear regression evaluated by mean squared error is that case. Almost nothing else is.

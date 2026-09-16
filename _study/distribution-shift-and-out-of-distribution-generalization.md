@@ -10,6 +10,10 @@ order: 9
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-10-02-zech-variable-generalization"
+  - "2026-05-18-shortcut-learning-data-acquisition-bias"
+  - "2026-08-30-monet-transparent-medical-image-ai"
 ---
 
 A model is evaluated under one joint distribution of inputs and targets and used under another. Understanding transfer requires stating which parts of that distribution change, which relationships are assumed to remain stable, and whether the target conditions are represented at all.

@@ -10,6 +10,8 @@ order: 3
 source: "Lecture"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-06-13-counterfactual-shortcut-utilization"
 ---
 
 ## Core question and definition

@@ -10,6 +10,8 @@ order: 1
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-07-02-weight-space-correlation-analysis"
 ---
 
 A representation matrix contains two linked kinds of structure: directions in feature space and patterns across observations. Singular value decomposition, or SVD, connects them. From that connection, covariance eigenvalues, principal components, projection, reconstruction error, and several notions of effective rank follow.

@@ -13,6 +13,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-11-29-concept-bottleneck-models"
+  - "2026-07-09-birads-net-explainable-breast-us"
+  - "2025-10-22-concept-bottleneck-breast-ultrasound"
 ---
 
 ## Core question and definition

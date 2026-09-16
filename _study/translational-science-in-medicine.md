@@ -10,6 +10,8 @@ order: 1
 source: "Lecture"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-12-25-qiba-liver-fat-attenuation"
 ---
 
 ## Core question and definition

@@ -10,6 +10,10 @@ order: 1
 source: "Lecture"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-08-16-stress-testing-clinic-readiness-dermatology"
+  - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
+  - "2026-08-30-monet-transparent-medical-image-ai"
 ---
 
 Dermatologic diagnosis connects visible morphology to a process in the skin, using distribution, symptoms, palpation, and change over time. A photograph can preserve useful evidence while omitting the information that distinguishes two otherwise similar conditions.

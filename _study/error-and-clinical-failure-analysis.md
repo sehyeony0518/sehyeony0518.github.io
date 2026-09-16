@@ -13,6 +13,7 @@ updated: "2026-09-08"
 papers:
   - "2025-11-10-oakden-rayner-hidden-stratification"
   - "2025-10-28-degrave-covid-shortcut"
+  - "2026-04-28-reveal-to-revise-spurious-behavior"
 ---
 
 An error case is a disagreement with a specified reference. Clinical failure analysis asks where the failure arose, what consequences it could produce, and what evidence would justify a particular repair.

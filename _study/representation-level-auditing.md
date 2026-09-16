@@ -12,6 +12,8 @@ written: true
 updated: "2026-09-08"
 papers:
   - "2025-09-19-tcav-concept-activation-vectors"
+  - "2026-07-02-weight-space-correlation-analysis"
+  - "2026-03-27-boland-shortcuts-radiology"
 ---
 
 A representation can contain a clinical finding without the diagnostic head using it. I use internal audits to separate information that is accessible, geometry that is shared, and sensitivity that reaches the final prediction.

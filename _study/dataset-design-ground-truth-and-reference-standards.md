@@ -10,6 +10,10 @@ order: 2
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-01-08-busbra-breast-ultrasound-dataset"
+  - "2025-12-19-eyepacs-grading-protocol"
+  - "2026-06-25-international-clinical-dr-severity-scale"
 ---
 
 A medical dataset contains labels produced by a reference process. It also contains patients selected through an enrollment process. Both processes determine what an evaluation estimates.

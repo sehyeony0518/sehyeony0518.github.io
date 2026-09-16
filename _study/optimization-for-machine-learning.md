@@ -10,6 +10,9 @@ order: 4
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2026-02-03-right-for-the-right-reasons"
+  - "2026-02-09-underspecification-credibility-ml"
 ---
 
 Optimization turns an objective into a sequence of parameter choices. Its guarantees depend on properties of that objective: convexity determines whether local optimality is sufficient, smoothness limits how inaccurate a local linear prediction can become, and strong convexity prevents the objective from becoming arbitrarily flat near its minimizer.

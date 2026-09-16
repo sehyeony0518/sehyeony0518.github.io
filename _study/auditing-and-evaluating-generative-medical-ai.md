@@ -10,6 +10,8 @@ order: 6
 source: "Independent study"
 written: true
 updated: "2026-09-08"
+papers:
+  - "2025-12-06-roentmod-counterfactual-cxr"
 ---
 
 ## Core question and definition
