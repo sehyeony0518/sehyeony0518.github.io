@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: insight
 title: "Su-In Lee on SHAP Consistency, Clinician Decisions, and Auditing Image Models"
 date: 2026-09-10 12:00:00 +0900
 description: "Notes on SHAP’s axioms, image ablation, and the Prescience clinician study, with implications for evaluating clinical faithfulness audits of medical image classifiers."
