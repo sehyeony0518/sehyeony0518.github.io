@@ -48,7 +48,7 @@ Damage can persist after treatment reduces active inflammation. Consequently, a 
 
 Degenerative joint disease involves failure and remodelling of the joint as an organ, including cartilage, bone, and surrounding structures. Mechanical loading and altered joint mechanics matter. It can also have inflammatory components, so a simple “inflammatory versus noninflammatory” split is imperfect.
 
-Crystal deposition can trigger an intense innate inflammatory response. Infection can also produce a hot, swollen, painful joint. The visible endpoint—fluid, swelling, or synovial change—does not uniquely identify the initiating mechanism.
+Crystal deposition can trigger an intense innate inflammatory response. Infection can also produce a hot, swollen, painful joint. The visible endpoint, fluid, swelling, or synovial change, does not uniquely identify the initiating mechanism.
 
 In systemic autoimmune disease, immune-mediated injury may involve skin, blood vessels, muscle, lung, kidney, or other organs. In lupus, for example, autoantibodies and immune-complex-related processes can contribute to injury in several tissues. A joint image cannot establish the full distribution of systemic involvement.
 

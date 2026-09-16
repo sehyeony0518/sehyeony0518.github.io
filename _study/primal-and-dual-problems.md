@@ -12,7 +12,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-Duality is one of those topics where opening a textbook at page one is a bad plan — there is far too much of it, and almost none of the first hundred pages is what you need to read a paper. What you actually need is small. The underlying idea is not complicated; proving that it holds in generality was the hard part, and that work is done.
+Duality is one of those topics where opening a textbook at page one is a bad plan: there is far too much of it, and almost none of the first hundred pages is what you need to read a paper. What you actually need is small. The underlying idea is not complicated; proving that it holds in generality was the hard part, and that work is done.
 
 ## Core question and definition
 
@@ -28,7 +28,7 @@ $$
 \min_{x'} f(x',y) \;\le\; f(x,y) \;\le\; \max_{y'} f(x,y').
 $$
 
-The left end depends only on $$y$$; the right end only on $$x$$. So maximising the left over $$y$$ and minimising the right over $$x$$ leaves the inequality intact, and that is the result. It is worth having the proof once, but the thing to carry away is the statement — **committing to your move first can only cost you**. Whoever chooses second gets to respond.
+The left end depends only on $$y$$; the right end only on $$x$$. So maximising the left over $$y$$ and minimising the right over $$x$$ leaves the inequality intact, and that is the result. It is worth having the proof once, but the thing to carry away is the statement: **committing to your move first can only cost you**. Whoever chooses second gets to respond.
 
 (Strictly this should be $$\sup$$ and $$\inf$$: $$\max_x 1/x$$ over $$x>0$$ does not exist while the supremum does. Engineering texts write $$\max$$ and mean $$\sup$$, and chasing the distinction here obscures the point rather than sharpening it.)
 
@@ -48,13 +48,13 @@ $$
 F(x) = \max_{\lambda \in \mathbb{R}} \; \big[\, f_0(x) + \lambda\, h(x) \,\big].
 $$
 
-If $$h(x)=0$$ the bracket is $$f_0(x)$$ for every $$\lambda$$; if $$h(x)\neq 0$$, $$\lambda$$ can be driven to $$\pm\infty$$ and the maximum is $$+\infty$$. For an inequality constraint $$h(x)\le 0$$ the same construction works with $$\lambda \ge 0$$ — a violation still buys $$+\infty$$, and satisfaction pins the optimal multiplier at zero.
+If $$h(x)=0$$ the bracket is $$f_0(x)$$ for every $$\lambda$$; if $$h(x)\neq 0$$, $$\lambda$$ can be driven to $$\pm\infty$$ and the maximum is $$+\infty$$. For an inequality constraint $$h(x)\le 0$$ the same construction works with $$\lambda \ge 0$$, a violation still buys $$+\infty$$, and satisfaction pins the optimal multiplier at zero.
 
 So the **primal** is $$\min_x \max_\lambda L(x,\lambda)$$ and the **dual** is $$\max_\lambda \min_x L(x,\lambda)$$, with $$L$$ the Lagrangian. They are the two sides of the max-min inequality applied to the same function. Nothing has been invented; the order of two operations has been swapped, and the inequality says which direction the swap costs.
 
 ### A worked case, both ways
 
-Minimise $$x^2+y^2$$ subject to $$x+y=1$$ — the squared distance from the origin to a line, so the answer is known to be $$\tfrac12$$. With $$L = x^2+y^2+\lambda(1-x-y)$$, the inner minimisation is unconstrained, so setting derivatives to zero gives $$x = y = \lambda/2$$. Substituting back,
+Minimise $$x^2+y^2$$ subject to $$x+y=1$$: the squared distance from the origin to a line, so the answer is known to be $$\tfrac12$$. With $$L = x^2+y^2+\lambda(1-x-y)$$, the inner minimisation is unconstrained, so setting derivatives to zero gives $$x = y = \lambda/2$$. Substituting back,
 
 $$
 g(\lambda) = \frac{\lambda^2}{2} + \lambda\left(1 - \lambda\right) = \lambda - \frac{\lambda^2}{2},
@@ -70,7 +70,7 @@ The other reasons are more common in practice than the size argument: some metho
 
 ### The duality gap is a measurement, not a defect
 
-The difference between the primal and dual optima is the **duality gap**. For convex problems under mild conditions it is zero — strong duality — which is what makes the swap lossless.[^boyd]
+The difference between the primal and dual optima is the **duality gap**. For convex problems under mild conditions it is zero, strong duality, which is what makes the swap lossless.[^boyd]
 
 When it is not zero, the situation is still better than not knowing. Suppose you have run the primal down to some feasible value and the dual up to some value. The true optimum is trapped between them. You do not know the answer, but you know how far from it you could possibly be. A gap of $$10^{-4}$$ is a certificate; an unbounded search with no dual bound gives you a number and no way to judge it.
 
@@ -96,7 +96,7 @@ $$
 x = -\tfrac12 A^{\mathsf T} y = A^{\mathsf T}(AA^{\mathsf T})^{-1} b,
 $$
 
-the right [pseudo-inverse](/study/linear-mmse-and-the-wiener-filter/) — the same answer the plain Lagrangian gives. The overdetermined case, $$\min\lVert Ax-b\rVert^2$$, has no constraint to dualise and goes straight to the normal equations, $$x = (A^{\mathsf T}A)^{-1}A^{\mathsf T}b$$.
+the right [pseudo-inverse](/study/linear-mmse-and-the-wiener-filter/): the same answer the plain Lagrangian gives. The overdetermined case, $$\min\lVert Ax-b\rVert^2$$, has no constraint to dualise and goes straight to the normal equations, $$x = (A^{\mathsf T}A)^{-1}A^{\mathsf T}b$$.
 
 Doing a solved problem twice looks wasteful. It is the point: the conjugate machinery reproduces the elementary answer here, which is the evidence that it can be trusted where no elementary answer exists.
 
@@ -104,9 +104,9 @@ Doing a solved problem twice looks wasteful. It is the point: the conjugate mach
 
 The habit worth taking from duality is not the algebra. It is that a bound from the other side is worth more than a better estimate from the same side.
 
-A [held-out score](/study/robustness-subgroup-performance-and-external-validation/) is a primal quantity: run the model, read a number. Nothing in it says how far that number could be from what deployment will produce. What supplies the other side is evidence of a different kind — a stress test that tries to make the model fail, an [attribution audit](/study/shortcut-learning-in-medical-imaging/) that looks for a shortcut rather than for accuracy, a prospective run. Those do not improve the estimate; they bracket it. A claim with only one side is a claim you cannot bound, however precisely it is reported.
+A [held-out score](/study/robustness-subgroup-performance-and-external-validation/) is a primal quantity: run the model, read a number. Nothing in it says how far that number could be from what deployment will produce. What supplies the other side is evidence of a different kind: a stress test that tries to make the model fail, an [attribution audit](/study/shortcut-learning-in-medical-imaging/) that looks for a shortcut rather than for accuracy, a prospective run. Those do not improve the estimate; they bracket it. A claim with only one side is a claim you cannot bound, however precisely it is reported.
 
-The honest limitation: strong duality is a theorem, and the evaluation analogy has no theorem. Nothing guarantees that an adversarial test and a benchmark bracket the deployment performance between them, and a model can fail in a way neither probes. The transferable part is narrower — the value of measuring from the opposite direction, and the discipline of reporting the interval instead of the point.
+The honest limitation: strong duality is a theorem, and the evaluation analogy has no theorem. Nothing guarantees that an adversarial test and a benchmark bracket the deployment performance between them, and a model can fail in a way neither probes. The transferable part is narrower: the value of measuring from the opposite direction, and the discipline of reporting the interval instead of the point.
 
 ---
 

@@ -12,7 +12,7 @@ written: true
 updated: "2026-09-15"
 ---
 
-Second-order information says how sharply a loss responds to a change in weights. For a trained network the matrix that carries it cannot be formed, let alone stored — and yet the quantities actually needed from it can be estimated with nothing but matrix-vector products.
+Second-order information says how sharply a loss responds to a change in weights. For a trained network the matrix that carries it cannot be formed, let alone stored, and yet the quantities actually needed from it can be estimated with nothing but matrix-vector products.
 
 ## Core question and definition
 
@@ -40,7 +40,7 @@ $$
 
 Writing $$v$$ in the eigenbasis makes the reason plain: each multiplication scales every component by its eigenvalue, so the largest one grows fastest in relative terms and the rest fade. After enough iterations $$v$$ points along the dominant eigenvector and $$v^\top H v$$ gives its eigenvalue.
 
-Nothing here requires $$H$$ itself, only the ability to compute $$Hv$$ — and that is available: $$Hv$$ is the gradient of $$g^\top v$$, so one extra backward pass through an autodiff graph produces it.
+Nothing here requires $$H$$ itself, only the ability to compute $$Hv$$, and that is available: $$Hv$$ is the gradient of $$g^\top v$$, so one extra backward pass through an autodiff graph produces it.
 
 ### Hutchinson's estimator gets the trace the same way
 
@@ -50,13 +50,13 @@ $$
 \mathbb{E}\!\left[z^\top H z\right] = \operatorname{tr}(H).
 $$
 
-Averaging $$z^\top H z$$ over sampled $$z$$ therefore estimates the trace — the sum of all eigenvalues — again through matrix-vector products only. [Hutchinson](https://doi.org/10.1080/03610918908812806) (1989) introduced it for influence matrices.
+Averaging $$z^\top H z$$ over sampled $$z$$ therefore estimates the trace, the sum of all eigenvalues, again through matrix-vector products only. [Hutchinson](https://doi.org/10.1080/03610918908812806) (1989) introduced it for influence matrices.
 
 Trace and top eigenvalue answer different questions. The top eigenvalue reports the single sharpest direction; the trace reports total curvature across all of them. Which is the better summary is an empirical question, and the two quantization papers below disagree about it.
 
 ### Curvature as a sensitivity ranking for mixed-precision quantization
 
-Mixed precision assigns different bit-widths to different parts of a network, and the search space is hopeless by brute force — thirty blocks with four candidate widths is $$4^{30}$$, each option requiring training to evaluate. A proxy for sensitivity is needed.
+Mixed precision assigns different bit-widths to different parts of a network, and the search space is hopeless by brute force: thirty blocks with four candidate widths is $$4^{30}$$, each option requiring training to evaluate. A proxy for sensitivity is needed.
 
 Gradient magnitude is the obvious candidate and is a poor one: at a converged minimum the gradient is near zero everywhere by construction, so it separates nothing. Curvature does not have that defect. A block whose loss responds sharply to perturbation should keep more bits; a flat one can be compressed harder.
 
@@ -72,9 +72,9 @@ It also invites a caution that the lecture makes better than the papers do: depl
 
 ## Where this touches my work
 
-Curvature as a sensitivity measure is the same shape of argument as an evidence audit — perturb something, see how much the output moves, rank by that — with one difference worth keeping in view. Here the perturbation is to weights and the ranking is of computational components. An evidence claim needs perturbation of the input and a ranking of clinical structures, and the two do not substitute for each other.
+Curvature as a sensitivity measure is the same shape of argument as an evidence audit, perturb something, see how much the output moves, rank by that, with one difference worth keeping in view. Here the perturbation is to weights and the ranking is of computational components. An evidence claim needs perturbation of the input and a ranking of clinical structures, and the two do not substitute for each other.
 
-The ZeroQ observation is the part I did not expect to find useful. Batch normalisation statistics are a record of the training distribution carried inside the shipped weights. Anything that leaks the training distribution is a route to asking whether a deployment population resembles it — and if that record can be recovered from the model alone, it is worth knowing both as a tool and as a disclosure risk for models released without their data.
+The ZeroQ observation is the part I did not expect to find useful. Batch normalisation statistics are a record of the training distribution carried inside the shipped weights. Anything that leaks the training distribution is a route to asking whether a deployment population resembles it, and if that record can be recovered from the model alone, it is worth knowing both as a tool and as a disclosure risk for models released without their data.
 
 ## What I have not resolved
 

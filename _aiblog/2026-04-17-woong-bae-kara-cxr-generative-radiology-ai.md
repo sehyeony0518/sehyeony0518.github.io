@@ -118,7 +118,7 @@ A large and diverse training corpus increases the number of situations the model
 
 Generative models expand both the answer space and the failure space.
 
-A fixed classifier may be unable to mention an unmodeled disease. A generative model may mention it: but may also describe it incorrectly, place it in the wrong location, assign it the wrong severity, or generate a plausible sentence unsupported by the image.
+A fixed classifier may be unable to mention an unmodeled disease. A generative model may mention it, but may also describe it incorrectly, place it in the wrong location, assign it the wrong severity, or generate a plausible sentence unsupported by the image.
 
 Scale makes broader capability possible. It does not remove the need to specify what has actually been validated.
 

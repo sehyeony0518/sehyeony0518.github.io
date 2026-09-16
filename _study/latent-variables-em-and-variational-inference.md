@@ -32,21 +32,21 @@ The distinction from the [previous note](/study/estimation-likelihood-and-poster
 
 If the latent values were known, estimating $$\theta$$ would be ordinary maximum likelihood. If $$\theta$$ were known, the latent values would follow from the posterior. Neither is known, so each is held fixed in turn.
 
-The **E-step** fixes $$\theta$$ and computes the posterior over the latent variable — for a Gaussian mixture, the responsibility of each component for each sample, which in practice is a table of soft assignments. The **M-step** treats those as if observed and re-estimates $$\theta$$ by maximum likelihood.
+The **E-step** fixes $$\theta$$ and computes the posterior over the latent variable: for a Gaussian mixture, the responsibility of each component for each sample, which in practice is a table of soft assignments. The **M-step** treats those as if observed and re-estimates $$\theta$$ by maximum likelihood.
 
-The Gaussian mixture is the case worth writing out by hand, because everything stays in closed form and the table makes the E-step concrete: which component produced this point, expressed as a probability rather than a label. [Dempster, Laird and Rubin](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x) (1977) gave the general treatment.
+The Gaussian mixture is the case worth writing out by hand, because everything stays in closed form and the table makes the E-step concrete, which component produced this point, expressed as a probability rather than a label. [Dempster, Laird and Rubin](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x) (1977) gave the general treatment.
 
 What EM returns is a point estimate of $$\theta$$ and a distribution over $$z$$. It does not report uncertainty about $$\theta$$, because it never treated $$\theta$$ as uncertain.
 
 ### The posterior is intractable for the same reason every time
 
-Taking $$\theta$$ as random requires the posterior, and the posterior requires the normalising constant — the integral over everything unknown. With a handful of binary latent variables this is a sum over $$2^n$$ configurations. A hundred of them is not a large model, and the sum is already out of reach.
+Taking $$\theta$$ as random requires the posterior, and the posterior requires the normalising constant: the integral over everything unknown. With a handful of binary latent variables this is a sum over $$2^n$$ configurations. A hundred of them is not a large model, and the sum is already out of reach.
 
 So the problem is not that the mathematics is unavailable. It is available and cannot be evaluated.
 
 ### Variational inference gives up exactness to keep tractability
 
-Rather than compute $$p(z \mid x)$$, choose a family $$\mathcal{Q}$$ that can be handled — often factorised, often Gaussian — and find the member closest to the true posterior:
+Rather than compute $$p(z \mid x)$$, choose a family $$\mathcal{Q}$$ that can be handled, often factorised, often Gaussian, and find the member closest to the true posterior:
 
 $$
 q^\star = \arg\min_{q \in \mathcal{Q}} \; \mathrm{KL}\!\left(q(z) \,\|\, p(z \mid x)\right).
@@ -64,7 +64,7 @@ EM's E-step needs a posterior over $$z$$. When that posterior is itself intracta
 
 ## Where this touches my work
 
-The mixture model is the honest version of a suspicion I have about clinical datasets: that a labelled cohort is a mixture of subpopulations that were never recorded — scanner, operator, referral route — and that a model fits the mixture rather than the disease. EM says what it would take to recover those components, and also what it would cost: a model of how many there are, which is exactly the thing nobody knows.
+The mixture model is the honest version of a suspicion I have about clinical datasets: that a labelled cohort is a mixture of subpopulations that were never recorded, scanner, operator, referral route, and that a model fits the mixture rather than the disease. EM says what it would take to recover those components, and also what it would cost: a model of how many there are, which is exactly the thing nobody knows.
 
 The variational bargain has a direct analogue in auditing. Choosing a tractable family and reporting the nearest member is what any audit does when it enumerates candidate explanations. The failure mode is the same: what lies outside the family is not scored badly, it is not scored at all.
 

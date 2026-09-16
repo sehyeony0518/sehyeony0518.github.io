@@ -215,7 +215,7 @@ This is the Mann–Whitney statistic in the orientation that counts positive sco
 
 The equivalence explains why strictly increasing transformations preserve AUROC. They preserve every ordering and tie, so they preserve every term in $$U$$. Such transformations can nevertheless change the meaning of a numerical score as a probability.
 
-### 4. Why AUROC is prevalence-independent—and what that statement assumes
+### 4. Why AUROC is prevalence-independent, and what that statement assumes
 
 The population definition contains only
 
