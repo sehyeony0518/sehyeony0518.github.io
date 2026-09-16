@@ -176,7 +176,20 @@
     </div>
     <div class="kg-tip"></div>
   </div>
-  {% unless kg_full %}<p class="kg-note">Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. <a href="{{ '/research/#graph' | relative_url }}">Open the full graph</a>.</p>{% endunless %}
+  {%- comment -%}
+    The caption used to describe the corpus graph and link to /research/#graph in
+    both views. Two problems: that anchor does not exist, so the link was dead,
+    and the sentence describes the corpus layout, which is wrong when the include
+    is asked for the ontology. Each view now states what it is showing, and the
+    link points at the other view where there is one to point at.
+  {%- endcomment -%}
+  {% unless kg_full %}<p class="kg-note">
+    {%- if kg_view == "onto" -%}
+      Concepts by type around the ring, and every edge an assertion about what holds between them. Hover an edge to read the claim. The <a href="{{ '/' | relative_url }}">corpus graph</a> shows instead which writing discusses which concept.
+    {%- else -%}
+      Clinical vocabulary across the top, computational across the bottom, and every piece of writing placed by what it actually discusses. The <a href="{{ '/study/' | relative_url }}#ontology">ontology</a> records what I take to be true between those concepts.
+    {%- endif -%}
+  </p>{% endunless %}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>

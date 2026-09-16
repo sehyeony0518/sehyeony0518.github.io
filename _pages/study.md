@@ -9,7 +9,10 @@ nav_order: 9
 
 <style>
 
-  .sl-intro { font-size: 1rem; line-height: 1.75; margin-bottom: .3rem; }
+  /* The theme sets the page h1 at display size. This page is an index, so it
+     leads with its content rather than with its own name. */
+  .post-title, article > h1, .page-title { font-size: 1.9rem; letter-spacing: -.02em; }
+  .sl-intro { font-size: .97rem; line-height: 1.75; margin-bottom: .3rem; max-width: 62ch; }
   /* The ontology is its own tab now, so it no longer needs the bottom-of-page
      separator, and its heading would only repeat the tab it sits under. */
   .sl-pane .on-wrap { margin-top: 1.4rem; padding-top: 0; border-top: 0; }
@@ -39,36 +42,54 @@ nav_order: 9
     .sl-tab { flex: 1 1 44%; }
   }
 
-  .sl-cats { display: flex; flex-wrap: wrap; gap: .3rem; margin: .9rem 0 .2rem; padding-bottom: .7rem;
-             border-bottom: 2px solid var(--global-theme-color); }
+  /* Filter row. The count sits inside the pill as its own chip so it stays
+     attached to the label when the row wraps, instead of reading as loose text
+     next to it. `align-items: center` keeps label and chip on one baseline. */
+  .sl-cats { display: flex; flex-wrap: wrap; gap: .32rem; margin: 1.1rem 0 .2rem;
+             padding-bottom: .8rem; border-bottom: 1px solid var(--global-divider-color); }
   .sl-cat {
-    padding: .18rem .6rem; border-radius: 999px; cursor: pointer; white-space: nowrap;
-    border: 1px solid rgba(128,128,128,.32); background: none; color: inherit;
-    font-size: .755rem; font-weight: 600; transition: all .15s ease;
+    display: inline-flex; align-items: center; gap: .36rem;
+    padding: .24rem .68rem; border-radius: 999px; cursor: pointer; white-space: nowrap;
+    border: 1px solid rgba(128,128,128,.3); background: none; color: inherit;
+    font-size: .755rem; font-weight: 550; line-height: 1.5;
+    transition: border-color .15s ease, background .15s ease, color .15s ease;
   }
   .sl-cat:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
   .sl-cat.active { background: var(--global-theme-color); border-color: var(--global-theme-color); color: #fff; }
-  .sl-cat .sl-cat-cnt { opacity: .7; font-size: .69rem; margin-left: .1rem; font-variant-numeric: tabular-nums; }
+  .sl-cat .sl-cat-cnt {
+    font-size: .655rem; font-weight: 650; font-variant-numeric: tabular-nums;
+    padding: .04rem .3rem; border-radius: 999px; margin: 0;
+    background: rgba(128,128,128,.16); color: inherit;
+  }
+  .sl-cat.active .sl-cat-cnt { background: rgba(255,255,255,.22); }
 
-  .sl-block { margin: 1.9rem 0 0; }
+  /* This page is a list, so the note titles should be the loudest thing on it.
+     The category heading is structure, not content: it was set at 1.12rem bold,
+     a hair above the 0.97rem bold note titles, which flattened the hierarchy and
+     made every row compete. Marking it by colour and letterspacing instead of by
+     size separates structure from content without shouting. */
+  .sl-block { margin: 2.4rem 0 0; }
   .sl-block.sl-hidden, .sl-pane.sl-hidden { display: none; }
   .sl-block h2 {
-    font-size: 1.12rem; margin: 0 0 .2rem; padding: 0; border: 0; line-height: 1.35;
+    font-size: .705rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--global-theme-color);
+    margin: 0 0 .6rem; padding: 0 0 .45rem; line-height: 1.4;
+    border: 0; border-bottom: 1px solid var(--global-divider-color);
   }
   .sl-sub {
-    font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--global-text-color-light); opacity: .8; margin: 1.1rem 0 .1rem;
+    font-size: .665rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--global-text-color-light); opacity: .75; margin: 1.4rem 0 .25rem;
   }
 
   /* Note rows */
   .sl-note {
     display: block; text-decoration: none; color: inherit;
-    padding: .78rem 0; border-bottom: 1px solid var(--global-divider-color);
+    padding: .85rem 0; border-bottom: 1px solid var(--global-divider-color);
   }
   a.sl-note:hover .sl-note-title { color: var(--global-theme-color); }
   a.sl-note:hover .sl-read { opacity: 1; }
-  .sl-note-title { font-size: .97rem; font-weight: 650; line-height: 1.4; }
-  .sl-note-sum { font-size: .845rem; line-height: 1.6; opacity: .68; margin-top: .12rem; max-width: 78ch; }
+  .sl-note-title { font-size: .975rem; font-weight: 600; line-height: 1.45; }
+  .sl-note-sum { font-size: .84rem; line-height: 1.65; opacity: .62; margin-top: .2rem; max-width: 72ch; }
   .sl-note-foot { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin-top: .3rem; }
   .sl-tag {
     font-size: .68rem; font-weight: 700; letter-spacing: .04em;
@@ -96,7 +117,7 @@ nav_order: 9
   .sl-empty { font-size: .87rem; opacity: .6; padding: .6rem 0; }
 </style>
 
-<p class="sl-intro">Three parts, in the order they build on each other &mdash; and the ontology that ties them together.</p>
+<p class="sl-intro">Three parts, in the order they build on each other, and the ontology that ties them together.</p>
 
 {% assign all_notes = site.study | where_exp: "n", "n.category" %}
 {% assign written_notes = all_notes | where: "written", true %}
@@ -176,7 +197,7 @@ nav_order: 9
   {%- comment -%}
     The map first: the shape of the thing before the claims that make it up. The
     include defers its own boot to an IntersectionObserver, so rendering inside a
-    hidden pane is safe — it sizes itself when the tab is first opened.
+    hidden pane is safe: it sizes itself when the tab is first opened.
   {%- endcomment -%}
   {% include knowledge_graph.liquid height=520 view="onto" %}
   {% include ontology_table.liquid %}
