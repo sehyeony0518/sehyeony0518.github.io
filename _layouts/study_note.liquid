@@ -11,10 +11,18 @@ layout: page
   /* No negative top margin: it pulled the crumb up into the descenders of the
      description above and clipped it. The crumb also now carries the rule that
      separates the header from the body, since the meta strip below it is gone. */
-  .sn-crumb {
-    font-size: .76rem; line-height: 1.6; opacity: .62;
+  /* The crumb and the share row share one line, so the rule under them belongs
+     to the line, not to the crumb. */
+  .sn-head {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
     margin: .75rem 0 1.4rem; padding-bottom: .7rem;
     border-bottom: 1px solid var(--global-divider-color);
+  }
+  .sn-head .sh-row { flex: 0 0 auto; margin: 0; }
+  .sn-crumb { flex: 1 1 auto; min-width: 0; font-size: .76rem; line-height: 1.6; opacity: .62; }
+  /* Too narrow for both: the crumb wraps and the buttons drop under it. */
+  @media (max-width: 620px) {
+    .sn-head { flex-direction: column; align-items: flex-start; gap: .55rem; }
   }
   .sn-crumb a { color: inherit; text-decoration: none; }
   .sn-crumb a:hover { color: var(--global-theme-color); text-decoration: underline; }
@@ -107,11 +115,14 @@ layout: page
 }
 </script>
 
-<div class="sn-crumb">
-  <a href="{{ '/study/' | relative_url }}">Study</a>
-  {%- if tab %} / <a href="{{ '/study/' | relative_url }}#{{ tab.id }}">{{ tab.title }}</a>{% endif -%}
-  {%- if cat %} / {{ cat.title }}{% endif -%}
-  {%- if page.subgroup %} / {{ page.subgroup }}{% endif -%}
+<div class="sn-head">
+  <div class="sn-crumb">
+    <a href="{{ '/study/' | relative_url }}">Study</a>
+    {%- if tab %} / <a href="{{ '/study/' | relative_url }}#{{ tab.id }}">{{ tab.title }}</a>{% endif -%}
+    {%- if cat %} / {{ cat.title }}{% endif -%}
+    {%- if page.subgroup %} / {{ page.subgroup }}{% endif -%}
+  </div>
+  {% include share.liquid %}
 </div>
 
 
@@ -142,8 +153,6 @@ layout: page
     {%- endfor %}
   </ul>
   {%- endif %}
-
-  {% include share.liquid %}
 
   <a class="sn-back" href="{{ '/study/' | relative_url }}{% if tab %}#{{ tab.id }}{% endif %}">&larr; Back to {% if tab %}{{ tab.title }}{% else %}study{% endif %}</a>
 </div>
