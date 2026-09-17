@@ -8,7 +8,7 @@ tab_title: "Clinical Medicine"
 category: "neurology"
 category_title: "Neurology & Sleep Medicine"
 subgroup: "Neurodegeneration"
-order: 3
+order: 4
 source: "Lecture"
 written: true
 updated: "2026-09-08"
