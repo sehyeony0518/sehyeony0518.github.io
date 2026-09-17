@@ -2,6 +2,7 @@
 layout: page
 permalink: /papers/
 title: Paper Reviews
+og_image: "https://sehyeony0518.github.io/assets/img/og/page-papers.png"
 description: "Papers I have studied closely: what they claim, how they show it, and what I take from them."
 nav: true
 nav_order: 11
