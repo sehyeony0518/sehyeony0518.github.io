@@ -2,6 +2,7 @@
 layout: study_note
 title: "Probability and Bayesian Reasoning"
 description: "Conditional probability, expectation, independence, and Bayes as the grammar for reasoning about diagnostic evidence."
+og_image: "https://sehyeony0518.github.io/assets/img/og/probability-and-bayesian-reasoning.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"

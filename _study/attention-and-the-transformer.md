@@ -2,6 +2,7 @@
 layout: study_note
 title: "Attention: Retrieval as a Differentiable Operation"
 description: "Deriving query-key-value attention, softmax, square-root dimension scaling, multi-head computation, positional encoding, causal masks, and Transformer costs through explicit examples."
+og_image: "https://sehyeony0518.github.io/assets/img/og/attention-and-the-transformer.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

@@ -5,6 +5,7 @@ date: 2026-08-10 12:00:00 +0900
 venue: "ICLR 2023"
 authors: "Andrew Bai, Chih-Kuan Yeh, Neil Y. C. Lin, Pradeep Ravikumar, Cho-Jui Hsieh (2023)"
 description: "TCAV assumes a concept occupies a linear direction in activation space. Concept Gradients drops that assumption and, in a medical case study, tracks concept importance scores against mortality-risk descriptions already published in the clinical literature."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-08-10-concept-gradients-nonlinear-interpretation.png"
 related_posts: false
 ---
 

@@ -5,6 +5,7 @@ date: 2025-12-19 12:00:00 +0900
 venue: "EyePACS Grading Protocol"
 authors: "EyePACS"
 description: "The internal grading manual behind the EyePACS diabetic-retinopathy dataset, the lesion-by-lesion rulebook that every EyePACS-trained DR model's labels ultimately trace back to."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-12-19-eyepacs-grading-protocol.png"
 related_posts: false
 ---
 

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Cholangiocarcinoma and Biliary Strictures"
 description: "Distinguishing benign from malignant strictures, and what each modality can contribute."
+og_image: "https://sehyeony0518.github.io/assets/img/og/cholangiocarcinoma-and-biliary-strictures.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

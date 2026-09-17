@@ -5,6 +5,7 @@ date: 2026-07-15 12:00:00 +0900
 venue: "Nature Biomedical Engineering"
 authors: "Tianyu Han, Riga Wu, Yu Tian, Firas Khader, Lisa C. Adams, Keno K. Bressem, Christos Davatzikos, Jakob Nikolas Kather, et al. (2026)"
 description: "A foundation model trained on 0.87 million image-report pairs, built from the ground up around clinical-concept embeddings rather than bolting interpretability onto a black box afterward, auditability as a design constraint, not an add-on."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-07-15-clear-auditable-foundation-model-radiology.png"
 related_posts: false
 ---
 

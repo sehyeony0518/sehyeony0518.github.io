@@ -2,6 +2,7 @@
 layout: study_note
 title: "External Validation and Clinical Utility for Gallbladder AI"
 description: "What it would take for a gallbladder model to be believed at a second hospital, and what its errors would cost."
+og_image: "https://sehyeony0518.github.io/assets/img/og/external-validation-and-clinical-utility-for-gallbladder-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "gallbladder-ai"

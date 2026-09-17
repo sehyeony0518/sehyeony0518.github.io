@@ -2,6 +2,7 @@
 layout: study_note
 title: "Diagnostic Markers as Shortcut Cues"
 description: "Calipers, annotations, and machine overlays as predictive artifacts, and what removing them changes."
+og_image: "https://sehyeony0518.github.io/assets/img/og/diagnostic-markers-as-shortcut-cues.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "gallbladder-ai"

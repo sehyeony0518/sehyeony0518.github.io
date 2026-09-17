@@ -5,6 +5,7 @@ date: 2025-11-03 12:00:00 +0900
 venue: "IJCARS"
 authors: "Michał Byra, Grzegorz Styczynski, Cezary Szmigielski, Piotr Kalinowski, Łukasz Michałowski, Rafał Paluszkiewicz, Bogna Ziarkiewicz-Wróblewska, Krzysztof Zieniewicz, Piotr Sobieraj, Andrzej Nowicki (2018)"
 description: "A transfer-learning pipeline for grading liver steatosis from B-mode ultrasound, benchmarked directly against the hepatorenal index and GLCM texture features, with biopsy as the reference standard."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-11-03-transfer-learning-liver-steatosis.png"
 related_posts: false
 ---
 

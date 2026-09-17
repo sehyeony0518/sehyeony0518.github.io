@@ -5,6 +5,7 @@ date: 2026-04-22 12:00:00 +0900
 venue: "Journal of Digital Imaging"
 authors: "Woo Kyung Moon, Chung-Ming Lo, Jung Min Chang, Chiun-Sheng Huang, Jeon-Hor Chen, Ruey-Feng Chang (2013)"
 description: "A CAD system targeted specifically at the ambiguous BI-RADS category 3, 'probably benign' masses, testing whether quantitative features can safely reclassify malignant cases that radiologists had grouped as low-risk."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-04-22-quantitative-us-birads-category-3.png"
 related_posts: false
 ---
 

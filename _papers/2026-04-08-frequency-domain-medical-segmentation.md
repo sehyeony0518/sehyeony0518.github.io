@@ -5,6 +5,7 @@ date: 2026-04-08 12:00:00 +0900
 venue: "Scientific Reports"
 authors: "Liu Qiong, Li Chaofan, Teng Jinnan, Chen Liping, Song Jianxiang (2025)"
 description: "A frequency-domain attention module built to recover the high-frequency texture and boundary information that Vision Transformer segmentation models tend to lose, directly relevant to any medical target defined by fine texture or a sharp boundary."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-04-08-frequency-domain-medical-segmentation.png"
 related_posts: false
 ---
 

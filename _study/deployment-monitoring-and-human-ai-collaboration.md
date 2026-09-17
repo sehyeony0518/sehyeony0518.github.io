@@ -2,6 +2,7 @@
 layout: study_note
 title: "Deployment, Monitoring, and Human-AI Collaboration"
 description: "Drift after deployment, safety monitoring, automation bias, and what changes with a clinician in the loop."
+og_image: "https://sehyeony0518.github.io/assets/img/og/deployment-monitoring-and-human-ai-collaboration.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "The Combinatorial Explosion, and Why Pruning Alone Is Not Enough"
 description: "Exponential search trees, learned pruning, policy proposals, and value functions: deriving computation costs and the decision errors caused by omitted actions and approximate leaf evaluation."
+og_image: "https://sehyeony0518.github.io/assets/img/og/the-combinatorial-explosion-and-learned-pruning.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "decision-and-control"

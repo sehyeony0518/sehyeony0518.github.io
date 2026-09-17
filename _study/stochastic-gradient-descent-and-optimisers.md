@@ -2,6 +2,7 @@
 layout: study_note
 title: "Stochastic Gradient Descent and the Optimizers Built On It"
 description: "Mini-batch gradient estimates, variance, momentum, per-parameter rates in AdaGrad, RMSProp and Adam, and what saddle points and local minima do not explain."
+og_image: "https://sehyeony0518.github.io/assets/img/og/stochastic-gradient-descent-and-optimisers.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

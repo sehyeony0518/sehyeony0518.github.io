@@ -5,6 +5,7 @@ date: 2026-02-09 12:00:00 +0900
 venue: "JMLR"
 authors: "Alexander D'Amour, Katherine Heller, Dan Moldovan, Ben Adlam, Babak Alipanahi, Alex Beutel, Christina Chen, Jonathan Deaton, et al. (2020)"
 description: "Two models with identical training accuracy, identical architecture, and different random seeds can behave completely differently under distribution shift, a Google-scale audit of just how common this is, including in a dermatology model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-02-09-underspecification-credibility-ml.png"
 related_posts: false
 ---
 

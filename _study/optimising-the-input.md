@@ -2,6 +2,7 @@
 layout: study_note
 title: "Optimizing the Input: Visualization, Style, and Adversarial Examples"
 description: "What happens when the weights are frozen and the image becomes the free variable, and why the same procedure produces both a picture of a concept and a picture that fools the model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/optimising-the-input.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

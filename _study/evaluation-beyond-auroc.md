@@ -2,6 +2,7 @@
 layout: study_note
 title: "Evaluation Beyond AUROC"
 description: "Sensitivity and specificity at the operating point that matters, decision curves, and clinical utility."
+og_image: "https://sehyeony0518.github.io/assets/img/og/evaluation-beyond-auroc.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

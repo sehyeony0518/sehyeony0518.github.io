@@ -2,6 +2,7 @@
 layout: study_note
 title: "MDPs and the Simulator Problem: Every RL Paper Starts After the Hard Part"
 description: "The Markov decision process five-tuple, Bellman equations, plans versus policies, and how simulator error and off-policy coverage affect reinforcement learning."
+og_image: "https://sehyeony0518.github.io/assets/img/og/mdps-and-the-simulator-problem.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "decision-and-control"

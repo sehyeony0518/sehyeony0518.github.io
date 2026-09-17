@@ -3,6 +3,7 @@ layout: insight
 title: "Priscilla Chan on the Virtual Cell, Open Datasets, and Patients Who Build the Assets"
 date: 2026-09-12 12:00:00 +0900
 description: "Notes on why the constraint in cell modelling moved from compute to data format, how an annotation tool accumulated a corpus mostly contributed by others, and what rare-disease groups bring beyond motivation."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-09-12-priscilla-chan-virtual-cell-rare-disease.png"
 tag: "Biohub"
 related_posts: false
 ---

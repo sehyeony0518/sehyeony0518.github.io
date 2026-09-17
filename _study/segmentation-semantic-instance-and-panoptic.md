@@ -2,6 +2,7 @@
 layout: study_note
 title: "Segmentation: Resolution Against Context, and the Things/Stuff Divide"
 description: "Semantic, instance, and panoptic segmentation derived through pixel losses, receptive fields, encoder-decoder reconstruction, atrous convolution, center offsets, and panoptic quality."
+og_image: "https://sehyeony0518.github.io/assets/img/og/segmentation-semantic-instance-and-panoptic.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

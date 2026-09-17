@@ -2,6 +2,7 @@
 layout: study_note
 title: "Routh–Hurwitz: Deciding Stability Without Finding a Single Root"
 description: "A table of divisions answers a question about polynomial roots that has no formula past degree four, and turns 'is this stable?' into 'for which gains is this stable?'"
+og_image: "https://sehyeony0518.github.io/assets/img/og/routh-hurwitz-and-the-stability-boundary.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"

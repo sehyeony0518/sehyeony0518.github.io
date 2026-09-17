@@ -5,6 +5,7 @@ date: 2026-03-20 12:00:00 +0900
 venue: "Biometrics"
 authors: "Qi Liu, Chun Li, Valentine Wanga, Bryan E. Shepherd (2018)"
 description: "A statistics paper on adjusting rank correlation for confounding covariates, read because so many AI-versus-classical-index comparisons in medical imaging report raw Spearman correlation without asking whether a shared confound is inflating it."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-03-20-covariate-adjusted-spearman-correlation.png"
 related_posts: false
 ---
 

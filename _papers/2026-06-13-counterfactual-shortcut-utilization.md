@@ -5,6 +5,7 @@ date: 2026-06-13 12:00:00 +0900
 venue: "MIDL 2025"
 authors: "Vibujithan Vigneshwaran, Emma A.M. Stanley, Raissa Souza, Erik Ohara, Matthias Wilms, Nils D. Forkert (2025)"
 description: "A counterfactual-generation approach to quantifying shortcut reliance in disease classifiers, in the same spirit as RoentMod but framed as a general evaluation method rather than a modality-specific tool."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-06-13-counterfactual-shortcut-utilization.png"
 related_posts: false
 ---
 

@@ -5,6 +5,7 @@ date: 2026-05-24 12:00:00 +0900
 venue: "ACM FAccT 2022"
 authors: "Lesia Semenova, Cynthia Rudin, Ronald Parr (2022)"
 description: "The Rashomon-set argument: for a given dataset, there are often many equally accurate models, some far simpler and more interpretable than others, so 'we needed the complex model for accuracy' is a claim that should be checked, not assumed."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-05-24-existence-of-simpler-models.png"
 related_posts: false
 ---
 

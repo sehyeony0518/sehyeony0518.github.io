@@ -2,6 +2,7 @@
 layout: study_note
 title: "Why Complex Exponentials: Choosing the Representation Is Most of the Work"
 description: "The convolution integral that takes a page, the eigenfunction that takes one line, and what it costs to throw away the transient."
+og_image: "https://sehyeony0518.github.io/assets/img/og/why-complex-exponentials.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"

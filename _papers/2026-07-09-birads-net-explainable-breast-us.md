@@ -5,6 +5,7 @@ date: 2026-07-09 12:00:00 +0900
 venue: "IEEE ISBI 2021"
 authors: "Boyu Zhang, Aleksandar Vakanski, Min Xian (2021)"
 description: "A multitask model that predicts BI-RADS descriptors alongside malignancy, one of the earlier attempts at the same explainable-by-BI-RADS idea that later concept-bottleneck papers pushed further."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-07-09-birads-net-explainable-breast-us.png"
 related_posts: false
 ---
 

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Cardiovascular Disease"
 description: "Risk prediction over long horizons, calibration, and decision thresholds tied to treatment."
+og_image: "https://sehyeony0518.github.io/assets/img/og/cardiovascular-disease.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "clinical-foundations"

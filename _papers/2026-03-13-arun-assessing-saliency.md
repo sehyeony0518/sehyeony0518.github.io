@@ -5,6 +5,7 @@ date: 2026-03-13 12:00:00 +0900
 venue: "Radiology: Artificial Intelligence"
 authors: "Arun, Gaw, Singh, Chang, Aggarwal, Chen, Hoebel, Gupta, Patel, Gidwani, Adebayo, Li, Kalpathy-Cramer (2021)"
 description: "Radiology-specific saliency evaluation: sanity checks and human-alignment tests applied directly to chest radiograph localization tasks."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-03-13-arun-assessing-saliency.png"
 related_posts: false
 ---
 

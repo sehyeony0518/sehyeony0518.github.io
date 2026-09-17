@@ -2,6 +2,7 @@
 layout: study_note
 title: "Backpropagation, in Scalars and in Matrices"
 description: "How backpropagation organizes the chain rule to compute derivatives for training, with scalar and matrix derivations for a dense layer and a convolution."
+og_image: "https://sehyeony0518.github.io/assets/img/og/backpropagation.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Post-hoc Model Auditing"
 description: "Auditing a model as it stands, and what a structured audit of a deployed system contains."
+og_image: "https://sehyeony0518.github.io/assets/img/og/post-hoc-model-auditing.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "auditing"

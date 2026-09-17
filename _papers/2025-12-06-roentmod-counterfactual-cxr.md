@@ -5,6 +5,7 @@ date: 2025-12-06 12:00:00 +0900
 venue: "npj Digital Medicine"
 authors: "Lauren H. Cooke, Matthias Jung, Jan M. Brendel, Nora M. Kerkovits, Borek Foldyna, Michael T. Lu, Vineet K. Raghu (2026)"
 description: "A counterfactual image-editing model that inserts or removes a chest X-ray finding without retraining the classifier under test: used to catch models exploiting institutional, demographic, and device markers as shortcuts."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-12-06-roentmod-counterfactual-cxr.png"
 related_posts: false
 ---
 

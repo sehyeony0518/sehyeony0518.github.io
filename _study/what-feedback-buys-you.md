@@ -2,6 +2,7 @@
 layout: study_note
 title: "What Feedback Buys You, and the One Thing It Cannot"
 description: "Closing the loop divides plant error and disturbance by the loop gain, and drives steady-state error to zero, but S + T = 1 means sensor noise and reference tracking trade off exactly, at every frequency, forever."
+og_image: "https://sehyeony0518.github.io/assets/img/og/what-feedback-buys-you.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"

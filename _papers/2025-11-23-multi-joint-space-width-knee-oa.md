@@ -5,6 +5,7 @@ date: 2025-11-23 12:00:00 +0900
 venue: "Biology (MDPI)"
 authors: "James Chung-Wai Cheung, Andy Yiu-Chau Tam, Lok-Chun Chan, Ping-Keung Chan, Chunyi Wen (2021)"
 description: "ResU-Net segmentation feeding 64-point multi-JSW measurements into XGBoost, outperforming the conventional single minimum-JSW pipeline for predicting knee-OA severity and progression, with the segmentation itself validated against a radiologist."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-11-23-multi-joint-space-width-knee-oa.png"
 related_posts: false
 ---
 

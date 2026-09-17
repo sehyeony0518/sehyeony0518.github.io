@@ -5,6 +5,7 @@ date: 2026-01-08 12:00:00 +0900
 venue: "Medical Physics"
 authors: "Wilfrido Gómez-Flores, Maria Julia Gregorio-Calas, Wagner Coelho de Albuquerque Pereira (2024)"
 description: "A biopsy-proven, multi-scanner breast ultrasound dataset with standardized cross-validation partitions, the kind of dataset-hygiene paper that makes fair benchmark comparisons possible in the first place."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-01-08-busbra-breast-ultrasound-dataset.png"
 related_posts: false
 ---
 

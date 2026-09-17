@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clinical Workflow and Task Definition for Gallbladder AI"
 description: "Deciding which decision a model supports, and letting that decide the label, the metric, and the design."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clinical-workflow-and-task-definition-for-gallbladder-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "gallbladder-ai"
