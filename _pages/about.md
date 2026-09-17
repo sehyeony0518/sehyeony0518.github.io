@@ -1,6 +1,7 @@
 ---
 layout: about
 title: about
+og_image: "https://sehyeony0518.github.io/assets/img/og/page-about.png"
 permalink: /
 
 profile:

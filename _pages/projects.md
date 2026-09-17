@@ -1,6 +1,7 @@
 ---
 layout: page
 title: projects
+og_image: "https://sehyeony0518.github.io/assets/img/og/page-projects.png"
 permalink: /projects/
 description: A growing collection of your cool projects.
 nav: false
