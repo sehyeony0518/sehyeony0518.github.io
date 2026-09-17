@@ -2,6 +2,7 @@
 layout: page
 permalink: /ministry/
 title: ministry
+og_image: "https://sehyeony0518.github.io/assets/img/og/page-ministry.png"
 description: 지금 맡겨진 자리에서의 순종, 그리고 부르심의 여정
 nav: true
 nav_order: 2

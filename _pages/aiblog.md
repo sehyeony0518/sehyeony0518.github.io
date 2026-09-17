@@ -2,6 +2,7 @@
 layout: page
 permalink: /blog/
 title: Insights
+og_image: "https://sehyeony0518.github.io/assets/img/og/page-aiblog.png"
 description: Insights related to my research, the trustworthiness of medical AI models.
 nav: true
 nav_order: 10

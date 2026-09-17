@@ -2,6 +2,7 @@
 layout: page
 permalink: /study/
 title: AI Study
+og_image: "https://sehyeony0518.github.io/assets/img/og/page-study.png"
 description: "Notes on trustworthy AI and the clinical knowledge that informs my research."
 nav: true
 nav_order: 9

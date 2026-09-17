@@ -2,6 +2,7 @@
 layout: page
 permalink: /research/
 title: research
+og_image: "https://sehyeony0518.github.io/assets/img/og/page-research.png"
 description: Trustworthy medical AI grounded in clinical evidence.
 nav: true
 nav_order: 7
