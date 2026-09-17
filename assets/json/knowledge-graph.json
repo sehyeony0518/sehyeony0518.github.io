@@ -8,17 +8,17 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Auditing & causality",
-   "deg": 129
+   "deg": 130
   },
   {
    "id": "c:Diagnostic reasoning",
    "label": "Diagnostic reasoning",
    "kind": "concept",
    "url": null,
-   "size": 3.61,
+   "size": 3.65,
    "fam": "clinical",
    "sector": "Clinical practice",
-   "deg": 31
+   "deg": 32
   },
   {
    "id": "c:Gallbladder disease",
@@ -85,10 +85,10 @@
    "label": "Inverse reconstruction",
    "kind": "concept",
    "url": null,
-   "size": 3.52,
+   "size": 3.56,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 29
+   "deg": 30
   },
   {
    "id": "c:Clinical assessability",
@@ -218,7 +218,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 60
+   "deg": 61
   },
   {
    "id": "c:Preprocessing & resampling",
@@ -265,10 +265,10 @@
    "label": "Reference standard adjudication",
    "kind": "concept",
    "url": null,
-   "size": 4.88,
+   "size": 4.93,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 59
+   "deg": 60
   },
   {
    "id": "c:Subgroup & fairness",
@@ -355,10 +355,10 @@
    "label": "Clinical evidence reliance",
    "kind": "concept",
    "url": null,
-   "size": 4.7,
+   "size": 4.75,
    "fam": "computational",
    "sector": "Evaluation & reliability",
-   "deg": 55
+   "deg": 56
   },
   {
    "id": "c:Uncertainty & abstention",
@@ -775,10 +775,10 @@
    "label": "Acute stroke triage",
    "kind": "concept",
    "url": null,
-   "size": 2.38,
+   "size": 2.43,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 4
+   "deg": 5
   },
   {
    "id": "c:Screening programs",
@@ -825,10 +825,10 @@
    "label": "Neuronal network activity",
    "kind": "concept",
    "url": null,
-   "size": 2.29,
+   "size": 2.34,
    "fam": "clinical",
    "sector": "Disease & pathology",
-   "deg": 2
+   "deg": 3
   },
   {
    "id": "c:Sensitivity analysis",
@@ -2159,6 +2159,16 @@
    "fam": "computational",
    "sector": "Auditing & causality",
    "deg": 4
+  },
+  {
+   "id": "note:stroke-management-syndrome-mechanism-deterioration",
+   "label": "Stroke Management: From Syndrome to Mechanism and Deterioration",
+   "kind": "note",
+   "url": "/study/stroke-management-syndrome-mechanism-deterioration/",
+   "size": 1.8,
+   "fam": "bridge",
+   "sector": "Disease & pathology",
+   "deg": 8
   },
   {
    "id": "note:stroke",
@@ -10218,6 +10228,54 @@
    "source": "note:stochastic-gradient-descent-and-optimisers",
    "target": "c:Objective design",
    "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Auditing",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Diagnostic reasoning",
+   "kind": "clinical",
+   "w": 1
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Deployment & drift",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Inverse reconstruction",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Reference standard adjudication",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Clinical evidence reliance",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Acute stroke triage",
+   "kind": "clinical",
+   "w": 2
+  },
+  {
+   "source": "note:stroke-management-syndrome-mechanism-deterioration",
+   "target": "c:Neuronal network activity",
+   "kind": "clinical",
    "w": 1
   },
   {
