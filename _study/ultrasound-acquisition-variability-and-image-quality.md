@@ -2,6 +2,7 @@
 layout: study_note
 title: "Ultrasound Acquisition Variability and Image Quality"
 description: "Operator, machine, and preset variation as the dominant nuisance factor, and what it does to a learned model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/ultrasound-acquisition-variability-and-image-quality.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

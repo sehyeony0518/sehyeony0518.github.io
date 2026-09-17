@@ -5,6 +5,7 @@ date: 2026-04-02 12:00:00 +0900
 venue: "ICLR 2025"
 authors: "Mingzhou Liu, Ching-Wen Lee, Xinwei Sun, Xueqing Yu, Qiao Yu, Yizhou Wang (2025)"
 description: "A causal framing of the shortcut-learning problem in disease diagnosis, trying to explicitly align a model's learned representation with the causal structure of disease, not just penalize known spurious features after the fact."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-04-02-causal-alignment-disease-diagnosis.png"
 related_posts: false
 ---
 

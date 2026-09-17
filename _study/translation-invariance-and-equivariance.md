@@ -2,6 +2,7 @@
 layout: study_note
 title: "Invariance and Equivariance: Two Jobs One Network Cannot Do at Once"
 description: "Deriving translation invariance and equivariance, including convolution, pooling, stride, boundaries, R-FCN position-sensitive pooling, and feature pyramids for detection."
+og_image: "https://sehyeony0518.github.io/assets/img/og/translation-invariance-and-equivariance.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

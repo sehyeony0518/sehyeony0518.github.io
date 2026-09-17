@@ -2,6 +2,7 @@
 layout: study_note
 title: "Gallbladder Cancer"
 description: "Features that raise concern for malignancy, the risk factors that shift pretest probability, and where imaging alone cannot settle it."
+og_image: "https://sehyeony0518.github.io/assets/img/og/gallbladder-cancer.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

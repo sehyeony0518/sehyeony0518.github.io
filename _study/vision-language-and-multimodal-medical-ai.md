@@ -2,6 +2,7 @@
 layout: study_note
 title: "Vision-Language and Multimodal Medical AI"
 description: "Image-text alignment, report grounding, and the failure modes of models that read images and language together."
+og_image: "https://sehyeony0518.github.io/assets/img/og/vision-language-and-multimodal-medical-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"

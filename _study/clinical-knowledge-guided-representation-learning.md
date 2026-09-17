@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clinical Knowledge-Guided Representation Learning"
 description: "Using echogenicity, texture, margin, wall features, and anatomical context as domain priors."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clinical-knowledge-guided-representation-learning.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "gallbladder-ai"

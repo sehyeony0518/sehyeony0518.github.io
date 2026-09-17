@@ -2,6 +2,7 @@
 layout: study_note
 title: "Intervention-Based Auditing"
 description: "Ablation, masking, and controlled edits as tests of what a prediction actually depends on."
+og_image: "https://sehyeony0518.github.io/assets/img/og/intervention-based-auditing.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "auditing"

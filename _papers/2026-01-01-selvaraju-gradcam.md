@@ -5,6 +5,7 @@ date: 2026-01-01 12:00:00 +0900
 venue: "ICCV"
 authors: "Selvaraju, Cogswell, Das, Vedantam, Parikh, Batra (2017)"
 description: "The saliency method almost every medical-imaging paper cites, and a good place to be precise about what its heatmap actually certifies."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-01-01-selvaraju-gradcam.png"
 related_posts: false
 ---
 

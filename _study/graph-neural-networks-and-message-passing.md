@@ -2,6 +2,7 @@
 layout: study_note
 title: "Graph Neural Networks: Message Passing, Aggregation, and Inductive Node Embeddings"
 description: "Learning a fixed-length descriptor for every node by repeatedly aggregating its neighbours, why a lookup table cannot embed a node it has never seen, and what makes the parameters independent of graph size."
+og_image: "https://sehyeony0518.github.io/assets/img/og/graph-neural-networks-and-message-passing.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"

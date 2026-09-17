@@ -2,6 +2,7 @@
 layout: study_note
 title: "Dementia"
 description: "Biomarker-based diagnosis and the difficulty of validating prediction far ahead of an event."
+og_image: "https://sehyeony0518.github.io/assets/img/og/dementia.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"

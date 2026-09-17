@@ -5,6 +5,7 @@ date: 2026-03-01 12:00:00 +0900
 venue: "IEEE TMI"
 authors: "Xiaomeng Li, Xiaowei Hu, Lequan Yu, Lei Zhu, Chi-Wing Fu, Pheng-Ann Heng (2020)"
 description: "Joint grading of two correlated diabetic-eye diseases via cross-disease attention, a structural bet that shared retinal evidence should inform both diagnoses at once, rather than training two separate classifiers that never talk to each other."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-03-01-canet-cross-disease-attention.png"
 related_posts: false
 ---
 

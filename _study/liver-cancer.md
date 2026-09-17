@@ -2,6 +2,7 @@
 layout: study_note
 title: "Liver Cancer"
 description: "Hepatocellular carcinoma and hepatic metastasis: surveillance, imaging diagnosis, and the reporting systems used."
+og_image: "https://sehyeony0518.github.io/assets/img/og/liver-cancer.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

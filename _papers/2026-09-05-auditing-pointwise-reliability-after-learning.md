@@ -5,6 +5,7 @@ date: 2026-09-05 12:00:00 +0900
 venue: "AISTATS 2019"
 authors: "Peter Schulam, Suchi Saria (2019)"
 description: "Resampling Uncertainty Estimation asks a narrower, more auditable question than most uncertainty methods: not how confident is the model in general, but how much would this specific prediction have changed if the model had been fit on slightly different training data."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-09-05-auditing-pointwise-reliability-after-learning.png"
 related_posts: false
 ---
 

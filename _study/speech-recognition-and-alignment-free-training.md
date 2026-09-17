@@ -2,6 +2,7 @@
 layout: study_note
 title: "Speech Recognition: Learning Without Knowing Where Anything Starts"
 description: "MFCC features, CTC alignment marginalization and forward–backward gradients, with exact frame-to-label path counts, repeated-label constraints and worked decoding examples."
+og_image: "https://sehyeony0518.github.io/assets/img/og/speech-recognition-and-alignment-free-training.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

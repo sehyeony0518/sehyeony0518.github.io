@@ -2,6 +2,7 @@
 layout: study_note
 title: "Neural Radiance Fields: A Scene Stored as a Function"
 description: "Deriving NeRF camera rays, volume density, transmittance, alpha compositing, rendering gradients, positional encoding, and the storage-computation tradeoff against voxel grids."
+og_image: "https://sehyeony0518.github.io/assets/img/og/neural-radiance-fields.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

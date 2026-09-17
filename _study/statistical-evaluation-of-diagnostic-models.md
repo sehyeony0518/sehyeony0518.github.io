@@ -2,6 +2,7 @@
 layout: study_note
 title: "Statistical Evaluation of Diagnostic Models"
 description: "Confidence intervals, bootstrapping, power, and the pitfalls that recur in diagnostic accuracy papers."
+og_image: "https://sehyeony0518.github.io/assets/img/og/statistical-evaluation-of-diagnostic-models.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

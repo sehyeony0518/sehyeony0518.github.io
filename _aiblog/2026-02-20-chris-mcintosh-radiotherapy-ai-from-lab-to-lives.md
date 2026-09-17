@@ -3,6 +3,7 @@ layout: insight
 title: "From Lab to Lives: Chris McIntosh on Making Medical AI Part of Routine Care"
 date: 2026-02-20 12:00:00 +0900
 description: Notes from Prof. Chris McIntosh's lecture on automated radiotherapy planning, treatment-specific patient matching, prospective deployment, and the gap between an AI plan being clinically acceptable and clinicians actually using it.
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-02-20-chris-mcintosh-radiotherapy-ai-from-lab-to-lives.png"
 tag: "McIntosh Lab"
 related_posts: false
 ---

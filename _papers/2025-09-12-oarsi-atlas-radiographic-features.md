@@ -5,6 +5,7 @@ date: 2025-09-12 12:00:00 +0900
 venue: "Osteoarthritis and Cartilage"
 authors: "R. D. Altman, G. E. Gold (2007)"
 description: "The OARSI atlas that turns joint-space narrowing, osteophytes, and sclerosis into graded reference images, the ground truth that any automated knee-OA grader is ultimately trying to reproduce."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-09-12-oarsi-atlas-radiographic-features.png"
 related_posts: false
 ---
 

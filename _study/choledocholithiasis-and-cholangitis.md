@@ -2,6 +2,7 @@
 layout: study_note
 title: "Choledocholithiasis and Cholangitis"
 description: "Stones in the common bile duct, and the presentation that turns an imaging finding into an emergency."
+og_image: "https://sehyeony0518.github.io/assets/img/og/choledocholithiasis-and-cholangitis.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

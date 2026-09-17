@@ -2,6 +2,7 @@
 layout: study_note
 title: "Curvature Without the Hessian: Power Iteration, Trace Estimation, and Quantization"
 description: "Second-order information about a network that is too large to form, estimated by matrix-vector products, and what it is used to decide."
+og_image: "https://sehyeony0518.github.io/assets/img/og/curvature-without-the-hessian.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

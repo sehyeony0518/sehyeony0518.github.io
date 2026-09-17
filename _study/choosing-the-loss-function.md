@@ -2,6 +2,7 @@
 layout: study_note
 title: "Choosing the Loss: Squared Error, Absolute Error, and What Each One Believes"
 description: "Squared error, absolute error and Huber loss: deriving their prediction targets, checking how one bad point affects a fit, and understanding weighted classification losses."
+og_image: "https://sehyeony0518.github.io/assets/img/og/choosing-the-loss-function.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

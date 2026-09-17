@@ -2,6 +2,7 @@
 layout: study_note
 title: "Reproducibility, Benchmarks, and Translational Study Design"
 description: "Designing studies whose results survive contact with another site and another team."
+og_image: "https://sehyeony0518.github.io/assets/img/og/reproducibility-benchmarks-and-translational-study-design.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

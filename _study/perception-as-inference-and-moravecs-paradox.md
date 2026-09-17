@@ -2,6 +2,7 @@
 layout: study_note
 title: "Perception as Inference: Illusions Are Not Failures, and the Easy Problems Were the Hard Ones"
 description: "Perception as Bayesian inference: retinal-image ambiguity, illumination and reflectance, Gaussian cue integration, decision costs, active sensing, and Moravec's paradox."
+og_image: "https://sehyeony0518.github.io/assets/img/og/perception-as-inference-and-moravecs-paradox.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

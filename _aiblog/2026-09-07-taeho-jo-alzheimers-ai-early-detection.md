@@ -4,6 +4,7 @@ title: "Before Symptoms Appear: Taeho Jo on Using AI to Find Earlier Signals of 
 date: 2026-09-07 12:00:00 +0900
 tag: "Indiana University"
 description: "Notes from Prof. Taeho Jo on using AI across tau PET, whole-genome sequencing, metabolomics, rare variants, and uncertainty estimation to search for earlier and more trustworthy signals of Alzheimer's disease."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-09-07-taeho-jo-alzheimers-ai-early-detection.png"
 related_posts: false
 ---
 

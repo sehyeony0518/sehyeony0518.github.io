@@ -5,6 +5,7 @@ date: 2026-01-14 12:00:00 +0900
 venue: "Medical Ultrasonography"
 authors: "Heon-Ju Kwon, Kyoung Won Kim, Jin-Hee Jung, Sang Hyun Choi, Woo Kyoung Jeong, Bohyun Kim, Gi-Won Song, Sung-Gyu Lee (2016)"
 description: "A head-to-head comparison of two classical ultrasound-based liver-fat indices in living liver-donor candidates, against biopsy, the pair of legible baselines that any liver-steatosis deep model is implicitly competing with."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-01-14-hepatorenal-index-attenuation-index.png"
 related_posts: false
 ---
 

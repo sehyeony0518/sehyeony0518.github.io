@@ -2,6 +2,7 @@
 layout: study_note
 title: "Epilepsy"
 description: "Seizure and epilepsy definitions, JME and mesial temporal epilepsy, social stigma, and bedside-to-bench electrophysiology, with implications for AI labels."
+og_image: "https://sehyeony0518.github.io/assets/img/og/epilepsy.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"

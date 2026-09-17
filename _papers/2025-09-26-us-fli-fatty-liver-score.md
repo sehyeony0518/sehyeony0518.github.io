@@ -5,6 +5,7 @@ date: 2025-09-26 12:00:00 +0900
 venue: "Liver International"
 authors: "Stefano Ballestri, Amedeo Lonardo, Dante Romagnoli, Lucia Carulli, Luisa Losi, Christopher P. Day, Paola Loria (2012)"
 description: "A hand-crafted, semi-quantitative ultrasound score (US-FLI) built from four visual features, the kind of clinically legible scoring system that a learned model in the same space should be able to match or explain, not just outperform."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-09-26-us-fli-fatty-liver-score.png"
 related_posts: false
 ---
 

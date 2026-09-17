@@ -2,6 +2,7 @@
 layout: study_note
 title: "Linearization: An Approximation Whose Licence Is Retrospective"
 description: "Pendulum linearization, small-angle sine approximations, Taylor error bounds, phase drift, and the poles that distinguish hanging, inverted, and cart-pole dynamics."
+og_image: "https://sehyeony0518.github.io/assets/img/og/linearization-and-the-inverted-pendulum.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "feedback-control"

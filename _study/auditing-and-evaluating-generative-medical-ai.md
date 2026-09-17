@@ -2,6 +2,7 @@
 layout: study_note
 title: "Auditing and Evaluating Generative Medical AI"
 description: "What evaluation means when the output is text or an image rather than a label."
+og_image: "https://sehyeony0518.github.io/assets/img/og/auditing-and-evaluating-generative-medical-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"

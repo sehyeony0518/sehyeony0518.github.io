@@ -3,6 +3,7 @@ layout: insight
 title: "Measure Before You Trust: Haanju Yoo on Medical LLMs, Hallucination, and Clinical Workflow"
 date: 2026-05-15 12:00:00 +0900
 description: "Notes from NAVER Cloud's Haanju Yoo on medical LLMs, hallucination, self-consistency, regulation, and why the path to useful healthcare AI begins with defining what can actually be measured."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-05-15-haanju-yoo-medical-llm-measure-before-you-trust.png"
 tag: "NAVER"
 featured: true
 related_posts: false

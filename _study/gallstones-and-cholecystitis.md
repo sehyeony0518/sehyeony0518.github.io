@@ -2,6 +2,7 @@
 layout: study_note
 title: "Gallstones and Cholecystitis"
 description: "Cholelithiasis, acute and chronic cholecystitis, and the findings that separate them."
+og_image: "https://sehyeony0518.github.io/assets/img/og/gallstones-and-cholecystitis.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

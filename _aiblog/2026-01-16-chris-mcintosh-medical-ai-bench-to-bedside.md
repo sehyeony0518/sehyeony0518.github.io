@@ -3,6 +3,7 @@ layout: insight
 title: "The Paper Is 10% of the Work: Chris McIntosh on Taking Medical AI from Bench to Bedside"
 date: 2026-01-16 12:00:00 +0900
 description: Notes from an interview with Prof. Chris McIntosh on clinical collaboration, radiotherapy deployment, transfer learning, explainability, fairness, wearables, and the long path from a paper to patient care.
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-01-16-chris-mcintosh-medical-ai-bench-to-bedside.png"
 featured: true
 pinned: true
 tag: "McIntosh Lab"

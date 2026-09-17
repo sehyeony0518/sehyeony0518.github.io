@@ -143,5 +143,7 @@ layout: page
   </ul>
   {%- endif %}
 
+  {% include share.liquid %}
+
   <a class="sn-back" href="{{ '/study/' | relative_url }}{% if tab %}#{{ tab.id }}{% endif %}">&larr; Back to {% if tab %}{{ tab.title }}{% else %}study{% endif %}</a>
 </div>

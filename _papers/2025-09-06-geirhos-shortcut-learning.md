@@ -5,6 +5,7 @@ date: 2025-09-06 12:00:00 +0900
 venue: "Nature Machine Intelligence"
 authors: "Geirhos, Jacobsen, Michaelis, Zemel, Brendel, Bethge, Wichmann (2020)"
 description: "The paper that gave the field a shared vocabulary for models that solve the benchmark without solving the task."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-09-06-geirhos-shortcut-learning.png"
 related_posts: false
 ---
 

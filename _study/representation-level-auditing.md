@@ -2,6 +2,7 @@
 layout: study_note
 title: "Representation-Level Auditing"
 description: "Probing, frequency analysis, and representation comparison as evidence about what formed inside the model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/representation-level-auditing.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "auditing"

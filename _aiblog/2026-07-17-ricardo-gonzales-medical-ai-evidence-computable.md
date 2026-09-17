@@ -3,6 +3,7 @@ layout: insight
 title: "Transparency Is Infrastructure, Not a Safety Warranty: Ricardo Gonzales on Making Medical AI Evidence Computable"
 date: 2026-07-17 12:00:00 +0900
 description: Notes from Ricardo Gonzales's RISE-MICCAI talk on ROADMAP, RSNA ATLAS, machine-readable performance metrics, LLM-assisted documentation, and why transparency can expose, but not eliminate, gaps in medical AI evidence.
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-07-17-ricardo-gonzales-medical-ai-evidence-computable.png"
 tag: "RSNA"
 related_posts: false
 ---

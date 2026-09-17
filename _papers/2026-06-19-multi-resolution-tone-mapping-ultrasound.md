@@ -5,6 +5,7 @@ date: 2026-06-19 12:00:00 +0900
 venue: "PLOS ONE"
 authors: "Thi Lan Nhi Vu, Vimal Chandran, Christina Haberl, Otmar Scherzer, Julia Binder (2026)"
 description: "A tone-mapping method that expands ultrasound's usable dynamic range before a model, or a clinician, ever sees the image, quantified with real, measurable image-quality gains."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-06-19-multi-resolution-tone-mapping-ultrasound.png"
 related_posts: false
 ---
 

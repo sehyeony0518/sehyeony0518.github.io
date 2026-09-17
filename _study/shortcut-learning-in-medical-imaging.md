@@ -2,6 +2,7 @@
 layout: study_note
 title: "Shortcut Learning in Medical Imaging"
 description: "The failure mode where a model reaches the right answer through a cue nobody intended it to use."
+og_image: "https://sehyeony0518.github.io/assets/img/og/shortcut-learning-in-medical-imaging.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "causality"

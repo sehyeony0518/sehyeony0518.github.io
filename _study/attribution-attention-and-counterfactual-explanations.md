@@ -2,6 +2,7 @@
 layout: study_note
 title: "Attribution, Attention, and Counterfactual Explanations"
 description: "The main families of post-hoc explanation for medical images, and what each actually measures."
+og_image: "https://sehyeony0518.github.io/assets/img/og/attribution-attention-and-counterfactual-explanations.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "alignment"

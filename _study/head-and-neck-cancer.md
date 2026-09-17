@@ -2,6 +2,7 @@
 layout: study_note
 title: "Head and Neck Cancer"
 description: "Multimodal staging and the coordination problem between imaging, pathology, and treatment planning."
+og_image: "https://sehyeony0518.github.io/assets/img/og/head-and-neck-cancer.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "oncology"

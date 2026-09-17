@@ -2,6 +2,7 @@
 layout: study_note
 title: "Matrix Calculus for Reading Papers: Determinants, Cofactors, and the Gaussian MLE"
 description: "Matrix differentiation through determinants, cofactors, log determinants and inverses, followed by a complete derivation of Gaussian mean and covariance maximum-likelihood estimators."
+og_image: "https://sehyeony0518.github.io/assets/img/og/matrix-calculus-for-reading-papers.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

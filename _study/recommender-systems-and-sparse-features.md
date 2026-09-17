@@ -2,6 +2,7 @@
 layout: study_note
 title: "Recommender Systems: Embeddings, Interactions, and a Field That Audited Itself"
 description: "Deriving recommendation from sparse categorical features through embeddings, matrix factorization, feature interactions, ranking losses, retrieval metrics, and reproducible evaluation."
+og_image: "https://sehyeony0518.github.io/assets/img/og/recommender-systems-and-sparse-features.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

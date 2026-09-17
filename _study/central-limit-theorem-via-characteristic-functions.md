@@ -2,6 +2,7 @@
 layout: study_note
 title: "The Central Limit Theorem, via Characteristic Functions"
 description: "Why sums of independent quantities turn Gaussian, shown by the transform that turns convolution into multiplication."
+og_image: "https://sehyeony0518.github.io/assets/img/og/central-limit-theorem-via-characteristic-functions.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"

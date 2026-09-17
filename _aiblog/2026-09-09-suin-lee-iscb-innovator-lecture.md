@@ -3,6 +3,7 @@ layout: insight
 title: "AI, Biology, and Clinical Medicine: Su-In Lee’s ISCB Innovator Award Lecture"
 date: 2026-09-09 12:00:00 +0900
 description: "Notes on Prescience, ENABL Age, Alzheimer’s pathway models, COVID shortcuts, and CoAI, with implications for clinical faithfulness auditing."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-09-09-suin-lee-iscb-innovator-lecture.png"
 tag: "AIMS Lab"
 related_posts: false
 ---

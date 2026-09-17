@@ -2,6 +2,7 @@
 layout: study_note
 title: "Foundation Models for Medical Imaging"
 description: "What large pretrained imaging models change about medical AI, and what they do not change about validation."
+og_image: "https://sehyeony0518.github.io/assets/img/og/foundation-models-for-medical-imaging.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"

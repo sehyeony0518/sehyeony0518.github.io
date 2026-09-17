@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clinical Validity and Clinical Utility"
 description: "The difference between a model that measures something real and a model that changes a decision."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clinical-validity-and-clinical-utility.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

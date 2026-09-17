@@ -5,6 +5,7 @@ date: 2026-08-23 12:00:00 +0900
 venue: "arXiv preprint"
 authors: "Mobarakol Islam, Zeju Li, Ben Glocker (2023)"
 description: "Progressive stress testing with five perturbation types at six severity levels, applied to chest X-ray and skin-lesion classifiers, separates iid test accuracy from robustness and finds that pretraining choice, not just architecture, shapes how a model degrades."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-08-23-robustness-stress-testing-medical-image-classification.png"
 related_posts: false
 ---
 

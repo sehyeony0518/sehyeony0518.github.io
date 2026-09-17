@@ -2,6 +2,7 @@
 layout: study_note
 title: "Selection Bias and Dataset Bias"
 description: "How the assembly of a medical dataset, through who was scanned, labeled, and recorded, writes itself into the model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/selection-bias-and-dataset-bias.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "causality"

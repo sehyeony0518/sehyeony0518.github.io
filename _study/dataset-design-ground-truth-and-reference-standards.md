@@ -2,6 +2,7 @@
 layout: study_note
 title: "Dataset Design, Ground Truth, and Reference Standards"
 description: "What counts as truth in a medical dataset, and how that choice bounds every result that follows."
+og_image: "https://sehyeony0518.github.io/assets/img/og/dataset-design-ground-truth-and-reference-standards.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

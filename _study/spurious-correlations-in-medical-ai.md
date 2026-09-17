@@ -2,6 +2,7 @@
 layout: study_note
 title: "Spurious Correlations in Medical AI"
 description: "Associations that hold in the training distribution and carry no clinical meaning, and how to tell them apart from real signal."
+og_image: "https://sehyeony0518.github.io/assets/img/og/spurious-correlations-in-medical-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "causality"

@@ -5,6 +5,7 @@ date: 2026-04-28 12:00:00 +0900
 venue: "Machine Learning"
 authors: "Frederik Pahde, Thomas Wiegand, Sebastian Lapuschkin, Wojciech Samek (2025)"
 description: "A framework connecting interpretability directly to correction: find the spurious behavior with concept-level explanation methods, then fix both the model and the data it came from."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-04-28-reveal-to-revise-spurious-behavior.png"
 related_posts: false
 ---
 

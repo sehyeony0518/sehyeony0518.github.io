@@ -2,6 +2,7 @@
 layout: study_note
 title: "Optimization for Machine Learning"
 description: "Gradients, regularization, and constrained optimization as the assumptions a training procedure quietly imposes."
+og_image: "https://sehyeony0518.github.io/assets/img/og/optimization-for-machine-learning.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

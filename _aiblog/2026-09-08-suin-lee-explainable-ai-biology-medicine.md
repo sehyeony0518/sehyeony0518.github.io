@@ -3,6 +3,7 @@ layout: insight
 title: "Beyond Feature Attribution: Su-In Lee on Explainable AI for Biology and Medicine"
 date: 2026-09-08 12:00:00 +0900
 description: "Notes from a TWIML conversation on SHAP, biological interpretation, counterfactual clinical audits, and the connection to my research on clinical faithfulness in gallbladder ultrasound AI."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-09-08-suin-lee-explainable-ai-biology-medicine.png"
 tag: "AIMS Lab"
 featured: true
 related_posts: false

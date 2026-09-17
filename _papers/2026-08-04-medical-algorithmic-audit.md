@@ -5,6 +5,7 @@ date: 2026-08-04 12:00:00 +0900
 venue: "Lancet Digital Health"
 authors: "Xiaoxuan Liu, Ben Glocker, Melissa M. McCradden, Marzyeh Ghassemi, Alastair K. Denniston, Lauren Oakden-Rayner (2022)"
 description: "A viewpoint proposing a structured audit process for deployed medical AI, treating shortcut learning, poor generalizability, and weak explainability as the three named failure modes an auditor should anticipate rather than discover by accident."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-08-04-medical-algorithmic-audit.png"
 related_posts: false
 ---
 

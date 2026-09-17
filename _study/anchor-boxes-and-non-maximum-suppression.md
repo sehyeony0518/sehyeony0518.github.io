@@ -2,6 +2,7 @@
 layout: study_note
 title: "Anchor Boxes and Non-Maximum Suppression: Where the Priors Are Hidden"
 description: "Deriving anchor-box geometry, normalized box regression, IoU matching, and non-maximum suppression, with worked examples of reference boxes, losses, and overlapping detections."
+og_image: "https://sehyeony0518.github.io/assets/img/og/anchor-boxes-and-non-maximum-suppression.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

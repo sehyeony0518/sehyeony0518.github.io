@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clinical Feature Annotation and Multi-Task Learning"
 description: "Building supervision from structured sonographic findings rather than the diagnosis alone."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clinical-feature-annotation-and-multi-task-learning.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "gallbladder-ai"

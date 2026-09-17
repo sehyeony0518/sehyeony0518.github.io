@@ -2,6 +2,7 @@
 layout: study_note
 title: "Parkinson's Disease"
 description: "Movement disorder assessment, rating scales as noisy ground truth, and longitudinal measurement."
+og_image: "https://sehyeony0518.github.io/assets/img/og/parkinsons-disease.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"

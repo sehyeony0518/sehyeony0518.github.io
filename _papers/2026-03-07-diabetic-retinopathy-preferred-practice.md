@@ -5,6 +5,7 @@ date: 2026-03-07 12:00:00 +0900
 venue: "American Academy of Ophthalmology"
 authors: "American Academy of Ophthalmology, Retina/Vitreous PPP Panel (2024)"
 description: "The clinical practice guideline that defines how diabetic retinopathy is actually meant to be screened, staged, and managed, the standard any AI screening tool is ultimately deployed to support, not replace."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-03-07-diabetic-retinopathy-preferred-practice.png"
 related_posts: false
 ---
 

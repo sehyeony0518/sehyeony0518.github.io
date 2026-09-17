@@ -2,6 +2,7 @@
 layout: study_note
 title: "Statistical Inference for Diagnostic Studies"
 description: "Hypothesis testing, confidence intervals, effect size, bootstrap, and multiple comparisons, applied to the claims diagnostic AI papers make."
+og_image: "https://sehyeony0518.github.io/assets/img/og/statistical-inference-for-diagnostic-studies.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"

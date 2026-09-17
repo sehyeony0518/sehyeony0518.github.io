@@ -5,6 +5,7 @@ date: 2026-04-15 12:00:00 +0900
 venue: "Osteoarthritis and Cartilage"
 authors: "A. C. A. Marijnissen, K. L. Vincken, P. A. J. M. Vos, D. B. F. Saris, M. A. Viergever, J. W. J. Bijlsma, L. W. Bartels, F. P. J. G. Lafeber (2008)"
 description: "A pre-deep-learning digital measurement system for knee-OA radiographic features, a reminder that 'objective, automated quantification' of joint space and osteophytes predates neural networks by well over a decade."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-04-15-knee-images-digital-analysis-kida.png"
 related_posts: false
 ---
 

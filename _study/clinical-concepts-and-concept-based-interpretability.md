@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clinical Concepts and Concept-Based Interpretability"
 description: "Concept bottlenecks and concept activation vectors as attempts to make a model speak in clinical terms."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clinical-concepts-and-concept-based-interpretability.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "alignment"

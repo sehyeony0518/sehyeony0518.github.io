@@ -5,6 +5,7 @@ date: 2026-01-27 12:00:00 +0900
 venue: "ICML"
 authors: "Guo, Pleiss, Sun, Weinberger (2017)"
 description: "Modern networks are more accurate and less calibrated than their predecessors, and the fix (temperature scaling) is almost embarrassingly simple."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-01-27-guo-calibration.png"
 related_posts: false
 ---
 

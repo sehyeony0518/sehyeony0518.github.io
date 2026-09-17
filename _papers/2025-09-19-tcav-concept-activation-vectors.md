@@ -5,6 +5,7 @@ date: 2025-09-19 12:00:00 +0900
 venue: "ICML 2018"
 authors: "Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viégas, Rory Sayres (2018)"
 description: "TCAV asks whether a model's prediction is sensitive to a human-named concept, such as 'striped' or 'malignant,' rather than to a single pixel, the tool that later work on shortcut detection in medical imaging builds directly on."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-09-19-tcav-concept-activation-vectors.png"
 related_posts: false
 ---
 

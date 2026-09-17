@@ -5,6 +5,7 @@ date: 2025-11-17 12:00:00 +0900
 venue: "AJR"
 authors: "Hong et al. (2005)"
 description: "An empirical look at how well individual BI-RADS sonographic descriptors actually predict malignancy, the kind of per-feature grounding that a BI-RADS-based concept bottleneck for breast ultrasound is implicitly relying on."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-11-17-birads-sonography-predictive-values.png"
 related_posts: false
 ---
 

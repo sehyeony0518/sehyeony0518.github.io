@@ -1,0 +1,13 @@
+# Gem-owned files this site shadows locally. Re-check each against upstream on a
+# gem bump: `bundle exec al-folio upgrade overrides audit`.
+overrides:
+  - path: _includes/metadata.liquid
+    owner: al_folio_core
+    version: 1.0.11
+    reason: >
+      twitter:card is hardcoded to "summary" upstream, which crops the 1200x630
+      share cards this site generates (bin/build_og_images.py) down to a square
+      thumbnail. The local copy emits summary_large_image when the page declares
+      og_image and keeps "summary" otherwise. Nothing else differs.
+    upstream_sha256: b9b8ea49980bb85109e344198a3b97818fcb6f5fec89e11f98e46af1529bc96a
+    local_sha256: f5c5f4aac7a460fc66d1d44f8c3246fdb8365cbc31d06169063ed954d157126c

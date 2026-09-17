@@ -2,6 +2,7 @@
 layout: study_note
 title: "Gastric Cancer"
 description: "Endoscopic detection, screening programs, and reader variability in a real-time diagnostic setting."
+og_image: "https://sehyeony0518.github.io/assets/img/og/gastric-cancer.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "oncology"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "When Models Outgrow Their Labels"
 description: "ImageNet's original labels score about 81% against a careful re-annotation, and several models beat them. Once the ceiling is the annotation rather than the method, the benchmark stops measuring what it reports."
+og_image: "https://sehyeony0518.github.io/assets/img/og/when-models-outgrow-their-labels.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

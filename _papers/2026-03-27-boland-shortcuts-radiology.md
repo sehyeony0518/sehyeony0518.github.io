@@ -5,6 +5,7 @@ date: 2026-03-27 12:00:00 +0900
 venue: "MIDL 2024"
 authors: "Christopher Boland, Keith A. Goatman, Sotirios A. Tsaftaris, Sonia Dahdouh (2024)"
 description: "A method for locating which layer of a network a shortcut's features actually manifest in, using Prediction Depth and KL divergence, moving from 'the model has a shortcut' to 'here is where in the network it lives.'"
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-03-27-boland-shortcuts-radiology.png"
 related_posts: false
 ---
 

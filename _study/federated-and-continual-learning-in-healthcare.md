@@ -2,6 +2,7 @@
 layout: study_note
 title: "Federated and Continual Learning in Healthcare"
 description: "Training across institutions that cannot share data, and updating a model without losing what it knew."
+og_image: "https://sehyeony0518.github.io/assets/img/og/federated-and-continual-learning-in-healthcare.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "systems"

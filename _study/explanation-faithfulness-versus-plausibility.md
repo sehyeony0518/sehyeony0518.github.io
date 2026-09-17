@@ -2,6 +2,7 @@
 layout: study_note
 title: "Explanation Faithfulness versus Plausibility"
 description: "Looking right to a clinician and reflecting the model's computation are different properties, and the gap between them is where trouble lives."
+og_image: "https://sehyeony0518.github.io/assets/img/og/explanation-faithfulness-versus-plausibility.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "alignment"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Gallbladder Polyps and Their Malignant Potential"
 description: "Cholesterol versus adenomatous polyps, the size thresholds that drive management, and why the distinction is hard on ultrasound."
+og_image: "https://sehyeony0518.github.io/assets/img/og/gallbladder-polyps-and-their-malignant-potential.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

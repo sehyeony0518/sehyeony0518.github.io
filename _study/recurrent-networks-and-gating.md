@@ -2,6 +2,7 @@
 layout: study_note
 title: "Recurrent Networks and Gating"
 description: "State carried across time, why gradients through it vanish or explode, and what a gate is actually doing about it."
+og_image: "https://sehyeony0518.github.io/assets/img/og/recurrent-networks-and-gating.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

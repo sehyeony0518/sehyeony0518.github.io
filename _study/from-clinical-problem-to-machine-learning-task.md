@@ -2,6 +2,7 @@
 layout: study_note
 title: "From Clinical Problem to Machine Learning Task"
 description: "The translation step where most medical AI projects are decided, long before a model is trained."
+og_image: "https://sehyeony0518.github.io/assets/img/og/from-clinical-problem-to-machine-learning-task.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

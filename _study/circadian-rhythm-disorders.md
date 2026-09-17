@@ -2,6 +2,7 @@
 layout: study_note
 title: "Circadian Rhythm Disorders"
 description: "Wearable and continuous data, and what changes when the signal is a long time series."
+og_image: "https://sehyeony0518.github.io/assets/img/og/circadian-rhythm-disorders.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"

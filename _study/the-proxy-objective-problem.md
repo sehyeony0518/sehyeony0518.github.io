@@ -2,6 +2,7 @@
 layout: study_note
 title: "The Proxy Objective: Training on One Thing, Being Judged on Another"
 description: "Cross-entropy is not what anyone wants. The metric that matters is usually non-differentiable, unaffordable, or lives in a person's head, so we optimize a stand-in and hope. The gap is structural, not sloppiness."
+og_image: "https://sehyeony0518.github.io/assets/img/og/the-proxy-objective-problem.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "The Graph Laplacian: There Is More Than One, and Choosing Is the Modelling"
 description: "What the heat equation, spectral clustering and graph networks share in the word Laplacian, why the smallest eigenvectors are the balanced states, and why writing D minus A reflexively skips a decision."
+og_image: "https://sehyeony0518.github.io/assets/img/og/the-graph-laplacian.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"

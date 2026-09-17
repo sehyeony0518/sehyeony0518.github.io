@@ -2,6 +2,7 @@
 layout: study_note
 title: "Linear Algebra for Representation Analysis"
 description: "Eigenvalues, SVD, projection, and PCA as the working tools for asking what a learned representation contains."
+og_image: "https://sehyeony0518.github.io/assets/img/og/linear-algebra-for-representation-analysis.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

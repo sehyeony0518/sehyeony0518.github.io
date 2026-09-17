@@ -2,6 +2,7 @@
 layout: study_note
 title: "Imaging Across Modalities and Radiology-Pathology Correlation"
 description: "When ultrasound leads to CT, MRI, or MRCP, and how imaging appearances map back to pathology."
+og_image: "https://sehyeony0518.github.io/assets/img/og/imaging-across-modalities-and-radiology-pathology-correlation.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

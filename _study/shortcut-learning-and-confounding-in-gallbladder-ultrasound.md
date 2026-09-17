@@ -2,6 +2,7 @@
 layout: study_note
 title: "Shortcut Learning and Confounding in Gallbladder Ultrasound"
 description: "The confounders specific to this problem, and telling a sonographic finding from an acquisition correlate."
+og_image: "https://sehyeony0518.github.io/assets/img/og/shortcut-learning-and-confounding-in-gallbladder-ultrasound.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "gallbladder-ai"

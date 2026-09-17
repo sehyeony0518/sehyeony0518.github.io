@@ -5,6 +5,7 @@ date: 2026-06-06 12:00:00 +0900
 venue: "WACV 2026"
 authors: "Balagopal Unnikrishnan, Michael Brudno, Chris McIntosh (2026)"
 description: "A McIntosh-lab paper on fixing shortcuts at the data level (laterality markers, scanner noise) without the mitigation itself quietly introducing a new confounder, which the authors show is a real risk of naive data-level fixes."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-06-06-silverlining-data-first-shortcuts.png"
 featured: true
 related_posts: false
 ---

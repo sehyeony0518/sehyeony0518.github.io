@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clustering and Mixture Models: k-means, GMM, and the Log of a Sum"
 description: "Hard assignment by alternating minimization, soft assignment by a density, and the structural reason the mixture likelihood cannot be solved by differentiating."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clustering-and-mixture-models.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"

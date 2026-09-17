@@ -5,6 +5,7 @@ date: 2025-12-13 12:00:00 +0900
 venue: "Nature Medicine"
 authors: "Seyyed-Kalantari, Zhang, McDermott, Chen, Ghassemi (2021)"
 description: "Chest X-ray classifiers assigned 'no finding' disproportionately to underserved patients, the error mode that silently denies care."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-12-13-seyyed-kalantari-underdiagnosis.png"
 related_posts: false
 ---
 
