@@ -2,11 +2,11 @@
 """Render the share-preview cards: one per note, review and insight, plus the
 standing pages.
 
-A link to this site used to preview with the profile photo and a small Twitter
+A link to this site used to preview with a portrait and a small Twitter
 card, which told a reader nothing about the page behind it. Each page now gets a
 1200x630 card that reproduces its own top: the breadcrumb line, the title and
 the description, on the site's dark ground. The home page gets a different card,
-because its top is a name and a photo rather than a heading.
+because its top is a name rather than a heading.
 
 The cards are generated here and committed, so the CI build needs neither
 Pillow nor the fonts. Regenerate after editing a title or description:
@@ -60,8 +60,12 @@ HOME = {
     "tagline": "Medical XAI Researcher",
     "blurb": "Whether a diagnostic model's accuracy comes from clinically valid "
              "evidence or from shortcuts, and how to make that reliance measurable.",
+    # The two directions the home page states, as its own two columns.
+    "columns": [
+        ("Reliable medical AI", "Evidence auditing, shortcut learning, faithfulness"),
+        ("Clinical translation", "Disease, imaging findings, diagnostic reasoning"),
+    ],
     "foot": "M.S. student  /  Ajou University  /  Embedded & Software Lab",
-    "photo": "assets/img/prof_pic.jpg",
 }
 
 
@@ -207,49 +211,42 @@ def render_entry(stem, kind, fm):
 
 
 def render_home(stem):
-    """The home page's top is a name beside a photograph, not a heading."""
+    """The home page's own opening, set as type. No portrait: a shared link
+    should lead with what the work is, not with a face."""
     img, d = base_card()
     x = PAD + 10
+    inner = W - x - PAD
 
-    photo_size = 300
-    photo_x = W - PAD - photo_size
-    photo_y = (H - photo_size) // 2 - 16
-    src = ROOT / HOME["photo"]
-    if src.exists():
-        p = Image.open(src).convert("RGB")
-        # Square crop from the centre, then a rounded mask.
-        side = min(p.size)
-        left, top = (p.width - side) // 2, (p.height - side) // 2
-        p = p.crop((left, top, left + side, top + side)).resize(
-            (photo_size, photo_size), Image.LANCZOS
-        )
-        mask = Image.new("L", (photo_size, photo_size), 0)
-        ImageDraw.Draw(mask).rounded_rectangle(
-            [0, 0, photo_size - 1, photo_size - 1], radius=24, fill=255
-        )
-        img.paste(p, (photo_x, photo_y), mask)
+    t_name = Text(d, font("Inter-Bold.ttf", 68), font("NanumBarunGothic-Bold-subset.ttf", 48))
+    t_line = Text(d, font("Inter-Regular.ttf", 27), font("NanumBarunGothic-Regular-subset.ttf", 26))
 
-    inner = photo_x - x - 56
-    f_name = font("Inter-Bold.ttf", 64)
-    t_name = Text(d, f_name, font("NanumBarunGothic-Bold-subset.ttf", 46))
-    t_line = Text(d, font("Inter-Regular.ttf", 26), font("NanumBarunGothic-Regular-subset.ttf", 25))
-
-    y = PAD + 46
-    end = t_name.draw((x, y), HOME["name"], INK)
+    y = PAD + 8
+    end_x = t_name.draw((x, y), HOME["name"], INK)
     d.text(
-        (end + 16, y + 20),
+        (end_x + 18, y + 22),
         HOME["name_ko"],
-        font=font("NanumBarunGothic-Bold-subset.ttf", 40),
+        font=font("NanumBarunGothic-Bold-subset.ttf", 42),
         fill=MUTED,
     )
-    y += 88
+    y += 94
 
-    d.text((x, y), HOME["tagline"], font=font("Inter-SemiBold.ttf", 31), fill=ACCENT)
-    y += 62
+    d.text((x, y), HOME["tagline"], font=font("Inter-SemiBold.ttf", 32), fill=ACCENT)
+    y += 66
 
     for line in wrap(t_line, HOME["blurb"], inner, 3):
         t_line.draw((x, y), line, MUTED)
-        y += 40
+        y += 41
+
+    # Two columns, as the page states its two directions.
+    y += 26
+    col_w = (inner - 56) // 2
+    f_head = font("Inter-SemiBold.ttf", 24)
+    f_sub = font("Inter-Regular.ttf", 21)
+    for i, (head, sub) in enumerate(HOME["columns"]):
+        cx = x + i * (col_w + 56)
+        d.line([(cx, y), (cx + col_w, y)], fill=RULE, width=1)
+        d.text((cx, y + 16), head, font=f_head, fill=INK)
+        d.text((cx, y + 48), sub, font=f_sub, fill=MUTED)
 
     d.text((x, H - PAD - 96), HOME["foot"], font=font("Inter-Regular.ttf", 23), fill=MUTED)
     footer(d, x)
