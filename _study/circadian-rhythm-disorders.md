@@ -8,7 +8,7 @@ tab_title: "Clinical Medicine"
 category: "neurology"
 category_title: "Neurology & Sleep Medicine"
 subgroup: "Sleep & Circadian Regulation"
-order: 5
+order: 6
 source: "Lecture"
 written: true
 updated: "2026-09-08"

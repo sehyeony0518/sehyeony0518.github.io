@@ -8,8 +8,8 @@ tab_title: "Clinical Medicine"
 category: "neurology"
 category_title: "Neurology & Sleep Medicine"
 subgroup: "Acute & Episodic Neurology"
-order: 2
-source: "Lecture: Epilepsy & Seizure, Jun-Young Choi, Ajou University School of Medicine"
+order: 3
+source: "Lecture, 정밀의학의 이해 (Understanding Precision Medicine), 2026-2, Ajou University; Jun-Young Choi, Ajou University School of Medicine"
 written: true
 updated: "2026-09-08"
 ---
