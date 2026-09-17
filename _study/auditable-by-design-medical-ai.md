@@ -2,6 +2,7 @@
 layout: study_note
 title: "Auditable-by-Design Medical AI"
 description: "Building models whose evidence can be checked, instead of auditing whatever is left afterwards."
+og_image: "https://sehyeony0518.github.io/assets/img/og/auditable-by-design-medical-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "auditing"

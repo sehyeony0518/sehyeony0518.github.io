@@ -2,6 +2,7 @@
 layout: study_note
 title: "Linear MMSE Estimation and the Wiener Filter"
 description: "The best linear estimate of one quantity from another, and why it needs only means and covariances rather than a distribution."
+og_image: "https://sehyeony0518.github.io/assets/img/og/linear-mmse-and-the-wiener-filter.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"

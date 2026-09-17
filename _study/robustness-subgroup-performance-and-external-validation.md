@@ -2,6 +2,7 @@
 layout: study_note
 title: "Robustness, Subgroup Performance, and External Validation"
 description: "Robustness to acquisition variability, subgroup analysis, and multi-center validation as tests of generalizability."
+og_image: "https://sehyeony0518.github.io/assets/img/og/robustness-subgroup-performance-and-external-validation.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

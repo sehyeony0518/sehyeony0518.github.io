@@ -5,6 +5,7 @@ date: 2026-07-28 12:00:00 +0900
 venue: "Nature Biomedical Engineering"
 authors: "Alex J. DeGrave, Zhuo Ran Cai, Joseph D. Janizek, Roxana Daneshjou, Su-In Lee (2025)"
 description: "Generative counterfactuals read by two blinded dermatologists across five academic and consumer skin-lesion classifiers, the closest published template I have found for the audit I want to run on ultrasound models."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-07-28-auditing-inference-processes-generative-counterfactuals.png"
 related_posts: false
 ---
 

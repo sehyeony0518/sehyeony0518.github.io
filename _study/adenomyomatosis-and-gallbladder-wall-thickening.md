@@ -2,6 +2,7 @@
 layout: study_note
 title: "Adenomyomatosis and Gallbladder Wall Thickening"
 description: "The benign causes of a thick gallbladder wall, the comet-tail artifact, and the differential it opens."
+og_image: "https://sehyeony0518.github.io/assets/img/og/adenomyomatosis-and-gallbladder-wall-thickening.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

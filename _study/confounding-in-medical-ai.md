@@ -2,6 +2,7 @@
 layout: study_note
 title: "Confounding in Medical AI"
 description: "A third factor driving both the image and the label, and what it does to a performance estimate."
+og_image: "https://sehyeony0518.github.io/assets/img/og/confounding-in-medical-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "causality"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Model Reliance on Clinical Evidence"
 description: "Moving from an alignment claim to a dependence claim, and what that step requires."
+og_image: "https://sehyeony0518.github.io/assets/img/og/model-reliance-on-clinical-evidence.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "auditing"

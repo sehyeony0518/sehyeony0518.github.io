@@ -5,6 +5,7 @@ date: 2026-02-15 12:00:00 +0900
 venue: "ICLR 2022"
 authors: "Julius Adebayo, Michael Muelly, Hal Abelson, Been Kim (2022)"
 description: "A sobering stress test of the exact interpretability toolkit I lean on elsewhere in this collection (feature attribution, concept activation, and training-point ranking) against spurious signals the practitioner doesn't already know to look for."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-02-15-posthoc-explanations-spurious-correlation.png"
 related_posts: false
 ---
 

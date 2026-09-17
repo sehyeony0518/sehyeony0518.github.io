@@ -5,6 +5,7 @@ date: 2025-10-15 12:00:00 +0900
 venue: "Clinical Orthopaedics and Related Research"
 authors: "Mark D. Kohn, Adam A. Sassoon, Navin D. Fernando (2016)"
 description: "A short clinical primer on the KL grading scale, the single most common label target for knee-OA deep learning papers, and a reminder of how much subjectivity that five-point scale is quietly absorbing."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-10-15-kellgren-lawrence-classification.png"
 related_posts: false
 ---
 

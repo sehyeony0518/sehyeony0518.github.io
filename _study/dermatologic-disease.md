@@ -2,6 +2,7 @@
 layout: study_note
 title: "Dermatologic Disease"
 description: "Visual diagnosis, dataset bias across skin tones, and the failure modes this field has documented most thoroughly."
+og_image: "https://sehyeony0518.github.io/assets/img/og/dermatologic-disease.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "clinical-foundations"

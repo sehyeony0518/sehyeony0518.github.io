@@ -5,6 +5,7 @@ date: 2025-11-10 12:00:00 +0900
 venue: "ACM CHIL"
 authors: "Oakden-Rayner, Dunnmon, Carneiro, Ré (2020)"
 description: "Within a labeled class there are clinically distinct subsets, and a model can fail on the dangerous ones while the headline number stays high."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-11-10-oakden-rayner-hidden-stratification.png"
 related_posts: false
 ---
 

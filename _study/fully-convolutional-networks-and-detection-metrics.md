@@ -2,6 +2,7 @@
 layout: study_note
 title: "Fully Convolutional Networks, and Why Detection Needed Its Own Metric"
 description: "Deriving fully convolutional networks from fully-connected layers, then computing IoU, detection matching, precision-recall, AP, and mAP under explicit evaluation conventions."
+og_image: "https://sehyeony0518.github.io/assets/img/og/fully-convolutional-networks-and-detection-metrics.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

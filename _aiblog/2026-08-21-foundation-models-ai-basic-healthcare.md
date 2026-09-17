@@ -3,6 +3,7 @@ layout: insight
 title: "From Diagnostic Tools to Expert Companions: Why Korea Wants Its Own Medical Foundation Model"
 date: 2026-08-21 12:00:00+0900
 description: "Notes from a lecture by Prof. Joon-Beom Seo, head of the AI-Basic Healthcare Task Force: ten years from AlphaGo, four ways AI can transform care, and the case for a sovereign medical foundation model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-08-21-foundation-models-ai-basic-healthcare.png"
 tag: "AI Committee"
 related_posts: false
 ---

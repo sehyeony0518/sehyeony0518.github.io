@@ -2,6 +2,7 @@
 layout: study_note
 title: "Matthews Correlation Coefficient: A Metric That Fails Loudly"
 description: "Why accuracy moves with prevalence and F1 ignores a whole cell of the confusion matrix, and how MCC falls out of a chi-squared test of independence between prediction and truth."
+og_image: "https://sehyeony0518.github.io/assets/img/og/matthews-correlation-coefficient.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Stroke"
 description: "Time-critical diagnosis and imaging triage, and why decision latency is itself a clinical outcome."
+og_image: "https://sehyeony0518.github.io/assets/img/og/stroke.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "neurology"

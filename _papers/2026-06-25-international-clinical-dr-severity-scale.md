@@ -5,6 +5,7 @@ date: 2026-06-25 12:00:00 +0900
 venue: "Ophthalmology"
 authors: "C. P. Wilkinson, Frederick L. Ferris III, Ronald E. Klein, Paul P. Lee, Carl David Agardh, et al. (2003)"
 description: "The ICDR scale: a 31-person, 16-country consensus process behind the DR severity labels nearly every retinal AI paper trains against, built via a modified Delphi method rather than a single objective measurement."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-06-25-international-clinical-dr-severity-scale.png"
 related_posts: false
 ---
 

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Latent Variables: EM and Variational Inference"
 description: "What to do when neither the parameter nor the variable that produced the data was observed, and why the posterior usually has to be approximated rather than computed."
+og_image: "https://sehyeony0518.github.io/assets/img/og/latent-variables-em-and-variational-inference.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"

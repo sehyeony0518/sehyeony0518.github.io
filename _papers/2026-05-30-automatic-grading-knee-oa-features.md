@@ -5,6 +5,7 @@ date: 2026-05-30 12:00:00 +0900
 venue: "Scientific Reports"
 authors: "Aleksei Tiulpin, Simo Saarakkala (2020)"
 description: "Rather than predicting a single aggregate KL grade, this model grades each individual OARSI-atlas feature (osteophytes, joint space narrowing, and more) separately, matching the atlas's own granularity."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-05-30-automatic-grading-knee-oa-features.png"
 related_posts: false
 ---
 

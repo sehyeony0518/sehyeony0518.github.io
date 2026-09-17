@@ -2,6 +2,7 @@
 layout: study_note
 title: "Critical Care Medicine"
 description: "Continuous monitoring data, deterioration prediction, and the ethical weight carried by such a model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/critical-care-medicine.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "clinical-foundations"

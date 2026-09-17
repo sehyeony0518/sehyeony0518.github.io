@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clinical Alignment and Knowledge as Supervision"
 description: "Using clinical knowledge to shape what a model learns, rather than only to judge it afterwards."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clinical-alignment-and-knowledge-as-supervision.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "alignment"

@@ -5,6 +5,7 @@ date: 2025-10-28 12:00:00 +0900
 venue: "Nature Machine Intelligence"
 authors: "DeGrave, Janizek, Lee (2021)"
 description: "During a pandemic, dozens of high-accuracy COVID detectors were published. This paper showed many were reading laterality markers, patient positioning, and dataset provenance."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-10-28-degrave-covid-shortcut.png"
 related_posts: false
 ---
 

@@ -2,6 +2,7 @@
 layout: study_note
 title: "AI Acceleration: Reducing Work and Choosing What to Optimize"
 description: "Transform convolution separates arithmetic savings from hardware utilization and makes the cost of optimization an explicit engineering decision."
+og_image: "https://sehyeony0518.github.io/assets/img/og/ai-acceleration-and-choosing-what-to-optimize.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "efficient-computation"

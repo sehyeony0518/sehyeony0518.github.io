@@ -5,6 +5,7 @@ date: 2025-10-08 12:00:00 +0900
 venue: "Nature Communications"
 authors: "Alexander Brown, Nenad Tomasev, Jan Freyberg, Yuan Liu, Alan Karthikesalingam, Jessica Schrouff (2023)"
 description: "A method (ShorT) for directly testing whether a clinical model is using shortcut correlations, with the uncomfortable finding that shortcuts are not always the reason a model is unfair."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-10-08-shortcut-testing-fair-medical-ai.png"
 related_posts: false
 ---
 

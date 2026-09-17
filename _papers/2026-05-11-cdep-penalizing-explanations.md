@@ -5,6 +5,7 @@ date: 2026-05-11 12:00:00 +0900
 venue: "ICML 2020"
 authors: "Laura Rieger, Chandan Singh, W. James Murdoch, Bin Yu (2020)"
 description: "CDEP, penalizing a model's contextual-decomposition-based explanation directly during training, so an explanation isn't just a diagnostic afterward but an actionable lever to fix the model."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-05-11-cdep-penalizing-explanations.png"
 related_posts: false
 ---
 

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Abdominal Ultrasound Physics and Image Formation"
 description: "Impedance, attenuation, gain, frequency and depth, harmonics, and the artifacts these physics produce."
+og_image: "https://sehyeony0518.github.io/assets/img/og/abdominal-ultrasound-physics-and-image-formation.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

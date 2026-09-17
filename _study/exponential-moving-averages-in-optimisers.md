@@ -2,6 +2,7 @@
 layout: study_note
 title: "The Exponential Moving Average: One Recursion Behind Momentum, RMSProp and Adam"
 description: "Deriving the exponential moving average behind momentum, RMSProp and Adam, including bias correction, memory timescales, effective sample size and numerical updates."
+og_image: "https://sehyeony0518.github.io/assets/img/og/exponential-moving-averages-in-optimisers.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

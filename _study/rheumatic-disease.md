@@ -2,6 +2,7 @@
 layout: study_note
 title: "Rheumatic Disease"
 description: "Diagnosis from a combination of imaging, serology, and clinical criteria rather than any single test."
+og_image: "https://sehyeony0518.github.io/assets/img/og/rheumatic-disease.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "clinical-foundations"

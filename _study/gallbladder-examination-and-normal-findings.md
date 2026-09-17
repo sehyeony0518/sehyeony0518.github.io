@@ -2,6 +2,7 @@
 layout: study_note
 title: "Gallbladder Examination and Normal Findings"
 description: "The scanning protocol, what normal looks like, and the sonographic feature vocabulary: echogenicity, margin, wall, posterior acoustics, Doppler."
+og_image: "https://sehyeony0518.github.io/assets/img/og/gallbladder-examination-and-normal-findings.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

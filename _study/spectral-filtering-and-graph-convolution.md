@@ -2,6 +2,7 @@
 layout: study_note
 title: "Spectral Filtering: Why the Fourier Transform Is a Special Case"
 description: "The analyze-scale-reconstruct template behind the word spectral, the fact that the Fourier basis is the eigenbasis of a ring graph's Laplacian, and what that licenses for graphs with no coordinates."
+og_image: "https://sehyeony0518.github.io/assets/img/og/spectral-filtering-and-graph-convolution.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"

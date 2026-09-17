@@ -2,6 +2,7 @@
 layout: study_note
 title: "Error and Clinical Failure Analysis"
 description: "Reading the cases a model gets wrong as evidence about what it learned."
+og_image: "https://sehyeony0518.github.io/assets/img/og/error-and-clinical-failure-analysis.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

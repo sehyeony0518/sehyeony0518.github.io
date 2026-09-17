@@ -2,6 +2,7 @@
 layout: study_note
 title: "Clinical Faithfulness and Reliance on Clinical Evidence"
 description: "My own research question: whether a model's evidence aligns with independent clinical factors rather than merely looking anatomically reasonable."
+og_image: "https://sehyeony0518.github.io/assets/img/og/clinical-faithfulness-and-reliance-on-clinical-evidence.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "alignment"

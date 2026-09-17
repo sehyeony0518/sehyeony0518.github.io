@@ -5,6 +5,7 @@ date: 2026-07-21 12:00:00 +0900
 venue: "arXiv preprint"
 authors: "Azmul A. Irfan, Nur Ahmad Khatim, Alfan Alfian Irfan, Achmad Zaki, Erike A. Suwarsono, Mansur M. Arief (2026)"
 description: "A framework built around the fact that a single-grade disagreement on the KL scale can redirect a patient from conservative therapy to a surgical pathway, explainability motivated directly by clinical stakes, not as a generic add-on."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-07-21-knee-xrai-explainable-kl-grading.png"
 related_posts: false
 ---
 

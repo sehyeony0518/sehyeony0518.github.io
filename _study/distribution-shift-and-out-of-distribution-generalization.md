@@ -2,6 +2,7 @@
 layout: study_note
 title: "Distribution Shift and Out-of-Distribution Generalization"
 description: "What breaks when the hospital, scanner, operator, or population changes, and which failures are foreseeable."
+og_image: "https://sehyeony0518.github.io/assets/img/og/distribution-shift-and-out-of-distribution-generalization.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

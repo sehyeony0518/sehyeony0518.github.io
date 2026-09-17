@@ -5,6 +5,7 @@ date: 2025-10-02 12:00:00 +0900
 venue: "PLOS Medicine"
 authors: "Zech, Badgeley, Liu, Costa, Titano, Oermann (2018)"
 description: "CNNs detected the treating institution from chest radiographs and used it as a proxy for disease prevalence, an early, concrete demonstration of confounding by site."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-10-02-zech-variable-generalization.png"
 related_posts: false
 ---
 

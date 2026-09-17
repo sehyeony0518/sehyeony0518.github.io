@@ -5,6 +5,7 @@ date: 2026-05-04 12:00:00 +0900
 venue: "IEEE EMBS 2006"
 authors: "Gwénolé Quellec, Mathieu Lamard, Pierre Marie Josselin, Guy Cazuguel, Béatrice Cochener, Christian Roux (2006)"
 description: "An early, template-based method for finding microaneurysms, the first and smallest lesions of diabetic retinopathy, using wavelet-domain matching rather than a learned classifier."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-05-04-wavelet-lesion-detection-retina.png"
 related_posts: false
 ---
 

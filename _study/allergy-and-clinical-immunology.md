@@ -2,6 +2,7 @@
 layout: study_note
 title: "Allergy and Clinical Immunology"
 description: "Diagnostic testing with imperfect specificity, and the role of clinical history in interpreting a result."
+og_image: "https://sehyeony0518.github.io/assets/img/og/allergy-and-clinical-immunology.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "clinical-foundations"

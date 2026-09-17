@@ -5,6 +5,7 @@ date: 2026-02-22 12:00:00 +0900
 venue: "IEEE JSTSP"
 authors: "Hsieh-Wei Lee, Bin-Da Liu, King-Chu Hung, Sheau-Fang Lei, Po-Chin Wang, Tsung-Lung Yang (2009)"
 description: "A pre-deep-learning approach to breast-ultrasound CAD: hand-engineered wavelet channel-energy features meant to capture how infiltrative a lesion's margin looks, a useful reminder of what feature engineering used to make explicit."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-02-22-wavelet-channel-energy-breast-us.png"
 related_posts: false
 ---
 

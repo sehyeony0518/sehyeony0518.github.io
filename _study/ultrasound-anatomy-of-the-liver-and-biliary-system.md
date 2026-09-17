@@ -2,6 +2,7 @@
 layout: study_note
 title: "Ultrasound Anatomy of the Liver and Biliary System"
 description: "The anatomy a sonographer works through, including the variants that change what a normal study looks like."
+og_image: "https://sehyeony0518.github.io/assets/img/og/ultrasound-anatomy-of-the-liver-and-biliary-system.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

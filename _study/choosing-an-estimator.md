@@ -2,6 +2,7 @@
 layout: study_note
 title: "Choosing an Estimator: MMSE, MAP, and Maximum Likelihood"
 description: "Three answers to the same question, what each one optimizes, and which of them needs an integral nobody can evaluate."
+og_image: "https://sehyeony0518.github.io/assets/img/og/choosing-an-estimator.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"

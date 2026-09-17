@@ -2,6 +2,7 @@
 layout: study_note
 title: "Biliary Obstruction"
 description: "Duct dilatation, the level and cause of obstruction, and what the clinical picture adds."
+og_image: "https://sehyeony0518.github.io/assets/img/og/biliary-obstruction.png"
 tab: "clinical-medicine"
 tab_title: "Clinical Medicine"
 category: "hepatobiliary"

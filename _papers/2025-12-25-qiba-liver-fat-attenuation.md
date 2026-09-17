@@ -5,6 +5,7 @@ date: 2025-12-25 12:00:00 +0900
 venue: "Radiology"
 authors: "Giovanna Ferraioli, Viksit Kumar, Arinc Ozturk, Kibo Nam, Chris L. de Korte, Richard G. Barr (2022)"
 description: "A standards-body review on turning ultrasound attenuation and backscatter into a quantitative, reproducible liver-fat biomarker, the standardization work that any AI liver-steatosis model eventually has to sit on top of."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2025-12-25-qiba-liver-fat-attenuation.png"
 related_posts: false
 ---
 

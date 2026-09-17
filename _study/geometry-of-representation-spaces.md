@@ -2,6 +2,7 @@
 layout: study_note
 title: "Geometry of Representation Spaces"
 description: "Cosine similarity, manifolds, metric spaces, and what the shape of a latent space says about what a model encodes."
+og_image: "https://sehyeony0518.github.io/assets/img/og/geometry-of-representation-spaces.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "algebra-and-optimization"

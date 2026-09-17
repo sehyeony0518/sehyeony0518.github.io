@@ -3,6 +3,7 @@ layout: insight
 title: "Ben Glocker on Causal Direction, Scanner Effects, and What Breaks at Deployment"
 date: 2026-09-11 12:00:00 +0900
 description: "Notes on whether the image causes the label or the label causes the image, how that framing bears on data scarcity and dataset shift, and an experiment in which site information survives a full neuroimaging pipeline."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-09-11-ben-glocker-causality-medical-imaging.png"
 tag: "Imperial College London"
 related_posts: false
 ---

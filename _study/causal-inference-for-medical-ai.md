@@ -2,6 +2,7 @@
 layout: study_note
 title: "Causal Inference for Medical AI"
 description: "Causal graphs, mediators and colliders, counterfactuals, and intervention as a language for asking why a feature predicts an outcome."
+og_image: "https://sehyeony0518.github.io/assets/img/og/causal-inference-for-medical-ai.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "causality"

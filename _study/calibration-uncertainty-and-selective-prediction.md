@@ -2,6 +2,7 @@
 layout: study_note
 title: "Calibration, Uncertainty, and Selective Prediction"
 description: "Whether a stated probability means what it says, and when a model should abstain."
+og_image: "https://sehyeony0518.github.io/assets/img/og/calibration-uncertainty-and-selective-prediction.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "evaluation"

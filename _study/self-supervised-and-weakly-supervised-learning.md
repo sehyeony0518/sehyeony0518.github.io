@@ -2,6 +2,7 @@
 layout: study_note
 title: "Self-Supervised and Weakly Supervised Learning"
 description: "Learning from medical data whose labels are scarce, noisy, or only available at the study level."
+og_image: "https://sehyeony0518.github.io/assets/img/og/self-supervised-and-weakly-supervised-learning.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "neural-networks"

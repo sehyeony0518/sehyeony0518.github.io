@@ -2,6 +2,7 @@
 layout: study_note
 title: "Resampling and Anti-Aliasing: Why Half of a Checkerboard Is Grey"
 description: "How downsampling folds the spectrum, why anti-aliasing must come first, and how interpolation, rational resampling, and checkerboard resizing set the filter cutoff."
+og_image: "https://sehyeony0518.github.io/assets/img/og/resampling-and-anti-aliasing.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "signals-and-systems"

@@ -2,6 +2,7 @@
 layout: study_note
 title: "Auditing Explanation Faithfulness in Gallbladder Models"
 description: "How the evidence a diagnostic model exposes can be checked against clinical information assessed separately from it."
+og_image: "https://sehyeony0518.github.io/assets/img/og/auditing-explanation-faithfulness-in-gallbladder-models.png"
 tab: "trustworthy-ai"
 tab_title: "Trustworthy AI"
 category: "gallbladder-ai"

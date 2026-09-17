@@ -5,6 +5,7 @@ date: 2026-07-02 12:00:00 +0900
 venue: "MIDL 2026"
 authors: "Chun Kit Wong, Paraskevas Pegios, Nina Weng, Emilie Pi Fogtmann Sejer, Martin Grønnebæk Tolsgaard, Anders Nymark Christensen, Aasa Feragen (2026)"
 description: "A method for detecting shortcut reliance by looking directly at correlations in a network's weight space, rather than at its activations or explanations, a different vantage point on the same underlying question."
+og_image: "https://sehyeony0518.github.io/assets/img/og/2026-07-02-weight-space-correlation-analysis.png"
 related_posts: false
 ---
 

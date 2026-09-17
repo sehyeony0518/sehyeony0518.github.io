@@ -2,6 +2,7 @@
 layout: study_note
 title: "Why EM Works: Responsibilities, the Q Function, and the Monotonicity Guarantee"
 description: "The latent-variable construction of a mixture, the update equations that fall out of it, and the argument that each iteration cannot make the likelihood worse."
+og_image: "https://sehyeony0518.github.io/assets/img/og/why-em-works.png"
 tab: "ai-foundations"
 tab_title: "AI Theory"
 category: "probability-and-inference"
