@@ -50,8 +50,6 @@ PAGES = {
     "research.md": "page",
     "publications.md": "page",
     "projects.md": "page",
-    "mission.md": "page",
-    "ministry.md": "page",
 }
 
 HOME = {
