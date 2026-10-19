@@ -188,9 +188,6 @@ collections:
     output: true
   teachings:
     output: true
-  prayer:
-    output: true
-    permalink: /prayer/:name/
   aiblog:
     output: true
     permalink: /blog/:name/

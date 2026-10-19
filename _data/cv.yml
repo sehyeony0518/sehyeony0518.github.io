@@ -4,7 +4,7 @@ cv:
   email: bikmiso3@ajou.ac.kr
   location: Suwon, South Korea
   image: ""
-  summary: M.S. student at Ajou University researching trustworthy and interpretable machine learning for healthcare, with a focus on clinical faithfulness, shortcut analysis, and ultrasound AI. I am also preparing for [removed], a long-term calling to serve students as a professor and [removed] campus missionary.
+  summary: M.S. student at Ajou University researching trustworthy and interpretable machine learning for healthcare, with a focus on clinical faithfulness, shortcut analysis, and ultrasound AI.
 
   social_networks:
     - network: GitHub
@@ -69,23 +69,6 @@ cv:
         end_date: 2024-12
         highlights:
           - Worked on a government-funded computational psychiatry project, gaining hands-on experience with IRB-approved clinical research workflows, clinical data handling, and clinician–AI collaboration.
-
-    Ministry & Service:
-      - company: Gyeongwon Church, Young Adults
-        position: Leadership Team · University Group Cell Leader (목장장)
-        location: Suwon, South Korea
-        start_date: 2025
-        end_date: present
-        highlights:
-          - Serving and discipling university students entrusted to me, a training ground for future missions.
-
-      - company: [removed] ([removed]), Suwon
-        position: Campus Mission & Discipleship, Leader (2021–2026), Student Representative (2025)
-        location: Suwon, South Korea
-        start_date: 2020
-        end_date: 2026
-        highlights:
-          - Learned that the gospel is not a program but walking long with one person, raising disciples who make disciples.
 
     Publications:
       - title: Design of Monitoring Software for Predictive Maintenance in Smart Factory
