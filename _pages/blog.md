@@ -2,8 +2,9 @@
 layout: default
 permalink: /diary/
 title: reflections
-nav: true
-nav_order: 13
+nav: false
+sitemap: false
+noindex: true
 pagination:
   enabled: true
   collection: posts

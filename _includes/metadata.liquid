@@ -40,6 +40,18 @@
 </title>
 <meta name="author" content="{{ author_name }}">
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+{%- comment -%}
+  LOCAL OVERRIDE, second change: the reflections are kept out of search.
+  robots.txt only asks a crawler not to fetch a page; a page it reaches by a
+  link can still be listed. This says not to index it at all. Set by
+  `noindex: true` in front matter, and by path for the archive pages
+  jekyll-archives generates, which have no source file to carry front matter.
+{%- endcomment -%}
+{%- assign in_diary = page.url | slice: 0, 7 -%}
+{%- if page.noindex or in_diary == "/diary/" -%}
+<meta name="robots" content="noindex, nofollow">
+{%- endif -%}
 {% if page.keywords or site.keywords %}
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 {% endif %}
