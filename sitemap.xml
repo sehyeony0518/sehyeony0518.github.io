@@ -1,0 +1,37 @@
+---
+permalink: /sitemap.xml
+---
+{%- comment -%}
+  A local sitemap, which makes jekyll-sitemap stand aside (it skips generation
+  when the source already has a sitemap.xml).
+
+  The reason: the year and tag pages under /diary/ are produced by
+  jekyll-archives, which gives them only a layout and no front matter, so no
+  Jekyll default can reach them and `sitemap: false` cannot be set on them.
+  jekyll-sitemap therefore listed seven /diary/ URLs. They carry a noindex tag
+  and robots.txt disallows them, but publishing a machine-readable list of them
+  works against both. This filters on the URL instead.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign entries = site.pages -%}
+{%- for collection in site.collections -%}
+  {%- if collection.output -%}
+    {%- assign entries = entries | concat: collection.docs -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- for item in entries -%}
+  {%- assign u = item.url -%}
+  {%- assign head = u | slice: 0, 7 -%}
+  {%- unless item.sitemap == false or item.noindex or head == "/diary/" -%}
+    {%- unless u contains ".xml" or u contains ".txt" or u contains ".json" or u contains "404" -%}
+  <url>
+    <loc>{{ u | absolute_url | xml_escape }}</loc>
+    {%- if item.last_modified_at or item.date %}
+    <lastmod>{{ item.last_modified_at | default: item.date | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+  </url>
+    {%- endunless -%}
+  {%- endunless -%}
+{%- endfor %}
+</urlset>
