@@ -1,13 +1,9 @@
 User-agent: *
 
-# The mission side of the site is deliberately kept out of search. It is written
-# for people who are already part of it, not for anyone looking me up.
+# The Korean reflections are personal writing, not something to be found by
+# looking me up. The pages also carry a noindex meta tag, which is what
+# actually keeps them out of a results page; this only asks crawlers not to
+# fetch them.
 Disallow: /diary/
-Disallow: /prayer/
-Disallow: /mission/
-Disallow: /ministry/
-Disallow: /team/
-Disallow: /photos/
-Disallow: /news/
 
 Sitemap: https://sehyeony0518.github.io/sitemap.xml
