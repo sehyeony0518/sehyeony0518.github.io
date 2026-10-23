@@ -305,20 +305,17 @@ defaults:
       type: "posts"
     values:
       sitemap: false
-  - scope:
-      path: ""
-      type: "prayer"
-    values:
-      sitemap: false
+      noindex: true
   - scope:
       path: ""
       type: "news"
     values:
       sitemap: false
   # jekyll-archives generates the year and tag pages under /diary/. They have no
-  # source path, so neither a collection nor a path scope reaches them and ten of
-  # them stay in the sitemap. robots.txt disallows /diary/, so a crawler will not
-  # fetch them regardless of what the sitemap lists.
+  # source path, so neither a collection nor a path scope reaches them and they
+  # stay in the sitemap. _includes/metadata.liquid gives every /diary/ page a
+  # noindex meta tag by path, which is what keeps them out of results; robots.txt
+  # additionally asks crawlers not to fetch them.
 
 sass:
   style: compressed
