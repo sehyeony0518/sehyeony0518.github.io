@@ -8,6 +8,11 @@ overrides:
       twitter:card is hardcoded to "summary" upstream, which crops the 1200x630
       share cards this site generates (bin/build_og_images.py) down to a square
       thumbnail. The local copy emits summary_large_image when the page declares
-      og_image and keeps "summary" otherwise. Nothing else differs.
+      og_image and keeps "summary" otherwise.
+
+      Second change: a <meta name="robots" content="noindex, nofollow"> for
+      pages the site keeps out of search, driven by `noindex: true` in front
+      matter and by the /diary/ path prefix for the archive pages
+      jekyll-archives builds without front matter. Nothing else differs.
     upstream_sha256: b9b8ea49980bb85109e344198a3b97818fcb6f5fec89e11f98e46af1529bc96a
-    local_sha256: f5c5f4aac7a460fc66d1d44f8c3246fdb8365cbc31d06169063ed954d157126c
+    local_sha256: 21fbabfac9053e0413d91d079f1074f5cde3523411309221a0f0f7303bf57c3a
