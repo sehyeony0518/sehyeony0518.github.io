@@ -86,7 +86,11 @@ navbar_fixed: true
 footer_fixed: true
 search_enabled: true
 socials_in_search: true
-posts_in_search: true
+# The reflections are kept out of search. This flag is what puts every post's
+# title, description and URL into the Cmd-K index, which is inlined in the HTML
+# of every page: hiding them from the nav bar would have left all 168 of them
+# readable in the page source.
+posts_in_search: false
 bib_search: true
 
 # Dimensions
