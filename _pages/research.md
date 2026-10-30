@@ -3,7 +3,7 @@ layout: page
 permalink: /research/
 title: research
 og_image: "https://sehyeony0518.github.io/assets/img/og/page-research.png"
-description: Human-centered medical AI: aligning what a model learns with clinical concepts and human values, and studying how clinicians and models decide together.
+description: "Human-centered medical AI: aligning what a model learns with clinical concepts and human values, and studying how clinicians and models decide together."
 nav: true
 nav_order: 7
 ---
