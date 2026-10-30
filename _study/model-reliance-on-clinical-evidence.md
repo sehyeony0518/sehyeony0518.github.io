@@ -18,11 +18,16 @@ papers:
   - "2026-06-13-counterfactual-shortcut-utilization"
   - "2025-12-06-roentmod-counterfactual-cxr"
 ---
-A dependence claim needs a comparison, which information changes, which model stays fixed, and which output is measured. I would reserve “the model relies on this clinical evidence” for results that specify all three.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+“The model relies on this clinical evidence” is the strongest claim available in this literature and the one most often made without a comparison behind it. This note is about what the claim costs.
 
-The target is computational dependence, not disease causation. An imaging sign can be useful because disease produces it. Editing the sign in an image does not alter the patient's disease, and a score response does not establish that the sign is causally responsible for the clinical outcome.
+## Core question and definition
+
+A dependence claim concerns a model's computation, not a patient's disease. An imaging sign can be useful precisely because disease produces it; altering the sign in an image does not alter the disease, and a model's response to that alteration says nothing about whether the sign is causally responsible for the clinical outcome.
+
+What a response does describe is the operation that produced it. An experiment that removes a marker measures sensitivity to removing that marker. One that blurs a wall measures sensitivity to that blurring. Reading the second as “reliance on wall irregularity” needs separate evidence that irregularity is what changed and that the rest of the relevant information did not, and that step is where most published claims stop.
+
+The quantity I would use for my own task, and the comparison it is computed over, are part of work in submission and are not set out here.
 
 ## Key concepts
 
@@ -50,13 +55,17 @@ For images, neither operation is implemented merely by shuffling factor labels i
 
 ### Local responses can disappear in an average
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+An average hides direction. Removing a marker might lower scores in some malignant cases and raise them in benign ones, averaging to nothing while affecting every case. A distribution, an absolute magnitude, and a breakdown within reference-label groups each recover part of what the average lost. Absolute magnitude in particular records that something moved without recording whether the movement helped.
+
+At a decision threshold the quantity of interest stops being the score and becomes whether the decision changed. The proportion of decisions that change is a different measurement from the average change in score, and it depends heavily on how many scores sat near the threshold to begin with. A change in decision is also not automatically a failure: those towards the reference label and those away from it have to be counted separately.
 
 Probability saturation also matters. A substantial logit change near an extreme probability can produce a small probability difference. Where accessible, logits help characterize response magnitude; probabilities and decisions retain their relevance to the clinical interface.
 
 ### Redundancy limits claims of necessity
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+A classifier may use both lesion morphology and an acquisition correlate. Removing one can leave its decision unchanged because the other remains informative. Conversely, deleting both can create a large response that neither individual edit predicts.
+
+Testing two suspected cues one at a time therefore cannot settle whether either is necessary. What the separate experiments miss is the interaction: whether the two together do more, or less, than their individual effects add up to. That comparison needs a joint condition validated in its own right, and a nonadditive result is weaker evidence than it looks, because a nonlinear output scale and an interaction between the two operations leave the same signature.
 
 ## Worked examples in medical AI
 

@@ -17,9 +17,12 @@ papers:
   - "2026-06-13-counterfactual-shortcut-utilization"
   - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
 ---
+
 The difficult part of an intervention audit is knowing what the edit changed. I want each experiment to test a named dependency while measuring the artifacts and information loss introduced by the test itself.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+## Core question and definition
+
+An intervention-based audit alters something about the input, or about the computation, and reads off what the model does differently. The reading carries no verdict on its own. A score that falls once a diagnostic finding is removed has behaved correctly; a score that falls once peripheral documentation is removed has not; the number can be identical in both cases. What makes the experiment informative is everything specified around it.
 
 I would specify the edit's target, replacement procedure, affected region, expected preserved information, and validity checks before inference. “Remove the lesion” is inadequate because masking, blurring, and synthesizing tissue produce different inputs. The resulting claim concerns the implemented intervention, and expands to a clinical feature only if the edit isolates that feature credibly.
 
@@ -43,7 +46,9 @@ Editing anatomy is more demanding. Clinical findings often occur together becaus
 
 ### Controls challenge alternative explanations
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+I would include sham processing, in which the image passes through the editing and export pipeline without changing the target. A control region should be chosen for the suspected artifact: similar area and boundary length for mask-edge effects, or comparable depth and texture for ultrasound appearance changes.
+
+Judging the target edit against the control edit, rather than against the untouched image, subtracts whatever the two edits have in common, which is the reason to have a control at all. The subtraction is only as good as the control: it removes the nonspecific effects the control actually reproduces, and no others. A patch of the same area in a different acoustic compartment can match on pixel count and still be the wrong comparison.
 
 I would compare several defensible replacements when possible. Agreement across them makes one particular editing artifact less plausible, but shared destruction of contextual evidence can still explain the result.
 

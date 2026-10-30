@@ -97,6 +97,14 @@ jobs:
         run: |
           pip3 install --upgrade pyyaml
           python3 bin/check_frontmatter.py
+      - name: Check the disclosure boundary 🔒
+        # The submission is not public and this site is. The checker existed for
+        # months and nothing ran it, so it only looked when someone remembered
+        # to ask; meanwhile the method sat in five notes as display math. It runs
+        # here now. It fails only on a passage that has not already been read and
+        # accepted into bin/disclosure_baseline.json, so a flagged ordinary
+        # passage does not block the deploy twice.
+        run: python3 bin/check_disclosure.py
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick

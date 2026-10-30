@@ -18,6 +18,7 @@ papers:
   - "2025-10-28-degrave-covid-shortcut"
   - "2025-10-02-zech-variable-generalization"
 ---
+
 A classifier can identify the correct diagnosis while relying on evidence that would become misleading under a different acquisition or referral process. I want to identify that dependence before a favorable test score makes it difficult to question.
 
 ## Core question and definition
@@ -88,9 +89,15 @@ The clinical finding remains irregular thickening. The tested alternative is the
 
 ## Evaluation methods and limitations
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### Define a behavioral quantity
 
-Pairs from one patient remain dependent. Confidence intervals should resample patients with their associated pairs. For a training-method claim, variation across independently trained models also matters.
+A claim that a model uses a cue has to name what will be measured, and on what scale, before the audit runs. Choosing the summary after seeing the results converts a descriptive observation into a finding.
+
+Whichever quantity it is, a signed summary and an absolute one answer different questions: effects in opposite directions cancel in the first and accumulate in the second. Crossings of a decision threshold answer a third question, and the threshold has to be set in advance. A logit change is not a probability change, and neither is by itself a statement about clinical harm.
+
+Repeated images of one examination are not independent observations, so an interval has to respect whatever grouping the data actually have. For a claim about a training procedure rather than about one trained model, variation across independently trained models matters too.
+
+The comparison I would use for my own task is part of work in submission and is not set out here.
 
 ### Challenge the cue-label relationship
 

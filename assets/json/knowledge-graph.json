@@ -228,7 +228,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 108
+   "deg": 107
   },
   {
    "id": "c:Deployment feedback loop",
@@ -2098,7 +2098,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Disease & pathology",
-   "deg": 19
+   "deg": 18
   },
   {
    "id": "note:spectral-filtering-and-graph-convolution",
@@ -9897,12 +9897,6 @@
   {
    "source": "note:shortcut-learning-in-medical-imaging",
    "target": "c:Counterfactual",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "note:shortcut-learning-in-medical-imaging",
-   "target": "c:Preprocessing & resampling",
    "kind": "computational",
    "w": 1
   },

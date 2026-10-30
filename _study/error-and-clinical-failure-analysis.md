@@ -17,6 +17,7 @@ papers:
   - "2025-10-28-degrave-covid-shortcut"
   - "2026-04-28-reveal-to-revise-spurious-behavior"
 ---
+
 An error case is a disagreement with a specified reference. Clinical failure analysis asks where the failure arose, what consequences it could produce, and what evidence would justify a particular repair.
 
 ## Core question and definition
@@ -296,13 +297,20 @@ For example, “errors often contain a caliper” is a case observation. Compari
 
 An explanation image alone does not complete this sequence.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### 8. Design controlled edits to test a specific hypothesis
 
-Interpreting the change as reliance on the intended cue requires that the edit does not also alter relevant evidence, introduce a new artifact, or shift the image in another consequential way.
+An edit intended to remove a suspected nuisance cue turns a case observation into an experiment, and what the experiment measures is the response to that editing procedure, not to the cue. Reading it as reliance on the cue requires that the edit left the relevant evidence intact, introduced no new artifact, and did not shift the image in some other consequential way. None of those three follows from the edited image looking right.
 
 Useful controls include:
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+- Edits of similarly sized irrelevant regions.
+- Alternative removal methods.
+- Checks that lesion visibility and image quality remain adequate.
+- Correctly predicted cases as well as errors.
+- Independent clinical assessment of the edited image.
+- Intervals that respect how repeated images are grouped.
+
+A masked region may remove clinical information along with an overlay. A model response then establishes sensitivity to the edit, not uniquely sensitivity to the overlay.
 
 Correct predictions are important controls because a shortcut can produce a correct answer while its usual association holds.
 

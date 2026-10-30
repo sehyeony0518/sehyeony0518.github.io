@@ -1,0 +1,61 @@
+{
+ "read": [
+  "2fd180565b4343f8",
+  "58d32c2da511c3de",
+  "8638cbbf1bf4e9f9",
+  "99b37994945ca41c",
+  "a9bb70322d14452b",
+  "b469f5042592bb2c",
+  "b501e2c70632b54b",
+  "bbac42d0673256c5",
+  "eb9aa54cb573f986"
+ ],
+ "note": "Hashes of passages that have been read and judged ordinary. Regenerate with: python3 bin/check_disclosure.py --write-baseline",
+ "entries": [
+  {
+   "file": "_papers/2025-12-06-roentmod-counterfactual-cxr.md",
+   "line": 11,
+   "hash": "8638cbbf1bf4e9f9"
+  },
+  {
+   "file": "_papers/2026-04-08-frequency-domain-medical-segmentation.md",
+   "line": 65,
+   "hash": "eb9aa54cb573f986"
+  },
+  {
+   "file": "_study/causal-inference-for-medical-ai.md",
+   "line": 9,
+   "hash": "b469f5042592bb2c"
+  },
+  {
+   "file": "_study/causal-inference-for-medical-ai.md",
+   "line": 119,
+   "hash": "2fd180565b4343f8"
+  },
+  {
+   "file": "_study/clinical-faithfulness-and-reliance-on-clinical-evidence.md",
+   "line": 63,
+   "hash": "b501e2c70632b54b"
+  },
+  {
+   "file": "_study/robustness-subgroup-performance-and-external-validation.md",
+   "line": 553,
+   "hash": "bbac42d0673256c5"
+  },
+  {
+   "file": "_study/robustness-subgroup-performance-and-external-validation.md",
+   "line": 555,
+   "hash": "58d32c2da511c3de"
+  },
+  {
+   "file": "_study/statistical-inference-for-diagnostic-studies.md",
+   "line": 25,
+   "hash": "99b37994945ca41c"
+  },
+  {
+   "file": "_study/statistical-inference-for-diagnostic-studies.md",
+   "line": 27,
+   "hash": "a9bb70322d14452b"
+  }
+ ]
+}

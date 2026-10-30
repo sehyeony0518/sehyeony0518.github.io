@@ -151,12 +151,15 @@ def main(argv):
     found = collect(targets)
 
     if write:
+        # Deliberately no signal names and no excerpt. This file is public, and a
+        # list of which categories fired is a shorter route to the boundary than
+        # the passages themselves. Rerun the checker to see the tags.
         BASELINE.write_text(json.dumps(
             {"read": sorted({f[3] for f in found}),
              "note": "Hashes of passages that have been read and judged ordinary. "
                      "Regenerate with: python3 bin/check_disclosure.py --write-baseline",
-             "entries": [{"file": f[0], "line": f[1], "signals": f[2], "hash": f[3]}
-                         for f in found]},
+             "entries": [{"file": f[0], "line": f[1], "hash": f[3]}
+                         for f in sorted(found)]},
             indent=1), encoding="utf-8")
         print(f"baseline written: {len(found)} passage(s) accepted "
               f"-> {BASELINE.relative_to(ROOT)}")
