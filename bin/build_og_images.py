@@ -55,13 +55,13 @@ PAGES = {
 HOME = {
     "name": "Se-Hyeon Hwang",
     "name_ko": "황세현",
-    "tagline": "Medical XAI Researcher",
-    "blurb": "Whether a diagnostic model's accuracy comes from clinically valid "
-             "evidence or from shortcuts, and how to make that reliance measurable.",
-    # The two directions the home page states, as its own two columns.
+    "tagline": "Human-Centered Medical AI",
+    "blurb": "Whether a clinical model uses the concepts an expert would name, whether it "
+             "optimizes what the task is for, and what happens when a clinician works with one.",
+    # The two halves the home page states, as its own two columns.
     "columns": [
-        ("Reliable medical AI", "Evidence auditing, shortcut learning, faithfulness"),
-        ("Clinical translation", "Disease, imaging findings, diagnostic reasoning"),
+        ("Alignment", "Clinical concepts, value, appropriate reliance"),
+        ("Clinical grounding", "Disease, imaging findings, diagnostic reasoning"),
     ],
     "foot": "M.S. student  /  Ajou University  /  Embedded & Software Lab",
 }
@@ -235,18 +235,20 @@ def render_home(stem):
         t_line.draw((x, y), line, MUTED)
         y += 41
 
-    # Two columns, as the page states its two directions.
-    y += 26
+    # The lower block is laid out from the bottom up, so a longer blurb cannot
+    # push the columns into the affiliation line.
+    foot_y = H - PAD - 96
+    col_y = foot_y - 92
     col_w = (inner - 56) // 2
     f_head = font("Inter-SemiBold.ttf", 24)
     f_sub = font("Inter-Regular.ttf", 21)
     for i, (head, sub) in enumerate(HOME["columns"]):
         cx = x + i * (col_w + 56)
-        d.line([(cx, y), (cx + col_w, y)], fill=RULE, width=1)
-        d.text((cx, y + 16), head, font=f_head, fill=INK)
-        d.text((cx, y + 48), sub, font=f_sub, fill=MUTED)
+        d.line([(cx, col_y), (cx + col_w, col_y)], fill=RULE, width=1)
+        d.text((cx, col_y + 16), head, font=f_head, fill=INK)
+        d.text((cx, col_y + 48), sub, font=f_sub, fill=MUTED)
 
-    d.text((x, H - PAD - 96), HOME["foot"], font=font("Inter-Regular.ttf", 23), fill=MUTED)
+    d.text((x, foot_y), HOME["foot"], font=font("Inter-Regular.ttf", 23), fill=MUTED)
     footer(d, x)
     OUT.mkdir(parents=True, exist_ok=True)
     img.save(OUT / f"{stem}.png", optimize=True)

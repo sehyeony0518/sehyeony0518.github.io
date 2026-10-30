@@ -14,10 +14,10 @@ layout: default
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Ajou University" },
   "givenName": "Se-Hyeon",
   "familyName": "Hwang",
-  "description": "Se-Hyeon Hwang (황세현) is an M.S. student at Ajou University researching trustworthy and explainable medical AI. 아주대학교 AI융합네트워크학과 석사과정으로 의료 인공지능의 신뢰성과 설명가능성을 연구합니다.",
+  "description": "Se-Hyeon Hwang (황세현) is an M.S. student at Ajou University researching human-centered medical AI: concept-based interpretability, clinical value alignment, and human-AI collaboration in clinical decision making. 아주대학교 AI융합네트워크학과 석사과정으로 인간 중심 의료 인공지능을 연구합니다.",
   "knowsLanguage": ["ko", "en"],
   "worksFor": { "@type": "Organization", "name": "Embedded & Software Lab, Ajou University", "url": "https://eslab.ajou.ac.kr/" },
-  "knowsAbout": ["Trustworthy AI", "Explainable AI", "Medical XAI", "Interpretable machine learning", "Medical imaging AI", "Ultrasound AI", "Clinical faithfulness", "의료 인공지능", "설명가능 인공지능"],
+  "knowsAbout": ["Human-centered AI", "Human-AI alignment", "Human-AI interaction", "Concept-based interpretability", "Clinical decision support", "Trustworthy AI", "Explainable AI", "Medical imaging AI", "Ultrasound AI", "Mental health AI", "인간 중심 의료 인공지능", "의료 인공지능", "설명가능 인공지능"],
   "sameAs": [
     "https://www.linkedin.com/in/sehyeony",
     "https://github.com/sehyeony0518"
@@ -49,7 +49,7 @@ layout: default
         <span class="font-weight-bold">Se-Hyeon</span> Hwang <span class="h1-ko" lang="ko">황세현</span>
       {% endif %}
     </h1>
-    <p class="hero-tagline"><span class="hero-text">Medical XAI Researcher</span><span class="hero-caret" aria-hidden="true"></span></p>
+    <p class="hero-tagline"><span class="hero-text">Human-Centered Medical AI</span><span class="hero-caret" aria-hidden="true"></span></p>
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
@@ -101,13 +101,13 @@ layout: default
       // Claims argued in the notes, in the field's own vocabulary. Weighted toward
       // interpretability and auditing of image models, which is where the work sits.
       var phrases = [
-        'AUROC depends on disease spectrum',
+        'Accuracy is not alignment',
         'Decodability is not reliance',
+        'An explanation can raise trust, not accuracy',
+        'A false negative is not a false positive',
         'Completeness is not plausibility',
-        'TCAV is not a causal proportion',
-        'Deletion curves depend on edits',
-        'Null ablations can hide redundancy',
-        'Medical XAI Researcher'
+        'Appropriate reliance, not agreement',
+        'Human-Centered Medical AI'
       ];
       var TYPE = 52, ERASE = 26, HOLD = 820;
       var p = 0, i = 0, erasing = false;

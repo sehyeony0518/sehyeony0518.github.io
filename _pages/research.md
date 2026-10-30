@@ -3,31 +3,66 @@ layout: page
 permalink: /research/
 title: research
 og_image: "https://sehyeony0518.github.io/assets/img/og/page-research.png"
-description: Trustworthy medical AI grounded in clinical evidence.
+description: Human-centered medical AI: aligning what a model learns with clinical concepts and human values, and studying how clinicians and models decide together.
 nav: true
 nav_order: 7
 ---
 <a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a>
 
-I study the reliability of medical image classifiers: whether a model's accuracy rests on evidence a clinician would recognize as relevant, and how that question can be examined rather than assumed.
+I work on **human-centered medical AI**: training and evaluating clinical models so that what they learn corresponds to clinical concepts and human values, and studying how clinicians and models arrive at better decisions together than either does alone.
 
-The work runs in two directions. **Reliable medical AI models** asks what a diagnostic model is actually responding to and when that response can be trusted. **Clinical translation** is the medical study that gives the first question something to check against. My M.S. research at Ajou University, advised by Prof. Jung-Won Lee in the Embedded & Software Lab, sits where the two meet, in ultrasound diagnosis.
+The field sits inside a larger one. **Human-centered AI** asks that systems be designed and judged by human values, autonomy, understandability and controllability. **Human-AI alignment and interaction** is the part of it that asks how the goals, concepts, judgments and trust of a person and a model can be brought into correspondence. **Medical AI and clinical decision support** is where I ask those questions: imaging diagnosis, clinical decision making, mental health, and the working relationship between a clinician and a model.
 
-## Reliable Medical AI Models
+### Accuracy is not the whole question
 
-A classifier can reach good diagnostic accuracy using features whose relationship to disease depends on how the images were acquired or selected rather than on the disease itself. Hospital-specific formatting, measurement markers, and acquisition settings can all carry predictive signal, and a random split preserves those relationships in training and test alike, so an evaluation can look successful while leaving the question untouched.
+Suppose a radiologist is handed a lung nodule flagged by a model that detects cancer at 95 percent accuracy. Several things can still be wrong, and none of them is a performance number.
 
-My interest is in the gap between a model's stated evidence and its actual reliance. An explanation that looks anatomically reasonable is not thereby faithful to the computation, and a readout that correlates with a clinical factor has not thereby been shown to drive the prediction. I work on how those distinctions can be made measurable, and on what has to hold before a result counts as evidence rather than a plausible picture.
+- The model may have learned a burned-in marker or a property of the scanner rather than the lesion.
+- The radiologist may not be able to tell why it decided what it decided.
+- The radiologist may defer to it where their own reading was better.
+- The radiologist may see something the model missed, with no way to give that back.
 
-The same question extends to generalization. Performance that holds on internal data can fail across hospitals, devices, and patient populations, and stable aggregate accuracy can hide a change in what the model is responding to.
+These are not failures of the classifier. They are failures of alignment between a person and a model, and they are what I want to work on.
 
-## Clinical Translation
+## Five questions I am working on
 
-The clinical half is not a supporting activity. Terms like clinically meaningful evidence have no content until the medicine behind them is understood, and without that content there is nothing for an audit to check against.
+### 1. Concept-based interpretability
 
-So I study the diseases, the imaging findings, and the diagnostic reasoning that produce a diagnosis: which features a radiologist reads and in what order, which findings are interpreted together, what a reference standard does and does not establish, and how patients who receive one workup differ from those who receive another. I also study ultrasound acquisition itself, since operator, machine, and preset variation are a property of the examination rather than of the patient, and telling those apart is a prerequisite for calling anything a shortcut.
+Does a model actually use the clinical concepts an expert would name?
 
-My [study notes](/study/) cover both directions in more detail, and my [publications](/publications/) list the work that has appeared.
+Saliency tells you where a model looked. A clinician wants to know something else: whether the lesion border is irregular, whether the tissue architecture is abnormal, whether a particular pattern is present, and how much each of those contributed to the diagnosis. The question is whether a link can be built between concepts a person holds and the representations a model computes, and what has to hold before such a link counts as evidence rather than a plausible picture.
+
+This is where my M.S. work sits. An explanation that looks anatomically reasonable is not thereby faithful to the computation, and a readout that correlates with a clinical factor has not thereby been shown to drive the prediction. Making those distinctions measurable is the problem.
+
+### 2. Clinical value alignment
+
+What makes a medical model good, if not accuracy?
+
+A false negative and a false positive are not the same event in a clinic. Missing a cancer and sending a healthy patient for an unnecessary workup carry different costs, borne by different people, and the balance between them changes with the disease, the setting and the stage of care. So the question is whether what a model optimizes corresponds to what the clinical task is actually for: which operating point, measured against which cost, for which population.
+
+### 3. Bidirectional human-AI alignment
+
+Alignment has usually meant moving the model toward the person. The harder version runs both ways: the clinician's knowledge, criteria and reasons should reach the model, and the model's uncertainty, grounds and failure modes should reach the clinician.
+
+The aim is not a clinician who agrees with the model. It is a clinician who knows accurately what it is good at and what it is not, and who can therefore rely on it or override it in the right places.
+
+### 4. Human-AI interaction in clinical decision making
+
+The previous three can be studied on a benchmark. This one cannot. It asks what happens when a clinician and a model actually work together, and it is answered by experiment: compare a reader given only the model's output against a reader given its output with concept-level grounds, and measure not only diagnostic accuracy but confidence, over-reliance, and how judgments change.
+
+The uncomfortable possibility is the interesting one. Explanations may raise accuracy, or they may simply raise trust, including where trust is not warranted. Which of those happens is an empirical question about a workflow, not a property of an algorithm.
+
+### 5. Human-centered mental health AI
+
+Mental health is where human values and interaction matter most and where classification alone is least sufficient, because the evidence is the patient's language, affect, context and subjective experience.
+
+For an LLM-administered assessment the questions are concrete. Does it extract the clinically significant content from what the patient said? Does its next question follow from the answer it was given? Where do its judgments agree with a clinician's and where do they diverge? Can the patient understand what it is asking and say what they mean? And does it ever hold a wrong conclusion confidently enough to lead a patient toward it? My [SCID-5 Module J agent](https://github.com/sehyeony0518/scid5-module-j-agent) is a first prototype against these questions.
+
+## The clinical half is not support work
+
+None of the five questions has content without the medicine. "Clinically valid evidence" and "clinical value" are empty phrases until someone knows what a radiologist reads and in what order, which findings are interpreted together, what a reference standard does and does not establish, and how patients who receive one workup differ from those who receive another.
+
+So I study that directly, along with ultrasound acquisition itself, because operator, machine and preset variation is a property of the examination rather than of the patient, and telling those apart is a prerequisite for calling anything a shortcut. My [study notes](/study/) cover this alongside the computational side, and my [publications](/publications/) list the work that has appeared.
 
 ## Selected Projects
 

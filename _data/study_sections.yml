@@ -1,6 +1,7 @@
 # Study tabs and their categories. Notes live in _study/ and join by `tab` + `category`.
 # Ordered as the argument builds: the machinery, then the clinical prior it is
-# judged against, then what both are for.
+# judged against, then what both are for, which is aligning a model with the
+# concepts and values a clinician works by.
 tabs:
   - id: "ai-foundations"
     title: "AI Theory"
@@ -10,7 +11,7 @@ tabs:
     description: "The prior: clinical knowledge across fields."
   - id: "trustworthy-ai"
     title: "Trustworthy AI"
-    description: "The purpose: causality, auditing, evaluation, deployment."
+    description: "The purpose: alignment, auditing, evaluation, deployment."
 categories:
   # AI entry route: probability orders 1-4, algebra, signals, probability orders 5-12,
   # learning models, probability order 13, feedback control, then decision making.
