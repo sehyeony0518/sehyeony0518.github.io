@@ -91,12 +91,31 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Check front matter 🧾
+        # A page whose front matter does not parse is skipped silently and the
+        # build still succeeds, which is how /research/ once deployed as a 404.
+        run: |
+          pip3 install --upgrade pyyaml
+          python3 bin/check_frontmatter.py
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
+      - name: Check the pages were built 🔎
+        # The backstop: whatever the cause, these must exist before we deploy.
+        run: |
+          missing=0
+          for p in index.html research/index.html study/index.html blog/index.html \
+                   papers/index.html publications/index.html gallery/index.html \
+                   diary/index.html sitemap.xml robots.txt; do
+            if [ ! -s "_site/$p" ]; then echo "MISSING: _site/$p"; missing=1; fi
+          done
+          n=$(ls _site/study/*/index.html 2>/dev/null | wc -l)
+          echo "study notes built: $n"
+          [ "$n" -ge 130 ] || { echo "too few study notes built"; missing=1; }
+          exit $missing
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
