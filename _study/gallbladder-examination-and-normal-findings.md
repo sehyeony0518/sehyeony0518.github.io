@@ -112,7 +112,7 @@ For each feature, I would distinguish present, absent, uncertain, and not assess
 
 A feasible study could ask whether readers agree more reliably on specific descriptors than on an overall “normal” label. I would measure agreement separately for wall irregularity, shadowing, attachment, and coverage, retaining disagreements rather than only a consensus answer.
 
-Another question is whether wall-thickness predictions follow tissue boundaries or caliper placement. Identical marked and unmarked exports would support an overlay test; independent measurements would supply a clinical reference.
+Another question is whether wall-thickness predictions follow tissue boundaries or caliper placement. Answering it means separating the caliper from what it measures, which is a design problem; independent measurements would supply a clinical reference.
 
 Finally, I would examine errors in apparently normal cases with incomplete neck coverage. If false reassurance concentrates there, the next useful model component may be an assessability check. This is my proposed interpretation, to be tested against the actual examinations rather than assumed from image quality alone.
 

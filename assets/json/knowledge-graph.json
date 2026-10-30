@@ -228,7 +228,7 @@
    "size": 4.93,
    "fam": "computational",
    "sector": "Systems & deployment",
-   "deg": 110
+   "deg": 108
   },
   {
    "id": "c:Deployment feedback loop",
@@ -335,10 +335,10 @@
    "label": "Counterfactual",
    "kind": "concept",
    "url": null,
-   "size": 3.06,
+   "size": 3.11,
    "fam": "computational",
    "sector": "Interpretability",
-   "deg": 19
+   "deg": 20
   },
   {
    "id": "c:Clinical validity",
@@ -2128,7 +2128,7 @@
    "size": 1.8,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 13
+   "deg": 14
   },
   {
    "id": "note:statistical-evaluation-of-diagnostic-models",
@@ -2348,7 +2348,7 @@
    "size": 1.3,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 13
+   "deg": 12
   },
   {
    "id": "review:2025-09-12-oarsi-atlas-radiographic-features",
@@ -3078,7 +3078,7 @@
    "size": 1.55,
    "fam": "bridge",
    "sector": "Auditing & causality",
-   "deg": 17
+   "deg": 16
   },
   {
    "id": "insight:2026-09-09-suin-lee-iscb-innovator-lecture",
@@ -10052,6 +10052,12 @@
   },
   {
    "source": "note:spurious-correlations-in-medical-ai",
+   "target": "c:Counterfactual",
+   "kind": "computational",
+   "w": 1
+  },
+  {
+   "source": "note:spurious-correlations-in-medical-ai",
    "target": "c:Clinical validity",
    "kind": "computational",
    "w": 1
@@ -11067,12 +11073,6 @@
   {
    "source": "review:2025-09-06-geirhos-shortcut-learning",
    "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "review:2025-09-06-geirhos-shortcut-learning",
-   "target": "c:Preprocessing & resampling",
    "kind": "computational",
    "w": 1
   },
@@ -15069,12 +15069,6 @@
   {
    "source": "insight:2026-09-08-suin-lee-explainable-ai-biology-medicine",
    "target": "c:Robustness",
-   "kind": "computational",
-   "w": 1
-  },
-  {
-   "source": "insight:2026-09-08-suin-lee-explainable-ai-biology-medicine",
-   "target": "c:Preprocessing & resampling",
    "kind": "computational",
    "w": 1
   },

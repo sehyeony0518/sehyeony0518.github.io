@@ -114,7 +114,7 @@ I would retain pathology, longitudinal clinical assessment, and unresolved cases
 
 A feasible acquisition hypothesis is that suspicious lesions receive tighter zoom, more calipers, and more interface-focused views. A classifier could use those operator actions as evidence of malignancy.
 
-I would compare paired marked and unmarked exports, examine scores within acquisition strata, and review whether new views add actual discriminating morphology. The question is whether a score change accompanies visible wall disruption or merely the documentation format.
+I would examine scores within acquisition strata and review whether new views add actual discriminating morphology. The question is whether a score change accompanies visible wall disruption or merely the documentation format.
 
 Finally, I would audit false negatives among adequately visualized focal lesions and false positives among inflammatory mimics. Readers would annotate architecture before seeing scores. This would let me ask whether model behavior aligns with the specific findings that motivated the differential, while keeping observational alignment distinct from demonstrated causal reliance.
 

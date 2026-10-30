@@ -115,7 +115,7 @@ A feasible audit could compare an image model with a size-only baseline within o
 
 A second question is whether repeated reader measurements change the apparent advantage over guideline baselines. I would recompute categories using each reader’s measurements and report threshold disagreement, rather than treat one caliper value as exact ground truth.
 
-Third, paired marked and unmarked exports could test whether predictions depend on calipers after physical image scale is preserved. Removing scale entirely would make this comparison ambiguous because size is legitimate evidence.
+Third, whether predictions depend on calipers has to be asked with physical image scale preserved. Removing scale entirely would make this comparison ambiguous because size is legitimate evidence.
 
 Finally, I would separate prediction of current malignant histology from prediction of future cancer. The latter requires a defined starting population, time horizon, and outcome ascertainment. A still-image dataset assembled at surgery cannot supply those missing temporal relationships.
 

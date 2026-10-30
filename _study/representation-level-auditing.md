@@ -94,7 +94,7 @@ Suppose both irregularity and machine identity are readily decoded. This does no
 
 I would examine concept-probe performance within machine groups and on a held-out machine where feasible. If a morphology probe fails when acquisition changes, I would investigate whether its learned separator captured machine appearance or whether the clinical finding became less visible. These alternatives require image review.
 
-A useful follow-up uses identical marked and unmarked frames. If a clinical probe changes its output when only calipers change, its purported morphology measure is contaminated under that comparison. If the original diagnostic score also changes, the two responses supply related evidence, but still do not prove that the probe direction mediates the classifier's effect.
+A useful follow-up asks what a clinical probe does when only the documentation changes. If its output moves, its purported morphology measure is contaminated under that comparison. If the original diagnostic score also changes, the two responses supply related evidence, but still do not prove that the probe direction mediates the classifier's effect.
 
 ### Spectral changes after resizing a diagnostic view
 

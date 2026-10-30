@@ -100,7 +100,7 @@ Here, $$y_i=1$$ denotes the adjudicated acute diagnosis, and $$\mathbf{1}$$ is t
 
 A specific shortcut hypothesis is that suspected inflammation prompts wall measurements and Doppler acquisition, whereas routine stone examinations contribute mainly grayscale images. Calipers, color boxes, or a bedside scanner's export layout could therefore predict the diagnosis through clinical workflow.
 
-I would first measure these associations, then test paired marked and unmarked exports where identical tissue pixels are available. Removing an overlay from a different frame would also change anatomy and speckle, weakening the interpretation.
+I would first measure these associations, which is the part that does not depend on any particular test design. Removing an overlay from a different frame would also change anatomy and speckle, weakening the interpretation.
 
 Another attackable question is whether errors concentrate in stone-positive cases with systemic edema. Readers could annotate the inflammatory constellation while blinded to model scores. I read this as a test of whether the classifier distinguishes local inflammatory evidence from a thick wall that has another plausible cause.
 

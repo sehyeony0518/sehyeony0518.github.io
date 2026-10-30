@@ -102,7 +102,7 @@ For localization, readers could annotate intrahepatic distribution, proximal duc
 
 A specific shortcut pathway begins when the operator suspects a dilated duct, freezes the view, places calipers, and exports the image. The calipers are consequences of clinical attention and may reveal which cases were considered abnormal.
 
-I would compare identical frames with and without overlays where available. A separate audit would test whether the model distinguishes the duct from adjacent vessels using cine continuity or paired Doppler information. A heatmap over the porta hepatis would not establish either capability.
+Separating the duct measurement from the documentation of it requires a comparison that holds the anatomy constant, which is a study-design question rather than an analysis one. A separate audit would test whether the model distinguishes the duct from adjacent vessels using cine continuity or paired Doppler information. A heatmap over the porta hepatis would not establish either capability.
 
 For a measurement model, I would examine error by measurement location, obliquity, visibility, and prior surgery. Good average agreement could conceal systematic overmeasurement of oblique distal segments.
 

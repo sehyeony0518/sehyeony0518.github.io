@@ -33,7 +33,11 @@ These operations can yield different responses even when their masks are identic
 
 The position of the edit within the pipeline matters. If the clinical application normalizes after decoding, an edit before normalization can propagate beyond the mask. I would distinguish a test of the complete application from a tensor-level test designed to hold already-normalized surrounding pixels fixed.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### There is a hierarchy of evidence preservation
+
+An intervention that removes something cleanly is a stronger comparison than one that has to estimate what was underneath. Two neighboring cine frames preserve the patient but may differ in probe angle, breathing phase, and visible morphology. Images from different patients introduce additional biological differences.
+
+I would not collapse these comparisons into a single category of “counterfactual images.” Their strengths differ because the unedited information is controlled differently. An authentic unmarked export still needs verification that dimensions, compression, grayscale mapping, and tissue content match.
 
 Editing anatomy is more demanding. Clinical findings often occur together because they arise from one process. A visually smooth replacement wall may remove irregularity, change thickness, and eliminate small cystic spaces simultaneously. Reader agreement that an image looks realistic is necessary evidence for some edits, but does not establish feature isolation.
 
@@ -61,7 +65,7 @@ I take this as motivation for a gallbladder experiment, not evidence that my cla
 
 ### Caliper removal with a known underlying image
 
-My preferred proposed experiment uses an unmarked frozen gallbladder frame and the same frame with measurement calipers. The target is the annotation layer, not the measured lesion.
+The target of such an audit is the annotation layer, not the measured lesion. Which comparison isolates it is the part of this I am still working on.
 
 I would compare tissue pixels outside the overlay, run both through the deployed pipeline, and record score changes. If source files permit faithful reconstruction, adding the authentic overlay to the unmarked frame gives a complementary insertion test. I would also test sham re-export to detect encoding changes.
 
@@ -95,7 +99,7 @@ I would report paired probability changes, logits where accessible, and decision
 
 ## Research connections and open questions
 
-The first practical question is how often authentic marked and unmarked gallbladder pairs can be recovered. Their availability determines whether the cleanest documentation experiment covers routine cases or only a selected subset.
+The first practical question is what the archive actually retains, since that determines whether the cleanest documentation experiment covers routine cases or only a selected subset.
 
 Second, which inpainting method best preserves reader-assessed wall morphology beneath sparse calipers? I would choose the method using blinded preservation assessments on recoverable examples, then evaluate model effects on separate cases.
 

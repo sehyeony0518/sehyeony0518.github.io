@@ -8,6 +8,7 @@ description: "The paper that gave the field a shared vocabulary for models that 
 og_image: "https://sehyeony0518.github.io/assets/img/og/2025-09-06-geirhos-shortcut-learning.png"
 related_posts: false
 ---
+
 **Paper.** *Shortcut Learning in Deep Neural Networks*. [Nature Machine Intelligence 2020](https://www.nature.com/articles/s42256-020-00257-z)
 
 A model can predict the right label while learning a rule that does not support the intended use. This perspective matters to my work because a medical benchmark rarely specifies which evidence a successful classifier must use. A malignancy label rewards any useful association with malignancy, including associations created by referral, acquisition, or documentation. The question is therefore broader than whether the model has learned something statistically real. It is whether the learned rule remains appropriate when the clinical setting changes.
@@ -26,7 +27,11 @@ The strongest conclusion I draw is an identification problem: benchmark success 
 
 A careful reader should nevertheless resist turning “shortcut” into a complete explanation of every generalization failure. A model can deteriorate because the relevant finding becomes less visible, the reference standard changes, or the target population includes unfamiliar disease presentations. Those possibilities require different repairs. Likewise, detecting an inappropriate dependency does not establish that it accounts for the entire performance gap. A model can combine useful morphology with source information, and its mixture of evidence can vary between easy and difficult cases.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+The paper leaves the operational boundary between legitimate context and shortcut unresolved. That is a limitation of its breadth, but also an honest reflection of the problem. There is no context-free list of forbidden pixels that establishes clinical validity. For a referral-prioritization system, some workflow information may belong in the input. For a claim of independent image-based diagnosis, the same information may undermine the interpretation. I would write that distinction into the task definition before choosing an audit.
+
+For a hypothetical gallbladder classifier, I would begin with a concrete hypothesis: measurement overlays may predict malignancy because suspicious lesions are measured more often. I would first check whether that association exists in the data at all, since a cue cannot be a shortcut for a model if it is not predictive in the first place. What would follow from there is a question about study design that this paper frames but does not settle.
+
+I would then examine whether the detected sensitivity matters under clinically relevant conditions. A score change is not automatically a harmful decision change. Evaluation should include the direction of the effect, threshold crossings, and performance among cases that challenge the usual association, such as marked benign lesions. If removing overlays reduces sensitivity to subtle cancers, that tradeoff needs investigation rather than being hidden behind a claim that the model is now shortcut-free.
 
 [Shortcut Learning in Medical Imaging]({{ '/study/shortcut-learning-in-medical-imaging/' | relative_url }}) develops the paper's central argument into three distinct claims: a cue predicts the label, the model encodes it, and the output depends on it. This perspective supports that separation, but does not supply the evidence needed to move between those claims. Zech's site-prevalence experiments and DeGrave's COVID-19 analyses provide more concrete examples elsewhere in this corpus.
 

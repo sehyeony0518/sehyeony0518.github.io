@@ -8,6 +8,7 @@ tag: "AIMS Lab"
 featured: true
 related_posts: false
 ---
+
 Su-In Lee argues that assigning importance to individual features is insufficient for the biological and clinical problems her lab wants to solve. A gene ranking does not explain how a treatment works, and a pixel attribution does not establish which clinical finding a classifier uses. I found this distinction especially relevant to my work on clinical faithfulness auditing, where anatomical agreement can be much easier to demonstrate than dependence on clinically meaningful evidence.
 
 These notes follow her conversation with Sam Charrington on the TWIML AI Podcast, *Explainable AI for Biology and Medicine*, published on August 14, 2023, around her talk at the ICML Workshop on Computational Biology. Lee is a professor at the University of Washington's Paul G. Allen School of Computer Science and Engineering and leads the AIMS Lab. I use the conversation as the main source, with published papers to clarify particular methods and later developments. ([TWIML episode](https://twimlai.com/podcast/twimlai/explainable-ai-for-biology-and-medicine))
@@ -118,7 +119,11 @@ That independence concerns how the reference was constructed. It does not mean t
 
 This extends Lee's argument in a direction specific to my project: before interpreting agreement, I need a defensible clinical reference that was not shaped by the model display being evaluated.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### A feasible intervention can support a narrower claim
+
+For the caliper example, the design question is what a comparison would have to hold constant to be worth anything, and how one would detect changes introduced by encoding or processing rather than by the cue itself.
+
+A prediction difference would support sensitivity to the annotation layer under that comparison. It would not establish every dependency of the classifier. If the calipers are burned into the image and must be inpainted, the claim becomes weaker because the underlying tissue has to be estimated.
 
 Editing morphology is harder. Smoothing a wall region might change thickness, contour, texture, and nearby findings together. I would not treat the resulting score change as isolated reliance on wall irregularity without evidence that the edit preserved the other relevant information.
 

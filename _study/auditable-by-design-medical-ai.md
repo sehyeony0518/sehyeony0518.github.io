@@ -17,6 +17,7 @@ papers:
   - "2025-10-22-concept-bottleneck-breast-ultrasound"
   - "2026-07-15-clear-auditable-foundation-model-radiology"
 ---
+
 I want an unexpected prediction to leave enough evidence for someone else to reconstruct it, challenge its intermediate claims, and test a suspected dependency. Auditability begins with deciding which questions the system must remain capable of answering.
 
 ## Core question and definition
@@ -83,7 +84,9 @@ I would also retain the original view beside the concept record. Otherwise, a re
 
 Consider a hypothetical frozen ultrasound frame with calipers bracketing a lesion. A concept detector might interpret high-contrast marker edges as an irregular attachment boundary. The final output could then change through a clinically named intermediate variable, even though the initiating evidence came from documentation.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+A comparison in which nothing but the annotation differs would be stronger than inpainting burned-in markers, which has to invent the tissue underneath. I would compare both the concept vector and diagnostic score, checking that tissue pixels and export processing match.
+
+This gives the audit a failure location: overlay sensitivity in the encoder, propagation through a particular concept, and a resulting diagnostic change. A heatmap over the correct anatomical region would not provide that decomposition.
 
 ## Evaluation methods and limitations
 
@@ -117,7 +120,11 @@ Version changes need equally concrete triggers. A new crop policy should prompt 
 
 ## Research connections and open questions
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+My first feasible study would compare two interfaces to the same frozen gallbladder classifier: a score with its source frames, and a score with source frames plus independently evaluated evidence readouts. I would measure whether reviewers can identify predefined failure mechanisms more accurately, rather than treating greater confidence as success.
+
+A second question is whether continuous concept values predict machine identity after conditioning on reader concept labels. A successful probe would identify retained acquisition information. Whether the diagnostic head then uses it is a separate question, and one a probe cannot answer on its own.
+
+Third, I would investigate which concept errors are both frequent and consequential. Combining reader disagreement, detector error, and downstream correction effects could identify where additional annotation would improve auditability most. That is a more actionable target than expanding the concept vocabulary without evidence that the added concepts support reliable review.
 
 ## References
 

@@ -17,6 +17,7 @@ papers:
   - "2025-10-08-shortcut-testing-fair-medical-ai"
   - "2026-08-30-monet-transparent-medical-image-ai"
 ---
+
 A cue-label association tells me what a model could exploit; an intervention tells me something about what the fitted model actually uses. I need both kinds of evidence before calling a gallbladder classifier's success clinically misleading.
 
 ## Core question and definition
@@ -115,12 +116,17 @@ Here, $$G$$ assigns each observation to a group. Worst-group risk reveals a fail
 
 Group distributionally robust optimization targets the largest training-group loss. [Sagawa and colleagues](https://arxiv.org/abs/1911.08731) show why regularization matters for worst-group generalization. I would treat this as a possible mitigation after identifying useful groups, not as proof that the resulting model uses clinical evidence.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### Pair additions and removals with controls
 
-A near-zero mean can conceal large positive and negative effects. I would therefore report absolute changes as well as signed changes, preserving patient clustering.
+A controlled comparison is the strongest form of this evidence: change the suspected cue and
+nothing else, and see whether the score moves. The literature on this is the counterfactual and
+ablation work reviewed elsewhere in these notes.
 
-Sham export tests can reveal compression or grayscale changes. If an overlay must be reconstructed, I would review whether the procedure changes wall boundaries or attachment morphology and compare defensible replacement methods. Agreement across replacements reduces dependence on one editing algorithm, but does not recover tissue that was never recorded.
-
+What makes such a comparison hard in ultrasound is that the two things being compared have to be
+genuinely identical apart from the cue. Any editing or re-encoding that touches tissue pixels
+introduces a second change, and a result then speaks to that change as much as to the cue. The
+design that satisfies this constraint for my own task is part of work in submission and is not
+written out here.
 ### Keep discovery separate from confirmation
 
 Searching many crops, metadata fields, and subgroups can produce compelling associations by chance. I would use development data to formulate candidate mechanisms, then freeze the cue definition, intervention, outcome scale, and analysis before confirmatory evaluation.
@@ -133,7 +139,7 @@ Successful nuisance invariance also needs a clinical counterpart. A model insens
 
 My first experiment would test whether the diagnosis-caliper association differs between routine survey frames and targeted lesion views. Recovering that acquisition context could distinguish documentation practice from a machine-specific visual style.
 
-Second, I would assemble authentic marked and unmarked pairs and ask whether overlay effects are larger when calipers overlap the lesion boundary. This would test whether anatomical localization makes a documentation dependency appear clinically plausible.
+Second, whether an overlay effect is larger when calipers overlap the lesion boundary is the question that would distinguish localization from coincidence. This would test whether anatomical localization makes a documentation dependency appear clinically plausible.
 
 Third, after any mitigation, I would evaluate marked benign and unmarked malignant cases alongside clinical-factor alignment. The useful outcome is not simply a smaller overlay effect. It is evidence that the classifier remains responsive to relevant findings when the convenient documentation association is challenged.
 

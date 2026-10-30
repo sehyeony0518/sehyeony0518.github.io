@@ -72,7 +72,7 @@ The ultrasound analogue is a hypothesis, not an established result: if malignant
 
 In my proposed gallbladder study, readers would score wall irregularity without seeing model outputs. Suppose malignancy scores rise with that factor. I would first cross-tabulate irregularity with calipers, zoom, acquisition site, and reference-standard type to determine whether informative comparisons actually exist.
 
-Identical frozen images exported with and without calipers permit a comparatively clean test of annotation dependence. If removing calipers changes the score while tissue pixels are preserved, I can attribute the computational response to the changed annotation layer under that pipeline. I still cannot conclude that morphology contributes nothing.
+Annotation dependence is testable in principle, but only under a comparison clean enough that the annotation is the sole difference. If such a comparison can be constructed and the score changes while tissue pixels are preserved, I can attribute the computational response to the changed annotation layer under that pipeline. I still cannot conclude that morphology contributes nothing.
 
 Zoom is harder. Cropping and resizing simultaneously change field of view, lesion scale, interpolation, and context. A score drop after a tight crop cannot isolate “background reliance.” I would compare crop variants that preserve lesion scale where possible, retain the full-image baseline, and describe the remaining differences explicitly.
 

@@ -19,6 +19,7 @@ papers:
   - "2026-03-20-covariate-adjusted-spearman-correlation"
   - "2026-07-28-auditing-inference-processes-generative-counterfactuals"
 ---
+
 I want to know whether a medical image classifier relies on clinically meaningful evidence, and how to make that reliance measurable and auditable. A heatmap that falls inside the gallbladder is a starting observation, not an answer.
 
 ## Core question and definition
@@ -77,7 +78,9 @@ I would compare adequately visualized benign wall-thickening cases with and with
 
 ### A measurement marker inside the correct region
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+Consider a hypothetical stored image in which calipers bracket an irregular gallbladder lesion. The operator noticed the lesion, froze a diagnostic view, and added measurements before export. Marker geometry therefore records an action downstream of clinical suspicion.
+
+An attribution map can overlap the lesion precisely because the calipers overlap it. Any comparison meant to separate the two has to establish that nothing else moved between the things being compared, which is worth verifying rather than assuming. Supposing that were established, a score change would support sensitivity to the annotation layer. A nearby cine frame would be weaker evidence because breathing, probe movement, and speckle also change.
 
 This example makes anatomical overlap ambiguous in a specific way: tissue morphology and documentation occupy the same region but enter the image through different mechanisms.
 
@@ -99,7 +102,11 @@ I would report anatomical agreement, clinical-factor alignment, and intervention
 
 ## Research connections and open questions
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+My first feasible question is whether attribution concentration in an annotated wall region tracks specific wall findings after accounting for region area and visibility. I can attack this with blinded annotation and predefined spatial baselines, before attempting difficult morphology edits.
+
+Second, can documentation explain the cases where anatomical overlap looks favorable but clinical-factor alignment is weak? That is the question that connects an apparently reassuring display to a mechanism rather than leaving it as a coincidence.
+
+Third, how sensitive are alignment conclusions to reader disagreement about intramural spaces? I would repeat the analysis using each reader's labels, adjudicated labels, and an explicitly assessable subset. Differences would identify which clinical references need better acquisition or annotation before a stronger reliance claim is warranted.
 
 ## References
 

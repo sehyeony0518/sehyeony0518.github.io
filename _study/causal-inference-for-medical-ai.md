@@ -16,6 +16,7 @@ papers:
   - "2026-06-13-counterfactual-shortcut-utilization"
   - "2026-04-02-causal-alignment-disease-diagnosis"
 ---
+
 Removing a caliper can change a classifier without changing the patient's disease. I use causal inference to keep that computational effect separate from claims about acquisition, diagnosis, and biological mechanisms.
 
 ## Core question and definition
@@ -58,7 +59,13 @@ where $$S$$ denotes surgery and $$F$$ fitness. Restricting to operated patients 
 
 I would therefore avoid a universal list of “variables to control.” A variable's role changes with the exposure, outcome, and graph. In particular, a measure of visibility may be a mediator in one analysis and a comparability variable in another.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### Observation is not intervention
+
+$$P(R\mid O=o)$$ describes scores among images observed with overlay state $$o$$. $$P(R\mid do(O=o))$$ describes scores under an intervention replacing the usual overlay-generating mechanism. [Pearl](https://doi.org/10.1214/09-SS057) formalizes this distinction.
+
+Observed marked and unmarked images can differ in lesion severity, because operators selectively measure suspicious findings. Any comparison between the two groups therefore carries that selection with it, and the comparison answers a question about the population as much as about the model.
+
+Changing an exported machine logo is likewise an intervention on pixels, not an intervention on the physical scanner. It leaves beam formation, acquisition settings, and patient routing untouched.
 
 ### Identification precedes estimation
 
@@ -118,11 +125,13 @@ Next, I would draw alternative plausible graphs before choosing adjustment varia
 
 Randomized assignment is valuable when the intervention can be controlled. Randomizing annotation presentation to the software can identify an input effect under the implemented rendering procedure. Randomizing acquisition order can reduce systematic order effects, although it cannot make two physical scans identical.
 
-I would include sham export, verify preserved information, and report effects on both scores and decisions at a prespecified threshold. A score change and a threshold crossing answer different questions.
+Any such comparison needs a control for the processing itself, verification that the information under examination survived, and results reported at a prespecified threshold as well as on the score. A score change and a threshold crossing answer different questions.
 
 Failure to detect an effect does not prove independence. The cue may be redundant with another input, the tested range may be narrow, or the score may be locally saturated. Conversely, a large response to an unrealistic edit can establish sensitivity without establishing clinically meaningful reliance.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+## Research connections and open questions
+
+The tractable version of the question is narrower than a biological causal model: it asks what a documentation cue contributes, not what the disease does. Which study design supports that claim is the part I am working on and not the part I would write up here.
 
 Second, I would reconstruct whether zoom, Doppler use, and caliper placement preceded or followed recognition of the target finding. This could distinguish routine acquisition variation from a response to suspicion.
 

@@ -8,6 +8,7 @@ description: "A counterfactual-generation approach to quantifying shortcut relia
 og_image: "https://sehyeony0518.github.io/assets/img/og/2026-06-13-counterfactual-shortcut-utilization.png"
 related_posts: false
 ---
+
 **Paper.** *Evaluating Shortcut Utilization in Deep Learning Disease Classification through Counterfactual Analysis*. [MIDL manuscript](https://openreview.net/pdf?id=vxSo5TJxlB)
 
 ## The distinction that motivates the paper
@@ -92,6 +93,8 @@ The paper also complements Boland's layer-localization study. Locating an access
 
 ## How I would use the approach
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+I would begin with an attribute whose intervention has a defensible interpretation and sufficient overlap in the observed data. For ultrasound, a documentation overlay is the candidate, and whether the archive supports the needed comparison is the limiting factor rather than the choice of estimator. The remainder of that design belongs to work in submission. Unmarked frames could provide a useful check against an activation-space estimate.
+
+I would freeze the original diagnostic model, validate reconstruction and preservation controls, and report the paired response distribution alongside performance changes.
 
 External acquisition tests would then provide another comparison. Agreement between activation interventions, valid input interventions, and transfer behavior would strengthen the reliance interpretation. Disagreement would identify an assumption worth investigating rather than a result to average away.

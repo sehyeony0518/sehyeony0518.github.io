@@ -78,7 +78,11 @@ I read this as a warning about assembling disease classes separately. A balanced
 
 The failure mechanism is more specific than “domain shift.” A predictor can assign a higher score to images from a high-prevalence hospital, improving pooled ranking even when its ability to distinguish patients within that hospital is weaker. I would therefore examine within-source discrimination alongside pooled AUROC.
 
-*[Removed 2026-10-30: this passage described work in submission.]*
+### Calipers on an irregular gallbladder lesion
+
+Consider a hypothetical malignancy classifier and an ultrasound image of focal irregular wall thickening on which an operator has placed measurement calipers. The morphology and the documentation of it occupy the same region, so an explanation that lands there is consistent with either.
+
+I would compare scores before looking at saliency. A higher malignancy score in the marked export supports sensitivity to that overlay. A second frame from a cine loop is a weaker control because probe position, respiration, and speckle also change.
 
 The clinical finding remains irregular thickening. The tested alternative is the operator’s measurement action, not an invented biological transformation.
 
@@ -98,7 +102,7 @@ Subgroup sensitivity, specificity, calibration, and patient counts answer differ
 
 ### Interpret interventions and mitigation together
 
-Black rectangles and inpainting can introduce unfamiliar edges or erase tissue. I would prefer native paired exports, then compare several editing strategies with matched control edits. Similar responses across plausible interventions strengthen the overlay hypothesis without making any edit a perfect counterfactual.
+Black rectangles and inpainting can introduce unfamiliar edges or erase tissue. The general lesson is to compare several editing strategies against matched control edits rather than trusting one. Similar responses across plausible interventions strengthen the overlay hypothesis without making any edit a perfect counterfactual.
 
 Mitigation should follow the mechanism. Removing burned-in text addresses text; balancing diagnosis within scanner addresses a recorded source association; collecting standardized views addresses acquisition selection. None guarantees removal of other proxies.
 
