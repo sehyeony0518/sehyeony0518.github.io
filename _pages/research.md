@@ -3,66 +3,66 @@ layout: page
 permalink: /research/
 title: research
 og_image: "https://sehyeony0518.github.io/assets/img/og/page-research.png"
-description: "Human-centered medical AI: aligning what a model learns with clinical concepts and human values, and studying how clinicians and models decide together."
+description: "Clinically grounded interpretability and evaluation of medical imaging AI, with ultrasound as the main application, toward human-centered clinical decision support."
 nav: true
 nav_order: 7
 ---
 <a href="/assets/pdf/cv-hwang.pdf" target="_blank" rel="noopener" style="display:inline-block; margin:.2rem 0 .8rem; padding:.4rem 1rem; border:1px solid var(--global-theme-color); border-radius:999px; color:var(--global-theme-color); text-decoration:none; font-size:.85rem; font-weight:600;">⬇ Download CV (PDF)</a>
 
-I work on **human-centered medical AI**: training and evaluating clinical models so that what they learn corresponds to clinical concepts and human values, and studying how clinicians and models arrive at better decisions together than either does alone.
+I study whether medical imaging models use the clinical concepts an expert would name, with ultrasound as the main application. The broader goal is **human-centered medical AI**: clinical models whose learned behavior corresponds to clinical concepts and values, supporting rather than displacing the person who has to decide.
 
-The field sits inside a larger one. **Human-centered AI** asks that systems be designed and judged by human values, autonomy, understandability and controllability. **Human-AI alignment and interaction** is the part of it that asks how the goals, concepts, judgments and trust of a person and a model can be brought into correspondence. **Medical AI and clinical decision support** is where I ask those questions: imaging diagnosis, clinical decision making, mental health, and the working relationship between a clinician and a model.
+This is how I situate the work rather than a settled taxonomy of the field, since interpretable machine learning, human-centered AI, alignment and clinical informatics overlap heavily. **Human-centered AI** asks that systems be designed and judged by human values, autonomy, understandability and control ([Shneiderman, 2020](https://doi.org/10.1080/10447318.2020.1741118)). **Human-AI interaction** asks how a person and a model actually work together ([Amershi et al., CHI 2019](https://doi.org/10.1145/3290605.3300233)). **Clinical decision support** is where I ask those questions: imaging diagnosis, clinical decision making, mental health, and the working relationship between a clinician and a model.
 
 ### Accuracy is not the whole question
 
-Suppose a radiologist is handed a lung nodule flagged by a model that detects cancer at 95 percent accuracy. Several things can still be wrong, and none of them is a performance number.
+Suppose a radiologist is handed a lung nodule flagged by a model that detects cancer at 95 percent accuracy. Several things can still be wrong, and the headline accuracy hides all of them.
 
 - The model may have learned a burned-in marker or a property of the scanner rather than the lesion.
 - The radiologist may not be able to tell why it decided what it decided.
 - The radiologist may defer to it where their own reading was better.
 - The radiologist may see something the model missed, with no way to give that back.
 
-These are not failures of the classifier. They are failures of alignment between a person and a model, and they are what I want to work on.
+These problems span model behavior, explanation quality and how a person uses what they are shown. My current work is on the first of those: whether the model uses the clinical concepts it is credited with.
 
-## Five questions I am working on
+## Current work and where it is going
 
 ### 1. Concept-based interpretability
 
 Does a model actually use the clinical concepts an expert would name?
 
-Saliency tells you where a model looked. A clinician wants to know something else: whether the lesion border is irregular, whether the tissue architecture is abnormal, whether a particular pattern is present, and how much each of those contributed to the diagnosis. The question is whether a link can be built between concepts a person holds and the representations a model computes, and what has to hold before such a link counts as evidence rather than a plausible picture.
+Saliency maps give spatial attribution. They do not establish which clinical concepts a model uses, and a clinician wants to know something else: whether the lesion border is irregular, whether the tissue architecture is abnormal, whether a particular pattern is present, and how much each of those contributed to the diagnosis. The question is whether a link can be built between concepts a person holds and the representations a model computes, and what has to hold before such a link counts as evidence rather than a plausible picture. The lineage runs through [TCAV](https://proceedings.mlr.press/v80/kim18d.html) (Kim et al., ICML 2018) and [concept bottleneck models](https://proceedings.mlr.press/v119/koh20a.html) (Koh et al., ICML 2020), which have branched rather than been superseded.
 
 This is where my M.S. work sits. An explanation that looks anatomically reasonable is not thereby faithful to the computation, and a readout that correlates with a clinical factor has not thereby been shown to drive the prediction. Making those distinctions measurable is the problem.
 
-### 2. Clinical value alignment
+### 2. Clinical objectives and evaluation
 
 What makes a medical model good, if not accuracy?
 
-A false negative and a false positive are not the same event in a clinic. Missing a cancer and sending a healthy patient for an unnecessary workup carry different costs, borne by different people, and the balance between them changes with the disease, the setting and the stage of care. So the question is whether what a model optimizes corresponds to what the clinical task is actually for: which operating point, measured against which cost, for which population.
+A false negative and a false positive are not the same event in a clinic. Missing a cancer and sending a healthy patient for an unnecessary workup carry different costs, borne by different people, and the balance between them changes with the disease, the setting and the stage of care. So the question is whether what a model optimizes corresponds to what the clinical task is actually for: which operating point, measured against which cost, for which population. My ACK 2025 requirements study is a first step, making malignant-class sensitivity the metric the requirements answer to. Extending that to error costs and populations is work I have not done. The fuller sense of value alignment, whose values a system should serve, is a normative question I am not yet addressing ([Gabriel, 2020](https://doi.org/10.1007/s11023-020-09539-2)).
 
-### 3. Bidirectional human-AI alignment
+### 3. Bidirectional human-AI alignment  <span class="rq-status">future direction</span>
 
-Alignment has usually meant moving the model toward the person. The harder version runs both ways: the clinician's knowledge, criteria and reasons should reach the model, and the model's uncertainty, grounds and failure modes should reach the clinician.
+Alignment has usually meant moving the model toward the person. The harder version runs both ways, and also covers how people adapt to the system ([Shen et al., NeurIPS 2025 position paper](https://arxiv.org/abs/2406.09264)): the clinician's knowledge, criteria and reasons should reach the model, and the model's uncertainty, grounds and failure modes should reach the clinician.
 
-The aim is not a clinician who agrees with the model. It is a clinician who knows accurately what it is good at and what it is not, and who can therefore rely on it or override it in the right places.
+The aim is not a clinician who agrees with the model. It is a clinician who knows accurately what it is good at and what it is not, and who can therefore rely on it or override it in the right places. That is the older problem of appropriate reliance ([Lee and See, 2004](https://doi.org/10.1518/hfes.46.1.50_30392)). I have not built or studied such a system.
 
-### 4. Human-AI interaction in clinical decision making
+### 4. Human-AI interaction in clinical decision making  <span class="rq-status">future direction</span>
 
-The previous three can be studied on a benchmark. This one cannot. It asks what happens when a clinician and a model actually work together, and it is answered by experiment: compare a reader given only the model's output against a reader given its output with concept-level grounds, and measure not only diagnostic accuracy but confidence, over-reliance, and how judgments change.
+This one is answered by reader study, not by a benchmark alone. Compare unaided interpretation, interpretation with the model's output, and interpretation with its output plus concept-level grounds, and measure not only diagnostic accuracy but confidence, over-reliance and how judgments change. A claim of better joint performance also has to be checked against the model working alone. The clinical onboarding problem here is already a literature ([Cai et al., CSCW 2019](https://doi.org/10.1145/3359206)).
 
-The uncomfortable possibility is the interesting one. Explanations may raise accuracy, or they may simply raise trust, including where trust is not warranted. Which of those happens is an empirical question about a workflow, not a property of an algorithm.
+The uncomfortable possibility is the interesting one. Explanations may raise accuracy, or they may simply raise trust, including where trust is not warranted. Which of those happens is an empirical question about a workflow, not a property of an algorithm. I have not run such a study: as I put it in my own [notes on Su-In Lee's lecture](/blog/2026-09-09-suin-lee-iscb-innovator-lecture/), an audit can expose a dependency without helping a clinician recognize an incorrect prediction, and I have not yet demonstrated that an audit changes what a clinician does.
 
 ### 5. Human-centered mental health AI
 
-Mental health is where human values and interaction matter most and where classification alone is least sufficient, because the evidence is the patient's language, affect, context and subjective experience.
+Mental health assessment raises its own version of these questions, because the evidence is the patient's language, affect, context and subjective experience, and classification alone does not reach it.
 
-For an LLM-administered assessment the questions are concrete. Does it extract the clinically significant content from what the patient said? Does its next question follow from the answer it was given? Where do its judgments agree with a clinician's and where do they diverge? Can the patient understand what it is asking and say what they mean? And does it ever hold a wrong conclusion confidently enough to lead a patient toward it? My [SCID-5 Module J agent](https://github.com/sehyeony0518/scid5-module-j-agent) is a first prototype against these questions.
+For an LLM-administered assessment the questions are concrete. Does it extract the clinically significant content from what the patient said? Does its next question follow from the answer it was given? Where do its judgments agree with a clinician's and where do they diverge? Can the patient understand what it is asking and say what they mean? And does it ever hold a wrong conclusion confidently enough to lead a patient toward it? I built a [research prototype inspired by SCID-5 Module J](https://github.com/sehyeony0518/scid5-module-j-agent) to explore structured interviewing. It has not been evaluated for clinician agreement, patient usability or clinical benefit, and its uncertainty category is model-generated rather than calibrated.
 
-## The clinical half is not support work
+## Clinical knowledge shapes the research question
 
 None of the five questions has content without the medicine. "Clinically valid evidence" and "clinical value" are empty phrases until someone knows what a radiologist reads and in what order, which findings are interpreted together, what a reference standard does and does not establish, and how patients who receive one workup differ from those who receive another.
 
-So I study that directly, along with ultrasound acquisition itself, because operator, machine and preset variation is a property of the examination rather than of the patient, and telling those apart is a prerequisite for calling anything a shortcut. My [study notes](/study/) cover this alongside the computational side, and my [publications](/publications/) list the work that has appeared.
+So I study hepatobiliary medicine, sonographic findings, examination protocols and ultrasound physics directly, because they determine what an image can support and which clinical concepts a model should be evaluated against. Acquisition is part of that: operator, machine and preset variation enters the image alongside the patient, and separating the two is a prerequisite for calling anything a shortcut. My [study notes](/study/) cover this alongside the computational side, and my [publications](/publications/) list the work that has appeared.
 
 ## Selected Projects
 
@@ -89,6 +89,13 @@ So I study that directly, along with ultrasound acquisition itself, because oper
   .proj-card .pc-tag { font-size: .7rem; padding: .12rem .5rem; border-radius: 6px; background: rgba(128,128,128,.12); opacity: .85; }
   .proj-card .pc-link { margin-top: .6rem; font-size: .8rem; text-decoration: none; color: var(--global-theme-color); }
   .proj-card .pc-link:hover { text-decoration: underline; }
+  /* Marks a research question as a direction rather than work already done. */
+  .rq-status {
+    font-size: .62rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    vertical-align: .28em; margin-left: .5rem; padding: .1rem .45rem;
+    border: 1px solid var(--global-divider-color); border-radius: 999px;
+    color: var(--global-text-color-light); opacity: .75;
+  }
 </style>
 
 <div class="proj-grid">
@@ -133,7 +140,7 @@ So I study that directly, along with ultrasound acquisition itself, because oper
 
 - **Undergraduate Researcher**, ITRC Project on Gallbladder Ultrasound AI &nbsp;<span style="opacity:.55;">Jan 2025 – Feb 2026</span>
   <span style="opacity:.55;">MIIDS Research Center, Ajou University</span>
-  Contributed to an MSIT-funded project on AI-based gallbladder ultrasound diagnosis in collaboration with Ajou University Hospital; the work continued into my M.S. research. First-authored a reliability requirements study reporting a **~33% improvement in malignant-class detection sensitivity** (C1). Developed clinical-knowledge-guided modeling strategies using echogenicity, texture, lesion margin, wall features, and anatomical context. Presented center research at the ITRC Talent Development Fair in 2025 and 2026.
+  Contributed to an MSIT-funded project on AI-based gallbladder ultrasound diagnosis in collaboration with Ajou University Hospital; the work continued into my M.S. research. First-authored a reliability requirements study reporting malignant-class sensitivity of **0.452 before and 0.600 after** applying the requirements, a relative increase of about 33 percent on the study's internal evaluation (C1). Developed clinical-knowledge-guided modeling strategies using echogenicity, texture, lesion margin, wall features, and anatomical context. Presented center research at the ITRC Talent Development Fair in 2025 and 2026.
 
 - **Graduate Researcher**, Diagnostic Prediction via Robotic Motion Anomaly Detection &nbsp;<span style="opacity:.55;">Dec 2025 – Nov 2026</span>
   <span style="opacity:.55;">Embedded & Software Lab (ESL), Ajou University, funded by Samsung Heavy Industries</span>
@@ -193,7 +200,7 @@ So I study that directly, along with ultrasound acquisition itself, because oper
   Participate in regular community outreach, providing practical assistance and ongoing support to local residents.
 - **Sergeant, Republic of Korea Air Force**, 15th Special Mission Wing, honorably discharged &nbsp;<span style="opacity:.55;">Mar 2022 – Dec 2023</span>
 
-## Open-Source Software
+## Public Research Repositories
 
 Selected repositories on [GitHub](https://github.com/sehyeony0518):
 
@@ -202,7 +209,7 @@ Selected repositories on [GitHub](https://github.com/sehyeony0518):
   <div class="proj-card">
     <div class="pc-top"><span class="pc-badge">ACK 2025 · C1</span></div>
     <h3>ultrasound-ai-reliability-requirements</h3>
-    <p class="pc-desc">Requirements framework for reliable ultrasound diagnostic AI, data/model attribute pairs made executable as a gallbladder pipeline (paper explainer).</p>
+    <p class="pc-desc">Paper explainer for the ACK 2025 ultrasound reliability requirements study: its framework, experimental setup and reported results. Implementation code is not included.</p>
     <a class="pc-link" href="https://github.com/sehyeony0518/ultrasound-ai-reliability-requirements" target="_blank" rel="noopener">→ github.com/sehyeony0518/ultrasound-ai-reliability-requirements</a>
   </div>
 
@@ -223,7 +230,7 @@ Selected repositories on [GitHub](https://github.com/sehyeony0518):
   <div class="proj-card">
     <div class="pc-top"><span class="pc-badge">Research Prototype</span></div>
     <h3>scid5-module-j-agent</h3>
-    <p class="pc-desc">LLM-administered SCID-5 Module J (adjustment disorder) interview, DSM-5 criteria as a decision tree, with human-in-the-loop probes on uncertainty.</p>
+    <p class="pc-desc">Research prototype inspired by SCID-5 Module J, with paraphrased criteria as a decision tree and follow-up questions when an answer is unclear. Clinician agreement and patient usability are unevaluated.</p>
     <a class="pc-link" href="https://github.com/sehyeony0518/scid5-module-j-agent" target="_blank" rel="noopener">→ github.com/sehyeony0518/scid5-module-j-agent</a>
   </div>
 

@@ -4,7 +4,7 @@ cv:
   email: bikmiso3@ajou.ac.kr
   location: Suwon, South Korea
   image: ""
-  summary: M.S. student at Ajou University researching human-centered medical AI, covering concept-based interpretability, clinical value alignment, and human-AI collaboration in clinical decision making, grounded in medical imaging and ultrasound diagnosis.
+  summary: M.S. student at Ajou University working on clinically grounded interpretability and evaluation of medical imaging AI, with ultrasound as the main application, toward human-centered medical AI for clinical decision support.
 
   social_networks:
     - network: GitHub

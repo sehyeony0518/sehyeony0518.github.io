@@ -56,12 +56,12 @@ HOME = {
     "name": "Se-Hyeon Hwang",
     "name_ko": "황세현",
     "tagline": "Human-Centered Medical AI",
-    "blurb": "Whether a clinical model uses the concepts an expert would name, whether it "
-             "optimizes what the task is for, and what happens when a clinician works with one.",
-    # The two halves the home page states, as its own two columns.
+    "blurb": "Whether a medical imaging model uses the clinical concepts an expert would "
+             "name, and what it should be optimized for when a false negative and a false "
+             "positive are not the same event.",
     "columns": [
-        ("Alignment", "Clinical concepts, value, appropriate reliance"),
-        ("Clinical grounding", "Disease, imaging findings, diagnostic reasoning"),
+        ("Now", "Concept use, clinical evaluation, ultrasound"),
+        ("Next", "How a clinician and a model decide together"),
     ],
     "foot": "M.S. student  /  Ajou University  /  Embedded & Software Lab",
 }
