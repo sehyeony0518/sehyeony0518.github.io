@@ -70,9 +70,7 @@ I take this as motivation for a gallbladder experiment, not evidence that my cla
 
 ### Caliper removal with a known underlying image
 
-The target of such an audit is the annotation layer, not the measured lesion. Which comparison isolates it is the part of this I am still working on.
-
-I would compare tissue pixels outside the overlay, run both through the deployed pipeline, and record score changes. If source files permit faithful reconstruction, adding the authentic overlay to the unmarked frame gives a complementary insertion test. I would also test sham re-export to detect encoding changes.
+The target of such an audit is the annotation layer, not the measured lesion.
 
 If only burned-in calipers exist, I would use more than one reconstruction and ask blinded readers whether the lesion boundary, wall thickness, and attachment remain assessable. Cases where the marker obscures the feature of interest would retain an explicit limitation: the original hidden tissue is unknown.
 

@@ -27,8 +27,6 @@ A dependence claim concerns a model's computation, not a patient's disease. An i
 
 What a response does describe is the operation that produced it. An experiment that removes a marker measures sensitivity to removing that marker. One that blurs a wall measures sensitivity to that blurring. Reading the second as “reliance on wall irregularity” needs separate evidence that irregularity is what changed and that the rest of the relevant information did not, and that step is where most published claims stop.
 
-The quantity I would use for my own task, and the comparison it is computed over, are part of work in submission and are not set out here.
-
 ## Key concepts
 
 ### Output dependence and useful dependence differ
@@ -104,14 +102,6 @@ The primary transformation and output have to be fixed in advance, all eligible 
 Natural matched comparisons need overlap. If every malignant case has calipers and no benign case does, statistical adjustment cannot recover an unobserved combination without extrapolation. I would report that limitation directly and seek additional data.
 
 A null response supports only a bounded conclusion: no detectable effect under the tested edit and precision. Redundancy, incomplete removal, insensitive outputs, and sparse samples remain distinct explanations that require different follow-up tests.
-
-## Research connections and open questions
-
-I would begin by estimating caliper-edit responses separately for benign and malignant gallbladder cases, with score changes and harmful flips reported together. This tests whether documentation dependence is concentrated in a clinically consequential subgroup.
-
-A second question is whether marker sensitivity persists when the visible wall finding is well assessed. Comparing predefined visibility strata can distinguish a broad dependence from one concentrated in difficult images, although visibility-related selection still needs review.
-
-Finally, I would test whether joint removal of two independently editable documentation elements produces nonadditive responses. If calipers and peripheral text can be separated without modifying anatomy, that experiment can investigate redundancy more credibly than a joint edit of tightly coupled disease signs.
 
 ## References
 

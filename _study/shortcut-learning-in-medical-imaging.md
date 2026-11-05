@@ -83,8 +83,6 @@ The failure mechanism is more specific than “domain shift.” A predictor can 
 
 Consider a hypothetical malignancy classifier and an ultrasound image of focal irregular wall thickening on which an operator has placed measurement calipers. The morphology and the documentation of it occupy the same region, so an explanation that lands there is consistent with either.
 
-I would compare scores before looking at saliency. A higher malignancy score in the marked export supports sensitivity to that overlay. A second frame from a cine loop is a weaker control because probe position, respiration, and speckle also change.
-
 The clinical finding remains irregular thickening. The tested alternative is the operator’s measurement action, not an invented biological transformation.
 
 ## Evaluation methods and limitations
@@ -96,8 +94,6 @@ A claim that a model uses a cue has to name what will be measured, and on what s
 Whichever quantity it is, a signed summary and an absolute one answer different questions: effects in opposite directions cancel in the first and accumulate in the second. Crossings of a decision threshold answer a third question, and the threshold has to be set in advance. A logit change is not a probability change, and neither is by itself a statement about clinical harm.
 
 Repeated images of one examination are not independent observations, so an interval has to respect whatever grouping the data actually have. For a claim about a training procedure rather than about one trained model, variation across independently trained models matters too.
-
-The comparison I would use for my own task is part of work in submission and is not set out here.
 
 ### Challenge the cue-label relationship
 
@@ -117,11 +113,9 @@ I would reserve independent patients for checking both shortcut sensitivity and 
 
 ## Research connections and open questions
 
-My first feasible question is whether paired overlay sensitivity is larger when the underlying lesion is poorly visualized. Readers could rate wall-margin assessability without seeing model scores, and I could compare patient-level intervention effects across those ratings.
+First, does a classifier retain discrimination between benign and malignant lesions within overlapping size ranges and scanner groups? This would test whether apparently strong aggregate performance depends on source or size distributions.
 
-Second, does a classifier retain discrimination between benign and malignant lesions within overlapping size ranges and scanner groups? This would test whether apparently strong aggregate performance depends on source or size distributions.
-
-Third, after removing overlays during training, does prediction align more closely with independently annotated sessility, wall irregularity, and intramural cystic spaces? I would evaluate those factors separately because removing an inappropriate cue does not identify its replacement.
+Second, after removing overlays during training, does prediction align more closely with independently annotated sessility, wall irregularity, and intramural cystic spaces? I would evaluate those factors separately because removing an inappropriate cue does not identify its replacement.
 
 Finally, I would examine whether a multi-frame prediction is less sensitive to the operator’s selected still image. Cine loops could support that comparison, provided the aggregation method and included views are fixed before examining outcomes.
 

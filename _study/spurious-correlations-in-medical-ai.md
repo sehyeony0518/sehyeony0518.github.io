@@ -86,7 +86,7 @@ Consider a hypothetical gallbladder dataset where suspicious lesions usually hav
 
 I would organize an evaluation by diagnosis and cue state: marked benign, unmarked benign, marked malignant, and unmarked malignant cases. The marked benign and unmarked malignant groups challenge the dominant association.
 
-The clinical comparison must remain meaningful. If marked benign lesions are larger and harder to characterize, lower specificity there cannot be attributed entirely to calipers. I would annotate morphology, size, and visibility, then add paired overlay comparisons where source data permit.
+The clinical comparison must remain meaningful. If marked benign lesions are larger and harder to characterize, lower specificity there cannot be attributed entirely to calipers. I would annotate morphology, size, and visibility.
 
 Empty groups are especially informative about study design. If no unmarked malignant cases exist, an observational benchmark cannot establish independence from marking through subgroup analysis alone.
 
@@ -124,9 +124,8 @@ ablation work reviewed elsewhere in these notes.
 
 What makes such a comparison hard in ultrasound is that the two things being compared have to be
 genuinely identical apart from the cue. Any editing or re-encoding that touches tissue pixels
-introduces a second change, and a result then speaks to that change as much as to the cue. The
-design that satisfies this constraint for my own task is part of work in submission and is not
-written out here.
+introduces a second change, and a result then speaks to that change as much as to the cue.
+
 ### Keep discovery separate from confirmation
 
 Searching many crops, metadata fields, and subgroups can produce compelling associations by chance. I would use development data to formulate candidate mechanisms, then freeze the cue definition, intervention, outcome scale, and analysis before confirmatory evaluation.
@@ -139,9 +138,7 @@ Successful nuisance invariance also needs a clinical counterpart. A model insens
 
 My first experiment would test whether the diagnosis-caliper association differs between routine survey frames and targeted lesion views. Recovering that acquisition context could distinguish documentation practice from a machine-specific visual style.
 
-Second, whether an overlay effect is larger when calipers overlap the lesion boundary is the question that would distinguish localization from coincidence. This would test whether anatomical localization makes a documentation dependency appear clinically plausible.
-
-Third, after any mitigation, I would evaluate marked benign and unmarked malignant cases alongside clinical-factor alignment. The useful outcome is not simply a smaller overlay effect. It is evidence that the classifier remains responsive to relevant findings when the convenient documentation association is challenged.
+Second, after any mitigation, I would evaluate marked benign and unmarked malignant cases alongside clinical-factor alignment. The useful outcome is not simply a weaker caliper association. It is evidence that the classifier remains responsive to relevant findings when the convenient documentation association is challenged.
 
 ## References
 

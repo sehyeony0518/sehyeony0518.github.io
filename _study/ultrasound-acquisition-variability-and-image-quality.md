@@ -102,7 +102,7 @@ I would cross-tabulate diagnosis against machine, operator, probe, preset, depth
 
 Paired acquisitions could compare the same wall segment with different gain, focus, frequency, or imaging modes during one examination. Readers blinded to model scores would first determine whether the relevant feature remains assessable in both images.
 
-For the retained pairs the question is how far the model's output moves, and the answer depends on which summary is reported. A signed change, an absolute change, and a change in the decision at a preset threshold are three different measurements of one experiment, and an interval that ignores the dependence between repeated images of one examination will be too narrow. How I would set that comparison up is part of work in submission and is not set out here.
+For the retained pairs the question is how far the model's output moves, and the answer depends on which summary is reported. A signed change, an absolute change, and a change in the decision at a preset threshold are three different measurements of one experiment, and an interval that ignores the dependence between repeated images of one examination will be too narrow.
 
 A pair in which the second acquisition loses the lesion is a different experiment from a pair preserving morphology. A changed score after genuine evidence loss should not automatically be counted as inappropriate instability.
 

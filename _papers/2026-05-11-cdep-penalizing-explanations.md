@@ -81,6 +81,6 @@ The Reveal2Revise review extends this idea operationally by connecting discovery
 
 I would begin with a prior that is narrow enough to defend, such as independence from a separately removable documentation overlay. I would compare ordinary training, a simple data-level correction, and explanation regularization under matched development conditions.
 
-Evaluation would include paired overlay changes, a correlation-shift test, and checks that independently annotated clinical findings remain recognized. Penalty strength would be chosen without consulting the final audit set.
+Evaluation would include a correlation-shift test and checks that independently annotated clinical findings remain recognized. Penalty strength would be chosen without consulting the final audit set.
 
 The paper's lasting contribution is that explanations can participate in model revision. The standard for success should remain the resulting behavior under a clearly specified test, with preservation of useful evidence evaluated alongside removal of the unwanted dependence.
