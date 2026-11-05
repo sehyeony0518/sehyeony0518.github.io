@@ -71,6 +71,15 @@ cv:
           - Worked on a government-funded computational psychiatry project, gaining hands-on experience with IRB-approved clinical research workflows, clinical data handling, and clinician–AI collaboration.
 
     Publications:
+      - title: "Attention UWT-Net: Frequency-Aware Gated Skip Connections for Medical Image Segmentation"
+        authors:
+          - S.-G. Lee
+          - S.-H. Hwang
+          - H. Choi
+          - J.-W. Lee
+        publisher: Proc. Fall Conference of the Institute of Electronics and Information Engineers (IEIE 2026) (in Korean)
+        releaseDate: 2026-11
+
       - title: Design of Monitoring Software for Predictive Maintenance in Smart Factory
         authors:
           - S.-H. Hwang

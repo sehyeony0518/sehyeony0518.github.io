@@ -10,7 +10,7 @@ nav_order: 8
 
 <!-- _pages/publications.md -->
 
-**Peer-reviewed publications and manuscripts in preparation.** (\* denotes first author)
+**Peer-reviewed publications and manuscripts in preparation.** My name is shown in bold; authors are listed in publication order.
 
 <!-- Bibsearch Feature -->
 
