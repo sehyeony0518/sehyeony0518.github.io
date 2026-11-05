@@ -236,4 +236,4 @@ Selected repositories on [GitHub](https://github.com/sehyeony0518):
 
 </div>
 
-Published papers and manuscripts in preparation are listed on the [publications](/publications/) page.
+Published papers, manuscripts in preparation, and patent applications are listed on the [publications](/publications/) page.

@@ -98,6 +98,16 @@ cv:
         publisher: Proc. Annual Conference of KIPS (ACK 2025), vol. 32, no. 2, pp. 489–490 (in Korean)
         releaseDate: 2025-11
 
+    Patents:
+      - title: "Method and Apparatus for Evaluating Diagnostic Model"
+        authors:
+          - J.-W. Lee
+          - S.-H. Hwang
+          - H. Choi
+          - J.-S. Kim
+        publisher: "Korean patent application 10-2026-0218360, filed 4 Nov 2026 by the Ajou University Industry–Academic Cooperation Foundation. Examination requested; application pending."
+        releaseDate: 2026-11
+
     Software Registration:
       - name: A Tool for Removing Diagnostic Markers and Restoring Medical Images
         summary: Software Copyright Registration No. ASSET_0013931. Removes on-image diagnostic markers, a known source of shortcut cues in medical imaging, while preserving downstream diagnostic usability.
